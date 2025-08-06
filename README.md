@@ -26,3 +26,4 @@ A modern, responsive landing page for FreightIQ - Intelligent Freight Management
 - Custom domain: www.freightiq.online
 
 Built with ❤️ for FreightIQ
+# Trigger deployment
