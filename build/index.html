@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreightIQ - Intelligent Freight Management Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'freight-orange': '#f97316',
+                        'freight-slate': '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white">
+    <nav class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="/static/logo-dark.svg" alt="FreightIQ" class="h-8 w-auto">
+                    <span class="ml-2 text-xl font-semibold">FreightIQ</span>
+                </div>
+                <a href="https://app.freightiq.online" class="bg-freight-orange text-white px-4 py-2 rounded-md font-medium">Launch App</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-24">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold text-gray-900 mb-6">
+                Intelligent Freight Management
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Streamline your logistics operations with our comprehensive suite of AI-powered tools for import, export, delivery, and freight management.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://app.freightiq.online" class="bg-freight-orange text-white px-8 py-4 rounded-lg text-lg font-semibold">
+                    Start Free Trial
+                </a>
+                <a href="#features" class="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
