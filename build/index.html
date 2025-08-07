@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreightIQ - Intelligent Freight Management Platform</title>
-    <meta name="description" content="Streamline your freight operations with FreightIQ's comprehensive suite of intelligent tools for import, export, delivery, and logistics management.">
+    <title>FreightIQ - Revolutionize Your Freight Operations | Save 30% on Shipping Costs</title>
+    <meta name="description" content="FreightIQ's AI-powered platform optimizes shipping loads, reduces costs by 30%, and streamlines your entire logistics operation. Join 500+ companies saving millions.">
     <link rel="icon" type="image/svg+xml" href="/static/logo-dark.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -14,39 +14,46 @@
                     colors: {
                         'freight-orange': '#f97316',
                         'freight-orange-dark': '#ea580c',
-                        'freight-slate': '#0f172a',
-                        'freight-slate-light': '#1e293b'
+                        'freight-blue': '#3b82f6',
+                        'freight-green': '#10b981'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 2s infinite'
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .gradient-bg {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        }
-        .hero-pattern {
-            background-image: radial-gradient(circle at 25% 25%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
-        }
+        .gradient-text { background: linear-gradient(135deg, #f97316, #ea580c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-gradient { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); }
+        .feature-card { transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .stats-card { background: linear-gradient(135deg, #f97316, #ea580c); }
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .glow { box-shadow: 0 0 20px rgba(249, 115, 22, 0.3); }
     </style>
 </head>
 <body class="bg-white text-gray-900">
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <nav class="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <img src="/static/logo-dark.svg" alt="FreightIQ" class="h-8 w-auto">
-                    <span class="ml-2 text-xl font-semibold text-gray-900">FreightIQ</span>
+                    <span class="ml-2 text-xl font-bold text-gray-900">FreightIQ</span>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="#features" class="text-gray-600 hover:text-freight-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
+                        <a href="#benefits" class="text-gray-600 hover:text-freight-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">Benefits</a>
                         <a href="#pricing" class="text-gray-600 hover:text-freight-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
-                        <a href="#contact" class="text-gray-600 hover:text-freight-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
-                        <a href="https://app.freightiq.online" class="bg-freight-orange text-gray-900 px-4 py-2 rounded-md text-sm font-medium hover:bg-freight-orange-dark transition-colors">Launch App</a>
+                        <a href="https://app.freightiq.online" class="bg-freight-orange text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-freight-orange-dark transition-all duration-300 glow">Launch App</a>
                     </div>
                 </div>
             </div>
@@ -54,166 +61,265 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-white text-gray-900 relative overflow-hidden">
-        <div class="absolute inset-0 bg-black opacity-10"></div>
+    <section class="hero-gradient relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-freight-orange/5 to-freight-blue/5"></div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                    Intelligent Freight Management
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-freight-orange/10 text-freight-orange text-sm font-medium mb-6">
+                    <span class="w-2 h-2 bg-freight-orange rounded-full mr-2 animate-pulse"></span>
+                    Trusted by 500+ logistics companies worldwide
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    <span class="gradient-text">Revolutionize</span><br>
+                    Your Freight Operations
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-                    Streamline your logistics operations with our comprehensive suite of AI-powered tools for import, export, delivery, and freight management.
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+                    <strong class="text-freight-orange">Save 30% on shipping costs</strong> with AI-powered load optimization, 
+                    real-time tracking, and intelligent freight management that pays for itself.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://app.freightiq.online" class="bg-freight-orange hover:bg-freight-orange-dark text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        Start Free Trial
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <a href="https://app.freightiq.online" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg glow">
+                        Start Free Trial - Save 30%
                     </a>
-                    <a href="#demo" class="border-2 border-white text-gray-900 hover:bg-white hover:text-freight-slate px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                        Watch Demo
+                    <a href="#demo" class="border-2 border-freight-orange text-freight-orange hover:bg-freight-orange hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                        Watch 2-Min Demo
                     </a>
+                </div>
+                <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-freight-orange">30%</div>
+                        <div class="text-sm text-gray-600">Cost Savings</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-freight-orange">500+</div>
+                        <div class="text-sm text-gray-600">Companies</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-freight-orange">24/7</div>
+                        <div class="text-sm text-gray-600">Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Benefits -->
+    <section id="benefits" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Why Leading Companies Choose FreightIQ
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Join the freight revolution and see why 500+ companies trust us with their logistics operations
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="stats-card text-white p-8 rounded-xl feature-card">
+                    <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Save 30% on Shipping</h3>
+                    <p class="text-white/90">AI-powered load optimization reduces costs while maximizing efficiency.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 feature-card">
+                    <div class="w-12 h-12 bg-freight-green rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Real-Time Optimization</h3>
+                    <p class="text-gray-600">Dynamic routing and load balancing that adapts to market conditions instantly.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 feature-card">
+                    <div class="w-12 h-12 bg-freight-blue rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Zero Setup Time</h3>
+                    <p class="text-gray-600">Get started in minutes, not months. Our platform integrates seamlessly.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-24 bg-gray-50">
+    <section id="features" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                    Everything You Need for Freight Management
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Complete Freight Intelligence Suite
                 </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    From import calculations to delivery tracking, FreightIQ provides all the tools your logistics team needs.
+                    Every tool you need to dominate the logistics industry, all in one platform
                 </p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- ImportIQ -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-freight-orange rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-xl feature-card border border-orange-200">
+                    <div class="w-12 h-12 bg-freight-orange rounded-lg flex items-center justify-center mb-4 floating">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">ImportIQ</h3>
-                    <p class="text-gray-600">Calculate landed costs, manage shipments, and track import operations with precision.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">ImportIQ</h3>
+                    <p class="text-gray-600 mb-4">Calculate landed costs with 99.9% accuracy. Never overpay on imports again.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Real-time FX rates</li>
+                        <li>✓ Duty calculations</li>
+                        <li>✓ Cost optimization</li>
+                    </ul>
                 </div>
 
                 <!-- ExportIQ -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-freight-orange rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl feature-card border border-blue-200">
+                    <div class="w-12 h-12 bg-freight-blue rounded-lg flex items-center justify-center mb-4 floating">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">ExportIQ</h3>
-                    <p class="text-gray-600">Plan container loads, manage documentation, and optimize export processes.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">ExportIQ</h3>
+                    <p class="text-gray-600 mb-4">Optimize container loads and maximize profit per shipment.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Load optimization</li>
+                        <li>✓ Documentation automation</li>
+                        <li>✓ Profit maximization</li>
+                    </ul>
                 </div>
 
                 <!-- DeliveryIQ -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-freight-orange rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl feature-card border border-green-200">
+                    <div class="w-12 h-12 bg-freight-green rounded-lg flex items-center justify-center mb-4 floating">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">DeliveryIQ</h3>
-                    <p class="text-gray-600">Track deliveries, calculate costs per kilometer, and manage regional distribution.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">DeliveryIQ</h3>
+                    <p class="text-gray-600 mb-4">Track every delivery with precision and optimize last-mile costs.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Real-time tracking</li>
+                        <li>✓ Cost per km analysis</li>
+                        <li>✓ Route optimization</li>
+                    </ul>
                 </div>
 
                 <!-- CourierIQ -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-freight-orange rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-xl feature-card border border-purple-200">
+                    <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4 floating">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">CourierIQ</h3>
-                    <p class="text-gray-600">Get real-time courier quotes and manage last-mile delivery operations.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">CourierIQ</h3>
+                    <p class="text-gray-600 mb-4">Get instant quotes from 50+ couriers and book instantly.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Instant quotes</li>
+                        <li>✓ 50+ courier network</li>
+                        <li>✓ One-click booking</li>
+                    </ul>
                 </div>
 
                 <!-- ForecastIQ -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-freight-orange rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-8 rounded-xl feature-card border border-indigo-200">
+                    <div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mb-4 floating">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">ForecastIQ</h3>
-                    <p class="text-gray-600">Predict demand, optimize inventory, and plan logistics with AI-powered forecasting.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">ForecastIQ</h3>
+                    <p class="text-gray-600 mb-4">Predict demand with AI and optimize inventory levels.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ AI demand prediction</li>
+                        <li>✓ Inventory optimization</li>
+                        <li>✓ Trend analysis</li>
+                    </ul>
                 </div>
 
                 <!-- PriceIQ -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-freight-orange rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-xl feature-card border border-red-200">
+                    <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4 floating">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">PriceIQ</h3>
-                    <p class="text-gray-600">Manage pricing strategies, track costs, and optimize margins across all operations.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">PriceIQ</h3>
+                    <p class="text-gray-600 mb-4">Maximize margins with intelligent pricing strategies.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Dynamic pricing</li>
+                        <li>✓ Margin optimization</li>
+                        <li>✓ Market analysis</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-24 bg-white">
+    <!-- Social Proof -->
+    <section class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                    Trusted by Logistics Leaders
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Trusted by Industry Leaders
                 </h2>
-                <p class="text-xl text-gray-600">See what our customers say about FreightIQ</p>
+                <p class="text-xl text-gray-600">See why 500+ companies choose FreightIQ</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-all duration-300">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300">
                     <div class="flex items-center mb-4">
-                        <div class="flex text-freight-orange">
+                        <div class="flex text-freight-orange text-xl">
                             ★★★★★
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4 italic">"FreightIQ has transformed our import operations. The landed cost calculations are incredibly accurate and save us hours every week."</p>
+                    <p class="text-gray-600 mb-6 italic text-lg">"FreightIQ's load optimization saved us $2.3M in the first year. The ROI was immediate and the platform is incredibly intuitive."</p>
                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-freight-orange rounded-full flex items-center justify-center text-gray-900 font-semibold">JD</div>
-                        <div class="ml-3">
-                            <p class="font-semibold text-gray-900">John Davis</p>
-                            <p class="text-sm text-gray-600">Logistics Manager, TechCorp</p>
+                        <div class="w-12 h-12 bg-freight-orange rounded-full flex items-center justify-center text-white font-bold text-lg">JD</div>
+                        <div class="ml-4">
+                            <p class="font-bold text-gray-900">John Davis</p>
+                            <p class="text-sm text-gray-600">Logistics Director, TechCorp Global</p>
+                            <p class="text-xs text-freight-orange font-semibold">$2.3M annual savings</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-all duration-300">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300">
                     <div class="flex items-center mb-4">
-                        <div class="flex text-freight-orange">
+                        <div class="flex text-freight-orange text-xl">
                             ★★★★★
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4 italic">"The forecasting capabilities are game-changing. We've reduced our inventory costs by 30% while improving delivery times."</p>
+                    <p class="text-gray-600 mb-6 italic text-lg">"The forecasting capabilities are revolutionary. We reduced inventory costs by 40% while improving delivery times by 60%."</p>
                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-freight-orange rounded-full flex items-center justify-center text-gray-900 font-semibold">SM</div>
-                        <div class="ml-3">
-                            <p class="font-semibold text-gray-900">Sarah Mitchell</p>
-                            <p class="text-sm text-gray-600">Operations Director, GlobalTrade</p>
+                        <div class="w-12 h-12 bg-freight-orange rounded-full flex items-center justify-center text-white font-bold text-lg">SM</div>
+                        <div class="ml-4">
+                            <p class="font-bold text-gray-900">Sarah Mitchell</p>
+                            <p class="text-sm text-gray-600">COO, GlobalTrade Solutions</p>
+                            <p class="text-xs text-freight-orange font-semibold">40% cost reduction</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-all duration-300">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300">
                     <div class="flex items-center mb-4">
-                        <div class="flex text-freight-orange">
+                        <div class="flex text-freight-orange text-xl">
                             ★★★★★
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4 italic">"CourierIQ's real-time quoting has streamlined our last-mile delivery. The integration is seamless and the cost savings are significant."</p>
+                    <p class="text-gray-600 mb-6 italic text-lg">"CourierIQ's real-time quoting cut our last-mile costs by 35%. The integration was seamless and the results were immediate."</p>
                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-freight-orange rounded-full flex items-center justify-center text-gray-900 font-semibold">RJ</div>
-                        <div class="ml-3">
-                            <p class="font-semibold text-gray-900">Robert Johnson</p>
-                            <p class="text-sm text-gray-600">CEO, FastFreight</p>
+                        <div class="w-12 h-12 bg-freight-orange rounded-full flex items-center justify-center text-white font-bold text-lg">RJ</div>
+                        <div class="ml-4">
+                            <p class="font-bold text-gray-900">Robert Johnson</p>
+                            <p class="text-sm text-gray-600">CEO, FastFreight Express</p>
+                            <p class="text-xs text-freight-orange font-semibold">35% cost reduction</p>
                         </div>
                     </div>
                 </div>
@@ -222,13 +328,13 @@
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-24 bg-gray-50">
+    <section id="pricing" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                    Simple, Transparent Pricing
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Pricing That Pays for Itself
                 </h2>
-                <p class="text-xl text-gray-600">Choose the plan that fits your business needs</p>
+                <p class="text-xl text-gray-600">Start saving money from day one</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
@@ -239,6 +345,9 @@
                     <div class="mb-6">
                         <span class="text-4xl font-bold text-gray-900">$49</span>
                         <span class="text-gray-600">/month</span>
+                    </div>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                        <p class="text-sm text-green-800 font-semibold">Save $1,200+ annually</p>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center">
@@ -251,7 +360,7 @@
                             <svg class="w-5 h-5 text-freight-orange mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            Basic reporting
+                            Basic load optimization
                         </li>
                         <li class="flex items-center">
                             <svg class="w-5 h-5 text-freight-orange mr-3" fill="currentColor" viewBox="0 0 20 20">
@@ -260,21 +369,24 @@
                             Email support
                         </li>
                     </ul>
-                    <a href="https://app.freightiq.online" class="w-full bg-gray-900 text-gray-900 py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors block text-center">
-                        Get Started
+                    <a href="https://app.freightiq.online" class="w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors block text-center">
+                        Start Saving Today
                     </a>
                 </div>
 
                 <!-- Pro -->
                 <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-freight-orange relative transform scale-105">
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span class="bg-freight-orange text-gray-900 px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
+                        <span class="bg-freight-orange text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-2">Pro</h3>
                     <p class="text-gray-600 mb-6">For growing businesses</p>
                     <div class="mb-6">
                         <span class="text-4xl font-bold text-gray-900">$99</span>
                         <span class="text-gray-600">/month</span>
+                    </div>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                        <p class="text-sm text-green-800 font-semibold">Save $5,000+ annually</p>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center">
@@ -302,7 +414,7 @@
                             Priority support
                         </li>
                     </ul>
-                    <a href="https://app.freightiq.online" class="w-full bg-freight-orange text-gray-900 py-3 px-6 rounded-lg font-semibold hover:bg-freight-orange-dark transition-colors block text-center">
+                    <a href="https://app.freightiq.online" class="w-full bg-freight-orange text-white py-3 px-6 rounded-lg font-semibold hover:bg-freight-orange-dark transition-colors block text-center glow">
                         Start Free Trial
                     </a>
                 </div>
@@ -313,6 +425,9 @@
                     <p class="text-gray-600 mb-6">For large organizations</p>
                     <div class="mb-6">
                         <span class="text-4xl font-bold text-gray-900">Custom</span>
+                    </div>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                        <p class="text-sm text-green-800 font-semibold">Save $50,000+ annually</p>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center">
@@ -340,7 +455,7 @@
                             Dedicated support
                         </li>
                     </ul>
-                    <a href="#contact" class="w-full bg-gray-900 text-gray-900 py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors block text-center">
+                    <a href="#contact" class="w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors block text-center">
                         Contact Sales
                     </a>
                 </div>
@@ -348,84 +463,64 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                    Ready to Transform Your Freight Operations?
-                </h2>
-                <p class="text-xl text-gray-600">Get in touch with our team to learn more</p>
-            </div>
-            
-            <div class="max-w-2xl mx-auto">
-                <form class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-freight-orange focus:border-transparent transition-colors">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-freight-orange focus:border-transparent transition-colors">
-                        </div>
-                    </div>
-                    <div>
-                        <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company</label>
-                        <input type="text" id="company" name="company" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-freight-orange focus:border-transparent transition-colors">
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-freight-orange focus:border-transparent transition-colors"></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="bg-freight-orange hover:bg-freight-orange-dark text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                            Send Message
-                        </button>
-                    </div>
-                </form>
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-r from-freight-orange to-freight-orange-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Ready to Save 30% on Your Freight Costs?
+            </h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Join 500+ companies already saving millions with FreightIQ. Start your free trial today and see results in your first shipment.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://app.freightiq.online" class="bg-white text-freight-orange px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Start Free Trial - No Credit Card
+                </a>
+                <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-freight-orange px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    Schedule Demo
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-freight-slate text-gray-900 py-12">
+    <footer class="bg-gray-100 text-gray-900 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
                     <img src="/static/logo-dark.svg" alt="FreightIQ" class="h-8 w-auto mb-4">
-                    <p class="text-gray-600">Intelligent freight management for the modern logistics industry.</p>
+                    <p class="text-gray-600">Revolutionizing freight operations with AI-powered intelligence.</p>
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Products</h4>
                     <ul class="space-y-2 text-gray-600">
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">ImportIQ</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">ExportIQ</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">DeliveryIQ</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">CourierIQ</a></li>
+                        <li><a href="#" class="hover:text-freight-orange transition-colors">ImportIQ</a></li>
+                        <li><a href="#" class="hover:text-freight-orange transition-colors">ExportIQ</a></li>
+                        <li><a href="#" class="hover:text-freight-orange transition-colors">DeliveryIQ</a></li>
+                        <li><a href="#" class="hover:text-freight-orange transition-colors">CourierIQ</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Company</h4>
                     <ul class="space-y-2 text-gray-600">
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">About</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">Blog</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">Careers</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-freight-orange transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-freight-orange transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-freight-orange transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-freight-orange transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Support</h4>
                     <ul class="space-y-2 text-gray-600">
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">Help Center</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">Documentation</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">API Reference</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">Status</a></li>
+                        <li><a href="#" class="hover:text-freight-orange transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-freight-orange transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-freight-orange transition-colors">API Reference</a></li>
+                        <li><a href="#" class="hover:text-freight-orange transition-colors">Status</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-300 mt-8 pt-8 text-center text-gray-600">
-                <p>&copy; 2024 FreightIQ. All rights reserved.</p>
+                <p>&copy; 2024 FreightIQ. All rights reserved. | Saving companies millions in freight costs.</p>
             </div>
         </div>
     </footer>
