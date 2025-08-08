@@ -154,64 +154,79 @@
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">One platform. End‑to‑end control.</h2>
                 <p class="text-gray-600">From purchasing to invoicing — every step unified, automated and visible.</p>
             </div>
-            <div class="relative bg-white border border-gray-200 rounded-3xl p-10 overflow-hidden shadow-xl">
-                <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-freight-orange/10 blur-3xl"></div>
-                <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-freight-orange-dark/10 blur-3xl"></div>
-                <div class="grid lg:grid-cols-4 gap-8">
-                    <div class="space-y-6">
-                        <div class="flex items-center">
-                            <div class="icon-badge mr-3"><i data-lucide="file-input" class="text-white" style="width:22px;height:22px"></i></div>
-                            <h3 class="font-bold text-gray-900">Import</h3>
+            <div class="relative mx-auto max-w-5xl aspect-square">
+                <!-- outer ring -->
+                <div class="absolute inset-0 rounded-full border-8 border-freight-orange/10"></div>
+                <div class="absolute inset-8 rounded-full border-8 border-freight-orange/10"></div>
+                <!-- center -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <div class="relative w-48 h-48 rounded-full bg-gradient-to-br from-freight-slate to-freight-slate-light flex items-center justify-center shadow-2xl">
+                        <div class="text-center">
+                            <div class="text-3xl font-extrabold text-white tracking-wide">Modules</div>
+                            <div class="text-xs text-gray-300 mt-1">FreightIQ Ecosystem</div>
                         </div>
-                        <p class="text-gray-600 text-sm">Invoices in, FX captured, landed cost built automatically.</p>
-                        <div class="flex items-center">
-                            <div class="icon-badge mr-3"><i data-lucide="truck" class="text-white" style="width:22px;height:22px"></i></div>
-                            <h3 class="font-bold text-gray-900">Export</h3>
-                        </div>
-                        <p class="text-gray-600 text-sm">Container planning and export docs in one workflow.</p>
-                    </div>
-                    <div class="space-y-6">
-                        <div class="flex items-center">
-                            <div class="icon-badge mr-3"><i data-lucide="warehouse" class="text-white" style="width:22px;height:22px"></i></div>
-                            <h3 class="font-bold text-gray-900">Inventory</h3>
-                        </div>
-                        <p class="text-gray-600 text-sm">Live stock by location, reorder signals, slow‑mover alerts.</p>
-                        <div class="flex items-center">
-                            <div class="icon-badge mr-3"><i data-lucide="badge-dollar-sign" class="text-white" style="width:22px;height:22px"></i></div>
-                            <h3 class="font-bold text-gray-900">Pricing</h3>
-                        </div>
-                        <p class="text-gray-600 text-sm">Price histories, margin guardrails, customer lists.</p>
-                    </div>
-                    <div class="space-y-6">
-                        <div class="flex items-center">
-                            <div class="icon-badge mr-3"><i data-lucide="factory" class="text-white" style="width:22px;height:22px"></i></div>
-                            <h3 class="font-bold text-gray-900">Manufacturing</h3>
-                        </div>
-                        <p class="text-gray-600 text-sm">Component demand and finished‑goods planning aligned.</p>
-                        <div class="flex items-center">
-                            <div class="icon-badge mr-3"><i data-lucide="route" class="text-white" style="width:22px;height:22px"></i></div>
-                            <h3 class="font-bold text-gray-900">Delivery</h3>
-                        </div>
-                        <p class="text-gray-600 text-sm">Optimal routes, per‑km costs, branch hand‑off.</p>
-                    </div>
-                    <div class="space-y-6">
-                        <div class="flex items-center">
-                            <div class="icon-badge mr-3"><i data-lucide="bike" class="text-white" style="width:22px;height:22px"></i></div>
-                            <h3 class="font-bold text-gray-900">Courier</h3>
-                        </div>
-                        <p class="text-gray-600 text-sm">Real‑time quotes and booking across carriers.</p>
-                        <div class="flex items-center">
-                            <div class="icon-badge mr-3"><i data-lucide="receipt-text" class="text-white" style="width:22px;height:22px"></i></div>
-                            <h3 class="font-bold text-gray-900">Invoicing</h3>
-                        </div>
-                        <p class="text-gray-600 text-sm">Accurate costs flow through to billing, no re‑capture.</p>
                     </div>
                 </div>
-                <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4 text-center text-sm text-gray-700">
-                    <div class="p-4 rounded-xl bg-gray-50 border border-gray-200">CSV/API ingest</div>
-                    <div class="p-4 rounded-xl bg-gray-50 border border-gray-200">AI forecasting</div>
-                    <div class="p-4 rounded-xl bg-gray-50 border border-gray-200">Automated docs</div>
-                    <div class="p-4 rounded-xl bg-gray-50 border border-gray-200">Audit & permissions</div>
+                <!-- orbiting items -->
+                <div class="absolute left-1/2 -translate-x-1/2 -top-3">
+                    <div class="flex flex-col items-center">
+                        <div class="icon-badge"><i data-lucide="file-input" class="text-white" style="width:22px;height:22px"></i></div>
+                        <div class="mt-2 text-sm font-semibold text-gray-900">ImportIQ</div>
+                    </div>
+                </div>
+                <div class="absolute right-10 top-1/4">
+                    <div class="flex flex-col items-center">
+                        <div class="icon-badge"><i data-lucide="ship" class="text-white" style="width:22px;height:22px"></i></div>
+                        <div class="mt-2 text-sm font-semibold text-gray-900">ExportIQ</div>
+                    </div>
+                </div>
+                <div class="absolute right-2 top-1/2 -translate-y-1/2">
+                    <div class="flex flex-col items-center">
+                        <div class="icon-badge"><i data-lucide="warehouse" class="text-white" style="width:22px;height:22px"></i></div>
+                        <div class="mt-2 text-sm font-semibold text-gray-900">Inventory</div>
+                    </div>
+                </div>
+                <div class="absolute right-10 bottom-1/4">
+                    <div class="flex flex-col items-center">
+                        <div class="icon-badge"><i data-lucide="badge-dollar-sign" class="text-white" style="width:22px;height:22px"></i></div>
+                        <div class="mt-2 text-sm font-semibold text-gray-900">PriceIQ</div>
+                    </div>
+                </div>
+                <div class="absolute left-1/2 -translate-x-1/2 -bottom-3">
+                    <div class="flex flex-col items-center">
+                        <div class="icon-badge"><i data-lucide="line-chart" class="text-white" style="width:22px;height:22px"></i></div>
+                        <div class="mt-2 text-sm font-semibold text-gray-900">ForecastIQ</div>
+                    </div>
+                </div>
+                <div class="absolute left-10 bottom-1/4">
+                    <div class="flex flex-col items-center">
+                        <div class="icon-badge"><i data-lucide="route" class="text-white" style="width:22px;height:22px"></i></div>
+                        <div class="mt-2 text-sm font-semibold text-gray-900">DeliveryIQ</div>
+                    </div>
+                </div>
+                <div class="absolute left-2 top-1/2 -translate-y-1/2">
+                    <div class="flex flex-col items-center">
+                        <div class="icon-badge"><i data-lucide="bike" class="text-white" style="width:22px;height:22px"></i></div>
+                        <div class="mt-2 text-sm font-semibold text-gray-900">CourierIQ</div>
+                    </div>
+                </div>
+                <div class="absolute left-10 top-1/4">
+                    <div class="flex flex-col items-center">
+                        <div class="icon-badge"><i data-lucide="receipt-text" class="text-white" style="width:22px;height:22px"></i></div>
+                        <div class="mt-2 text-sm font-semibold text-gray-900">InvoiceIQ</div>
+                    </div>
+                </div>
+                <div class="absolute left-1/3 top-6">
+                    <div class="flex flex-col items-center">
+                        <div class="icon-badge"><i data-lucide="check-square" class="text-white" style="width:22px;height:22px"></i></div>
+                        <div class="mt-2 text-sm font-semibold text-gray-900">TaskIQ</div>
+                    </div>
+                </div>
+                <div class="absolute right-1/3 top-6">
+                    <div class="flex flex-col items-center">
+                        <div class="icon-badge"><i data-lucide="shield-check" class="text-white" style="width:22px;height:22px"></i></div>
+                        <div class="mt-2 text-sm font-semibold text-gray-900">WarrantyIQ</div>
+                    </div>
                 </div>
             </div>
         </div>
