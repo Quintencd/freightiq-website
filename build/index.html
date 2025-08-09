@@ -67,6 +67,32 @@
         .orbit-item { position: absolute; transform: translate(-50%, -50%); text-align: center; }
         .orbit-badge { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #f97316, #ea580c); display:flex; align-items:center; justify-content:center; color:white; box-shadow: 0 10px 25px rgba(249,115,22,.35), 0 0 0 6px rgba(249,115,22,.08); backdrop-filter: blur(4px); }
         .orbit-label { margin-top: .35rem; font-size: .8rem; font-weight: 600; color: #111827; text-shadow: 0 1px 0 rgba(255,255,255,.6); }
+
+        /* Responsiveness for smaller screens */
+        @media (max-width: 1024px) {
+          .orbit-wrap { width: min(540px, 94vw); height: min(540px, 94vw); }
+          .orbit-center { width: 140px; height: 140px; }
+          .orbit-badge { width: 40px; height: 40px; }
+          .orbit-label { font-size: .75rem; }
+          .orbit-ring { border-width: 7px; }
+          .orbit-ring.inner { inset: 20px; border-width: 5px; }
+        }
+        @media (max-width: 640px) {
+          .orbit-wrap { width: min(380px, 96vw); height: min(380px, 96vw); }
+          .orbit-center { width: 120px; height: 120px; }
+          .orbit-badge { width: 36px; height: 36px; border-radius: 10px; }
+          .orbit-label { font-size: .7rem; }
+          .orbit-ring { border-width: 6px; }
+          .orbit-ring.inner { inset: 16px; border-width: 4px; }
+        }
+        @media (max-width: 380px) {
+          .orbit-wrap { width: min(320px, 96vw); height: min(320px, 96vw); }
+          .orbit-center { width: 104px; height: 104px; }
+          .orbit-badge { width: 32px; height: 32px; border-radius: 8px; }
+          .orbit-label { display:none; }
+          .orbit-ring { border-width: 5px; }
+          .orbit-ring.inner { inset: 14px; border-width: 3px; }
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900">
