@@ -9,6 +9,13 @@
 # Redirects for the website
 [[redirects]]
   from = "/*"
+  to = "https://www.freightiq.online/:splat"
+  status = 301
+  force = true
+  conditions = { Host = ["freightiq.online"] }
+
+[[redirects]]
+  from = "/*"
   to = "/index.html"
   status = 200
 
