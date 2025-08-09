@@ -59,6 +59,14 @@
         .feature-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
         .stats-card { background: linear-gradient(135deg, #f97316, #ea580c); }
         .icon-badge { width: 3rem; height: 3rem; border-radius: 0.75rem; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, #f97316, #ea580c); box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35); }
+        /* Orbit diagram styles */
+        .orbit-wrap { width: min(680px, 92vw); height: min(680px, 92vw); position: relative; margin: 0 auto; }
+        .orbit-ring { position:absolute; inset: 0; border-radius: 9999px; border: 8px solid rgba(249, 115, 22, 0.08); box-shadow: 0 0 80px rgba(249, 115, 22, 0.08) inset; }
+        .orbit-ring.inner { inset: 24px; border-width: 6px; opacity: .8; }
+        .orbit-center { width: 168px; height: 168px; border-radius: 9999px; background: radial-gradient(120px 120px at 50% 35%, #0f172a, #1e293b); box-shadow: 0 20px 50px rgba(15, 23, 42, .35), 0 0 0 10px rgba(249, 115, 22, .06); }
+        .orbit-item { position: absolute; transform: translate(-50%, -50%); text-align: center; }
+        .orbit-badge { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #f97316, #ea580c); display:flex; align-items:center; justify-content:center; color:white; box-shadow: 0 10px 25px rgba(249,115,22,.35), 0 0 0 6px rgba(249,115,22,.08); backdrop-filter: blur(4px); }
+        .orbit-label { margin-top: .35rem; font-size: .8rem; font-weight: 600; color: #111827; text-shadow: 0 1px 0 rgba(255,255,255,.6); }
     </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -154,79 +162,61 @@
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">One platform. End‑to‑end control.</h2>
                 <p class="text-gray-600">From purchasing to invoicing — every step unified, automated and visible.</p>
             </div>
-            <div class="relative mx-auto max-w-5xl aspect-square">
-                <!-- outer ring -->
-                <div class="absolute inset-0 rounded-full border-8 border-freight-orange/10"></div>
-                <div class="absolute inset-8 rounded-full border-8 border-freight-orange/10"></div>
-                <!-- center -->
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <div class="relative w-48 h-48 rounded-full bg-gradient-to-br from-freight-slate to-freight-slate-light flex items-center justify-center shadow-2xl">
+            <div class="orbit-wrap">
+                <div class="orbit-ring"></div>
+                <div class="orbit-ring inner"></div>
+                <div class="orbit-item" style="top:50%;left:50%">
+                    <div class="orbit-center flex items-center justify-center">
                         <div class="text-center">
-                            <div class="text-3xl font-extrabold text-white tracking-wide">Modules</div>
-                            <div class="text-xs text-gray-300 mt-1">FreightIQ Ecosystem</div>
+                            <div class="text-2xl font-extrabold text-white">Modules</div>
+                            <div class="text-xs text-gray-300">FreightIQ Ecosystem</div>
                         </div>
                     </div>
                 </div>
-                <!-- orbiting items -->
-                <div class="absolute left-1/2 -translate-x-1/2 -top-3">
-                    <div class="flex flex-col items-center">
-                        <div class="icon-badge"><i data-lucide="file-input" class="text-white" style="width:22px;height:22px"></i></div>
-                        <div class="mt-2 text-sm font-semibold text-gray-900">ImportIQ</div>
-                    </div>
+                <!-- evenly spaced 10 items around circle -->
+                <div class="orbit-item" style="top:6%;left:50%">
+                    <div class="orbit-badge"><i data-lucide='file-input' style="width:20px;height:20px"></i></div>
+                    <div class="orbit-label">ImportIQ</div>
                 </div>
-                <div class="absolute right-10 top-1/4">
-                    <div class="flex flex-col items-center">
-                        <div class="icon-badge"><i data-lucide="ship" class="text-white" style="width:22px;height:22px"></i></div>
-                        <div class="mt-2 text-sm font-semibold text-gray-900">ExportIQ</div>
-                    </div>
+                <div class="orbit-item" style="top:18%;left:80%">
+                    <div class="orbit-badge"><i data-lucide='ship' style="width:20px;height:20px"></i></div>
+                    <div class="orbit-label">ExportIQ</div>
                 </div>
-                <div class="absolute right-2 top-1/2 -translate-y-1/2">
-                    <div class="flex flex-col items-center">
-                        <div class="icon-badge"><i data-lucide="warehouse" class="text-white" style="width:22px;height:22px"></i></div>
-                        <div class="mt-2 text-sm font-semibold text-gray-900">Inventory</div>
-                    </div>
+                <div class="orbit-item" style="top:50%;left:94%">
+                    <div class="orbit-badge"><i data-lucide='warehouse' style="width:20px;height:20px"></i></div>
+                    <div class="orbit-label">Inventory</div>
                 </div>
-                <div class="absolute right-10 bottom-1/4">
-                    <div class="flex flex-col items-center">
-                        <div class="icon-badge"><i data-lucide="badge-dollar-sign" class="text-white" style="width:22px;height:22px"></i></div>
-                        <div class="mt-2 text-sm font-semibold text-gray-900">PriceIQ</div>
-                    </div>
+                <div class="orbit-item" style="top:82%;left:80%">
+                    <div class="orbit-badge"><i data-lucide='badge-dollar-sign' style="width:20px;height:20px"></i></div>
+                    <div class="orbit-label">PriceIQ</div>
                 </div>
-                <div class="absolute left-1/2 -translate-x-1/2 -bottom-3">
-                    <div class="flex flex-col items-center">
-                        <div class="icon-badge"><i data-lucide="line-chart" class="text-white" style="width:22px;height:22px"></i></div>
-                        <div class="mt-2 text-sm font-semibold text-gray-900">ForecastIQ</div>
-                    </div>
+                <div class="orbit-item" style="top:94%;left:50%">
+                    <div class="orbit-badge"><i data-lucide='line-chart' style="width:20px;height:20px"></i></div>
+                    <div class="orbit-label">ForecastIQ</div>
                 </div>
-                <div class="absolute left-10 bottom-1/4">
-                    <div class="flex flex-col items-center">
-                        <div class="icon-badge"><i data-lucide="route" class="text-white" style="width:22px;height:22px"></i></div>
-                        <div class="mt-2 text-sm font-semibold text-gray-900">DeliveryIQ</div>
-                    </div>
+                <div class="orbit-item" style="top:82%;left:20%">
+                    <div class="orbit-badge"><i data-lucide='route' style="width:20px;height:20px"></i></div>
+                    <div class="orbit-label">DeliveryIQ</div>
                 </div>
-                <div class="absolute left-2 top-1/2 -translate-y-1/2">
-                    <div class="flex flex-col items-center">
-                        <div class="icon-badge"><i data-lucide="bike" class="text-white" style="width:22px;height:22px"></i></div>
-                        <div class="mt-2 text-sm font-semibold text-gray-900">CourierIQ</div>
-                    </div>
+                <div class="orbit-item" style="top:50%;left:6%">
+                    <div class="orbit-badge"><i data-lucide='bike' style="width:20px;height:20px"></i></div>
+                    <div class="orbit-label">CourierIQ</div>
                 </div>
-                <div class="absolute left-10 top-1/4">
-                    <div class="flex flex-col items-center">
-                        <div class="icon-badge"><i data-lucide="receipt-text" class="text-white" style="width:22px;height:22px"></i></div>
-                        <div class="mt-2 text-sm font-semibold text-gray-900">InvoiceIQ</div>
-                    </div>
+                <div class="orbit-item" style="top:18%;left:20%">
+                    <div class="orbit-badge"><i data-lucide='receipt-text' style="width:20px;height:20px"></i></div>
+                    <div class="orbit-label">InvoiceIQ</div>
                 </div>
-                <div class="absolute left-1/3 top-6">
-                    <div class="flex flex-col items-center">
-                        <div class="icon-badge"><i data-lucide="check-square" class="text-white" style="width:22px;height:22px"></i></div>
-                        <div class="mt-2 text-sm font-semibold text-gray-900">TaskIQ</div>
-                    </div>
+                <div class="orbit-item" style="top:30%;left:88%">
+                    <div class="orbit-badge"><i data-lucide='factory' style="width:20px;height:20px"></i></div>
+                    <div class="orbit-label">Manufacturing</div>
                 </div>
-                <div class="absolute right-1/3 top-6">
-                    <div class="flex flex-col items-center">
-                        <div class="icon-badge"><i data-lucide="shield-check" class="text-white" style="width:22px;height:22px"></i></div>
-                        <div class="mt-2 text-sm font-semibold text-gray-900">WarrantyIQ</div>
-                    </div>
+                <div class="orbit-item" style="top:30%;left:12%">
+                    <div class="orbit-badge"><i data-lucide='check-square' style="width:20px;height:20px"></i></div>
+                    <div class="orbit-label">TaskIQ</div>
+                </div>
+                <div class="orbit-item" style="top:6%;left:68%">
+                    <div class="orbit-badge"><i data-lucide='shield-check' style="width:20px;height:20px"></i></div>
+                    <div class="orbit-label">WarrantyIQ</div>
                 </div>
             </div>
         </div>
