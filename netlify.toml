@@ -7,12 +7,13 @@
   NODE_VERSION = "18"
 
 # Redirects for the website
+# Canonicalize to apex domain to match Netlify primary domain settings
 [[redirects]]
   from = "/*"
-  to = "https://www.freightiq.online/:splat"
+  to = "https://freightiq.online/:splat"
   status = 301
   force = true
-  conditions = { Host = ["freightiq.online"] }
+  conditions = { Host = ["www.freightiq.online"] }
 
 [[redirects]]
   from = "/*"
