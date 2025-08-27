@@ -3,101 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreightIQ - AI-Driven Logistics Platform | Smart Logistics for Global Giants</title>
-    <meta name="description" content="Unlock the software edge once reserved for global giants. AI-powered automation from importing to inventory. Take control like never before with FreightIQ.">
+    <title>FreightIQ - Intelligent Freight Management</title>
+    <meta name="description" content="AI-powered logistics suite from importing to delivery.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="FreightIQ — AI-Driven Logistics Platform">
-    <meta property="og:description" content="Streamline logistics from importing to delivery with AI-powered modules.">
+    <meta property="og:description" content="Streamline logistics with AI modules: ImportIQ, ExportIQ, DeliveryIQ, and more.">
     <meta property="og:url" content="https://www.freightiq.online/">
-    <meta property="og:image" content="https://www.freightiq.online/static/logo-dark.png">
-    <meta property="og:site_name" content="FreightIQ">
+    <meta property="og:image" content="https://www.freightiq.online/logo-dark.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="FreightIQ — AI-Driven Logistics Platform">
-    <meta name="twitter:description" content="Streamline logistics from importing to delivery with AI-powered modules.">
-    <meta name="twitter:image" content="https://www.freightiq.online/static/logo-dark.png">
-    <link rel="icon" type="image/svg+xml" href="/static/logo-dark.svg">
+    <meta name="twitter:description" content="Streamline logistics with AI modules.">
+    <meta name="twitter:image" content="https://www.freightiq.online/logo-dark.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'freight-orange': '#f97316',
-                        'freight-orange-dark': '#ea580c',
-                        'freight-slate': '#0f172a',
-                        'freight-slate-light': '#1e293b'
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                        'slide-up': 'slideUp 0.8s ease-out',
-                        'fade-in': 'fadeIn 1s ease-out'
-                    }
-                }
-            }
-        }
-    </script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); }
-        .container-ship { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); }
-        .ai-glow { box-shadow: 0 0 30px rgba(249, 115, 22, 0.4); }
-        .floating { animation: float 6s ease-in-out infinite; }
-        .glow-effect { animation: glow 2s ease-in-out infinite alternate; }
-        .slide-up { animation: slideUp 0.8s ease-out; }
-        .fade-in { animation: fadeIn 1s ease-out; }
-        
+        .bg-freight-slate { background-color: #0f172a; }
+        .bg-freight-slate-light { background-color: #1e293b; }
+        .text-freight-orange { color: #f97316; }
+        .bg-freight-orange { background-color: #f97316; }
+        .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-pulse-slow { animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-        @keyframes glow { from { box-shadow: 0 0 20px rgba(249, 115, 22, 0.3); } to { box-shadow: 0 0 40px rgba(249, 115, 22, 0.6); } }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        
-        .gradient-text { background: linear-gradient(135deg, #f97316, #ea580c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .feature-card { transition: all 0.4s ease; }
-        .feature-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
-        .stats-card { background: linear-gradient(135deg, #f97316, #ea580c); }
-        .icon-badge { width: 3rem; height: 3rem; border-radius: 0.75rem; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, #f97316, #ea580c); box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35); }
-        /* Orbit diagram styles */
-        .orbit-wrap { width: min(680px, 92vw); height: min(680px, 92vw); position: relative; margin: 0 auto; }
-        .orbit-ring { position:absolute; inset: 0; border-radius: 9999px; border: 8px solid rgba(249, 115, 22, 0.08); box-shadow: 0 0 80px rgba(249, 115, 22, 0.08) inset; }
-        .orbit-ring.inner { inset: 24px; border-width: 6px; opacity: .8; }
-        .orbit-center { width: 168px; height: 168px; border-radius: 9999px; background: radial-gradient(120px 120px at 50% 35%, #0f172a, #1e293b); box-shadow: 0 20px 50px rgba(15, 23, 42, .35), 0 0 0 10px rgba(249, 115, 22, .06); }
-        .orbit-item { position: absolute; transform: translate(-50%, -50%); text-align: center; }
-        .orbit-badge { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #f97316, #ea580c); display:flex; align-items:center; justify-content:center; color:white; box-shadow: 0 10px 25px rgba(249,115,22,.35), 0 0 0 6px rgba(249,115,22,.08); backdrop-filter: blur(4px); }
-        .orbit-label { margin-top: .35rem; font-size: .8rem; font-weight: 600; color: #111827; text-shadow: 0 1px 0 rgba(255,255,255,.6); }
-
-        /* Responsiveness for smaller screens */
-        @media (max-width: 1024px) {
-          .orbit-wrap { width: min(540px, 94vw); height: min(540px, 94vw); }
-          .orbit-center { width: 140px; height: 140px; }
-          .orbit-badge { width: 40px; height: 40px; }
-          .orbit-label { font-size: .75rem; }
-          .orbit-ring { border-width: 7px; }
-          .orbit-ring.inner { inset: 20px; border-width: 5px; }
-        }
-        @media (max-width: 640px) {
-          .orbit-wrap { width: min(380px, 96vw); height: min(380px, 96vw); }
-          .orbit-center { width: 120px; height: 120px; }
-          .orbit-badge { width: 36px; height: 36px; border-radius: 10px; }
-          .orbit-label { font-size: .7rem; }
-          .orbit-ring { border-width: 6px; }
-          .orbit-ring.inner { inset: 16px; border-width: 4px; }
-        }
-        @media (max-width: 380px) {
-          .orbit-wrap { width: min(320px, 96vw); height: min(320px, 96vw); }
-          .orbit-center { width: 104px; height: 104px; }
-          .orbit-badge { width: 32px; height: 32px; border-radius: 8px; }
-          .orbit-label { display:none; }
-          .orbit-ring { border-width: 5px; }
-          .orbit-ring.inner { inset: 14px; border-width: 3px; }
-        }
     </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-freight-slate text-slate-100">
     <!-- Navigation -->
-    <nav class="bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200 sticky top-0 z-50">
+    <nav class="fixed w-full z-50 bg-freight-slate/90 backdrop-blur-md border-b border-slate-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
@@ -105,723 +40,766 @@
                         <img src="/static/logo-light.svg" alt="FreightIQ" class="h-10 md:h-11 w-auto" loading="eager" decoding="async">
                     </a>
                 </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#platform" class="text-gray-600 hover:text-freight-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">Platform</a>
-                        <a href="#ai-intelligence" class="text-gray-600 hover:text-freight-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">AI Intelligence</a>
-                        <a href="#modules" class="text-gray-600 hover:text-freight-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">Modules</a>
-                        <a href="#solutions" class="text-gray-600 hover:text-freight-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">Solutions</a>
-                        <a href="/pricing.html" class="text-gray-600 hover:text-freight-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
-                        <a href="#roi" class="text-gray-600 hover:text-freight-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">ROI</a>
-                        <a href="#faq" class="text-gray-600 hover:text-freight-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">FAQ</a>
-                        <a href="#contact" class="text-gray-600 hover:text-freight-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
-                        <a href="https://app.freightiq.online" class="bg-freight-orange text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-freight-orange-dark transition-all duration-300 ai-glow">Launch Platform</a>
-                    </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-slate-300 hover:text-freight-orange transition-colors">Features</a>
+                    <a href="#modules" class="text-slate-300 hover:text-freight-orange transition-colors">Modules</a>
+                    <a href="#pricing" class="text-slate-300 hover:text-freight-orange transition-colors">Pricing</a>
+                    <a href="#testimonials" class="text-slate-300 hover:text-freight-orange transition-colors">Reviews</a>
+                    <a href="#contact" class="text-slate-300 hover:text-freight-orange transition-colors">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-slate-300 hover:text-white transition-colors">Login</a>
+                    <a href="#pricing" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-4 py-2 rounded-lg transition-colors">
+                        Start Free Trial
+                    </a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-gradient text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-freight-orange/10 to-transparent"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Content -->
-                <div class="slide-up">
-                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-freight-orange/20 text-freight-orange text-sm font-medium mb-6 border border-freight-orange/30">
-                        <span class="w-2 h-2 bg-freight-orange rounded-full mr-2 animate-pulse"></span>
-                        AI-DRIVEN LOGISTICS PLATFORM
-                    </div>
-                    <h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
-                        <span class="gradient-text">Cut Logistics Costs. Stop Stock‑outs.</span><br>
-                        Ship Faster — With AI That Pays for Itself
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-                        FreightIQ ends spreadsheet chaos, margin leakage and slow shipments. Landed costs you can trust, inventory that stays in stock, and containers that fit right — first time.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                        <a href="#contact" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-lg text-lg font-bold transition-all duration-300 transform hover:scale-105 ai-glow">
-                            Book Live Demo
-                        </a>
-                        <a href="/pricing.html" class="border-2 border-white text-white hover:bg-white hover:text-freight-slate px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                            See Pricing
-                        </a>
-                    </div>
-                    <div class="grid grid-cols-3 gap-6">
-                        <div class="text-center">
-                            <div class="counter text-3xl font-black text-freight-orange" data-target="0">0</div>
-                            <div class="text-sm text-gray-400">Development Costs</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-black text-freight-orange">AI</div>
-                            <div class="text-sm text-gray-400">Powered Automation</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="counter text-3xl font-black text-freight-orange" data-target="100">0%</div>
-                            <div class="text-sm text-gray-400">Scalability</div>
-                        </div>
-                    </div>
+    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="animate-float">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                    Intelligent
+                    <span class="text-freight-orange"> Freight</span>
+                    Management
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto">
+                    Streamline your entire freight operation with our comprehensive suite of intelligent modules. 
+                    From import to delivery, we've got you covered.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#pricing" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105">
+                        Start Free Trial
+                    </a>
+                    <a href="#contact" class="border border-slate-600 hover:border-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all">
+                        Book Demo
+                    </a>
                 </div>
-                
-                <!-- Right Visual -->
-                <div class="container-ship p-8 rounded-2xl relative floating">
-                    <div class="text-center">
-                        <div class="w-32 h-32 mx-auto mb-6 relative">
-                            <div class="absolute inset-0 bg-gradient-to-br from-freight-orange to-freight-orange-dark rounded-full glow-effect shadow-xl shadow-freight-orange/40"></div>
-                            <div class="absolute inset-2 bg-freight-slate rounded-full flex items-center justify-center">
-                                <i data-lucide="ship" class="text-white" style="width:44px;height:44px"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">Smart Container Loads</h3>
-                        <p class="text-gray-300">Simulate container configurations to maximize CBM</p>
-                    </div>
-                </div>
+                <p class="text-sm text-slate-400 mt-4">No credit card required • 14-day free trial</p>
             </div>
         </div>
     </section>
 
-    <!-- Stunning Ecosystem Flow -->
-    <section id="flow" class="py-24 bg-gradient-to-b from-white to-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">One platform. End‑to‑end control.</h2>
-                <p class="text-gray-600">From purchasing to invoicing — every step unified, automated and visible.</p>
-            </div>
-            <div class="orbit-wrap">
-                <div class="orbit-ring"></div>
-                <div class="orbit-ring inner"></div>
-                <div class="orbit-item" style="top:50%;left:50%">
-                    <div class="orbit-center flex items-center justify-center">
-                        <div class="text-center">
-                            <div class="text-2xl font-extrabold text-white">Modules</div>
-                            <div class="text-xs text-gray-300">FreightIQ Ecosystem</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- evenly spaced 10 items around circle -->
-                <div class="orbit-item" style="top:6%;left:50%">
-                    <div class="orbit-badge"><i data-lucide='file-input' style="width:20px;height:20px"></i></div>
-                    <div class="orbit-label">ImportIQ</div>
-                </div>
-                <div class="orbit-item" style="top:18%;left:80%">
-                    <div class="orbit-badge"><i data-lucide='ship' style="width:20px;height:20px"></i></div>
-                    <div class="orbit-label">ExportIQ</div>
-                </div>
-                <div class="orbit-item" style="top:50%;left:94%">
-                    <div class="orbit-badge"><i data-lucide='warehouse' style="width:20px;height:20px"></i></div>
-                    <div class="orbit-label">Inventory</div>
-                </div>
-                <div class="orbit-item" style="top:82%;left:80%">
-                    <div class="orbit-badge"><i data-lucide='badge-dollar-sign' style="width:20px;height:20px"></i></div>
-                    <div class="orbit-label">PriceIQ</div>
-                </div>
-                <div class="orbit-item" style="top:94%;left:50%">
-                    <div class="orbit-badge"><i data-lucide='line-chart' style="width:20px;height:20px"></i></div>
-                    <div class="orbit-label">ForecastIQ</div>
-                </div>
-                <div class="orbit-item" style="top:82%;left:20%">
-                    <div class="orbit-badge"><i data-lucide='route' style="width:20px;height:20px"></i></div>
-                    <div class="orbit-label">DeliveryIQ</div>
-                </div>
-                <div class="orbit-item" style="top:50%;left:6%">
-                    <div class="orbit-badge"><i data-lucide='bike' style="width:20px;height:20px"></i></div>
-                    <div class="orbit-label">CourierIQ</div>
-                </div>
-                <div class="orbit-item" style="top:18%;left:20%">
-                    <div class="orbit-badge"><i data-lucide='receipt-text' style="width:20px;height:20px"></i></div>
-                    <div class="orbit-label">InvoiceIQ</div>
-                </div>
-                <div class="orbit-item" style="top:30%;left:88%">
-                    <div class="orbit-badge"><i data-lucide='factory' style="width:20px;height:20px"></i></div>
-                    <div class="orbit-label">Manufacturing</div>
-                </div>
-                <div class="orbit-item" style="top:30%;left:12%">
-                    <div class="orbit-badge"><i data-lucide='check-square' style="width:20px;height:20px"></i></div>
-                    <div class="orbit-label">TaskIQ</div>
-                </div>
-                <div class="orbit-item" style="top:6%;left:68%">
-                    <div class="orbit-badge"><i data-lucide='shield-check' style="width:20px;height:20px"></i></div>
-                    <div class="orbit-label">WarrantyIQ</div>
-                </div>
+    <!-- Logos Wall -->
+    <section class="py-16 bg-freight-slate">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-slate-400 uppercase tracking-widest text-xs mb-6">Trusted by teams who move the world</p>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 items-center opacity-80">
+                <div class="p-4 bg-freight-slate-light rounded-lg border border-slate-700"><i data-lucide="building-2" class="mx-auto text-slate-200" style="width:28px;height:28px"></i></div>
+                <div class="p-4 bg-freight-slate-light rounded-lg border border-slate-700"><i data-lucide="factory" class="mx-auto text-slate-200" style="width:28px;height:28px"></i></div>
+                <div class="p-4 bg-freight-slate-light rounded-lg border border-slate-700"><i data-lucide="warehouse" class="mx-auto text-slate-200" style="width:28px;height:28px"></i></div>
+                <div class="p-4 bg-freight-slate-light rounded-lg border border-slate-700"><i data-lucide="truck" class="mx-auto text-slate-200" style="width:28px;height:28px"></i></div>
+                <div class="p-4 bg-freight-slate-light rounded-lg border border-slate-700"><i data-lucide="plane" class="mx-auto text-slate-200" style="width:28px;height:28px"></i></div>
             </div>
         </div>
     </section>
-    <!-- Pain to Solution Section -->
-    <section id="solutions" class="py-24 bg-gray-50">
+
+    <!-- Bundled Modules Section -->
+    <section id="modules" class="py-20 bg-freight-slate">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Your pains, solved</h2>
-                <p class="text-xl text-gray-600">FreightIQ turns the three biggest logistics headaches into advantages.</p>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">Complete Supply Chain Platform</h2>
+                <p class="text-slate-300 max-w-3xl mx-auto">Everything you need to manage inventory, shipments, and operations in one unified system.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl border border-gray-200 feature-card">
-                    <div class="flex items-center mb-4">
-                        <div class="icon-badge mr-3"><i data-lucide="percent" class="text-white" style="width:22px;height:22px"></i></div>
-                        <h3 class="text-xl font-bold">Margin leakage</h3>
+            
+            <!-- Operations Suite -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-white mb-6 text-center">Operations Suite</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="layout-dashboard" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">Dashboard</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Real-time overview of your entire operation with key metrics and alerts.</p>
                     </div>
-                    <ul class="space-y-3 text-gray-700">
-                        <li>Hidden costs, FX drift, manual spreadsheets</li>
-                        <li class="font-semibold">Solution: ImportIQ + PriceIQ</li>
-                        <li class="text-gray-600">Accurate landed costs, FX guardrails, margin protection at SKU level</li>
-                    </ul>
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="check-square" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">TaskIQ</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Team workflows, recurring tasks, and comprehensive audit logs.</p>
+                    </div>
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="building" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">CompaniesIQ</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Customer and supplier management with integrated CRM functionality.</p>
+                    </div>
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="shopping-cart" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">PurchaseIQ</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Purchase order management and supplier relationship tracking.</p>
+                    </div>
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="package" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">InventoryIQ</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Master catalog, stock management, and cost tracking across warehouses.</p>
+                    </div>
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="receipt" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">InvoiceIQ</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Invoice generation, credit management, and customer billing.</p>
+                    </div>
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="bar-chart-3" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">ReportsIQ</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Commission reports, sales analytics, and performance insights.</p>
+                    </div>
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="book-open" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">JournalIQ</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Accounting integration and financial transaction management.</p>
+                    </div>
                 </div>
-                <div class="bg-white p-8 rounded-2xl border border-gray-200 feature-card">
-                    <div class="flex items-center mb-4">
-                        <div class="icon-badge mr-3"><i data-lucide="boxes" class="text-white" style="width:22px;height:22px"></i></div>
-                        <h3 class="text-xl font-bold">Stock‑outs & overstock</h3>
+            </div>
+
+            <!-- Logistics Suite -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-white mb-6 text-center">Logistics Suite</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="download" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">ImportIQ</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Landed cost calculator, FX tracking, and container optimization.</p>
                     </div>
-                    <ul class="space-y-3 text-gray-700">
-                        <li>Missed sales, cash locked in slow‑movers</li>
-                        <li class="font-semibold">Solution: ForecastIQ</li>
-                        <li class="text-gray-600">AI demand planning with reorder signals and location‑level accuracy</li>
-                    </ul>
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="upload" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">ExportIQ</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Container load planning and export documentation automation.</p>
+                    </div>
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="truck" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">DeliveryIQ</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Route optimization and last-mile delivery management.</p>
+                    </div>
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="package-search" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">CourierIQ</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Real-time courier quotes and shipping comparison.</p>
+                    </div>
                 </div>
-                <div class="bg-white p-8 rounded-2xl border border-gray-200 feature-card">
-                    <div class="flex items-center mb-4">
-                        <div class="icon-badge mr-3"><i data-lucide="clock" class="text-white" style="width:22px;height:22px"></i></div>
-                        <h3 class="text-xl font-bold">Slow, manual ops</h3>
+            </div>
+
+            <!-- Intelligence Suite -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-white mb-6 text-center">Intelligence Suite</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="trending-up" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">PriceIQ</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">AI-powered dynamic pricing and margin optimization.</p>
                     </div>
-                    <ul class="space-y-3 text-gray-700">
-                        <li>Emails, PDFs and copy‑paste overwhelm teams</li>
-                        <li class="font-semibold">Solution: Automation</li>
-                        <li class="text-gray-600">Auto documents, container simulation, courier quotes and task workflows</li>
-                    </ul>
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="brain" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">ForecastIQ</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Machine learning demand forecasting and inventory planning.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enterprise Features -->
+            <div class="text-center">
+                <h3 class="text-2xl font-bold text-white mb-6">Enterprise Features</h3>
+                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="factory" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">Manufacturing</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Production planning, BOM management, and manufacturing workflows.</p>
+                    </div>
+                    <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <div class="flex items-center mb-3">
+                            <i data-lucide="shield-check" class="text-freight-orange mr-2" style="width:20px;height:20px"></i>
+                            <h4 class="text-lg font-semibold text-white">WarrantyIQ</h4>
+                        </div>
+                        <p class="text-slate-300 text-sm">Warranty claims management and customer support automation.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-24 bg-white">
+    <section id="pricing" class="py-20 bg-freight-slate-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-slate-300 max-w-3xl mx-auto">Start small, scale when you're ready. All plans include core modules and 14-day free trial.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Core/Operations Plan -->
+                <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Core</h3>
+                        <p class="text-slate-400 text-sm mb-4">Perfect for small teams</p>
+                        <div class="text-3xl font-bold text-freight-orange mb-2">$99<span class="text-lg text-slate-400">/mo</span></div>
+                        <p class="text-slate-400 text-xs">or R1,800/mo</p>
+                    </div>
+                    <ul class="space-y-3 text-slate-300 text-sm mb-6">
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Operations Suite
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Up to 5 users
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Email support
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Xero integration
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white px-4 py-2 rounded-lg font-semibold transition-colors">
+                        Start Free Trial
+                    </a>
+                </div>
+
+                <!-- Logistics Plan -->
+                <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Logistics</h3>
+                        <p class="text-slate-400 text-sm mb-4">Growing operations</p>
+                        <div class="text-3xl font-bold text-freight-orange mb-2">$199<span class="text-lg text-slate-400">/mo</span></div>
+                        <p class="text-slate-400 text-xs">or R3,600/mo</p>
+                    </div>
+                    <ul class="space-y-3 text-slate-300 text-sm mb-6">
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Everything in Core
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Logistics Suite
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Up to 15 users
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            2 shipments/month
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Priority support
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white px-4 py-2 rounded-lg font-semibold transition-colors">
+                        Start Free Trial
+                    </a>
+                </div>
+
+                <!-- Intelligence Plan -->
+                <div class="card-hover bg-freight-slate p-6 rounded-xl border-2 border-freight-orange relative">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-freight-orange text-white text-xs px-3 py-1 rounded-full">Most Popular</div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Intelligence</h3>
+                        <p class="text-slate-400 text-sm mb-4">AI-powered insights</p>
+                        <div class="text-3xl font-bold text-freight-orange mb-2">$399<span class="text-lg text-slate-400">/mo</span></div>
+                        <p class="text-slate-400 text-xs">or R7,200/mo</p>
+                    </div>
+                    <ul class="space-y-3 text-slate-300 text-sm mb-6">
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Everything in Logistics
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Intelligence Suite
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Unlimited users
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Unlimited shipments
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            API access
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white px-4 py-2 rounded-lg font-semibold transition-colors">
+                        Start Free Trial
+                    </a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Enterprise</h3>
+                        <p class="text-slate-400 text-sm mb-4">Custom solutions</p>
+                        <div class="text-3xl font-bold text-freight-orange mb-2">Custom</div>
+                        <p class="text-slate-400 text-xs">Contact sales</p>
+                    </div>
+                    <ul class="space-y-3 text-slate-300 text-sm mb-6">
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Everything in Intelligence
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Enterprise features
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            White-labeling
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Custom integrations
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="text-green-500 mr-2" style="width:16px;height:16px"></i>
+                            Dedicated support
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white px-4 py-2 rounded-lg font-semibold transition-colors">
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <p class="text-slate-400 text-sm">All plans include 14-day free trial • No credit card required • Annual billing available with 20% discount</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-freight-slate">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">Trusted by Growing Businesses</h2>
+                <p class="text-slate-300 max-w-3xl mx-auto">See how companies are transforming their operations with our platform.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-freight-orange rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold text-lg">J</span>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold">John Smith</h4>
+                            <p class="text-slate-400 text-sm">Operations Manager, TechCorp</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 text-sm">"FreightIQ helped us reduce our freight costs by 23% and eliminated stock-outs completely. The inventory management is game-changing."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-freight-orange rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold text-lg">S</span>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold">Sarah Johnson</h4>
+                            <p class="text-slate-400 text-sm">CEO, ImportPro</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 text-sm">"The AI forecasting has been incredibly accurate. We've improved our cash flow by 40% and our customers love the reliable delivery times."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-freight-orange rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold text-lg">M</span>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold">Mike Chen</h4>
+                            <p class="text-slate-400 text-sm">Supply Chain Director, GlobalTrade</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 text-sm">"The unified platform approach is brilliant. We've consolidated 5 different systems into one, saving us $50k annually in software costs."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                        <i data-lucide="star" style="width:16px;height:16px"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & Trust Section -->
+    <section class="py-20 bg-freight-slate-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">Enterprise Security & Compliance</h2>
+                <p class="text-slate-300 max-w-3xl mx-auto">Your data is protected with bank-level security and compliance standards.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700 text-center">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="shield-check" class="text-green-500" style="width:24px;height:24px"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Bank-Level Security</h3>
+                    <p class="text-slate-300 text-sm">256-bit encryption at rest and in transit with role-based access controls.</p>
+                </div>
+                
+                <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700 text-center">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="globe" class="text-blue-500" style="width:24px;height:24px"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">GDPR & POPIA Compliant</h3>
+                    <p class="text-slate-300 text-sm">Full compliance with international data protection regulations.</p>
+                </div>
+                
+                <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700 text-center">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="database" class="text-purple-500" style="width:24px;height:24px"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Data Ownership</h3>
+                    <p class="text-slate-300 text-sm">You retain full ownership of your data and can export it anytime.</p>
+                </div>
+                
+                <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700 text-center">
+                    <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="refresh-cw" class="text-orange-500" style="width:24px;height:24px"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Xero Integration</h3>
+                    <p class="text-slate-300 text-sm">Seamless sync with Xero for real-time financial data integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="py-20 bg-freight-slate">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
+                <p class="text-slate-300">Tell us about your operation. We’ll tailor a quick demo.</p>
+            </div>
+            <div class="max-w-2xl mx-auto bg-freight-slate-light p-8 rounded-xl border border-slate-700">
+                <form name="contact" method="POST" netlify>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white" name="name" placeholder="Full name" required />
+                        <input class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white" type="email" name="email" placeholder="Email" required />
+                        <input class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white" name="company" placeholder="Company" required />
+                        <input class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white" name="phone" placeholder="Phone" />
+                        <textarea class="md:col-span-2 w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white" rows="4" name="message" placeholder="What are you trying to achieve?" required></textarea>
+                    </div>
+                    <button class="mt-6 w-full bg-freight-orange hover:bg-freight-orange-dark text-white py-3 rounded-lg font-semibold">Request Demo</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-freight-slate-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Simple, transparent pricing</h2>
-                <p class="text-xl text-gray-600">Start small, scale when you’re ready. All plans include core modules.</p>
+                <h2 class="text-4xl font-bold text-white mb-4">Why Choose FreightIQ?</h2>
+                <p class="text-xl text-slate-300 max-w-2xl mx-auto">
+                    Built for modern freight operations with cutting-edge technology and intuitive design.
+                </p>
             </div>
+            
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl border border-gray-200 bg-white feature-card">
-                    <h3 class="text-2xl font-bold mb-2">Starter</h3>
-                    <p class="text-gray-600 mb-6">Best for small teams getting started</p>
-                    <div class="text-4xl font-extrabold text-freight-orange mb-6">$99<span class="text-lg text-gray-500">/mo</span></div>
-                    <ul class="space-y-3 text-gray-700 mb-8">
-                        <li>Up to 5 users</li>
-                        <li>ImportIQ, DeliveryIQ, TaskIQ (core)</li>
-                        <li>Email support</li>
-                    </ul>
-                    <a href="#contact" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg font-semibold">Get Started</a>
+                <div class="card-hover bg-freight-slate p-8 rounded-xl border border-slate-700">
+                    <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="zap" class="text-orange-500" style="width:22px;height:22px"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Lightning Fast</h3>
+                    <p class="text-slate-300">Real-time processing and instant updates across all modules. No more waiting for data to sync.</p>
                 </div>
-                <div class="p-8 rounded-2xl border-2 border-freight-orange bg-white feature-card relative">
-                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-freight-orange text-white text-xs px-3 py-1 rounded-full">Most popular</span>
-                    <h3 class="text-2xl font-bold mb-2">Pro</h3>
-                    <p class="text-gray-600 mb-6">Growing teams that want the full suite</p>
-                    <div class="text-4xl font-extrabold text-freight-orange mb-6">$299<span class="text-lg text-gray-500">/mo</span></div>
-                    <ul class="space-y-3 text-gray-700 mb-8">
-                        <li>Up to 25 users</li>
-                        <li>All modules incl. PriceIQ & ForecastIQ</li>
-                        <li>Priority support</li>
-                        <li>API access</li>
-                    </ul>
-                    <a href="#contact" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg font-semibold">Start Pro</a>
+                
+                <div class="card-hover bg-freight-slate p-8 rounded-xl border border-slate-700">
+                    <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="shield" class="text-orange-500" style="width:22px;height:22px"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Enterprise Security</h3>
+                    <p class="text-slate-300">Bank-level security with role-based access control and comprehensive audit trails.</p>
                 </div>
-                <div class="p-8 rounded-2xl border border-gray-200 bg-white feature-card">
-                    <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
-                    <p class="text-gray-600 mb-6">Advanced controls and SLAs</p>
-                    <div class="text-4xl font-extrabold text-freight-orange mb-6">Custom</div>
-                    <ul class="space-y-3 text-gray-700 mb-8">
-                        <li>Unlimited users</li>
-                        <li>White‑label & SSO</li>
-                        <li>Dedicated success manager</li>
-                        <li>Custom integrations</li>
-                    </ul>
-                    <a href="#contact" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg font-semibold">Talk to Sales</a>
+                
+                <div class="card-hover bg-freight-slate p-8 rounded-xl border border-slate-700">
+                    <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="chart-line" class="text-orange-500" style="width:22px;height:22px"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Smart Analytics</h3>
+                    <p class="text-slate-300">AI-powered insights and forecasting to optimize your operations and reduce costs.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ROI Calculator -->
-    <section id="roi" class="py-24 bg-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-4xl font-bold text-gray-900 mb-3">See your ROI in 30 seconds</h2>
-                <p class="text-gray-600">A quick estimate based on your shipments and average margin.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Monthly shipments</label>
-                    <input id="roi_shipments" type="number" min="0" class="w-full mb-4 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-freight-orange" placeholder="e.g. 120">
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Average landed cost per shipment ($)</label>
-                    <input id="roi_cost" type="number" min="0" class="w-full mb-4 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-freight-orange" placeholder="e.g. 950">
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Margin improvement with FreightIQ</label>
-                    <input id="roi_margin" type="number" min="0" max="100" class="w-full mb-6 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-freight-orange" placeholder="e.g. 3 (percent)">
-                    <button id="roi_btn" class="w-full bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">Calculate</button>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-gray-200">
-                    <h3 class="text-2xl font-bold mb-4">Your results</h3>
-                    <p class="text-gray-600">Estimated monthly savings from reduced leakage, better packing and fewer stock‑outs:</p>
-                    <div class="mt-6 text-5xl font-extrabold text-freight-orange"><span id="roi_savings">$0</span></div>
-                    <p class="text-gray-600 mt-2">Conservative estimate using <span class="font-semibold">1.5% packing</span> + <span class="font-semibold">1% landed‑cost accuracy</span> + <span class="font-semibold">margin boost</span>.</p>
-                    <a href="#contact" class="inline-block mt-6 bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg font-semibold">Book a tailored ROI session</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Logos Wall -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-500 uppercase tracking-widest text-xs mb-6">Trusted by teams who move the world</p>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 items-center opacity-80">
-                <div class="p-4 bg-white rounded-lg border border-gray-200"><i data-lucide="building-2" class="mx-auto text-gray-700" style="width:28px;height:28px"></i></div>
-                <div class="p-4 bg-white rounded-lg border border-gray-200"><i data-lucide="factory" class="mx-auto text-gray-700" style="width:28px;height:28px"></i></div>
-                <div class="p-4 bg-white rounded-lg border border-gray-200"><i data-lucide="warehouse" class="mx-auto text-gray-700" style="width:28px;height:28px"></i></div>
-                <div class="p-4 bg-white rounded-lg border border-gray-200"><i data-lucide="truck" class="mx-auto text-gray-700" style="width:28px;height:28px"></i></div>
-                <div class="p-4 bg-white rounded-lg border border-gray-200"><i data-lucide="plane" class="mx-auto text-gray-700" style="width:28px;height:28px"></i></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modules Overview -->
-    <section id="modules" class="py-24 bg-white">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-freight-slate-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">FreightIQ Product Suite</h2>
-                <p class="text-xl text-gray-600 max-w-4xl mx-auto">Every module is designed to remove friction, increase margins, and give you control from purchase order to delivery.</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- ImportIQ -->
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 feature-card">
-                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-freight-orange to-freight-orange-dark flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1">ImportIQ</h3>
-                    <p class="text-sm text-gray-600">Landed cost calculator, FX tracking, CBM/KG allocation, full/ shared containers.</p>
-                </div>
-                <!-- ExportIQ -->
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 feature-card">
-                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-freight-orange to-freight-orange-dark flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1">ExportIQ</h3>
-                    <p class="text-sm text-gray-600">Container load planning, FX/margin by destination, auto-docs, commercial invoices.</p>
-                </div>
-                <!-- DeliveryIQ -->
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 feature-card">
-                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-freight-orange to-freight-orange-dark flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.69l1.5 4.49a1 1 0 01-.5 1.21l-2.26 1.13a11.04 11.04 0 005.52 5.52l1.13-2.26a1 1 0 011.21-.5l4.49 1.5a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1">DeliveryIQ</h3>
-                    <p class="text-sm text-gray-600">Route optimization, fuel sync, region mapping, per‑km costs, live dashboards.</p>
-                </div>
-                <!-- CourierIQ -->
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 feature-card">
-                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-freight-orange to-freight-orange-dark flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h13l3 5v5a2 2 0 01-2 2H3z"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1">CourierIQ</h3>
-                    <p class="text-sm text-gray-600">Real‑time quote API and comparison. Pick the best courier in seconds.</p>
-                </div>
-                <!-- PriceIQ -->
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 feature-card">
-                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-freight-orange to-freight-orange-dark flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.66 0-3 .9-3 2s1.34 2 3 2 3 .9 3 2-1.34 2-3 2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8V7m0 10v1M4 5h16v14H4z"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1">PriceIQ</h3>
-                    <p class="text-sm text-gray-600">Dynamic pricing, margin protection, price history, SKU‑level profitability.</p>
-                </div>
-                <!-- ForecastIQ -->
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 feature-card">
-                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-freight-orange to-freight-orange-dark flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 12h2m-6 4h10M5 8h14M7 20h10a2 2 0 002-2V6a2 2 0 00-2-2H7a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1">ForecastIQ</h3>
-                    <p class="text-sm text-gray-600">AI demand forecasting, trends, stock‑out prevention, replenishment signals.</p>
-                </div>
-                <!-- TaskIQ -->
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 feature-card">
-                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-freight-orange to-freight-orange-dark flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1">TaskIQ</h3>
-                    <p class="text-sm text-gray-600">Team workflows, recurring tasks, audit logs, SLA tracking.</p>
-                </div>
-                <!-- WarrantyIQ -->
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 feature-card">
-                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-freight-orange to-freight-orange-dark flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M4 6h16v12H4z"/></svg>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1">WarrantyIQ</h3>
-                    <p class="text-sm text-gray-600">Claims intake to resolution, documents, reporting, customer comms.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Platform Description -->
-    <section class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    An Intuitive SaaS Platform
-                </h2>
-                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                    Delivering a seamless logistics experience with AI-powered automation at your fingertips, from importing to inventory. Let smart tech run your supply chain.
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Trusted by Industry Leaders</h2>
+                <p class="text-xl text-slate-300 max-w-2xl mx-auto">
+                    See what our customers are saying about FreightIQ
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-lg feature-card border border-gray-200">
-                        <div class="icon-badge mb-6 floating">
-                            <i data-lucide="calculator" class="text-white" style="width:24px;height:24px"></i>
-                        </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Landed Cost Calculator</h3>
-                    <p class="text-gray-600">Track expenses across the supply chain with precision</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl shadow-lg feature-card border border-gray-200">
-                        <div class="icon-badge mb-6 floating">
-                            <i data-lucide="line-chart" class="text-white" style="width:24px;height:24px"></i>
-                        </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Profit Forecasting</h3>
-                    <p class="text-gray-600">Predict shipment profitability ahead of time</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl shadow-lg feature-card border border-gray-200">
-                        <div class="icon-badge mb-6 floating">
-                            <i data-lucide="boxes" class="text-white" style="width:24px;height:24px"></i>
-                        </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Stock Reordering</h3>
-                    <p class="text-gray-600">Optimize inventory on autopilot with AI</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl shadow-lg feature-card border border-gray-200">
-                        <div class="icon-badge mb-6 floating">
-                            <i data-lucide="truck" class="text-white" style="width:24px;height:24px"></i>
-                        </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Smart Container Loads</h3>
-                    <p class="text-gray-600">Simulate container configurations to maximize CBM</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Intelligence Section -->
-    <section id="ai-intelligence" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    Sophisticated Power and AI Intelligence
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Level up with FreightIQ — and take control like never before
-                </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left: AI Features -->
-                <div class="space-y-8">
-                    <div class="bg-gradient-to-r from-freight-slate to-freight-slate-light p-8 rounded-2xl text-white">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-freight-orange rounded-lg flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold">Landed Cost Calculator</h3>
-                        </div>
-                        <p class="text-gray-300">Track expenses across the supply chain with unmatched accuracy</p>
-                    </div>
-
-                    <div class="bg-gradient-to-r from-freight-slate to-freight-slate-light p-8 rounded-2xl text-white">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-freight-orange rounded-lg flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold">Profit Forecasting</h3>
-                        </div>
-                        <p class="text-gray-300">Predict shipment profitability ahead of time with AI precision</p>
-                    </div>
-
-                    <div class="bg-gradient-to-r from-freight-slate to-freight-slate-light p-8 rounded-2xl text-white">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-freight-orange rounded-lg flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold">Stock Reordering</h3>
-                        </div>
-                        <p class="text-gray-300">Optimize inventory on autopilot with intelligent AI algorithms</p>
-                    </div>
-
-                    <div class="bg-gradient-to-r from-freight-slate to-freight-slate-light p-8 rounded-2xl text-white">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-freight-orange rounded-lg flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold">Smart Container Loads</h3>
-                        </div>
-                        <p class="text-gray-300">Simulate container configurations to maximize CBM efficiency</p>
-                    </div>
-                </div>
-
-                <!-- Right: Visual -->
-                <div class="text-center">
-                        <div class="w-64 h-64 mx-auto mb-8 relative">
-                            <div class="absolute inset-0 bg-gradient-to-br from-freight-orange to-freight-orange-dark rounded-full glow-effect shadow-xl shadow-freight-orange/40"></div>
-                            <div class="absolute inset-4 bg-freight-slate rounded-full flex items-center justify-center">
-                                <i data-lucide="brain-circuit" class="text-white" style="width:56px;height:56px"></i>
-                            </div>
-                        </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Leverage the AI Advantage</h3>
-                    <p class="text-gray-600">Fuel higher profits with intelligent automation</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Platform Features -->
-    <section id="platform" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    Complete Product Suite
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    From importing to inventory, let smart tech run your supply chain
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- ImportIQ -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg feature-card border border-gray-200">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-freight-slate p-8 rounded-xl border border-slate-700">
                     <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-freight-orange to-freight-orange-dark rounded-xl shadow-lg shadow-freight-orange/30 flex items-center justify-center mr-4 floating">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
+                        <div class="flex text-orange-500">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                             </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-6 italic">
+                        "FreightIQ has completely transformed our import operations. The landed cost calculations are spot-on, and the real-time tracking has eliminated so many headaches. ROI was achieved within the first month!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-orange-500 font-semibold">SM</span>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold text-gray-900">ImportIQ</h3>
-                            <p class="text-freight-orange font-semibold">Inbound Logistics & Costing</p>
+                            <h4 class="text-white font-semibold">Sarah Mitchell</h4>
+                            <p class="text-slate-400 text-sm">Operations Director, Global Imports Ltd</p>
                         </div>
                     </div>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-freight-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Landed cost calculation (FX, freight, duties, clearance)
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-freight-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Multi-currency tracking (USD/CNY to ZAR)
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-freight-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Freight allocation using CBM/KG logic
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-freight-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Simulate full or shared containers
-                        </li>
-                    </ul>
                 </div>
-
-                <!-- ExportIQ -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg feature-card border border-gray-200">
+                
+                <div class="card-hover bg-freight-slate p-8 rounded-xl border border-slate-700">
                     <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-freight-orange to-freight-orange-dark rounded-xl shadow-lg shadow-freight-orange/30 flex items-center justify-center mr-4 floating">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        <div class="flex text-orange-500">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                             </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-6 italic">
+                        "The forecasting capabilities are incredible. We've reduced our inventory costs by 30% and improved our delivery times significantly. The AI insights are game-changing for our business."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-orange-500 font-semibold">DJ</span>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold text-gray-900">ExportIQ</h3>
-                            <p class="text-freight-orange font-semibold">Outbound Logistics & Documents</p>
+                            <h4 class="text-white font-semibold">David Johnson</h4>
+                            <p class="text-slate-400 text-sm">CEO, Express Logistics Co</p>
                         </div>
                     </div>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-freight-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </div>
+                
+                <div class="card-hover bg-freight-slate p-8 rounded-xl border border-slate-700">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-orange-500">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                             </svg>
-                            Container load planning for exports
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-freight-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                             </svg>
-                            FX margin tracking by destination and currency
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-freight-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                             </svg>
-                            Auto-generate export documents
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-freight-orange mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                             </svg>
-                            CBM/KG-based cost distribution
-                        </li>
-                    </ul>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-6 italic">
+                        "The courier comparison feature alone has saved us thousands. Being able to instantly compare rates and book the best option has streamlined our entire delivery process."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-orange-500 font-semibold">LW</span>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold">Lisa Wang</h4>
+                            <p class="text-slate-400 text-sm">Supply Chain Manager, TechCorp</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-24 bg-gradient-to-r from-freight-slate to-freight-slate-light text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                Now It's Your Turn to Level Up
-            </h2>
-            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-                Unlock the software edge once reserved for global giants. Take control like never before with FreightIQ.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://app.freightiq.online" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-lg text-lg font-bold transition-all duration-300 transform hover:scale-105 ai-glow">
-                    Launch Platform
-                </a>
-                <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-freight-slate px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                    Schedule Demo
-                </a>
+            
+            <div class="text-center mt-12">
+            <div class="inline-flex items-center space-x-8 text-slate-400">
+                <div class="flex items-center">
+                    <span class="counter text-2xl font-bold text-white mr-2" data-target="500">0</span>
+                    <span>Happy Customers</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="counter text-2xl font-bold text-white mr-2" data-target="99">0%</span>
+                    <span>Uptime</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-white mr-2">24/7</span>
+                    <span>Support</span>
+                </div>
+            </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="py-24 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Questions, answered</h2>
-                <p class="text-gray-600">Straight answers to the most common concerns.</p>
-            </div>
-            <div class="space-y-6">
-                <details class="bg-white border border-gray-200 rounded-xl p-6">
-                    <summary class="font-semibold text-gray-900 cursor-pointer">Will FreightIQ replace my ERP?</summary>
-                    <p class="text-gray-700 mt-3">No. FreightIQ complements your ERP by handling landed cost, forecasting, pricing and logistics automation. We integrate via CSV/API and keep your ERP as the source of truth.</p>
-                </details>
-                <details class="bg-white border border-gray-200 rounded-xl p-6">
-                    <summary class="font-semibold text-gray-900 cursor-pointer">How fast can we go live?</summary>
-                    <p class="text-gray-700 mt-3">Most teams start in under a week. Import existing SKUs, costs and shipment history, then enable automation module‑by‑module.</p>
-                </details>
-                <details class="bg-white border border-gray-200 rounded-xl p-6">
-                    <summary class="font-semibold text-gray-900 cursor-pointer">Is our data secure?</summary>
-                    <p class="text-gray-700 mt-3">Yes. Role‑based access, audit logs and encrypted data at rest/in transit. We support SSO on Enterprise.</p>
-                </details>
-                <details class="bg-white border border-gray-200 rounded-xl p-6">
-                    <summary class="font-semibold text-gray-900 cursor-pointer">What integrations do you support?</summary>
-                    <p class="text-gray-700 mt-3">CSV import/export out of the box. API access on Pro. We commonly connect to accounting, ERP and courier platforms; custom integrations on Enterprise.</p>
-                </details>
-                <details class="bg-white border border-gray-200 rounded-xl p-6">
-                    <summary class="font-semibold text-gray-900 cursor-pointer">Can we cancel anytime?</summary>
-                    <p class="text-gray-700 mt-3">Yes. Monthly plans with no lock‑in. Your data remains yours; export at any time.</p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-24 bg-gray-50">
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-freight-slate">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4">Ready to Get Started?</h2>
-                <p class="text-lg text-gray-600">Tell us about your operation. We’ll tailor a quick demo and rollout plan.</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Ready to Transform Your Freight Operations?</h2>
+                <p class="text-xl text-slate-300 max-w-2xl mx-auto">
+                    Get started with FreightIQ today. Our team will help you onboard and optimize your operations.
+                </p>
             </div>
+            
             <div class="max-w-2xl mx-auto">
-                <form name="contact" method="POST" netlify class="bg-white p-8 rounded-2xl border border-gray-200 shadow-lg">
+                <form name="contact" method="POST" netlify class="bg-freight-slate-light p-8 rounded-xl border border-slate-700">
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                            <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-freight-orange" type="text" name="name" required>
+                            <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-orange-500 focus:outline-none">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                            <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-freight-orange" type="email" name="email" required>
+                            <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-orange-500 focus:outline-none">
                         </div>
                     </div>
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Company</label>
-                            <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-freight-orange" type="text" name="company" required>
+                            <label for="company" class="block text-sm font-medium text-slate-300 mb-2">Company Name</label>
+                            <input type="text" id="company" name="company" required class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-orange-500 focus:outline-none">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                            <input class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-freight-orange" type="tel" name="phone">
+                            <label for="phone" class="block text-sm font-medium text-slate-300 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-orange-500 focus:outline-none">
                         </div>
                     </div>
                     <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">How can we help?</label>
-                        <textarea class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-freight-orange" rows="4" name="message" placeholder="Briefly describe your challenges and objectives" required></textarea>
+                        <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Tell us about your freight operations</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-orange-500 focus:outline-none" placeholder="Describe your current challenges and what you're looking to achieve..."></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">Request Demo</button>
+                    <div class="text-center">
+                        <button type="submit" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105">
+                            Get Started - Free Consultation
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 text-gray-900 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer class="bg-freight-slate-light border-t border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <img src="/static/logo-dark.svg" alt="FreightIQ" class="h-8 w-auto mb-4">
-                    <span class="text-sm text-freight-orange font-medium">Smart logistics</span>
-                    <p class="text-gray-600 mt-2">AI-driven logistics platform for the modern supply chain.</p>
+                    <span class="text-xl font-bold text-white mb-4 block">FreightIQ</span>
+                    <p class="text-slate-300 mb-4">Intelligent freight management for the modern world.</p>
                 </div>
+                
                 <div>
-                    <h4 class="font-semibold mb-4">Platform</h4>
-                    <ul class="space-y-2 text-gray-600">
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">ImportIQ</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">ExportIQ</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">DeliveryIQ</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">CourierIQ</a></li>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-slate-300">
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">API</a></li>
                     </ul>
                 </div>
+                
                 <div>
-                    <h4 class="font-semibold mb-4">Company</h4>
-                    <ul class="space-y-2 text-gray-600">
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">About</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">Blog</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">Careers</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">Contact</a></li>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-slate-300">
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Contact</a></li>
                     </ul>
                 </div>
+                
                 <div>
-                    <h4 class="font-semibold mb-4">Support</h4>
-                    <ul class="space-y-2 text-gray-600">
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">Help Center</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">Documentation</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">API Reference</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">Status</a></li>
+                    <h4 class="text-white font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-slate-300">
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Status</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-300 mt-8 pt-8 text-center text-gray-600">
-                <p>&copy; 2024 FreightIQ. All rights reserved. | AI-driven logistics platform.</p>
+            
+            <div class="border-t border-slate-700 mt-12 pt-8 text-center">
+                <p class="text-slate-400 text-sm">© 2024 FreightIQ. All rights reserved.</p>
             </div>
         </div>
     </footer>
 </body>
 <script>
-  // Render Lucide icons
   if (window.lucide) { window.lucide.createIcons(); }
-  // Animated counters when in view
   (function(){
     const counters = document.querySelectorAll('.counter');
     if (!('IntersectionObserver' in window) || counters.length === 0) return;
@@ -830,10 +808,9 @@
       const isPercent = el.textContent.includes('%');
       const duration = 1200;
       const start = performance.now();
-      const from = 0;
       function frame(now){
         const p = Math.min(1, (now - start) / duration);
-        const value = Math.floor(from + (target - from) * p);
+        const value = Math.floor(target * p);
         el.textContent = isPercent ? value + '%' : String(value);
         if (p < 1) requestAnimationFrame(frame);
       }
