@@ -7,16 +7,21 @@
   NODE_VERSION = "18"
 
 # Redirects for the website
-# Canonicalize to www as primary
+# Canonicalize to www.flowiq.online as primary
 [[redirects]]
   from = "/*"
-  to = "https://www.freightiq.online/:splat"
+  to = "https://www.flowiq.online/:splat"
   status = 301
   force = true
-  conditions = { Host = ["freightiq.online"] }
+  conditions = { Host = ["freightiq.online", "www.freightiq.online", "flowiq.online"] }
 
 [[redirects]]
-  from = "/*"
+  from = "/pricing"
+  to = "/pricing.html"
+  status = 301
+
+[[redirects]]
+  from = "/"
   to = "/index.html"
   status = 200
 
