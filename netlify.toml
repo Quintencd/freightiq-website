@@ -21,6 +21,16 @@
   status = 301
 
 [[redirects]]
+  from = "/landing.html"
+  to = "/solutions/freight-logistics.html"
+  status = 301
+
+[[redirects]]
+  from = "/solutions"
+  to = "/solutions/index.html"
+  status = 301
+
+[[redirects]]
   from = "/"
   to = "/index.html"
   status = 200

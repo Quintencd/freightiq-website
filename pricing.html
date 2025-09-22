@@ -161,6 +161,53 @@
       </div>
     </div>
 
+    <!-- Compare Plans Table -->
+    <div class="mt-20 overflow-x-auto">
+      <h2 class="text-3xl font-bold text-white text-center mb-8">Compare plans</h2>
+      <table class="min-w-full bg-freight-slate-light border border-slate-700 rounded-xl text-sm">
+        <thead class="bg-freight-slate">
+          <tr>
+            <th class="text-left text-slate-300 px-4 py-3 border-b border-slate-700">Feature</th>
+            <th class="text-center text-white px-4 py-3 border-b border-slate-700">Core Ops</th>
+            <th class="text-center text-white px-4 py-3 border-b border-slate-700">Supply Chain</th>
+            <th class="text-center text-white px-4 py-3 border-b border-slate-700">Intelligence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-slate-700">
+            <td class="px-4 py-3 text-slate-300">Modules</td>
+            <td class="text-center px-4 py-3 text-slate-100">Inventory, Purchase, Invoice, Companies</td>
+            <td class="text-center px-4 py-3 text-slate-100">+ Import, Export, Delivery, Courier</td>
+            <td class="text-center px-4 py-3 text-slate-100">+ PriceIQ, ForecastIQ</td>
+          </tr>
+          <tr class="border-b border-slate-700">
+            <td class="px-4 py-3 text-slate-300">Users</td>
+            <td class="text-center px-4 py-3 text-slate-100">5</td>
+            <td class="text-center px-4 py-3 text-slate-100">15</td>
+            <td class="text-center px-4 py-3 text-slate-100">Unlimited</td>
+          </tr>
+          <tr class="border-b border-slate-700">
+            <td class="px-4 py-3 text-slate-300">Warehouses</td>
+            <td class="text-center px-4 py-3 text-slate-100">1</td>
+            <td class="text-center px-4 py-3 text-slate-100">3</td>
+            <td class="text-center px-4 py-3 text-slate-100">Unlimited</td>
+          </tr>
+          <tr class="border-b border-slate-700">
+            <td class="px-4 py-3 text-slate-300">Automations</td>
+            <td class="text-center px-4 py-3 text-slate-100">—</td>
+            <td class="text-center px-4 py-3 text-slate-100">2 / month</td>
+            <td class="text-center px-4 py-3 text-slate-100">Unlimited</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 text-slate-300">Support</td>
+            <td class="text-center px-4 py-3 text-slate-100">Email + KB</td>
+            <td class="text-center px-4 py-3 text-slate-100">Priority</td>
+            <td class="text-center px-4 py-3 text-slate-100">Priority + SLA</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <div class="text-center mt-12">
       <p class="text-slate-400 text-sm">All plans include 14-day free trial • No credit card required • Annual billing available with 20% discount</p>
     </div>
@@ -196,5 +243,26 @@
   </footer>
 </body>
 </html>
+<script>
+  // JSON-LD for Product pricing
+  (function(){
+    const product = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Flow IQ ERP",
+      "url": "https://www.flowiq.online/pricing.html",
+      "brand": {"@type":"Brand","name":"Flow IQ"},
+      "offers": [
+        {"@type":"Offer","name":"Core Operations","price":"99","priceCurrency":"USD","url":"https://www.flowiq.online/pricing.html"},
+        {"@type":"Offer","name":"Supply Chain","price":"199","priceCurrency":"USD","url":"https://www.flowiq.online/pricing.html"},
+        {"@type":"Offer","name":"Intelligence","price":"399","priceCurrency":"USD","url":"https://www.flowiq.online/pricing.html"}
+      ]
+    };
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.textContent = JSON.stringify(product);
+    document.head.appendChild(s);
+  })();
+</script>
 
 

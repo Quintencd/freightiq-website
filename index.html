@@ -47,6 +47,7 @@
                     <a href="/solutions/freight-logistics.html" class="text-slate-300 hover:text-freight-orange transition-colors">Solutions</a>
                     <a href="#pricing" class="text-slate-300 hover:text-freight-orange transition-colors">Pricing</a>
                     <a href="#reviews" class="text-slate-300 hover:text-freight-orange transition-colors">Reviews</a>
+                    <a href="/public/roadmap.html" class="text-slate-300 hover:text-freight-orange transition-colors">Roadmap</a>
                     <a href="#contact" class="text-slate-300 hover:text-freight-orange transition-colors">Contact</a>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -86,11 +87,36 @@
                     <a href="#contact" class="border border-slate-600 hover:border-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all">
                         Book Demo
                     </a>
+                    <button id="openLeadModal" class="border border-slate-600 hover:border-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all">Email me the deck</button>
                 </div>
                 <p class="text-sm text-slate-400 mt-4">No credit card required • 14-day free trial</p>
+                <div class="mt-6 flex flex-wrap items-center justify-center gap-6 text-slate-400 text-sm">
+                    <div class="flex items-center gap-2"><i data-lucide="shield-check" class="text-green-500" style="width:16px;height:16px"></i><span>Bank‑level security</span></div>
+                    <div class="flex items-center gap-2"><i data-lucide="star" class="text-yellow-400" style="width:16px;height:16px"></i><span>Trusted by growing teams</span></div>
+                    <div class="flex items-center gap-2"><i data-lucide="zap" class="text-orange-500" style="width:16px;height:16px"></i><span>Live in 24 hours</span></div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Lead Magnet Modal -->
+    <div id="leadModal" class="hidden fixed inset-0 z-50 items-center justify-center">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative bg-freight-slate-light border border-slate-700 rounded-xl max-w-md w-full mx-4 p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-white text-lg font-semibold">Get the Flow IQ overview deck</h3>
+                <button id="closeLeadModal" class="text-slate-400 hover:text-white">✕</button>
+            </div>
+            <form name="deck" method="POST" netlify>
+                <div class="space-y-3">
+                    <input class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white" name="name" placeholder="Full name" required />
+                    <input class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white" type="email" name="email" placeholder="Work email" required />
+                </div>
+                <button class="mt-4 w-full bg-freight-orange hover:bg-freight-orange-dark text-white py-3 rounded-lg font-semibold">Email me the deck</button>
+                <p class="text-xs text-slate-400 mt-2">We’ll also send occasional product updates. Unsubscribe anytime.</p>
+            </form>
+        </div>
+    </div>
 
     <!-- Competitive Advantage Section -->
     <section class="py-16 bg-freight-slate">
@@ -471,6 +497,33 @@
                 <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center animate-bounce">
                     <i data-lucide="check" class="text-white" style="width:20px;height:20px"></i>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Tour Section -->
+    <section class="py-20 bg-freight-slate">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">90‑Second Product Tour</h2>
+                <p class="text-slate-300 max-w-3xl mx-auto">See how Flow IQ streamlines inventory, purchasing, manufacturing, and invoicing in a single workflow.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                    <div class="flex items-center mb-2"><i data-lucide="package" class="text-freight-orange mr-2" style="width:18px;height:18px"></i><h3 class="text-white font-semibold">Inventory in seconds</h3></div>
+                    <p class="text-slate-300 text-sm">Find SKUs, view stock by branch, and act fast with smart shortcuts.</p>
+                </div>
+                <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                    <div class="flex items-center mb-2"><i data-lucide="shopping-cart" class="text-freight-orange mr-2" style="width:18px;height:18px"></i><h3 class="text-white font-semibold">Purchase to receipt</h3></div>
+                    <p class="text-slate-300 text-sm">Raise POs, receive goods, and update FIFO layers automatically.</p>
+                </div>
+                <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                    <div class="flex items-center mb-2"><i data-lucide="factory" class="text-freight-orange mr-2" style="width:18px;height:18px"></i><h3 class="text-white font-semibold">Manufacture & invoice</h3></div>
+                    <p class="text-slate-300 text-sm">Commit work orders, add finished goods costs, and invoice with Xero.</p>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#contact" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-lg text-lg font-semibold">Book a live demo</a>
             </div>
         </div>
     </section>
@@ -1102,6 +1155,48 @@
       entries.forEach(e=>{ if (e.isIntersecting){ animate(e.target); io.unobserve(e.target); }});
     }, {threshold: 0.6});
     counters.forEach(c=>io.observe(c));
+  })();
+  // Lead modal handlers + exit intent
+  (function(){
+    const modal = document.getElementById('leadModal');
+    const openBtn = document.getElementById('openLeadModal');
+    const closeBtn = document.getElementById('closeLeadModal');
+    function open(){ modal.classList.remove('hidden'); modal.classList.add('flex'); }
+    function close(){ modal.classList.add('hidden'); modal.classList.remove('flex'); }
+    if (openBtn) openBtn.addEventListener('click', open);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    // Exit intent
+    let shown = sessionStorage.getItem('lead_shown');
+    document.addEventListener('mouseout', (e)=>{
+      if (shown) return;
+      if (!e.toElement && !e.relatedTarget && e.clientY < 10) {
+        shown = '1'; sessionStorage.setItem('lead_shown','1'); open();
+      }
+    });
+  })();
+  // JSON-LD for Organization and SoftwareApplication
+  (function(){
+    const ld = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Flow IQ",
+      "url": "https://www.flowiq.online/",
+      "logo": "https://www.flowiq.online/logo-light.png",
+      "sameAs": []
+    };
+    const app = {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Flow IQ",
+      "operatingSystem": "Web",
+      "applicationCategory": "ERP",
+      "url": "https://www.flowiq.online/",
+      "offers": {"@type":"Offer","price":"99","priceCurrency":"USD"}
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify([ld, app]);
+    document.head.appendChild(script);
   })();
 </script>
 </html>

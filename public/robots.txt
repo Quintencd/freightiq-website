@@ -1,3 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.flowiq.online/sitemap.xml
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JournalIQ — Accounting Integration</title>
+  <meta name="description" content="JournalIQ: Xero integration, journal queues, WIP/FG postings, audit trails.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>.bg-freight-slate{background:#0f172a}.bg-freight-slate-light{background:#1e293b}.bg-freight-orange{background:#f97316}</style>
+</head>
+<body class="bg-freight-slate text-slate-100">
+  <nav class="sticky top-0 z-50 bg-freight-slate/95 backdrop-blur-md border-b border-slate-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center"><img src="/logo-light.png" class="h-9" alt="Flow IQ" /><span class="ml-2 text-lg font-bold text-white">Flow IQ</span></a>
+      <div class="hidden md:flex items-center space-x-6 text-sm">
+        <a href="/index.html#modules" class="text-slate-300 hover:text-freight-orange">Modules</a>
+        <a href="/pricing.html" class="text-slate-300 hover:text-freight-orange">Pricing</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-b from-freight-slate to-freight-slate-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h1 class="text-4xl md:text-5xl font-black mb-4 text-white">JournalIQ</h1>
+      <p class="text-slate-300 text-lg max-w-3xl">Queue and sync journals to Xero including WIP start/complete for manufacturing and COGS for sales.</p>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
+    <section class="grid md:grid-cols-3 gap-6">
+      <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+        <h3 class="text-white font-semibold mb-2">Mappings</h3>
+        <p class="text-slate-300 text-sm">Map WIP, Finished Goods, Raw Materials, COGS, and Revenue accounts.</p>
+      </div>
+      <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+        <h3 class="text-white font-semibold mb-2">Queued Sync</h3>
+        <p class="text-slate-300 text-sm">Retry-safe journal queue with status and error inspection.</p>
+      </div>
+      <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+        <h3 class="text-white font-semibold mb-2">Audit Trails</h3>
+        <p class="text-slate-300 text-sm">Full audit of postings tied to transactions and work orders.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-freight-slate text-slate-300 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-slate-400">© 2024 Flow IQ. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
