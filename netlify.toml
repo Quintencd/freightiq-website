@@ -1,5 +1,5 @@
 [build]
-  publish = "build"
+  publish = "."
   command = "echo 'Static site - no build needed'"
 
 # Custom domain
@@ -43,6 +43,16 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/logo-*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/logo-*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # Cache static assets
 [[headers]]
