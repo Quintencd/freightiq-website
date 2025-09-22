@@ -508,6 +508,22 @@
                 <h2 class="text-4xl font-bold text-white mb-4">90‑Second Product Tour</h2>
                 <p class="text-slate-300 max-w-3xl mx-auto">See how Flow IQ streamlines inventory, purchasing, manufacturing, and invoicing in a single workflow.</p>
             </div>
+            <!-- Responsive video placeholder: upload /public/product-tour.mp4 and optional /public/product-tour-poster.jpg -->
+            <div class="relative max-w-4xl mx-auto mb-10 aspect-video bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
+                <video id="productTourVideo" class="w-full h-full" controls preload="metadata" poster="/product-tour-poster.jpg">
+                    <source src="/product-tour.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div id="productTourPlaceholder" class="absolute inset-0 hidden items-center justify-center">
+                    <div class="text-center">
+                        <div class="mx-auto mb-3 w-16 h-16 rounded-full bg-slate-700/70 flex items-center justify-center">
+                            <i data-lucide="play" class="text-slate-300" style="width:28px;height:28px"></i>
+                        </div>
+                        <p class="text-slate-300">Product tour video coming soon</p>
+                        <p class="text-slate-400 text-xs">Add <code>/public/product-tour.mp4</code> to enable playback</p>
+                    </div>
+                </div>
+            </div>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
                     <div class="flex items-center mb-2"><i data-lucide="package" class="text-freight-orange mr-2" style="width:18px;height:18px"></i><h3 class="text-white font-semibold">Inventory in seconds</h3></div>
@@ -1173,6 +1189,17 @@
         shown = '1'; sessionStorage.setItem('lead_shown','1'); open();
       }
     });
+  })();
+  // Show placeholder if video asset missing
+  (function(){
+    const v = document.getElementById('productTourVideo');
+    const ph = document.getElementById('productTourPlaceholder');
+    if (!v) return;
+    // Heuristic: if the source fails to load, show placeholder
+    v.addEventListener('error', ()=>{ if (ph) { ph.classList.remove('hidden'); ph.classList.add('flex'); } });
+    // If metadata can't load in 1s, assume missing
+    const timer = setTimeout(()=>{ if (v.readyState < 1 && ph) { ph.classList.remove('hidden'); ph.classList.add('flex'); } }, 1000);
+    v.addEventListener('loadedmetadata', ()=> clearTimeout(timer));
   })();
   // JSON-LD for Organization and SoftwareApplication
   (function(){

@@ -13,7 +13,7 @@
   to = "https://www.flowiq.online/:splat"
   status = 301
   force = true
-  conditions = { Host = ["freightiq.online", "www.freightiq.online", "flowiq.online"] }
+  conditions = { Host = ["freightiq.online", "www.freightiq.online", "flowiq.online", "www.flowiq.online", "flowiq.info", "www.flowiq.info"] }
 
 [[redirects]]
   from = "/pricing"
