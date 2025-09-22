@@ -10,7 +10,7 @@
 # Canonicalize to www.flowiq.online as primary
 [[redirects]]
   from = "/*"
-  to = "https://www.flowiq.online/:splat"
+  to = "https://www.flowiq.info/:splat"
   status = 301
   force = true
   conditions = { Host = ["freightiq.online", "www.freightiq.online", "flowiq.online", "www.flowiq.online", "flowiq.info", "www.flowiq.info"] }
