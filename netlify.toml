@@ -54,6 +54,16 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+[[headers]]
+  for = "/public/logo-*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/public/logo-*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 # Cache static assets
 [[headers]]
   for = "/static/*"
