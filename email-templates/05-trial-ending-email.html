@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Flow IQ Trial Ends Tomorrow - Don't Lose Your Data!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8fafc;
+            line-height: 1.6;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+        
+        .logo {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .urgency-badge {
+            background: #ffffff;
+            color: #dc2626;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 12px;
+            display: inline-block;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .hero-card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 32px;
+            text-align: center;
+            border: 2px solid #dc2626;
+        }
+        
+        .hero-title {
+            color: #ffffff;
+            margin: 0 0 16px 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .hero-text {
+            color: #cbd5e1;
+            margin: 0;
+            font-size: 16px;
+        }
+        
+        .countdown {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        
+        .countdown-number {
+            color: #ffffff;
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .countdown-text {
+            color: #fecaca;
+            font-size: 18px;
+            margin: 8px 0 0 0;
+        }
+        
+        .value-prop {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .value-title {
+            color: #ffffff;
+            margin: 0 0 16px 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .value-list {
+            color: #cbd5e1;
+            margin: 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        
+        .value-list li {
+            margin-bottom: 8px;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .value-list li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+        }
+        
+        .pricing-card {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            margin: 32px 0;
+        }
+        
+        .pricing-title {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+        }
+        
+        .pricing-amount {
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .pricing-period {
+            color: #a7f3d0;
+            font-size: 16px;
+            margin: 4px 0 16px 0;
+        }
+        
+        .pricing-save {
+            background: #ffffff;
+            color: #059669;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #059669;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            margin-top: 8px;
+        }
+        
+        .testimonial {
+            background: #334155;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .quote-text {
+            color: #ffffff;
+            font-style: italic;
+            margin: 0 0 16px 0;
+            font-size: 16px;
+        }
+        
+        .quote-author {
+            color: #94a3b8;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .data-security {
+            background: #7c2d12;
+            border: 1px solid #ea580c;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+        
+        .security-icon {
+            color: #fb923c;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        
+        .security-title {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+        
+        .security-text {
+            color: #fed7aa;
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            color: #64748b;
+            font-size: 12px;
+            padding: 20px;
+        }
+
+        /* Mobile responsive */
+        @media screen and (max-width: 600px) {
+            .hero-card,
+            .value-prop,
+            .pricing-card {
+                padding: 20px;
+            }
+            
+            .countdown-number {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="logo">Flow IQ</h1>
+            <div class="urgency-badge">TRIAL ENDING SOON</div>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Hero Section -->
+            <div class="hero-card">
+                <h2 class="hero-title">⚠️ Don't Lose Everything Tomorrow!</h2>
+                <p class="hero-text">
+                    Hi {{ .UserMetaData.first_name }}, your Flow IQ trial expires in 24 hours. All your setup work, product data, and configurations will be preserved if you continue today.
+                </p>
+            </div>
+
+            <!-- Countdown -->
+            <div class="countdown">
+                <p class="countdown-number">24</p>
+                <p class="countdown-text">Hours Remaining</p>
+            </div>
+            
+            <!-- What You'll Keep -->
+            <div class="value-prop">
+                <h3 class="value-title">🔒 Keep Everything You've Built:</h3>
+                <ul class="value-list">
+                    <li>All your product catalog and inventory data</li>
+                    <li>Customer and supplier information</li>
+                    <li>Xero integration and settings</li>
+                    <li>Custom price lists and margins</li>
+                    <li>User accounts and permissions</li>
+                    <li>Reports and analytics history</li>
+                </ul>
+            </div>
+
+            <!-- Pricing Offer -->
+            <div class="pricing-card">
+                <div class="pricing-save">SAVE 20% - LIMITED TIME</div>
+                <h3 class="pricing-title">Continue with Flow IQ</h3>
+                <p class="pricing-amount">$79</p>
+                <p class="pricing-period">per month (normally $99)</p>
+                <a href="https://app.flowiq.info/billing?promo=SAVE20" class="cta-button">
+                    Continue & Save 20%
+                </a>
+                <p style="color: #a7f3d0; font-size: 12px; margin: 16px 0 0 0;">
+                    Cancel anytime • 30-day money-back guarantee
+                </p>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="testimonial">
+                <p class="quote-text">
+                    "Flow IQ paid for itself in the first month. The inventory optimization alone saved us $12,000 in overstock. I can't imagine running our business without it now."
+                </p>
+                <p class="quote-author">— Mike Chen, Supply Chain Director at GlobalTrade</p>
+            </div>
+
+            <!-- Data Warning -->
+            <div class="data-security">
+                <div class="security-icon">⚠️</div>
+                <h4 class="security-title">Your Data Will Be Lost</h4>
+                <p class="security-text">
+                    If you don't continue by tomorrow at {{ .TrialEndTime }}, all your data will be permanently deleted and cannot be recovered.
+                </p>
+            </div>
+
+            <!-- What You'll Miss -->
+            <div class="value-prop">
+                <h3 class="value-title">❌ What you'll miss without Flow IQ:</h3>
+                <ul class="value-list">
+                    <li>$50,000+ in annual software cost savings</li>
+                    <li>5+ hours per week of manual work</li>
+                    <li>Real-time inventory and financial insights</li>
+                    <li>Automated Xero synchronization</li>
+                    <li>AI-powered demand forecasting</li>
+                    <li>Professional invoicing and reporting</li>
+                </ul>
+            </div>
+
+            <!-- Final CTA -->
+            <div style="background: #1e293b; border-radius: 12px; padding: 32px; text-align: center; margin: 32px 0;">
+                <h3 style="color: #ffffff; margin: 0 0 16px 0;">Ready to transform {{ .UserMetaData.company_name }}?</h3>
+                <a href="https://app.flowiq.info/billing?promo=SAVE20" style="display: inline-block; background: #f97316; color: white; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 700; font-size: 18px; margin: 0 8px 16px 0;">
+                    Save My Data & Continue
+                </a>
+                <br>
+                <a href="https://flowiq.info/schedule-call" style="color: #f97316; text-decoration: none; font-size: 14px;">
+                    Or schedule a call to discuss your needs →
+                </a>
+            </div>
+
+            <!-- Contact Support -->
+            <div style="background: #334155; border-radius: 8px; padding: 16px; text-align: center;">
+                <p style="color: #94a3b8; margin: 0 0 8px 0; font-size: 14px;">Questions about continuing?</p>
+                <p style="color: #94a3b8; margin: 0; font-size: 14px;">
+                    📞 Call us: <a href="tel:+1234567890" style="color: #f97316;">+1 (234) 567-8900</a> |
+                    📧 Email: <a href="mailto:support@flowiq.info" style="color: #f97316;">support@flowiq.info</a>
+                </p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>Don't want to continue? <a href="https://app.flowiq.info/cancel" style="color: #64748b;">Cancel your trial here</a></p>
+            <p>© 2024 Flow IQ. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

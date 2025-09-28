@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Flow IQ | Complete Business Management Platform</title>
+    <meta name="description" content="Sign in to your Flow IQ account and access your complete business management platform with AI-powered insights.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sign In to Flow IQ — Complete Business Management Platform">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        .bg-freight-slate { background-color: #0f172a; }
+        .bg-freight-slate-light { background-color: #1e293b; }
+        .text-freight-orange { color: #f97316; }
+        .bg-freight-orange { background-color: #f97316; }
+        .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+        .border-freight-orange { border-color: #f97316; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="gradient-bg min-h-screen text-slate-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-freight-slate/90 backdrop-blur-md border-b border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" aria-label="Flow IQ home" class="flex items-center">
+                        <img src="/public/logo-light.png?v=3" alt="Flow IQ" class="h-10 md:h-11 w-auto" loading="eager" decoding="async">
+                        <span class="ml-3 text-xl font-bold text-white">Flow IQ</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/signup.html" class="text-slate-300 hover:text-white transition-colors">Need an account? Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-16 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <!-- Header -->
+            <div class="text-center">
+                <div class="mx-auto h-16 w-16 bg-freight-orange/20 rounded-full flex items-center justify-center mb-6">
+                    <i data-lucide="log-in" class="text-freight-orange" style="width:32px;height:32px"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-white mb-2">Welcome Back</h2>
+                <p class="text-slate-300">Sign in to your Flow IQ dashboard</p>
+            </div>
+
+            <!-- Success/Info Messages from URL -->
+            <div id="urlMessage" class="hidden p-4 rounded-lg"></div>
+
+            <!-- Login Form -->
+            <div class="bg-freight-slate-light rounded-xl shadow-2xl p-8 border border-slate-700">
+                <form id="loginForm" class="space-y-6">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
+                        <input 
+                            id="email" 
+                            name="email" 
+                            type="email" 
+                            required 
+                            class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
+                            placeholder="john@yourcompany.com"
+                        >
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <label for="password" class="block text-sm font-medium text-slate-300">Password</label>
+                            <button type="button" id="forgotPasswordLink" class="text-sm text-freight-orange hover:text-freight-orange-dark transition-colors">
+                                Forgot password?
+                            </button>
+                        </div>
+                        <div class="relative">
+                            <input 
+                                id="password" 
+                                name="password" 
+                                type="password" 
+                                required 
+                                class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors pr-12"
+                                placeholder="Enter your password"
+                            >
+                            <button 
+                                type="button" 
+                                id="togglePassword" 
+                                class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-white"
+                            >
+                                <i data-lucide="eye" style="width:20px;height:20px"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Remember Me -->
+                    <div class="flex items-center">
+                        <input 
+                            id="remember" 
+                            name="remember" 
+                            type="checkbox" 
+                            class="w-4 h-4 text-freight-orange bg-freight-slate border-slate-600 rounded focus:ring-freight-orange focus:ring-2"
+                        >
+                        <label for="remember" class="ml-2 text-sm text-slate-300">Remember me for 30 days</label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button 
+                        type="submit" 
+                        id="submitButton"
+                        class="w-full bg-freight-orange hover:bg-freight-orange-dark text-white py-3 px-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-freight-orange/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        <span id="buttonText">Sign In</span>
+                        <div id="loadingSpinner" class="hidden inline-block ml-2">
+                            <div class="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
+                        </div>
+                    </button>
+
+                    <!-- Error/Success Messages -->
+                    <div id="message" class="hidden p-4 rounded-lg"></div>
+                </form>
+
+                <!-- Password Reset Form (Hidden by default) -->
+                <div id="resetForm" class="hidden">
+                    <form id="passwordResetForm" class="space-y-6">
+                        <div class="text-center mb-6">
+                            <i data-lucide="mail" class="mx-auto text-freight-orange mb-4" style="width:48px;height:48px"></i>
+                            <h3 class="text-xl font-semibold text-white mb-2">Reset Your Password</h3>
+                            <p class="text-slate-300 text-sm">Enter your email address and we'll send you a reset link.</p>
+                        </div>
+
+                        <div>
+                            <label for="resetEmail" class="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
+                            <input 
+                                id="resetEmail" 
+                                name="resetEmail" 
+                                type="email" 
+                                required 
+                                class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
+                                placeholder="john@yourcompany.com"
+                            >
+                        </div>
+
+                        <div class="flex space-x-3">
+                            <button 
+                                type="button" 
+                                id="cancelReset"
+                                class="flex-1 bg-slate-600 hover:bg-slate-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors"
+                            >
+                                Cancel
+                            </button>
+                            <button 
+                                type="submit" 
+                                id="resetButton"
+                                class="flex-1 bg-freight-orange hover:bg-freight-orange-dark text-white py-3 px-4 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                <span id="resetButtonText">Send Reset Link</span>
+                                <div id="resetLoadingSpinner" class="hidden inline-block ml-2">
+                                    <div class="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div id="resetMessage" class="hidden p-4 rounded-lg"></div>
+                    </form>
+                </div>
+
+                <!-- Divider -->
+                <div class="mt-8 relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-slate-600"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-4 bg-freight-slate-light text-slate-400">Don't have an account?</span>
+                    </div>
+                </div>
+
+                <!-- Sign Up Link -->
+                <div class="mt-6 text-center">
+                    <a href="/signup.html" class="text-freight-orange hover:text-freight-orange-dark font-semibold transition-colors">
+                        Start your free 14-day trial →
+                    </a>
+                </div>
+
+                <!-- Support -->
+                <div class="mt-8 pt-6 border-t border-slate-600">
+                    <div class="text-center">
+                        <p class="text-sm text-slate-400 mb-3">Need help?</p>
+                        <div class="flex items-center justify-center space-x-6 text-slate-500">
+                            <div class="flex items-center space-x-2">
+                                <i data-lucide="help-circle" class="text-blue-500" style="width:16px;height:16px"></i>
+                                <a href="#" class="text-xs hover:text-blue-400">Help Center</a>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i data-lucide="mail" class="text-green-500" style="width:16px;height:16px"></i>
+                                <a href="mailto:support@flowiq.info" class="text-xs hover:text-green-400">Contact Support</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        if (window.lucide) { window.lucide.createIcons(); }
+
+        // Initialize Supabase - using the same credentials as signup
+        const supabaseUrl = 'https://yvbhjlmvpipniedwvdji.supabase.co'
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2YmhqbG12cGlwbmllZHd2ZGppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjM2Mjk2MjYsImV4cCI6MjAzOTIwNTYyNn0.SagrV1jNVrYrPRpHMZBTm6trKJUiFoHoNKZhBvQdFyU'
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey)
+
+        // Check for URL messages (from signup redirect)
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get('message');
+        if (message) {
+            const urlMessageDiv = document.getElementById('urlMessage');
+            urlMessageDiv.className = 'p-4 rounded-lg bg-blue-500/20 border border-blue-500/30';
+            urlMessageDiv.innerHTML = `
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="info" class="text-blue-500" style="width:20px;height:20px"></i>
+                    <p class="text-blue-300">${message}</p>
+                </div>
+            `;
+            urlMessageDiv.classList.remove('hidden');
+            if (window.lucide) { window.lucide.createIcons(); }
+        }
+
+        // Password visibility toggle
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const password = document.getElementById('password');
+            const icon = this.querySelector('i');
+            
+            if (password.type === 'password') {
+                password.type = 'text';
+                icon.setAttribute('data-lucide', 'eye-off');
+            } else {
+                password.type = 'password';
+                icon.setAttribute('data-lucide', 'eye');
+            }
+            if (window.lucide) { window.lucide.createIcons(); }
+        });
+
+        // Show/hide password reset form
+        document.getElementById('forgotPasswordLink').addEventListener('click', function() {
+            document.getElementById('loginForm').parentElement.style.display = 'none';
+            document.getElementById('resetForm').classList.remove('hidden');
+        });
+
+        document.getElementById('cancelReset').addEventListener('click', function() {
+            document.getElementById('resetForm').classList.add('hidden');
+            document.getElementById('loginForm').parentElement.style.display = 'block';
+        });
+
+        // Login form submission
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitButton = document.getElementById('submitButton');
+            const buttonText = document.getElementById('buttonText');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const messageDiv = document.getElementById('message');
+            
+            // Show loading state
+            submitButton.disabled = true;
+            buttonText.textContent = 'Signing In...';
+            loadingSpinner.classList.remove('hidden');
+            messageDiv.classList.add('hidden');
+            
+            try {
+                const formData = new FormData(this);
+                const { data, error } = await supabase.auth.signInWithPassword({
+                    email: formData.get('email'),
+                    password: formData.get('password'),
+                });
+
+                if (error) {
+                    throw error;
+                }
+
+                // Success - redirect to app
+                messageDiv.className = 'p-4 rounded-lg bg-green-500/20 border border-green-500/30';
+                messageDiv.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="check-circle" class="text-green-500" style="width:20px;height:20px"></i>
+                        <div>
+                            <p class="text-green-400 font-semibold">Welcome back!</p>
+                            <p class="text-green-300 text-sm mt-1">Redirecting to your dashboard...</p>
+                        </div>
+                    </div>
+                `;
+                messageDiv.classList.remove('hidden');
+                
+                // Redirect to the main app (you'll need to update this URL to match your app)
+                setTimeout(() => {
+                    window.location.href = 'https://app.flowiq.info/';
+                }, 1500);
+
+            } catch (error) {
+                console.error('Login error:', error);
+                
+                let errorMessage = error.message;
+                if (error.message === 'Email not confirmed') {
+                    errorMessage = 'Please check your email and click the verification link to activate your account.';
+                } else if (error.message === 'Invalid login credentials') {
+                    errorMessage = 'Invalid email or password. Please check your credentials and try again.';
+                }
+                
+                // Show error
+                messageDiv.className = 'p-4 rounded-lg bg-red-500/20 border border-red-500/30';
+                messageDiv.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="alert-circle" class="text-red-500" style="width:20px;height:20px"></i>
+                        <div>
+                            <p class="text-red-400 font-semibold">Sign In Failed</p>
+                            <p class="text-red-300 text-sm mt-1">${errorMessage}</p>
+                        </div>
+                    </div>
+                `;
+                messageDiv.classList.remove('hidden');
+            } finally {
+                // Reset button state
+                submitButton.disabled = false;
+                buttonText.textContent = 'Sign In';
+                loadingSpinner.classList.add('hidden');
+                
+                if (window.lucide) { window.lucide.createIcons(); }
+            }
+        });
+
+        // Password reset form submission
+        document.getElementById('passwordResetForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const resetButton = document.getElementById('resetButton');
+            const resetButtonText = document.getElementById('resetButtonText');
+            const resetLoadingSpinner = document.getElementById('resetLoadingSpinner');
+            const resetMessageDiv = document.getElementById('resetMessage');
+            
+            // Show loading state
+            resetButton.disabled = true;
+            resetButtonText.textContent = 'Sending...';
+            resetLoadingSpinner.classList.remove('hidden');
+            resetMessageDiv.classList.add('hidden');
+            
+            try {
+                const formData = new FormData(this);
+                const { error } = await supabase.auth.resetPasswordForEmail(
+                    formData.get('resetEmail'),
+                    {
+                        redirectTo: window.location.origin + '/reset-password.html'
+                    }
+                );
+
+                if (error) {
+                    throw error;
+                }
+
+                // Success
+                resetMessageDiv.className = 'p-4 rounded-lg bg-green-500/20 border border-green-500/30';
+                resetMessageDiv.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="check-circle" class="text-green-500" style="width:20px;height:20px"></i>
+                        <div>
+                            <p class="text-green-400 font-semibold">Reset Link Sent!</p>
+                            <p class="text-green-300 text-sm mt-1">Check your email for password reset instructions.</p>
+                        </div>
+                    </div>
+                `;
+                resetMessageDiv.classList.remove('hidden');
+                
+                // Clear form
+                this.reset();
+
+            } catch (error) {
+                console.error('Reset error:', error);
+                
+                // Show error
+                resetMessageDiv.className = 'p-4 rounded-lg bg-red-500/20 border border-red-500/30';
+                resetMessageDiv.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="alert-circle" class="text-red-500" style="width:20px;height:20px"></i>
+                        <div>
+                            <p class="text-red-400 font-semibold">Reset Failed</p>
+                            <p class="text-red-300 text-sm mt-1">${error.message}</p>
+                        </div>
+                    </div>
+                `;
+                resetMessageDiv.classList.remove('hidden');
+            } finally {
+                // Reset button state
+                resetButton.disabled = false;
+                resetButtonText.textContent = 'Send Reset Link';
+                resetLoadingSpinner.classList.add('hidden');
+                
+                if (window.lucide) { window.lucide.createIcons(); }
+            }
+        });
+
+        // Check if user is already logged in
+        supabase.auth.onAuthStateChange((event, session) => {
+            if (event === 'SIGNED_IN' && session) {
+                // User is signed in, redirect to app
+                window.location.href = 'https://app.flowiq.info/';
+            }
+        });
+    </script>
+</body>
+</html>

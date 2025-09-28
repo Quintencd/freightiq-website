@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Flow IQ | Complete Business Management Platform</title>
+    <meta name="description" content="Create your Flow IQ account and start managing your entire business with our unified ERP platform. 14-day free trial, no credit card required.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sign Up for Flow IQ — Complete Business Management Platform">
+    <meta property="og:description" content="Create your Flow IQ account and start managing your entire business with our unified ERP platform.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        .bg-freight-slate { background-color: #0f172a; }
+        .bg-freight-slate-light { background-color: #1e293b; }
+        .text-freight-orange { color: #f97316; }
+        .bg-freight-orange { background-color: #f97316; }
+        .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+        .border-freight-orange { border-color: #f97316; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        }
+        .animate-pulse-slow { animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="gradient-bg min-h-screen text-slate-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-freight-slate/90 backdrop-blur-md border-b border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" aria-label="Flow IQ home" class="flex items-center">
+                        <img src="/public/logo-light.png?v=3" alt="Flow IQ" class="h-10 md:h-11 w-auto" loading="eager" decoding="async">
+                        <span class="ml-3 text-xl font-bold text-white">Flow IQ</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/login.html" class="text-slate-300 hover:text-white transition-colors">Already have an account? Sign In</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-16 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <!-- Header -->
+            <div class="text-center">
+                <div class="mx-auto h-16 w-16 bg-freight-orange/20 rounded-full flex items-center justify-center mb-6">
+                    <i data-lucide="building-2" class="text-freight-orange" style="width:32px;height:32px"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-white mb-2">Create Your Account</h2>
+                <p class="text-slate-300">Start your 14-day free trial. No credit card required.</p>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="bg-freight-slate-light rounded-xl shadow-2xl p-8 border border-slate-700">
+                <form id="signupForm" class="space-y-6">
+                    <!-- Company Information -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold text-white border-b border-slate-600 pb-2">Company Information</h3>
+                        
+                        <div>
+                            <label for="companyName" class="block text-sm font-medium text-slate-300 mb-2">Company Name *</label>
+                            <input 
+                                id="companyName" 
+                                name="companyName" 
+                                type="text" 
+                                required 
+                                class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
+                                placeholder="Your Company Name"
+                            >
+                        </div>
+
+                        <div>
+                            <label for="industry" class="block text-sm font-medium text-slate-300 mb-2">Industry</label>
+                            <select 
+                                id="industry" 
+                                name="industry" 
+                                class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
+                            >
+                                <option value="">Select your industry</option>
+                                <option value="freight-logistics">Freight & Logistics</option>
+                                <option value="wholesale-distribution">Wholesale Distribution</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="retail">Retail</option>
+                                <option value="import-export">Import/Export</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="employees" class="block text-sm font-medium text-slate-300 mb-2">Company Size</label>
+                                <select 
+                                    id="employees" 
+                                    name="employees" 
+                                    class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
+                                >
+                                    <option value="">Select size</option>
+                                    <option value="1-5">1-5 employees</option>
+                                    <option value="6-15">6-15 employees</option>
+                                    <option value="16-50">16-50 employees</option>
+                                    <option value="51-200">51-200 employees</option>
+                                    <option value="200+">200+ employees</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="country" class="block text-sm font-medium text-slate-300 mb-2">Country</label>
+                                <select 
+                                    id="country" 
+                                    name="country" 
+                                    class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
+                                >
+                                    <option value="">Select country</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="ZA">South Africa</option>
+                                    <option value="NZ">New Zealand</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admin User Information -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold text-white border-b border-slate-600 pb-2">Admin User Details</h3>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-slate-300 mb-2">First Name *</label>
+                                <input 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    type="text" 
+                                    required 
+                                    class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
+                                    placeholder="John"
+                                >
+                            </div>
+
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-slate-300 mb-2">Last Name *</label>
+                                <input 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    type="text" 
+                                    required 
+                                    class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
+                                    placeholder="Smith"
+                                >
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Work Email *</label>
+                            <input 
+                                id="email" 
+                                name="email" 
+                                type="email" 
+                                required 
+                                class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
+                                placeholder="john@yourcompany.com"
+                            >
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-slate-300 mb-2">Phone Number</label>
+                            <input 
+                                id="phone" 
+                                name="phone" 
+                                type="tel" 
+                                class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
+                                placeholder="+1 (555) 123-4567"
+                            >
+                        </div>
+
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-slate-300 mb-2">Password *</label>
+                            <div class="relative">
+                                <input 
+                                    id="password" 
+                                    name="password" 
+                                    type="password" 
+                                    required 
+                                    class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors pr-12"
+                                    placeholder="Create a strong password"
+                                    minlength="8"
+                                >
+                                <button 
+                                    type="button" 
+                                    id="togglePassword" 
+                                    class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-white"
+                                >
+                                    <i data-lucide="eye" style="width:20px;height:20px"></i>
+                                </button>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-1">Minimum 8 characters with letters and numbers</p>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="flex items-start space-x-3">
+                        <input 
+                            id="terms" 
+                            name="terms" 
+                            type="checkbox" 
+                            required 
+                            class="mt-1 w-4 h-4 text-freight-orange bg-freight-slate border-slate-600 rounded focus:ring-freight-orange focus:ring-2"
+                        >
+                        <label for="terms" class="text-sm text-slate-300">
+                            I agree to Flow IQ's <a href="#" class="text-freight-orange hover:text-freight-orange-dark">Terms of Service</a> 
+                            and <a href="#" class="text-freight-orange hover:text-freight-orange-dark">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button 
+                        type="submit" 
+                        id="submitButton"
+                        class="w-full bg-freight-orange hover:bg-freight-orange-dark text-white py-3 px-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-freight-orange/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        <span id="buttonText">Start Your Free Trial</span>
+                        <div id="loadingSpinner" class="hidden inline-block ml-2">
+                            <div class="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
+                        </div>
+                    </button>
+
+                    <!-- Error/Success Messages -->
+                    <div id="message" class="hidden p-4 rounded-lg"></div>
+                </form>
+
+                <!-- Social Proof -->
+                <div class="mt-8 pt-6 border-t border-slate-600">
+                    <div class="text-center">
+                        <p class="text-sm text-slate-400 mb-3">Trusted by growing businesses worldwide</p>
+                        <div class="flex items-center justify-center space-x-6 text-slate-500">
+                            <div class="flex items-center space-x-2">
+                                <i data-lucide="shield-check" class="text-green-500" style="width:16px;height:16px"></i>
+                                <span class="text-xs">Bank-level security</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i data-lucide="clock" class="text-blue-500" style="width:16px;height:16px"></i>
+                                <span class="text-xs">Live in 24 hours</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i data-lucide="star" class="text-yellow-500" style="width:16px;height:16px"></i>
+                                <span class="text-xs">14-day free trial</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        if (window.lucide) { window.lucide.createIcons(); }
+
+        // Initialize Supabase
+        const supabaseUrl = 'https://yvbhjlmvpipniedwvdji.supabase.co'
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2YmhqbG12cGlwbmllZHd2ZGppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjM2Mjk2MjYsImV4cCI6MjAzOTIwNTYyNn0.SagrV1jNVrYrPRpHMZBTm6trKJUiFoHoNKZhBvQdFyU'
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey)
+
+        // Password visibility toggle
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const password = document.getElementById('password');
+            const icon = this.querySelector('i');
+            
+            if (password.type === 'password') {
+                password.type = 'text';
+                icon.setAttribute('data-lucide', 'eye-off');
+            } else {
+                password.type = 'password';
+                icon.setAttribute('data-lucide', 'eye');
+            }
+            if (window.lucide) { window.lucide.createIcons(); }
+        });
+
+        // Form submission
+        document.getElementById('signupForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitButton = document.getElementById('submitButton');
+            const buttonText = document.getElementById('buttonText');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const messageDiv = document.getElementById('message');
+            
+            // Show loading state
+            submitButton.disabled = true;
+            buttonText.textContent = 'Creating Account...';
+            loadingSpinner.classList.remove('hidden');
+            messageDiv.classList.add('hidden');
+            
+            try {
+                const formData = new FormData(this);
+                const userData = {
+                    email: formData.get('email'),
+                    password: formData.get('password'),
+                    options: {
+                        data: {
+                            first_name: formData.get('firstName'),
+                            last_name: formData.get('lastName'),
+                            company_name: formData.get('companyName'),
+                            industry: formData.get('industry'),
+                            employees: formData.get('employees'),
+                            country: formData.get('country'),
+                            phone: formData.get('phone'),
+                            role: 'admin'
+                        }
+                    }
+                };
+
+                const { data, error } = await supabase.auth.signUp(userData);
+
+                if (error) {
+                    throw error;
+                }
+
+                // Success
+                messageDiv.className = 'p-4 rounded-lg bg-green-500/20 border border-green-500/30';
+                messageDiv.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="check-circle" class="text-green-500" style="width:20px;height:20px"></i>
+                        <div>
+                            <p class="text-green-400 font-semibold">Account Created Successfully!</p>
+                            <p class="text-green-300 text-sm mt-1">Please check your email to verify your account, then you can sign in.</p>
+                        </div>
+                    </div>
+                `;
+                messageDiv.classList.remove('hidden');
+                
+                // Reset form
+                this.reset();
+                
+                // Redirect after 3 seconds
+                setTimeout(() => {
+                    window.location.href = '/login.html?message=Please check your email to verify your account';
+                }, 3000);
+
+            } catch (error) {
+                console.error('Signup error:', error);
+                
+                // Show error
+                messageDiv.className = 'p-4 rounded-lg bg-red-500/20 border border-red-500/30';
+                messageDiv.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="alert-circle" class="text-red-500" style="width:20px;height:20px"></i>
+                        <div>
+                            <p class="text-red-400 font-semibold">Error Creating Account</p>
+                            <p class="text-red-300 text-sm mt-1">${error.message}</p>
+                        </div>
+                    </div>
+                `;
+                messageDiv.classList.remove('hidden');
+            } finally {
+                // Reset button state
+                submitButton.disabled = false;
+                buttonText.textContent = 'Start Your Free Trial';
+                loadingSpinner.classList.add('hidden');
+                
+                if (window.lucide) { window.lucide.createIcons(); }
+            }
+        });
+    </script>
+</body>
+</html>

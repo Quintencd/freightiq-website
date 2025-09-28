@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Flow IQ Journey Begins Now!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8fafc;
+            line-height: 1.6;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        
+        .logo {
+            color: #f97316;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .hero-card {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        
+        .hero-title {
+            color: #ffffff;
+            margin: 0 0 16px 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .hero-text {
+            color: #fff3e6;
+            margin: 0;
+            font-size: 16px;
+        }
+        
+        .quick-start-card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .card-title {
+            color: #ffffff;
+            margin: 0 0 16px 0;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-text {
+            color: #cbd5e1;
+            margin: 0 0 16px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #f97316;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        
+        .secondary-button {
+            display: inline-block;
+            background-color: transparent;
+            color: #f97316;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            border: 1px solid #f97316;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        
+        .module-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        
+        .module-item {
+            background: #334155;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .module-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .module-name {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        .progress-bar {
+            background: #334155;
+            border-radius: 10px;
+            height: 8px;
+            margin: 16px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            background: #f97316;
+            height: 100%;
+            width: 10%;
+            border-radius: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            color: #64748b;
+            font-size: 12px;
+            padding: 20px;
+        }
+
+        /* Mobile responsive */
+        @media screen and (max-width: 600px) {
+            .module-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-card,
+            .quick-start-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="logo">Flow IQ</h1>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Hero Section -->
+            <div class="hero-card">
+                <h2 class="hero-title">🎉 Account Activated!</h2>
+                <p class="hero-text">
+                    Welcome to Flow IQ, {{ .UserMetaData.first_name }}! Your business transformation journey starts now.
+                </p>
+            </div>
+
+            <!-- Setup Progress -->
+            <div class="quick-start-card">
+                <h3 class="card-title">📈 Setup Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p class="card-text" style="margin: 0; font-size: 14px; color: #94a3b8;">
+                    1 of 5 steps complete • Let's get you up and running!
+                </p>
+            </div>
+            
+            <!-- Quick Start -->
+            <div class="quick-start-card">
+                <h3 class="card-title">🚀 Quick Start (5 minutes)</h3>
+                <p class="card-text">
+                    Complete these essential steps to unlock the full power of Flow IQ for {{ .UserMetaData.company_name }}.
+                </p>
+                <a href="https://app.flowiq.info/setup" class="cta-button">Complete Setup →</a>
+            </div>
+
+            <!-- Features Overview -->
+            <div class="quick-start-card">
+                <h3 class="card-title">💼 Your Complete Business Suite</h3>
+                <p class="card-text">
+                    Access all these powerful modules from your dashboard:
+                </p>
+                
+                <div class="module-grid">
+                    <div class="module-item">
+                        <div class="module-icon">📦</div>
+                        <p class="module-name">InventoryIQ</p>
+                    </div>
+                    <div class="module-item">
+                        <div class="module-icon">🧾</div>
+                        <p class="module-name">InvoiceIQ</p>
+                    </div>
+                    <div class="module-item">
+                        <div class="module-icon">🛒</div>
+                        <p class="module-name">PurchaseIQ</p>
+                    </div>
+                    <div class="module-item">
+                        <div class="module-icon">🔮</div>
+                        <p class="module-name">ForecastIQ</p>
+                    </div>
+                    <div class="module-item">
+                        <div class="module-icon">📊</div>
+                        <p class="module-name">ReportsIQ</p>
+                    </div>
+                    <div class="module-item">
+                        <div class="module-icon">🏢</div>
+                        <p class="module-name">CompaniesIQ</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="https://app.flowiq.info/modules" class="secondary-button">Explore All Modules</a>
+                </div>
+            </div>
+
+            <!-- Getting Started Resources -->
+            <div class="quick-start-card">
+                <h3 class="card-title">📚 Essential Resources</h3>
+                <div style="display: grid; gap: 12px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <div>
+                            <strong style="color: #ffffff;">📖 Quick Start Guide</strong>
+                            <p style="margin: 4px 0 0 0; font-size: 14px; color: #94a3b8;">5-minute setup walkthrough</p>
+                        </div>
+                        <a href="https://flowiq.info/guide" class="secondary-button" style="margin: 0;">Read</a>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <div>
+                            <strong style="color: #ffffff;">🎥 Video Tutorials</strong>
+                            <p style="margin: 4px 0 0 0; font-size: 14px; color: #94a3b8;">Step-by-step module demos</p>
+                        </div>
+                        <a href="https://flowiq.info/tutorials" class="secondary-button" style="margin: 0;">Watch</a>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <div>
+                            <strong style="color: #ffffff;">💬 Live Support</strong>
+                            <p style="margin: 4px 0 0 0; font-size: 14px; color: #94a3b8;">Get help from our team</p>
+                        </div>
+                        <a href="https://flowiq.info/contact" class="secondary-button" style="margin: 0;">Chat</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trial Reminder -->
+            <div class="quick-start-card" style="background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);">
+                <h3 class="card-title" style="color: #ffffff;">⏰ Your 14-Day Trial</h3>
+                <p class="card-text" style="color: #dbeafe;">
+                    You have <strong>14 days</strong> to explore all features risk-free. No credit card required until you're ready to continue.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>Questions? Reply to this email or contact us at support@flowiq.info</p>
+            <p>© 2024 Flow IQ. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

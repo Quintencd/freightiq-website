@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3 Quick Wins to Transform Your Business Operations</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8fafc;
+            line-height: 1.6;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        
+        .logo {
+            color: #f97316;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .hero-card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 32px;
+            text-align: center;
+            border-left: 4px solid #10b981;
+        }
+        
+        .hero-title {
+            color: #ffffff;
+            margin: 0 0 16px 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .hero-text {
+            color: #cbd5e1;
+            margin: 0;
+            font-size: 16px;
+        }
+        
+        .tip-card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border-left: 4px solid #f97316;
+        }
+        
+        .tip-number {
+            background: #f97316;
+            color: #ffffff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .tip-title {
+            color: #ffffff;
+            margin: 0 0 12px 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .tip-text {
+            color: #cbd5e1;
+            margin: 0 0 16px 0;
+        }
+        
+        .tip-benefit {
+            background: #065f46;
+            color: #6ee7b7;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin: 12px 0;
+            display: inline-block;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #f97316;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        
+        .success-stories {
+            background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        
+        .quote-text {
+            color: #ffffff;
+            font-style: italic;
+            font-size: 16px;
+            margin: 0 0 16px 0;
+        }
+        
+        .quote-author {
+            color: #e9d5ff;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            color: #64748b;
+            font-size: 12px;
+            padding: 20px;
+        }
+
+        /* Mobile responsive */
+        @media screen and (max-width: 600px) {
+            .hero-card,
+            .tip-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="logo">Flow IQ</h1>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Hero Section -->
+            <div class="hero-card">
+                <h2 class="hero-title">👋 How's it going, {{ .UserMetaData.first_name }}?</h2>
+                <p class="hero-text">
+                    You've been exploring Flow IQ for 3 days now. Here are 3 quick wins that will make the biggest impact on {{ .UserMetaData.company_name }}'s operations.
+                </p>
+            </div>
+            
+            <!-- Tip 1 -->
+            <div class="tip-card">
+                <div class="tip-number">1</div>
+                <h3 class="tip-title">🏢 Set Up Your Company Structure</h3>
+                <p class="tip-text">
+                    Configure your warehouses, branches, and user roles. This foundation will power everything else in Flow IQ and ensure accurate reporting across locations.
+                </p>
+                <div class="tip-benefit">⚡ Impact: 60% faster daily operations</div>
+                <br>
+                <a href="https://app.flowiq.info/settings/company" class="cta-button">Set Up Now (2 mins)</a>
+            </div>
+
+            <!-- Tip 2 -->
+            <div class="tip-card">
+                <div class="tip-number">2</div>
+                <h3 class="tip-title">🔗 Connect Your Xero Account</h3>
+                <p class="tip-text">
+                    Link your existing Xero account for seamless financial sync. Invoices, payments, and accounting entries will flow automatically - no more double entry!
+                </p>
+                <div class="tip-benefit">💰 Saves: 5+ hours per week</div>
+                <br>
+                <a href="https://app.flowiq.info/integrations/xero" class="cta-button">Connect Xero (1 click)</a>
+            </div>
+
+            <!-- Tip 3 -->
+            <div class="tip-card">
+                <div class="tip-number">3</div>
+                <h3 class="tip-title">📦 Import Your Product Catalog</h3>
+                <p class="tip-text">
+                    Upload your existing product data using our CSV importer. Once imported, you'll have real-time inventory tracking, FIFO costing, and smart reorder alerts.
+                </p>
+                <div class="tip-benefit">📈 Result: 40% reduction in stockouts</div>
+                <br>
+                <a href="https://app.flowiq.info/inventoryiq/import" class="cta-button">Import Products</a>
+            </div>
+
+            <!-- Success Story -->
+            <div class="success-stories">
+                <p class="quote-text">
+                    "I completed these 3 steps on my first day and immediately saw how Flow IQ would transform our business. The time savings alone paid for itself in week one."
+                </p>
+                <p class="quote-author">— Sarah Mitchell, Operations Director</p>
+            </div>
+
+            <!-- Need Help Section -->
+            <div class="tip-card" style="border-left-color: #3b82f6; text-align: center;">
+                <h3 class="tip-title">🤝 Need a Hand?</h3>
+                <p class="tip-text">
+                    Our team is here to help you succeed. Book a free 15-minute setup call or browse our video tutorials.
+                </p>
+                <a href="https://flowiq.info/setup-call" class="cta-button" style="margin-right: 12px;">Book Setup Call</a>
+                <a href="https://flowiq.info/tutorials" class="cta-button" style="background: transparent; border: 1px solid #f97316; color: #f97316;">Watch Tutorials</a>
+            </div>
+
+            <!-- Trial Progress -->
+            <div style="background: #1e293b; border-radius: 12px; padding: 20px; text-align: center; margin-top: 32px;">
+                <p style="color: #94a3b8; margin: 0 0 8px 0; font-size: 14px;">Your Trial Progress</p>
+                <div style="background: #334155; border-radius: 10px; height: 8px; margin: 8px 0; overflow: hidden;">
+                    <div style="background: #f97316; height: 100%; width: 21%; border-radius: 10px;"></div>
+                </div>
+                <p style="color: #cbd5e1; margin: 8px 0 0 0; font-size: 14px;">
+                    <strong>Day 3 of 14</strong> • 11 days remaining
+                </p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>Questions about setup? Just reply to this email!</p>
+            <p>© 2024 Flow IQ. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
