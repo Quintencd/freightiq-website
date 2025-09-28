@@ -1,2 +1,3 @@
-# FreightIQ Landing Site
+# FreightIQ Landing Site  
 # Deployment trigger: 2024-09-28 - Website improvements deployed
+# Cache bust: Force rebuild now - v2
