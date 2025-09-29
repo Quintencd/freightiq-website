@@ -41,19 +41,29 @@
                         <span class="ml-3 text-xl font-bold text-white">Flow IQ</span>
                     </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#solutions" class="text-slate-300 hover:text-freight-orange transition-colors">Solutions</a>
-                    <a href="#product-suites" class="text-slate-300 hover:text-freight-orange transition-colors">Product Suites</a>
-                    <a href="#pricing" class="text-slate-300 hover:text-freight-orange transition-colors">Pricing</a>
-                    <a href="#customer-stories" class="text-slate-300 hover:text-freight-orange transition-colors">Case Studies</a>
-                    <a href="#resources" class="text-slate-300 hover:text-freight-orange transition-colors">Resources</a>
-                    <a href="#contact" class="text-slate-300 hover:text-freight-orange transition-colors">Contact</a>
-                </div>
-                <div class="flex items-center space-x-4">
+                <div class="hidden md:flex items-center space-x-4">
                     <a href="https://app.flowiq.info/" class="text-slate-300 hover:text-white transition-colors">Login</a>
                     <a href="/signup.html" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-4 py-2 rounded-lg transition-colors">
                         Start Free Trial
                     </a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-300 hover:text-white" aria-label="Open menu">
+                    <i data-lucide="menu" style="width:24px;height:24px"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700 bg-freight-slate">
+            <div class="px-4 py-4 space-y-4">
+                <a href="#solutions" class="block text-slate-300 hover:text-white">Solutions</a>
+                <a href="#product-suites" class="block text-slate-300 hover:text-white">Product Suites</a>
+                <a href="#pricing" class="block text-slate-300 hover:text-white">Pricing</a>
+                <a href="#customer-stories" class="block text-slate-300 hover:text-white">Case Studies</a>
+                <a href="#resources" class="block text-slate-300 hover:text-white">Resources</a>
+                <a href="#contact" class="block text-slate-300 hover:text-white">Contact</a>
+                <div class="pt-2 flex items-center gap-3">
+                    <a href="https://app.flowiq.info/" class="flex-1 text-center border border-slate-600 text-white py-2 rounded-lg">Login</a>
+                    <a href="/signup.html" class="flex-1 text-center bg-freight-orange hover:bg-freight-orange-dark text-white py-2 rounded-lg">Start Free Trial</a>
                 </div>
             </div>
         </div>
@@ -1227,6 +1237,19 @@
     script.type = 'application/ld+json';
     script.textContent = JSON.stringify([ld, app]);
     document.head.appendChild(script);
+  })();
+</script>
+<script>
+  (function(){
+    const btn = document.getElementById('mobileMenuBtn');
+    const panel = document.getElementById('mobileMenu');
+    if (btn && panel){
+      btn.addEventListener('click', ()=>{
+        const isHidden = panel.classList.contains('hidden');
+        if (isHidden){ panel.classList.remove('hidden'); }
+        else { panel.classList.add('hidden'); }
+      });
+    }
   })();
 </script>
 </html>
