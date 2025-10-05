@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowIQ Info Card</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 60px;
+            max-width: 800px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            color: #f97316;
+            margin-bottom: 20px;
+        }
+        .tagline {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            color: #e2e8f0;
+        }
+        .bullets {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .bullet {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            color: #cbd5e1;
+        }
+        .bullet-icon {
+            color: #f97316;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+        .pricing {
+            margin-top: 40px;
+            font-size: 24px;
+            color: #f97316;
+            font-weight: bold;
+        }
+        .website {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">FlowIQ</div>
+        <div class="tagline">Smart logistics. Sharper profits.</div>
+        
+        <div class="bullets">
+            <div class="bullet">
+                <span class="bullet-icon">🚢</span>
+                <span>AI-powered import forecasting & landed cost optimization</span>
+            </div>
+            <div class="bullet">
+                <span class="bullet-icon">📊</span>
+                <span>Real-time inventory tracking with FIFO costing</span>
+            </div>
+            <div class="bullet">
+                <span class="bullet-icon">💼</span>
+                <span>Complete ERP suite with Xero integration</span>
+            </div>
+        </div>
+        
+        <div class="pricing">From R9,500/month</div>
+        <div class="website">flowiq.info</div>
+    </div>
+</body>
+</html>

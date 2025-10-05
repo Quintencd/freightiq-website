@@ -1,0 +1,138 @@
+{
+  "product": {
+    "name": "FlowIQ",
+    "description": "Smart logistics intelligence platform for importers, distributors, and manufacturers",
+    "category": "Business Software",
+    "subcategory": "ERP & Logistics",
+    "target_market": "SMEs in South Africa",
+    "pricing_model": "SaaS Subscription",
+    "deployment": "Cloud-based Web Application",
+    "features": [
+      {
+        "name": "ImportIQ",
+        "description": "Landed cost calculator with multi-currency support and container optimization"
+      },
+      {
+        "name": "ForecastIQ", 
+        "description": "AI-powered demand forecasting with p10/p50/p90 scenarios"
+      },
+      {
+        "name": "InventoryIQ",
+        "description": "Real-time stock tracking with FIFO costing and multi-warehouse management"
+      },
+      {
+        "name": "DashboardIQ",
+        "description": "Real-time profit and performance dashboards with advanced analytics"
+      },
+      {
+        "name": "PriceIQ",
+        "description": "Dynamic pricing and margin optimization tools"
+      },
+      {
+        "name": "WarrantyIQ",
+        "description": "Warranty claim tracking and management system"
+      },
+      {
+        "name": "TaskIQ",
+        "description": "Team workflow automation and task management"
+      },
+      {
+        "name": "CourierIQ",
+        "description": "Live courier quote comparisons and booking"
+      },
+      {
+        "name": "ExportIQ",
+        "description": "Export planning and documentation management"
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Xero",
+        "type": "Accounting",
+        "description": "Full accounting sync for customers, suppliers, and journals"
+      }
+    ],
+    "pricing_plans": [
+      {
+        "name": "Growth",
+        "price": 9500,
+        "currency": "ZAR",
+        "billing": "monthly",
+        "features": [
+          "Up to 5 users",
+          "1,000 SKUs",
+          "1-2 warehouses", 
+          "2 import + 2 export shipments/month",
+          "Email & chat support",
+          "All core modules"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": 14800,
+        "currency": "ZAR", 
+        "billing": "monthly",
+        "features": [
+          "Unlimited users, SKUs, warehouses",
+          "Unlimited shipments",
+          "Advanced ForecastIQ scenarios",
+          "Automated cost adjustments",
+          "Supplier scorecards",
+          "Live shipment quoting",
+          "Auto rebates & settlements",
+          "Email & phone support"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom",
+        "currency": "ZAR",
+        "billing": "monthly",
+        "features": [
+          "All Pro features",
+          "Custom integrations",
+          "Regional data hosting",
+          "SLA options",
+          "Dedicated account liaison",
+          "Custom reporting"
+        ]
+      }
+    ],
+    "benefits": [
+      "Reduce landed costs by up to 20%",
+      "Improve delivery oversight with real-time milestones",
+      "Reduce stockouts with AI forecasting",
+      "Track supplier price creep automatically",
+      "Single platform replacing 5+ systems",
+      "Real-time profit visibility"
+    ],
+    "target_industries": [
+      "Import/Export",
+      "Distribution",
+      "Manufacturing",
+      "Wholesale",
+      "Retail"
+    ],
+    "company_info": {
+      "name": "FlowIQ",
+      "founded": "2024",
+      "headquarters": "South Africa",
+      "website": "https://www.flowiq.info",
+      "email": "info@flowiq.info",
+      "linkedin": "https://www.linkedin.com/company/flowiq",
+      "twitter": "https://twitter.com/flowiq_sa"
+    },
+    "keywords": [
+      "importing software",
+      "logistics intelligence", 
+      "landed cost",
+      "forecasting",
+      "freight optimization",
+      "South Africa SaaS",
+      "ERP system",
+      "supply chain management",
+      "inventory tracking",
+      "Xero integration"
+    ]
+  }
+}
