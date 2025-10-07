@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- Cache busting to ensure updated code loads -->
     <script>
-        console.log('Signup page loaded - version 2.1 (Fixed Foreign Key)');
+        console.log('Signup page loaded - version 2.2 (Custom FlowIQ Checkbox)');
     </script>
     <style>
         .bg-freight-slate { background-color: #0f172a; }
@@ -210,14 +210,21 @@
 
                     <!-- Terms and Conditions -->
                     <div class="flex items-start space-x-3">
-                        <input 
-                            id="terms" 
-                            name="terms" 
-                            type="checkbox" 
-                            required 
-                            class="mt-1 w-4 h-4 text-freight-orange bg-freight-slate border-slate-600 rounded focus:ring-freight-orange focus:ring-2"
-                        >
-                        <label for="terms" class="text-sm text-slate-300">
+                        <div class="relative mt-1">
+                            <input 
+                                id="terms" 
+                                name="terms" 
+                                type="checkbox" 
+                                required 
+                                class="sr-only"
+                            >
+                            <label for="terms" class="flex items-center justify-center w-4 h-4 bg-freight-slate border border-slate-600 rounded cursor-pointer transition-all duration-200 hover:border-freight-orange focus-within:ring-2 focus-within:ring-freight-orange focus-within:ring-opacity-20">
+                                <svg class="w-3 h-3 text-freight-orange opacity-0 transition-opacity duration-200" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                            </label>
+                        </div>
+                        <label for="terms" class="text-sm text-slate-300 cursor-pointer">
                             I agree to Flow IQ's <a href="#" class="text-freight-orange hover:text-freight-orange-dark">Terms of Service</a> 
                             and <a href="#" class="text-freight-orange hover:text-freight-orange-dark">Privacy Policy</a>
                         </label>
@@ -285,6 +292,21 @@
                 icon.setAttribute('data-lucide', 'eye');
             }
             if (window.lucide) { window.lucide.createIcons(); }
+        });
+
+        // Custom checkbox behavior
+        document.getElementById('terms').addEventListener('change', function() {
+            const checkbox = this;
+            const label = document.querySelector('label[for="terms"]');
+            const svg = label.querySelector('svg');
+            
+            if (checkbox.checked) {
+                svg.classList.remove('opacity-0');
+                svg.classList.add('opacity-100');
+            } else {
+                svg.classList.remove('opacity-100');
+                svg.classList.add('opacity-0');
+            }
         });
 
         // Form submission - Version 2.0 (Direct Auth)
