@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- Cache busting to ensure updated code loads -->
     <script>
-        console.log('Signup page loaded - version 2.0 (Direct Auth)');
+        console.log('Signup page loaded - version 2.1 (Fixed Foreign Key)');
     </script>
     <style>
         .bg-freight-slate { background-color: #0f172a; }
@@ -306,7 +306,7 @@
             try {
                 const formData = new FormData(this);
                 
-                // Step 1: Create organization
+                // Step 1: Create organization in both tables
                 const { data: org, error: orgError } = await supabase
                     .from('organizations')
                     .insert([{ 
@@ -320,6 +320,19 @@
                     .single();
                 
                 if (orgError) throw orgError;
+                
+                // Also create in orgs table for foreign key constraint
+                const { error: orgsError } = await supabase
+                    .from('orgs')
+                    .insert([{
+                        id: org.id,
+                        name: formData.get('companyName'),
+                        created_at: new Date().toISOString()
+                    }]);
+                
+                if (orgsError) {
+                    console.warn('Warning: Could not create org in orgs table:', orgsError.message);
+                }
                 
                 // Step 2: Create user with direct Supabase Auth (Edge Function has env issues)
                 const { data: authData, error: authError } = await supabase.auth.signUp({
