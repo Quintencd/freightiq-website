@@ -21,3 +21,27 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+# Environment variables - NEVER COMMIT
+.env
+.env.local
+.env.production
+.env.development
+
+# Sensitive documentation
+*.md
+assets/ai/
+deployment-trigger.txt
+
+# API keys and secrets
+*.key
+*.secret
+*secret*
+*key*
+*config*
+
+# Business intelligence files
+*business*
+*strategy*
+*architecture*
+*product-feed*
+*summary*
