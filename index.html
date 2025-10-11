@@ -27,6 +27,35 @@
         .animate-pulse-slow { animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
         .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .plan-chip {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2px;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            background-color: rgba(15, 23, 42, 0.65);
+            color: #e2e8f0;
+            font-weight: 600;
+            min-width: 9.5rem;
+            text-align: left;
+            transition: all 0.2s ease;
+        }
+        .plan-chip:hover {
+            border-color: rgba(249, 115, 22, 0.65);
+            transform: translateY(-2px);
+        }
+        .plan-chip.is-active {
+            border-color: #f97316;
+            background-color: rgba(249, 115, 22, 0.18);
+            color: #f8fafc;
+            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.2);
+        }
+        details[open] .faq-toggle-icon {
+            transform: rotate(180deg);
+        }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
     </style>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -153,6 +182,60 @@
                     <div class="flex items-center gap-2"><i data-lucide="shield-check" class="text-green-500" style="width:16px;height:16px"></i><span>Bank‑level security</span></div>
                     <div class="flex items-center gap-2"><i data-lucide="star" class="text-yellow-400" style="width:16px;height:16px"></i><span>Trusted by growing teams</span></div>
                     <div class="flex items-center gap-2"><i data-lucide="zap" class="text-orange-500" style="width:16px;height:16px"></i><span>Live in 24 hours</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Implementation Roadmap -->
+    <section class="py-16 bg-freight-slate-light/60 border-y border-slate-700/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-4">Launch in days, not months</h2>
+                    <p class="text-slate-300 mb-6">We pair every new team with an implementation specialist so you see value on day one. Here's the typical FlowIQ rollout:</p>
+                    <ol class="space-y-4">
+                        <li class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-freight-orange/20 text-freight-orange font-semibold flex items-center justify-center">1</div>
+                            <div>
+                                <h3 class="text-white font-semibold">Kickoff & KPI mapping (60 minutes)</h3>
+                                <p class="text-slate-400 text-sm">Align on import volumes, margin targets, and workflow gaps so we can pre-configure dashboards for your team.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-freight-orange/20 text-freight-orange font-semibold flex items-center justify-center">2</div>
+                            <div>
+                                <h3 class="text-white font-semibold">Connect systems & cleanse data</h3>
+                                <p class="text-slate-400 text-sm">Securely sync Xero, import historical shipments, and enrich supplier catalogs with our guided importer.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-freight-orange/20 text-freight-orange font-semibold flex items-center justify-center">3</div>
+                            <div>
+                                <h3 class="text-white font-semibold">Go-live with tailored playbooks</h3>
+                                <p class="text-slate-400 text-sm">Your team gets role-based checklists, saved reports, and a dedicated success manager to monitor adoption.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <div class="bg-freight-slate p-6 rounded-2xl border border-slate-700 shadow-lg shadow-black/20">
+                    <h3 class="text-white text-xl font-semibold mb-4">What customers notice first</h3>
+                    <ul class="space-y-4 text-sm text-slate-300">
+                        <li class="flex gap-3">
+                            <i data-lucide="trending-down" class="text-green-400" style="width:18px;height:18px"></i>
+                            <span><strong class="text-white">18% faster landed-cost reconciliations</strong> because every fee auto-tags to the right SKU or shipment.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i data-lucide="bar-chart" class="text-blue-400" style="width:18px;height:18px"></i>
+                            <span><strong class="text-white">Visibility for finance, ops, and sales</strong> with dashboards they can access without analyst support.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i data-lucide="sparkles" class="text-orange-400" style="width:18px;height:18px"></i>
+                            <span><strong class="text-white">Proactive exception alerts</strong> to flag supplier price creep, FX swings, and delayed containers before margins erode.</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 rounded-xl border border-freight-orange/40 bg-freight-orange/10 p-4">
+                        <p class="text-sm text-slate-200"><strong class="text-white">Need stakeholder buy-in?</strong> Ask us for the ROI deck and a cost-recovery calculator tailored to your SKUs.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -907,6 +990,30 @@
                     <input type="hidden" name="form-name" value="demo" />
                     <input type="hidden" name="selected-plan" id="selectedPlan" value="" />
                     <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+                    <div class="mb-6" aria-live="polite">
+                        <span class="block text-sm font-medium text-slate-200 mb-3">Which plan are you interested in?</span>
+                        <div class="flex flex-wrap gap-3" role="radiogroup" aria-label="Select a FlowIQ plan">
+                            <button type="button" data-plan-option data-plan-value="growth" class="plan-chip">
+                                Growth
+                                <span class="block text-xs text-slate-300 font-normal">For focused SKU import teams</span>
+                            </button>
+                            <button type="button" data-plan-option data-plan-value="pro" class="plan-chip">
+                                Pro
+                                <span class="block text-xs text-slate-300 font-normal">Unlimited users & predictive AI</span>
+                            </button>
+                            <button type="button" data-plan-option data-plan-value="enterprise" class="plan-chip">
+                                Enterprise
+                                <span class="block text-xs text-slate-300 font-normal">Custom workflows & integrations</span>
+                            </button>
+                            <button type="button" data-plan-option data-plan-value="" class="plan-chip">
+                                Not sure yet
+                                <span class="block text-xs text-slate-300 font-normal">Help me choose on the demo</span>
+                            </button>
+                        </div>
+                        <p id="selectedPlanLabel" class="mt-3 text-sm text-slate-300">
+                            Not sure yet — we'll help you choose the right fit.
+                        </p>
+                    </div>
                     <div class="grid md:grid-cols-2 gap-6">
                         <input class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white" name="name" placeholder="Full name" required />
                         <input class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white" type="email" name="email" placeholder="Email" required />
@@ -1118,49 +1225,73 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-freight-slate">
+    <!-- Resources & FAQ Section -->
+    <section id="resources" class="py-20 bg-freight-slate">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-white mb-4">Ready to Transform Your Business Operations?</h2>
-                <p class="text-xl text-slate-300 max-w-2xl mx-auto">
-                    Get started with Flow IQ today. Our team will help you onboard and optimize your entire business with our complete management platform.
-                </p>
+                <h2 class="text-4xl font-bold text-white mb-4">Resources to help you evaluate FlowIQ</h2>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Use these talking points, checklists, and FAQs to get your finance, ops, and leadership teams aligned before your demo.</p>
             </div>
-            
-            <div class="max-w-2xl mx-auto">
-                <form name="contact" method="POST" netlify data-netlify="true" class="bg-freight-slate-light p-8 rounded-xl border border-slate-700">
-                    <input type="hidden" name="form-name" value="contact" />
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Full Name</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-orange-500 focus:outline-none">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-orange-500 focus:outline-none">
+            <div class="grid lg:grid-cols-2 gap-10">
+                <div class="space-y-6">
+                    <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <h3 class="text-xl font-semibold text-white mb-3">Decision toolkit</h3>
+                        <ul class="text-sm text-slate-300 space-y-3">
+                            <li class="flex gap-3"><i data-lucide="file-text" class="text-freight-orange" style="width:18px;height:18px"></i><span>ROI calculator template with landed-cost, demurrage, and rebate inputs.</span></li>
+                            <li class="flex gap-3"><i data-lucide="users" class="text-blue-400" style="width:18px;height:18px"></i><span>Stakeholder rollout deck covering finance, warehouse, and sales enablement.</span></li>
+                            <li class="flex gap-3"><i data-lucide="clipboard-check" class="text-green-400" style="width:18px;height:18px"></i><span>30-day success plan outlining the first four automation wins to target.</span></li>
+                        </ul>
+                        <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-freight-orange hover:text-white transition-colors" data-plan="growth">
+                            <span>Request the toolkit with your demo</span>
+                            <i data-lucide="arrow-up-right" style="width:18px;height:18px"></i>
+                        </a>
+                    </div>
+                    <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                        <h3 class="text-xl font-semibold text-white mb-3">Rollout checklist</h3>
+                        <p class="text-slate-300 text-sm mb-4">Most teams go live in under 14 days. Share this with your implementation lead so nothing gets missed.</p>
+                        <div class="space-y-3 text-sm text-slate-300">
+                            <div class="flex items-center gap-3"><i data-lucide="check-circle" class="text-green-400" style="width:18px;height:18px"></i><span>Import your latest shipment manifest or CSV — we'll flag anomalies.</span></div>
+                            <div class="flex items-center gap-3"><i data-lucide="lock" class="text-purple-400" style="width:18px;height:18px"></i><span>Configure role-based permissions with our recommended policy presets.</span></div>
+                            <div class="flex items-center gap-3"><i data-lucide="rocket" class="text-orange-400" style="width:18px;height:18px"></i><span>Schedule a "first automation" workshop to automate a manual freight task.</span></div>
                         </div>
                     </div>
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label for="company" class="block text-sm font-medium text-slate-300 mb-2">Company Name</label>
-                            <input type="text" id="company" name="company" required class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-orange-500 focus:outline-none">
-                        </div>
-                        <div>
-                            <label for="phone" class="block text-sm font-medium text-slate-300 mb-2">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-orange-500 focus:outline-none">
-                        </div>
+                </div>
+                <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
+                    <h3 class="text-xl font-semibold text-white mb-4">Frequently asked questions</h3>
+                    <div class="space-y-4">
+                        <details class="border border-slate-700/80 rounded-lg p-4 bg-freight-slate/80">
+                            <summary class="flex items-center justify-between cursor-pointer text-white font-medium">
+                                How long does onboarding take?
+                                <i data-lucide="chevron-down" class="faq-toggle-icon transition-transform duration-200" style="width:18px;height:18px"></i>
+                            </summary>
+                            <p class="mt-3 text-sm text-slate-300">Most teams complete onboarding in 7–14 days. We preload your product catalog, supplier list, and historical shipments so you can validate landed-cost accuracy within the first week.</p>
+                        </details>
+                        <details class="border border-slate-700/80 rounded-lg p-4 bg-freight-slate/80">
+                            <summary class="flex items-center justify-between cursor-pointer text-white font-medium">
+                                Do you support hybrid accounting setups?
+                                <i data-lucide="chevron-down" class="faq-toggle-icon transition-transform duration-200" style="width:18px;height:18px"></i>
+                            </summary>
+                            <p class="mt-3 text-sm text-slate-300">Yes. FlowIQ syncs with Xero out of the box, and our enterprise connectors support SAP, NetSuite, and custom ERPs. You choose which journals to automate and which to hold for review.</p>
+                        </details>
+                        <details class="border border-slate-700/80 rounded-lg p-4 bg-freight-slate/80">
+                            <summary class="flex items-center justify-between cursor-pointer text-white font-medium">
+                                What kind of support is included?
+                                <i data-lucide="chevron-down" class="faq-toggle-icon transition-transform duration-200" style="width:18px;height:18px"></i>
+                            </summary>
+                            <p class="mt-3 text-sm text-slate-300">All plans include in-app chat, quarterly optimization reviews, and access to our 24-hour knowledge base. Pro and Enterprise also receive phone support and a dedicated success manager.</p>
+                        </details>
+                        <details class="border border-slate-700/80 rounded-lg p-4 bg-freight-slate/80">
+                            <summary class="flex items-center justify-between cursor-pointer text-white font-medium">
+                                Can FlowIQ replace our freight forwarder portal?
+                                <i data-lucide="chevron-down" class="faq-toggle-icon transition-transform duration-200" style="width:18px;height:18px"></i>
+                            </summary>
+                            <p class="mt-3 text-sm text-slate-300">Yes. Our forwarder network feeds milestone updates directly into FlowIQ. You can still work with your preferred partners while giving your team a unified track-and-trace command center.</p>
+                        </details>
                     </div>
-                    <div class="mb-6">
-                        <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Tell us about your business operations</label>
-                        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-orange-500 focus:outline-none" placeholder="Describe your current challenges and what you're looking to achieve with Flow IQ..."></textarea>
+                    <div class="mt-6 p-4 rounded-lg border border-freight-orange/40 bg-freight-orange/10">
+                        <p class="text-sm text-slate-200">Still evaluating vendors? <a href="#contact" class="text-freight-orange hover:text-white font-semibold">Book a consultation</a> and we'll benchmark FlowIQ against your shortlist.</p>
                     </div>
-                    <div class="text-center">
-                        <button type="submit" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105">
-                            Get Started - Free Consultation
-                        </button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </section>
@@ -1255,6 +1386,14 @@
     if (!contactSection) return;
     const planInput = contactSection.querySelector('input[name="selected-plan"]');
     if (!planInput) return;
+    const planButtons = Array.from(contactSection.querySelectorAll('[data-plan-option]'));
+    const planLabel = document.getElementById('selectedPlanLabel');
+    const planDescriptions = {
+      growth: 'Growth — Built for importers managing a focused SKU range with predictable shipments.',
+      pro: 'Pro — Unlock unlimited users, predictive scenarios, and proactive landed-cost control.',
+      enterprise: 'Enterprise — Tailored deployments with advanced integrations and governance.'
+    };
+    const defaultPlanMessage = 'Not sure yet — we\'ll help you choose the right fit.';
 
     const getStorage = () => {
       try {
@@ -1265,14 +1404,33 @@
     };
 
     const storage = getStorage();
-    const setPlan = (plan) => {
-      planInput.value = plan || '';
-      if (!storage) return;
-      if (plan) {
-        storage.setItem('selectedPlan', plan);
-      } else {
-        storage.removeItem('selectedPlan');
+    const syncPlanUI = (plan) => {
+      const safePlan = plan || '';
+      const labelCopy = planDescriptions[safePlan] || (safePlan ? `Custom selection — ${safePlan}` : defaultPlanMessage);
+      if (planLabel) {
+        planLabel.textContent = labelCopy;
+        planLabel.classList.toggle('text-freight-orange', Boolean(safePlan));
+        planLabel.classList.toggle('font-semibold', Boolean(safePlan));
       }
+      planButtons.forEach((btn) => {
+        const btnPlan = btn.getAttribute('data-plan-value') || '';
+        const isActive = btnPlan === safePlan || (!safePlan && btnPlan === '');
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+    };
+
+    const setPlan = (plan) => {
+      const normalized = typeof plan === 'string' ? plan.trim() : '';
+      planInput.value = normalized;
+      if (storage) {
+        if (normalized) {
+          storage.setItem('selectedPlan', normalized);
+        } else {
+          storage.removeItem('selectedPlan');
+        }
+      }
+      syncPlanUI(normalized);
     };
 
     const hydrateFromHash = () => {
@@ -1295,8 +1453,19 @@
     if (!hydratedPlan && storage) {
       const storedPlan = storage.getItem('selectedPlan');
       if (storedPlan) {
-        planInput.value = storedPlan;
+        setPlan(storedPlan);
       }
+    }
+    if (!planInput.value) {
+      syncPlanUI('');
+    }
+
+    if (planButtons.length) {
+      planButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          setPlan(btn.getAttribute('data-plan-value') || '');
+        });
+      });
     }
 
     document.querySelectorAll('a[data-plan]').forEach((cta)=>{
@@ -1304,6 +1473,12 @@
         setPlan(cta.getAttribute('data-plan') || '');
       });
     });
+
+    if (hydratedPlan) {
+      syncPlanUI(planInput.value || hydratedPlan);
+    } else if (planInput.value) {
+      syncPlanUI(planInput.value);
+    }
 
     contactSection.addEventListener('submit', ()=>{
       if (storage) storage.removeItem('selectedPlan');
@@ -1358,4 +1533,5 @@
     }
   })();
 </script>
+</html>
 </html>
