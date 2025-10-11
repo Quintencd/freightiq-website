@@ -653,7 +653,7 @@
                             Multi-currency support
                         </li>
                     </ul>
-                    <a href="#contact?plan=growth" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-8">
+                    <a href="#contact" data-plan="growth" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-8">
                         Start Now
                     </a>
                 </div>
@@ -704,7 +704,7 @@
                             Live Shipment Quoting & Milestone Tracking – one-click quotes from forwarders
                         </li>
                     </ul>
-                    <a href="#contact?plan=pro" class="block text-center bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-8">
+                    <a href="#contact" data-plan="pro" class="block text-center bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-8">
                         Upgrade to Pro
                     </a>
                 </div>
@@ -739,7 +739,7 @@
                             Custom reporting & data warehouse sync
                         </li>
                     </ul>
-                    <a href="#contact?plan=enterprise" class="block text-center bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-8">
+                    <a href="#contact" data-plan="enterprise" class="block text-center bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-8">
                         Contact Sales
                     </a>
                 </div>
@@ -905,6 +905,7 @@
             <div class="max-w-2xl mx-auto bg-freight-slate-light p-8 rounded-xl border border-slate-700">
                 <form name="demo" method="POST" netlify netlify-honeypot="bot-field" data-netlify="true" action="/thank-you">
                     <input type="hidden" name="form-name" value="demo" />
+                    <input type="hidden" name="selected-plan" id="selectedPlan" value="" />
                     <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
                     <div class="grid md:grid-cols-2 gap-6">
                         <input class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white" name="name" placeholder="Full name" required />
@@ -1246,6 +1247,66 @@
       if (!e.toElement && !e.relatedTarget && e.clientY < 10) {
         shown = '1'; sessionStorage.setItem('lead_shown','1'); open();
       }
+    });
+  })();
+  // Pricing CTA plan capture
+  (function(){
+    const contactSection = document.querySelector('#contact form');
+    if (!contactSection) return;
+    const planInput = contactSection.querySelector('input[name="selected-plan"]');
+    if (!planInput) return;
+
+    const getStorage = () => {
+      try {
+        return window.sessionStorage;
+      } catch (err) {
+        return null;
+      }
+    };
+
+    const storage = getStorage();
+    const setPlan = (plan) => {
+      planInput.value = plan || '';
+      if (!storage) return;
+      if (plan) {
+        storage.setItem('selectedPlan', plan);
+      } else {
+        storage.removeItem('selectedPlan');
+      }
+    };
+
+    const hydrateFromHash = () => {
+      const { hash } = window.location;
+      if (!hash || !hash.includes('?plan=')) return null;
+      const [, query] = hash.split('?');
+      const params = new URLSearchParams(query);
+      const plan = params.get('plan');
+      if (!plan) return null;
+      setPlan(plan);
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', '#contact');
+      } else {
+        window.location.hash = '#contact';
+      }
+      return plan;
+    };
+
+    const hydratedPlan = hydrateFromHash();
+    if (!hydratedPlan && storage) {
+      const storedPlan = storage.getItem('selectedPlan');
+      if (storedPlan) {
+        planInput.value = storedPlan;
+      }
+    }
+
+    document.querySelectorAll('a[data-plan]').forEach((cta)=>{
+      cta.addEventListener('click', ()=>{
+        setPlan(cta.getAttribute('data-plan') || '');
+      });
+    });
+
+    contactSection.addEventListener('submit', ()=>{
+      if (storage) storage.removeItem('selectedPlan');
     });
   })();
   // Show placeholder if video asset missing

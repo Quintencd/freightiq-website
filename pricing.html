@@ -75,7 +75,7 @@
         <div class="text-4xl font-extrabold text-freight-orange mb-2">R 9 500<span class="text-lg text-slate-400">/month</span></div>
         <p class="text-slate-400 text-sm mb-2">Up to 5 users · 1,000 SKUs · 1–2 warehouses · 2 import + 2 export shipments/month</p>
         <p class="text-slate-400 text-sm mb-6">Email & chat support</p>
-        <a href="/index.html#contact?plan=growth" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-8" data-analytics="cta-growth">Start Now</a>
+        <a href="/index.html#contact" data-plan="growth" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-8" data-analytics="cta-growth">Start Now</a>
         <ul class="space-y-3 text-slate-300">
           <li class="flex items-center">
             <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
@@ -132,7 +132,7 @@
         <div class="text-4xl font-extrabold text-freight-orange mb-2">R 14 800<span class="text-lg text-slate-400">/month</span></div>
         <p class="text-slate-400 text-sm mb-2">Unlimited users · SKUs · warehouses · imports & exports</p>
         <p class="text-slate-400 text-sm mb-6">Email & phone support</p>
-        <a href="/index.html#contact?plan=pro" class="block text-center bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-8" data-analytics="cta-pro">Upgrade to Pro</a>
+        <a href="/index.html#contact" data-plan="pro" class="block text-center bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-8" data-analytics="cta-pro">Upgrade to Pro</a>
         <ul class="space-y-3 text-slate-300">
           <li class="flex items-center">
             <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
@@ -181,7 +181,7 @@
         <div class="text-4xl font-extrabold text-freight-orange mb-2">Price on Request</div>
         <p class="text-slate-400 text-sm mb-2">Custom integrations · Regional hosting · SLA options</p>
         <p class="text-slate-400 text-sm mb-6">Enterprise account liaison (business hours)</p>
-        <a href="/index.html#contact?plan=enterprise" class="block text-center bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-8" data-analytics="cta-enterprise">Contact Sales</a>
+        <a href="/index.html#contact" data-plan="enterprise" class="block text-center bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-8" data-analytics="cta-enterprise">Contact Sales</a>
         <ul class="space-y-3 text-slate-300">
           <li class="flex items-center">
             <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
@@ -305,6 +305,29 @@
       }
     }
   });
+
+  // Persist selected plan when navigating to index contact form
+  (function(){
+    const getStorage = () => {
+      try {
+        return window.sessionStorage;
+      } catch (err) {
+        return null;
+      }
+    };
+    const storage = getStorage();
+    if (!storage) return;
+    document.querySelectorAll('a[data-plan]').forEach((cta)=>{
+      cta.addEventListener('click', ()=>{
+        const plan = cta.getAttribute('data-plan') || '';
+        if (plan) {
+          storage.setItem('selectedPlan', plan);
+        } else {
+          storage.removeItem('selectedPlan');
+        }
+      });
+    });
+  })();
 </script>
 
 
