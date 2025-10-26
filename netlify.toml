@@ -7,13 +7,29 @@
   NODE_VERSION = "18"
 
 # Redirects for the website
-# Canonicalize to www.flowiq.online as primary
+# Force HTTPS and canonicalize to www.flowiq.info as primary
+
+# Force HTTPS redirect for apex domain
+[[redirects]]
+  from = "http://flowiq.info/*"
+  to = "https://www.flowiq.info/:splat"
+  status = 301
+  force = true
+
+# Redirect apex domain to www (HTTPS)
+[[redirects]]
+  from = "https://flowiq.info/*"
+  to = "https://www.flowiq.info/:splat"
+  status = 301
+  force = true
+
+# Redirect other domains to primary
 [[redirects]]
   from = "/*"
   to = "https://www.flowiq.info/:splat"
   status = 301
   force = true
-  conditions = { Host = ["freightiq.online", "www.freightiq.online", "flowiq.online", "www.flowiq.online", "flowiq.info", "www.flowiq.info"] }
+  conditions = { Host = ["freightiq.online", "www.freightiq.online", "flowiq.online", "www.flowiq.online"] }
 
 [[redirects]]
   from = "/pricing"
