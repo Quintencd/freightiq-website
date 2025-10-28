@@ -45,3 +45,6 @@ deployment-trigger.txt
 *architecture*
 *product-feed*
 *summary*
+
+# Local Netlify folder
+.netlify
