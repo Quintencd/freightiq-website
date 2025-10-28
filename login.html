@@ -352,7 +352,7 @@
                 const { error } = await supabase.auth.resetPasswordForEmail(
                     formData.get('resetEmail'),
                     {
-                        redirectTo: 'https://flowiq.info/reset-password'
+                        redirectTo: 'https://app.flowiq.info/reset-password'
                     }
                 );
 
