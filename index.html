@@ -102,6 +102,15 @@
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-4">
+                    <div class="relative group" id="modulesDropdown">
+                        <button class="text-slate-300 hover:text-white transition-colors flex items-center gap-1">
+                            Modules <i data-lucide="chevron-down" style="width:16px;height:16px"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-freight-slate-light border border-slate-600 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <a href="/modules.html" class="block px-4 py-2 text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-t-lg">All Modules</a>
+                            <a href="#features" class="block px-4 py-2 text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-b-lg">Features</a>
+                        </div>
+                    </div>
                     <a href="https://app.flowiq.info/" class="text-slate-300 hover:text-white transition-colors">Login</a>
                     <a href="/signup" class="text-slate-300 hover:text-white transition-colors">Sign Up</a>
                     <a href="#demo" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-4 py-2 rounded-lg transition-colors">
@@ -117,6 +126,7 @@
         <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700 bg-freight-slate">
             <div class="px-4 py-4 space-y-4">
                 <a href="#product-suites" class="block text-slate-300 hover:text-white">Solutions</a>
+                <a href="/modules.html" class="block text-slate-300 hover:text-white">Modules</a>
                 <a href="#features" class="block text-slate-300 hover:text-white">Features</a>
                 <a href="#pricing" class="block text-slate-300 hover:text-white">Pricing</a>
                 <a href="#reviews" class="block text-slate-300 hover:text-white">Customer Voices</a>

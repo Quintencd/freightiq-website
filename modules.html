@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowIQ Modules – Complete Suite Overview</title>
+    <meta name="description" content="Explore all FlowIQ modules: Dashboard, TaskIQ, CompaniesIQ, InvoiceIQ, PurchaseIQ, InventoryIQ, ImportIQ, ExportIQ, WarrantyIQ, and ForecastIQ.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-freight-slate { background-color: #0f172a; }
+        .bg-freight-slate-light { background-color: #1e293b; }
+        .text-freight-orange { color: #f97316; }
+        .bg-freight-orange { background-color: #f97316; }
+        .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body class="bg-freight-slate text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-freight-slate/90 backdrop-blur-md border-b border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" aria-label="Flow IQ home" class="flex items-center">
+                        <img src="logo-dark.png?v=4" alt="Flow IQ" class="h-9 w-auto" loading="lazy" decoding="async" onerror="this.src='public/logo-dark.png';">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="/" class="text-slate-300 hover:text-white transition-colors">Home</a>
+                    <div class="relative group" id="modulesDropdown">
+                        <button class="text-slate-300 hover:text-white transition-colors flex items-center gap-1">
+                            Modules <i data-lucide="chevron-down" style="width:16px;height:16px"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-freight-slate-light border border-slate-600 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <a href="/modules.html" class="block px-4 py-2 text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-t-lg">All Modules</a>
+                            <a href="/#features" class="block px-4 py-2 text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-b-lg">Features</a>
+                        </div>
+                    </div>
+                    <a href="https://app.flowiq.info/" class="text-slate-300 hover:text-white transition-colors">Login</a>
+                    <a href="/signup" class="text-slate-300 hover:text-white transition-colors">Sign Up</a>
+                    <a href="/#demo" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-4 py-2 rounded-lg transition-colors">
+                        Book a Demo
+                    </a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-300 hover:text-white" aria-label="Open menu">
+                    <i data-lucide="menu" style="width:24px;height:24px"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700 bg-freight-slate">
+            <div class="px-4 py-4 space-y-4">
+                <a href="/" class="block text-slate-300 hover:text-white">Home</a>
+                <a href="/modules.html" class="block text-slate-300 hover:text-white">Modules</a>
+                <a href="/#features" class="block text-slate-300 hover:text-white">Features</a>
+                <a href="/#pricing" class="block text-slate-300 hover:text-white">Pricing</a>
+                <a href="/signup" class="block text-slate-300 hover:text-white">Sign Up</a>
+                <a href="/#demo" class="block text-slate-300 hover:text-white">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 text-center">
+                FlowIQ <span class="text-freight-orange">Modules</span>
+            </h1>
+            <p class="text-xl text-slate-300 mb-8 text-center max-w-3xl mx-auto">
+                Complete suite of intelligent modules working together seamlessly. Click any card to explore.
+            </p>
+        </div>
+    </section>
+
+    <!-- Modules Grid -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="modulesGrid">
+                <!-- Modules will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-700 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-slate-400">© 2025 FlowIQ. All rights reserved.</span>
+                </div>
+                <div class="flex gap-6">
+                    <a href="/" class="text-slate-400 hover:text-white">Home</a>
+                    <a href="/#pricing" class="text-slate-400 hover:text-white">Pricing</a>
+                    <a href="/#contact" class="text-slate-400 hover:text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+        
+        const modules = [
+            { key: 'dashboard', title: 'Dashboard', img: 'assets/dashboard.jpg', copy: 'Company performance, KPIs, and smart insights at a glance.' },
+            { key: 'taskiq', title: 'TaskIQ', img: 'assets/taskiq.jpg', copy: 'Manage team workload, deadlines, and recurring ops tasks.' },
+            { key: 'companiesiq', title: 'CompaniesIQ', img: 'assets/companiesiq.jpg', copy: 'Customers and suppliers in one place with clean account views.' },
+            { key: 'invoiceiq', title: 'InvoiceIQ', img: 'assets/invoiceiq.jpg', copy: 'Quotes, invoices, credit notes, status and payments—beautifully streamlined.' },
+            { key: 'purchaseiq', title: 'PurchaseIQ', img: 'assets/purchaseiq.jpg', copy: 'Purchase orders, bills and receiving—planned and controlled.' },
+            { key: 'inventoryiq', title: 'InventoryIQ', img: 'assets/inventoryiq.jpg', copy: 'Master SKUs, stock levels, costs, transfers and adjustments.' },
+            { key: 'importiq', title: 'ImportIQ', img: 'assets/importiq.jpg', copy: 'Import shipments with landed cost tracking and easy progress.' },
+            { key: 'exportiq', title: 'ExportIQ', img: 'assets/exportiq.jpg', copy: 'Export shipment management and FX inflow tracking.' },
+            { key: 'warrantyiq', title: 'WarrantyIQ', img: 'assets/warrantyiq.jpg', copy: 'Warranty claims and customer support workflow in one tab.' },
+            { key: 'forecastiq', title: 'ForecastIQ', img: 'assets/forecastiq.jpg', copy: 'Advanced demand forecasting, risks and order planning.' }
+        ];
+
+        const grid = document.getElementById('modulesGrid');
+        modules.forEach(m => {
+            const card = document.createElement('div');
+            card.className = 'bg-freight-slate-light/50 rounded-lg border border-slate-600 overflow-hidden card-hover';
+            card.innerHTML = `
+                <figure class="aspect-video bg-slate-800 overflow-hidden">
+                    <img src="${m.img}" alt="${m.title} screenshot" 
+                         class="w-full h-full object-cover" 
+                         loading="lazy"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'800\\' height=\\'450\\'%3E%3Crect fill=\\'%231e293b\\' width=\\'800\\' height=\\'450\\'/%3E%3Ctext fill=\\'%23475569\\' font-family=\\'system-ui\\' font-size=\\'24\\' x=\\'50%25\\' y=\\'50%25\\' text-anchor=\\'middle\\' dominant-baseline=\\'middle\\'%3E${m.title}%3C/text%3E%3C/svg%3E';">
+                </figure>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">${m.title}</h3>
+                    <p class="text-slate-300">${m.copy}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
+            const menu = document.getElementById('mobileMenu');
+            menu?.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
