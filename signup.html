@@ -413,7 +413,7 @@
                         email_confirm: true  // Auto-confirm for immediate access
                     })
                 });
-
+                
                 if (!response.ok) {
                     const errorData = await response.json().catch(() => ({ error: `HTTP ${response.status}` }));
                     throw new Error(errorData.error || errorData.message || `Failed to create account (${response.status})`);
