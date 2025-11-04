@@ -111,6 +111,7 @@
                             <a href="#features" class="block px-4 py-2 text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-b-lg">Features</a>
                         </div>
                     </div>
+                    <a href="/pricing.html" class="text-slate-300 hover:text-white transition-colors">Pricing</a>
                     <a href="https://app.flowiq.info/" class="text-slate-300 hover:text-white transition-colors">Login</a>
                     <a href="/signup" class="text-slate-300 hover:text-white transition-colors">Sign Up</a>
                     <a href="#demo" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-4 py-2 rounded-lg transition-colors">
@@ -693,201 +694,16 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-20 bg-freight-slate-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 space-y-6">
-                <div>
-                    <h2 class="text-4xl font-bold text-white mb-4">FlowIQ Pricing Plans</h2>
-                    <p class="text-slate-300 max-w-3xl mx-auto">Two powerful plans — one intelligent platform. Built for importers, distributors, and manufacturers who need complete visibility from purchase order to profit.</p>
-                    <p class="text-slate-400 text-sm mt-2">All plans include Xero integration, multi-currency, TaskIQ, CourierIQ, and DashboardIQ.</p>
-                </div>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <p class="text-xs sm:text-sm text-slate-300 bg-slate-900/60 border border-slate-700 rounded-full px-4 py-2" data-currency-note>
-                        Showing pricing in <span class="font-semibold">South African Rand (ZAR)</span>.
-                    </p>
-                    <label class="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
-                        <span>Show pricing in</span>
-                        <select id="currencySelector" class="bg-freight-slate border border-slate-600 rounded-lg px-3 py-1.5 text-slate-100 focus:border-freight-orange focus:outline-none">
-                            <option value="ZAR" selected>South African Rand (ZAR)</option>
-                            <option value="USD">US Dollar (USD)</option>
-                            <option value="EUR">Euro (EUR)</option>
-                            <option value="GBP">British Pound (GBP)</option>
-                            <option value="AUD">Australian Dollar (AUD)</option>
-                            <option value="CAD">Canadian Dollar (CAD)</option>
-                            <option value="NZD">New Zealand Dollar (NZD)</option>
-                        </select>
-                    </label>
-                </div>
-            </div>
-            
-                <div class="grid md:grid-cols-3 gap-8">
-                <!-- Growth Plan -->
-                <div class="card-hover bg-freight-slate p-8 rounded-xl border-2 border-freight-orange relative shadow-lg shadow-orange-500/10" data-plan-pricing="growth" data-price-zar="9500" data-price-usd="499" data-billing-term="/month">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-freight-orange text-white text-xs px-3 py-1 rounded-full">Most Popular</div>
-                    <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">Growth</h3>
-                        <div class="text-4xl font-bold text-freight-orange mb-2">
-                            <span data-price-amount>R 9 500</span>
-                            <span class="text-lg text-slate-400" data-price-term>/month</span>
-                        </div>
-                        <p class="text-xs text-slate-400 mb-3" data-price-footnote>Local South African pricing. Billed monthly.</p>
-                        <p class="text-slate-400 text-sm mb-2">Up to 5 users · 1,000 SKUs · 1–2 warehouses · 2 import + 2 export shipments/month</p>
-                        <p class="text-slate-400 text-sm mb-6">Email & chat support</p>
-                    </div>
-                    <ul class="space-y-3 text-slate-300 text-sm mb-8">
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            ForecastIQ – AI-driven demand & reorder forecasting
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            InventoryIQ – Stock tracking with FIFO costing
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            ImportIQ – Landed cost & FX
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            ExportIQ – Export planning & invoicing
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            PriceIQ – Margin tracking & dynamic pricing
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            DashboardIQ – Real-time profit & performance dashboards
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            WarrantyIQ – Warranty & claim tracking
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            TaskIQ – Team & workflow automation
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            CourierIQ – Live courier quote comparisons
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            Xero Integration – Full accounting sync
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            Multi-currency support
-                        </li>
-                    </ul>
-                    <a href="#contact" data-plan="Growth" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-4">
-                        Start Now
-                    </a>
-                    <p class="text-center text-xs text-green-300/90">Most teams recoup the platform cost in their first month.</p>
-                </div>
-
-                <!-- Pro Plan -->
-                <div class="card-hover bg-freight-slate p-8 rounded-xl border border-slate-700" data-plan-pricing="pro" data-price-zar="14800" data-price-usd="799" data-billing-term="/month">
-                    <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">Pro</h3>
-                        <div class="text-4xl font-bold text-freight-orange mb-2">
-                            <span data-price-amount>R 14 800</span>
-                            <span class="text-lg text-slate-400" data-price-term>/month</span>
-                        </div>
-                        <p class="text-xs text-slate-400 mb-3" data-price-footnote>Local South African pricing. Billed monthly.</p>
-                        <p class="text-slate-400 text-sm mb-2">Unlimited users · SKUs · warehouses · imports & exports</p>
-                        <p class="text-slate-400 text-sm mb-6">Email & phone support</p>
-                    </div>
-                    <ul class="space-y-3 text-slate-300 text-sm mb-8">
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            Everything in Growth, plus:
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            Advanced ForecastIQ – p10 / p50 / p90 predictive scenarios
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            Automated Cost Adjustments – auto-backfills invoices & recalculates landed costs
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            Supplier Scorecards – AI ranking for supplier reliability & performance
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            Predictive Freight & FX Trend Engine – timing guidance for shipments & FX
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            Smart Container Load Optimizer – auto-simulate packing for max efficiency
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            DashboardIQ+ – multi-branch, multi-region advanced analytics
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            Auto Rebates, Settlements & Commissions – automated discount tracking
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            Live Shipment Quoting & Milestone Tracking – one-click quotes from forwarders
-                        </li>
-                    </ul>
-                    <a href="#contact" data-plan="Pro" class="block text-center bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-4">
-                        Upgrade to Pro
-                    </a>
-                    <p class="text-center text-xs text-slate-400">Includes white-glove onboarding for complex supply chains.</p>
-                </div>
-
-                <!-- Enterprise Plan -->
-                <div class="card-hover bg-freight-slate p-8 rounded-xl border border-slate-700" data-plan-pricing="enterprise" data-custom-label="Price on Request" data-billing-term="">
-                    <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">Enterprise</h3>
-                        <div class="text-4xl font-bold text-freight-orange mb-2">
-                            <span data-price-amount>Price on Request</span>
-                            <span class="text-lg text-slate-400" data-price-term></span>
-                        </div>
-                        <p class="text-xs text-slate-400 mb-3" data-price-footnote>Custom regional deployments and billing options.</p>
-                        <p class="text-slate-400 text-sm mb-2">Custom integrations · Regional hosting · SLA options</p>
-                        <p class="text-slate-400 text-sm mb-6">Enterprise account liaison (business hours)</p>
-                    </div>
-                    <ul class="space-y-3 text-slate-300 text-sm mb-8">
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            All FlowIQ modules
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            Custom integrations (SAP, NetSuite, Xero, courier & warehouse systems)
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            Predictive ROI dashboards
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            Regional data hosting & SLA options
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check" class="text-freight-orange mr-2" style="width:16px;height:16px"></i>
-                            Custom reporting & data warehouse sync
-                        </li>
-                    </ul>
-                    <a href="#contact" data-plan="Enterprise" class="block text-center bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors mb-4">
-                        Contact Sales
-                    </a>
-                    <p class="text-center text-xs text-slate-400">Custom integrations & regional hosting included in every agreement.</p>
-                </div>
-
-            </div>
-            
-            <div class="text-center mt-8">
-                <p class="text-slate-400 text-sm">All plans include Xero integration, multi-currency support, and 14-day free trial. No credit card required to start.</p>
-            </div>
+    <!-- Pricing CTA Section -->
+    <section id="pricing" class="py-20 bg-gradient-to-r from-freight-orange to-orange-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Simple, Transparent Pricing</h2>
+            <p class="text-xl text-orange-100 mb-4">From solo founders to enterprises. Choose the plan that fits your business.</p>
+            <p class="text-lg text-orange-50 mb-8">5 flexible tiers • 14-day free trial • No credit card required</p>
+            <a href="/pricing.html" class="inline-block bg-white hover:bg-slate-100 text-freight-orange px-8 py-4 rounded-lg text-lg font-bold transition-all transform hover:scale-105 shadow-xl">
+                View All Pricing Plans →
+            </a>
+            <p class="text-sm text-orange-100 mt-6">Starter from R4,995/mo • Growth R9,500/mo • Professional R14,800/mo • Scale R19,800/mo</p>
         </div>
     </section>
 
