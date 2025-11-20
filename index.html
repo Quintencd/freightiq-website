@@ -63,6 +63,83 @@
         .modal-container.modal-open { display: flex; }
         .modal-panel { transform: scale(0.94); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; }
         .modal-open .modal-panel { transform: scale(1); opacity: 1; }
+        
+        /* Hero Video Dialog Styles */
+        .hero-video-dialog-thumbnail {
+            transition: filter 0.2s ease-out;
+        }
+        .hero-video-dialog-thumbnail:hover {
+            filter: brightness(0.8);
+        }
+        .hero-video-dialog-play-overlay {
+            transform: scale(0.9);
+            transition: transform 0.2s ease-out;
+        }
+        .hero-video-dialog-thumbnail:hover .hero-video-dialog-play-overlay {
+            transform: scale(1);
+        }
+        .hero-video-dialog-play-button {
+            transition: transform 0.2s ease-out;
+        }
+        .hero-video-dialog-thumbnail:hover .hero-video-dialog-play-button {
+            transform: scale(1.2);
+        }
+        .hero-video-dialog-play-icon {
+            transition: transform 0.2s ease-out;
+        }
+        .hero-video-dialog-thumbnail:hover .hero-video-dialog-play-icon {
+            transform: scale(1.05);
+        }
+        .hero-video-dialog-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 50;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .hero-video-dialog-modal.open {
+            display: flex;
+            opacity: 1;
+        }
+        .hero-video-dialog-content {
+            position: relative;
+            margin: 1rem;
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            max-width: 56rem;
+        }
+        .hero-video-dialog-content.from-center {
+            transform: scale(0.5);
+            opacity: 0;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+        }
+        .hero-video-dialog-modal.open .hero-video-dialog-content.from-center {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .hero-video-dialog-close {
+            position: absolute;
+            top: -4rem;
+            right: 0;
+            border-radius: 9999px;
+            background-color: rgba(23, 23, 23, 0.5);
+            padding: 0.5rem;
+            font-size: 1.25rem;
+            color: white;
+            border: 1px solid;
+            backdrop-filter: blur(8px);
+        }
+        @media (prefers-color-scheme: dark) {
+            .hero-video-dialog-close {
+                background-color: rgba(245, 245, 245, 0.5);
+                color: black;
+            }
+        }
     </style>
     <script src="https://unpkg.com/lucide@latest"></script>
     
@@ -661,19 +738,46 @@
                 <h2 class="text-4xl font-bold text-white mb-4">90‑Second Product Tour</h2>
                 <p class="text-slate-300 max-w-3xl mx-auto">See how Flow IQ streamlines inventory, purchasing, manufacturing, and invoicing in a single workflow.</p>
             </div>
-            <!-- Responsive video placeholder: upload /public/product-tour.mp4 and optional /public/product-tour-poster.jpg -->
-            <div class="relative max-w-4xl mx-auto mb-10 aspect-video bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
-                <video id="productTourVideo" class="w-full h-full" controls preload="metadata" poster="public/product-tour-poster.jpg">
-                    <source src="public/product-tour.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-                <div id="productTourPlaceholder" class="absolute inset-0 hidden items-center justify-center">
-                    <div class="text-center">
-                        <div class="mx-auto mb-3 w-16 h-16 rounded-full bg-slate-700/70 flex items-center justify-center">
-                            <i data-lucide="play" class="text-slate-300" style="width:28px;height:28px"></i>
+            <!-- Hero Video Dialog -->
+            <div class="relative max-w-4xl mx-auto mb-10">
+                <div class="hero-video-dialog-thumbnail relative cursor-pointer border-0 bg-transparent p-0">
+                    <img
+                        id="heroVideoThumbnail"
+                        src="https://via.placeholder.com/1920x1080/1e293b/ffffff?text=Flow+IQ+Product+Tour"
+                        alt="Flow IQ Product Tour Video"
+                        width="1920"
+                        height="1080"
+                        class="w-full rounded-md border shadow-lg"
+                    />
+                    <div class="hero-video-dialog-play-overlay absolute inset-0 flex items-center justify-center rounded-2xl">
+                        <div class="bg-freight-orange/10 flex size-28 items-center justify-center rounded-full backdrop-blur-md">
+                            <div class="hero-video-dialog-play-button from-freight-orange/30 to-freight-orange relative flex size-20 items-center justify-center rounded-full bg-gradient-to-b shadow-md">
+                                <i data-lucide="play" class="hero-video-dialog-play-icon size-8 fill-white text-white" style="filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));"></i>
+                            </div>
                         </div>
-                        <p class="text-slate-300">Product tour video coming soon</p>
-                        <p class="text-slate-400 text-xs">Add <code>/public/product-tour.mp4</code> to enable playback</p>
+                    </div>
+                </div>
+                
+                <!-- Video Modal -->
+                <div id="heroVideoModal" class="hero-video-dialog-modal" role="button" tabindex="0">
+                    <div class="hero-video-dialog-content from-center">
+                        <button
+                            id="heroVideoClose"
+                            class="hero-video-dialog-close"
+                            aria-label="Close video"
+                        >
+                            <i data-lucide="x" class="size-5"></i>
+                        </button>
+                        <div class="relative isolate z-[1] size-full overflow-hidden rounded-2xl border-2 border-white">
+                            <iframe
+                                id="heroVideoIframe"
+                                src=""
+                                title="Hero Video player"
+                                class="size-full rounded-2xl"
+                                allowfullscreen
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1724,16 +1828,57 @@
       if (storage) storage.removeItem('selectedPlan');
     });
   })();
-  // Show placeholder if video asset missing
+  // Hero Video Dialog functionality
   (function(){
-    const v = document.getElementById('productTourVideo');
-    const ph = document.getElementById('productTourPlaceholder');
-    if (!v) return;
-    // Heuristic: if the source fails to load, show placeholder
-    v.addEventListener('error', ()=>{ if (ph) { ph.classList.remove('hidden'); ph.classList.add('flex'); } });
-    // If metadata can't load in 1s, assume missing
-    const timer = setTimeout(()=>{ if (v.readyState < 1 && ph) { ph.classList.remove('hidden'); ph.classList.add('flex'); } }, 1000);
-    v.addEventListener('loadedmetadata', ()=> clearTimeout(timer));
+    const thumbnail = document.querySelector('.hero-video-dialog-thumbnail');
+    const modal = document.getElementById('heroVideoModal');
+    const closeBtn = document.getElementById('heroVideoClose');
+    const iframe = document.getElementById('heroVideoIframe');
+    
+    // Configure your video here - use YouTube embed URL or direct video URL
+    // For YouTube: https://www.youtube.com/embed/VIDEO_ID
+    // For direct video: your-video-url.mp4
+    const videoSrc = 'https://www.youtube.com/embed/dQw4w9WgXcQ'; // Replace with your actual video URL
+    
+    if (!thumbnail || !modal || !closeBtn || !iframe) return;
+    
+    // Open modal
+    thumbnail.addEventListener('click', () => {
+      iframe.src = videoSrc;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+    
+    // Close modal
+    const closeModal = () => {
+      modal.classList.remove('open');
+      iframe.src = '';
+      document.body.style.overflow = '';
+    };
+    
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeModal();
+    });
+    
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+    
+    // Keyboard support
+    modal.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        closeModal();
+      }
+    });
+    
+    // Initialize Lucide icons for the video dialog
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
   })();
   // JSON-LD for Organization and SoftwareApplication
   (function(){
