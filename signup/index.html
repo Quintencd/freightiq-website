@@ -212,26 +212,375 @@
                         </div>
                     </div>
 
-                    <!-- Terms and Conditions -->
-                    <div class="flex items-start space-x-3">
-                        <div class="relative mt-1">
-                            <input 
-                                id="terms" 
-                                name="terms" 
-                                type="checkbox" 
-                                required 
-                                class="sr-only"
-                            >
-                            <label for="terms" class="flex items-center justify-center w-4 h-4 bg-freight-slate border border-slate-600 rounded cursor-pointer transition-all duration-200 hover:border-freight-orange focus-within:ring-2 focus-within:ring-freight-orange focus-within:ring-opacity-20">
-                                <svg class="w-3 h-3 text-freight-orange opacity-0 transition-opacity duration-200" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
+                    <!-- Legal acceptance (required) -->
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <div class="relative mt-1">
+                                <input 
+                                    id="terms" 
+                                    name="terms" 
+                                    type="checkbox" 
+                                    required 
+                                    class="sr-only"
+                                >
+                                <label for="terms" class="flex items-center justify-center w-4 h-4 bg-freight-slate border border-slate-600 rounded cursor-pointer transition-all duration-200 hover:border-freight-orange focus-within:ring-2 focus-within:ring-freight-orange focus-within:ring-opacity-20">
+                                    <svg class="w-3 h-3 text-freight-orange opacity-0 transition-opacity duration-200" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </label>
+                            </div>
+                            <label for="terms" class="text-sm text-slate-300 cursor-pointer whitespace-pre-wrap">
+                                I have read and agree to the FlowIQ Terms and Conditions.
                             </label>
                         </div>
-                        <label for="terms" class="text-sm text-slate-300 cursor-pointer">
-                            I agree to Flow IQ's <a href="#" class="text-freight-orange hover:text-freight-orange-dark">Terms of Service</a> 
-                            and <a href="#" class="text-freight-orange hover:text-freight-orange-dark">Privacy Policy</a>
-                        </label>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="relative mt-1">
+                                <input 
+                                    id="privacy" 
+                                    name="privacy" 
+                                    type="checkbox" 
+                                    required 
+                                    class="sr-only"
+                                >
+                                <label for="privacy" class="flex items-center justify-center w-4 h-4 bg-freight-slate border border-slate-600 rounded cursor-pointer transition-all duration-200 hover:border-freight-orange focus-within:ring-2 focus-within:ring-freight-orange focus-within:ring-opacity-20">
+                                    <svg class="w-3 h-3 text-freight-orange opacity-0 transition-opacity duration-200" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </label>
+                            </div>
+                            <label for="privacy" class="text-sm text-slate-300 cursor-pointer">
+                                I have read and agree to the FlowIQ Privacy Policy (POPIA).
+                            </label>
+                        </div>
+
+                        <details class="rounded-lg border border-slate-700 bg-freight-slate p-3">
+                            <summary class="cursor-pointer text-sm text-freight-orange">View FlowIQ Terms & Conditions + Privacy Policy (POPIA)</summary>
+                            <div class="mt-3 max-h-56 overflow-auto whitespace-pre-wrap text-xs text-slate-200">
+FLOWIQ
+
+TERMS AND CONDITIONS OF USE
+
+Last Updated: 8 January 2026
+Governing Law: Republic of South Africa
+
+⸻
+
+IMPORTANT – LEGALLY BINDING AGREEMENT
+
+By clicking “Create Account”, “Sign Up”, “Register”, or any similar action, you confirm that:
+	•	You have read, understood, and agreed to these Terms and Conditions
+	•	You are legally authorised to bind yourself or the entity you represent
+	•	Your use of FlowIQ is entirely at your own risk
+
+If you do not agree, do not use the Platform.
+
+⸻
+
+1. DEFINITIONS
+
+“Platform” means the FlowIQ software platform, including all modules, dashboards, tools, AI components, calculations, reports, forecasts, integrations, and interfaces.
+
+“Company” means FlowIQ (Pty) Ltd, including its directors, officers, shareholders, employees, contractors, licensors, and agents.
+
+“User” means any individual or entity accessing or using the Platform.
+
+“Data” means all information uploaded, imported, entered, processed, generated, or exported by the User.
+
+⸻
+
+2. PLATFORM PURPOSE – NO ADVICE
+
+FlowIQ is provided solely as a software-as-a-service (SaaS) tool.
+
+FlowIQ does not provide:
+	•	Financial advice
+	•	Accounting advice
+	•	Tax advice
+	•	Legal advice
+	•	Logistics advice
+	•	Business or commercial advice
+
+All outputs, calculations, analytics, projections, insights, recommendations, and reports are:
+	•	Informational only
+	•	Indicative
+	•	Dependent entirely on user-supplied data
+	•	Not guaranteed to be accurate, complete, or fit for any purpose
+
+The User remains fully and solely responsible for:
+	•	Verifying all outputs
+	•	Consulting qualified professionals
+	•	All decisions, actions, and consequences arising from Platform use
+
+⸻
+
+3. USER DATA RESPONSIBILITY
+
+The User:
+	•	Warrants they have the legal right to upload and use all Data
+	•	Accepts full responsibility for the accuracy, completeness, and legality of all Data
+	•	Acknowledges that incorrect or incomplete Data will produce incorrect outputs
+
+The Company does not audit, validate, or verify User Data.
+
+⸻
+
+4. DATA STORAGE, SECURITY & LOSS
+
+While reasonable technical and organisational safeguards are applied:
+
+The Company does not warrant that:
+	•	Data will be error-free
+	•	Data will not be lost, corrupted, delayed, or accessed unlawfully
+	•	The Platform will be uninterrupted or fully secure
+
+The User expressly acknowledges that:
+	•	Data loss may occur
+	•	Backups are the User’s responsibility
+	•	FlowIQ is not a system of record
+
+⸻
+
+5. AI, AUTOMATION & FORECASTING DISCLAIMER
+
+Where the Platform uses:
+	•	Artificial intelligence
+	•	Automation
+	•	Forecasting
+	•	Predictive analytics
+	•	Optimisation logic
+
+Such outputs:
+	•	Are probabilistic and non-deterministic
+	•	May be incomplete, inaccurate, or misleading
+	•	Must never be relied upon as guarantees or factual outcomes
+
+The User assumes all risk arising from reliance on AI-assisted or automated outputs.
+
+⸻
+
+6. LIMITATION OF LIABILITY (CRITICAL)
+
+To the maximum extent permitted by law, the Company shall not be liable for any:
+	•	Loss of income
+	•	Loss of profits
+	•	Loss of business or contracts
+	•	Loss of data
+	•	Loss of goodwill
+	•	Business interruption
+	•	Indirect, incidental, special, or consequential damages
+	•	Errors, omissions, or inaccuracies
+	•	Decisions made based on Platform outputs
+	•	Failures of third-party services or integrations
+
+Total aggregate liability, if any, is strictly limited to:
+
+➡ The fees actually paid by the User to FlowIQ in the preceding three (3) months
+
+If no fees were paid:
+
+➡ Total liability is zero
+
+⸻
+
+7. INDEMNITY
+
+The User indemnifies and holds harmless the Company against all claims, damages, losses, costs, and legal expenses arising from or related to:
+	•	Use of the Platform
+	•	Reliance on any outputs
+	•	Uploaded or processed Data
+	•	Breach of these Terms
+	•	Claims by third parties
+
+⸻
+
+8. AVAILABILITY & CHANGES
+
+The Company may:
+	•	Modify, suspend, or discontinue any feature at any time
+	•	Deploy updates or changes without notice
+	•	Alter functionality, logic, or availability
+
+No uptime, availability, or feature-continuity guarantees are provided.
+
+⸻
+
+9. THIRD-PARTY SERVICES
+
+The Platform may integrate with third-party services.
+
+The Company:
+	•	Does not control third-party systems
+	•	Makes no warranties regarding them
+	•	Bears no liability for third-party failures, interruptions, or losses
+
+⸻
+
+10. CONFIDENTIALITY & INTELLECTUAL PROPERTY
+
+All Platform logic, calculations, architecture, workflows, designs, and documentation are proprietary and confidential.
+
+The User may not:
+	•	Reverse engineer
+	•	Copy, resell, or sublicense
+	•	Extract or replicate logic
+	•	Use the Platform to compete
+
+⸻
+
+11. TERMINATION
+
+The Company may suspend or terminate access:
+	•	For breach of these Terms
+	•	For misuse
+	•	For risk exposure
+	•	At its sole discretion
+
+All disclaimers, limitations, and indemnities survive termination.
+
+⸻
+
+12. GOVERNING LAW & JURISDICTION
+
+These Terms are governed by the laws of the Republic of South Africa.
+
+The courts of South Africa have exclusive jurisdiction.
+
+⸻
+
+13. SEVERABILITY
+
+If any provision is found unenforceable, the remaining provisions remain fully enforceable.
+
+⸻
+
+14. ENTIRE AGREEMENT
+
+These Terms constitute the entire agreement between the User and the Company and override all prior discussions or representations.
+
+⸻
+
+15. CONTACT
+
+Legal notices:
+info@flowiq.co.za
+
+
+⸻
+
+ENTERPRISE & CUSTOM AGREEMENTS
+
+Notwithstanding anything in these Terms:
+	•	Enterprise or high-value clients may be subject to a separately negotiated written agreement
+	•	Only a document signed by an authorised director of FlowIQ may override these Terms
+	•	Verbal assurances, emails, proposals, or sales discussions do not modify liability
+	•	In the event of conflict, the signed enterprise agreement prevails only for that client
+
+All other provisions remain fully enforceable.
+
+
+FLOWIQ
+
+PRIVACY POLICY (POPIA)
+
+Last Updated: 8 January 2026
+Applicable Law: Protection of Personal Information Act, 4 of 2013 (POPIA)
+
+⸻
+
+1. PURPOSE
+
+FlowIQ respects user privacy and processes personal information in accordance with POPIA.
+
+This policy explains how personal information is collected, used, stored, and protected.
+
+⸻
+
+2. INFORMATION WE COLLECT
+
+FlowIQ may process:
+	•	Account details (name, email, company name)
+	•	Login credentials (encrypted)
+	•	Usage and interaction data
+	•	Business and operational data uploaded by users
+	•	Technical data (IP address, browser type, device data)
+
+FlowIQ does not verify the accuracy of uploaded data.
+
+⸻
+
+3. PURPOSE OF PROCESSING
+
+Personal information is processed to:
+	•	Provide and operate the Platform
+	•	Authenticate users
+	•	Improve performance and features
+	•	Communicate service-related notices
+	•	Comply with legal obligations
+
+⸻
+
+4. DATA OWNERSHIP
+	•	Users retain ownership of all uploaded data
+	•	FlowIQ acts as a data operator, not a data owner
+	•	Users confirm they have lawful authority to upload all data
+
+⸻
+
+5. DATA SECURITY
+
+FlowIQ implements reasonable technical and organisational safeguards.
+
+However:
+	•	No system is completely secure
+	•	FlowIQ does not guarantee prevention of breaches or data loss
+	•	Users remain responsible for backups and redundancy
+
+⸻
+
+6. DATA RETENTION
+	•	Data is retained only as long as necessary for platform operation or legal compliance
+	•	Upon account termination, data may be deleted or anonymised at FlowIQ’s discretion unless legally required otherwise
+
+⸻
+
+7. DATA SHARING
+
+FlowIQ:
+	•	Does not sell personal data
+	•	May share data with trusted service providers strictly for platform operation
+	•	May disclose data if legally required
+
+⸻
+
+8. USER RIGHTS (POPIA)
+
+Users may request to:
+	•	Access personal data
+	•	Correct inaccurate data
+	•	Delete personal data (subject to legal limits)
+
+Requests can be sent to:
+legal@flowiq.co.za
+
+⸻
+
+9. LIMITATION
+
+FlowIQ is not responsible for:
+	•	Data uploaded by users about third parties
+	•	User misuse of personal information
+	•	Compliance failures caused by user actions
+
+⸻
+
+10. CHANGES
+
+This policy may be updated at any time. Continued use constitutes acceptance.
+
+⸻
+                            </div>
+                        </details>
                     </div>
 
                     <!-- Submit Button -->
@@ -299,19 +648,25 @@
         });
 
         // Custom checkbox behavior
-        document.getElementById('terms').addEventListener('change', function() {
-            const checkbox = this;
-            const label = document.querySelector('label[for="terms"]');
-            const svg = label.querySelector('svg');
-            
-            if (checkbox.checked) {
-                svg.classList.remove('opacity-0');
-                svg.classList.add('opacity-100');
-            } else {
-                svg.classList.remove('opacity-100');
-                svg.classList.add('opacity-0');
-            }
-        });
+        function wireCustomCheckbox(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.addEventListener('change', function() {
+                const checkbox = this;
+                const label = document.querySelector(`label[for="${id}"]`);
+                const svg = label ? label.querySelector('svg') : null;
+                if (!svg) return;
+                if (checkbox.checked) {
+                    svg.classList.remove('opacity-0');
+                    svg.classList.add('opacity-100');
+                } else {
+                    svg.classList.remove('opacity-100');
+                    svg.classList.add('opacity-0');
+                }
+            });
+        }
+        wireCustomCheckbox('terms');
+        wireCustomCheckbox('privacy');
 
         // Form submission - Version 3.0 (Anti-Spam Email Confirmation)
         console.log('Signup form initialized - using email confirmation protection');
@@ -354,6 +709,13 @@
                         first_name: formData.get('firstName'),
                         last_name: formData.get('lastName'),
                         surname: formData.get('lastName'),
+                        // ✅ Legal acceptance (required)
+                        terms_accepted: document.getElementById('terms')?.checked === true,
+                        terms_version: '2026-01-08',
+                        terms_accepted_at: new Date().toISOString(),
+                        privacy_accepted: document.getElementById('privacy')?.checked === true,
+                        privacy_version: '2026-01-08',
+                        privacy_accepted_at: new Date().toISOString(),
                         email_confirm: true // Bypass email confirmation for testing
                     })
                 });
