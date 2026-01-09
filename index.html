@@ -551,115 +551,126 @@
                 <p class="text-slate-300 max-w-3xl mx-auto">Choose the suite that matches your business needs, or combine them for complete operational control.</p>
             </div>
             
-            <!-- Three Product Suites -->
-            <div class="grid lg:grid-cols-3 gap-8 mb-12">
-                <!-- Operations Suite -->
-                <div class="card-hover bg-gradient-to-br from-freight-slate-light to-slate-800 p-8 rounded-2xl border border-slate-600 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-500/20 to-transparent rounded-full -translate-y-10 translate-x-10"></div>
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center mb-6">
-                            <i data-lucide="settings" class="text-green-500" style="width:32px;height:32px"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">Operations Suite</h3>
-                        <p class="text-slate-300 mb-6">Core business management: inventory, sales, purchasing, and accounting - all integrated with Xero.</p>
-                        
-                        <div class="space-y-3 mb-8">
-                            <div class="flex items-center text-sm text-slate-300">
-                                <i data-lucide="check" class="text-green-500 mr-3" style="width:16px;height:16px"></i>
-                                <span>InventoryIQ + InvoiceIQ + PurchaseIQ</span>
+            <!-- Three Product Suites - Horizontal Scrolling -->
+            <div class="relative mb-12">
+                <div class="overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4" style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <div class="flex gap-6 min-w-max" style="width: max-content;">
+                        <!-- Operations Suite -->
+                        <div class="card-hover bg-gradient-to-br from-freight-slate-light to-slate-800 p-8 rounded-2xl border border-slate-600 relative overflow-hidden flex-shrink-0" style="min-width: 400px; max-width: 450px;">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-500/20 to-transparent rounded-full -translate-y-10 translate-x-10"></div>
+                            <div class="relative z-10">
+                                <div class="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center mb-6">
+                                    <i data-lucide="settings" class="text-green-500" style="width:32px;height:32px"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-4">Operations Suite</h3>
+                                <p class="text-slate-300 mb-6">Core business management: inventory, sales, purchasing, and accounting - all integrated with Xero.</p>
+                                
+                                <div class="space-y-3 mb-8">
+                                    <div class="flex items-center text-sm text-slate-300">
+                                        <i data-lucide="check" class="text-green-500 mr-3 flex-shrink-0" style="width:16px;height:16px"></i>
+                                        <span>InventoryIQ + InvoiceIQ + PurchaseIQ</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-slate-300">
+                                        <i data-lucide="check" class="text-green-500 mr-3 flex-shrink-0" style="width:16px;height:16px"></i>
+                                        <span>CompaniesIQ + TaskIQ + JournalIQ</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-slate-300">
+                                        <i data-lucide="check" class="text-green-500 mr-3 flex-shrink-0" style="width:16px;height:16px"></i>
+                                        <span>Real-time Xero synchronization</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-green-500/10 rounded-lg p-4 mb-6">
+                                    <div class="text-sm text-green-400 font-semibold">Perfect for:</div>
+                                    <div class="text-sm text-slate-300">Growing businesses ready to replace spreadsheets with professional systems</div>
+                                </div>
+                                
+                                <a href="#pricing" class="block text-center bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
+                                    View Operations Pricing
+                                </a>
                             </div>
-                            <div class="flex items-center text-sm text-slate-300">
-                                <i data-lucide="check" class="text-green-500 mr-3" style="width:16px;height:16px"></i>
-                                <span>CompaniesIQ + TaskIQ + JournalIQ</span>
-                            </div>
-                            <div class="flex items-center text-sm text-slate-300">
-                                <i data-lucide="check" class="text-green-500 mr-3" style="width:16px;height:16px"></i>
-                                <span>Real-time Xero synchronization</span>
+                        </div>
+
+                        <!-- Logistics Suite -->
+                        <div class="card-hover bg-gradient-to-br from-freight-slate-light to-slate-800 p-8 rounded-2xl border-2 border-freight-orange relative overflow-hidden flex-shrink-0" style="min-width: 400px; max-width: 450px;">
+                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-freight-orange text-white text-xs px-3 py-1 rounded-full font-semibold">Most Popular</div>
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-freight-orange/20 to-transparent rounded-full -translate-y-10 translate-x-10"></div>
+                            <div class="relative z-10">
+                                <div class="w-16 h-16 bg-freight-orange/20 rounded-2xl flex items-center justify-center mb-6">
+                                    <i data-lucide="truck" class="text-freight-orange" style="width:32px;height:32px"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-4">Logistics Suite</h3>
+                                <p class="text-slate-300 mb-6">Complete supply chain control: import/export, delivery management, and freight optimization.</p>
+                                
+                                <div class="space-y-3 mb-8">
+                                    <div class="flex items-center text-sm text-slate-300">
+                                        <i data-lucide="check" class="text-freight-orange mr-3 flex-shrink-0" style="width:16px;height:16px"></i>
+                                        <span>Operations Suite + ImportIQ + ExportIQ</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-slate-300">
+                                        <i data-lucide="check" class="text-freight-orange mr-3 flex-shrink-0" style="width:16px;height:16px"></i>
+                                        <span>DeliveryIQ + CourierIQ + Container optimization</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-slate-300">
+                                        <i data-lucide="check" class="text-freight-orange mr-3 flex-shrink-0" style="width:16px;height:16px"></i>
+                                        <span>Landed cost calculator + Multi-currency</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-freight-orange/10 rounded-lg p-4 mb-6">
+                                    <div class="text-sm text-freight-orange font-semibold">Perfect for:</div>
+                                    <div class="text-sm text-slate-300">Import/export businesses and distributors with complex supply chains</div>
+                                </div>
+                                
+                                <a href="#pricing" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white py-3 px-6 rounded-lg font-semibold transition-colors">
+                                    View Logistics Pricing
+                                </a>
                             </div>
                         </div>
-                        
-                        <div class="bg-green-500/10 rounded-lg p-4 mb-6">
-                            <div class="text-sm text-green-400 font-semibold">Perfect for:</div>
-                            <div class="text-sm text-slate-300">Growing businesses ready to replace spreadsheets with professional systems</div>
+
+                        <!-- Intelligence Suite -->
+                        <div class="card-hover bg-gradient-to-br from-freight-slate-light to-slate-800 p-8 rounded-2xl border border-slate-600 relative overflow-hidden flex-shrink-0" style="min-width: 400px; max-width: 450px;">
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full -translate-y-10 translate-x-10"></div>
+                            <div class="relative z-10">
+                                <div class="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6">
+                                    <i data-lucide="brain" class="text-purple-500" style="width:32px;height:32px"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-4">Intelligence Suite</h3>
+                                <p class="text-slate-300 mb-6">AI-powered insights: demand forecasting, pricing optimization, and advanced analytics.</p>
+                                
+                                <div class="space-y-3 mb-8">
+                                    <div class="flex items-center text-sm text-slate-300">
+                                        <i data-lucide="check" class="text-purple-500 mr-3 flex-shrink-0" style="width:16px;height:16px"></i>
+                                        <span>Logistics Suite + ForecastIQ + PriceIQ</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-slate-300">
+                                        <i data-lucide="check" class="text-purple-500 mr-3 flex-shrink-0" style="width:16px;height:16px"></i>
+                                        <span>ReportsIQ + Manufacturing + WarrantyIQ</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-slate-300">
+                                        <i data-lucide="check" class="text-purple-500 mr-3 flex-shrink-0" style="width:16px;height:16px"></i>
+                                        <span>AI demand prediction + Margin optimization</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-purple-500/10 rounded-lg p-4 mb-6">
+                                    <div class="text-sm text-purple-400 font-semibold">Perfect for:</div>
+                                    <div class="text-sm text-slate-300">Established businesses wanting AI-driven competitive advantages</div>
+                                </div>
+                                
+                                <a href="#pricing" class="block text-center bg-purple-500 hover:bg-purple-600 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
+                                    View Intelligence Pricing
+                                </a>
+                            </div>
                         </div>
-                        
-                        <a href="#pricing" class="block text-center bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
-                            View Operations Pricing
-                        </a>
                     </div>
                 </div>
-
-                <!-- Logistics Suite -->
-                <div class="card-hover bg-gradient-to-br from-freight-slate-light to-slate-800 p-8 rounded-2xl border-2 border-freight-orange relative overflow-hidden">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-freight-orange text-white text-xs px-3 py-1 rounded-full font-semibold">Most Popular</div>
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-freight-orange/20 to-transparent rounded-full -translate-y-10 translate-x-10"></div>
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 bg-freight-orange/20 rounded-2xl flex items-center justify-center mb-6">
-                            <i data-lucide="truck" class="text-freight-orange" style="width:32px;height:32px"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">Logistics Suite</h3>
-                        <p class="text-slate-300 mb-6">Complete supply chain control: import/export, delivery management, and freight optimization.</p>
-                        
-                        <div class="space-y-3 mb-8">
-                            <div class="flex items-center text-sm text-slate-300">
-                                <i data-lucide="check" class="text-freight-orange mr-3" style="width:16px;height:16px"></i>
-                                <span>Operations Suite + ImportIQ + ExportIQ</span>
-                            </div>
-                            <div class="flex items-center text-sm text-slate-300">
-                                <i data-lucide="check" class="text-freight-orange mr-3" style="width:16px;height:16px"></i>
-                                <span>DeliveryIQ + CourierIQ + Container optimization</span>
-                            </div>
-                            <div class="flex items-center text-sm text-slate-300">
-                                <i data-lucide="check" class="text-freight-orange mr-3" style="width:16px;height:16px"></i>
-                                <span>Landed cost calculator + Multi-currency</span>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-freight-orange/10 rounded-lg p-4 mb-6">
-                            <div class="text-sm text-freight-orange font-semibold">Perfect for:</div>
-                            <div class="text-sm text-slate-300">Import/export businesses and distributors with complex supply chains</div>
-                        </div>
-                        
-                        <a href="#pricing" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white py-3 px-6 rounded-lg font-semibold transition-colors">
-                            View Logistics Pricing
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Intelligence Suite -->
-                <div class="card-hover bg-gradient-to-br from-freight-slate-light to-slate-800 p-8 rounded-2xl border border-slate-600 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full -translate-y-10 translate-x-10"></div>
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6">
-                            <i data-lucide="brain" class="text-purple-500" style="width:32px;height:32px"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">Intelligence Suite</h3>
-                        <p class="text-slate-300 mb-6">AI-powered insights: demand forecasting, pricing optimization, and advanced analytics.</p>
-                        
-                        <div class="space-y-3 mb-8">
-                            <div class="flex items-center text-sm text-slate-300">
-                                <i data-lucide="check" class="text-purple-500 mr-3" style="width:16px;height:16px"></i>
-                                <span>Logistics Suite + ForecastIQ + PriceIQ</span>
-                            </div>
-                            <div class="flex items-center text-sm text-slate-300">
-                                <i data-lucide="check" class="text-purple-500 mr-3" style="width:16px;height:16px"></i>
-                                <span>ReportsIQ + Manufacturing + WarrantyIQ</span>
-                            </div>
-                            <div class="flex items-center text-sm text-slate-300">
-                                <i data-lucide="check" class="text-purple-500 mr-3" style="width:16px;height:16px"></i>
-                                <span>AI demand prediction + Margin optimization</span>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-purple-500/10 rounded-lg p-4 mb-6">
-                            <div class="text-sm text-purple-400 font-semibold">Perfect for:</div>
-                            <div class="text-sm text-slate-300">Established businesses wanting AI-driven competitive advantages</div>
-                        </div>
-                        
-                        <a href="#pricing" class="block text-center bg-purple-500 hover:bg-purple-600 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
-                            View Intelligence Pricing
-                        </a>
-                    </div>
+                <!-- Scroll Indicator -->
+                <div class="flex justify-center mt-4 gap-2">
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <p class="text-xs text-slate-500 ml-2">← Scroll to see more →</p>
                 </div>
             </div>
 
