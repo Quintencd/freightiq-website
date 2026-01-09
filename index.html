@@ -1063,37 +1063,50 @@
                 <p class="text-slate-300 max-w-3xl mx-auto">Your data is protected with bank-level security and compliance standards.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700 text-center">
-                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="shield-check" class="text-green-500" style="width:24px;height:24px"></i>
+            <!-- Horizontal Scrolling Container -->
+            <div class="relative">
+                <div class="overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4" style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <div class="flex gap-6 min-w-max" style="width: max-content;">
+                        <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700 text-center flex-shrink-0" style="min-width: 280px; max-width: 320px;">
+                            <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="shield-check" class="text-green-500" style="width:24px;height:24px"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-2">Bank-Level Security</h3>
+                            <p class="text-slate-300 text-sm">256-bit encryption at rest and in transit with role-based access controls.</p>
+                        </div>
+                        
+                        <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700 text-center flex-shrink-0" style="min-width: 280px; max-width: 320px;">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="globe" class="text-blue-500" style="width:24px;height:24px"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-2">GDPR & POPIA Compliant</h3>
+                            <p class="text-slate-300 text-sm">Full compliance with international data protection regulations.</p>
+                        </div>
+                        
+                        <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700 text-center flex-shrink-0" style="min-width: 280px; max-width: 320px;">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="database" class="text-purple-500" style="width:24px;height:24px"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-2">Data Ownership</h3>
+                            <p class="text-slate-300 text-sm">You retain full ownership of your data and can export it anytime.</p>
+                        </div>
+                        
+                        <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700 text-center flex-shrink-0" style="min-width: 280px; max-width: 320px;">
+                            <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="refresh-cw" class="text-orange-500" style="width:24px;height:24px"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-white mb-2">Xero Integration</h3>
+                            <p class="text-slate-300 text-sm">Seamless sync with Xero for real-time financial data integration.</p>
+                        </div>
                     </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">Bank-Level Security</h3>
-                    <p class="text-slate-300 text-sm">256-bit encryption at rest and in transit with role-based access controls.</p>
                 </div>
-                
-                <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700 text-center">
-                    <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="globe" class="text-blue-500" style="width:24px;height:24px"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">GDPR & POPIA Compliant</h3>
-                    <p class="text-slate-300 text-sm">Full compliance with international data protection regulations.</p>
-                </div>
-                
-                <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700 text-center">
-                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="database" class="text-purple-500" style="width:24px;height:24px"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">Data Ownership</h3>
-                    <p class="text-slate-300 text-sm">You retain full ownership of your data and can export it anytime.</p>
-                </div>
-                
-                <div class="card-hover bg-freight-slate p-6 rounded-xl border border-slate-700 text-center">
-                    <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="refresh-cw" class="text-orange-500" style="width:24px;height:24px"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">Xero Integration</h3>
-                    <p class="text-slate-300 text-sm">Seamless sync with Xero for real-time financial data integration.</p>
+                <!-- Scroll Indicator -->
+                <div class="flex justify-center mt-4 gap-2">
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <p class="text-xs text-slate-500 ml-2">← Scroll to see more →</p>
                 </div>
             </div>
         </div>
