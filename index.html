@@ -736,66 +736,81 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="/modules.html" class="card-hover bg-freight-slate/70 p-6 rounded-2xl border border-slate-700 block">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-11 h-11 bg-freight-orange/20 rounded-xl flex items-center justify-center">
-                            <i data-lucide="layout-dashboard" class="text-freight-orange" style="width:20px;height:20px"></i>
-                        </div>
-                        <h3 class="text-white font-semibold text-lg">Dashboard</h3>
-                    </div>
-                    <p class="text-slate-300 text-sm">Company performance, margin, and KPIs in real time.</p>
-                </a>
+            <!-- Horizontal Scrolling Container -->
+            <div class="relative">
+                <div class="overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4" style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <div class="flex gap-6 min-w-max" style="width: max-content;">
+                        <a href="/modules.html" class="card-hover bg-freight-slate/70 p-6 rounded-2xl border border-slate-700 block flex-shrink-0" style="min-width: 280px; max-width: 320px;">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-11 h-11 bg-freight-orange/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="layout-dashboard" class="text-freight-orange" style="width:20px;height:20px"></i>
+                                </div>
+                                <h3 class="text-white font-semibold text-lg">Dashboard</h3>
+                            </div>
+                            <p class="text-slate-300 text-sm">Company performance, margin, and KPIs in real time.</p>
+                        </a>
 
-                <a href="/modules.html" class="card-hover bg-freight-slate/70 p-6 rounded-2xl border border-slate-700 block">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-11 h-11 bg-blue-500/20 rounded-xl flex items-center justify-center">
-                            <i data-lucide="users" class="text-blue-400" style="width:20px;height:20px"></i>
-                        </div>
-                        <h3 class="text-white font-semibold text-lg">CompaniesIQ</h3>
-                    </div>
-                    <p class="text-slate-300 text-sm">Customers and suppliers in one clean system.</p>
-                </a>
+                        <a href="/modules.html" class="card-hover bg-freight-slate/70 p-6 rounded-2xl border border-slate-700 block flex-shrink-0" style="min-width: 280px; max-width: 320px;">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-11 h-11 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="users" class="text-blue-400" style="width:20px;height:20px"></i>
+                                </div>
+                                <h3 class="text-white font-semibold text-lg">CompaniesIQ</h3>
+                            </div>
+                            <p class="text-slate-300 text-sm">Customers and suppliers in one clean system.</p>
+                        </a>
 
-                <a href="/modules/inventoryiq.html" class="card-hover bg-freight-slate/70 p-6 rounded-2xl border border-slate-700 block">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-11 h-11 bg-purple-500/20 rounded-xl flex items-center justify-center">
-                            <i data-lucide="warehouse" class="text-purple-400" style="width:20px;height:20px"></i>
-                        </div>
-                        <h3 class="text-white font-semibold text-lg">InventoryIQ</h3>
-                    </div>
-                    <p class="text-slate-300 text-sm">SKUs, stock by branch, FIFO costs, adjustments, and transfers.</p>
-                </a>
+                        <a href="/modules/inventoryiq.html" class="card-hover bg-freight-slate/70 p-6 rounded-2xl border border-slate-700 block flex-shrink-0" style="min-width: 280px; max-width: 320px;">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-11 h-11 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="warehouse" class="text-purple-400" style="width:20px;height:20px"></i>
+                                </div>
+                                <h3 class="text-white font-semibold text-lg">InventoryIQ</h3>
+                            </div>
+                            <p class="text-slate-300 text-sm">SKUs, stock by branch, FIFO costs, adjustments, and transfers.</p>
+                        </a>
 
-                <a href="/modules/purchaseiq.html" class="card-hover bg-freight-slate/70 p-6 rounded-2xl border border-slate-700 block">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-11 h-11 bg-emerald-500/20 rounded-xl flex items-center justify-center">
-                            <i data-lucide="shopping-cart" class="text-emerald-400" style="width:20px;height:20px"></i>
-                        </div>
-                        <h3 class="text-white font-semibold text-lg">PurchaseIQ</h3>
-                    </div>
-                    <p class="text-slate-300 text-sm">Purchase orders, receipts, and supplier pricing history.</p>
-                </a>
+                        <a href="/modules/purchaseiq.html" class="card-hover bg-freight-slate/70 p-6 rounded-2xl border border-slate-700 block flex-shrink-0" style="min-width: 280px; max-width: 320px;">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-11 h-11 bg-emerald-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="shopping-cart" class="text-emerald-400" style="width:20px;height:20px"></i>
+                                </div>
+                                <h3 class="text-white font-semibold text-lg">PurchaseIQ</h3>
+                            </div>
+                            <p class="text-slate-300 text-sm">Purchase orders, receipts, and supplier pricing history.</p>
+                        </a>
 
-                <a href="/modules/invoiceiq.html" class="card-hover bg-freight-slate/70 p-6 rounded-2xl border border-slate-700 block">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-11 h-11 bg-sky-500/20 rounded-xl flex items-center justify-center">
-                            <i data-lucide="file-text" class="text-sky-400" style="width:20px;height:20px"></i>
-                        </div>
-                        <h3 class="text-white font-semibold text-lg">InvoiceIQ</h3>
-                    </div>
-                    <p class="text-slate-300 text-sm">Quotes, invoices, credit notes, payments — synced to Xero.</p>
-                </a>
+                        <a href="/modules/invoiceiq.html" class="card-hover bg-freight-slate/70 p-6 rounded-2xl border border-slate-700 block flex-shrink-0" style="min-width: 280px; max-width: 320px;">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-11 h-11 bg-sky-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="file-text" class="text-sky-400" style="width:20px;height:20px"></i>
+                                </div>
+                                <h3 class="text-white font-semibold text-lg">InvoiceIQ</h3>
+                            </div>
+                            <p class="text-slate-300 text-sm">Quotes, invoices, credit notes, payments — synced to Xero.</p>
+                        </a>
 
-                <a href="/solutions/freight-logistics.html" class="card-hover bg-freight-slate/70 p-6 rounded-2xl border border-slate-700 block">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-11 h-11 bg-freight-orange/20 rounded-xl flex items-center justify-center">
-                            <i data-lucide="ship" class="text-freight-orange" style="width:20px;height:20px"></i>
-                        </div>
-                        <h3 class="text-white font-semibold text-lg">ImportIQ + ExportIQ</h3>
+                        <a href="/solutions/freight-logistics.html" class="card-hover bg-freight-slate/70 p-6 rounded-2xl border border-slate-700 block flex-shrink-0" style="min-width: 280px; max-width: 320px;">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-11 h-11 bg-freight-orange/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="ship" class="text-freight-orange" style="width:20px;height:20px"></i>
+                                </div>
+                                <h3 class="text-white font-semibold text-lg">ImportIQ + ExportIQ</h3>
+                            </div>
+                            <p class="text-slate-300 text-sm">Best‑in‑class import/export workflows with landed cost and FX visibility.</p>
+                        </a>
                     </div>
-                    <p class="text-slate-300 text-sm">Best‑in‑class import/export workflows with landed cost and FX visibility.</p>
-                </a>
+                </div>
+                <!-- Scroll Indicator -->
+                <div class="flex justify-center mt-4 gap-2">
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <p class="text-xs text-slate-500 ml-2">← Scroll to see more →</p>
+                </div>
             </div>
 
             <div class="text-center mt-10">
