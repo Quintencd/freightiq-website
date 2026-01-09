@@ -90,6 +90,14 @@
         .hero-video-dialog-thumbnail:hover .hero-video-dialog-play-icon {
             transform: scale(1.05);
         }
+        /* Hide scrollbar but keep functionality */
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
         .hero-video-dialog-modal {
             display: none;
             position: fixed;
@@ -354,54 +362,69 @@
                 </p>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="bg-freight-slate-light/40 rounded-2xl border border-slate-700 p-8">
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center">
-                            <i data-lucide="sheet" class="text-red-400" style="width:22px;height:22px"></i>
+            <!-- Horizontal Scrolling Container -->
+            <div class="relative">
+                <div class="overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4" style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <div class="flex gap-6 min-w-max" style="width: max-content;">
+                        <!-- Card 1: Spreadsheet chaos -->
+                        <div class="bg-freight-slate-light/40 rounded-2xl border border-slate-700 p-8 flex-shrink-0" style="min-width: 400px; max-width: 450px;">
+                            <div class="flex items-center gap-3 mb-5">
+                                <div class="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center">
+                                    <i data-lucide="sheet" class="text-red-400" style="width:22px;height:22px"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-white">Spreadsheet chaos</h3>
+                            </div>
+                            <ul class="space-y-3 text-slate-300 text-sm">
+                                <li class="flex gap-3"><i data-lucide="x-circle" class="text-red-400 flex-shrink-0" style="width:18px;height:18px"></i><span>Costs live across multiple tabs, versions, and email threads.</span></li>
+                                <li class="flex gap-3"><i data-lucide="x-circle" class="text-red-400 flex-shrink-0" style="width:18px;height:18px"></i><span>Landed cost per SKU is slow, inconsistent, and error-prone.</span></li>
+                                <li class="flex gap-3"><i data-lucide="x-circle" class="text-red-400 flex-shrink-0" style="width:18px;height:18px"></i><span>Margin is guessed until month-end (often too late).</span></li>
+                                <li class="flex gap-3"><i data-lucide="x-circle" class="text-red-400 flex-shrink-0" style="width:18px;height:18px"></i><span>No single view of imports, exports, inventory, and finance.</span></li>
+                            </ul>
                         </div>
-                        <h3 class="text-xl font-semibold text-white">Spreadsheet chaos</h3>
-                    </div>
-                    <ul class="space-y-3 text-slate-300 text-sm">
-                        <li class="flex gap-3"><i data-lucide="x-circle" class="text-red-400" style="width:18px;height:18px"></i><span>Costs live across multiple tabs, versions, and email threads.</span></li>
-                        <li class="flex gap-3"><i data-lucide="x-circle" class="text-red-400" style="width:18px;height:18px"></i><span>Landed cost per SKU is slow, inconsistent, and error-prone.</span></li>
-                        <li class="flex gap-3"><i data-lucide="x-circle" class="text-red-400" style="width:18px;height:18px"></i><span>Margin is guessed until month-end (often too late).</span></li>
-                        <li class="flex gap-3"><i data-lucide="x-circle" class="text-red-400" style="width:18px;height:18px"></i><span>No single view of imports, exports, inventory, and finance.</span></li>
-                    </ul>
-                </div>
 
-                <div class="bg-freight-slate-light/40 rounded-2xl border border-freight-orange/30 p-8 shadow-lg shadow-orange-500/10">
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-12 h-12 rounded-xl bg-freight-orange/20 flex items-center justify-center">
-                            <i data-lucide="sparkles" class="text-freight-orange" style="width:22px;height:22px"></i>
+                        <!-- Card 2: FlowIQ (self-serve) -->
+                        <div class="bg-freight-slate-light/40 rounded-2xl border border-freight-orange/30 p-8 shadow-lg shadow-orange-500/10 flex-shrink-0" style="min-width: 400px; max-width: 450px;">
+                            <div class="flex items-center gap-3 mb-5">
+                                <div class="w-12 h-12 rounded-xl bg-freight-orange/20 flex items-center justify-center">
+                                    <i data-lucide="sparkles" class="text-freight-orange" style="width:22px;height:22px"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-white">FlowIQ (self‑serve)</h3>
+                            </div>
+                            <ul class="space-y-3 text-slate-300 text-sm">
+                                <li class="flex gap-3"><i data-lucide="check-circle" class="text-green-400 flex-shrink-0" style="width:18px;height:18px"></i><span><strong class="text-white">ImportIQ:</strong> landed cost per SKU, fee allocation, FX, and supplier terms.</span></li>
+                                <li class="flex gap-3"><i data-lucide="check-circle" class="text-green-400 flex-shrink-0" style="width:18px;height:18px"></i><span><strong class="text-white">ExportIQ:</strong> export shipment visibility and FX inflow tracking.</span></li>
+                                <li class="flex gap-3"><i data-lucide="check-circle" class="text-green-400 flex-shrink-0" style="width:18px;height:18px"></i><span><strong class="text-white">InventoryIQ + FIFO:</strong> stock and cost accuracy across branches.</span></li>
+                                <li class="flex gap-3"><i data-lucide="check-circle" class="text-green-400 flex-shrink-0" style="width:18px;height:18px"></i><span><strong class="text-white">Dashboard + Reports:</strong> margin, sales, and performance in real time.</span></li>
+                                <li class="flex gap-3"><i data-lucide="check-circle" class="text-green-400 flex-shrink-0" style="width:18px;height:18px"></i><span><strong class="text-white">Xero sync:</strong> invoices and financial data without re‑keying.</span></li>
+                            </ul>
                         </div>
-                        <h3 class="text-xl font-semibold text-white">FlowIQ (self‑serve)</h3>
-                    </div>
-                    <ul class="space-y-3 text-slate-300 text-sm">
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="text-green-400" style="width:18px;height:18px"></i><span><strong class="text-white">ImportIQ:</strong> landed cost per SKU, fee allocation, FX, and supplier terms.</span></li>
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="text-green-400" style="width:18px;height:18px"></i><span><strong class="text-white">ExportIQ:</strong> export shipment visibility and FX inflow tracking.</span></li>
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="text-green-400" style="width:18px;height:18px"></i><span><strong class="text-white">InventoryIQ + FIFO:</strong> stock and cost accuracy across branches.</span></li>
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="text-green-400" style="width:18px;height:18px"></i><span><strong class="text-white">Dashboard + Reports:</strong> margin, sales, and performance in real time.</span></li>
-                        <li class="flex gap-3"><i data-lucide="check-circle" class="text-green-400" style="width:18px;height:18px"></i><span><strong class="text-white">Xero sync:</strong> invoices and financial data without re‑keying.</span></li>
-                    </ul>
-                </div>
 
-                <div class="bg-freight-slate-light/40 rounded-2xl border border-slate-700 p-8">
-                    <div class="flex items-center gap-3 mb-5">
-                        <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center">
-                            <i data-lucide="rocket" class="text-green-400" style="width:22px;height:22px"></i>
+                        <!-- Card 3: Go live fast -->
+                        <div class="bg-freight-slate-light/40 rounded-2xl border border-slate-700 p-8 flex-shrink-0" style="min-width: 400px; max-width: 450px;">
+                            <div class="flex items-center gap-3 mb-5">
+                                <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center">
+                                    <i data-lucide="rocket" class="text-green-400" style="width:22px;height:22px"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-white">Go live fast</h3>
+                            </div>
+                            <ol class="space-y-3 text-slate-300 text-sm">
+                                <li class="flex gap-3"><span class="w-6 h-6 rounded-full bg-freight-orange/20 text-freight-orange flex items-center justify-center text-xs font-semibold flex-shrink-0">1</span><span>Create your account (no credit card required).</span></li>
+                                <li class="flex gap-3"><span class="w-6 h-6 rounded-full bg-freight-orange/20 text-freight-orange flex items-center justify-center text-xs font-semibold flex-shrink-0">2</span><span>Import products, suppliers, and shipments using templates.</span></li>
+                                <li class="flex gap-3"><span class="w-6 h-6 rounded-full bg-freight-orange/20 text-freight-orange flex items-center justify-center text-xs font-semibold flex-shrink-0">3</span><span>Track shipments, allocate costs, and monitor margin from day one.</span></li>
+                            </ol>
+                            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                                <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg font-semibold text-center">Start Free Trial</a>
+                                <a href="/modules.html" class="border border-slate-600 hover:border-orange-500 text-white px-6 py-3 rounded-lg font-semibold text-center">See all modules</a>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold text-white">Go live fast</h3>
                     </div>
-                    <ol class="space-y-3 text-slate-300 text-sm">
-                        <li class="flex gap-3"><span class="w-6 h-6 rounded-full bg-freight-orange/20 text-freight-orange flex items-center justify-center text-xs font-semibold">1</span><span>Create your account (no credit card required).</span></li>
-                        <li class="flex gap-3"><span class="w-6 h-6 rounded-full bg-freight-orange/20 text-freight-orange flex items-center justify-center text-xs font-semibold">2</span><span>Import products, suppliers, and shipments using templates.</span></li>
-                        <li class="flex gap-3"><span class="w-6 h-6 rounded-full bg-freight-orange/20 text-freight-orange flex items-center justify-center text-xs font-semibold">3</span><span>Track shipments, allocate costs, and monitor margin from day one.</span></li>
-                    </ol>
-                    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-                        <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg font-semibold text-center">Start Free Trial</a>
-                        <a href="/modules.html" class="border border-slate-600 hover:border-orange-500 text-white px-6 py-3 rounded-lg font-semibold text-center">See all modules</a>
-                    </div>
+                </div>
+                <!-- Scroll Indicator -->
+                <div class="flex justify-center mt-4 gap-2">
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <div class="w-2 h-2 rounded-full bg-slate-600"></div>
+                    <p class="text-xs text-slate-500 ml-2">← Scroll to see more →</p>
                 </div>
             </div>
         </div>
