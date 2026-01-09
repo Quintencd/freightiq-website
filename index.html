@@ -986,12 +986,12 @@
         </div>
     </section>
 
-    <!-- Demo CTA -->
+    <!-- Demo / Get Started CTA -->
     <section id="demo" class="py-20 bg-freight-slate">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
-                <p class="text-slate-300">Tell us about your operation. We'll tailor a quick demo.</p>
+                <p class="text-slate-300">Create your account and set up FlowIQ in minutes. Prefer to speak to someone first? You can still request a demo below.</p>
             </div>
             <div class="max-w-2xl mx-auto bg-freight-slate-light p-8 rounded-xl border border-slate-700">
                 <form name="demo" method="POST" netlify netlify-honeypot="bot-field" data-netlify="true" action="/thank-you">
@@ -1016,11 +1016,11 @@
                             </button>
                             <button type="button" data-plan-option data-plan-value="" class="plan-chip">
                                 Not sure yet
-                                <span class="block text-xs text-slate-300 font-normal">Help me choose on the demo</span>
+                                <span class="block text-xs text-slate-300 font-normal">Choose later (upgrade anytime)</span>
                             </button>
                         </div>
                         <p id="selectedPlanLabel" class="mt-3 text-sm text-slate-300">
-                            Not sure yet — we'll help you choose the right fit.
+                            Not sure yet — you can choose a plan later and upgrade anytime.
                         </p>
                     </div>
                     <div class="grid md:grid-cols-2 gap-6">
@@ -1031,6 +1031,12 @@
                         <textarea class="md:col-span-2 w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white" rows="4" name="message" placeholder="What are you trying to achieve?" required></textarea>
                     </div>
                     <button class="mt-6 w-full bg-freight-orange hover:bg-freight-orange-dark text-white py-3 rounded-lg font-semibold">Request Demo</button>
+                    <div class="mt-4 text-center">
+                        <a href="/signup" class="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:border-orange-500">
+                            Start Free Trial instead
+                            <i data-lucide="arrow-up-right" style="width:16px;height:16px"></i>
+                        </a>
+                    </div>
                 </form>
             </div>
         </div>
@@ -1239,7 +1245,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-white mb-4">Resources to help you evaluate FlowIQ</h2>
-                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Use these talking points, checklists, and FAQs to get your finance, ops, and leadership teams aligned before your demo.</p>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Use these talking points, checklists, and FAQs to get your finance, ops, and leadership teams aligned before you start your free trial.</p>
             </div>
             <div class="grid lg:grid-cols-2 gap-10">
                 <div class="space-y-6">
@@ -1251,17 +1257,17 @@
                             <li class="flex gap-3"><i data-lucide="clipboard-check" class="text-green-400" style="width:18px;height:18px"></i><span>30-day success plan outlining the first four automation wins to target.</span></li>
                         </ul>
                         <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-freight-orange hover:text-white transition-colors" data-plan="growth">
-                            <span>Request the toolkit with your demo</span>
+                            <span>Get the toolkit</span>
                             <i data-lucide="arrow-up-right" style="width:18px;height:18px"></i>
                         </a>
                     </div>
                     <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
                         <h3 class="text-xl font-semibold text-white mb-3">Rollout checklist</h3>
-                        <p class="text-slate-300 text-sm mb-4">Most teams go live in under 14 days. Share this with your implementation lead so nothing gets missed.</p>
+                        <p class="text-slate-300 text-sm mb-4">Most teams go live in under 14 days. Share this with your ops lead so nothing gets missed.</p>
                         <div class="space-y-3 text-sm text-slate-300">
-                            <div class="flex items-center gap-3"><i data-lucide="check-circle" class="text-green-400" style="width:18px;height:18px"></i><span>Import your latest shipment manifest or CSV — we'll flag anomalies.</span></div>
+                            <div class="flex items-center gap-3"><i data-lucide="check-circle" class="text-green-400" style="width:18px;height:18px"></i><span>Import your latest shipment manifest or CSV — FlowIQ flags anomalies automatically.</span></div>
                             <div class="flex items-center gap-3"><i data-lucide="lock" class="text-purple-400" style="width:18px;height:18px"></i><span>Configure role-based permissions with our recommended policy presets.</span></div>
-                            <div class="flex items-center gap-3"><i data-lucide="rocket" class="text-orange-400" style="width:18px;height:18px"></i><span>Schedule a "first automation" workshop to automate a manual freight task.</span></div>
+                            <div class="flex items-center gap-3"><i data-lucide="rocket" class="text-orange-400" style="width:18px;height:18px"></i><span>Enable your first automation (e.g., landed-cost fee allocation) and remove a manual freight step.</span></div>
                         </div>
                     </div>
                 </div>
@@ -1273,7 +1279,7 @@
                                 How long does onboarding take?
                                 <i data-lucide="chevron-down" class="faq-toggle-icon transition-transform duration-200" style="width:18px;height:18px"></i>
                             </summary>
-                            <p class="mt-3 text-sm text-slate-300">Most teams complete onboarding in 7–14 days. We preload your product catalog, supplier list, and historical shipments so you can validate landed-cost accuracy within the first week.</p>
+                            <p class="mt-3 text-sm text-slate-300">Most teams complete onboarding in 7–14 days. Import your product catalog, suppliers, and historical shipments with our templates so you can validate landed-cost accuracy within the first week.</p>
                         </details>
                         <details class="border border-slate-700/80 rounded-lg p-4 bg-freight-slate/80">
                             <summary class="flex items-center justify-between cursor-pointer text-white font-medium">
@@ -1294,11 +1300,11 @@
                                 Can FlowIQ replace our freight forwarder portal?
                                 <i data-lucide="chevron-down" class="faq-toggle-icon transition-transform duration-200" style="width:18px;height:18px"></i>
                             </summary>
-                            <p class="mt-3 text-sm text-slate-300">Yes. Our forwarder network feeds milestone updates directly into FlowIQ. You can still work with your preferred partners while giving your team a unified track-and-trace command center.</p>
+                            <p class="mt-3 text-sm text-slate-300">Yes. FlowIQ centralises shipment milestones in one place so your team has a unified track-and-trace command center while still working with your preferred partners.</p>
                         </details>
                     </div>
                     <div class="mt-6 p-4 rounded-lg border border-freight-orange/40 bg-freight-orange/10">
-                        <p class="text-sm text-slate-200">Still evaluating vendors? <a href="#contact" class="text-freight-orange hover:text-white font-semibold">Book a consultation</a> and we'll benchmark FlowIQ against your shortlist.</p>
+                        <p class="text-sm text-slate-200">Still evaluating vendors? Use the toolkit to compare FlowIQ against your shortlist, or <a href="/signup" class="text-freight-orange hover:text-white font-semibold">start a free trial</a> and test it with your own data.</p>
                     </div>
                 </div>
             </div>
