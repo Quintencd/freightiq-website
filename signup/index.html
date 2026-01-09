@@ -60,9 +60,50 @@
                 <p class="text-slate-300">Start your 14-day free trial. No credit card required.</p>
             </div>
 
+            <!-- Plan Selection (optional) -->
+            <div id="planCard" class="bg-freight-slate-light/70 rounded-xl border border-slate-700 p-5">
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="layers" class="text-freight-orange" style="width:18px;height:18px"></i>
+                            <h3 class="text-white font-semibold">Choose a plan</h3>
+                        </div>
+                        <p class="text-slate-300 text-sm mt-1">Pick what you want to start with — you can change plans anytime during your trial.</p>
+                    </div>
+                    <a href="/pricing.html" class="text-sm text-slate-300 hover:text-white transition-colors whitespace-nowrap">View pricing</a>
+                </div>
+
+                <div class="mt-4 grid grid-cols-2 gap-3" role="radiogroup" aria-label="Select a FlowIQ plan">
+                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-colors" data-plan="starter">
+                        <div class="text-white font-semibold">Starter</div>
+                        <div class="text-xs text-slate-300">Solo founders</div>
+                    </button>
+                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-colors" data-plan="growth">
+                        <div class="text-white font-semibold">Growth</div>
+                        <div class="text-xs text-slate-300">Small teams</div>
+                    </button>
+                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-colors" data-plan="professional">
+                        <div class="text-white font-semibold">Professional</div>
+                        <div class="text-xs text-slate-300">Established ops</div>
+                    </button>
+                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-colors" data-plan="scale">
+                        <div class="text-white font-semibold">Scale</div>
+                        <div class="text-xs text-slate-300">High volume</div>
+                    </button>
+                </div>
+
+                <div class="mt-4 flex items-center justify-between gap-3">
+                    <div class="text-sm text-slate-300">
+                        Selected: <span id="selectedPlanName" class="text-white font-semibold">Growth</span>
+                    </div>
+                    <a href="/index.html#demo" class="text-sm text-slate-300 hover:text-white transition-colors">Enterprise? Request demo</a>
+                </div>
+            </div>
+
             <!-- Signup Form -->
             <div class="bg-freight-slate-light rounded-xl shadow-2xl p-8 border border-slate-700">
                 <form id="signupForm" class="space-y-6">
+                    <input type="hidden" id="selectedPlan" name="selectedPlan" value="" />
                     <!-- Company Information -->
                     <div class="space-y-4">
                         <h3 class="text-lg font-semibold text-white border-b border-slate-600 pb-2">Company Information</h3>
@@ -594,6 +635,9 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                             <div class="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
                         </div>
                     </button>
+                    <p class="mt-2 text-center text-xs text-slate-400">
+                        Selected: <span id="selectedPlanInline" class="text-slate-200 font-semibold">Growth</span> <span class="text-slate-500">• change anytime</span>
+                    </p>
 
                     <!-- Error/Success Messages -->
                     <div id="message" class="hidden p-4 rounded-lg"></div>
@@ -631,6 +675,62 @@ This policy may be updated at any time. Continued use constitutes acceptance.
         const supabaseUrl = 'https://yvbhjlmvpipniedwvdji.supabase.co'
         const supabaseKey = 'sb_publishable_8VnlIrOQ-FKqYVacj50Pbw_25kjFUXl'
         const supabase = window.supabase.createClient(supabaseUrl, supabaseKey)
+
+        // Plan preselection (pricing -> signup). Safe: does NOT change backend signup payload.
+        (function initPlanSelection() {
+            const allowedPlans = ['starter', 'growth', 'professional', 'scale'];
+            const planLabels = {
+                starter: 'Starter',
+                growth: 'Growth',
+                professional: 'Professional',
+                scale: 'Scale'
+            };
+            const planCtaLabels = {
+                starter: 'Start Starter Free Trial',
+                growth: 'Start Growth Free Trial',
+                professional: 'Start Professional Free Trial',
+                scale: 'Start Scale Free Trial'
+            };
+
+            const params = new URLSearchParams(window.location.search || '');
+            const paramPlan = (params.get('plan') || '').toLowerCase();
+            const storedPlan = (localStorage.getItem('flowiq_selected_plan') || '').toLowerCase();
+
+            let activePlan = allowedPlans.includes(paramPlan) ? paramPlan : (allowedPlans.includes(storedPlan) ? storedPlan : 'growth');
+
+            const selectedPlanInput = document.getElementById('selectedPlan');
+            const selectedPlanName = document.getElementById('selectedPlanName');
+            const selectedPlanInline = document.getElementById('selectedPlanInline');
+            const planButtons = Array.from(document.querySelectorAll('.plan-option[data-plan]'));
+            const buttonTextEl = document.getElementById('buttonText');
+
+            function render() {
+                if (selectedPlanInput) selectedPlanInput.value = activePlan;
+                if (selectedPlanName) selectedPlanName.textContent = planLabels[activePlan] || 'Growth';
+                if (selectedPlanInline) selectedPlanInline.textContent = planLabels[activePlan] || 'Growth';
+                planButtons.forEach((btn) => {
+                    const isActive = (btn.getAttribute('data-plan') || '').toLowerCase() === activePlan;
+                    btn.classList.toggle('border-freight-orange', isActive);
+                    btn.classList.toggle('bg-freight-orange/10', isActive);
+                });
+                if (buttonTextEl) {
+                    buttonTextEl.textContent = planCtaLabels[activePlan] || 'Start Your Free Trial';
+                }
+            }
+
+            function setPlan(next) {
+                if (!allowedPlans.includes(next)) return;
+                activePlan = next;
+                try { localStorage.setItem('flowiq_selected_plan', activePlan); } catch (_) {}
+                render();
+            }
+
+            planButtons.forEach((btn) => {
+                btn.addEventListener('click', () => setPlan((btn.getAttribute('data-plan') || '').toLowerCase()));
+            });
+
+            render();
+        })();
 
         // Password visibility toggle
         document.getElementById('togglePassword').addEventListener('click', function() {
@@ -762,7 +862,15 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             } finally {
                 // Reset button state
                 submitButton.disabled = false;
-                buttonText.textContent = 'Start Your Free Trial';
+                // Respect selected plan label after submission attempt
+                const planFromState = (document.getElementById('selectedPlan')?.value || '').toLowerCase();
+                const planToCta = {
+                    starter: 'Start Starter Free Trial',
+                    growth: 'Start Growth Free Trial',
+                    professional: 'Start Professional Free Trial',
+                    scale: 'Start Scale Free Trial'
+                };
+                buttonText.textContent = planToCta[planFromState] || 'Start Your Free Trial';
                 loadingSpinner.classList.add('hidden');
                 
                 if (window.lucide) { window.lucide.createIcons(); }
