@@ -722,9 +722,16 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 if (selectedPlanName) selectedPlanName.textContent = planLabels[activePlan] || 'Growth';
                 if (selectedPlanInline) selectedPlanInline.textContent = planLabels[activePlan] || 'Growth';
                 planButtons.forEach((btn) => {
-                    const isActive = (btn.getAttribute('data-plan') || '').toLowerCase() === activePlan;
-                    btn.classList.toggle('border-freight-orange', isActive);
-                    btn.classList.toggle('bg-freight-orange/10', isActive);
+                    const btnPlan = (btn.getAttribute('data-plan') || '').toLowerCase();
+                    const isActive = btnPlan === activePlan;
+                    // Remove all active classes first
+                    btn.classList.remove('border-freight-orange', 'bg-freight-orange/10', 'border-slate-600');
+                    // Add active classes to selected button
+                    if (isActive) {
+                        btn.classList.add('border-freight-orange', 'bg-freight-orange/10');
+                    } else {
+                        btn.classList.add('border-slate-600');
+                    }
                 });
                 if (buttonTextEl) {
                     buttonTextEl.textContent = planCtaLabels[activePlan] || 'Start Your Free Trial';
