@@ -14,6 +14,13 @@ A modern, responsive marketing site for FlowIQ.
 - Static HTML + Tailwind (CDN)
 - Netlify hosting
 
+## Theme (Light-only)
+This marketing website is **light-only** (no dark mode). The shared stylesheet `flowiq-light.css` deterministically remaps the older dark palette to a light, readable marketing look.
+
+- All public pages should include: `<link rel="stylesheet" href="/flowiq-light.css?v=1">` (in the `<head>`, after any page-specific `<style>` so it wins).
+- Do **not** add `<html class="dark">` or `prefers-color-scheme` switching on marketing pages.
+- Email templates under `email-templates/` are intentionally separate and are not governed by the marketing site theme.
+
 ## Plan pre-selection (Pricing → Signup)
 Pricing CTAs include a query param: `?plan=starter|growth|professional|scale`.
 

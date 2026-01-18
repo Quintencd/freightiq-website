@@ -1,0 +1,103 @@
+/* FlowIQ Marketing Website — Light-only theme
+   - This repo originally used a dark palette via Tailwind CDN + custom classes.
+   - We keep the HTML mostly unchanged and deterministically remap the palette here.
+   - No "system preference" switching: this is explicitly light-only. */
+
+:root {
+  color-scheme: light;
+}
+
+/* ------------------------------
+   Base brand tokens (always on)
+-------------------------------- */
+.text-freight-orange { color: #f97316 !important; }
+.bg-freight-orange { background-color: #f97316 !important; }
+.border-freight-orange { border-color: #f97316 !important; }
+.hover\:bg-freight-orange-dark:hover { background-color: #ea580c !important; }
+.hover\:text-freight-orange-dark:hover { color: #ea580c !important; }
+
+/* Opacity variants used throughout the HTML (these are NOT real Tailwind classes without a config) */
+.bg-freight-orange\/5 { background-color: rgba(249, 115, 22, 0.05) !important; }
+.bg-freight-orange\/10 { background-color: rgba(249, 115, 22, 0.10) !important; }
+.bg-freight-orange\/20 { background-color: rgba(249, 115, 22, 0.20) !important; }
+
+/* ------------------------------
+   Light-only palette remap
+-------------------------------- */
+.bg-freight-slate { background-color: #f8fafc !important; }         /* slate-50 */
+.bg-freight-slate-light { background-color: #ffffff !important; }   /* surface */
+
+/* Tailwind-like classes used in markup but not backed by a Tailwind config on most pages */
+.bg-freight-slate\/90 { background-color: rgba(255, 255, 255, 0.90) !important; }
+.bg-freight-slate\/95 { background-color: rgba(255, 255, 255, 0.95) !important; }
+.bg-freight-slate-light\/50 { background-color: rgba(255, 255, 255, 0.72) !important; }
+.bg-freight-slate-light\/70 { background-color: rgba(255, 255, 255, 0.85) !important; }
+.bg-freight-slate-light\/95 { background-color: rgba(255, 255, 255, 0.95) !important; }
+
+/* Background gradients originally built for dark mode */
+.hero-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+}
+.gradient-bg {
+  background:
+    radial-gradient(1200px circle at 20% 10%, rgba(249, 115, 22, 0.10), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+}
+
+/* Typography remap (the old dark theme leaned on very light grays / white) */
+.text-white { color: #0f172a !important; }      /* slate-900 */
+.text-slate-100 { color: #0f172a !important; }  /* slate-900 */
+.text-slate-200 { color: #0f172a !important; }  /* slate-900 */
+.text-slate-300 { color: #475569 !important; }  /* slate-600 */
+.text-slate-400 { color: #64748b !important; }  /* slate-500 */
+.text-slate-500 { color: #64748b !important; }  /* slate-500 */
+.text-slate-600 { color: #475569 !important; }  /* slate-600 */
+
+/* Borders: remap dark borders to light dividers */
+.border-slate-800 { border-color: #e2e8f0 !important; } /* slate-200 */
+.border-slate-700 { border-color: #e2e8f0 !important; } /* slate-200 */
+.border-slate-600 { border-color: #cbd5e1 !important; } /* slate-300 */
+
+/* Shadows: soften for light surfaces */
+.card-hover:hover {
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12) !important;
+}
+
+/* Plan chips (Index hero) */
+.plan-chip {
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  color: #0f172a !important;
+}
+.plan-chip.is-active {
+  border-color: rgba(249, 115, 22, 0.70) !important;
+  background-color: rgba(249, 115, 22, 0.12) !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.18) !important;
+}
+
+/* Controls / inputs (login + signup) */
+.bg-freight-slate.border {
+  border-color: #cbd5e1 !important;
+}
+
+/* Ensure critical CTAs keep white text */
+.bg-freight-orange,
+.bg-freight-orange * ,
+.bg-green-600,
+.bg-green-600 *,
+.bg-blue-600,
+.bg-blue-600 * ,
+.bg-red-600,
+.bg-red-600 * {
+  color: #ffffff !important;
+}
+
+/* Secondary button pattern used in pricing cards (bg-slate-700 / hover:bg-slate-600 + text-white) */
+.bg-slate-700 { background-color: #0f172a !important; }
+.hover\:bg-slate-600:hover { background-color: #1e293b !important; }
+.bg-slate-700,
+.bg-slate-700 * {
+  color: #ffffff !important;
+}
+
