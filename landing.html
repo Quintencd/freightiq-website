@@ -1,81 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flow IQ - Complete Business Management Platform</title>
-    <meta name="description" content="Flow IQ is a complete business management platform with AI-powered analytics, Xero integration, and advanced supply chain management. Replace 5+ systems with one unified platform.">
-    <link rel="icon" type="image/png" href="favicon.ico">
+    <title>Flow IQ - Complete Business Management Platform</title>
+    <meta name="description"
+        content="Flow IQ is a complete business management platform with AI-powered analytics, Xero integration, and advanced supply chain management. Replace 5+ systems with one unified platform.">
+    <link rel="icon" type="image/svg+xml" href="/flowiq-iq-badge.svg?v=1">
+    <link rel="alternate icon" type="image/png" href="/flowiq-iq-badge.svg?v=1">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'freight-orange': '#f97316',
-                        'freight-orange-dark': '#ea580c',
-                        'freight-slate': '#0f172a',
-                        'freight-slate-light': '#1e293b'
-                    }
-                }
-            }
-        }
-    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
+
         body {
             font-family: 'Inter', sans-serif;
         }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+
+        /* Premium Light Theme Colors */
+        .text-freight-orange {
+            color: #f97316;
         }
-        
+
+        .bg-freight-orange {
+            background-color: #f97316;
+        }
+
+        .hover\:bg-freight-orange-dark:hover {
+            background-color: #ea580c;
+        }
+
+        /* Gradients */
         .hero-gradient {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: radial-gradient(circle at 50% 0%, #fff7ed 0%, #f8fafc 100%);
         }
-        
+
         .card-hover {
             transition: all 0.3s ease;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
         }
-        
+
         .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
-        
+
         .animate-float {
             animation: float 6s ease-in-out infinite;
         }
-        
+
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
     </style>
-    <link rel="stylesheet" href="/flowiq-light.css?v=1">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-freight-slate text-slate-100">
+
+<body class="bg-slate-50 text-slate-900">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-freight-slate/90 backdrop-blur-md border-b border-slate-700">
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center h-20">
                 <div class="flex items-center">
-                    <span class="inline-flex items-end leading-none select-none transition-transform duration-300">
-                        <span class="text-white text-[1.35rem] font-semibold tracking-tight drop-shadow-sm">Flow</span>
-                        <span class="ml-1 inline-flex items-center px-2 py-0.5 text-[0.95rem] font-semibold uppercase tracking-wide text-orange-400 bg-orange-500/10 border border-orange-400/60 rounded-md shadow-[0_0_12px_rgba(249,115,22,0.35)]">IQ</span>
-                    </span>
+                    <a href="/" class="flex items-center gap-2 group">
+                        <img src="/flowiq-iq-badge.svg?v=1" alt="FlowIQ Logo"
+                            class="h-8 w-8 group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-2xl font-bold tracking-tight text-slate-900">Flow<span
+                                class="text-orange-600">IQ</span></span>
+                    </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-slate-300 hover:text-freight-orange transition-colors">Features</a>
-                    <a href="#modules" class="text-slate-300 hover:text-freight-orange transition-colors">Modules</a>
-                    <a href="#pricing" class="text-slate-300 hover:text-freight-orange transition-colors">Pricing</a>
-                    <a href="#contact" class="text-slate-300 hover:text-freight-orange transition-colors">Contact</a>
+                    <a href="#features"
+                        class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Features</a>
+                    <a href="#modules"
+                        class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Modules</a>
+                    <a href="/pricing.html"
+                        class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Pricing</a>
+                    <a href="#contact"
+                        class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Contact</a>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="https://app.flowiq.info/" class="text-slate-300 hover:text-white transition-colors">Login</a>
-                    <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-4 py-2 rounded-lg transition-colors">
+                    <a href="https://app.flowiq.info/"
+                        class="text-slate-600 hover:text-slate-900 font-medium transition-colors">Login</a>
+                    <a href="/signup"
+                        class="bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-2.5 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
                         Start Free Trial
                     </a>
                 </div>
@@ -84,27 +100,60 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-freight-orange/10 to-transparent"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Abstract Background Shapes -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div
+                class="absolute top-20 left-10 w-72 h-72 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob">
+            </div>
+            <div
+                class="absolute top-20 right-10 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000">
+            </div>
+            <div
+                class="absolute -bottom-8 left-20 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 pt-10 pb-20">
             <div class="animate-float">
-                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 text-orange-700 text-sm font-semibold mb-8 border border-orange-100 shadow-sm">
+                    <span class="flex h-2 w-2 rounded-full bg-orange-500"></span>
+                    Unified Business Management
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-bold text-slate-900 mb-6 tracking-tight">
                     Complete Business
-                    <span class="text-freight-orange"> Management</span>
+                    <span
+                        class="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">Management</span>
                     System
                 </h1>
-                <p class="text-xl md:text-2xl text-slate-300 mb-4 max-w-3xl mx-auto">
-                    Replace 5+ disconnected systems with one unified ERP platform. Manage inventory, 
-                    sales, manufacturing, shipping, and finances - all with AI-powered insights.
+
+                <p class="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Replace 5+ disconnected systems with one unified ERP platform. Manage inventory,
+                    sales, manufacturing, shipping, and finances — all with AI-powered insights.
                 </p>
-                <p class="text-lg text-slate-400 mb-8 max-w-4xl mx-auto italic border-l-4 border-freight-orange pl-4">
-                    "Business Owners with decades of experience creating an all-in-one ERP system that speaks to the business owner with logic, simplicity, powerful data and business analytics at your fingertips to optimize the bottom line."
-                </p>
+
+                <div
+                    class="bg-white/80 backdrop-blur-sm border border-slate-200 rounded-2xl p-6 max-w-4xl mx-auto mb-12 shadow-sm text-left relative">
+                    <i data-lucide="quote"
+                        class="absolute top-6 left-6 text-slate-200 fill-slate-50 w-10 h-10 -z-10"></i>
+                    <p class="text-lg text-slate-700 italic font-medium relative z-10">
+                        "Business Owners with decades of experience creating an all-in-one ERP system that speaks to the
+                        business owner with logic, simplicity, powerful data and business analytics at your fingertips
+                        to optimize the bottom line."
+                    </p>
+                </div>
+
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105">
+                    <a href="/signup"
+                        class="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:-translate-y-1 hover:shadow-lg flex items-center justify-center gap-2">
                         Start Free Trial
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
-                    <a href="#demo" class="border border-slate-600 hover:border-freight-orange text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all">
+                    <a href="#demo"
+                        class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:-translate-y-1 hover:shadow-md flex items-center justify-center gap-2">
+                        <i data-lucide="play-circle" class="w-5 h-5"></i>
                         Watch Demo
                     </a>
                 </div>
@@ -113,190 +162,221 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-20 bg-freight-slate-light">
+    <section id="features" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-white mb-4">Why Choose Flow IQ for Your Business?</h2>
-                <p class="text-xl text-slate-300 max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold text-slate-900 mb-6">Why Choose Flow IQ for Your Business?</h2>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">
                     Built for modern businesses with cutting-edge technology and intuitive design.
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="card-hover bg-freight-slate p-8 rounded-xl border border-slate-700">
-                    <div class="w-12 h-12 bg-freight-orange/20 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-freight-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
+                <!-- Feature 1 -->
+                <div class="card-hover bg-slate-50 p-8 rounded-2xl border border-slate-100 group">
+                    <div
+                        class="w-14 h-14 bg-white border border-orange-100 rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                        <i data-lucide="zap" class="text-orange-600 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Lightning Fast</h3>
-                    <p class="text-slate-300">Real-time processing and instant updates across all modules. No more waiting for data to sync.</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Lightning Fast</h3>
+                    <p class="text-slate-600 leading-relaxed">Real-time processing and instant updates across all
+                        modules. No more waiting for data to sync or elaborate page loads.</p>
                 </div>
-                
-                <div class="card-hover bg-freight-slate p-8 rounded-xl border border-slate-700">
-                    <div class="w-12 h-12 bg-freight-orange/20 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-freight-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                        </svg>
+
+                <!-- Feature 2 -->
+                <div class="card-hover bg-slate-50 p-8 rounded-2xl border border-slate-100 group">
+                    <div
+                        class="w-14 h-14 bg-white border border-blue-100 rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                        <i data-lucide="shield-check" class="text-blue-600 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Enterprise Security</h3>
-                    <p class="text-slate-300">Bank-level security with role-based access control and comprehensive audit trails.</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Enterprise Security</h3>
+                    <p class="text-slate-600 leading-relaxed">Bank-level security with role-based access control and
+                        comprehensive audit trails for peace of mind.</p>
                 </div>
-                
-                <div class="card-hover bg-freight-slate p-8 rounded-xl border border-slate-700">
-                    <div class="w-12 h-12 bg-freight-orange/20 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-freight-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
-                        </svg>
+
+                <!-- Feature 3 -->
+                <div class="card-hover bg-slate-50 p-8 rounded-2xl border border-slate-100 group">
+                    <div
+                        class="w-14 h-14 bg-white border border-purple-100 rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                        <i data-lucide="brain" class="text-purple-600 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Smart Analytics</h3>
-                    <p class="text-slate-300">AI-powered insights and forecasting to optimize your operations and reduce costs.</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Smart Analytics</h3>
+                    <p class="text-slate-600 leading-relaxed">AI-powered insights and forecasting to optimize your
+                        operations, reduce costs, and predict demand.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Modules Section -->
-    <section id="modules" class="py-20 bg-freight-slate">
+    <section id="modules" class="py-24 bg-slate-50 border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-white mb-4">Complete Business Management Solution</h2>
-                <p class="text-xl text-slate-300 max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold text-slate-900 mb-6">Complete Business Management Solution</h2>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">
                     Every aspect of your business operation, unified in one powerful platform.
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700 text-center">
-                    <div class="w-16 h-16 bg-freight-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-freight-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
+                <!-- InventoryIQ -->
+                <div
+                    class="card-hover bg-white p-6 rounded-xl border border-slate-200 text-center group hover:border-orange-300">
+                    <div
+                        class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="package" class="text-orange-600 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">InventoryIQ</h3>
-                    <p class="text-slate-300 text-sm">Master catalog and stock management with FIFO costing</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">InventoryIQ</h3>
+                    <p class="text-slate-600 text-sm">Master catalog and stock management with FIFO costing.</p>
                 </div>
-                
-                <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700 text-center">
-                    <div class="w-16 h-16 bg-freight-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-freight-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
+
+                <!-- InvoiceIQ -->
+                <div
+                    class="card-hover bg-white p-6 rounded-xl border border-slate-200 text-center group hover:border-sky-300">
+                    <div
+                        class="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="file-text" class="text-sky-600 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">InvoiceIQ</h3>
-                    <p class="text-slate-300 text-sm">Professional billing with Xero integration</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">InvoiceIQ</h3>
+                    <p class="text-slate-600 text-sm">Professional billing with seamless Xero integration.</p>
                 </div>
-                
-                <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700 text-center">
-                    <div class="w-16 h-16 bg-freight-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-freight-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
+
+                <!-- PurchaseIQ -->
+                <div
+                    class="card-hover bg-white p-6 rounded-xl border border-slate-200 text-center group hover:border-emerald-300">
+                    <div
+                        class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shopping-cart" class="text-emerald-600 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">PurchaseIQ</h3>
-                    <p class="text-slate-300 text-sm">Purchase order management and supplier tracking</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">PurchaseIQ</h3>
+                    <p class="text-slate-600 text-sm">Purchase order management and supplier tracking.</p>
                 </div>
-                
-                <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700 text-center">
-                    <div class="w-16 h-16 bg-freight-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-freight-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-                        </svg>
+
+                <!-- ReportsIQ -->
+                <div
+                    class="card-hover bg-white p-6 rounded-xl border border-slate-200 text-center group hover:border-indigo-300">
+                    <div
+                        class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="bar-chart-2" class="text-indigo-600 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">ReportsIQ</h3>
-                    <p class="text-slate-300 text-sm">Real-time analytics and business intelligence</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">ReportsIQ</h3>
+                    <p class="text-slate-600 text-sm">Real-time analytics and business intelligence.</p>
                 </div>
-                
-                <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700 text-center">
-                    <div class="w-16 h-16 bg-freight-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-freight-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                        </svg>
+
+                <!-- ForecastIQ -->
+                <div
+                    class="card-hover bg-white p-6 rounded-xl border border-slate-200 text-center group hover:border-purple-300">
+                    <div
+                        class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="brain" class="text-purple-600 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">ForecastIQ</h3>
-                    <p class="text-slate-300 text-sm">AI-powered demand forecasting</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">ForecastIQ</h3>
+                    <p class="text-slate-600 text-sm">AI-powered demand forecasting and optimization.</p>
                 </div>
-                
-                <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700 text-center">
-                    <div class="w-16 h-16 bg-freight-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-freight-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
+
+                <!-- CompaniesIQ -->
+                <div
+                    class="card-hover bg-white p-6 rounded-xl border border-slate-200 text-center group hover:border-blue-300">
+                    <div
+                        class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="users" class="text-blue-600 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">CompaniesIQ</h3>
-                    <p class="text-slate-300 text-sm">Customer and supplier management</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">CompaniesIQ</h3>
+                    <p class="text-slate-600 text-sm">Comprehensive customer and supplier management.</p>
                 </div>
-                
-                <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700 text-center">
-                    <div class="w-16 h-16 bg-freight-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-freight-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
-                        </svg>
+
+                <!-- TaskIQ -->
+                <div
+                    class="card-hover bg-white p-6 rounded-xl border border-slate-200 text-center group hover:border-pink-300">
+                    <div
+                        class="w-12 h-12 bg-pink-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="check-square" class="text-pink-600 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">TaskIQ</h3>
-                    <p class="text-slate-300 text-sm">Team collaboration and task management</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">TaskIQ</h3>
+                    <p class="text-slate-600 text-sm">Team collaboration and task management.</p>
                 </div>
-                
-                <div class="card-hover bg-freight-slate-light p-6 rounded-xl border border-slate-700 text-center">
-                    <div class="w-16 h-16 bg-freight-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-freight-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-                        </svg>
+
+                <!-- Manufacturing -->
+                <div
+                    class="card-hover bg-white p-6 rounded-xl border border-slate-200 text-center group hover:border-amber-300">
+                    <div
+                        class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="factory" class="text-amber-600 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">Manufacturing</h3>
-                    <p class="text-slate-300 text-sm">Production planning and BOM management</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Manufacturing</h3>
+                    <p class="text-slate-600 text-sm">Production planning and BOM management.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-freight-slate-light border-t border-slate-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <span class="inline-flex items-end leading-none select-none transition-transform duration-300 mb-4">
-                        <span class="text-white text-[1.35rem] font-semibold tracking-tight drop-shadow-sm">Flow</span>
-                        <span class="ml-1 inline-flex items-center px-2 py-0.5 text-[0.95rem] font-semibold uppercase tracking-wide text-orange-400 bg-orange-500/10 border border-orange-400/60 rounded-md shadow-[0_0_12px_rgba(249,115,22,0.35)]">IQ</span>
-                    </span>
-                    <p class="text-slate-300 mb-4">Complete business management platform with AI-powered analytics and seamless integrations.</p>
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <a href="/" class="flex items-center mb-6">
+                        <span class="text-white text-2xl font-bold tracking-tight">Flow</span>
+                        <span
+                            class="ml-1 px-2 py-0.5 text-sm font-bold uppercase tracking-wide text-orange-500 bg-orange-900/30 border border-orange-500/30 rounded-md">IQ</span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6">
+                        The all-in-one logistics intelligence platform for importers, distributors, and manufacturers.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="linkedin"
+                                class="w-5 h-5"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="twitter"
+                                class="w-5 h-5"></i></a>
+                    </div>
                 </div>
-                
+
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Product</h4>
-                    <ul class="space-y-2 text-slate-300">
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">Features</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">Pricing</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">API</a></li>
+                    <h4 class="text-white font-semibold mb-6">Product</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/modules.html" class="hover:text-orange-500 transition-colors">All Modules</a></li>
+                        <li><a href="#features" class="hover:text-orange-500 transition-colors">Features</a></li>
+                        <li><a href="/pricing.html" class="hover:text-orange-500 transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Updates</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Company</h4>
-                    <ul class="space-y-2 text-slate-300">
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">About</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">Blog</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">Contact</a></li>
+                    <h4 class="text-white font-semibold mb-6">Resources</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">ROI Calculator</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Support</h4>
-                    <ul class="space-y-2 text-slate-300">
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">Help Center</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">Documentation</a></li>
-                        <li><a href="#" class="hover:text-freight-orange transition-colors">Status</a></li>
+                    <h4 class="text-white font-semibold mb-6">Company</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Legal</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Contact</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-slate-700 mt-12 pt-8 text-center">
-                <p class="text-slate-400 text-sm">© 2024 Flow IQ. All rights reserved.</p>
+
+            <div
+                class="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+                <p>&copy; 2024 FlowIQ. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
+        lucide.createIcons();
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -312,4 +392,5 @@
         });
     </script>
 </body>
+
 </html>

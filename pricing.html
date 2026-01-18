@@ -1,306 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FlowIQ Pricing – 5 Powerful Tiers for Every Business</title>
-  <meta name="description" content="From solo founders to enterprises. AI forecasting, import management, and automation. Start at R4,995/month." />
+  <meta name="description"
+    content="From solo founders to enterprises. AI forecasting, import management, and automation. Start at R4,995/month." />
   <link rel="icon" type="image/svg+xml" href="flowiq-iq-badge.svg?v=2">
   <link rel="alternate icon" type="image/png" href="flowiq-wordmark.svg?v=4">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .bg-freight-slate { background-color: #0f172a; }
-    .bg-freight-slate-light { background-color: #1e293b; }
-    .text-freight-orange { color: #f97316; }
-    .bg-freight-orange { background-color: #f97316; }
-    .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Light Theme */
+    .text-freight-orange {
+      color: #f97316;
+    }
+
+    .bg-freight-orange {
+      background-color: #f97316;
+    }
+
+    .hover\:bg-freight-orange-dark:hover {
+      background-color: #ea580c;
+    }
+
+    .hero-gradient {
+      background: radial-gradient(circle at 50% 0%, #fff7ed 0%, #f8fafc 100%);
+    }
   </style>
-  <link rel="stylesheet" href="/flowiq-light.css?v=1">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-freight-slate text-slate-100">
-  <nav class="sticky top-0 z-50 bg-freight-slate/95 backdrop-blur-md border-b border-slate-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="/" class="flex items-center">
-        <span class="inline-flex items-end leading-none select-none transition-transform duration-300">
-          <span class="text-white text-[1.35rem] font-semibold tracking-tight drop-shadow-sm">Flow</span>
-          <span class="ml-1 inline-flex items-center px-2 py-0.5 text-[0.95rem] font-semibold uppercase tracking-wide text-orange-400 bg-orange-500/10 border border-orange-400/60 rounded-md shadow-[0_0_12px_rgba(249,115,22,0.35)]">IQ</span>
-        </span>
-      </a>
-      <div class="hidden md:flex items-center space-x-6 text-sm">
-        <a href="/" class="text-slate-300 hover:text-freight-orange">Home</a>
-        <a href="/index.html#modules" class="text-slate-300 hover:text-freight-orange">Modules</a>
-        <a href="#" class="text-white font-semibold">Pricing</a>
-        <a href="/index.html#demo" class="text-slate-300 hover:text-freight-orange">Book a Demo</a>
-        <a href="/signup?plan=growth" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-4 py-2 rounded-lg">Start Free Trial</a>
+
+<body class="bg-slate-50 text-slate-900">
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center gap-2 group">
+            <img src="/flowiq-iq-badge.svg?v=1" alt="FlowIQ Logo"
+              class="h-8 w-8 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-2xl font-bold tracking-tight text-slate-900">Flow<span
+                class="text-orange-600">IQ</span></span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Home</a>
+          <a href="/modules.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Modules</a>
+          <a href="/pricing.html" class="text-orange-600 font-medium transition-colors">Pricing</a>
+          <a href="/#demo" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Book a Demo</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="https://app.flowiq.info/"
+            class="text-slate-600 hover:text-slate-900 font-medium transition-colors">Login</a>
+          <a href="/signup"
+            class="bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-2.5 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
+            Start Free Trial
+          </a>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white absolute w-full left-0 top-20">
+      <div class="px-4 py-4 space-y-4 shadow-lg">
+        <a href="/" class="block text-slate-600 hover:text-orange-600 font-medium">Home</a>
+        <a href="/modules.html" class="block text-slate-600 hover:text-orange-600 font-medium">Modules</a>
+        <a href="/pricing.html" class="block text-orange-600 font-medium">Pricing</a>
+        <a href="/#demo" class="block text-slate-600 hover:text-orange-600 font-medium">Book a Demo</a>
+        <a href="/signup" class="block bg-freight-orange text-white px-4 py-2 rounded-lg text-center font-medium">Start
+          Free Trial</a>
       </div>
     </div>
   </nav>
 
-  <header class="bg-gradient-to-b from-white to-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-      <h1 class="text-5xl font-black mb-4 text-white">FlowIQ Pricing</h1>
-      <p class="text-slate-300 text-lg max-w-3xl mx-auto">From solo founders to enterprises. Choose the plan that fits your business today, upgrade as you grow.</p>
-      <div class="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-green-600 rounded-full text-white font-semibold">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-        </svg>
+  <header class="hero-gradient pt-40 pb-20 relative overflow-hidden">
+    <!-- Decoration -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      <div
+        class="absolute top-20 right-10 w-96 h-96 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40">
+      </div>
+      <div
+        class="absolute top-40 left-10 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40">
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h1 class="text-5xl md:text-6xl font-black mb-6 text-slate-900 tracking-tight">FlowIQ Pricing</h1>
+      <p class="text-slate-600 text-xl max-w-3xl mx-auto leading-relaxed">From solo founders to enterprises. Choose the
+        plan that fits your business today, upgrade as you grow.</p>
+      <div
+        class="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-green-100 border border-green-200 rounded-full text-green-800 font-semibold shadow-sm">
+        <i data-lucide="check-circle-2" class="w-5 h-5 text-green-600"></i>
         <span>14-Day Free Trial - FULL ACCESS to All Features (Including AI Forecasting!)</span>
       </div>
-      <p class="text-slate-400 text-sm mt-4">All plans include multi-currency, Xero integration, and mobile access.</p>
+      <p class="text-slate-500 text-sm mt-4 font-medium">All plans include multi-currency, Xero integration, and mobile
+        access.</p>
     </div>
   </header>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-    
+
     <!-- Pricing Grid - 5 Tiers -->
-    <div class="grid md:grid-cols-5 gap-6 mt-10">
-      
+    <div class="grid md:grid-cols-5 gap-4 mt-10">
+
       <!-- TIER 1: STARTER -->
-      <div class="p-6 rounded-2xl border border-slate-700 bg-freight-slate-light hover:border-slate-600 transition-colors">
-        <div class="mb-3">
-          <h3 class="text-xl font-bold text-white">Starter</h3>
-          <p class="text-slate-400 text-xs mt-1">Solo founders</p>
+      <div
+        class="p-6 rounded-2xl border border-slate-200 bg-white hover:border-orange-200 hover:shadow-lg transition-all flex flex-col">
+        <div class="mb-4">
+          <h3 class="text-xl font-bold text-slate-900">Starter</h3>
+          <p class="text-slate-500 text-xs mt-1 font-medium bg-slate-100 inline-block px-2 py-1 rounded">Solo founders
+          </p>
         </div>
-        <div class="text-3xl font-extrabold text-freight-orange mb-2">
-          R4,995<span class="text-base text-slate-400">/mo</span>
+        <div class="text-3xl font-extrabold text-slate-900 mb-2">
+          R4,995<span class="text-base text-slate-500 font-normal">/mo</span>
         </div>
-        <a href="/signup?plan=starter" class="block text-center bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors mb-6 text-sm">
+        <a href="/signup?plan=starter"
+          class="block text-center bg-slate-100 hover:bg-slate-200 text-slate-900 px-4 py-2.5 rounded-xl font-semibold transition-colors mb-6 text-sm">
           Start Free Trial
         </a>
-        <ul class="space-y-2 text-slate-300 text-xs">
+        <ul class="space-y-3 text-slate-600 text-xs flex-grow">
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span><strong>2 users</strong>, 500 SKUs, 1 warehouse</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>InventoryIQ (basic stock)</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>InvoiceIQ (200/mo)</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>PurchaseIQ (200/mo)</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>Basic CRM & Tasks</span>
           </li>
-          <li class="flex items-start">
-            <i data-lucide="x" class="text-slate-600 mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
-            <span class="text-slate-500">No Import/Export</span>
+          <li class="flex items-start opacity-50">
+            <i data-lucide="x" class="text-slate-400 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
+            <span>No Import/Export</span>
           </li>
-          <li class="flex items-start">
-            <i data-lucide="x" class="text-slate-600 mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
-            <span class="text-slate-500">No Forecasting</span>
+          <li class="flex items-start opacity-50">
+            <i data-lucide="x" class="text-slate-400 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
+            <span>No Forecasting</span>
           </li>
         </ul>
       </div>
 
       <!-- TIER 2: GROWTH -->
-      <div class="p-6 rounded-2xl border-2 border-freight-orange bg-freight-slate-light relative shadow-lg shadow-orange-500/20">
-        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-freight-orange text-white text-xs px-3 py-1 rounded-full font-semibold">Most Popular</span>
-        <div class="mb-3">
-          <h3 class="text-xl font-bold text-white">Growth</h3>
-          <p class="text-slate-400 text-xs mt-1">Small teams</p>
+      <div
+        class="p-6 rounded-2xl border-2 border-orange-500 bg-white relative shadow-xl shadow-orange-100 flex flex-col transform md:-translate-y-2 z-10">
+        <span
+          class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-600 to-orange-500 text-white text-xs px-3 py-1 rounded-full font-bold shadow-sm tracking-wide">Most
+          Popular</span>
+        <div class="mb-4">
+          <h3 class="text-xl font-bold text-slate-900">Growth</h3>
+          <p
+            class="text-slate-500 text-xs mt-1 font-medium bg-orange-50 text-orange-700 inline-block px-2 py-1 rounded">
+            Small teams</p>
         </div>
-        <div class="text-3xl font-extrabold text-freight-orange mb-2">
-          R9,500<span class="text-base text-slate-400">/mo</span>
+        <div class="text-3xl font-extrabold text-orange-600 mb-2">
+          R9,500<span class="text-base text-slate-500 font-normal">/mo</span>
         </div>
-        <a href="/signup?plan=growth" class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white px-4 py-2 rounded-lg font-semibold transition-colors mb-6 text-sm">
+        <a href="/signup?plan=growth"
+          class="block text-center bg-freight-orange hover:bg-freight-orange-dark text-white px-4 py-2.5 rounded-xl font-semibold transition-colors mb-6 text-sm shadow-md hover:shadow-lg">
           Start Free Trial
         </a>
-        <ul class="space-y-2 text-slate-300 text-xs">
+        <ul class="space-y-3 text-slate-600 text-xs flex-grow">
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span><strong>5 users</strong>, 1,000 SKUs, 2 warehouses</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span><strong>3+3 shipments/mo</strong> (Import + Export)</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>ImportIQ – Landed costs & FX</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>Baseline Forecasting</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>BOM & Manufacturing</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>ProjectsIQ</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>3 Custom Price Lists</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
-            <span>InvoiceIQ (500/mo)</span>
-          </li>
-          <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
-            <span>PurchaseIQ (500/mo)</span>
-          </li>
-          <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>Xero Integration (basic)</span>
           </li>
-          <li class="flex items-start">
-            <i data-lucide="x" class="text-slate-600 mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
-            <span class="text-slate-500">No AI Forecasting</span>
+          <li class="flex items-start opacity-50">
+            <i data-lucide="x" class="text-slate-400 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
+            <span>No AI Forecasting</span>
           </li>
         </ul>
       </div>
 
       <!-- TIER 3: PROFESSIONAL -->
-      <div class="p-6 rounded-2xl border border-slate-600 bg-freight-slate-light hover:border-freight-orange transition-colors">
-        <div class="mb-3">
-          <h3 class="text-xl font-bold text-white">Professional</h3>
-          <p class="text-slate-400 text-xs mt-1">Established ops</p>
+      <div
+        class="p-6 rounded-2xl border border-slate-200 bg-white hover:border-blue-500 transition-colors flex flex-col group">
+        <div class="mb-4">
+          <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Professional</h3>
+          <p class="text-slate-500 text-xs mt-1 font-medium bg-slate-100 inline-block px-2 py-1 rounded">Established ops
+          </p>
         </div>
-        <div class="text-3xl font-extrabold text-freight-orange mb-2">
-          R14,800<span class="text-base text-slate-400">/mo</span>
+        <div class="text-3xl font-extrabold text-slate-900 mb-2">
+          R14,800<span class="text-base text-slate-500 font-normal">/mo</span>
         </div>
-        <a href="/signup?plan=professional" class="block text-center bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors mb-6 text-sm">
+        <a href="/signup?plan=professional"
+          class="block text-center bg-slate-900 hover:bg-slate-800 text-white px-4 py-2.5 rounded-xl font-semibold transition-colors mb-6 text-sm">
           Start Free Trial
         </a>
-        <ul class="space-y-2 text-slate-300 text-xs">
+        <ul class="space-y-3 text-slate-600 text-xs flex-grow">
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span><strong>15 users</strong>, 3,000 SKUs, 5 warehouses</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span><strong>10+10 shipments/mo</strong></span>
           </li>
-          <li class="flex items-start">
-            <i data-lucide="zap" class="text-yellow-500 mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
-            <span class="font-semibold text-yellow-400">AI Forecasting (p10/p50/p90)</span>
+          <li class="flex items-start bg-yellow-50 p-1.5 -m-1.5 rounded">
+            <i data-lucide="zap" class="text-yellow-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
+            <span class="font-bold text-yellow-700">AI Forecasting (p10/p50/p90)</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>Advanced Automation</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>ProjectsIQ</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>ReportsIQ & JournalIQ</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>Unlimited Price Lists</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
-            <span>Xero Advanced Sync</span>
-          </li>
-          <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>Phone Support</span>
           </li>
         </ul>
       </div>
 
       <!-- TIER 4: SCALE -->
-      <div class="p-6 rounded-2xl border border-slate-700 bg-freight-slate-light hover:border-slate-600 transition-colors">
-        <div class="mb-3">
-          <h3 class="text-xl font-bold text-white">Scale</h3>
-          <p class="text-slate-400 text-xs mt-1">High volume</p>
+      <div
+        class="p-6 rounded-2xl border border-slate-200 bg-white hover:border-purple-500 transition-colors flex flex-col group">
+        <div class="mb-4">
+          <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Scale</h3>
+          <p class="text-slate-500 text-xs mt-1 font-medium bg-slate-100 inline-block px-2 py-1 rounded">High volume</p>
         </div>
-        <div class="text-3xl font-extrabold text-freight-orange mb-2">
-          R19,800<span class="text-base text-slate-400">/mo</span>
+        <div class="text-3xl font-extrabold text-slate-900 mb-2">
+          R19,800<span class="text-base text-slate-500 font-normal">/mo</span>
         </div>
-        <a href="/signup?plan=scale" class="block text-center bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors mb-6 text-sm">
+        <a href="/signup?plan=scale"
+          class="block text-center bg-slate-100 hover:bg-slate-200 text-slate-900 px-4 py-2.5 rounded-xl font-semibold transition-colors mb-6 text-sm">
           Start Free Trial
         </a>
-        <ul class="space-y-2 text-slate-300 text-xs">
+        <ul class="space-y-3 text-slate-600 text-xs flex-grow">
           <li class="flex items-start">
-            <i data-lucide="infinity" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="infinity" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span><strong>Unlimited</strong> users, SKUs, warehouses</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="infinity" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="infinity" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span><strong>Unlimited</strong> shipments</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span class="font-semibold">Everything in Professional</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
-            <span>ProjectsIQ</span>
-          </li>
-          <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>Admin Tools & Labs</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>FX Trend Engine</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>Premium Support</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>Quarterly release highlights</span>
           </li>
         </ul>
       </div>
 
       <!-- TIER 5: ENTERPRISE -->
-      <div class="p-6 rounded-2xl border border-slate-700 bg-gradient-to-br from-slate-800 to-slate-900 hover:border-slate-600 transition-colors">
-        <div class="mb-3">
+      <div
+        class="p-6 rounded-2xl border border-slate-800 bg-slate-900 text-slate-300 hover:border-slate-700 transition-colors flex flex-col">
+        <div class="mb-4">
           <h3 class="text-xl font-bold text-white">Enterprise</h3>
-          <p class="text-slate-400 text-xs mt-1">Corporates</p>
+          <p class="text-slate-400 text-xs mt-1 font-medium bg-slate-800 inline-block px-2 py-1 rounded">Corporates</p>
         </div>
-        <div class="text-2xl font-extrabold text-freight-orange mb-2">
+        <div class="text-2xl font-extrabold text-white mb-2">
           Custom
         </div>
-        <p class="text-slate-500 text-xs mb-4">Tailored to your needs</p>
-        <a href="/index.html#demo" class="block text-center bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors mb-6 text-sm">
+        <p class="text-slate-400 text-xs mb-3">Tailored to your needs</p>
+        <a href="/index.html#demo"
+          class="block text-center bg-white hover:bg-slate-100 text-slate-900 px-4 py-2.5 rounded-xl font-semibold transition-colors mb-6 text-sm">
           Request Demo
         </a>
-        <ul class="space-y-2 text-slate-300 text-xs">
+        <ul class="space-y-3 text-slate-400 text-xs flex-grow">
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
-            <span class="font-semibold">Everything in Scale</span>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
+            <span class="font-semibold text-slate-200">Everything in Scale</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
-            <span>ProjectsIQ</span>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
+            <span>Custom integrations</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
-            <span>Custom integrations (SAP, NetSuite)</span>
-          </li>
-          <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>White-labeling</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>SLA Guarantee (99.9%)</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>24/7 Dedicated Support</span>
           </li>
           <li class="flex items-start">
-            <i data-lucide="check" class="text-freight-orange mr-2 flex-shrink-0" style="width:14px;height:14px;margin-top:2px"></i>
+            <i data-lucide="check" class="text-orange-500 mr-2 flex-shrink-0 w-4 h-4 mt-0.5"></i>
             <span>Regional Hosting</span>
           </li>
         </ul>
@@ -309,112 +362,113 @@
     </div>
 
     <!-- Comparison Table -->
-    <section class="mt-20">
-      <h2 class="text-3xl font-bold text-white text-center mb-8">Compare Plans at a Glance</h2>
-      <div class="overflow-x-auto rounded-2xl border border-slate-700/80 bg-freight-slate-light">
-        <table class="min-w-full divide-y divide-slate-700 text-sm text-slate-200">
-          <thead class="bg-slate-900/60 text-xs uppercase tracking-wide text-slate-400">
+    <section class="mt-24">
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-8">Compare Plans at a Glance</h2>
+      <div class="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm">
+        <table class="min-w-full divide-y divide-slate-200 text-sm text-slate-600">
+          <thead class="bg-slate-50 text-xs uppercase tracking-wide text-slate-500 font-semibold">
             <tr>
               <th scope="col" class="px-6 py-4 text-left">Feature</th>
               <th scope="col" class="px-6 py-4 text-center">Starter</th>
-              <th scope="col" class="px-6 py-4 text-center bg-orange-900/20">Growth</th>
+              <th scope="col" class="px-6 py-4 text-center bg-orange-50/50 text-orange-800">Growth</th>
               <th scope="col" class="px-6 py-4 text-center">Professional</th>
               <th scope="col" class="px-6 py-4 text-center">Scale</th>
-              <th scope="col" class="px-6 py-4 text-center">Enterprise</th>
+              <th scope="col" class="px-6 py-4 text-center text-slate-900">Enterprise</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-slate-800">
-            <tr class="bg-slate-900/40">
-              <th colspan="6" class="px-6 py-3 text-left font-semibold text-white">Capacity</th>
+          <tbody class="divide-y divide-slate-100">
+            <tr class="bg-slate-50/50">
+              <th colspan="6" class="px-6 py-3 text-left font-bold text-slate-900 text-xs uppercase tracking-wider">
+                Capacity</th>
             </tr>
             <tr>
-              <td class="px-6 py-4 font-medium">Users</td>
+              <td class="px-6 py-4 font-medium text-slate-900">Users</td>
               <td class="px-6 py-4 text-center">1</td>
-              <td class="px-6 py-4 text-center bg-orange-900/10">3</td>
+              <td class="px-6 py-4 text-center bg-orange-50/20 font-semibold">3</td>
               <td class="px-6 py-4 text-center">15</td>
-              <td class="px-6 py-4 text-center text-freight-orange">Unlimited</td>
-              <td class="px-6 py-4 text-center text-freight-orange">Unlimited</td>
+              <td class="px-6 py-4 text-center text-orange-600 font-bold">Unlimited</td>
+              <td class="px-6 py-4 text-center text-slate-900 font-bold">Unlimited</td>
             </tr>
             <tr>
-              <td class="px-6 py-4 font-medium">SKUs</td>
+              <td class="px-6 py-4 font-medium text-slate-900">SKUs</td>
               <td class="px-6 py-4 text-center">500</td>
-              <td class="px-6 py-4 text-center bg-orange-900/10">1,000</td>
+              <td class="px-6 py-4 text-center bg-orange-50/20 font-semibold">1,000</td>
               <td class="px-6 py-4 text-center">3,000</td>
-              <td class="px-6 py-4 text-center text-freight-orange">Unlimited</td>
-              <td class="px-6 py-4 text-center text-freight-orange">Unlimited</td>
+              <td class="px-6 py-4 text-center text-orange-600 font-bold">Unlimited</td>
+              <td class="px-6 py-4 text-center text-slate-900 font-bold">Unlimited</td>
             </tr>
             <tr>
-              <td class="px-6 py-4 font-medium">Warehouses</td>
+              <td class="px-6 py-4 font-medium text-slate-900">Warehouses</td>
               <td class="px-6 py-4 text-center">1</td>
-              <td class="px-6 py-4 text-center bg-orange-900/10">2</td>
+              <td class="px-6 py-4 text-center bg-orange-50/20 font-semibold">2</td>
               <td class="px-6 py-4 text-center">5</td>
-              <td class="px-6 py-4 text-center text-freight-orange">Unlimited</td>
-              <td class="px-6 py-4 text-center text-freight-orange">Unlimited</td>
+              <td class="px-6 py-4 text-center text-orange-600 font-bold">Unlimited</td>
+              <td class="px-6 py-4 text-center text-slate-900 font-bold">Unlimited</td>
             </tr>
             <tr>
-              <td class="px-6 py-4 font-medium">Shipments/month</td>
-              <td class="px-6 py-4 text-center">-</td>
-              <td class="px-6 py-4 text-center bg-orange-900/10">3+3</td>
+              <td class="px-6 py-4 font-medium text-slate-900">Shipments/month</td>
+              <td class="px-6 py-4 text-center text-slate-400">-</td>
+              <td class="px-6 py-4 text-center bg-orange-50/20 font-semibold">3+3</td>
               <td class="px-6 py-4 text-center">10+10</td>
-              <td class="px-6 py-4 text-center text-freight-orange">Unlimited</td>
-              <td class="px-6 py-4 text-center text-freight-orange">Unlimited</td>
+              <td class="px-6 py-4 text-center text-orange-600 font-bold">Unlimited</td>
+              <td class="px-6 py-4 text-center text-slate-900 font-bold">Unlimited</td>
             </tr>
-            <tr class="bg-slate-900/40">
-              <th colspan="6" class="px-6 py-3 text-left font-semibold text-white">Forecasting & AI</th>
-            </tr>
-            <tr>
-              <td class="px-6 py-4 font-medium">ForecastIQ</td>
-              <td class="px-6 py-4 text-center">-</td>
-              <td class="px-6 py-4 text-center bg-orange-900/10">Baseline</td>
-              <td class="px-6 py-4 text-center"><span class="text-yellow-400 font-semibold">AI (p10/p50/p90)</span></td>
-              <td class="px-6 py-4 text-center text-freight-orange">Premium</td>
-              <td class="px-6 py-4 text-center text-freight-orange">Custom Models</td>
+
+            <tr class="bg-slate-50/50">
+              <th colspan="6" class="px-6 py-3 text-left font-bold text-slate-900 text-xs uppercase tracking-wider">
+                Forecasting & AI</th>
             </tr>
             <tr>
-              <td class="px-6 py-4 font-medium">Automation</td>
-              <td class="px-6 py-4 text-center">-</td>
-              <td class="px-6 py-4 text-center bg-orange-900/10">-</td>
+              <td class="px-6 py-4 font-medium text-slate-900">ForecastIQ</td>
+              <td class="px-6 py-4 text-center text-slate-400">-</td>
+              <td class="px-6 py-4 text-center bg-orange-50/20">Baseline</td>
+              <td class="px-6 py-4 text-center"><span
+                  class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-bold">AI (p10/p50/p90)</span>
+              </td>
+              <td class="px-6 py-4 text-center text-orange-600 font-bold">Premium</td>
+              <td class="px-6 py-4 text-center text-slate-900 font-bold">Custom Models</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-medium text-slate-900">Automation</td>
+              <td class="px-6 py-4 text-center text-slate-400">-</td>
+              <td class="px-6 py-4 text-center bg-orange-50/20 text-slate-400">-</td>
               <td class="px-6 py-4 text-center">Advanced</td>
-              <td class="px-6 py-4 text-center text-freight-orange">Premium</td>
-              <td class="px-6 py-4 text-center text-freight-orange">Custom</td>
+              <td class="px-6 py-4 text-center text-orange-600 font-bold">Premium</td>
+              <td class="px-6 py-4 text-center text-slate-900 font-bold">Custom</td>
             </tr>
-            <tr class="bg-slate-900/40">
-              <th colspan="6" class="px-6 py-3 text-left font-semibold text-white">Modules</th>
-            </tr>
-            <tr>
-              <td class="px-6 py-4 font-medium">Import/Export</td>
-              <td class="px-6 py-4 text-center">-</td>
-              <td class="px-6 py-4 text-center bg-orange-900/10">✓</td>
-              <td class="px-6 py-4 text-center">✓</td>
-              <td class="px-6 py-4 text-center">✓</td>
-              <td class="px-6 py-4 text-center">✓</td>
+
+            <tr class="bg-slate-50/50">
+              <th colspan="6" class="px-6 py-3 text-left font-bold text-slate-900 text-xs uppercase tracking-wider">
+                Modules</th>
             </tr>
             <tr>
-              <td class="px-6 py-4 font-medium">ReportsIQ & JournalIQ</td>
-              <td class="px-6 py-4 text-center">-</td>
-              <td class="px-6 py-4 text-center bg-orange-900/10">-</td>
-              <td class="px-6 py-4 text-center">✓</td>
-              <td class="px-6 py-4 text-center">✓</td>
-              <td class="px-6 py-4 text-center">✓</td>
+              <td class="px-6 py-4 font-medium text-slate-900">Import/Export</td>
+              <td class="px-6 py-4 text-center text-slate-400">-</td>
+              <td class="px-6 py-4 text-center bg-orange-50/20 text-green-600 font-bold">✓</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">✓</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">✓</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">✓</td>
             </tr>
             <tr>
-              <td class="px-6 py-4 font-medium">Admin Tools & Labs</td>
-              <td class="px-6 py-4 text-center">-</td>
-              <td class="px-6 py-4 text-center bg-orange-900/10">-</td>
-              <td class="px-6 py-4 text-center">-</td>
-              <td class="px-6 py-4 text-center">✓</td>
-              <td class="px-6 py-4 text-center">✓</td>
+              <td class="px-6 py-4 font-medium text-slate-900">ReportsIQ & JournalIQ</td>
+              <td class="px-6 py-4 text-center text-slate-400">-</td>
+              <td class="px-6 py-4 text-center bg-orange-50/20 text-slate-400">-</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">✓</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">✓</td>
+              <td class="px-6 py-4 text-center text-green-600 font-bold">✓</td>
             </tr>
-            <tr class="bg-slate-900/40">
-              <th colspan="6" class="px-6 py-3 text-left font-semibold text-white">Support</th>
+
+            <tr class="bg-slate-50/50">
+              <th colspan="6" class="px-6 py-3 text-left font-bold text-slate-900 text-xs uppercase tracking-wider">
+                Support</th>
             </tr>
             <tr>
-              <td class="px-6 py-4 font-medium">Support Level</td>
+              <td class="px-6 py-4 font-medium text-slate-900">Support Level</td>
               <td class="px-6 py-4 text-center text-xs">Email only</td>
-              <td class="px-6 py-4 text-center bg-orange-900/10 text-xs">Email + Chat</td>
+              <td class="px-6 py-4 text-center bg-orange-50/20 text-xs">Email + Chat</td>
               <td class="px-6 py-4 text-center text-xs">+ Phone</td>
               <td class="px-6 py-4 text-center text-xs">+ WhatsApp + QBRs</td>
-              <td class="px-6 py-4 text-center text-xs text-freight-orange">24/7 Dedicated</td>
+              <td class="px-6 py-4 text-center text-xs text-orange-600 font-bold">24/7 Dedicated</td>
             </tr>
           </tbody>
         </table>
@@ -423,121 +477,208 @@
 
     <!-- Add-Ons Section -->
     <section class="mt-20">
-      <h2 class="text-3xl font-bold text-white text-center mb-6">Need More Capacity?</h2>
-      <p class="text-center text-slate-300 max-w-3xl mx-auto mb-10">Purchase add-ons for extra users, SKUs, or shipments. Upgrade anytime for better value.</p>
-      
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-6">Need More Capacity?</h2>
+      <p class="text-center text-slate-600 max-w-3xl mx-auto mb-10">Purchase add-ons for extra users, SKUs, or
+        shipments. Upgrade anytime for better value.</p>
+
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         <!-- Starter Add-Ons -->
-        <div class="rounded-xl border border-slate-700 bg-freight-slate-light p-6">
-          <h3 class="text-lg font-semibold text-white mb-4">Starter Add-Ons</h3>
-          <ul class="space-y-3 text-sm text-slate-300">
+        <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-lg font-bold text-slate-900 mb-4">Starter Add-Ons</h3>
+          <ul class="space-y-3 text-sm text-slate-600">
             <li class="flex items-center justify-between">
               <span>Extra User</span>
-              <span class="font-semibold text-freight-orange">R750/mo</span>
+              <span class="font-bold text-orange-600">R750/mo</span>
             </li>
             <li class="flex items-center justify-between">
               <span>+250 SKUs</span>
-              <span class="font-semibold text-freight-orange">R2,000/mo</span>
+              <span class="font-bold text-orange-600">R2,000/mo</span>
             </li>
             <li class="flex items-center justify-between">
               <span>+50 Invoices</span>
-              <span class="font-semibold text-freight-orange">R500/mo</span>
+              <span class="font-bold text-orange-600">R500/mo</span>
             </li>
           </ul>
-          <p class="text-xs text-slate-500 mt-4">Max 2 users & 500 SKUs total. Then upgrade to Growth.</p>
+          <p class="text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3">Max 2 users & 500 SKUs total. Then
+            upgrade to Growth.</p>
         </div>
 
         <!-- Growth Add-Ons -->
-        <div class="rounded-xl border-2 border-freight-orange bg-freight-slate-light p-6">
-          <h3 class="text-lg font-semibold text-white mb-4">Growth Add-Ons</h3>
-          <ul class="space-y-3 text-sm text-slate-300">
+        <div class="rounded-xl border-2 border-orange-500 bg-white p-6 shadow-lg shadow-orange-100 relative">
+          <span
+            class="absolute top-0 right-0 bg-orange-100 text-orange-700 text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg">POPULAR</span>
+          <h3 class="text-lg font-bold text-slate-900 mb-4">Growth Add-Ons</h3>
+          <ul class="space-y-3 text-sm text-slate-600">
             <li class="flex items-center justify-between">
               <span>Extra User</span>
-              <span class="font-semibold text-freight-orange">R500/mo</span>
+              <span class="font-bold text-orange-600">R500/mo</span>
             </li>
             <li class="flex items-center justify-between">
               <span>+500 SKUs</span>
-              <span class="font-semibold text-freight-orange">R1,500/mo</span>
+              <span class="font-bold text-orange-600">R1,500/mo</span>
             </li>
             <li class="flex items-center justify-between">
               <span>+3+3 Shipments</span>
-              <span class="font-semibold text-freight-orange">R1,200/mo</span>
+              <span class="font-bold text-orange-600">R1,200/mo</span>
             </li>
             <li class="flex items-center justify-between">
               <span>+3 Price Lists</span>
-              <span class="font-semibold text-freight-orange">R800/mo</span>
+              <span class="font-bold text-orange-600">R800/mo</span>
             </li>
           </ul>
-          <p class="text-xs text-slate-500 mt-4">Max 8 users & 2,000 SKUs total. Then upgrade to Professional.</p>
+          <p class="text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3">Max 8 users & 2,000 SKUs total. Then
+            upgrade to Professional.</p>
         </div>
 
         <!-- Professional Add-Ons -->
-        <div class="rounded-xl border border-slate-700 bg-freight-slate-light p-6">
-          <h3 class="text-lg font-semibold text-white mb-4">Professional Add-Ons</h3>
-          <ul class="space-y-3 text-sm text-slate-300">
+        <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-lg font-bold text-slate-900 mb-4">Professional Add-Ons</h3>
+          <ul class="space-y-3 text-sm text-slate-600">
             <li class="flex items-center justify-between">
               <span>Extra User</span>
-              <span class="font-semibold text-freight-orange">R400/mo</span>
+              <span class="font-bold text-orange-600">R400/mo</span>
             </li>
             <li class="flex items-start justify-between">
               <span>+1,000 SKUs</span>
-              <span class="font-semibold text-freight-orange">R2,000/mo</span>
+              <span class="font-bold text-orange-600">R2,000/mo</span>
             </li>
             <li class="flex items-center justify-between">
               <span>+10+10 Shipments</span>
-              <span class="font-semibold text-freight-orange">R1,500/mo</span>
+              <span class="font-bold text-orange-600">R1,500/mo</span>
             </li>
           </ul>
-          <p class="text-xs text-slate-500 mt-4">Max 25 users & 5,000 SKUs total. Then upgrade to Scale.</p>
+          <p class="text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3">Max 25 users & 5,000 SKUs total. Then
+            upgrade to Scale.</p>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
     <section class="mt-20">
-      <h2 class="text-3xl font-bold text-white text-center mb-12">Frequently Asked Questions</h2>
+      <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Frequently Asked Questions</h2>
       <div class="max-w-3xl mx-auto space-y-4">
-        <details class="rounded-lg border border-slate-700 bg-freight-slate-light p-4">
-          <summary class="cursor-pointer font-medium text-white text-lg mb-2">What happens when I hit my limits?</summary>
-          <p class="text-slate-300 text-sm mt-2">You'll see a notification at 80% usage with options to upgrade or buy add-ons. At 100%, you'll need to upgrade or purchase add-ons to continue.</p>
+        <details class="group rounded-xl border border-slate-200 bg-white p-4 open:bg-slate-50 transition-colors">
+          <summary
+            class="cursor-pointer font-bold text-slate-900 text-lg mb-2 flex items-center gap-2 select-none group-open:text-orange-600">
+            <i data-lucide="plus" class="w-5 h-5 text-slate-400 group-open:rotate-45 transition-transform"></i>
+            What happens when I hit my limits?
+          </summary>
+          <p class="text-slate-600 text-sm mt-2 pl-7 leading-relaxed">You'll see a notification at 80% usage with
+            options to upgrade or buy add-ons. At 100%, you'll need to upgrade or purchase add-ons to continue.</p>
         </details>
-        <details class="rounded-lg border border-slate-700 bg-freight-slate-light p-4">
-          <summary class="cursor-pointer font-medium text-white text-lg mb-2">Are shipments counted monthly or annually?</summary>
-          <p class="text-slate-300 text-sm mt-2">Monthly. Your shipment counter resets on the 1st of each month. Growth gets 3 import + 3 export per month (36+36 per year).</p>
+        <details class="group rounded-xl border border-slate-200 bg-white p-4 open:bg-slate-50 transition-colors">
+          <summary
+            class="cursor-pointer font-bold text-slate-900 text-lg mb-2 flex items-center gap-2 select-none group-open:text-orange-600">
+            <i data-lucide="plus" class="w-5 h-5 text-slate-400 group-open:rotate-45 transition-transform"></i>
+            Are shipments counted monthly or annually?
+          </summary>
+          <p class="text-slate-600 text-sm mt-2 pl-7 leading-relaxed">Monthly. Your shipment counter resets on the 1st
+            of each month. Growth gets 3 import + 3 export per month (36+36 per year).</p>
         </details>
-        <details class="rounded-lg border border-slate-700 bg-freight-slate-light p-4">
-          <summary class="cursor-pointer font-medium text-white text-lg mb-2">Can I upgrade mid-month?</summary>
-          <p class="text-slate-300 text-sm mt-2">Yes! Upgrades apply immediately and we'll prorate the billing. Your new limits take effect right away.</p>
+        <details class="group rounded-xl border border-slate-200 bg-white p-4 open:bg-slate-50 transition-colors">
+          <summary
+            class="cursor-pointer font-bold text-slate-900 text-lg mb-2 flex items-center gap-2 select-none group-open:text-orange-600">
+            <i data-lucide="plus" class="w-5 h-5 text-slate-400 group-open:rotate-45 transition-transform"></i>
+            Can I upgrade mid-month?
+          </summary>
+          <p class="text-slate-600 text-sm mt-2 pl-7 leading-relaxed">Yes! Upgrades apply immediately and we'll prorate
+            the billing. Your new limits take effect right away.</p>
         </details>
-        <details class="rounded-lg border border-slate-700 bg-freight-slate-light p-4">
-          <summary class="cursor-pointer font-medium text-white text-lg mb-2">What's the difference between Baseline and AI Forecasting?</summary>
-          <p class="text-slate-300 text-sm mt-2"><strong>Baseline (Growth):</strong> Simple moving average predictions. <strong>AI (Professional):</strong> Machine learning with p10/p50/p90 scenarios, seasonality, and trend analysis. This is THE upgrade reason from Growth to Professional.</p>
+        <details class="group rounded-xl border border-slate-200 bg-white p-4 open:bg-slate-50 transition-colors">
+          <summary
+            class="cursor-pointer font-bold text-slate-900 text-lg mb-2 flex items-center gap-2 select-none group-open:text-orange-600">
+            <i data-lucide="plus" class="w-5 h-5 text-slate-400 group-open:rotate-45 transition-transform"></i>
+            What's the difference between Baseline and AI Forecasting?
+          </summary>
+          <p class="text-slate-600 text-sm mt-2 pl-7 leading-relaxed"><strong>Baseline (Growth):</strong> Simple moving
+            average predictions. <strong>AI (Professional):</strong> Machine learning with p10/p50/p90 scenarios,
+            seasonality, and trend analysis. This is THE upgrade reason from Growth to Professional.</p>
         </details>
-        <details class="rounded-lg border border-slate-700 bg-freight-slate-light p-4">
-          <summary class="cursor-pointer font-medium text-white text-lg mb-2">Can I cancel anytime?</summary>
-          <p class="text-slate-300 text-sm mt-2">Yes, you can cancel anytime. Your access continues until the end of your current billing period.</p>
+        <details class="group rounded-xl border border-slate-200 bg-white p-4 open:bg-slate-50 transition-colors">
+          <summary
+            class="cursor-pointer font-bold text-slate-900 text-lg mb-2 flex items-center gap-2 select-none group-open:text-orange-600">
+            <i data-lucide="plus" class="w-5 h-5 text-slate-400 group-open:rotate-45 transition-transform"></i>
+            Can I cancel anytime?
+          </summary>
+          <p class="text-slate-600 text-sm mt-2 pl-7 leading-relaxed">Yes, you can cancel anytime. Your access continues
+            until the end of your current billing period.</p>
         </details>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="mt-20 bg-gradient-to-r from-orange-600 to-orange-500 rounded-3xl p-10 text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">Start Your 14-Day Free Trial</h2>
-      <p class="text-orange-100 max-w-2xl mx-auto mb-6">No credit card required. Try any plan free for 14 days. Upgrade, downgrade, or cancel anytime.</p>
+    <section class="mt-24 mb-10 bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-12 text-center shadow-xl">
+      <h2 class="text-4xl font-bold text-white mb-6">Start Your 14-Day Free Trial</h2>
+      <p class="text-slate-300 max-w-2xl mx-auto mb-8 text-lg">No credit card required. Try any plan free for 14 days.
+        Upgrade, downgrade, or cancel anytime.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/signup?plan=growth" class="bg-white hover:bg-slate-100 text-orange-600 px-8 py-3 rounded-lg font-semibold transition-colors">
+        <a href="/signup?plan=growth"
+          class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-orange-500/25">
           Start Free Trial
         </a>
-        <a href="/index.html#demo" class="border-2 border-white hover:bg-white hover:text-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+        <a href="/index.html#demo"
+          class="bg-white hover:bg-slate-50 text-slate-900 px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg">
           Request Demo
         </a>
       </div>
     </section>
   </main>
 
-  <footer class="bg-freight-slate text-slate-300 py-10 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-slate-400">© 2024 Flow IQ. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div class="col-span-1 md:col-span-1">
+          <a href="/" class="flex items-center mb-6">
+            <span class="text-white text-2xl font-bold tracking-tight">Flow</span>
+            <span
+              class="ml-1 px-2 py-0.5 text-sm font-bold uppercase tracking-wide text-orange-500 bg-orange-900/30 border border-orange-500/30 rounded-md">IQ</span>
+          </a>
+          <p class="text-sm leading-relaxed mb-6">
+            The all-in-one logistics intelligence platform for importers, distributors, and manufacturers.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="linkedin"
+                class="w-5 h-5"></i></a>
+            <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="twitter"
+                class="w-5 h-5"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-6">Product</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/modules.html" class="hover:text-orange-500 transition-colors">All Modules</a></li>
+            <li><a href="/#features" class="hover:text-orange-500 transition-colors">Features</a></li>
+            <li><a href="/pricing.html" class="hover:text-orange-500 transition-colors">Pricing</a></li>
+            <li><a href="#" class="hover:text-orange-500 transition-colors">Updates</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-6">Resources</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="hover:text-orange-500 transition-colors">Blog</a></li>
+            <li><a href="#" class="hover:text-orange-500 transition-colors">Case Studies</a></li>
+            <li><a href="#" class="hover:text-orange-500 transition-colors">Help Center</a></li>
+            <li><a href="#" class="hover:text-orange-500 transition-colors">ROI Calculator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-6">Company</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="hover:text-orange-500 transition-colors">About Us</a></li>
+            <li><a href="#" class="hover:text-orange-500 transition-colors">Careers</a></li>
+            <li><a href="#" class="hover:text-orange-500 transition-colors">Legal</a></li>
+            <li><a href="#" class="hover:text-orange-500 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+        <p>&copy; 2024 FlowIQ. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
@@ -545,7 +686,7 @@
     lucide.createIcons();
 
     // Persist selected plan when navigating to contact form
-    (function(){
+    (function () {
       const getStorage = () => {
         try {
           return window.sessionStorage;
@@ -555,9 +696,10 @@
       };
       const storage = getStorage();
       if (!storage) return;
-      document.querySelectorAll('a[data-plan]').forEach((cta)=>{
-        cta.addEventListener('click', ()=>{
-          const plan = cta.getAttribute('data-plan') || '';
+      document.querySelectorAll('a[href^="/signup"]').forEach((cta) => {
+        cta.addEventListener('click', () => {
+          const urlParams = new URLSearchParams(cta.href.split('?')[1]);
+          const plan = urlParams.get('plan');
           if (plan) {
             storage.setItem('selectedPlan', plan);
           }
@@ -566,6 +708,5 @@
     })();
   </script>
 </body>
-</html>
 
-<!-- Cache bust 1761658290 -->
+</html>
