@@ -37,6 +37,16 @@
   status = 301
 
 [[redirects]]
+  from = "/thank-you"
+  to = "/thank-you.html"
+  status = 301
+
+[[redirects]]
+  from = "/thank-you/"
+  to = "/thank-you.html"
+  status = 301
+
+[[redirects]]
   from = "/landing.html"
   to = "/solutions/freight-logistics.html"
   status = 301
