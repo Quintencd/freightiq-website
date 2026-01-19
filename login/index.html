@@ -213,9 +213,11 @@
         if (window.lucide) { window.lucide.createIcons(); }
 
         // Initialize Supabase - using the same credentials as signup
+        // IMPORTANT: Do not name this variable `supabase` because the Supabase UMD bundle
+        // declares a global `supabase` identifier. Re-declaring it will hard-crash this page.
         const supabaseUrl = 'https://yvbhjlmvpipniedwvdji.supabase.co'
         const supabaseKey = 'sb_publishable_8VnlIrOQ-FKqYVacj50Pbw_25kjFUXl'
-        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey)
+        const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey)
 
         // Check for URL messages (from signup redirect)
         const urlParams = new URLSearchParams(window.location.search);
@@ -276,7 +278,7 @@
             
             try {
                 const formData = new FormData(this);
-                const { data, error } = await supabase.auth.signInWithPassword({
+                const { data, error } = await supabaseClient.auth.signInWithPassword({
                     email: formData.get('email'),
                     password: formData.get('password'),
                 });
@@ -352,7 +354,7 @@
             
             try {
                 const formData = new FormData(this);
-                const { error } = await supabase.auth.resetPasswordForEmail(
+                const { error } = await supabaseClient.auth.resetPasswordForEmail(
                     formData.get('resetEmail'),
                     {
                         redirectTo: 'https://app.flowiq.info/reset-password'
@@ -405,7 +407,7 @@
         });
 
         // Check if user is already logged in
-        supabase.auth.onAuthStateChange((event, session) => {
+        supabaseClient.auth.onAuthStateChange((event, session) => {
             if (event === 'SIGNED_IN' && session) {
                 // User is signed in, redirect to app
                 window.location.href = 'https://app.flowiq.info/';

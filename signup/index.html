@@ -673,9 +673,12 @@ This policy may be updated at any time. Continued use constitutes acceptance.
         if (window.lucide) { window.lucide.createIcons(); }
 
         // Initialize Supabase
+        // IMPORTANT: Do not name this variable `supabase` because the Supabase UMD bundle
+        // declares a global `supabase` identifier. Re-declaring it here will hard-crash
+        // this entire script block (and break plan selection, submission, etc).
         const supabaseUrl = 'https://yvbhjlmvpipniedwvdji.supabase.co'
         const supabaseKey = 'sb_publishable_8VnlIrOQ-FKqYVacj50Pbw_25kjFUXl'
-        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey)
+        const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey)
 
         // Plan preselection (pricing -> signup). Safe: does NOT change backend signup payload.
         (function initPlanSelection() {
@@ -803,7 +806,7 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `Bearer ${supabase.supabaseKey}`
+                        "Authorization": `Bearer ${supabaseKey}`
                     },
                     body: JSON.stringify({
                         email: formData.get('email'),

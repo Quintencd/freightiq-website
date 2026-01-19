@@ -2,6 +2,10 @@
   publish = "."
   command = "echo 'Static site - no build needed'"
 
+# Netlify Functions (marketing site)
+[functions]
+  directory = "netlify/functions"
+
 # Custom domain
 [build.environment]
   NODE_VERSION = "18"

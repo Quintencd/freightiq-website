@@ -14,6 +14,14 @@ A modern, responsive marketing site for FlowIQ.
 - Static HTML + Tailwind (CDN)
 - Netlify hosting
 
+## Forms (Demo / Deck / Contact)
+Public forms submit to a Netlify Function at `/.netlify/functions/public-lead` (then redirect to `/thank-you.html`).
+
+Required Netlify env vars on the **marketing site**:
+- `SUPPORT_EMAIL_TO`
+- `RESEND_API_KEY`
+- `RESEND_FROM`
+
 ## Theme (Light-only)
 This marketing website is **light-only** (no dark mode). The shared stylesheet `flowiq-light.css` deterministically remaps the older dark palette to a light, readable marketing look.
 
@@ -28,6 +36,8 @@ Signup pages (`/signup` and `/signup.html`) will:
 - Preselect the plan from the query string (or from `localStorage` if previously chosen)
 - Display the selection to reduce friction
 - **Not** send the plan to the Supabase signup Edge Function payload (safe / avoids backend validation risk)
+
+Implementation note: **do not declare a top-level variable named `supabase`** on these pages. The Supabase browser bundle exposes a global `supabase` identifier; re-declaring it will throw `Identifier 'supabase' has already been declared` and break plan selection + signup.
 
 ## Quick Start
 - No build required (static site).
