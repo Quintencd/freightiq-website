@@ -258,7 +258,11 @@
             </div>
             
             <div class="max-w-2xl mx-auto">
-                <form name="contact" method="POST" netlify class="bg-freight-slate-light p-8 rounded-xl border border-slate-700">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+                    action="/.netlify/functions/public-lead" class="bg-freight-slate-light p-8 rounded-xl border border-slate-700">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <input type="hidden" name="request_type" value="contact" />
+                    <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Full Name</label>
