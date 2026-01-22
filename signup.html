@@ -14,7 +14,7 @@
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <!-- Cache busting to ensure updated code loads -->
     <script>
-        console.log('Signup page loaded - version 3.0 (Anti-Spam Protection)');
+        console.log('Signup page loaded - version 3.1 (Supabase init crash fix)');
     </script>
     <style>
         .bg-freight-slate { background-color: #0f172a; }
@@ -45,7 +45,7 @@
                     </a>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="/login.html" class="text-slate-300 hover:text-white transition-colors">Already have an account? Sign In</a>
+                    <a class='text-slate-300 hover:text-white transition-colors' href='/login'>Already have an account? Sign In</a>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
                         </div>
                         <p class="text-slate-300 text-sm mt-1">Pick what you want to start with — you can change plans anytime during your trial.</p>
                     </div>
-                    <a href="/pricing.html" class="text-sm text-slate-300 hover:text-white transition-colors whitespace-nowrap">View pricing</a>
+                    <a class='text-sm text-slate-300 hover:text-white transition-colors whitespace-nowrap' href='/pricing'>View pricing</a>
                 </div>
 
                 <div class="mt-4 grid grid-cols-2 gap-3" role="radiogroup" aria-label="Select a FlowIQ plan">
@@ -99,7 +99,7 @@
                     <div class="text-sm text-slate-300">
                         Selected: <span id="selectedPlanName" class="text-white font-semibold">Growth</span>
                     </div>
-                    <a href="/index.html#demo" class="text-sm text-slate-300 hover:text-white transition-colors">Enterprise? Request demo</a>
+                    <a class='text-sm text-slate-300 hover:text-white transition-colors' href='/#demo'>Enterprise? Request demo</a>
                 </div>
             </div>
 
@@ -693,7 +693,9 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             // IMPORTANT: Do not name this variable `supabase` because the Supabase UMD bundle
             // declares a global `supabase` identifier. Re-declaring it here will hard-crash
             // this entire script block (and break plan selection, submission, etc).
-            const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey)
+        // NOTE: This marketing signup page does not need a Supabase JS client instance.
+        // Creating one via the CDN bundle was crashing the page in production, which prevented
+        // plan selection + checkbox visuals + password toggle from working.
 
             // Plan preselection (pricing -> signup). Safe: does NOT change backend signup payload.
             (function initPlanSelection() {
