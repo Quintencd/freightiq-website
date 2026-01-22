@@ -730,13 +730,20 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 planButtons.forEach((btn) => {
                     const btnPlan = (btn.getAttribute('data-plan') || '').toLowerCase();
                     const isActive = btnPlan === activePlan;
-                    // Remove all active classes first
-                    btn.classList.remove('border-freight-orange', 'bg-freight-orange/10', 'border-slate-600', 'ring-2', 'ring-freight-orange/50', 'ring-freight-orange/70', 'shadow-lg', 'shadow-orange-500/50');
-                    // Add active classes to selected button
+                    // Reset all styles
+                    btn.style.borderColor = '';
+                    btn.style.backgroundColor = '';
+                    btn.style.boxShadow = '';
+                    btn.classList.remove('border-freight-orange', 'bg-freight-orange/10', 'border-slate-600');
+                    // Apply active styles
                     if (isActive) {
-                        btn.classList.add('border-freight-orange', 'bg-freight-orange/10', 'ring-2', 'ring-freight-orange/70', 'shadow-lg', 'shadow-orange-500/50');
+                        btn.classList.add('border-freight-orange', 'bg-freight-orange/10');
+                        btn.style.borderColor = '#f97316';
+                        btn.style.backgroundColor = 'rgba(249, 115, 22, 0.1)';
+                        btn.style.boxShadow = '0 0 0 2px rgba(249, 115, 22, 0.5), 0 0 12px rgba(249, 115, 22, 0.5)';
                     } else {
                         btn.classList.add('border-slate-600');
+                        btn.style.borderColor = '#475569';
                     }
                 });
                 if (buttonTextEl) {
@@ -785,83 +792,76 @@ This policy may be updated at any time. Continued use constitutes acceptance.
 
             // Password visibility toggle
             const togglePasswordBtn = document.getElementById('togglePassword');
-            if (togglePasswordBtn) {
-                togglePasswordBtn.addEventListener('click', function(e) {
+            const passwordInput = document.getElementById('password');
+            if (togglePasswordBtn && passwordInput) {
+                togglePasswordBtn.onclick = function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    const password = document.getElementById('password');
                     const icon = this.querySelector('i');
+                    if (!icon) return;
                     
-                    if (!password || !icon) return;
-                    
-                    if (password.type === 'password') {
-                        password.type = 'text';
+                    if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
                         icon.setAttribute('data-lucide', 'eye-off');
                     } else {
-                        password.type = 'password';
+                        passwordInput.type = 'password';
                         icon.setAttribute('data-lucide', 'eye');
                     }
                     if (window.lucide) { window.lucide.createIcons(); }
-                });
+                };
             }
 
-            // Custom checkbox behavior - improved to handle both label clicks
+            // Custom checkbox behavior - simplified and robust
             function wireCustomCheckbox(id) {
                 const checkbox = document.getElementById(id);
-                if (!checkbox) {
-                    console.warn(`Checkbox ${id} not found`);
-                    return;
-                }
+                if (!checkbox) return;
                 
-                // Find the checkbox icon SVG using the checkbox-label class
                 const checkboxLabel = document.querySelector(`label.checkbox-label[for="${id}"]`);
                 const svg = checkboxLabel ? checkboxLabel.querySelector('svg.checkbox-icon') : null;
+                if (!svg) return;
                 
-                if (!svg) {
-                    console.warn(`Checkbox SVG for ${id} not found`);
-                    return;
-                }
-                
-                // Update visual state
                 function updateCheckboxState() {
                     if (checkbox.checked) {
+                        svg.style.opacity = '1';
                         svg.classList.remove('opacity-0');
                         svg.classList.add('opacity-100');
                     } else {
+                        svg.style.opacity = '0';
                         svg.classList.remove('opacity-100');
                         svg.classList.add('opacity-0');
                     }
                 }
                 
-                // Listen for change events
-                checkbox.addEventListener('change', updateCheckboxState);
+                // Handle checkbox change
+                checkbox.onchange = updateCheckboxState;
                 
-                // Also listen for clicks on the text label to ensure it works
-                const textLabel = document.querySelector(`label[for="${id}"]:not(.checkbox-label)`);
-                if (textLabel) {
-                    textLabel.addEventListener('click', function(e) {
-                        // Toggle checkbox manually since label click might not always trigger change
-                        checkbox.checked = !checkbox.checked;
-                        updateCheckboxState();
-                    });
-                }
-                
-                // Also handle clicks on the checkbox label itself
+                // Handle clicks on checkbox label box
                 if (checkboxLabel) {
-                    checkboxLabel.addEventListener('click', function(e) {
+                    checkboxLabel.onclick = function(e) {
                         e.preventDefault();
                         checkbox.checked = !checkbox.checked;
                         updateCheckboxState();
-                    });
+                    };
+                }
+                
+                // Handle clicks on text label
+                const textLabel = document.querySelector(`label[for="${id}"]:not(.checkbox-label)`);
+                if (textLabel) {
+                    textLabel.onclick = function(e) {
+                        checkbox.checked = !checkbox.checked;
+                        updateCheckboxState();
+                    };
                 }
                 
                 // Initial state
                 updateCheckboxState();
             }
             
-            // Wire checkboxes after DOM is ready
-            wireCustomCheckbox('terms');
-            wireCustomCheckbox('privacy');
+            // Wire checkboxes
+            setTimeout(() => {
+                wireCustomCheckbox('terms');
+                wireCustomCheckbox('privacy');
+            }, 100);
 
             // Form submission - Version 3.1 (With Turnstile Anti-Spam)
             console.log('Signup form initialized - using Turnstile spam protection');
