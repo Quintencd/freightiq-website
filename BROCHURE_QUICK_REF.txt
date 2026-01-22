@@ -1,0 +1,75 @@
+FlowIQ Marketing Brochure - Quick Reference
+===========================================
+
+📍 Location: /freightiq-website/brochure.html
+
+🎯 Purpose: Professional 8-page marketing brochure for client outreach
+
+📄 Content Overview:
+--------------------
+
+1. COVER PAGE
+   - FlowIQ logo and branding
+   - Hero tagline: "Smarter Imports. Sharper Margins. Seamless Control."
+   - Key stats: 20% lower costs, 24hr setup, 100% visibility
+
+2. PAIN POINTS (6 Categories)
+   ✗ Spreadsheet Chaos
+   ✗ Margin Mystery  
+   ✗ Supply Chain Blindness
+   ✗ System Fragmentation
+   ✗ Growth Constraints
+   ✗ Time Drain
+
+3. THE SOLUTION
+   ✓ Exact Landed Costs
+   ✓ Real-Time FIFO Margins
+   ✓ Automated Xero Sync
+   ✓ Import/Export Visibility
+   ✓ AI Forecasting
+   ✓ Multi-Branch Control
+   ✓ Price Monitoring
+   ✓ 24hr Go-Live
+
+4. CORE MODULES
+   • DashboardIQ    • CompaniesIQ   • InventoryIQ
+   • PurchaseIQ     • InvoiceIQ     • ImportIQ
+
+5. ADVANCED MODULES
+   • ExportIQ       • ForecastIQ    • PriceIQ
+   • ProjectsIQ     • Manufacturing • ReportsIQ
+
+6. KEY FEATURES
+   - Operational Excellence
+   - Financial Intelligence  
+   - Data & Analytics
+   - Security & Compliance
+
+7. TESTIMONIALS
+   📊 32% cost reduction (NZ Wine)
+   📈 18% margin gain (Pacific Medical)
+   ⚡ 4x faster close (Industrial Equipment)
+
+8. CALL TO ACTION
+   - Free trial signup
+   - Demo booking
+   - Contact information
+
+🖨️ To Print/Share:
+------------------
+1. Open brochure.html in browser
+2. Click "Print Brochure" button (orange, bottom-right)
+3. Save as PDF or print physical copies
+4. Share with clients via email
+
+🎨 Brand Colors Used:
+--------------------
+• Primary Orange: #f97316
+• Dark Slate: #0f172a  
+• White & Light Grays
+• Accent Blues & Purples
+
+✅ Status: READY TO USE - No shortcuts taken!
+
+🌐 Website: www.flowiq.info
+📧 Email: hello@flowiq.info
