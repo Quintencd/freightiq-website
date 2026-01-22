@@ -681,20 +681,22 @@ This policy may be updated at any time. Continued use constitutes acceptance.
     </div>
 
     <script>
-        // Initialize Lucide icons
-        if (window.lucide) { window.lucide.createIcons(); }
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Lucide icons
+            if (window.lucide) { window.lucide.createIcons(); }
 
-        // Initialize Supabase
-        const supabaseUrl = 'https://yvbhjlmvpipniedwvdji.supabase.co'
-        // ✅ FIXED: Use proper JWT anon key (not sb_publishable format)
-        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2YmhqbG12cGlwbmllZHd2ZGppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwNzcxODAsImV4cCI6MjA2MzY1MzE4MH0.nnITbcUjg_J33oK_1JCU82wMTr5Ko501JEHSW_3medw'
-        // IMPORTANT: Do not name this variable `supabase` because the Supabase UMD bundle
-        // declares a global `supabase` identifier. Re-declaring it here will hard-crash
-        // this entire script block (and break plan selection, submission, etc).
-        const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey)
+            // Initialize Supabase
+            const supabaseUrl = 'https://yvbhjlmvpipniedwvdji.supabase.co'
+            // ✅ FIXED: Use proper JWT anon key (not sb_publishable format)
+            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2YmhqbG12cGlwbmllZHd2ZGppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwNzcxODAsImV4cCI6MjA2MzY1MzE4MH0.nnITbcUjg_J33oK_1JCU82wMTr5Ko501JEHSW_3medw'
+            // IMPORTANT: Do not name this variable `supabase` because the Supabase UMD bundle
+            // declares a global `supabase` identifier. Re-declaring it here will hard-crash
+            // this entire script block (and break plan selection, submission, etc).
+            const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey)
 
-        // Plan preselection (pricing -> signup). Safe: does NOT change backend signup payload.
-        (function initPlanSelection() {
+            // Plan preselection (pricing -> signup). Safe: does NOT change backend signup payload.
+            (function initPlanSelection() {
             const allowedPlans = ['starter', 'growth', 'professional', 'scale'];
             const planLabels = {
                 starter: 'Starter',
@@ -729,10 +731,10 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     const btnPlan = (btn.getAttribute('data-plan') || '').toLowerCase();
                     const isActive = btnPlan === activePlan;
                     // Remove all active classes first
-                    btn.classList.remove('border-freight-orange', 'bg-freight-orange/10', 'border-slate-600', 'ring-2', 'ring-freight-orange/50', 'shadow-[0_0_12px_rgba(249,115,22,0.5)]');
+                    btn.classList.remove('border-freight-orange', 'bg-freight-orange/10', 'border-slate-600', 'ring-2', 'ring-freight-orange/50', 'ring-freight-orange/70', 'shadow-lg', 'shadow-orange-500/50');
                     // Add active classes to selected button
                     if (isActive) {
-                        btn.classList.add('border-freight-orange', 'bg-freight-orange/10', 'ring-2', 'ring-freight-orange/50', 'shadow-[0_0_12px_rgba(249,115,22,0.5)]');
+                        btn.classList.add('border-freight-orange', 'bg-freight-orange/10', 'ring-2', 'ring-freight-orange/70', 'shadow-lg', 'shadow-orange-500/50');
                     } else {
                         btn.classList.add('border-slate-600');
                     }
@@ -754,9 +756,9 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             });
 
             render();
-        })();
+            })();
 
-        // Cloudflare Turnstile callback
+            // Cloudflare Turnstile callback
         let turnstileToken = null;
         let turnstileFailed = false;
         
@@ -781,74 +783,89 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             }
         }, 3000);
 
-        // Password visibility toggle
-        const togglePasswordBtn = document.getElementById('togglePassword');
-        if (togglePasswordBtn) {
-            togglePasswordBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                const password = document.getElementById('password');
-                const icon = this.querySelector('i');
-                
-                if (!password || !icon) return;
-                
-                if (password.type === 'password') {
-                    password.type = 'text';
-                    icon.setAttribute('data-lucide', 'eye-off');
-                } else {
-                    password.type = 'password';
-                    icon.setAttribute('data-lucide', 'eye');
-                }
-                if (window.lucide) { window.lucide.createIcons(); }
-            });
-        }
-
-        // Custom checkbox behavior - improved to handle both label clicks
-        function wireCustomCheckbox(id) {
-            const checkbox = document.getElementById(id);
-            if (!checkbox) return;
-            
-            // Find the checkbox icon SVG using the checkbox-label class
-            const checkboxLabel = document.querySelector(`label.checkbox-label[for="${id}"]`);
-            const svg = checkboxLabel ? checkboxLabel.querySelector('svg.checkbox-icon') : null;
-            
-            if (!svg) return;
-            
-            // Update visual state
-            function updateCheckboxState() {
-                if (checkbox.checked) {
-                    svg.classList.remove('opacity-0');
-                    svg.classList.add('opacity-100');
-                } else {
-                    svg.classList.remove('opacity-100');
-                    svg.classList.add('opacity-0');
-                }
-            }
-            
-            // Listen for change events
-            checkbox.addEventListener('change', updateCheckboxState);
-            
-            // Also listen for clicks on the text label to ensure it works
-            const textLabel = document.querySelector(`label[for="${id}"]:not(.checkbox-label)`);
-            if (textLabel) {
-                textLabel.addEventListener('click', function(e) {
-                    // Let the default label behavior toggle the checkbox
-                    // Then update the visual state
-                    setTimeout(updateCheckboxState, 0);
+            // Password visibility toggle
+            const togglePasswordBtn = document.getElementById('togglePassword');
+            if (togglePasswordBtn) {
+                togglePasswordBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const password = document.getElementById('password');
+                    const icon = this.querySelector('i');
+                    
+                    if (!password || !icon) return;
+                    
+                    if (password.type === 'password') {
+                        password.type = 'text';
+                        icon.setAttribute('data-lucide', 'eye-off');
+                    } else {
+                        password.type = 'password';
+                        icon.setAttribute('data-lucide', 'eye');
+                    }
+                    if (window.lucide) { window.lucide.createIcons(); }
                 });
             }
-            
-            // Initial state
-            updateCheckboxState();
-        }
-        
-        // Wire checkboxes after DOM is ready
-        wireCustomCheckbox('terms');
-        wireCustomCheckbox('privacy');
 
-        // Form submission - Version 3.1 (With Turnstile Anti-Spam)
-        console.log('Signup form initialized - using Turnstile spam protection');
-        document.getElementById('signupForm').addEventListener('submit', async function(e) {
+            // Custom checkbox behavior - improved to handle both label clicks
+            function wireCustomCheckbox(id) {
+                const checkbox = document.getElementById(id);
+                if (!checkbox) {
+                    console.warn(`Checkbox ${id} not found`);
+                    return;
+                }
+                
+                // Find the checkbox icon SVG using the checkbox-label class
+                const checkboxLabel = document.querySelector(`label.checkbox-label[for="${id}"]`);
+                const svg = checkboxLabel ? checkboxLabel.querySelector('svg.checkbox-icon') : null;
+                
+                if (!svg) {
+                    console.warn(`Checkbox SVG for ${id} not found`);
+                    return;
+                }
+                
+                // Update visual state
+                function updateCheckboxState() {
+                    if (checkbox.checked) {
+                        svg.classList.remove('opacity-0');
+                        svg.classList.add('opacity-100');
+                    } else {
+                        svg.classList.remove('opacity-100');
+                        svg.classList.add('opacity-0');
+                    }
+                }
+                
+                // Listen for change events
+                checkbox.addEventListener('change', updateCheckboxState);
+                
+                // Also listen for clicks on the text label to ensure it works
+                const textLabel = document.querySelector(`label[for="${id}"]:not(.checkbox-label)`);
+                if (textLabel) {
+                    textLabel.addEventListener('click', function(e) {
+                        // Toggle checkbox manually since label click might not always trigger change
+                        checkbox.checked = !checkbox.checked;
+                        updateCheckboxState();
+                    });
+                }
+                
+                // Also handle clicks on the checkbox label itself
+                if (checkboxLabel) {
+                    checkboxLabel.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        checkbox.checked = !checkbox.checked;
+                        updateCheckboxState();
+                    });
+                }
+                
+                // Initial state
+                updateCheckboxState();
+            }
+            
+            // Wire checkboxes after DOM is ready
+            wireCustomCheckbox('terms');
+            wireCustomCheckbox('privacy');
+
+            // Form submission - Version 3.1 (With Turnstile Anti-Spam)
+            console.log('Signup form initialized - using Turnstile spam protection');
+            document.getElementById('signupForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const submitButton = document.getElementById('submitButton');
@@ -977,6 +994,7 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 
                 if (window.lucide) { window.lucide.createIcons(); }
             }
+            });
         });
     </script>
 </body>
