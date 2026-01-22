@@ -10,11 +10,9 @@
     <meta property="og:description" content="Create your Flow IQ account and start managing your entire business with our unified ERP platform.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <!-- Cloudflare Turnstile - Spam Protection -->
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <!-- Cache busting to ensure updated code loads -->
     <script>
-        console.log('Signup page loaded - version 3.3 (FlowIQ tick + password toggle)');
+        console.log('Signup page loaded - version 3.4 (Turnstile removed)');
     </script>
     <style>
         .bg-freight-slate { background-color: #0f172a; }
@@ -633,16 +631,6 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                         </details>
                     </div>
 
-                    <!-- Anti-Spam Verification -->
-                    <div class="flex justify-center">
-                        <div id="turnstileWrap" class="cf-turnstile" 
-                             data-sitekey="0x4AAAAAAAzQj8LNnPJvJXDO" 
-                             data-theme="light"
-                             data-callback="onTurnstileSuccess"
-                             data-error-callback="onTurnstileError">
-                        </div>
-                    </div>
-
                     <!-- Submit Button -->
                     <button 
                         type="submit" 
@@ -773,39 +761,6 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             render();
             })();
 
-            // Cloudflare Turnstile callback
-        let turnstileToken = null;
-        let turnstileFailed = false;
-        
-        window.onTurnstileSuccess = function(token) {
-            turnstileToken = token;
-            console.log('Turnstile verification successful');
-        }
-        
-        // Handle Turnstile errors gracefully
-        window.onTurnstileError = function(error) {
-            // Fail closed on noisy retries: mark failed once, hide widget, and stop logging.
-            if (turnstileFailed) return;
-            turnstileFailed = true;
-            console.warn('Turnstile error:', error);
-            const wrap = document.getElementById('turnstileWrap');
-            if (wrap) {
-                wrap.style.display = 'none';
-            }
-            // Allow signup to proceed without Turnstile if it fails to load
-        }
-        
-        // Detect if Turnstile widget failed to render
-        setTimeout(() => {
-            if (turnstileFailed) return;
-            const turnstileWidget = document.getElementById('turnstileWrap');
-            if (turnstileWidget && !turnstileWidget.querySelector('iframe')) {
-                console.warn('Turnstile widget failed to load - allowing signup without verification');
-                turnstileFailed = true;
-                turnstileWidget.style.display = 'none';
-            }
-        }, 3000);
-
             // Password visibility toggle
             const togglePasswordBtn = document.getElementById('togglePassword');
             const passwordInput = document.getElementById('password');
@@ -875,8 +830,8 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 wireCustomCheckbox('privacy');
             }, 100);
 
-            // Form submission - Version 3.1 (With Turnstile Anti-Spam)
-            console.log('Signup form initialized - using Turnstile spam protection');
+            // Form submission - Version 3.4 (Turnstile removed, server-side validation only)
+            console.log('Signup form initialized - server-side validation');
             document.getElementById('signupForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -884,23 +839,6 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             const buttonText = document.getElementById('buttonText');
             const loadingSpinner = document.getElementById('loadingSpinner');
             const messageDiv = document.getElementById('message');
-            
-            // Verify Turnstile token (only if Turnstile loaded successfully)
-            if (!turnstileToken && !turnstileFailed) {
-                messageDiv.className = 'p-4 rounded-lg bg-red-500/20 border border-red-500/30';
-                messageDiv.innerHTML = `
-                    <div class="flex items-center space-x-3">
-                        <i data-lucide="alert-circle" class="text-red-500" style="width:20px;height:20px"></i>
-                        <div>
-                            <p class="text-red-400 font-semibold">Verification Required</p>
-                            <p class="text-red-300 text-sm mt-1">Please complete the security check above</p>
-                        </div>
-                    </div>
-                `;
-                messageDiv.classList.remove('hidden');
-                if (window.lucide) { window.lucide.createIcons(); }
-                return;
-            }
             
             // Show loading state
             submitButton.disabled = true;
@@ -912,7 +850,7 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 const formData = new FormData(this);
                 
                 // ✅ ROBUST SOLUTION: Use edge function with proper error handling
-                // Edge function provides: Turnstile verification, service role security, better error handling
+                // Edge function provides: service role security, better error handling
                 const orgId = crypto.randomUUID();
                 
                 // ✅ ROBUST: Call edge function with proper authentication
@@ -935,7 +873,6 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                         first_name: formData.get('firstName') || '',
                         last_name: formData.get('lastName') || '',
                         surname: formData.get('lastName') || '',
-                        turnstile_token: turnstileToken,  // ✅ Anti-spam verification
                         // ✅ Legal acceptance (required)
                         terms_accepted: document.getElementById('terms')?.checked === true,
                         terms_version: '2026-01-08',
