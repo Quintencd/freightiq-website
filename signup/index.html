@@ -678,14 +678,14 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             // IMPORTANT: Do not name this variable `supabase` because the Supabase UMD bundle
             // declares a global `supabase` identifier. Re-declaring it here will hard-crash
             // this entire script block (and break plan selection, submission, etc).
-            const supabaseUrl = 'https://yvbhjlmvpipniedwvdji.supabase.co'
-            const supabaseKey = 'sb_publishable_8VnlIrOQ-FKqYVacj50Pbw_25kjFUXl'
+            const supabaseUrl = 'https://yvbhjlmvpipniedwvdji.supabase.co';
+            const supabaseKey = 'sb_publishable_8VnlIrOQ-FKqYVacj50Pbw_25kjFUXl';
         // NOTE: This marketing signup page does not need a Supabase JS client instance.
         // Creating one via the CDN bundle was crashing the page in production, which prevented
         // plan selection + checkbox visuals + password toggle from working.
 
             // Plan preselection (pricing -> signup). Safe: does NOT change backend signup payload.
-            (function initPlanSelection() {
+            ;(function initPlanSelection() {
             const allowedPlans = ['starter', 'growth', 'professional', 'scale'];
             const planLabels = {
                 starter: 'Starter',

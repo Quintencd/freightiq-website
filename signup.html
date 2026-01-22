@@ -14,7 +14,7 @@
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <!-- Cache busting to ensure updated code loads -->
     <script>
-        console.log('Signup page loaded - version 3.1 (Supabase init crash fix)');
+        console.log('Signup page loaded - version 3.2 (JS crash fix)');
     </script>
     <style>
         .bg-freight-slate { background-color: #0f172a; }
@@ -687,9 +687,9 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             if (window.lucide) { window.lucide.createIcons(); }
 
             // Initialize Supabase
-            const supabaseUrl = 'https://yvbhjlmvpipniedwvdji.supabase.co'
+            const supabaseUrl = 'https://yvbhjlmvpipniedwvdji.supabase.co';
             // ✅ FIXED: Use proper JWT anon key (not sb_publishable format)
-            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2YmhqbG12cGlwbmllZHd2ZGppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwNzcxODAsImV4cCI6MjA2MzY1MzE4MH0.nnITbcUjg_J33oK_1JCU82wMTr5Ko501JEHSW_3medw'
+            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2YmhqbG12cGlwbmllZHd2ZGppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwNzcxODAsImV4cCI6MjA2MzY1MzE4MH0.nnITbcUjg_J33oK_1JCU82wMTr5Ko501JEHSW_3medw';
             // IMPORTANT: Do not name this variable `supabase` because the Supabase UMD bundle
             // declares a global `supabase` identifier. Re-declaring it here will hard-crash
             // this entire script block (and break plan selection, submission, etc).
@@ -698,7 +698,7 @@ This policy may be updated at any time. Continued use constitutes acceptance.
         // plan selection + checkbox visuals + password toggle from working.
 
             // Plan preselection (pricing -> signup). Safe: does NOT change backend signup payload.
-            (function initPlanSelection() {
+            ;(function initPlanSelection() {
             const allowedPlans = ['starter', 'growth', 'professional', 'scale'];
             const planLabels = {
                 starter: 'Starter',
