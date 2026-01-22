@@ -75,19 +75,19 @@
                 </div>
 
                 <div class="mt-4 grid grid-cols-2 gap-3" role="radiogroup" aria-label="Select a FlowIQ plan">
-                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-colors" data-plan="starter">
+                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="starter">
                         <div class="text-white font-semibold">Starter</div>
                         <div class="text-xs text-slate-300">Solo founders</div>
                     </button>
-                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-colors" data-plan="growth">
+                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="growth">
                         <div class="text-white font-semibold">Growth</div>
                         <div class="text-xs text-slate-300">Small teams</div>
                     </button>
-                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-colors" data-plan="professional">
+                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="professional">
                         <div class="text-white font-semibold">Professional</div>
                         <div class="text-xs text-slate-300">Established ops</div>
                     </button>
-                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-colors" data-plan="scale">
+                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="scale">
                         <div class="text-white font-semibold">Scale</div>
                         <div class="text-xs text-slate-300">High volume</div>
                     </button>
@@ -256,28 +256,28 @@
 
                     <!-- Legal acceptance (required) -->
                     <div class="space-y-3">
-                    <div class="flex items-start space-x-3">
-                        <div class="relative mt-1">
-                            <input 
-                                id="terms" 
-                                name="terms" 
-                                type="checkbox" 
-                                required 
-                                class="sr-only"
-                            >
-                            <label for="terms" class="flex items-center justify-center w-4 h-4 bg-freight-slate border border-slate-600 rounded cursor-pointer transition-all duration-200 hover:border-freight-orange focus-within:ring-2 focus-within:ring-freight-orange focus-within:ring-opacity-20">
-                                <svg class="w-3 h-3 text-freight-orange opacity-0 transition-opacity duration-200" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                            </label>
-                        </div>
-                            <label for="terms" class="text-sm text-slate-300 cursor-pointer whitespace-pre-wrap">
-                                I have read and agree to the FlowIQ Terms and Conditions.
+                        <div class="flex items-start gap-3">
+                            <div class="relative flex-shrink-0 mt-0.5">
+                                <input 
+                                    id="terms" 
+                                    name="terms" 
+                                    type="checkbox" 
+                                    required 
+                                    class="sr-only"
+                                >
+                                <label for="terms" class="checkbox-label flex items-center justify-center w-5 h-5 bg-freight-slate border border-slate-600 rounded cursor-pointer transition-all duration-200 hover:border-freight-orange focus-within:ring-2 focus-within:ring-freight-orange focus-within:ring-opacity-20">
+                                    <svg class="checkbox-icon w-3 h-3 text-freight-orange opacity-0 transition-opacity duration-200" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </label>
+                            </div>
+                            <label for="terms" class="text-sm text-slate-300 cursor-pointer leading-relaxed flex-1">
+                                I have read and agree to the <span class="text-freight-orange hover:underline">FlowIQ Terms and Conditions</span>.
                             </label>
                         </div>
 
-                        <div class="flex items-start space-x-3">
-                            <div class="relative mt-1">
+                        <div class="flex items-start gap-3">
+                            <div class="relative flex-shrink-0 mt-0.5">
                                 <input 
                                     id="privacy" 
                                     name="privacy" 
@@ -285,15 +285,15 @@
                                     required 
                                     class="sr-only"
                                 >
-                                <label for="privacy" class="flex items-center justify-center w-4 h-4 bg-freight-slate border border-slate-600 rounded cursor-pointer transition-all duration-200 hover:border-freight-orange focus-within:ring-2 focus-within:ring-freight-orange focus-within:ring-opacity-20">
-                                    <svg class="w-3 h-3 text-freight-orange opacity-0 transition-opacity duration-200" fill="currentColor" viewBox="0 0 20 20">
+                                <label for="privacy" class="checkbox-label flex items-center justify-center w-5 h-5 bg-freight-slate border border-slate-600 rounded cursor-pointer transition-all duration-200 hover:border-freight-orange focus-within:ring-2 focus-within:ring-freight-orange focus-within:ring-opacity-20">
+                                    <svg class="checkbox-icon w-3 h-3 text-freight-orange opacity-0 transition-opacity duration-200" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                     </svg>
                                 </label>
                             </div>
-                            <label for="privacy" class="text-sm text-slate-300 cursor-pointer">
-                                I have read and agree to the FlowIQ Privacy Policy (POPIA).
-                        </label>
+                            <label for="privacy" class="text-sm text-slate-300 cursor-pointer leading-relaxed flex-1">
+                                I have read and agree to the <span class="text-freight-orange hover:underline">FlowIQ Privacy Policy (POPIA)</span>.
+                            </label>
                         </div>
 
                         <details class="rounded-lg border border-slate-700 bg-freight-slate p-3">
@@ -716,10 +716,10 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     const btnPlan = (btn.getAttribute('data-plan') || '').toLowerCase();
                     const isActive = btnPlan === activePlan;
                     // Remove all active classes first
-                    btn.classList.remove('border-freight-orange', 'bg-freight-orange/10', 'border-slate-600');
+                    btn.classList.remove('border-freight-orange', 'bg-freight-orange/10', 'border-slate-600', 'ring-2', 'ring-freight-orange/50', 'shadow-[0_0_12px_rgba(249,115,22,0.5)]');
                     // Add active classes to selected button
                     if (isActive) {
-                        btn.classList.add('border-freight-orange', 'bg-freight-orange/10');
+                        btn.classList.add('border-freight-orange', 'bg-freight-orange/10', 'ring-2', 'ring-freight-orange/50', 'shadow-[0_0_12px_rgba(249,115,22,0.5)]');
                     } else {
                         btn.classList.add('border-slate-600');
                     }
@@ -744,38 +744,67 @@ This policy may be updated at any time. Continued use constitutes acceptance.
         })();
 
         // Password visibility toggle
-        document.getElementById('togglePassword').addEventListener('click', function() {
-            const password = document.getElementById('password');
-            const icon = this.querySelector('i');
-            
-            if (password.type === 'password') {
-                password.type = 'text';
-                icon.setAttribute('data-lucide', 'eye-off');
-            } else {
-                password.type = 'password';
-                icon.setAttribute('data-lucide', 'eye');
-            }
-            if (window.lucide) { window.lucide.createIcons(); }
-        });
-
-        // Custom checkbox behavior
-        function wireCustomCheckbox(id) {
-            const el = document.getElementById(id);
-            if (!el) return;
-            el.addEventListener('change', function() {
-            const checkbox = this;
-                const label = document.querySelector(`label[for="${id}"]`);
-                const svg = label ? label.querySelector('svg') : null;
-                if (!svg) return;
-            if (checkbox.checked) {
-                svg.classList.remove('opacity-0');
-                svg.classList.add('opacity-100');
-            } else {
-                svg.classList.remove('opacity-100');
-                svg.classList.add('opacity-0');
-            }
-        });
+        const togglePasswordBtn = document.getElementById('togglePassword');
+        if (togglePasswordBtn) {
+            togglePasswordBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const password = document.getElementById('password');
+                const icon = this.querySelector('i');
+                
+                if (!password || !icon) return;
+                
+                if (password.type === 'password') {
+                    password.type = 'text';
+                    icon.setAttribute('data-lucide', 'eye-off');
+                } else {
+                    password.type = 'password';
+                    icon.setAttribute('data-lucide', 'eye');
+                }
+                if (window.lucide) { window.lucide.createIcons(); }
+            });
         }
+
+        // Custom checkbox behavior - improved to handle both label clicks
+        function wireCustomCheckbox(id) {
+            const checkbox = document.getElementById(id);
+            if (!checkbox) return;
+            
+            // Find the checkbox icon SVG using the checkbox-label class
+            const checkboxLabel = document.querySelector(`label.checkbox-label[for="${id}"]`);
+            const svg = checkboxLabel ? checkboxLabel.querySelector('svg.checkbox-icon') : null;
+            
+            if (!svg) return;
+            
+            // Update visual state
+            function updateCheckboxState() {
+                if (checkbox.checked) {
+                    svg.classList.remove('opacity-0');
+                    svg.classList.add('opacity-100');
+                } else {
+                    svg.classList.remove('opacity-100');
+                    svg.classList.add('opacity-0');
+                }
+            }
+            
+            // Listen for change events
+            checkbox.addEventListener('change', updateCheckboxState);
+            
+            // Also listen for clicks on the text label to ensure it works
+            const textLabel = document.querySelector(`label[for="${id}"]:not(.checkbox-label)`);
+            if (textLabel) {
+                textLabel.addEventListener('click', function(e) {
+                    // Let the default label behavior toggle the checkbox
+                    // Then update the visual state
+                    setTimeout(updateCheckboxState, 0);
+                });
+            }
+            
+            // Initial state
+            updateCheckboxState();
+        }
+        
+        // Wire checkboxes after DOM is ready
         wireCustomCheckbox('terms');
         wireCustomCheckbox('privacy');
 
