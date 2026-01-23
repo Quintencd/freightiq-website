@@ -224,7 +224,40 @@ exports.handler = async (event) => {
         message,
       });
       if (storedInDb) {
-        console.log('Demo request stored in database');
+        console.log('Demo request stored in database - trigger will send email automatically');
+        
+        // Also try calling the Supabase function directly as backup (trigger should handle it, but this ensures it)
+        try {
+          const supabaseFunctionUrl = `${supabaseUrl}/functions/v1/send-demo-request-email`;
+          await fetch(supabaseFunctionUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${serviceRoleKey}`,
+              'apikey': serviceRoleKey,
+            },
+            body: JSON.stringify({
+              record: {
+                id: 'temp-id', // Will be replaced by actual record from DB
+                request_type,
+                email,
+                first_name,
+                last_name,
+                name,
+                phone,
+                company,
+                message,
+                created_at: new Date().toISOString(),
+              },
+            }),
+          }).catch(() => {
+            // Non-fatal - trigger should handle it
+            console.log('Direct function call failed (trigger should handle email)');
+          });
+        } catch (funcError) {
+          // Non-fatal - trigger should handle it
+          console.log('Direct function call error (trigger should handle email):', funcError.message);
+        }
       }
     } else {
       console.warn('SUPABASE_SERVICE_ROLE_KEY not configured - skipping database storage');
