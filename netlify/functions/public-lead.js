@@ -119,22 +119,64 @@ async function storeInDatabase({ supabaseUrl, serviceRoleKey, request_type, emai
   }
 }
 
-async function sendViaResend({ apiKey, to, from, replyTo, subject, text }) {
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from,
-      to: [to],
-      subject,
-      text,
-      reply_to: replyTo || undefined,
-    }),
-  });
-  return res;
+// Use Netlify Email Extension (configured via Netlify dashboard)
+async function sendEmail({ to, replyTo, subject, requestType, firstName, lastName, name, email, phone, company, message }) {
+  // Netlify Email Extension uses the @netlify/emails package
+  // The email provider and API key are configured in Netlify dashboard
+  try {
+    // Dynamic import for ESM module
+    const netlifyEmails = await import('@netlify/emails').catch(() => null);
+    
+    if (netlifyEmails && netlifyEmails.sendEmail) {
+      // Import the email template
+      const DemoRequestEmail = (await import('../../emails/demo-request.tsx')).default;
+      
+      await netlifyEmails.sendEmail({
+        to,
+        from: process.env.EMAILS_FROM || process.env.RESEND_FROM || 'onboarding@resend.dev',
+        replyTo: replyTo || email,
+        subject,
+        component: DemoRequestEmail({
+          requestType,
+          firstName,
+          lastName,
+          name,
+          email,
+          phone,
+          company,
+          message,
+        }),
+      });
+      
+      return { ok: true, method: 'netlify-email-extension' };
+    }
+  } catch (netlifyError) {
+    console.log('Netlify Email Extension not available:', netlifyError.message);
+  }
+  
+  // Fallback: Direct Resend API (if Netlify Email Extension not configured)
+  const resendKey = process.env.RESEND_API_KEY;
+  if (resendKey) {
+    const text = buildEmailText({ request_type: requestType, name, email, phone, company, message, first_name: firstName, last_name: lastName });
+    
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${resendKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: process.env.RESEND_FROM || 'onboarding@resend.dev',
+        to: [to],
+        subject,
+        text,
+        reply_to: replyTo || undefined,
+      }),
+    });
+    return { ok: res.ok, status: res.status, method: 'resend-direct', response: res };
+  }
+  
+  return { ok: false, error: 'No email service configured' };
 }
 
 async function submitToNetlifyForms({ netlifySiteUrl, formName, fields }) {
@@ -263,19 +305,15 @@ exports.handler = async (event) => {
       console.warn('SUPABASE_SERVICE_ROLE_KEY not configured - skipping database storage');
     }
 
-    // Try to send email (optional - don't fail if it doesn't work)
+    // Try to send email using Netlify Email Extension (optional - don't fail if it doesn't work)
     const to = process.env.SUPPORT_EMAIL_TO;
-    const resendKey = process.env.RESEND_API_KEY;
-    const from = process.env.RESEND_FROM || 'onboarding@resend.dev';
 
     console.log('Email config check:', { 
-      hasResendKey: !!resendKey, 
-      hasTo: !!to, 
-      from: from,
+      hasTo: !!to,
       to: to 
     });
 
-    if (resendKey && to) {
+    if (to) {
       try {
         const subject =
           request_type === 'deck'
@@ -284,39 +322,45 @@ exports.handler = async (event) => {
               ? 'FlowIQ – Contact request'
               : 'FlowIQ – Demo request';
 
-        const text = buildEmailText({ request_type, name, email, phone, company, message, first_name, last_name });
-
-        const resendRes = await sendViaResend({
-          apiKey: resendKey,
+        const emailResult = await sendEmail({
           to,
-          from,
           replyTo: email,
           subject,
-          text,
+          requestType: request_type,
+          firstName: first_name,
+          lastName: last_name,
+          name,
+          email,
+          phone,
+          company,
+          message,
         });
 
-        if (resendRes.ok) {
-          console.log('Demo request email sent successfully via Resend');
-        } else {
+        if (emailResult.ok) {
+          console.log(`Demo request email sent successfully via ${emailResult.method || 'email service'}`);
+        } else if (emailResult.method === 'resend-direct' && emailResult.response) {
+          // Handle Resend-specific errors
           let errorData = {};
           try {
-            errorData = await resendRes.json();
+            errorData = await emailResult.response.json();
           } catch {
             try {
-              const errorText = await resendRes.text();
+              const errorText = await emailResult.response.text();
               errorData = { message: errorText };
             } catch {
               errorData = { message: '' };
             }
           }
           // Don't fail if domain not verified - request is already in database
-          if (resendRes.status === 403 && errorData.message && errorData.message.includes('domain is not verified')) {
+          if (emailResult.status === 403 && errorData.message && errorData.message.includes('domain is not verified')) {
             console.log('Email sending skipped - Resend domain not verified (request stored in database)');
             console.log('Full error:', JSON.stringify(errorData));
           } else {
-            console.warn('Email sending failed (request stored in database):', resendRes.status, errorData.message || errorData);
+            console.warn('Email sending failed (request stored in database):', emailResult.status, errorData.message || errorData);
             console.warn('Full error response:', JSON.stringify(errorData));
           }
+        } else {
+          console.warn('Email sending failed (request stored in database):', emailResult.error || 'Unknown error');
         }
       } catch (emailError) {
         // Don't fail the request if email fails - it's already in database

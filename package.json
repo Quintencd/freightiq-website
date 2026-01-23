@@ -1,5 +1,9 @@
 {
   "name": "freightiq-website",
   "version": "0.1.0",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@netlify/emails": "^0.0.3",
+    "@react-email/components": "^0.0.20"
+  }
 }

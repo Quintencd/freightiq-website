@@ -6,6 +6,10 @@
 [functions]
   directory = "netlify/functions"
 
+# Netlify Email Extension configuration
+[emails]
+  directory = "emails"
+
 # Custom domain
 [build.environment]
   NODE_VERSION = "18"
