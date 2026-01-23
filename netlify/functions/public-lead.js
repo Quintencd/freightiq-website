@@ -296,7 +296,7 @@ exports.handler = async (event) => {
         });
 
         if (resendRes.ok) {
-          console.log('Demo request email sent successfully');
+          console.log('Demo request email sent successfully via Resend');
         } else {
           let errorData = {};
           try {
