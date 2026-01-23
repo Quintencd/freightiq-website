@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- Cache busting to ensure updated code loads -->
     <script>
-        console.log('Signup page loaded - version 3.3 (FlowIQ tick + password toggle)');
+        console.log('Signup page loaded - version 3.5 (mandatory fields + auth key fix)');
     </script>
     <style>
         .bg-freight-slate { background-color: #0f172a; }
@@ -126,10 +126,11 @@
                         </div>
 
                         <div>
-                            <label for="industry" class="block text-sm font-medium text-slate-300 mb-2">Industry</label>
+                            <label for="industry" class="block text-sm font-medium text-slate-300 mb-2">Industry *</label>
                             <select 
                                 id="industry" 
                                 name="industry" 
+                                required
                                 class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
                             >
                                 <option value="">Select your industry</option>
@@ -144,10 +145,11 @@
 
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label for="employees" class="block text-sm font-medium text-slate-300 mb-2">Company Size</label>
+                                <label for="employees" class="block text-sm font-medium text-slate-300 mb-2">Company Size *</label>
                                 <select 
                                     id="employees" 
                                     name="employees" 
+                                    required
                                     class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
                                 >
                                     <option value="">Select size</option>
@@ -160,10 +162,11 @@
                             </div>
 
                             <div>
-                                <label for="country" class="block text-sm font-medium text-slate-300 mb-2">Country</label>
+                                <label for="country" class="block text-sm font-medium text-slate-300 mb-2">Country *</label>
                                 <select 
                                     id="country" 
                                     name="country" 
+                                    required
                                     class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
                                 >
                                     <option value="">Select country</option>
@@ -225,11 +228,12 @@
                         </div>
 
                         <div>
-                            <label for="phone" class="block text-sm font-medium text-slate-300 mb-2">Phone Number</label>
+                            <label for="phone" class="block text-sm font-medium text-slate-300 mb-2">Phone Number *</label>
                             <input 
                                 id="phone" 
                                 name="phone" 
                                 type="tel" 
+                                required
                                 autocomplete="tel"
                                 class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
                                 placeholder="+1 (555) 123-4567"
@@ -688,7 +692,9 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             // declares a global `supabase` identifier. Re-declaring it here will hard-crash
             // this entire script block (and break plan selection, submission, etc).
             const supabaseUrl = 'https://yvbhjlmvpipniedwvdji.supabase.co';
-            const supabaseKey = 'sb_publishable_8VnlIrOQ-FKqYVacj50Pbw_25kjFUXl';
+            // IMPORTANT: Supabase Edge Functions require a JWT in the Authorization header.
+            // Use the project's anon key (JWT), NOT the sb_publishable_* key.
+            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2YmhqbG12cGlwbmllZHd2ZGppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwNzcxODAsImV4cCI6MjA2MzY1MzE4MH0.nnITbcUjg_J33oK_1JCU82wMTr5Ko501JEHSW_3medw';
         // NOTE: This marketing signup page does not need a Supabase JS client instance.
         // Creating one via the CDN bundle was crashing the page in production, which prevented
         // plan selection + checkbox visuals + password toggle from working.
@@ -884,10 +890,24 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     })
                 });
 
-                const data = await response.json();
+                let data;
+                try {
+                    data = await response.json();
+                } catch (parseError) {
+                    // If response isn't JSON, get text
+                    const text = await response.text();
+                    throw new Error(`Server error: ${text || response.statusText || 'Unknown error'}`);
+                }
                 
                 if (!response.ok) {
-                    throw new Error(data.error || 'Failed to create account');
+                    // Use details if available, otherwise error, otherwise default message
+                    const errorMessage = data.details || data.error || `Failed to create account (${response.status})`;
+                    console.error('Signup error response:', {
+                        status: response.status,
+                        statusText: response.statusText,
+                        data: data
+                    });
+                    throw new Error(errorMessage);
                 }
                 
                 // ✅ SUCCESS: Account created with organization (bypasses rate limits)
