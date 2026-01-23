@@ -235,6 +235,13 @@ exports.handler = async (event) => {
     const resendKey = process.env.RESEND_API_KEY;
     const from = process.env.RESEND_FROM || 'onboarding@resend.dev';
 
+    console.log('Email config check:', { 
+      hasResendKey: !!resendKey, 
+      hasTo: !!to, 
+      from: from,
+      to: to 
+    });
+
     if (resendKey && to) {
       try {
         const subject =
@@ -272,8 +279,10 @@ exports.handler = async (event) => {
           // Don't fail if domain not verified - request is already in database
           if (resendRes.status === 403 && errorData.message && errorData.message.includes('domain is not verified')) {
             console.log('Email sending skipped - Resend domain not verified (request stored in database)');
+            console.log('Full error:', JSON.stringify(errorData));
           } else {
             console.warn('Email sending failed (request stored in database):', resendRes.status, errorData.message || errorData);
+            console.warn('Full error response:', JSON.stringify(errorData));
           }
         }
       } catch (emailError) {
@@ -282,6 +291,10 @@ exports.handler = async (event) => {
       }
     } else {
       console.log('Email not configured - request stored in database only');
+      console.log('Missing:', { 
+        resendKey: !resendKey ? 'RESEND_API_KEY' : null,
+        to: !to ? 'SUPPORT_EMAIL_TO' : null
+      });
     }
 
     // If database storage failed and email is not configured, return error
