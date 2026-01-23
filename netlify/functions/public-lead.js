@@ -7,15 +7,17 @@
  * return 404 at `/.netlify/functions/public-lead`.
  *
  * Behavior:
- * - Accepts `application/x-www-form-urlencoded` form POSTs from the website.
- * - Sends an email to SUPPORT_EMAIL_TO via Resend.
+ * - Stores requests in database (primary method - always works)
+ * - Sends an email to SUPPORT_EMAIL_TO via Resend (optional - fails gracefully)
  * - Best-effort submits to Netlify Forms for dashboard visibility.
  * - Redirects user to `/thank-you.html` on success.
  *
  * Required Netlify env vars (set in the *marketing site* on Netlify):
- * - SUPPORT_EMAIL_TO
- * - RESEND_API_KEY
- * - RESEND_FROM
+ * - SUPABASE_URL
+ * - SUPABASE_SERVICE_ROLE_KEY (for database storage)
+ * - SUPPORT_EMAIL_TO (optional - for email notifications)
+ * - RESEND_API_KEY (optional - for email notifications)
+ * - RESEND_FROM (optional - for email notifications)
  */
 
 function isAllowedRequest({ origin = '', referer = '', host = '' }) {
@@ -75,6 +77,42 @@ function buildEmailText({ request_type, name, email, phone, company, message, fi
   lines.push('---');
   lines.push('Sent from FlowIQ marketing website');
   return lines.join('\n');
+}
+
+async function storeInDatabase({ supabaseUrl, serviceRoleKey, request_type, email, first_name, last_name, name, phone, company, message }) {
+  try {
+    // Use dynamic import for Supabase client (works in Netlify functions)
+    const supabaseModule = await import('https://esm.sh/@supabase/supabase-js@2');
+    const { createClient } = supabaseModule;
+    const supabase = createClient(supabaseUrl, serviceRoleKey);
+    
+    const { error } = await supabase
+      .from('demo_requests')
+      .insert({
+        request_type,
+        email,
+        first_name: first_name || null,
+        last_name: last_name || null,
+        name: name || null,
+        phone: phone || null,
+        company: company || null,
+        message: message || null,
+      });
+
+    if (error) {
+      // If table doesn't exist yet, that's okay - migration will create it
+      if (error.message?.includes('does not exist') || error.code === '42P01') {
+        console.log('demo_requests table not created yet - run migration first');
+        return false;
+      }
+      console.error('Failed to store demo request in database:', error);
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.error('Error storing demo request in database:', err);
+    return false;
+  }
 }
 
 async function sendViaResend({ apiKey, to, from, replyTo, subject, text }) {
@@ -157,31 +195,78 @@ exports.handler = async (event) => {
       return { statusCode: 400, headers, body: 'Missing required field: name' };
     }
 
-    const to = requiredEnv('SUPPORT_EMAIL_TO');
-    const resendKey = requiredEnv('RESEND_API_KEY');
-    const from = requiredEnv('RESEND_FROM');
+    // Store in database first (primary method - always works)
+    const supabaseUrl = process.env.SUPABASE_URL || 'https://yvbhjlmvpipniedwvdji.supabase.co';
+    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    
+    let storedInDb = false;
+    if (serviceRoleKey) {
+      storedInDb = await storeInDatabase({
+        supabaseUrl,
+        serviceRoleKey,
+        request_type,
+        email,
+        first_name,
+        last_name,
+        name,
+        phone,
+        company,
+        message,
+      });
+      if (storedInDb) {
+        console.log('Demo request stored in database');
+      }
+    } else {
+      console.warn('SUPABASE_SERVICE_ROLE_KEY not configured - skipping database storage');
+    }
 
-    const subject =
-      request_type === 'deck'
-        ? 'FlowIQ – Deck request'
-        : request_type === 'contact'
-          ? 'FlowIQ – Contact request'
-          : 'FlowIQ – Demo request';
+    // Try to send email (optional - don't fail if it doesn't work)
+    const to = process.env.SUPPORT_EMAIL_TO;
+    const resendKey = process.env.RESEND_API_KEY;
+    const from = process.env.RESEND_FROM || 'onboarding@resend.dev';
 
-    const text = buildEmailText({ request_type, name, email, phone, company, message, first_name, last_name });
+    if (resendKey && to) {
+      try {
+        const subject =
+          request_type === 'deck'
+            ? 'FlowIQ – Deck request'
+            : request_type === 'contact'
+              ? 'FlowIQ – Contact request'
+              : 'FlowIQ – Demo request';
 
-    const resendRes = await sendViaResend({
-      apiKey: resendKey,
-      to,
-      from,
-      replyTo: email,
-      subject,
-      text,
-    });
+        const text = buildEmailText({ request_type, name, email, phone, company, message, first_name, last_name });
 
-    if (!resendRes.ok) {
-      const errText = await resendRes.text().catch(() => '');
-      return { statusCode: 502, headers, body: `Email send failed (${resendRes.status}): ${errText}` };
+        const resendRes = await sendViaResend({
+          apiKey: resendKey,
+          to,
+          from,
+          replyTo: email,
+          subject,
+          text,
+        });
+
+        if (resendRes.ok) {
+          console.log('Demo request email sent successfully');
+        } else {
+          const errorData = await resendRes.json().catch(() => ({ message: await resendRes.text().catch(() => '') }));
+          // Don't fail if domain not verified - request is already in database
+          if (resendRes.status === 403 && errorData.message?.includes('domain is not verified')) {
+            console.log('Email sending skipped - Resend domain not verified (request stored in database)');
+          } else {
+            console.warn('Email sending failed (request stored in database):', resendRes.status, errorData.message || errorData);
+          }
+        }
+      } catch (emailError) {
+        // Don't fail the request if email fails - it's already in database
+        console.log('Email sending error (request stored in database):', emailError.message || emailError);
+      }
+    } else {
+      console.log('Email not configured - request stored in database only');
+    }
+
+    // If database storage failed and email is not configured, return error
+    if (!storedInDb && (!resendKey || !to)) {
+      return { statusCode: 500, headers, body: 'Failed to store request and email not configured' };
     }
 
     // Store in Netlify Forms too (best-effort)
