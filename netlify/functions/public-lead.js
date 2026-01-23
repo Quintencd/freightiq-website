@@ -258,7 +258,17 @@ exports.handler = async (event) => {
         if (resendRes.ok) {
           console.log('Demo request email sent successfully');
         } else {
-          const errorData = await resendRes.json().catch(() => ({ message: await resendRes.text().catch(() => '') }));
+          let errorData = {};
+          try {
+            errorData = await resendRes.json();
+          } catch {
+            try {
+              const errorText = await resendRes.text();
+              errorData = { message: errorText };
+            } catch {
+              errorData = { message: '' };
+            }
+          }
           // Don't fail if domain not verified - request is already in database
           if (resendRes.status === 403 && errorData.message && errorData.message.includes('domain is not verified')) {
             console.log('Email sending skipped - Resend domain not verified (request stored in database)');
