@@ -81,14 +81,16 @@ function buildEmailText({ request_type, name, email, phone, company, message, fi
 
 async function storeInDatabase({ supabaseUrl, serviceRoleKey, request_type, email, first_name, last_name, name, phone, company, message }) {
   try {
-    // Use dynamic import for Supabase client (works in Netlify functions)
-    const supabaseModule = await import('https://esm.sh/@supabase/supabase-js@2');
-    const { createClient } = supabaseModule;
-    const supabase = createClient(supabaseUrl, serviceRoleKey);
-    
-    const { error } = await supabase
-      .from('demo_requests')
-      .insert({
+    // Use Supabase REST API directly (no imports needed)
+    const response = await fetch(`${supabaseUrl}/rest/v1/demo_requests`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': serviceRoleKey,
+        'Authorization': `Bearer ${serviceRoleKey}`,
+        'Prefer': 'return=minimal',
+      },
+      body: JSON.stringify({
         request_type,
         email,
         first_name: first_name || null,
@@ -97,15 +99,17 @@ async function storeInDatabase({ supabaseUrl, serviceRoleKey, request_type, emai
         phone: phone || null,
         company: company || null,
         message: message || null,
-      });
+      }),
+    });
 
-    if (error) {
+    if (!response.ok) {
+      const errorText = await response.text().catch(() => '');
       // If table doesn't exist yet, that's okay - migration will create it
-      if (error.message?.includes('does not exist') || error.code === '42P01') {
+      if (response.status === 404 || errorText.includes('does not exist')) {
         console.log('demo_requests table not created yet - run migration first');
         return false;
       }
-      console.error('Failed to store demo request in database:', error);
+      console.error('Failed to store demo request in database:', response.status, errorText);
       return false;
     }
     return true;
