@@ -139,7 +139,13 @@ async function sendViaResend({ apiKey, to, from, replyTo, subject, text }) {
 
 async function submitToNetlifyForms({ netlifySiteUrl, formName, fields }) {
   // Best-effort storage in Netlify Forms. Non-fatal if it fails.
-  const formData = new URLSearchParams({ 'form-name': formName, ...fields });
+  const formData = new URLSearchParams();
+  formData.append('form-name', formName);
+  Object.keys(fields).forEach(key => {
+    if (fields[key] != null && fields[key] !== '') {
+      formData.append(key, fields[key]);
+    }
+  });
   const res = await fetch(`${netlifySiteUrl}/`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -254,7 +260,7 @@ exports.handler = async (event) => {
         } else {
           const errorData = await resendRes.json().catch(() => ({ message: await resendRes.text().catch(() => '') }));
           // Don't fail if domain not verified - request is already in database
-          if (resendRes.status === 403 && errorData.message?.includes('domain is not verified')) {
+          if (resendRes.status === 403 && errorData.message && errorData.message.includes('domain is not verified')) {
             console.log('Email sending skipped - Resend domain not verified (request stored in database)');
           } else {
             console.warn('Email sending failed (request stored in database):', resendRes.status, errorData.message || errorData);
@@ -299,7 +305,7 @@ exports.handler = async (event) => {
       body: '',
     };
   } catch (err) {
-    return { statusCode: 500, headers, body: err?.message || 'Unknown error' };
+    return { statusCode: 500, headers, body: (err && err.message) || 'Unknown error' };
   }
 };
 
