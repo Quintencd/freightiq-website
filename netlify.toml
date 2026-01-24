@@ -44,6 +44,24 @@
   to = "/pricing.html"
   status = 301
 
+# Signup should be served from ONE canonical file.
+# `/signup` and `/signup/` should render the same page as `/signup/index.html`.
+[[redirects]]
+  from = "/signup"
+  to = "/signup/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/signup/"
+  to = "/signup/index.html"
+  status = 200
+
+# Canonicalize legacy direct file access
+[[redirects]]
+  from = "/signup.html"
+  to = "/signup"
+  status = 301
+
 [[redirects]]
   from = "/thank-you"
   to = "/thank-you.html"
