@@ -50,17 +50,20 @@
   from = "/signup"
   to = "/signup/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/signup/"
   to = "/signup/index.html"
   status = 200
+  force = true
 
 # Canonicalize legacy direct file access
 [[redirects]]
   from = "/signup.html"
   to = "/signup"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/thank-you"
