@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlowIQ Marketing Brochure - Complete Feature Guide</title>
-    <link rel="icon" type="image/svg+xml" href="/flowiq-iq-badge.svg?v=1">
-    <link rel="icon" href="/favicon.ico">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Favicon - Multiple formats for maximum browser compatibility -->
+    <link rel="icon" type="image/svg+xml" href="/flowiq-iq-badge.svg?v=3">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=3">
+    <link rel="apple-touch-icon" href="/flowiq-iq-badge.svg?v=3">
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico?v=3">
+    <!-- Preconnect to ensure favicon loads quickly -->
+    <link rel="preconnect" href="https://www.flowiq.info">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <style>
@@ -1858,6 +1863,58 @@
                 }
             });
         }, observerOptions);
+
+        // Ensure favicon is set correctly (override any cached/default favicons)
+        (function() {
+            const setFavicon = () => {
+                const faviconPath = '/flowiq-iq-badge.svg';
+                
+                // Remove any existing React/default favicons
+                const existingFavicons = document.querySelectorAll('link[rel*="icon"]');
+                existingFavicons.forEach(link => {
+                    if (link.href && (link.href.includes('react') || (link.href.includes('favicon.ico') && !link.href.includes('flowiq')))) {
+                        link.remove();
+                    }
+                });
+                
+                // Set primary favicon (SVG)
+                let faviconLink = document.querySelector('link[rel="icon"]:not([rel*="alternate"])');
+                if (!faviconLink) {
+                    faviconLink = document.createElement('link');
+                    faviconLink.rel = 'icon';
+                    faviconLink.type = 'image/svg+xml';
+                    document.head.insertBefore(faviconLink, document.head.firstChild);
+                }
+                faviconLink.href = faviconPath + '?v=' + Date.now();
+                
+                // Set alternate favicon (ICO)
+                let alternateFavicon = document.querySelector('link[rel="alternate icon"]');
+                if (!alternateFavicon) {
+                    alternateFavicon = document.createElement('link');
+                    alternateFavicon.rel = 'alternate icon';
+                    alternateFavicon.type = 'image/x-icon';
+                    document.head.appendChild(alternateFavicon);
+                }
+                alternateFavicon.href = '/favicon.ico?v=' + Date.now();
+                
+                // Set apple-touch-icon
+                let appleTouchIcon = document.querySelector('link[rel="apple-touch-icon"]');
+                if (!appleTouchIcon) {
+                    appleTouchIcon = document.createElement('link');
+                    appleTouchIcon.rel = 'apple-touch-icon';
+                    appleTouchIcon.sizes = '180x180';
+                    document.head.appendChild(appleTouchIcon);
+                }
+                appleTouchIcon.href = faviconPath;
+            };
+            
+            setFavicon();
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', setFavicon);
+            }
+            setTimeout(setFavicon, 100);
+            setTimeout(setFavicon, 500);
+        })();
 
         // Auto-generate icons for print and setup counters
         document.addEventListener('DOMContentLoaded', function () {

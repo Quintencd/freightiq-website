@@ -8,16 +8,16 @@
  *
  * Behavior:
  * - Stores requests in database (primary method - always works)
- * - Sends an email to SUPPORT_EMAIL_TO via Resend (optional - fails gracefully)
+ * - Sends an email to SUPPORT_EMAIL_TO via Resend (required)
  * - Best-effort submits to Netlify Forms for dashboard visibility.
  * - Redirects user to `/thank-you.html` on success.
  *
  * Required Netlify env vars (set in the *marketing site* on Netlify):
  * - SUPABASE_URL
  * - SUPABASE_SERVICE_ROLE_KEY (for database storage)
- * - SUPPORT_EMAIL_TO (optional - for email notifications)
- * - RESEND_API_KEY (optional - for email notifications)
- * - RESEND_FROM (optional - for email notifications)
+ * - SUPPORT_EMAIL_TO (required - for email notifications)
+ * - RESEND_API_KEY (required - for email notifications)
+ * - RESEND_FROM (optional - defaults to onboarding@resend.dev)
  */
 
 function isAllowedRequest({ origin = '', referer = '', host = '' }) {
@@ -305,78 +305,51 @@ exports.handler = async (event) => {
       console.warn('SUPABASE_SERVICE_ROLE_KEY not configured - skipping database storage');
     }
 
-    // Try to send email using Netlify Email Extension (optional - don't fail if it doesn't work)
+    // Send email (required for contact/demo requests)
     const to = process.env.SUPPORT_EMAIL_TO;
+    const resendKey = process.env.RESEND_API_KEY;
 
-    console.log('Email config check:', { 
-      hasTo: !!to,
-      to: to 
-    });
-
-    if (to) {
-      try {
-        const subject =
-          request_type === 'deck'
-            ? 'FlowIQ – Deck request'
-            : request_type === 'contact'
-              ? 'FlowIQ – Contact request'
-              : 'FlowIQ – Demo request';
-
-        const emailResult = await sendEmail({
-          to,
-          replyTo: email,
-          subject,
-          requestType: request_type,
-          firstName: first_name,
-          lastName: last_name,
-          name,
-          email,
-          phone,
-          company,
-          message,
-        });
-
-        if (emailResult.ok) {
-          console.log(`Demo request email sent successfully via ${emailResult.method || 'email service'}`);
-        } else if (emailResult.method === 'resend-direct' && emailResult.response) {
-          // Handle Resend-specific errors
-          let errorData = {};
-          try {
-            errorData = await emailResult.response.json();
-          } catch {
-            try {
-              const errorText = await emailResult.response.text();
-              errorData = { message: errorText };
-            } catch {
-              errorData = { message: '' };
-            }
-          }
-          // Don't fail if domain not verified - request is already in database
-          if (emailResult.status === 403 && errorData.message && errorData.message.includes('domain is not verified')) {
-            console.log('Email sending skipped - Resend domain not verified (request stored in database)');
-            console.log('Full error:', JSON.stringify(errorData));
-          } else {
-            console.warn('Email sending failed (request stored in database):', emailResult.status, errorData.message || errorData);
-            console.warn('Full error response:', JSON.stringify(errorData));
-          }
-        } else {
-          console.warn('Email sending failed (request stored in database):', emailResult.error || 'Unknown error');
-        }
-      } catch (emailError) {
-        // Don't fail the request if email fails - it's already in database
-        console.log('Email sending error (request stored in database):', emailError.message || emailError);
-      }
-    } else {
-      console.log('Email not configured - request stored in database only');
-      console.log('Missing:', { 
-        resendKey: !resendKey ? 'RESEND_API_KEY' : null,
-        to: !to ? 'SUPPORT_EMAIL_TO' : null
-      });
+    if (!to || !resendKey) {
+      return { statusCode: 500, headers, body: 'Email not configured: set SUPPORT_EMAIL_TO and RESEND_API_KEY' };
     }
 
-    // If database storage failed and email is not configured, return error
-    if (!storedInDb && (!resendKey || !to)) {
-      return { statusCode: 500, headers, body: 'Failed to store request and email not configured' };
+    const subject =
+      request_type === 'deck'
+        ? 'FlowIQ – Deck request'
+        : request_type === 'contact'
+          ? 'FlowIQ – Contact request'
+          : 'FlowIQ – Demo request';
+
+    const emailResult = await sendEmail({
+      to,
+      replyTo: email,
+      subject,
+      requestType: request_type,
+      firstName: first_name,
+      lastName: last_name,
+      name,
+      email,
+      phone,
+      company,
+      message,
+    });
+
+    if (!emailResult.ok) {
+      if (emailResult.method === 'resend-direct' && emailResult.response) {
+        let errorData = {};
+        try {
+          errorData = await emailResult.response.json();
+        } catch {
+          try {
+            const errorText = await emailResult.response.text();
+            errorData = { message: errorText };
+          } catch {
+            errorData = { message: '' };
+          }
+        }
+        return { statusCode: 502, headers, body: `Email send failed: ${errorData.message || 'Resend error'}` };
+      }
+      return { statusCode: 502, headers, body: `Email send failed: ${emailResult.error || 'Unknown error'}` };
     }
 
     // Store in Netlify Forms too (best-effort)
