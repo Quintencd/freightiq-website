@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- Cache busting to ensure updated code loads -->
     <script>
-        console.log('Signup page loaded - version 3.5 (mandatory fields + auth key fix)');
+        console.log('Signup page loaded - version 3.9 (strict password policy + real-time validation)');
     </script>
     <style>
         .bg-freight-slate { background-color: #0f172a; }
@@ -28,6 +28,21 @@
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
         }
         .animate-pulse-slow { animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        /* Error state styling */
+        .field-error {
+            border-color: #ef4444 !important;
+            background-color: rgba(239, 68, 68, 0.1) !important;
+            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2) !important;
+        }
+        .field-error:focus {
+            border-color: #ef4444 !important;
+            ring-color: rgba(239, 68, 68, 0.2) !important;
+        }
+        .error-message {
+            color: #f87171;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
     </style>
     <link rel="stylesheet" href="/flowiq-light.css?v=1">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -107,7 +122,7 @@
             <!-- Signup Form -->
             <div class="bg-freight-slate-light rounded-xl shadow-2xl p-8 border border-slate-700">
                 <form id="signupForm" class="space-y-6">
-                    <input type="hidden" id="selectedPlan" name="selectedPlan" value="" />
+                    <input type="hidden" id="selectedPlan" name="selectedPlan" value="growth" />
                     <!-- Company Information -->
                     <div class="space-y-4">
                         <h3 class="text-lg font-semibold text-white border-b border-slate-600 pb-2">Company Information</h3>
@@ -252,6 +267,7 @@
                                     class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors pr-12"
                                     placeholder="Create a strong password"
                                     minlength="8"
+                                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
                                 >
                                 <button 
                                     type="button" 
@@ -261,7 +277,27 @@
                                     <i data-lucide="eye" style="width:20px;height:20px"></i>
                                 </button>
                             </div>
-                            <p class="text-xs text-slate-400 mt-1">Minimum 8 characters with letters and numbers</p>
+                            <div id="passwordRequirements" class="mt-2 space-y-1">
+                                <p class="text-xs font-medium text-slate-300 mb-1">Password must contain:</p>
+                                <ul class="text-xs space-y-0.5">
+                                    <li id="req-length" class="text-slate-400 flex items-center gap-1">
+                                        <i data-lucide="x" class="w-3 h-3"></i>
+                                        <span>At least 8 characters</span>
+                                    </li>
+                                    <li id="req-lowercase" class="text-slate-400 flex items-center gap-1">
+                                        <i data-lucide="x" class="w-3 h-3"></i>
+                                        <span>One lowercase letter (a-z)</span>
+                                    </li>
+                                    <li id="req-uppercase" class="text-slate-400 flex items-center gap-1">
+                                        <i data-lucide="x" class="w-3 h-3"></i>
+                                        <span>One uppercase letter (A-Z)</span>
+                                    </li>
+                                    <li id="req-number" class="text-slate-400 flex items-center gap-1">
+                                        <i data-lucide="x" class="w-3 h-3"></i>
+                                        <span>One number (0-9)</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -728,7 +764,14 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             const buttonTextEl = document.getElementById('buttonText');
 
             function render() {
-                if (selectedPlanInput) selectedPlanInput.value = activePlan;
+                // Always ensure hidden input has the current plan value
+                if (selectedPlanInput) {
+                    selectedPlanInput.value = activePlan;
+                    // Double-check it was set
+                    if (!selectedPlanInput.value || selectedPlanInput.value.trim() === '') {
+                        selectedPlanInput.value = activePlan || 'growth';
+                    }
+                }
                 if (selectedPlanName) selectedPlanName.textContent = planLabels[activePlan] || 'Growth';
                 if (selectedPlanInline) selectedPlanInline.textContent = planLabels[activePlan] || 'Growth';
                 planButtons.forEach((btn) => {
@@ -760,6 +803,12 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 activePlan = next;
                 try { localStorage.setItem('flowiq_selected_plan', activePlan); } catch (_) {}
                 render();
+                // Explicitly verify the hidden input was updated
+                const verifyInput = document.getElementById('selectedPlan');
+                if (verifyInput && verifyInput.value !== activePlan) {
+                    console.warn('Plan selection not persisted to hidden input, fixing...');
+                    verifyInput.value = activePlan;
+                }
             }
 
             planButtons.forEach((btn) => {
@@ -784,6 +833,65 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     togglePasswordBtn.innerHTML = `<i data-lucide="${nextIcon}" style="width:20px;height:20px"></i>`;
                     if (window.lucide) { window.lucide.createIcons(); }
                 };
+            }
+
+            // Real-time password strength validation
+            function validatePasswordStrength(password) {
+                const checks = {
+                    length: password.length >= 8,
+                    lowercase: /[a-z]/.test(password),
+                    uppercase: /[A-Z]/.test(password),
+                    number: /\d/.test(password)
+                };
+                return checks;
+            }
+
+            function updatePasswordRequirements(password) {
+                const checks = validatePasswordStrength(password);
+                const requirements = {
+                    'req-length': checks.length,
+                    'req-lowercase': checks.lowercase,
+                    'req-uppercase': checks.uppercase,
+                    'req-number': checks.number
+                };
+
+                Object.entries(requirements).forEach(([id, met]) => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        const icon = element.querySelector('i[data-lucide]');
+                        if (icon) {
+                            if (met) {
+                                icon.setAttribute('data-lucide', 'check');
+                                icon.classList.remove('text-slate-400');
+                                icon.classList.add('text-green-500');
+                                element.classList.remove('text-slate-400');
+                                element.classList.add('text-green-400');
+                            } else {
+                                icon.setAttribute('data-lucide', 'x');
+                                icon.classList.remove('text-green-500');
+                                icon.classList.add('text-slate-400');
+                                element.classList.remove('text-green-400');
+                                element.classList.add('text-slate-400');
+                            }
+                            // Re-render Lucide icon
+                            if (window.lucide) {
+                                window.lucide.createIcons();
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Add real-time password validation
+            if (passwordInput) {
+                // Initialize requirements display on page load
+                updatePasswordRequirements('');
+                
+                passwordInput.addEventListener('input', function() {
+                    updatePasswordRequirements(this.value);
+                    // Clear error state when user starts typing
+                    clearFieldError('password');
+                });
             }
 
             // Custom checkbox behavior - simplified and robust
@@ -838,6 +946,181 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 wireCustomCheckbox('privacy');
             }, 100);
 
+            // Field error highlighting functions
+            const fieldMapping = {
+                'email': 'email',
+                'password': 'password',
+                'company name': 'companyName',
+                'company_name': 'companyName',
+                'full name': ['firstName', 'lastName'],
+                'first_name': 'firstName',
+                'last_name': 'lastName',
+                'first name': 'firstName',
+                'last name': 'lastName',
+                'industry': 'industry',
+                'company size': 'employees',
+                'employees': 'employees',
+                'country': 'country',
+                'phone number': 'phone',
+                'phone': 'phone',
+                'plan selection': 'selectedPlan',
+                'selectedPlan': 'selectedPlan',
+                'terms': 'terms',
+                'privacy': 'privacy'
+            };
+
+            function highlightFieldError(fieldName) {
+                const mappedField = fieldMapping[fieldName.toLowerCase()];
+                if (!mappedField) {
+                    // Try to find field by partial match
+                    const lowerFieldName = fieldName.toLowerCase();
+                    for (const [key, value] of Object.entries(fieldMapping)) {
+                        if (lowerFieldName.includes(key) || key.includes(lowerFieldName)) {
+                            const field = Array.isArray(value) ? document.getElementById(value[0]) : document.getElementById(value);
+                            if (field) {
+                                if (Array.isArray(value)) {
+                                    value.forEach(id => highlightFieldById(id, fieldName));
+                                } else {
+                                    highlightFieldById(value, fieldName);
+                                }
+                                return;
+                            }
+                        }
+                    }
+                    return;
+                }
+
+                if (Array.isArray(mappedField)) {
+                    // Handle fields that span multiple inputs (e.g., full name)
+                    mappedField.forEach(id => highlightFieldById(id, fieldName));
+                } else {
+                    highlightFieldById(mappedField, fieldName);
+                }
+            }
+
+            function highlightFieldById(fieldId, fieldName) {
+                const field = document.getElementById(fieldId);
+                if (!field) return;
+
+                field.classList.add('field-error');
+                
+                // Special handling for plan selection
+                if (fieldId === 'selectedPlan') {
+                    const planCard = document.getElementById('planCard');
+                    if (planCard && !planCard.querySelector('.error-message')) {
+                        const errorMsg = document.createElement('p');
+                        errorMsg.className = 'error-message mt-2';
+                        errorMsg.textContent = 'Please select a plan';
+                        planCard.appendChild(errorMsg);
+                    }
+                    // Also highlight plan buttons
+                    document.querySelectorAll('.plan-option').forEach(btn => {
+                        btn.style.borderColor = '#ef4444';
+                        btn.style.boxShadow = '0 0 0 2px rgba(239, 68, 68, 0.2)';
+                    });
+                    return;
+                }
+
+                // Special handling for checkboxes
+                if (fieldId === 'terms' || fieldId === 'privacy') {
+                    const checkboxLabel = document.querySelector(`label[for="${fieldId}"]:not(.checkbox-label)`);
+                    if (checkboxLabel && !checkboxLabel.querySelector('.error-message')) {
+                        const errorMsg = document.createElement('span');
+                        errorMsg.className = 'error-message block mt-1';
+                        errorMsg.textContent = `Please accept the ${fieldId === 'terms' ? 'Terms and Conditions' : 'Privacy Policy'}`;
+                        checkboxLabel.appendChild(errorMsg);
+                    }
+                    return;
+                }
+
+                // For regular input fields, add error message after the field
+                if (!field.nextElementSibling?.classList.contains('error-message')) {
+                    const errorMsg = document.createElement('p');
+                    errorMsg.className = 'error-message';
+                    let message = `Please enter ${fieldName}`;
+                    if (fieldName.toLowerCase().includes('email')) {
+                        message = 'Please enter a valid email address';
+                    } else if (fieldName.toLowerCase().includes('password')) {
+                        message = 'Password must be at least 8 characters';
+                    }
+                    errorMsg.textContent = message;
+                    field.parentElement?.appendChild(errorMsg);
+                }
+            }
+
+            function clearFieldError(fieldId) {
+                const field = document.getElementById(fieldId);
+                if (field) {
+                    field.classList.remove('field-error');
+                    // Remove error message
+                    const errorMsg = field.parentElement?.querySelector('.error-message');
+                    if (errorMsg) {
+                        errorMsg.remove();
+                    }
+                }
+                
+                // Special handling for plan selection
+                if (fieldId === 'selectedPlan') {
+                    const planCard = document.getElementById('planCard');
+                    if (planCard) {
+                        const errorMsg = planCard.querySelector('.error-message');
+                        if (errorMsg) errorMsg.remove();
+                    }
+                    // Reset plan button styles
+                    document.querySelectorAll('.plan-option').forEach(btn => {
+                        btn.style.borderColor = '';
+                        btn.style.boxShadow = '';
+                    });
+                }
+            }
+
+            function clearAllFieldErrors() {
+                // Clear all field errors
+                document.querySelectorAll('.field-error').forEach(el => {
+                    el.classList.remove('field-error');
+                });
+                // Remove all error messages
+                document.querySelectorAll('.error-message').forEach(el => {
+                    el.remove();
+                });
+                // Reset plan button styles
+                document.querySelectorAll('.plan-option').forEach(btn => {
+                    btn.style.borderColor = '';
+                    btn.style.boxShadow = '';
+                });
+            }
+
+            // Add event listeners to clear errors when user interacts with fields
+            const formFields = ['email', 'password', 'companyName', 'firstName', 'lastName', 'industry', 'employees', 'country', 'phone'];
+            formFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (field) {
+                    field.addEventListener('input', () => clearFieldError(fieldId));
+                    field.addEventListener('change', () => clearFieldError(fieldId));
+                }
+            });
+
+            // Clear plan selection error when user clicks a plan
+            document.querySelectorAll('.plan-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    clearFieldError('selectedPlan');
+                    // Also clear any error message near the plan selection
+                    const planCard = document.getElementById('planCard');
+                    if (planCard) {
+                        const errorMsg = planCard.querySelector('.error-message');
+                        if (errorMsg) errorMsg.remove();
+                    }
+                });
+            });
+
+            // Clear checkbox errors when user checks them
+            ['terms', 'privacy'].forEach(checkboxId => {
+                const checkbox = document.getElementById(checkboxId);
+                if (checkbox) {
+                    checkbox.addEventListener('change', () => clearFieldError(checkboxId));
+                }
+            });
+
             // Form submission - Version 3.0 (Anti-Spam Email Confirmation)
             console.log('Signup form initialized - using email confirmation protection');
             document.getElementById('signupForm').addEventListener('submit', async function(e) {
@@ -848,17 +1131,144 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             const loadingSpinner = document.getElementById('loadingSpinner');
             const messageDiv = document.getElementById('message');
             
+            // Clear previous errors
+            clearAllFieldErrors();
+
+            // Browser-native validity checks (required fields, type=email, etc).
+            // Because we call preventDefault, we must trigger validation explicitly.
+            if (typeof this.reportValidity === 'function' && !this.reportValidity()) {
+                return;
+            }
+
             // Show loading state
             submitButton.disabled = true;
             buttonText.textContent = 'Creating Account...';
             loadingSpinner.classList.remove('hidden');
             messageDiv.classList.add('hidden');
-            
+
             try {
                 const formData = new FormData(this);
+
+                // Friendly email validation (common mistake: phone number entered into email)
+                const emailValue = (formData.get('email') || '').toString().trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailValue)) {
+                    highlightFieldError('email');
+                    throw new Error('Please enter a valid email address (e.g., name@company.com). It looks like you entered a phone number or non-email text in the Work Email field.');
+                }
                 
                 // Generate UUID for organization (required by database)
                 const orgId = crypto.randomUUID();
+                
+                // Get selected plan - read directly from DOM element as fallback if FormData doesn't have it
+                const selectedPlanInput = document.getElementById('selectedPlan');
+                let selectedPlanValue = (selectedPlanInput?.value || formData.get('selectedPlan') || '').toString().trim().toLowerCase();
+                
+                // Fallback: if still empty, check the active plan from the plan selection state
+                if (!selectedPlanValue) {
+                    // Try to get from the active button
+                    const activeButton = document.querySelector('.plan-option.border-freight-orange[data-plan]');
+                    if (activeButton) {
+                        selectedPlanValue = (activeButton.getAttribute('data-plan') || '').toLowerCase();
+                    }
+                }
+                
+                // Final fallback to 'growth' if still empty
+                if (!selectedPlanValue || !['starter', 'growth', 'professional', 'scale'].includes(selectedPlanValue)) {
+                    selectedPlanValue = 'growth';
+                    // Update the hidden input for consistency
+                    if (selectedPlanInput) selectedPlanInput.value = selectedPlanValue;
+                }
+                
+                // Log for debugging
+                console.log('Submitting with plan:', selectedPlanValue, 'from input:', selectedPlanInput?.value);
+                
+                // Client-side validation before submission
+                const validationErrors = [];
+                
+                // Validate all required fields
+                if (!formData.get('email') || !formData.get('email').toString().trim()) {
+                    validationErrors.push('email');
+                } else {
+                    // Basic email format validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(formData.get('email').toString().trim())) {
+                        validationErrors.push('email');
+                    }
+                }
+                
+                // Strict password validation
+                const passwordValue = (formData.get('password') || '').toString();
+                const passwordChecks = validatePasswordStrength(passwordValue);
+                if (!passwordValue || !passwordChecks.length || !passwordChecks.lowercase || !passwordChecks.uppercase || !passwordChecks.number) {
+                    validationErrors.push('password');
+                    // Highlight password field
+                    highlightFieldError('password');
+                    // Show specific missing requirements
+                    const missingReqs = [];
+                    if (!passwordChecks.length) missingReqs.push('at least 8 characters');
+                    if (!passwordChecks.lowercase) missingReqs.push('a lowercase letter');
+                    if (!passwordChecks.uppercase) missingReqs.push('an uppercase letter');
+                    if (!passwordChecks.number) missingReqs.push('a number');
+                    
+                    const passwordField = document.getElementById('password');
+                    if (passwordField && !passwordField.nextElementSibling?.classList.contains('error-message')) {
+                        const errorMsg = document.createElement('p');
+                        errorMsg.className = 'error-message';
+                        errorMsg.textContent = `Password must contain: ${missingReqs.join(', ')}`;
+                        passwordField.parentElement?.appendChild(errorMsg);
+                    }
+                }
+                
+                if (!formData.get('companyName') || !formData.get('companyName').toString().trim()) {
+                    validationErrors.push('company name');
+                }
+                
+                if (!formData.get('firstName') || !formData.get('firstName').toString().trim()) {
+                    validationErrors.push('first name');
+                }
+                
+                if (!formData.get('lastName') || !formData.get('lastName').toString().trim()) {
+                    validationErrors.push('last name');
+                }
+                
+                if (!formData.get('industry') || !formData.get('industry').toString().trim()) {
+                    validationErrors.push('industry');
+                }
+                
+                if (!formData.get('employees') || !formData.get('employees').toString().trim()) {
+                    validationErrors.push('company size');
+                }
+                
+                if (!formData.get('country') || !formData.get('country').toString().trim()) {
+                    validationErrors.push('country');
+                }
+                
+                if (!formData.get('phone') || !formData.get('phone').toString().trim()) {
+                    validationErrors.push('phone number');
+                }
+                
+                if (!selectedPlanValue || !['starter', 'growth', 'professional', 'scale'].includes(selectedPlanValue)) {
+                    validationErrors.push('plan selection');
+                }
+                
+                if (!document.getElementById('terms')?.checked) {
+                    validationErrors.push('terms');
+                }
+                
+                if (!document.getElementById('privacy')?.checked) {
+                    validationErrors.push('privacy');
+                }
+                
+                // If there are validation errors, highlight them and stop submission
+                if (validationErrors.length > 0) {
+                    validationErrors.forEach(fieldName => {
+                        highlightFieldError(fieldName);
+                    });
+                    
+                    const errorList = validationErrors.map(f => f.replace(/_/g, ' ')).join(', ');
+                    throw new Error(`Please fill in all required fields: ${errorList}`);
+                }
                 
                 // ✅ BYPASS RATE LIMITS: Use Edge Function to avoid email rate limits
                 const response = await fetch("https://yvbhjlmvpipniedwvdji.supabase.co/functions/v1/public-signup", {
@@ -868,7 +1278,8 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                         "Authorization": `Bearer ${supabaseKey}`
                     },
                     body: JSON.stringify({
-                        email: formData.get('email'),
+                        selectedPlan: selectedPlanValue,
+                        email: emailValue,
                         password: formData.get('password'),
                         org_id: orgId,  // Required by edge function
                         company_name: formData.get('companyName'),
@@ -907,6 +1318,54 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                         statusText: response.statusText,
                         data: data
                     });
+                    
+                    // Parse error message to identify missing fields
+                    const errorText = errorMessage.toLowerCase();
+                    
+                    // Check for "Missing required fields" pattern
+                    if (errorText.includes('missing required fields') || errorText.includes('missing required field')) {
+                        // Extract field names from error message
+                        const missingFieldsMatch = errorMessage.match(/missing required fields?:\s*([^.]+)/i);
+                        if (missingFieldsMatch) {
+                            const fieldsList = missingFieldsMatch[1];
+                            // Split by comma and clean up field names
+                            const fields = fieldsList.split(',').map(f => f.trim().toLowerCase());
+                            
+                            // Highlight each missing field
+                            fields.forEach(fieldName => {
+                                highlightFieldError(fieldName);
+                            });
+                        }
+                    }
+                    
+                    // Check for specific validation errors
+                    if (errorText.includes('invalid email') || errorText.includes('email format')) {
+                        highlightFieldError('email');
+                    }
+                    if (errorText.includes('password') && (errorText.includes('weak') || errorText.includes('security requirements') || errorText.includes('does not meet'))) {
+                        highlightFieldError('password');
+                        // Show specific password requirements error
+                        const passwordField = document.getElementById('password');
+                        if (passwordField) {
+                            const existingError = passwordField.parentElement?.querySelector('.error-message');
+                            if (existingError) {
+                                existingError.textContent = errorMessage.includes('details') ? data.details || errorMessage : errorMessage;
+                            } else {
+                                const errorMsg = document.createElement('p');
+                                errorMsg.className = 'error-message';
+                                errorMsg.textContent = data.details || errorMessage;
+                                passwordField.parentElement?.appendChild(errorMsg);
+                            }
+                        }
+                    }
+                    if (errorText.includes('terms not accepted') || errorText.includes('must accept')) {
+                        highlightFieldError('terms');
+                        highlightFieldError('privacy');
+                    }
+                    if (errorText.includes('already registered') || errorText.includes('email already exists')) {
+                        highlightFieldError('email');
+                    }
+                    
                     throw new Error(errorMessage);
                 }
                 
@@ -917,7 +1376,7 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                         <i data-lucide="mail" class="text-blue-500" style="width:20px;height:20px"></i>
                         <div>
                             <p class="text-blue-400 font-semibold">Check Your Email!</p>
-                            <p class="text-blue-300 text-sm mt-1">We've sent a confirmation link to ${formData.get('email')}. Click the link to activate your account and create your organization.</p>
+                            <p class="text-blue-300 text-sm mt-1">We've sent a confirmation link to ${emailValue}. Click the link to activate your account and create your organization.</p>
                         </div>
                     </div>
                 `;
