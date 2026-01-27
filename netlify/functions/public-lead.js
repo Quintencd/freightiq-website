@@ -305,51 +305,39 @@ exports.handler = async (event) => {
       console.warn('SUPABASE_SERVICE_ROLE_KEY not configured - skipping database storage');
     }
 
-    // Send email (required for contact/demo requests)
+    // Send email (best-effort - Supabase function will also send via database trigger)
+    // If Netlify email fails, that's okay since Supabase function handles it
     const to = process.env.SUPPORT_EMAIL_TO;
     const resendKey = process.env.RESEND_API_KEY;
 
-    if (!to || !resendKey) {
-      return { statusCode: 500, headers, body: 'Email not configured: set SUPPORT_EMAIL_TO and RESEND_API_KEY' };
-    }
+    if (to && resendKey) {
+      const subject =
+        request_type === 'deck'
+          ? 'FlowIQ – Deck request'
+          : request_type === 'contact'
+            ? 'FlowIQ – Contact request'
+            : 'FlowIQ – Demo request';
 
-    const subject =
-      request_type === 'deck'
-        ? 'FlowIQ – Deck request'
-        : request_type === 'contact'
-          ? 'FlowIQ – Contact request'
-          : 'FlowIQ – Demo request';
+      const emailResult = await sendEmail({
+        to,
+        replyTo: email,
+        subject,
+        requestType: request_type,
+        firstName: first_name,
+        lastName: last_name,
+        name,
+        email,
+        phone,
+        company,
+        message,
+      });
 
-    const emailResult = await sendEmail({
-      to,
-      replyTo: email,
-      subject,
-      requestType: request_type,
-      firstName: first_name,
-      lastName: last_name,
-      name,
-      email,
-      phone,
-      company,
-      message,
-    });
-
-    if (!emailResult.ok) {
-      if (emailResult.method === 'resend-direct' && emailResult.response) {
-        let errorData = {};
-        try {
-          errorData = await emailResult.response.json();
-        } catch {
-          try {
-            const errorText = await emailResult.response.text();
-            errorData = { message: errorText };
-          } catch {
-            errorData = { message: '' };
-          }
-        }
-        return { statusCode: 502, headers, body: `Email send failed: ${errorData.message || 'Resend error'}` };
+      if (!emailResult.ok) {
+        // Log error but don't fail - Supabase function will send email via database trigger
+        console.warn('Netlify email send failed (Supabase function will handle it):', emailResult.error || 'Resend error');
       }
-      return { statusCode: 502, headers, body: `Email send failed: ${emailResult.error || 'Unknown error'}` };
+    } else {
+      console.log('Netlify email not configured - Supabase function will send email via database trigger');
     }
 
     // Store in Netlify Forms too (best-effort)
