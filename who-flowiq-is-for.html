@@ -30,7 +30,7 @@
       background-color: #ea580c;
     }
   </style>
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 
 <body class="bg-slate-50 text-slate-900">
@@ -46,16 +46,18 @@
             </span>
           </a>
         </div>
-        <div class="hidden md:flex items-center space-x-8">
+        <div class="hidden md:flex items-center space-x-6">
           <a href="/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Home</a>
+          <a href="/who-flowiq-is-for.html" class="text-orange-600 font-medium transition-colors">Who it's for</a>
+          <a href="/modules.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Modules</a>
           <a href="/pricing.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Pricing</a>
-        </div>
-        <div class="flex items-center space-x-4">
+          <a href="/brochure.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Brochure</a>
           <a href="https://app.flowiq.info/"
-            class="text-slate-600 hover:text-slate-900 font-medium transition-colors">Login</a>
+            class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Login</a>
+          <a href="#demo" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Book a Demo</a>
           <a href="/signup"
-            class="bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-2.5 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-            Start Trial
+            class="bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-2.5 rounded-lg font-semibold shadow-sm transition-all hover:shadow-md">
+            Start 14-Day Full Trial
           </a>
         </div>
         <!-- Mobile Menu Button -->
@@ -68,9 +70,14 @@
     <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white absolute w-full left-0 top-16">
       <div class="px-4 py-4 space-y-4 shadow-lg">
         <a href="/" class="block text-slate-600 hover:text-orange-600 font-medium">Home</a>
+        <a href="/who-flowiq-is-for.html" class="block text-orange-600 font-medium">Who it's for</a>
+        <a href="/modules.html" class="block text-slate-600 hover:text-orange-600 font-medium">Modules</a>
         <a href="/pricing.html" class="block text-slate-600 hover:text-orange-600 font-medium">Pricing</a>
+        <a href="/brochure.html" class="block text-slate-600 hover:text-orange-600 font-medium">Brochure</a>
+        <a href="https://app.flowiq.info/" class="block text-slate-600 hover:text-orange-600 font-medium">Login</a>
+        <a href="#demo" class="block text-slate-600 hover:text-orange-600 font-medium">Book a Demo</a>
         <a href="/signup" class="block bg-freight-orange text-white px-4 py-2 rounded-lg text-center font-medium">Start
-          Trial</a>
+          14-Day Full Trial</a>
       </div>
     </div>
   </nav>
@@ -246,18 +253,22 @@
     </div>
   </footer>
 
-  <script>
-    lucide.createIcons();
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
 
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    });
   </script>
 </body>
 
