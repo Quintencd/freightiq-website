@@ -44,6 +44,11 @@
   to = "/pricing.html"
   status = 301
 
+[[redirects]]
+  from = "/who-flowiq-is-for"
+  to = "/who-flowiq-is-for.html"
+  status = 301
+
 # Signup should be served from ONE canonical file.
 # `/signup` and `/signup/` should render the same page as `/signup/index.html`.
 [[redirects]]
