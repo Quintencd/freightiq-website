@@ -1,55 +1,110 @@
-<!doctype html>
-<!-- FlowIQ marketing site · styles inline fallback 2025-01-29 -->
-<html lang="en-ZA">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Import &amp; Inventory Software for Growing Businesses | FlowIQ</title>
-  <meta name="description" content="Inventory and import cost software built for true landed cost accuracy, margin control, and scalable operations. Ideal for importers, distributors, and manufacturers.">
-  <link rel="canonical" href="https://www.flowiq.info/">
-  <style>/* FlowIQ base — inline so page always styled */:root{--color-bg:#fff;--color-text:#1a1a1a;--color-muted:#555;--color-link:#0066cc;--font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}*{box-sizing:border-box}body{margin:0;font-family:var(--font-sans);font-size:1rem;line-height:1.5;color:var(--color-text);background:var(--color-bg)}header{padding:1rem 1.5rem;border-bottom:1px solid #eee}nav{display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem;max-width:1200px;margin:0 auto}nav a{color:var(--color-text);text-decoration:none}nav a:hover{color:var(--color-link)}main{max-width:900px;margin:0 auto;padding:2rem 1.5rem}.hero{padding:4rem 0 3rem}.hero h1{font-size:clamp(1.75rem,4vw,2.25rem);font-weight:700;line-height:1.2;margin:0 0 1rem}.hero p{font-size:1.125rem;color:var(--color-muted);margin:0 0 1.5rem}.hero a,main a{color:var(--color-link);text-decoration:none}.hero a:hover,main a:hover{text-decoration:underline}section.cta{margin-top:3rem;padding:2.5rem 0;border-top:1px solid #eee}section.cta h2{font-size:1.5rem;margin:0 0 0.5rem}footer{padding:2rem 1.5rem;border-top:1px solid #eee;text-align:center;color:var(--color-muted);font-size:0.9rem}footer a{color:var(--color-link);text-decoration:none;margin:0 0.75rem}footer a:hover{text-decoration:underline}footer p{margin:1rem 0 0}</style>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta name="description" content="Inventory and import cost software built for true landed cost accuracy, margin control, and scalable operations. Ideal for importers, distributors, and manufacturers." />
+  <link rel="canonical" href="https://www.flowiq.info/" />
+  <link rel="icon" type="image/svg+xml" href="/flowiq-iq-badge.svg?v=1">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .text-freight-orange { color: #f97316; }
+    .bg-freight-orange { background-color: #f97316; }
+    .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+  </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/","description":"Inventory and import cost software focused on landed cost accuracy, margin visibility, and scalable operations for importers, distributors, and manufacturers."}
   </script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
-<body>
-  <header>
-    <nav>
-      <a href="/">FlowIQ</a>
-      <a href="/modules.html">Product</a>
-      <a href="/solutions/">Solutions</a>
-      <a href="/use-cases/">Use Cases</a>
-      <a href="/tools/">Tools</a>
-      <a href="/glossary/">Resources</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/book-demo.html">Book Demo</a>
-    </nav>
-  </header>
-  <main>
-    <section class="hero">
-      <h1>Inventory &amp; Import Cost Software — True Landed Costs, Real Margins, Full Control</h1>
-      <p>Built import-first for landed cost accuracy, and powerful enough for distributors and manufacturers who need clean inventory, margin visibility, and forecasting without ERP complexity.</p>
-      <p>
-        <a href="/solutions/importers.html">For Importers</a> ·
-        <a href="/use-cases/true-landed-cost.html">True Landed Cost</a> ·
-        <a href="/tools/landed-cost-calculator.html">Landed Cost Calculator</a> ·
-        <a href="/book-demo.html">Book Demo</a>
+<body class="bg-slate-50 text-slate-900">
+  <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center gap-2">
+            <span class="inline-flex items-end leading-none select-none">
+              <span class="text-slate-900 text-[1.35rem] font-semibold tracking-tight">Flow</span>
+              <span class="ml-1 inline-flex items-center px-2 py-0.5 text-[0.95rem] font-semibold uppercase tracking-wide text-orange-600 bg-orange-50 border border-orange-200 rounded-md">IQ</span>
+            </span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Home</a>
+          <a href="/who-flowiq-is-for.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Who it's for</a>
+          <a href="/modules.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Modules</a>
+          <a href="/pricing.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Pricing</a>
+          <a href="/brochure.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Brochure</a>
+          <a href="https://app.flowiq.info/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Login</a>
+          <a href="/book-demo.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Book a Demo</a>
+          <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-2.5 rounded-lg font-semibold shadow-sm transition-all hover:shadow-md">Start your 30-day free trial</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white absolute w-full left-0 top-16">
+      <div class="px-4 py-4 space-y-4 shadow-lg">
+        <a href="/" class="block text-slate-600 hover:text-orange-600 font-medium">Home</a>
+        <a href="/who-flowiq-is-for.html" class="block text-slate-600 hover:text-orange-600 font-medium">Who it's for</a>
+        <a href="/modules.html" class="block text-slate-600 hover:text-orange-600 font-medium">Modules</a>
+        <a href="/pricing.html" class="block text-slate-600 hover:text-orange-600 font-medium">Pricing</a>
+        <a href="/brochure.html" class="block text-slate-600 hover:text-orange-600 font-medium">Brochure</a>
+        <a href="https://app.flowiq.info/" class="block text-slate-600 hover:text-orange-600 font-medium">Login</a>
+        <a href="/book-demo.html" class="block text-slate-600 hover:text-orange-600 font-medium">Book a Demo</a>
+        <a href="/signup" class="block bg-freight-orange text-white px-4 py-2 rounded-lg text-center font-medium">Start your 30-day free trial</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
+    <section class="text-center mb-16">
+      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Inventory &amp; Import Cost Software — True Landed Costs, Real Margins, Full Control</h1>
+      <p class="text-xl text-slate-600 mb-8">Built import-first for landed cost accuracy, and powerful enough for distributors and manufacturers who need clean inventory, margin visibility, and forecasting without ERP complexity.</p>
+      <a href="/book-demo.html" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Book Demo</a>
+      <p class="mt-6 text-slate-600">
+        <a href="/solutions/importers.html" class="text-orange-600 hover:underline font-medium">For Importers</a>
+        <span class="mx-2">·</span>
+        <a href="/use-cases/true-landed-cost.html" class="text-orange-600 hover:underline font-medium">True Landed Cost</a>
+        <span class="mx-2">·</span>
+        <a href="/tools/landed-cost-calculator.html" class="text-orange-600 hover:underline font-medium">Landed Cost Calculator</a>
       </p>
     </section>
-    <section class="cta">
-      <h2>See FlowIQ in Action</h2>
-      <p>Get a guided demo focused on your workflow.</p>
-      <a href="/book-demo.html">Book Demo</a>
+
+    <section class="text-center pt-8 pb-4 border-t border-slate-200">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-4">See FlowIQ in Action</h2>
+      <p class="text-slate-600 mb-6">Get a guided demo focused on your workflow.</p>
+      <a href="/book-demo.html" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Book Demo</a>
     </section>
   </main>
-  <footer>
-    <a href="/solutions/">Solutions</a>
-    <a href="/use-cases/">Use Cases</a>
-    <a href="/tools/">Tools</a>
-    <a href="/compare/">Compare</a>
-    <a href="/glossary/">Glossary</a>
-    <p>Your data remains private and is never shared.</p>
+
+  <footer class="border-t border-slate-200 py-8 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
+      <a href="/solutions/" class="text-slate-600 hover:text-orange-600">Solutions</a>
+      <span class="mx-2">·</span>
+      <a href="/use-cases/" class="text-slate-600 hover:text-orange-600">Use Cases</a>
+      <span class="mx-2">·</span>
+      <a href="/tools/" class="text-slate-600 hover:text-orange-600">Tools</a>
+      <span class="mx-2">·</span>
+      <a href="/compare/" class="text-slate-600 hover:text-orange-600">Compare</a>
+      <span class="mx-2">·</span>
+      <a href="/glossary/" class="text-slate-600 hover:text-orange-600">Glossary</a>
+      <p class="mt-4">Your data remains private and is never shared.</p>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
+      var menu = document.getElementById('mobileMenu');
+      menu?.classList.toggle('hidden');
+    });
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  </script>
 </body>
 </html>

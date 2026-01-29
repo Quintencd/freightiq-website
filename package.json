@@ -2,6 +2,10 @@
   "name": "flowiq_website",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "dev": "npx serve . -l 3333",
+    "start": "npx serve . -l 3333"
+  },
   "dependencies": {
     "@react-email/components": "^0.0.20"
   }
