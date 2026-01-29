@@ -9,54 +9,100 @@
   <link rel="icon" href="/favicon.ico">
   <link rel="shortcut icon" href="/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>.bg-freight-slate{background:#0f172a}.bg-freight-slate-light{background:#1e293b}.bg-freight-orange{background:#f97316}</style>
-  <link rel="stylesheet" href="/flowiq-light.css?v=1">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .text-freight-orange { color: #f97316; }
+    .bg-freight-orange { background-color: #f97316; }
+    .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+  </style>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
-<body class="bg-freight-slate text-slate-100">
-  <nav class="sticky top-0 z-50 bg-freight-slate/95 backdrop-blur-md border-b border-slate-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="/index.html" class="flex items-center">
-        <span class="inline-flex items-end leading-none select-none transition-transform duration-300">
-          <span class="text-white text-[1.35rem] font-semibold tracking-tight drop-shadow-sm">Flow</span>
-          <span class="ml-1 inline-flex items-center px-2 py-0.5 text-[0.95rem] font-semibold uppercase tracking-wide text-orange-400 bg-orange-500/10 border border-orange-400/60 rounded-md shadow-[0_0_12px_rgba(249,115,22,0.35)]">IQ</span>
-        </span>
-      </a>
-      <div class="hidden md:flex items-center space-x-6 text-sm">
-        <a href="/index.html#modules" class="text-slate-300 hover:text-freight-orange">Modules</a>
-        <a href="/pricing.html" class="text-slate-300 hover:text-freight-orange">Pricing</a>
+<body class="bg-slate-50 text-slate-900">
+  <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center gap-2">
+            <span class="inline-flex items-end leading-none select-none">
+              <span class="text-slate-900 text-[1.35rem] font-semibold tracking-tight">Flow</span>
+              <span class="ml-1 inline-flex items-center px-2 py-0.5 text-[0.95rem] font-semibold uppercase tracking-wide text-orange-600 bg-orange-50 border border-orange-200 rounded-md">IQ</span>
+            </span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Home</a>
+          <a href="/who-flowiq-is-for.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Who it's for</a>
+          <a href="/modules.html" class="text-orange-600 font-medium">Modules</a>
+          <a href="/pricing.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Pricing</a>
+          <a href="/brochure.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Brochure</a>
+          <a href="https://app.flowiq.info/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Login</a>
+          <a href="/book-demo.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Book a Demo</a>
+          <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-2.5 rounded-lg font-semibold shadow-sm transition-all hover:shadow-md">Start your 30-day free trial</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white absolute w-full left-0 top-16">
+      <div class="px-4 py-4 space-y-4 shadow-lg">
+        <a href="/" class="block text-slate-600 hover:text-orange-600 font-medium">Home</a>
+        <a href="/who-flowiq-is-for.html" class="block text-slate-600 hover:text-orange-600 font-medium">Who it's for</a>
+        <a href="/modules.html" class="block text-orange-600 font-medium">Modules</a>
+        <a href="/pricing.html" class="block text-slate-600 hover:text-orange-600 font-medium">Pricing</a>
+        <a href="/brochure.html" class="block text-slate-600 hover:text-orange-600 font-medium">Brochure</a>
+        <a href="https://app.flowiq.info/" class="block text-slate-600 hover:text-orange-600 font-medium">Login</a>
+        <a href="/book-demo.html" class="block text-slate-600 hover:text-orange-600 font-medium">Book a Demo</a>
+        <a href="/signup" class="block bg-freight-orange text-white px-4 py-2 rounded-lg text-center font-medium">Start your 30-day free trial</a>
       </div>
     </div>
   </nav>
 
-  <header class="bg-gradient-to-b from-white to-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h1 class="text-4xl md:text-5xl font-black mb-4 text-white">Manufacturing</h1>
-      <p class="text-slate-300 text-lg max-w-3xl">Work orders that consume raw materials FIFO and add finished goods layers — with WIP/FG journals to Xero.</p>
-    </div>
-  </header>
-
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32 space-y-12">
+    <section class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Manufacturing</h1>
+      <p class="text-xl text-slate-600 max-w-3xl mx-auto">Work orders that consume raw materials FIFO and add finished goods layers — with WIP/FG journals to Xero.</p>
+      <a href="/book-demo.html" class="inline-flex items-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all mt-6">Book Demo</a>
+    </section>
     <section class="grid md:grid-cols-3 gap-6">
-      <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
-        <h3 class="text-white font-semibold mb-2">BOM Management</h3>
-        <p class="text-slate-300 text-sm">Versioned BOMs with component costs and historical views.</p>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <h3 class="text-slate-900 font-semibold mb-2">BOM Management</h3>
+        <p class="text-slate-600 text-sm">Versioned BOMs with component costs and historical views.</p>
       </div>
-      <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
-        <h3 class="text-white font-semibold mb-2">FIFO Consumption</h3>
-        <p class="text-slate-300 text-sm">Consume oldest stock first for accurate COGS and margins.</p>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <h3 class="text-slate-900 font-semibold mb-2">FIFO Consumption</h3>
+        <p class="text-slate-600 text-sm">Consume oldest stock first for accurate COGS and margins.</p>
       </div>
-      <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
-        <h3 class="text-white font-semibold mb-2">Xero Journals</h3>
-        <p class="text-slate-300 text-sm">WIP start/complete entries syncing to Finished Goods and Raw Materials.</p>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <h3 class="text-slate-900 font-semibold mb-2">Xero Journals</h3>
+        <p class="text-slate-600 text-sm">WIP start/complete entries syncing to Finished Goods and Raw Materials.</p>
       </div>
     </section>
   </main>
 
-  <footer class="bg-freight-slate text-slate-300 py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-slate-400">© 2024 Flow IQ. All rights reserved.</p>
+  <footer class="border-t border-slate-200 py-8 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
+      <a href="/solutions/" class="text-slate-600 hover:text-orange-600">Solutions</a>
+      <span class="mx-2">·</span>
+      <a href="/use-cases/" class="text-slate-600 hover:text-orange-600">Use Cases</a>
+      <span class="mx-2">·</span>
+      <a href="/tools/" class="text-slate-600 hover:text-orange-600">Tools</a>
+      <span class="mx-2">·</span>
+      <a href="/compare/" class="text-slate-600 hover:text-orange-600">Compare</a>
+      <span class="mx-2">·</span>
+      <a href="/glossary/" class="text-slate-600 hover:text-orange-600">Glossary</a>
+      <p class="mt-4">Your data remains private and is never shared.</p>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
+      var menu = document.getElementById('mobileMenu');
+      menu?.classList.toggle('hidden');
+    });
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  </script>
 </body>
 </html>
 

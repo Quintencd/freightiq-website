@@ -3,20 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You — Flow IQ</title>
+  <title>Thank You — FlowIQ</title>
   <link rel="icon" type="image/svg+xml" href="/flowiq-iq-badge.svg?v=1">
   <link rel="icon" href="/favicon.ico">
   <link rel="shortcut icon" href="/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/flowiq-light.css?v=1">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .text-freight-orange { color: #f97316; }
+    .bg-freight-orange { background-color: #f97316; }
+    .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+  </style>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 <body class="bg-slate-50 text-slate-900">
-  <div class="min-h-screen flex items-center justify-center p-6">
-    <div class="max-w-md w-full bg-white border border-slate-200 rounded-xl p-8 text-center shadow-sm">
-      <h1 class="text-2xl font-bold mb-3">Thanks — we’ve got your request!</h1>
-      <p class="text-slate-600 mb-6">Our team will reach out shortly to schedule your quick demo.</p>
-      <a href="/" class="inline-block bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-3 rounded-lg font-semibold">Back to Home</a>
+  <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center gap-2">
+            <span class="inline-flex items-end leading-none select-none">
+              <span class="text-slate-900 text-[1.35rem] font-semibold tracking-tight">Flow</span>
+              <span class="ml-1 inline-flex items-center px-2 py-0.5 text-[0.95rem] font-semibold uppercase tracking-wide text-orange-600 bg-orange-50 border border-orange-200 rounded-md">IQ</span>
+            </span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Home</a>
+          <a href="/who-flowiq-is-for.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Who it's for</a>
+          <a href="/modules.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Modules</a>
+          <a href="/pricing.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Pricing</a>
+          <a href="/brochure.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Brochure</a>
+          <a href="https://app.flowiq.info/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Login</a>
+          <a href="/book-demo.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Book a Demo</a>
+          <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-2.5 rounded-lg font-semibold shadow-sm transition-all hover:shadow-md">Start your 30-day free trial</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
     </div>
-  </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white absolute w-full left-0 top-16">
+      <div class="px-4 py-4 space-y-4 shadow-lg">
+        <a href="/" class="block text-slate-600 hover:text-orange-600 font-medium">Home</a>
+        <a href="/who-flowiq-is-for.html" class="block text-slate-600 hover:text-orange-600 font-medium">Who it's for</a>
+        <a href="/modules.html" class="block text-slate-600 hover:text-orange-600 font-medium">Modules</a>
+        <a href="/pricing.html" class="block text-slate-600 hover:text-orange-600 font-medium">Pricing</a>
+        <a href="/brochure.html" class="block text-slate-600 hover:text-orange-600 font-medium">Brochure</a>
+        <a href="https://app.flowiq.info/" class="block text-slate-600 hover:text-orange-600 font-medium">Login</a>
+        <a href="/book-demo.html" class="block text-slate-600 hover:text-orange-600 font-medium">Book a Demo</a>
+        <a href="/signup" class="block bg-freight-orange text-white px-4 py-2 rounded-lg text-center font-medium">Start your 30-day free trial</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="min-h-screen flex items-center justify-center px-4 sm:px-6 py-24 pt-32">
+    <div class="max-w-md w-full bg-white border border-slate-200 rounded-xl p-8 text-center shadow-sm">
+      <h1 class="text-2xl font-bold mb-3 text-slate-900">Thanks — we've got your request!</h1>
+      <p class="text-slate-600 mb-6">Our team will reach out shortly to schedule your quick demo.</p>
+      <a href="/" class="inline-block bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-3 rounded-lg font-semibold transition-colors">Back to Home</a>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-200 py-8 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
+      <a href="/solutions/" class="text-slate-600 hover:text-orange-600">Solutions</a>
+      <span class="mx-2">·</span>
+      <a href="/use-cases/" class="text-slate-600 hover:text-orange-600">Use Cases</a>
+      <span class="mx-2">·</span>
+      <a href="/tools/" class="text-slate-600 hover:text-orange-600">Tools</a>
+      <span class="mx-2">·</span>
+      <a href="/compare/" class="text-slate-600 hover:text-orange-600">Compare</a>
+      <span class="mx-2">·</span>
+      <a href="/glossary/" class="text-slate-600 hover:text-orange-600">Glossary</a>
+      <p class="mt-4">Your data remains private and is never shared.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
+      var menu = document.getElementById('mobileMenu');
+      menu?.classList.toggle('hidden');
+    });
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  </script>
 </body>
 </html>

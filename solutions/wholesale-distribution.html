@@ -9,61 +9,119 @@
   <link rel="icon" href="/favicon.ico">
   <link rel="shortcut icon" href="/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>.bg-freight-slate{background:#0f172a}.bg-freight-slate-light{background:#1e293b}.bg-freight-orange{background:#f97316}</style>
-  <link rel="stylesheet" href="/flowiq-light.css?v=1">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .text-freight-orange { color: #f97316; }
+    .bg-freight-orange { background-color: #f97316; }
+    .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+  </style>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
-<body class="bg-freight-slate text-slate-100">
-  <nav class="sticky top-0 z-50 bg-freight-slate/95 backdrop-blur-md border-b border-slate-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="/index.html" class="flex items-center">
-        <span class="inline-flex items-end leading-none select-none transition-transform duration-300">
-          <span class="text-white text-[1.35rem] font-semibold tracking-tight drop-shadow-sm">Flow</span>
-          <span class="ml-1 inline-flex items-center px-2 py-0.5 text-[0.95rem] font-semibold uppercase tracking-wide text-orange-400 bg-orange-500/10 border border-orange-400/60 rounded-md shadow-[0_0_12px_rgba(249,115,22,0.35)]">IQ</span>
-        </span>
-      </a>
-      <div class="hidden md:flex items-center space-x-6 text-sm">
-        <a href="/index.html#modules" class="text-slate-300 hover:text-freight-orange">Modules</a>
-        <a href="/pricing.html" class="text-slate-300 hover:text-freight-orange">Pricing</a>
+<body class="bg-slate-50 text-slate-900">
+  <nav
+    class="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm supports-[backdrop-filter]:bg-white/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center gap-2 group">
+            <span
+              class="inline-flex items-end leading-none select-none transition-transform group-hover:scale-105 duration-300">
+              <span class="text-slate-900 text-[1.45rem] font-bold tracking-tight">Flow</span>
+              <span
+                class="ml-1 inline-flex items-center px-2 py-0.5 text-[1rem] font-bold uppercase tracking-wide text-orange-600 bg-orange-50 border border-orange-200 rounded-md">IQ</span>
+            </span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Home</a>
+          <a href="/who-flowiq-is-for.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Who it's for</a>
+          <a href="/modules.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Modules</a>
+          <a href="/pricing.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Pricing</a>
+          <a href="/brochure.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Brochure</a>
+          <a href="https://app.flowiq.info/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Login</a>
+          <a href="/book-demo.html" class="text-slate-900 font-semibold hover:text-orange-600 transition-colors">Book a Demo</a>
+          <a href="/signup"
+            class="bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-orange-500/20 transition-all hover:shadow-orange-500/40 hover:-translate-y-0.5">Start Free Trial</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu"
+      class="md:hidden hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-20 shadow-xl">
+      <div class="px-6 py-6 space-y-4">
+        <a href="/" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Home</a>
+        <a href="/who-flowiq-is-for.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Who it's for</a>
+        <a href="/modules.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Modules</a>
+        <a href="/pricing.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Pricing</a>
+        <a href="/brochure.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Brochure</a>
+        <a href="https://app.flowiq.info/" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Login</a>
+        <a href="/book-demo.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Book a Demo</a>
+        <a href="/signup"
+          class="block bg-freight-orange text-white px-4 py-3 rounded-xl text-center font-bold text-lg shadow-md">Start your 30-day free trial</a>
       </div>
     </div>
   </nav>
 
-  <header class="bg-gradient-to-b from-white to-slate-50">
+  <header class="bg-gradient-to-b from-white to-slate-50 pt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-      <h1 class="text-5xl font-black mb-4 text-white">Wholesale Distribution</h1>
-      <p class="text-slate-300 text-lg max-w-3xl mx-auto">Run multi‑warehouse operations with accurate FIFO costs, smart purchasing, and real‑time analytics — fully integrated with Xero.</p>
-      <div class="mt-6 flex gap-4 justify-center">
-        <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg">Start Free Trial</a>
-        <a href="/index.html#demo" class="border border-slate-600 hover:border-freight-orange text-white px-6 py-3 rounded-lg">Request Demo</a>
+      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Wholesale Distribution</h1>
+      <p class="text-slate-600 text-lg max-w-3xl mx-auto">Run multi‑warehouse operations with accurate FIFO costs, smart purchasing, and real‑time analytics — fully integrated with Xero.</p>
+      <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg font-semibold inline-flex items-center justify-center">Start Free Trial</a>
+        <a href="/book-demo.html" class="border border-slate-300 hover:border-orange-400 text-slate-700 hover:text-orange-600 px-6 py-3 rounded-lg font-medium inline-flex items-center justify-center">Request Demo</a>
       </div>
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
     <section>
-      <h2 class="text-3xl font-bold text-white mb-6">The Flow</h2>
+      <h2 class="text-2xl font-bold text-slate-900 mb-6">The Flow</h2>
       <ol class="grid md:grid-cols-2 gap-6 list-decimal list-inside">
-        <li class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">Forecast demand with ForecastIQ and set dynamic pricing with PriceIQ.</li>
-        <li class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">Place POs in PurchaseIQ with supplier price history and approvals.</li>
-        <li class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">Receive goods; FIFO layers update automatically in InventoryIQ.</li>
-        <li class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">Invoice in InvoiceIQ; journals sync to Xero via JournalIQ.</li>
+        <li class="bg-white p-6 rounded-xl border border-slate-200 text-slate-700 shadow-sm">Forecast demand with ForecastIQ and set dynamic pricing with PriceIQ.</li>
+        <li class="bg-white p-6 rounded-xl border border-slate-200 text-slate-700 shadow-sm">Place POs in PurchaseIQ with supplier price history and approvals.</li>
+        <li class="bg-white p-6 rounded-xl border border-slate-200 text-slate-700 shadow-sm">Receive goods; FIFO layers update automatically in InventoryIQ.</li>
+        <li class="bg-white p-6 rounded-xl border border-slate-200 text-slate-700 shadow-sm">Invoice in InvoiceIQ; journals sync to Xero via JournalIQ.</li>
       </ol>
     </section>
     <section>
-      <h2 class="text-3xl font-bold text-white mb-6">Results</h2>
+      <h2 class="text-2xl font-bold text-slate-900 mb-6">Results</h2>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700 text-center"><div class="text-4xl font-extrabold text-freight-orange">-18%</div><div class="text-slate-400 text-sm">COGS variance</div></div>
-        <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700 text-center"><div class="text-4xl font-extrabold text-freight-orange">-35%</div><div class="text-slate-400 text-sm">Stockouts</div></div>
-        <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700 text-center"><div class="text-4xl font-extrabold text-freight-orange">+22%</div><div class="text-slate-400 text-sm">Gross margin</div></div>
+        <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm"><div class="text-3xl font-extrabold text-orange-600">-18%</div><div class="text-slate-500 text-sm">COGS variance</div></div>
+        <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm"><div class="text-3xl font-extrabold text-orange-600">-35%</div><div class="text-slate-500 text-sm">Stockouts</div></div>
+        <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm"><div class="text-3xl font-extrabold text-orange-600">+22%</div><div class="text-slate-500 text-sm">Gross margin</div></div>
       </div>
+    </section>
+    <section class="text-center pt-8 border-t border-slate-200">
+      <p class="text-slate-600 mb-6">Get a guided demo focused on your workflow.</p>
+      <a href="/book-demo.html" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Book Demo</a>
     </section>
   </main>
 
-  <footer class="bg-freight-slate text-slate-300 py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-slate-400">© 2024 Flow IQ. All rights reserved.</p>
+  <footer class="border-t border-slate-200 py-8 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
+      <a href="/solutions/" class="text-slate-600 hover:text-orange-600">Solutions</a>
+      <span class="mx-2">·</span>
+      <a href="/use-cases/" class="text-slate-600 hover:text-orange-600">Use Cases</a>
+      <span class="mx-2">·</span>
+      <a href="/tools/" class="text-slate-600 hover:text-orange-600">Tools</a>
+      <span class="mx-2">·</span>
+      <a href="/compare/" class="text-slate-600 hover:text-orange-600">Compare</a>
+      <span class="mx-2">·</span>
+      <a href="/glossary/" class="text-slate-600 hover:text-orange-600">Glossary</a>
+      <p class="mt-4">Your data remains private and is never shared.</p>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
+      var menu = document.getElementById('mobileMenu');
+      menu?.classList.toggle('hidden');
+    });
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  </script>
 </body>
 </html>
 
