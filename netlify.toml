@@ -20,35 +20,8 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
-# Redirects for the website
-# Canonical domain: https://flowiq.info (no www). Do NOT redirect to www or you get infinite loops.
-
-# Force HTTPS and canonicalize to https://flowiq.info (no www)
-[[redirects]]
-  from = "http://flowiq.info/*"
-  to = "https://flowiq.info/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://www.flowiq.info/*"
-  to = "https://flowiq.info/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://www.flowiq.info/*"
-  to = "https://flowiq.info/:splat"
-  status = 301
-  force = true
-
-# Redirect other domains to primary (https://flowiq.info)
-[[redirects]]
-  from = "/*"
-  to = "https://flowiq.info/:splat"
-  status = 301
-  force = true
-  conditions = { Host = ["freightiq.online", "www.freightiq.online", "flowiq.online", "www.flowiq.online"] }
+# Domain redirects (http→https, www→apex) REMOVED until SSL is green to avoid infinite loops.
+# After SSL is active, add back: http://flowiq.info/*, http://www.flowiq.info/*, https://www.flowiq.info/* → https://flowiq.info/:splat 301
 
 [[redirects]]
   from = "/pricing"
