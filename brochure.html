@@ -27,6 +27,18 @@
             background: #f8fafc;
             color: #0f172a;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Web-only background mesh for "stunning" preview */
+        .web-background {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            background: white;
+            background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(249, 115, 22, 0.15), rgba(255, 255, 255, 0));
         }
 
         /* Print styles for professional brochure output */
@@ -48,11 +60,15 @@
         .page {
             width: 210mm;
             min-height: 297mm;
-            margin: 20px auto;
-            background: white;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+            /* Minimal rounding for paper feel but softer */
         }
 
         /* Brand Colors */
@@ -137,21 +153,33 @@
             right: 0;
             bottom: 0;
             opacity: 0.03;
-            background-image: 
+            background-image:
                 url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Crect x='0' y='0' width='30' height='4'/%3E%3Crect x='0' y='10' width='30' height='4'/%3E%3Crect x='0' y='20' width='30' height='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             animation: drift 20s linear infinite;
         }
 
         /* Floating animation */
         @keyframes float {
-            0%, 100% { transform: translate(30%, -30%) scale(1); }
-            50% { transform: translate(35%, -25%) scale(1.05); }
+
+            0%,
+            100% {
+                transform: translate(30%, -30%) scale(1);
+            }
+
+            50% {
+                transform: translate(35%, -25%) scale(1.05);
+            }
         }
 
         /* Drift animation for background pattern */
         @keyframes drift {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(60px); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(60px);
+            }
         }
 
         .logo {
@@ -169,8 +197,15 @@
         }
 
         @keyframes logoGlow {
-            0%, 100% { filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.3)); }
-            50% { filter: drop-shadow(0 0 16px rgba(249, 115, 22, 0.5)); }
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.3));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 16px rgba(249, 115, 22, 0.5));
+            }
         }
 
         .logo-flow {
@@ -218,6 +253,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -259,9 +295,17 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .stat-card:nth-child(1) { animation-delay: 1.1s; }
-        .stat-card:nth-child(2) { animation-delay: 1.3s; }
-        .stat-card:nth-child(3) { animation-delay: 1.5s; }
+        .stat-card:nth-child(1) {
+            animation-delay: 1.1s;
+        }
+
+        .stat-card:nth-child(2) {
+            animation-delay: 1.3s;
+        }
+
+        .stat-card:nth-child(3) {
+            animation-delay: 1.5s;
+        }
 
         .stat-card:hover {
             transform: translateY(-5px);
@@ -357,8 +401,11 @@
             animation: slideInLeft 0.8s ease-out both;
         }
 
-        .pain-card:nth-child(odd) { animation-delay: 0.1s; }
-        .pain-card:nth-child(even) { 
+        .pain-card:nth-child(odd) {
+            animation-delay: 0.1s;
+        }
+
+        .pain-card:nth-child(even) {
             animation-delay: 0.3s;
             animation-name: slideInRight;
         }
@@ -374,6 +421,7 @@
                 opacity: 0;
                 transform: translateX(-30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -385,6 +433,7 @@
                 opacity: 0;
                 transform: translateX(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -584,8 +633,13 @@
             z-index: 2;
         }
 
-        .module-card:nth-child(odd) { animation-delay: 0.1s; }
-        .module-card:nth-child(even) { animation-delay: 0.2s; }
+        .module-card:nth-child(odd) {
+            animation-delay: 0.1s;
+        }
+
+        .module-card:nth-child(even) {
+            animation-delay: 0.2s;
+        }
 
         .module-card:hover {
             border-color: #f97316;
@@ -614,6 +668,7 @@
                 opacity: 0;
                 transform: scale(0.9) translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: scale(1) translateY(0);
@@ -841,11 +896,14 @@
         }
 
         @keyframes pulse {
-            0%, 100% { 
+
+            0%,
+            100% {
                 box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
                 transform: scale(1);
             }
-            50% { 
+
+            50% {
                 box-shadow: 0 15px 35px rgba(249, 115, 22, 0.5);
                 transform: scale(1.02);
             }
@@ -1043,6 +1101,8 @@
 <body>
     <!-- Print Button -->
     <button class="print-button no-print" onclick="window.print()">🖨️ Print Brochure</button>
+
+    <div class="web-background no-print"></div>
 
     <!-- PAGE 1: COVER -->
     <div class="page cover">
@@ -1503,9 +1563,9 @@
             <p>Real-time insights and control at your fingertips</p>
             <div class="dashboard-screenshot">
                 <div class="screenshot-container">
-                    <img src="https://www.flowiq.info/assets/dashboard-preview.png" 
-                         alt="Flow IQ Dashboard - Complete business performance overview with KPIs, charts, and analytics"
-                         class="dashboard-image" />
+                    <img src="https://www.flowiq.info/assets/dashboard-preview.png"
+                        alt="Flow IQ Dashboard - Complete business performance overview with KPIs, charts, and analytics"
+                        class="dashboard-image" />
                     <div class="screenshot-overlay">
                         <div class="overlay-stats">
                             <div class="overlay-stat">
@@ -1706,15 +1766,18 @@
             <h3>Proven ROI Across Industries</h3>
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 30px;">
                 <div style="text-align: center;">
-                    <div class="counter-stat" style="font-size: 48px; font-weight: 900; margin-bottom: 10px;" data-count="500">R0M+</div>
+                    <div class="counter-stat" style="font-size: 48px; font-weight: 900; margin-bottom: 10px;"
+                        data-count="500">R0M+</div>
                     <div style="font-size: 16px; opacity: 0.9;">Transaction Value Processed</div>
                 </div>
                 <div style="text-align: center;">
-                    <div class="counter-stat" style="font-size: 48px; font-weight: 900; margin-bottom: 10px;" data-count="100">0K+</div>
+                    <div class="counter-stat" style="font-size: 48px; font-weight: 900; margin-bottom: 10px;"
+                        data-count="100">0K+</div>
                     <div style="font-size: 16px; opacity: 0.9;">Shipments Tracked</div>
                 </div>
                 <div style="text-align: center;">
-                    <div class="counter-stat" style="font-size: 48px; font-weight: 900; margin-bottom: 10px;" data-count="99.8">0%</div>
+                    <div class="counter-stat" style="font-size: 48px; font-weight: 900; margin-bottom: 10px;"
+                        data-count="99.8">0%</div>
                     <div style="font-size: 16px; opacity: 0.9;">System Uptime</div>
                 </div>
             </div>
@@ -1819,14 +1882,14 @@
                     current = target;
                     clearInterval(timer);
                 }
-                
+
                 let displayValue;
                 if (target >= 100 && suffix.includes('%')) {
                     displayValue = Math.floor(current * 10) / 10; // One decimal for percentages
                 } else {
                     displayValue = Math.floor(current);
                 }
-                
+
                 element.textContent = prefix + displayValue + suffix;
             }, 20);
         }
@@ -1843,11 +1906,11 @@
                     entry.target.classList.add('animated');
                     const target = parseFloat(entry.target.dataset.count);
                     const text = entry.target.textContent;
-                    
+
                     // Extract prefix and suffix from original text
                     let prefix = '';
                     let suffix = '';
-                    
+
                     if (text.includes('R') && text.includes('M+')) {
                         prefix = 'R';
                         suffix = 'M+';
@@ -1858,17 +1921,17 @@
                     } else if (text.includes('hrs')) {
                         suffix = 'hrs';
                     }
-                    
+
                     animateCounter(entry.target, target, suffix, prefix);
                 }
             });
         }, observerOptions);
 
         // Ensure favicon is set correctly (override any cached/default favicons)
-        (function() {
+        (function () {
             const setFavicon = () => {
                 const faviconPath = '/flowiq-iq-badge.svg';
-                
+
                 // Remove any existing React/default favicons
                 const existingFavicons = document.querySelectorAll('link[rel*="icon"]');
                 existingFavicons.forEach(link => {
@@ -1876,7 +1939,7 @@
                         link.remove();
                     }
                 });
-                
+
                 // Set primary favicon (SVG)
                 let faviconLink = document.querySelector('link[rel="icon"]:not([rel*="alternate"])');
                 if (!faviconLink) {
@@ -1886,7 +1949,7 @@
                     document.head.insertBefore(faviconLink, document.head.firstChild);
                 }
                 faviconLink.href = faviconPath + '?v=' + Date.now();
-                
+
                 // Set alternate favicon (ICO)
                 let alternateFavicon = document.querySelector('link[rel="alternate icon"]');
                 if (!alternateFavicon) {
@@ -1896,7 +1959,7 @@
                     document.head.appendChild(alternateFavicon);
                 }
                 alternateFavicon.href = '/favicon.ico?v=' + Date.now();
-                
+
                 // Set apple-touch-icon
                 let appleTouchIcon = document.querySelector('link[rel="apple-touch-icon"]');
                 if (!appleTouchIcon) {
@@ -1907,7 +1970,7 @@
                 }
                 appleTouchIcon.href = faviconPath;
             };
-            
+
             setFavicon();
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', setFavicon);
@@ -1919,7 +1982,7 @@
         // Auto-generate icons for print and setup counters
         document.addEventListener('DOMContentLoaded', function () {
             console.log('FlowIQ Marketing Brochure Loaded - Ready to Print!');
-            
+
             // Observe all counter elements
             const counters = document.querySelectorAll('[data-count]');
             counters.forEach(counter => {

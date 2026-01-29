@@ -29,20 +29,32 @@
     .hover\:bg-freight-orange-dark:hover {
       background-color: #ea580c;
     }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-slate-50 text-slate-900 selection:bg-orange-100 selection:text-orange-900 overflow-x-hidden">
+  <!-- Dynamic Background Mesh -->
+  <div
+    class="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.15),rgba(255,255,255,0))]">
+  </div>
   <!-- Navigation -->
-  <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+  <nav
+    class="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm supports-[backdrop-filter]:bg-white/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
         <div class="flex items-center">
           <a href="/" class="flex items-center gap-2">
             <span class="inline-flex items-end leading-none select-none">
               <span class="text-slate-900 text-[1.35rem] font-semibold tracking-tight">Flow</span>
-              <span class="ml-1 inline-flex items-center px-2 py-0.5 text-[0.95rem] font-semibold uppercase tracking-wide text-orange-600 bg-orange-50 border border-orange-200 rounded-md">IQ</span>
+              <span
+                class="ml-1 inline-flex items-center px-2 py-0.5 text-[0.95rem] font-semibold uppercase tracking-wide text-orange-600 bg-orange-50 border border-orange-200 rounded-md">IQ</span>
             </span>
           </a>
         </div>
@@ -51,10 +63,12 @@
           <a href="/who-flowiq-is-for.html" class="text-orange-600 font-medium transition-colors">Who it's for</a>
           <a href="/modules.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Modules</a>
           <a href="/pricing.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Pricing</a>
-          <a href="/brochure.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Brochure</a>
+          <a href="/brochure.html"
+            class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Brochure</a>
           <a href="https://app.flowiq.info/"
             class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Login</a>
-          <a href="/book-demo.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Book a Demo</a>
+          <a href="/book-demo.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Book a
+            Demo</a>
           <a href="/signup"
             class="bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-2.5 rounded-lg font-semibold shadow-sm transition-all hover:shadow-md">
             Start your 30-day free trial
@@ -76,95 +90,136 @@
         <a href="/brochure.html" class="block text-slate-600 hover:text-orange-600 font-medium">Brochure</a>
         <a href="https://app.flowiq.info/" class="block text-slate-600 hover:text-orange-600 font-medium">Login</a>
         <a href="/book-demo.html" class="block text-slate-600 hover:text-orange-600 font-medium">Book a Demo</a>
-        <a href="/signup" class="block bg-freight-orange text-white px-4 py-2 rounded-lg text-center font-medium">Start your 30-day free trial</a>
+        <a href="/signup" class="block bg-freight-orange text-white px-4 py-2 rounded-lg text-center font-medium">Start
+          your 30-day free trial</a>
       </div>
     </div>
   </nav>
 
-  <!-- Main Content -->
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
-    <div class="text-center mb-12">
-      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
-        Who FlowIQ is For
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+        Who <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">FlowIQ is
+          For</span>
       </h1>
-      <p class="text-xl text-slate-600">
+      <p class="text-xl text-slate-600 max-w-2xl mx-auto">
         FlowIQ is built for businesses that need real decision intelligence, not just data entry.
       </p>
     </div>
 
     <!-- Good Fit Section -->
-    <section class="mb-16">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-6">
+    <section class="mb-20">
+      <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3" data-aos="fade-right">
+        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-600">
+          <i data-lucide="check" class="h-5 w-5"></i>
+        </span>
         FlowIQ is a great fit if you're:
       </h2>
       <div class="space-y-6">
-        <div class="bg-green-50 border border-green-200 rounded-lg p-6">
-          <div class="flex items-start gap-4">
-            <i data-lucide="check-circle" class="h-6 w-6 text-green-600 flex-shrink-0 mt-1"></i>
+        <div
+          class="group bg-white border border-slate-200 hover:border-green-300 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="0">
+          <div class="flex items-start gap-5">
+            <div
+              class="h-12 w-12 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors">
+              <i data-lucide="ship" class="h-6 w-6 text-green-600"></i>
+            </div>
             <div>
-              <h3 class="text-lg font-semibold text-slate-900 mb-2">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-green-700 transition-colors">
                 Importers & Distributors
               </h3>
-              <p class="text-slate-600">
-                You import goods and need accurate landed cost tracking, FX management, and margin visibility across multiple shipments.
+              <p class="text-slate-600 leading-relaxed">
+                You import goods and need accurate landed cost tracking, FX management, and margin visibility across
+                multiple shipments.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="bg-green-50 border border-green-200 rounded-lg p-6">
-          <div class="flex items-start gap-4">
-            <i data-lucide="check-circle" class="h-6 w-6 text-green-600 flex-shrink-0 mt-1"></i>
+        <div
+          class="group bg-white border border-slate-200 hover:border-green-300 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-start gap-5">
+            <div
+              class="h-12 w-12 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors">
+              <i data-lucide="warehouse" class="h-6 w-6 text-green-600"></i>
+            </div>
             <div>
-              <h3 class="text-lg font-semibold text-slate-900 mb-2">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-green-700 transition-colors">
                 Multi-branch Inventory Businesses
               </h3>
-              <p class="text-slate-600">
-                You manage inventory across multiple locations and need forecasting, stock optimization, and transfer management.
+              <p class="text-slate-600 leading-relaxed">
+                You manage inventory across multiple locations and need forecasting, stock optimization, and transfer
+                management.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="bg-green-50 border border-green-200 rounded-lg p-6">
-          <div class="flex items-start gap-4">
-            <i data-lucide="check-circle" class="h-6 w-6 text-green-600 flex-shrink-0 mt-1"></i>
+        <div
+          class="group bg-white border border-slate-200 hover:border-green-300 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-start gap-5">
+            <div
+              class="h-12 w-12 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors">
+              <i data-lucide="settings" class="h-6 w-6 text-green-600"></i>
+            </div>
             <div>
-              <h3 class="text-lg font-semibold text-slate-900 mb-2">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-green-700 transition-colors">
                 Light Manufacturing / Assembly
               </h3>
-              <p class="text-slate-600">
+              <p class="text-slate-600 leading-relaxed">
                 You assemble or manufacture products and need BOM tracking, component costing, and production planning.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="bg-green-50 border border-green-200 rounded-lg p-6">
-          <div class="flex items-start gap-4">
-            <i data-lucide="check-circle" class="h-6 w-6 text-green-600 flex-shrink-0 mt-1"></i>
+        <div
+          class="group bg-white border border-slate-200 hover:border-green-300 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-start gap-5">
+            <div
+              class="h-12 w-12 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors">
+              <i data-lucide="file-spreadsheet" class="h-6 w-6 text-green-600"></i>
+            </div>
             <div>
-              <h3 class="text-lg font-semibold text-slate-900 mb-2">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-green-700 transition-colors">
                 Businesses Using Xero + Spreadsheets
               </h3>
-              <p class="text-slate-600">
-                You're managing operations in spreadsheets and Xero, but need better visibility into landed costs, margins, and inventory forecasting.
+              <p class="text-slate-600 leading-relaxed">
+                You're managing operations in spreadsheets and Xero, but need better visibility into landed costs,
+                margins, and inventory forecasting.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="bg-green-50 border border-green-200 rounded-lg p-6">
-          <div class="flex items-start gap-4">
-            <i data-lucide="check-circle" class="h-6 w-6 text-green-600 flex-shrink-0 mt-1"></i>
+        <div
+          class="group bg-white border border-slate-200 hover:border-green-300 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="400">
+          <div class="flex items-start gap-5">
+            <div
+              class="h-12 w-12 rounded-xl bg-green-50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors">
+              <i data-lucide="alert-triangle" class="h-6 w-6 text-green-600"></i>
+            </div>
             <div>
-              <h3 class="text-lg font-semibold text-slate-900 mb-2">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-green-700 transition-colors">
                 Businesses Suffering From:
               </h3>
-              <ul class="list-disc list-inside text-slate-600 space-y-1 ml-4">
-                <li>Margin leakage from inaccurate cost allocation</li>
-                <li>Over/under-stocking due to poor forecasting</li>
-                <li>FX & landed cost uncertainty affecting pricing decisions</li>
+              <ul class="space-y-2 mt-3">
+                <li class="flex items-center gap-2 text-slate-600">
+                  <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span> Margin leakage from inaccurate cost
+                  allocation
+                </li>
+                <li class="flex items-center gap-2 text-slate-600">
+                  <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span> Over/under-stocking due to poor
+                  forecasting
+                </li>
+                <li class="flex items-center gap-2 text-slate-600">
+                  <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span> FX & landed cost uncertainty affecting
+                  pricing decisions
+                </li>
               </ul>
             </div>
           </div>
@@ -173,33 +228,46 @@
     </section>
 
     <!-- Not a Fit Section -->
-    <section class="mb-16">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-6">
+    <section class="mb-20">
+      <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3" data-aos="fade-right">
+        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-red-100 text-red-600">
+          <i data-lucide="x" class="h-5 w-5"></i>
+        </span>
         FlowIQ may not be a fit if you're:
       </h2>
-      <div class="space-y-4">
-        <div class="bg-red-50 border border-red-200 rounded-lg p-6">
-          <div class="flex items-start gap-4">
-            <i data-lucide="x-circle" class="h-6 w-6 text-red-600 flex-shrink-0 mt-1"></i>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div
+          class="group bg-white border border-slate-200 hover:border-red-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="0">
+          <div class="flex items-start gap-5">
+            <div
+              class="h-12 w-12 rounded-xl bg-red-50 flex items-center justify-center flex-shrink-0 group-hover:bg-red-100 transition-colors">
+              <i data-lucide="store" class="h-6 w-6 text-red-600"></i>
+            </div>
             <div>
-              <h3 class="text-lg font-semibold text-slate-900 mb-2">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-red-700 transition-colors">
                 Micro Traders
               </h3>
-              <p class="text-slate-600">
+              <p class="text-slate-600 leading-relaxed">
                 Very small operations with minimal inventory and no need for forecasting or advanced cost tracking.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="bg-red-50 border border-red-200 rounded-lg p-6">
-          <div class="flex items-start gap-4">
-            <i data-lucide="x-circle" class="h-6 w-6 text-red-600 flex-shrink-0 mt-1"></i>
+        <div
+          class="group bg-white border border-slate-200 hover:border-red-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-start gap-5">
+            <div
+              class="h-12 w-12 rounded-xl bg-red-50 flex items-center justify-center flex-shrink-0 group-hover:bg-red-100 transition-colors">
+              <i data-lucide="package-x" class="h-6 w-6 text-red-600"></i>
+            </div>
             <div>
-              <h3 class="text-lg font-semibold text-slate-900 mb-2">
+              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-red-700 transition-colors">
                 One-off Importers
               </h3>
-              <p class="text-slate-600">
+              <p class="text-slate-600 leading-relaxed">
                 Businesses that import occasionally and don't need ongoing inventory management or forecasting.
               </p>
             </div>
@@ -238,8 +306,16 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script defer>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({
+        once: true,
+        offset: 50,
+        duration: 800,
+        easing: 'ease-out-cubic',
+      });
+
       if (typeof lucide !== 'undefined') {
         lucide.createIcons();
       }
@@ -247,7 +323,7 @@
       // Mobile menu toggle
       const mobileMenuBtn = document.getElementById('mobileMenuBtn');
       const mobileMenu = document.getElementById('mobileMenu');
-      
+
       if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
           mobileMenu.classList.toggle('hidden');
