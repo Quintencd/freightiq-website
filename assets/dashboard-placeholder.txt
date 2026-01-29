@@ -1,11 +1,14 @@
-Dashboard Image Placeholder
+Dashboard Image
 
-Please replace this with your actual dashboard screenshot.
+Used on:
+- Front page (index.html) — hero section, below the main CTA
+- Brochure (brochure.html) — "See FlowIQ in Action" section
 
-Steps:
-1. Take a screenshot of your Flow IQ dashboard
+File: dashboard-preview.png
+Location: flowiq_website/assets/ (this folder)
+
+Steps if you need to replace it:
+1. Take a screenshot of your FlowIQ dashboard
 2. Save it as: dashboard-preview.png
-3. Place it in: /flowiq_website/assets/
+3. Place it in: flowiq_website/assets/
 4. Supported formats: PNG, JPG, JPEG, WebP
-
-The image will automatically display on the homepage.
