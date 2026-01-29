@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>True Landed Cost per SKU | Import Cost Calculation | FlowIQ</title>
+  <meta name="description" content="Calculate true landed cost per SKU including freight, duty, clearance, insurance, and FX. See real margins without spreadsheets using FlowIQ." />
+  <link rel="canonical" href="https://www.flowiq.info/use-cases/true-landed-cost.html" />
+  <link rel="icon" type="image/svg+xml" href="/flowiq-iq-badge.svg?v=1">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .text-freight-orange { color: #f97316; }
+    .bg-freight-orange { background-color: #f97316; }
+    .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+  </style>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+  <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center gap-2">
+            <span class="inline-flex items-end leading-none select-none">
+              <span class="text-slate-900 text-[1.35rem] font-semibold tracking-tight">Flow</span>
+              <span class="ml-1 inline-flex items-center px-2 py-0.5 text-[0.95rem] font-semibold uppercase tracking-wide text-orange-600 bg-orange-50 border border-orange-200 rounded-md">IQ</span>
+            </span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Home</a>
+          <a href="/who-flowiq-is-for.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Who it's for</a>
+          <a href="/modules.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Modules</a>
+          <a href="/pricing.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Pricing</a>
+          <a href="/brochure.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Brochure</a>
+          <a href="https://app.flowiq.info/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Login</a>
+          <a href="/book-demo.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Book a Demo</a>
+          <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-2.5 rounded-lg font-semibold shadow-sm transition-all hover:shadow-md">Start your 30-day free trial</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white absolute w-full left-0 top-16">
+      <div class="px-4 py-4 space-y-4 shadow-lg">
+        <a href="/" class="block text-slate-600 hover:text-orange-600 font-medium">Home</a>
+        <a href="/who-flowiq-is-for.html" class="block text-slate-600 hover:text-orange-600 font-medium">Who it's for</a>
+        <a href="/modules.html" class="block text-slate-600 hover:text-orange-600 font-medium">Modules</a>
+        <a href="/pricing.html" class="block text-slate-600 hover:text-orange-600 font-medium">Pricing</a>
+        <a href="/brochure.html" class="block text-slate-600 hover:text-orange-600 font-medium">Brochure</a>
+        <a href="https://app.flowiq.info/" class="block text-slate-600 hover:text-orange-600 font-medium">Login</a>
+        <a href="/book-demo.html" class="block text-slate-600 hover:text-orange-600 font-medium">Book a Demo</a>
+        <a href="/signup" class="block bg-freight-orange text-white px-4 py-2 rounded-lg text-center font-medium">Start your 30-day free trial</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
+    <section class="text-center mb-16">
+      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">True Landed Cost per SKU — Calculated Correctly</h1>
+      <p class="text-xl text-slate-600 mb-8">FlowIQ shows the real landed cost of every SKU by allocating freight, duty, clearance, insurance, and FX accurately — so margins are based on reality, not estimates.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/tools/landed-cost-calculator.html" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2">Use the Landed Cost Calculator <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+        <a href="/book-demo.html" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 px-8 py-4 rounded-xl font-semibold shadow-sm hover:shadow-md transition-all inline-flex items-center justify-center gap-2">Book a Demo</a>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">What “True Landed Cost” Actually Means</h2>
+      <p class="text-slate-600 mb-4">True landed cost is the total real cost of getting a product into sellable inventory — calculated per unit, per SKU.</p>
+      <p class="text-slate-600 mb-2">It includes:</p>
+      <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+        <li>Supplier cost</li>
+        <li>Freight (international and local)</li>
+        <li>Customs duty</li>
+        <li>Clearance and port charges</li>
+        <li>Insurance</li>
+        <li>FX differences across payments</li>
+        <li>Any additional shipment-related costs</li>
+      </ul>
+      <p class="text-slate-600">If any of these are missing or estimated incorrectly, margins are immediately distorted.</p>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">Why Most Landed Cost Calculations Fail</h2>
+      <p class="text-slate-600 mb-4">Most businesses calculate landed cost using spreadsheets or averages.</p>
+      <p class="text-slate-600 mb-2">This fails because:</p>
+      <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+        <li>Shipments contain mixed SKUs</li>
+        <li>Freight must be allocated, not divided evenly</li>
+        <li>FX changes between payments</li>
+        <li>Clearance and duties differ from estimates</li>
+        <li>Costs are reconciled after stock is already sold</li>
+      </ul>
+      <p class="text-slate-600 font-medium mb-2">The result:</p>
+      <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+        <li>Margins that look correct but aren’t</li>
+        <li>Pricing decisions made on false data</li>
+        <li>Inventory values that don’t match reality</li>
+      </ul>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">How FlowIQ Calculates True Landed Cost</h2>
+      <p class="text-slate-600 mb-4">FlowIQ treats every shipment as a cost container.</p>
+      <p class="text-slate-600 mb-4">All shipment-level costs are captured and then allocated across SKUs using configurable, auditable rules.</p>
+      <p class="text-slate-600 mb-2">Allocation methods include:</p>
+      <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+        <li>CBM (volume)</li>
+        <li>Weight</li>
+        <li>Item value</li>
+        <li>Custom allocation logic</li>
+      </ul>
+      <p class="text-slate-600 mb-2">Each SKU receives its true share of total landed cost.</p>
+      <p class="text-slate-600">No averages. No assumptions. No rework.</p>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">True Landed Cost Formula (Simplified)</h2>
+      <div class="bg-slate-100 border border-slate-200 rounded-lg p-6 font-mono text-slate-800 mb-4 whitespace-pre">(Supplier Cost
+  + Allocated Freight
+  + Allocated Duty
+  + Allocated Clearance
+  + Allocated Insurance
+  + FX Variance)
+÷ Units Received
+= True Landed Cost per Unit</div>
+      <p class="text-slate-600">FlowIQ performs this calculation automatically and consistently — every time stock is received.</p>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">Example: Mixed-SKU Import Shipment</h2>
+      <p class="text-slate-600 mb-2">A single shipment contains:</p>
+      <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+        <li>Multiple SKUs</li>
+        <li>Different sizes and weights</li>
+        <li>One total freight invoice</li>
+        <li>One clearance invoice</li>
+        <li>Multiple FX payments</li>
+      </ul>
+      <p class="text-slate-600 mb-2">FlowIQ:</p>
+      <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+        <li>Captures all shipment costs</li>
+        <li>Allocates them correctly per SKU</li>
+        <li>Updates inventory value at receipt</li>
+        <li>Shows real margin immediately</li>
+      </ul>
+      <p class="text-slate-600">No spreadsheets. No manual reconciliation.</p>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">Why True Landed Cost Changes Everything</h2>
+      <p class="text-slate-600 mb-2">Accurate landed cost allows you to:</p>
+      <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+        <li>Price products correctly</li>
+        <li>Trust your margins</li>
+        <li>Identify loss-making SKUs early</li>
+        <li>Allocate cash to the right stock</li>
+        <li>Make confident reorder decisions</li>
+      </ul>
+      <p class="text-slate-600">Without true landed cost, every downstream decision is compromised.</p>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">Who Needs True Landed Cost Accuracy</h2>
+      <p class="text-slate-600 mb-2">This matters most for:</p>
+      <ul class="list-disc list-inside text-slate-600 space-y-1">
+        <li>Importers with mixed-SKU shipments</li>
+        <li>Businesses exposed to FX volatility</li>
+        <li>Companies using spreadsheets for costing</li>
+        <li>Teams managing multiple suppliers or routes</li>
+      </ul>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-lg font-semibold text-slate-900 mb-2">What is the difference between landed cost and true landed cost?</h3>
+          <p class="text-slate-600">Landed cost is often estimated or averaged. True landed cost reflects actual costs allocated accurately per SKU using real shipment data.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-slate-900 mb-2">Can FlowIQ handle multiple currencies?</h3>
+          <p class="text-slate-600">Yes. FlowIQ tracks FX payments and incorporates currency differences directly into landed cost calculations.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-slate-900 mb-2">When is landed cost finalised?</h3>
+          <p class="text-slate-600">Landed cost is finalised when stock is received, using actual freight, duty, and clearance values — not estimates.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-slate-900 mb-2">Can I adjust allocation methods?</h3>
+          <p class="text-slate-600">Yes. FlowIQ supports allocation by CBM, weight, value, or custom rules depending on your shipment structure.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-center pt-8 pb-4 border-t border-slate-200">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-4">Calculate Your True Landed Cost</h2>
+      <p class="text-slate-600 mb-8 max-w-2xl mx-auto">Use the FlowIQ Landed Cost Calculator or book a demo to see how accurate landed costing transforms margin visibility and decision-making.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/tools/landed-cost-calculator.html" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2">Use the Landed Cost Calculator <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+        <a href="/book-demo.html" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 px-8 py-4 rounded-xl font-semibold shadow-sm hover:shadow-md transition-all inline-flex items-center justify-center gap-2">Book a Demo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 py-8 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
+      <a href="/" class="text-orange-600 hover:underline">FlowIQ</a> · <a href="/pricing.html" class="text-slate-600 hover:underline">Pricing</a> · <a href="/book-demo.html" class="text-slate-600 hover:underline">Book a Demo</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
+      var menu = document.getElementById('mobileMenu');
+      menu?.classList.toggle('hidden');
+    });
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  </script>
+</body>
+
+</html>

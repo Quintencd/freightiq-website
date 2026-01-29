@@ -14,6 +14,12 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# API routes for Netlify Functions (e.g. signup-notify)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
 # Redirects for the website
 # Force HTTPS and canonicalize to www.flowiq.info as primary
 
@@ -87,7 +93,27 @@
 
 [[redirects]]
   from = "/solutions"
-  to = "/solutions/index.html"
+  to = "/solutions/"
+  status = 301
+
+[[redirects]]
+  from = "/use-cases"
+  to = "/use-cases/"
+  status = 301
+
+[[redirects]]
+  from = "/tools"
+  to = "/tools/"
+  status = 301
+
+[[redirects]]
+  from = "/compare"
+  to = "/compare/"
+  status = 301
+
+[[redirects]]
+  from = "/glossary"
+  to = "/glossary/"
   status = 301
 
 [[redirects]]

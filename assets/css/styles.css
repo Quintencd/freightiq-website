@@ -1,0 +1,117 @@
+/* FlowIQ Marketing Site - Base Styles */
+:root {
+  --color-bg: #fff;
+  --color-text: #1a1a1a;
+  --color-muted: #555;
+  --color-link: #0066cc;
+  --color-cta: #0066cc;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--color-link);
+}
+
+nav a.cta {
+  color: var(--color-cta);
+  font-weight: 600;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.hero {
+  padding: 3rem 0;
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  color: var(--color-muted);
+  margin: 0 0 1.5rem;
+}
+
+.hero a,
+main a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.hero a:hover,
+main a:hover {
+  text-decoration: underline;
+}
+
+section.cta {
+  margin-top: 3rem;
+  padding: 2rem 0;
+  border-top: 1px solid #eee;
+}
+
+section.cta h2 {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+}
+
+footer {
+  padding: 2rem 1.5rem;
+  border-top: 1px solid #eee;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--color-link);
+  text-decoration: none;
+  margin: 0 0.75rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  margin: 1rem 0 0;
+}
