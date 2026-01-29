@@ -1,8 +1,8 @@
 /**
  * Public lead capture for FlowIQ marketing website (unauthenticated).
  *
- * This function MUST live under `freightiq-website/netlify/functions/` because
- * the marketing site uses `freightiq-website/` as its Netlify base/publish directory.
+ * This function MUST live under `flowiq_website/netlify/functions/` because
+ * the marketing site uses `flowiq_website/` as its Netlify base/publish directory.
  * If this file only exists at repo root (`/netlify/functions`), the marketing site will
  * return 404 at `/.netlify/functions/public-lead`.
  *

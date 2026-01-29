@@ -1,6 +1,6 @@
 # Bugbot Rules for FreightIQ (Marketing Site)
 
-Guidance for PR reviews in `freightiq-website/` (static marketing site).
+Guidance for PR reviews in `flowiq_website/` (static marketing site).
 
 ## Security & Hygiene
 - Never commit secrets or credentials; no inline analytics keys that expose PII.

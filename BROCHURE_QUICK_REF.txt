@@ -1,7 +1,7 @@
 FlowIQ Marketing Brochure - Quick Reference
 ===========================================
 
-📍 Location: /freightiq-website/brochure.html
+📍 Location: /flowiq_website/brochure.html
 
 🎯 Purpose: Professional 8-page marketing brochure for client outreach
 

@@ -13,7 +13,7 @@ function isAllowedOrigin(referer = '') {
   return (
     referer.includes('://www.flowiq.info') ||
     referer.includes('://flowiq.info') ||
-    referer.includes('://freightiq-website.netlify.app') ||
+    referer.includes('://flowiq-website.netlify.app') ||
     referer.includes('://deploy-preview-') ||
     referer.includes('://localhost')
   );

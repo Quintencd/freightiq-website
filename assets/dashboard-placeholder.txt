@@ -5,7 +5,7 @@ Please replace this with your actual dashboard screenshot.
 Steps:
 1. Take a screenshot of your Flow IQ dashboard
 2. Save it as: dashboard-preview.png
-3. Place it in: /freightiq-website/assets/
+3. Place it in: /flowiq_website/assets/
 4. Supported formats: PNG, JPG, JPEG, WebP
 
 The image will automatically display on the homepage.
