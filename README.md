@@ -1,51 +1,9 @@
-# FlowIQ Website
+# FlowIQ marketing site (flowiq.info) — canonical source
 
-A modern, responsive marketing site for FlowIQ.
+**This folder is the live marketing site for www.flowiq.info.**
 
-## Features
-- Modern design with gradient backgrounds
-- Responsive mobile-first design
-- Conversion-focused CTAs (trial-first, demo secondary)
-- SEO optimized with meta tags
-- Clear self-serve onboarding messaging (no concierge/implementation copy)
-- Plan pre-selection from pricing → signup
+- **Edit here** for homepage, pricing, solutions, use-cases, tools, compare, glossary, signup, login, book-demo, modules, and all SEO pages.
+- **Styles:** `assets/css/styles.css` + inline fallback in each HTML file (see `docs/website-styling-setup.md`).
+- **Deploy:** Netlify with base directory = `freightiq-website`, publish = `.` (see `netlify.toml` in this folder).
 
-## Tech Stack
-- Static HTML + Tailwind (CDN)
-- Netlify hosting
-
-## Forms (Demo / Deck / Contact)
-Public forms submit to a Netlify Function at `/.netlify/functions/public-lead` (then redirect to `/thank-you.html`).
-
-Required Netlify env vars on the **marketing site**:
-- `SUPPORT_EMAIL_TO`
-- `RESEND_API_KEY`
-- `RESEND_FROM`
-
-## Theme (Light-only)
-This marketing website is **light-only** (no dark mode). The shared stylesheet `flowiq-light.css` deterministically remaps the older dark palette to a light, readable marketing look.
-
-- All public pages should include: `<link rel="stylesheet" href="/flowiq-light.css?v=1">` (in the `<head>`, after any page-specific `<style>` so it wins).
-- Do **not** add `<html class="dark">` or `prefers-color-scheme` switching on marketing pages.
-- Email templates under `email-templates/` are intentionally separate and are not governed by the marketing site theme.
-
-## Plan pre-selection (Pricing → Signup)
-Pricing CTAs include a query param: `?plan=starter|growth|professional|scale`.
-
-Signup pages (`/signup` and `/signup.html`) will:
-- Preselect the plan from the query string (or from `localStorage` if previously chosen)
-- Display the selection to reduce friction
-- **Not** send the plan to the Supabase signup Edge Function payload (safe / avoids backend validation risk)
-
-Implementation note: **do not declare a top-level variable named `supabase`** on these pages. The Supabase browser bundle exposes a global `supabase` identifier; re-declaring it will throw `Identifier 'supabase' has already been declared` and break plan selection + signup.
-
-## Quick Start
-- No build required (static site).
-- Edit `.html` files directly and redeploy on Netlify.
-
-## Deployment
-- Build command: `echo 'Static site - no build needed'`
-- Publish directory: `.`
-- Primary domain: `www.flowiq.info`
-
-Built for FlowIQ
+Do **not** use the other folder `website/` for flowiq.info updates — that is a different, minimal site (3 pages, dark theme). See `docs/website-folder-structure.md` for the full map.
