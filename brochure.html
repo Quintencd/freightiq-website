@@ -27,18 +27,6 @@
             background: #f8fafc;
             color: #0f172a;
             line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Web-only background mesh for "stunning" preview */
-        .web-background {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            height: 100%;
-            width: 100%;
-            background: white;
-            background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(249, 115, 22, 0.15), rgba(255, 255, 255, 0));
         }
 
         /* Print styles for professional brochure output */
@@ -60,15 +48,11 @@
         .page {
             width: 210mm;
             min-height: 297mm;
-            margin: 40px auto;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 4px;
-            /* Minimal rounding for paper feel but softer */
         }
 
         /* Brand Colors */
@@ -1102,8 +1086,6 @@
     <!-- Print Button -->
     <button class="print-button no-print" onclick="window.print()">🖨️ Print Brochure</button>
 
-    <div class="web-background no-print"></div>
-
     <!-- PAGE 1: COVER -->
     <div class="page cover">
         <div class="cover-bg-pattern"></div>
@@ -1882,14 +1864,14 @@
                     current = target;
                     clearInterval(timer);
                 }
-
+                
                 let displayValue;
                 if (target >= 100 && suffix.includes('%')) {
                     displayValue = Math.floor(current * 10) / 10; // One decimal for percentages
                 } else {
                     displayValue = Math.floor(current);
                 }
-
+                
                 element.textContent = prefix + displayValue + suffix;
             }, 20);
         }
@@ -1906,11 +1888,11 @@
                     entry.target.classList.add('animated');
                     const target = parseFloat(entry.target.dataset.count);
                     const text = entry.target.textContent;
-
+                    
                     // Extract prefix and suffix from original text
                     let prefix = '';
                     let suffix = '';
-
+                    
                     if (text.includes('R') && text.includes('M+')) {
                         prefix = 'R';
                         suffix = 'M+';
@@ -1921,17 +1903,17 @@
                     } else if (text.includes('hrs')) {
                         suffix = 'hrs';
                     }
-
+                    
                     animateCounter(entry.target, target, suffix, prefix);
                 }
             });
         }, observerOptions);
 
         // Ensure favicon is set correctly (override any cached/default favicons)
-        (function () {
+        (function() {
             const setFavicon = () => {
                 const faviconPath = '/flowiq-iq-badge.svg';
-
+                
                 // Remove any existing React/default favicons
                 const existingFavicons = document.querySelectorAll('link[rel*="icon"]');
                 existingFavicons.forEach(link => {
@@ -1939,7 +1921,7 @@
                         link.remove();
                     }
                 });
-
+                
                 // Set primary favicon (SVG)
                 let faviconLink = document.querySelector('link[rel="icon"]:not([rel*="alternate"])');
                 if (!faviconLink) {
@@ -1949,7 +1931,7 @@
                     document.head.insertBefore(faviconLink, document.head.firstChild);
                 }
                 faviconLink.href = faviconPath + '?v=' + Date.now();
-
+                
                 // Set alternate favicon (ICO)
                 let alternateFavicon = document.querySelector('link[rel="alternate icon"]');
                 if (!alternateFavicon) {
@@ -1959,7 +1941,7 @@
                     document.head.appendChild(alternateFavicon);
                 }
                 alternateFavicon.href = '/favicon.ico?v=' + Date.now();
-
+                
                 // Set apple-touch-icon
                 let appleTouchIcon = document.querySelector('link[rel="apple-touch-icon"]');
                 if (!appleTouchIcon) {
@@ -1970,7 +1952,7 @@
                 }
                 appleTouchIcon.href = faviconPath;
             };
-
+            
             setFavicon();
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', setFavicon);
@@ -1982,7 +1964,7 @@
         // Auto-generate icons for print and setup counters
         document.addEventListener('DOMContentLoaded', function () {
             console.log('FlowIQ Marketing Brochure Loaded - Ready to Print!');
-
+            
             // Observe all counter elements
             const counters = document.querySelectorAll('[data-count]');
             counters.forEach(counter => {
