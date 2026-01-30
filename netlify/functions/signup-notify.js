@@ -1,33 +1,29 @@
 /**
- * New organization signup notification (marketing website).
+ * New organization signup notification (marketing site).
+ * Called by flowiq_website/signup/index.html after successful public-signup.
  *
- * When a new user/org signs up via www.flowiq.info/signup, send an email to
- * support@flowiq.info with all submitted details.
+ * Sends an email to support with signup details. If SUPPORT_EMAIL_TO or
+ * RESEND_API_KEY are not set, returns 200 and skips sending (no 502/500).
  *
- * Required Netlify env vars (set in website Netlify dashboard):
+ * Netlify env vars (optional):
  * - SUPPORT_EMAIL_TO   (e.g. support@flowiq.info)
  * - RESEND_API_KEY     (Resend API key)
  */
 
 function isAllowedOrigin(referer = '') {
   return (
+    referer.includes('://app.flowiq.info') ||
     referer.includes('://www.flowiq.info') ||
     referer.includes('://flowiq.info') ||
-    referer.includes('://flowiq-website.netlify.app') ||
+    referer.includes('://freightiq.netlify.app') ||
     referer.includes('://deploy-preview-') ||
     referer.includes('://localhost')
   );
 }
 
-function requiredEnv(name) {
-  const value = process.env[name];
-  if (!value) throw new Error(`Missing required env var: ${name}`);
-  return value;
-}
-
 function buildEmailText(payload) {
   const lines = [];
-  lines.push('FlowIQ – New organization signup (website)');
+  lines.push('FlowIQ – New organization signup');
   lines.push('');
   lines.push('Contact');
   lines.push('--------');
@@ -35,16 +31,11 @@ function buildEmailText(payload) {
   lines.push(`Full name:   ${payload.full_name || '(not provided)'}`);
   lines.push(`First name:  ${payload.first_name || '(not provided)'}`);
   lines.push(`Last name:   ${payload.last_name || '(not provided)'}`);
-  if (payload.phone) lines.push(`Phone:       ${payload.phone}`);
   lines.push('');
   lines.push('Organization');
   lines.push('-------------');
   lines.push(`Company:     ${payload.org_name || payload.company_name || '(not provided)'}`);
-  if (payload.industry) lines.push(`Industry:    ${payload.industry}`);
-  if (payload.employees) lines.push(`Company size: ${payload.employees}`);
-  if (payload.country) lines.push(`Country:     ${payload.country}`);
-  if (payload.selected_plan) lines.push(`Plan:        ${payload.selected_plan}`);
-  lines.push(`Signup source: ${payload.signup_source || 'website_signup'}`);
+  lines.push(`Signup source: ${payload.signup_source || 'public_signup'}`);
   lines.push('');
   lines.push('Legal');
   lines.push('-----');
@@ -54,7 +45,7 @@ function buildEmailText(payload) {
   lines.push(`Privacy accepted at: ${payload.privacy_accepted_at || 'n/a'}`);
   lines.push('');
   lines.push('---');
-  lines.push('Sent from FlowIQ website signup (Netlify function signup-notify)');
+  lines.push('Sent from FlowIQ signup (Netlify function signup-notify)');
   return lines.join('\n');
 }
 
@@ -97,6 +88,7 @@ exports.handler = async (event) => {
 
     const body = typeof event.body === 'string' ? JSON.parse(event.body || '{}') : event.body || {};
     const email = (body.email || '').toString().trim();
+    const orgName = (body.org_name || body.company_name || '').toString().trim();
 
     if (!email) {
       return {
@@ -106,25 +98,28 @@ exports.handler = async (event) => {
       };
     }
 
-    const to = requiredEnv('SUPPORT_EMAIL_TO');
-    const resendKey = requiredEnv('RESEND_API_KEY');
-    const from = 'onboarding@resend.dev';
+    const to = process.env.SUPPORT_EMAIL_TO;
+    const resendKey = process.env.RESEND_API_KEY;
 
-    const subject = 'FlowIQ – New organization signup (website)';
-    const fullName = [body.first_name, body.last_name].filter(Boolean).join(' ').trim() || body.full_name;
+    // If not configured, return 200 so signup flow never sees 502
+    if (!to || !resendKey) {
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({ status: 'ok', skipped: 'SUPPORT_EMAIL_TO or RESEND_API_KEY not set' }),
+      };
+    }
+
+    const from = 'onboarding@resend.dev';
+    const subject = 'FlowIQ – New organization signup';
     const text = buildEmailText({
       email,
-      full_name: fullName || (body.full_name || '').toString().trim(),
+      full_name: (body.full_name || '').toString().trim(),
       first_name: (body.first_name || '').toString().trim(),
       last_name: (body.last_name || '').toString().trim(),
-      phone: (body.phone || '').toString().trim(),
-      org_name: (body.org_name || body.company_name || '').toString().trim(),
-      company_name: (body.company_name || body.org_name || '').toString().trim(),
-      industry: (body.industry || '').toString().trim(),
-      employees: (body.employees || '').toString().trim(),
-      country: (body.country || '').toString().trim(),
-      selected_plan: (body.selected_plan || '').toString().trim(),
-      signup_source: (body.signup_source || 'website_signup').toString().trim(),
+      org_name: orgName,
+      company_name: orgName,
+      signup_source: (body.signup_source || 'public_signup').toString().trim(),
       terms_accepted: body.terms_accepted,
       terms_version: (body.terms_version || '').toString().trim(),
       terms_accepted_at: (body.terms_accepted_at || '').toString().trim(),

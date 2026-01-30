@@ -51,15 +51,15 @@
   <nav
     class="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm supports-[backdrop-filter]:bg-white/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-20">
-        <div class="flex items-center">
-          <a href="/" class="flex items-center gap-2 group">
+      <div class="flex justify-between items-center h-20 gap-2">
+        <div class="flex items-center min-w-0 flex-shrink">
+          <a href="/" class="flex items-center gap-2 group min-w-0">
             <img src="/flowiq-logo.png" alt="FlowIQ - Smarter business in motion"
-              class="h-[72px] w-auto max-w-[280px] object-contain group-hover:opacity-90 transition-opacity duration-300"
-              width="280" height="72" loading="eager">
+              class="h-[52px] w-auto max-w-[205px] object-contain group-hover:opacity-90 transition-opacity duration-300"
+              width="205" height="52" loading="eager">
           </a>
         </div>
-        <div class="hidden md:flex items-center space-x-8">
+        <div class="hidden md:flex items-center space-x-8 flex-shrink-0">
           <a href="/"
             class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Home</a>
           <a href="/who-flowiq-is-for.html"
@@ -79,8 +79,8 @@
             class="bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-orange-500/20 transition-all hover:shadow-orange-500/40 hover:-translate-y-0.5">Start
             Free Trial</a>
         </div>
-        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu">
-          <i data-lucide="menu" class="w-6 h-6"></i>
+        <button id="mobileMenuBtn" class="md:hidden flex-shrink-0 p-3 -mr-1 text-slate-600 hover:text-slate-900 touch-manipulation" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </button>
       </div>
     </div>

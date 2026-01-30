@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thank You — FlowIQ</title>
-  <link rel="icon" type="image/svg+xml" href="/flowiq-iq-badge.svg?v=1">
+  <link rel="icon" type="image/png" href="/flowiq-logo.png">
   <link rel="icon" href="/favicon.ico">
   <link rel="shortcut icon" href="/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,13 +20,10 @@
 <body class="bg-slate-50 text-slate-900">
   <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <div class="flex items-center">
-          <a href="/" class="flex items-center gap-2">
-            <span class="inline-flex items-end leading-none select-none">
-              <span class="text-slate-900 text-[1.35rem] font-semibold tracking-tight">Flow</span>
-              <span class="ml-1 inline-flex items-center px-2 py-0.5 text-[0.95rem] font-semibold uppercase tracking-wide text-orange-600 bg-orange-50 border border-orange-200 rounded-md">IQ</span>
-            </span>
+      <div class="flex justify-between items-center h-16 gap-2">
+        <div class="flex items-center min-w-0 flex-shrink">
+          <a href="/" class="flex items-center gap-2 min-w-0">
+            <img src="/flowiq-logo.png" alt="FlowIQ - Smarter business in motion" class="h-[52px] w-auto max-w-[205px] object-contain" width="205" height="52" loading="eager">
           </a>
         </div>
         <div class="hidden md:flex items-center space-x-6">
@@ -39,8 +36,8 @@
           <a href="/book-demo.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Book a Demo</a>
           <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-2.5 rounded-lg font-semibold shadow-sm transition-all hover:shadow-md">Start your 30-day free trial</a>
         </div>
-        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu">
-          <i data-lucide="menu" class="w-6 h-6"></i>
+        <button id="mobileMenuBtn" class="md:hidden flex-shrink-0 p-3 -mr-1 text-slate-600 hover:text-slate-900 touch-manipulation" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </button>
       </div>
     </div>
