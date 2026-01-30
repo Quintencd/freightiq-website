@@ -1157,7 +1157,8 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             });
 
             // Form submission
-            console.log('Signup form initialized - immediate login enabled (no email confirmation)');
+            // IMPORTANT: Signup creates the account only. Users must manually sign in afterwards.
+            console.log('Signup form initialized - login required after account creation');
             document.getElementById('signupForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -1470,11 +1471,7 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 
                 // Reset form
                 this.reset();
-                
-                // Auto-redirect to login page after 5 seconds (optional - user can click button immediately)
-                setTimeout(() => {
-                    window.location.href = 'https://app.flowiq.info/login';
-                }, 5000);
+                // No auto-login / no auto-redirect: user explicitly clicks "Go to Sign In".
 
             } catch (error) {
                 console.error('Signup error:', error);
