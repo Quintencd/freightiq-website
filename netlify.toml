@@ -20,8 +20,12 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
-# Domain redirects (http→https, www→apex) REMOVED until SSL is green to avoid infinite loops.
-# After SSL is active, add back: http://flowiq.info/*, http://www.flowiq.info/*, https://www.flowiq.info/* → https://flowiq.info/:splat 301
+# Canonical: redirect https://flowiq.info (no www) to https://www.flowiq.info
+[[redirects]]
+  from = "https://flowiq.info/*"
+  to = "https://www.flowiq.info/:splat"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/pricing"
