@@ -1336,12 +1336,20 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 });
 
                 let data;
+                let responseText = '';
                 try {
+                    // Get raw response text first for debugging
+                    responseText = await response.clone().text();
+                    console.log('Raw response text:', responseText);
+                    console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+                    
+                    // Try to parse as JSON
                     data = await response.json();
                 } catch (parseError) {
-                    // If response isn't JSON, get text
-                    const text = await response.text();
-                    throw new Error(`Server error: ${text || response.statusText || 'Unknown error'}`);
+                    // If response isn't JSON, use the text we already got
+                    console.error('Failed to parse JSON response:', parseError);
+                    console.error('Response text was:', responseText);
+                    throw new Error(`Server error: ${responseText || response.statusText || 'Unknown error'}`);
                 }
                 
                 if (!response.ok) {
@@ -1350,7 +1358,12 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     console.error('Signup error response:', {
                         status: response.status,
                         statusText: response.statusText,
-                        data: data
+                        data: data,
+                        rawText: responseText,
+                        errorCode: data.errorCode,
+                        errorHint: data.errorHint,
+                        errorDetails: data.errorDetails,
+                        debug: data.debug
                     });
                     
                     // Parse error message to identify missing fields
