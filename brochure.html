@@ -27,6 +27,19 @@
             background: #f8fafc;
             color: #0f172a;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Same orange background glow as front page */
+        .brochure-orange-glow {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            background: #f8fafc;
+            background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(249, 115, 22, 0.15), transparent 70%);
+            pointer-events: none;
         }
 
         /* Print styles for professional brochure output */
@@ -171,49 +184,16 @@
             z-index: 2;
         }
 
-        .logo-container {
-            display: inline-flex;
-            align-items: flex-end;
-            line-height: 1;
-            user-select: none;
-            transition: transform 0.3s ease;
-            animation: logoGlow 4s ease-in-out infinite;
+        .brochure-logo-img {
+            height: 52px;
+            width: auto;
+            max-width: 205px;
+            object-fit: contain;
+            display: block;
         }
 
-        @keyframes logoGlow {
-
-            0%,
-            100% {
-                filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.3));
-            }
-
-            50% {
-                filter: drop-shadow(0 0 16px rgba(249, 115, 22, 0.5));
-            }
-        }
-
-        .logo-flow {
-            color: white;
-            font-size: 3rem;
-            font-weight: 600;
-            letter-spacing: -0.025em;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo-iq {
-            margin-left: 0.25rem;
-            display: inline-flex;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            font-size: 2.25rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #fb923c;
-            background: rgba(249, 115, 22, 0.1);
-            border: 1px solid rgba(249, 115, 22, 0.6);
-            border-radius: 0.5rem;
-            box-shadow: 0 0 12px rgba(249, 115, 22, 0.35);
+        .cover .brochure-logo-img {
+            filter: brightness(0) invert(1);
         }
 
         .cover-title {
@@ -1083,6 +1063,8 @@
 </head>
 
 <body>
+    <!-- Same orange background glow as front page -->
+    <div class="brochure-orange-glow" aria-hidden="true"></div>
     <!-- Print Button -->
     <button class="print-button no-print" onclick="window.print()">🖨️ Print Brochure</button>
 
@@ -1090,10 +1072,9 @@
     <div class="page cover">
         <div class="cover-bg-pattern"></div>
         <div class="logo">
-            <span class="logo-container">
-                <span class="logo-flow">Flow</span>
-                <span class="logo-iq">IQ</span>
-            </span>
+            <a href="/" class="inline-block">
+                <img src="/flowiq-logo.png" alt="FlowIQ - Smarter business in motion" class="brochure-logo-img" width="205" height="52" loading="eager">
+            </a>
         </div>
 
         <div class="cover-title">
