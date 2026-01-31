@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landed Cost Calculator for Imports | Per SKU Costing | FlowIQ</title>
-  <meta name="description" content="Use a landed cost calculator that shows true cost per SKU including freight, duty, clearance, insurance, and FX — without spreadsheets." />
+  <title>Landed Cost Calculator for Importers | FlowIQ</title>
+  <meta name="description" content="Use FlowIQ's landed cost calculator to estimate true import costs including freight, duties, and exchange rates." />
   <link rel="canonical" href="https://www.flowiq.info/tools/landed-cost-calculator.html" />
   <link rel="icon" type="image/png" href="/flowiq-logo.png">
   <link rel="icon" href="/favicon.ico">
@@ -65,12 +65,104 @@
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
     <section id="calculator" class="text-center mb-16">
-      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Landed Cost Calculator — Per SKU, Not Estimates</h1>
-      <p class="text-xl text-slate-600 mb-8">Calculate true landed cost per SKU by allocating freight, duty, clearance, insurance, and FX accurately — then see real margins with FlowIQ.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#calculator" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2">Use the Calculator</a>
+      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Calculate your true landed cost before the stock arrives</h1>
+      <p class="text-xl text-slate-600 mb-8">Calculate true landed cost per SKU by allocating freight, duty, clearance, insurance, and FX accurately — then see real margins with FlowIQ. To see this with your own data, <a href="/book-demo.html" class="text-orange-600 hover:underline font-medium">book a demo</a>.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+        <a href="#calculator-form" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2">Use the Calculator</a>
         <a href="/book-demo.html" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 px-8 py-4 rounded-xl font-semibold shadow-sm hover:shadow-md transition-all inline-flex items-center justify-center gap-2">Book a Demo</a>
       </div>
+
+      <div id="calculator-form" class="max-w-lg mx-auto text-left bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+        <h2 class="text-xl font-semibold text-slate-900 mb-4">Quick estimate</h2>
+        <div class="space-y-4">
+          <div>
+            <label for="calc-product-cost" class="block text-sm font-medium text-slate-700 mb-1">Total product cost</label>
+            <input type="number" id="calc-product-cost" min="0" step="0.01" placeholder="e.g. 10000" class="w-full px-4 py-2 border border-slate-300 rounded-lg text-slate-900 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+          </div>
+          <div>
+            <label for="calc-freight" class="block text-sm font-medium text-slate-700 mb-1">Freight</label>
+            <input type="number" id="calc-freight" min="0" step="0.01" placeholder="e.g. 2500" class="w-full px-4 py-2 border border-slate-300 rounded-lg text-slate-900 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+          </div>
+          <div>
+            <label for="calc-duty" class="block text-sm font-medium text-slate-700 mb-1">Duty &amp; clearance</label>
+            <input type="number" id="calc-duty" min="0" step="0.01" placeholder="e.g. 1500" class="w-full px-4 py-2 border border-slate-300 rounded-lg text-slate-900 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+          </div>
+          <div>
+            <label for="calc-units" class="block text-sm font-medium text-slate-700 mb-1">Number of units</label>
+            <input type="number" id="calc-units" min="1" step="1" placeholder="e.g. 500" class="w-full px-4 py-2 border border-slate-300 rounded-lg text-slate-900 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+          </div>
+          <button type="button" id="calc-submit" class="w-full bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Calculate landed cost</button>
+        </div>
+        <div id="calculator-results" class="mt-6 p-4 bg-slate-50 border border-slate-200 rounded-lg hidden" role="region" aria-live="polite">
+          <p class="text-sm font-medium text-slate-700 mb-1">Estimated landed cost per unit</p>
+          <p id="calculator-result-value" class="text-2xl font-bold text-orange-600"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="lead-capture-cta" class="mb-16 hidden" aria-hidden="true">
+      <div class="max-w-2xl mx-auto text-center border border-slate-200 rounded-xl bg-white p-8 shadow-sm">
+        <h2 class="text-2xl font-semibold text-slate-900 mb-4">Want this broken down properly?</h2>
+        <p class="text-slate-600 mb-6">Most importers underestimate landed cost by 5–15%. Get a full breakdown using your real data and see how FlowIQ calculates it correctly.</p>
+        <div id="lead-capture-buttons" class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button type="button" id="lead-email-cta" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2">Email me this breakdown</button>
+          <a href="/book-demo.html" class="text-orange-600 hover:underline font-medium">Book a demo instead</a>
+        </div>
+        <form id="lead-capture-form" name="landed-cost-leads" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="mt-6 text-left hidden" novalidate>
+          <input type="hidden" name="form-name" value="landed-cost-leads" />
+          <div class="hidden" aria-hidden="true">
+            <label for="lead-bot-field">Don’t fill this</label>
+            <input type="text" name="bot-field" id="lead-bot-field" tabindex="-1" autocomplete="off" />
+          </div>
+          <input type="hidden" name="page_source" value="Landed Cost Calculator" />
+          <input type="hidden" name="landed_cost_per_unit" id="lead-landed-cost-per-unit" value="" />
+          <input type="hidden" name="total_product_cost" id="lead-total-product-cost" value="" />
+          <input type="hidden" name="freight" id="lead-freight" value="" />
+          <input type="hidden" name="duties_clearance" id="lead-duties-clearance" value="" />
+          <input type="hidden" name="units" id="lead-units" value="" />
+          <div class="space-y-4">
+            <div>
+              <label for="lead-email" class="block text-sm font-medium text-slate-700 mb-1">Email address <span class="text-slate-400">(required)</span></label>
+              <input type="email" id="lead-email" name="email" required placeholder="you@company.com" class="w-full px-4 py-2 border border-slate-300 rounded-lg text-slate-900 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+              <p class="mt-1 text-xs text-slate-500">We don't spam. This is used only to send your calculation and demo access.</p>
+            </div>
+            <div>
+              <label for="lead-company" class="block text-sm font-medium text-slate-700 mb-1">Company name <span class="text-slate-400">(optional)</span></label>
+              <input type="text" id="lead-company" name="company" placeholder="Your company" class="w-full px-4 py-2 border border-slate-300 rounded-lg text-slate-900 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+            </div>
+            <div class="flex items-start gap-2">
+              <input type="checkbox" id="lead-importing" name="importing" checked class="mt-1 h-4 w-4 rounded border-slate-300 text-orange-600 focus:ring-orange-500">
+              <label for="lead-importing" class="text-sm text-slate-700">I'm importing products and want more accurate landed cost</label>
+            </div>
+          </div>
+          <button type="submit" class="mt-4 w-full sm:w-auto bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Send breakdown</button>
+        </form>
+        <div id="lead-capture-success" class="hidden text-center">
+          <p class="text-lg font-medium text-slate-900 mb-2">Thanks — we'll send a detailed breakdown and show how FlowIQ calculates landed cost more accurately.</p>
+          <p class="text-slate-600 mb-6">If you'd like to see this live with your own SKUs, book a demo.</p>
+          <a href="/book-demo.html" class="inline-flex items-center justify-center bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Book a demo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">What is landed cost?</h2>
+      <p class="text-slate-600 mb-4">Landed cost is the true per-unit cost of importing a product, including the product price, freight, duties, clearance, and exchange rate impacts. Many businesses calculate landed cost incorrectly by excluding costs or spreading them inaccurately across units.</p>
+      <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+        <li>Product cost from supplier</li>
+        <li>Freight (air or sea)</li>
+        <li>Duties and clearance</li>
+        <li>Exchange rate effects</li>
+        <li>Total units imported</li>
+      </ul>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">Example: calculating landed cost for an import shipment</h2>
+      <p class="text-slate-600 mb-4">For example, if you import products with a supplier cost of R500,000, freight of R80,000, and duties and clearance of R40,000 across 1,000 units, the true landed cost per unit is not the supplier price — it's the total landed cost divided by units.</p>
+      <p class="text-slate-600 mb-2 font-medium">Total cost = R620,000<br>Units imported = 1,000<br>Landed cost per unit = R620.00</p>
+      <p class="text-slate-600 mb-4">This calculator gives you a quick estimate. FlowIQ applies this logic automatically across shipments, SKUs, and currencies.</p>
+      <p class="text-slate-600">For a deeper explanation, see how we calculate <a href="/use-cases/true-landed-cost.html" class="text-orange-600 hover:underline font-medium">true landed cost</a> and why spreadsheets often get this wrong.</p>
     </section>
 
     <section class="mb-16">
@@ -208,6 +300,83 @@
       menu?.classList.toggle('hidden');
     });
     if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    (function () {
+      var calcSubmit = document.getElementById('calc-submit');
+      var calcResults = document.getElementById('calculator-results');
+      var calcResultValue = document.getElementById('calculator-result-value');
+      var leadCtaSection = document.getElementById('lead-capture-cta');
+      var leadButtons = document.getElementById('lead-capture-buttons');
+      var leadEmailCta = document.getElementById('lead-email-cta');
+      var leadForm = document.getElementById('lead-capture-form');
+      var leadSuccess = document.getElementById('lead-capture-success');
+
+      var lastCalculation = {};
+
+      if (calcSubmit && calcResults && calcResultValue) {
+        calcSubmit.addEventListener('click', function () {
+          var productCost = parseFloat(document.getElementById('calc-product-cost').value) || 0;
+          var freight = parseFloat(document.getElementById('calc-freight').value) || 0;
+          var duty = parseFloat(document.getElementById('calc-duty').value) || 0;
+          var units = parseInt(document.getElementById('calc-units').value, 10) || 1;
+          var total = productCost + freight + duty;
+          var perUnit = total / units;
+          lastCalculation = {
+            total_product_cost: String(productCost),
+            freight: String(freight),
+            duties_clearance: String(duty),
+            units: String(units),
+            landed_cost_per_unit: perUnit.toFixed(2)
+          };
+          calcResultValue.textContent = 'R ' + perUnit.toFixed(2) + ' per unit';
+          calcResults.classList.remove('hidden');
+          if (leadCtaSection) {
+            leadCtaSection.classList.remove('hidden');
+            leadCtaSection.setAttribute('aria-hidden', 'false');
+          }
+        });
+      }
+
+      if (leadEmailCta && leadButtons && leadForm) {
+        leadEmailCta.addEventListener('click', function () {
+          leadButtons.classList.add('hidden');
+          leadForm.classList.remove('hidden');
+        });
+      }
+
+      if (leadForm && leadSuccess && leadButtons) {
+        leadForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var emailInput = document.getElementById('lead-email');
+          if (!emailInput || !emailInput.value.trim()) {
+            emailInput.focus();
+            return;
+          }
+          var perUnitEl = document.getElementById('lead-landed-cost-per-unit');
+          var totalCostEl = document.getElementById('lead-total-product-cost');
+          var freightEl = document.getElementById('lead-freight');
+          var dutiesEl = document.getElementById('lead-duties-clearance');
+          var unitsEl = document.getElementById('lead-units');
+          if (perUnitEl && lastCalculation.landed_cost_per_unit !== undefined) perUnitEl.value = lastCalculation.landed_cost_per_unit;
+          if (totalCostEl && lastCalculation.total_product_cost !== undefined) totalCostEl.value = lastCalculation.total_product_cost;
+          if (freightEl && lastCalculation.freight !== undefined) freightEl.value = lastCalculation.freight;
+          if (dutiesEl && lastCalculation.duties_clearance !== undefined) dutiesEl.value = lastCalculation.duties_clearance;
+          if (unitsEl && lastCalculation.units !== undefined) unitsEl.value = lastCalculation.units;
+
+          var formData = new FormData(leadForm);
+          fetch(leadForm.getAttribute('action') || window.location.pathname || '/', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          }).then(function (res) {
+            if (res.ok) {
+              leadForm.classList.add('hidden');
+              leadSuccess.classList.remove('hidden');
+            }
+          }).catch(function () {});
+        });
+      }
+    })();
   </script>
 </body>
 
