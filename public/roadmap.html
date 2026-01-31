@@ -22,6 +22,16 @@
         <a href="/index.html#modules" class="text-slate-300 hover:text-freight-orange">Modules</a>
         <a href="/pricing.html" class="text-slate-300 hover:text-freight-orange">Pricing</a>
       </div>
+      <button id="mobileMenuBtn" class="md:hidden flex-shrink-0 p-3 -mr-1 text-slate-300 hover:text-white touch-manipulation" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700 bg-freight-slate/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-xl">
+      <div class="px-6 py-6 space-y-4">
+        <a href="/index.html" class="block text-slate-300 hover:text-white font-medium text-lg">Home</a>
+        <a href="/index.html#modules" class="block text-slate-300 hover:text-white font-medium text-lg">Modules</a>
+        <a href="/pricing.html" class="block text-slate-300 hover:text-white font-medium text-lg">Pricing</a>
+      </div>
     </div>
   </nav>
 
@@ -56,6 +66,12 @@
       <p class="text-slate-400">© 2024 Flow IQ. All rights reserved.</p>
     </div>
   </footer>
+  <script>
+    document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
+      var menu = document.getElementById('mobileMenu');
+      if (menu) menu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
 

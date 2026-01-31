@@ -37,12 +37,25 @@
                     <a href="#testimonials" class="text-slate-300 hover:text-freight-orange transition-colors">Reviews</a>
                     <a href="#contact" class="text-slate-300 hover:text-freight-orange transition-colors">Contact</a>
                 </div>
-                <div class="flex items-center space-x-4">
+                <div class="hidden md:flex items-center space-x-4">
                     <a href="https://app.flowiq.info/" class="text-slate-300 hover:text-white transition-colors">Login</a>
                     <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-4 py-2 rounded-lg transition-colors">
                         Start Free Trial
                     </a>
                 </div>
+                <button id="mobileMenuBtn" class="md:hidden flex-shrink-0 p-3 -mr-1 text-slate-300 hover:text-white touch-manipulation" aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700 bg-freight-slate/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-xl">
+            <div class="px-6 py-6 space-y-4">
+                <a href="#features" class="block text-slate-300 hover:text-white font-medium text-lg">Features</a>
+                <a href="#modules" class="block text-slate-300 hover:text-white font-medium text-lg">Modules</a>
+                <a href="#testimonials" class="block text-slate-300 hover:text-white font-medium text-lg">Reviews</a>
+                <a href="#contact" class="block text-slate-300 hover:text-white font-medium text-lg">Contact</a>
+                <a href="https://app.flowiq.info/" class="block text-slate-300 hover:text-white font-medium text-lg">Login</a>
+                <a href="/signup" class="block bg-freight-orange text-white px-4 py-3 rounded-xl text-center font-bold text-lg">Start Free Trial</a>
             </div>
         </div>
     </nav>
@@ -342,5 +355,11 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
+            var menu = document.getElementById('mobileMenu');
+            if (menu) menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>

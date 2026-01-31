@@ -36,9 +36,18 @@
                         <img src="/flowiq-logo.png" alt="FlowIQ - Smarter business in motion" class="h-[52px] w-auto max-w-[205px] object-contain" width="205" height="52" loading="eager">
                     </a>
                 </div>
-                <div class="flex items-center space-x-4">
+                <div class="hidden md:flex items-center space-x-4">
                     <a href="/signup" class="text-slate-300 hover:text-white transition-colors">Need an account? Start Free Trial</a>
                 </div>
+                <button id="mobileMenuBtn" class="md:hidden flex-shrink-0 p-3 -mr-1 text-slate-300 hover:text-white touch-manipulation" aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden border-t border-slate-700 bg-freight-slate/95 backdrop-blur-md absolute w-full left-0 top-16 shadow-xl">
+            <div class="px-6 py-6 space-y-4">
+                <a href="/" class="block text-slate-300 hover:text-white font-medium text-lg">Home</a>
+                <a href="/signup" class="block bg-freight-orange text-white px-4 py-3 rounded-xl text-center font-bold text-lg">Start Free Trial</a>
             </div>
         </div>
     </nav>
@@ -211,6 +220,11 @@
     <script>
         // Initialize Lucide icons
         if (window.lucide) { window.lucide.createIcons(); }
+
+        document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
+            var menu = document.getElementById('mobileMenu');
+            if (menu) menu.classList.toggle('hidden');
+        });
 
         // Initialize Supabase - using the same credentials as signup
         // IMPORTANT: Do not name this variable `supabase` because the Supabase UMD bundle

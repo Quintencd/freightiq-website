@@ -87,7 +87,7 @@
                     <a href="#contact"
                         class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Contact</a>
                 </div>
-                <div class="flex items-center space-x-4">
+                <div class="hidden md:flex items-center space-x-4">
                     <a href="https://app.flowiq.info/"
                         class="text-slate-600 hover:text-slate-900 font-medium transition-colors">Login</a>
                     <a href="/signup"
@@ -95,6 +95,19 @@
                         Start Free Trial
                     </a>
                 </div>
+                <button id="mobileMenuBtn" class="md:hidden flex-shrink-0 p-3 -mr-1 text-slate-600 hover:text-slate-900 touch-manipulation" aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-20 shadow-xl">
+            <div class="px-6 py-6 space-y-4">
+                <a href="#features" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Features</a>
+                <a href="#modules" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Modules</a>
+                <a href="/pricing.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Pricing</a>
+                <a href="#contact" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Contact</a>
+                <a href="https://app.flowiq.info/" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Login</a>
+                <a href="/signup" class="block bg-freight-orange text-white px-4 py-3 rounded-xl text-center font-bold text-lg shadow-md">Start your 30-day free trial</a>
             </div>
         </div>
     </nav>
@@ -376,6 +389,11 @@
 
     <script>
         lucide.createIcons();
+
+        document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
+            var menu = document.getElementById('mobileMenu');
+            if (menu) menu.classList.toggle('hidden');
+        });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
