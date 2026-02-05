@@ -62,13 +62,14 @@ function requiredEnv(name) {
   return value;
 }
 
-function buildEmailText({ request_type, name, email, phone, company, message, first_name, last_name }) {
+function buildEmailText({ request_type, name, email, phone, country, company, message, first_name, last_name }) {
   const lines = [];
   lines.push(`Type: ${request_type || 'contact'}`);
   if (name) lines.push(`Name: ${name}`);
   if (first_name || last_name) lines.push(`Name: ${(first_name || '').trim()} ${(last_name || '').trim()}`.trim());
   if (email) lines.push(`Email: ${email}`);
   if (phone) lines.push(`Phone: ${phone}`);
+  if (country) lines.push(`Country: ${country}`);
   if (company) lines.push(`Company: ${company}`);
   lines.push('');
   lines.push('Message:');
@@ -79,37 +80,61 @@ function buildEmailText({ request_type, name, email, phone, company, message, fi
   return lines.join('\n');
 }
 
-async function storeInDatabase({ supabaseUrl, serviceRoleKey, request_type, email, first_name, last_name, name, phone, company, message }) {
+async function storeInDatabase({ supabaseUrl, serviceRoleKey, request_type, email, first_name, last_name, name, phone, country, company, message }) {
   try {
-    // Use Supabase REST API directly (no imports needed)
-    const response = await fetch(`${supabaseUrl}/rest/v1/demo_requests`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'apikey': serviceRoleKey,
-        'Authorization': `Bearer ${serviceRoleKey}`,
-        'Prefer': 'return=minimal',
-      },
-      body: JSON.stringify({
-        request_type,
-        email,
-        first_name: first_name || null,
-        last_name: last_name || null,
-        name: name || null,
-        phone: phone || null,
-        company: company || null,
-        message: message || null,
-      }),
-    });
+    const attemptInsert = async (payload) => {
+      const response = await fetch(`${supabaseUrl}/rest/v1/demo_requests`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': serviceRoleKey,
+          'Authorization': `Bearer ${serviceRoleKey}`,
+          'Prefer': 'return=minimal',
+        },
+        body: JSON.stringify(payload),
+      });
 
-    if (!response.ok) {
+      if (response.ok) return { ok: true };
+
       const errorText = await response.text().catch(() => '');
+      return { ok: false, status: response.status, errorText };
+    };
+
+    // Use Supabase REST API directly (no imports needed)
+    const payloadWithCountry = {
+      request_type,
+      email,
+      first_name: first_name || null,
+      last_name: last_name || null,
+      name: name || null,
+      phone: phone || null,
+      country: country || null,
+      company: company || null,
+      message: message || null,
+    };
+
+    let result = await attemptInsert(payloadWithCountry);
+    if (!result.ok) {
       // If table doesn't exist yet, that's okay - migration will create it
-      if (response.status === 404 || errorText.includes('does not exist')) {
+      if (result.status === 404 || (result.errorText || '').includes('does not exist')) {
         console.log('demo_requests table not created yet - run migration first');
         return false;
       }
-      console.error('Failed to store demo request in database:', response.status, errorText);
+
+      // Backwards compatible: if the DB schema doesn't have `country` yet, retry without it.
+      const errorText = result.errorText || '';
+      const missingCountryColumn =
+        errorText.includes('country') &&
+        (errorText.includes('column') || errorText.includes('field') || errorText.includes('Could not find')) &&
+        (errorText.includes('does not exist') || errorText.includes('not found') || errorText.includes('schema cache'));
+
+      if (missingCountryColumn) {
+        const { country: _omitCountry, ...payloadWithoutCountry } = payloadWithCountry;
+        result = await attemptInsert(payloadWithoutCountry);
+        if (result.ok) return true;
+      }
+
+      console.error('Failed to store demo request in database:', result.status, errorText);
       return false;
     }
     return true;
@@ -120,7 +145,7 @@ async function storeInDatabase({ supabaseUrl, serviceRoleKey, request_type, emai
 }
 
 // Use Netlify Email Extension (configured via Netlify dashboard)
-async function sendEmail({ to, replyTo, subject, requestType, firstName, lastName, name, email, phone, company, message }) {
+async function sendEmail({ to, replyTo, subject, requestType, firstName, lastName, name, email, phone, country, company, message }) {
   // Netlify Email Extension uses the @netlify/emails package
   // The email provider and API key are configured in Netlify dashboard
   try {
@@ -143,6 +168,7 @@ async function sendEmail({ to, replyTo, subject, requestType, firstName, lastNam
           name,
           email,
           phone,
+          country,
           company,
           message,
         }),
@@ -157,7 +183,7 @@ async function sendEmail({ to, replyTo, subject, requestType, firstName, lastNam
   // Fallback: Direct Resend API (if Netlify Email Extension not configured)
   const resendKey = process.env.RESEND_API_KEY;
   if (resendKey) {
-    const text = buildEmailText({ request_type: requestType, name, email, phone, company, message, first_name: firstName, last_name: lastName });
+    const text = buildEmailText({ request_type: requestType, name, email, phone, country, company, message, first_name: firstName, last_name: lastName });
     
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -231,6 +257,7 @@ exports.handler = async (event) => {
     const name = (body.name || '').toString().trim();
     const email = (body.email || '').toString().trim();
     const phone = (body.phone || '').toString().trim();
+    const country = (body.country || '').toString().trim();
     const company = (body.company || '').toString().trim();
     const message = (body.message || '').toString().trim();
     const first_name = (body.first_name || '').toString().trim();
@@ -262,6 +289,7 @@ exports.handler = async (event) => {
         last_name,
         name,
         phone,
+        country,
         company,
         message,
       });
@@ -287,6 +315,7 @@ exports.handler = async (event) => {
                 last_name,
                 name,
                 phone,
+                country,
                 company,
                 message,
                 created_at: new Date().toISOString(),
@@ -328,6 +357,7 @@ exports.handler = async (event) => {
         name,
         email,
         phone,
+        country,
         company,
         message,
       });
@@ -351,6 +381,7 @@ exports.handler = async (event) => {
           name: name || `${first_name} ${last_name}`.trim(),
           email,
           phone,
+          country,
           company,
           message,
           request_type,
@@ -369,4 +400,3 @@ exports.handler = async (event) => {
     return { statusCode: 500, headers, body: (err && err.message) || 'Unknown error' };
   }
 };
-
