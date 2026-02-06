@@ -62,7 +62,7 @@ function requiredEnv(name) {
   return value;
 }
 
-function buildEmailText({ request_type, name, email, phone, country, company, message, first_name, last_name }) {
+function buildEmailText({ request_type, name, email, phone, country, feature_interest, company, message, first_name, last_name }) {
   const lines = [];
   lines.push(`Type: ${request_type || 'contact'}`);
   if (name) lines.push(`Name: ${name}`);
@@ -70,6 +70,7 @@ function buildEmailText({ request_type, name, email, phone, country, company, me
   if (email) lines.push(`Email: ${email}`);
   if (phone) lines.push(`Phone: ${phone}`);
   if (country) lines.push(`Country: ${country}`);
+  if (feature_interest) lines.push(`Feature interest: ${feature_interest}`);
   if (company) lines.push(`Company: ${company}`);
   lines.push('');
   lines.push('Message:');
@@ -80,7 +81,7 @@ function buildEmailText({ request_type, name, email, phone, country, company, me
   return lines.join('\n');
 }
 
-async function storeInDatabase({ supabaseUrl, serviceRoleKey, request_type, email, first_name, last_name, name, phone, country, company, message }) {
+async function storeInDatabase({ supabaseUrl, serviceRoleKey, request_type, email, first_name, last_name, name, phone, country, feature_interest, company, message }) {
   try {
     const attemptInsert = async (payload) => {
       const response = await fetch(`${supabaseUrl}/rest/v1/demo_requests`, {
@@ -101,7 +102,7 @@ async function storeInDatabase({ supabaseUrl, serviceRoleKey, request_type, emai
     };
 
     // Use Supabase REST API directly (no imports needed)
-    const payloadWithCountry = {
+    const payloadWithExtras = {
       request_type,
       email,
       first_name: first_name || null,
@@ -109,11 +110,12 @@ async function storeInDatabase({ supabaseUrl, serviceRoleKey, request_type, emai
       name: name || null,
       phone: phone || null,
       country: country || null,
+      feature_interest: feature_interest || null,
       company: company || null,
       message: message || null,
     };
 
-    let result = await attemptInsert(payloadWithCountry);
+    let result = await attemptInsert(payloadWithExtras);
     if (!result.ok) {
       // If table doesn't exist yet, that's okay - migration will create it
       if (result.status === 404 || (result.errorText || '').includes('does not exist')) {
@@ -123,14 +125,19 @@ async function storeInDatabase({ supabaseUrl, serviceRoleKey, request_type, emai
 
       // Backwards compatible: if the DB schema doesn't have `country` yet, retry without it.
       const errorText = result.errorText || '';
-      const missingCountryColumn =
-        errorText.includes('country') &&
+      const isMissingColumn = (col) =>
+        errorText.includes(col) &&
         (errorText.includes('column') || errorText.includes('field') || errorText.includes('Could not find')) &&
         (errorText.includes('does not exist') || errorText.includes('not found') || errorText.includes('schema cache'));
 
-      if (missingCountryColumn) {
-        const { country: _omitCountry, ...payloadWithoutCountry } = payloadWithCountry;
-        result = await attemptInsert(payloadWithoutCountry);
+      if (isMissingColumn('feature_interest')) {
+        const { feature_interest: _omit, ...payloadWithout } = payloadWithExtras;
+        result = await attemptInsert(payloadWithout);
+        if (result.ok) return true;
+      }
+      if (isMissingColumn('country')) {
+        const { country: _omit, ...payloadWithout } = payloadWithExtras;
+        result = await attemptInsert(payloadWithout);
         if (result.ok) return true;
       }
 
@@ -145,7 +152,7 @@ async function storeInDatabase({ supabaseUrl, serviceRoleKey, request_type, emai
 }
 
 // Use Netlify Email Extension (configured via Netlify dashboard)
-async function sendEmail({ to, replyTo, subject, requestType, firstName, lastName, name, email, phone, country, company, message }) {
+async function sendEmail({ to, replyTo, subject, requestType, firstName, lastName, name, email, phone, country, featureInterest, company, message }) {
   // Netlify Email Extension uses the @netlify/emails package
   // The email provider and API key are configured in Netlify dashboard
   try {
@@ -169,6 +176,7 @@ async function sendEmail({ to, replyTo, subject, requestType, firstName, lastNam
           email,
           phone,
           country,
+          featureInterest,
           company,
           message,
         }),
@@ -183,7 +191,7 @@ async function sendEmail({ to, replyTo, subject, requestType, firstName, lastNam
   // Fallback: Direct Resend API (if Netlify Email Extension not configured)
   const resendKey = process.env.RESEND_API_KEY;
   if (resendKey) {
-    const text = buildEmailText({ request_type: requestType, name, email, phone, country, company, message, first_name: firstName, last_name: lastName });
+    const text = buildEmailText({ request_type: requestType, name, email, phone, country, feature_interest: featureInterest, company, message, first_name: firstName, last_name: lastName });
     
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -258,6 +266,7 @@ exports.handler = async (event) => {
     const email = (body.email || '').toString().trim();
     const phone = (body.phone || '').toString().trim();
     const country = (body.country || '').toString().trim();
+    const feature_interest = (body.feature_interest || '').toString().trim();
     const company = (body.company || '').toString().trim();
     const message = (body.message || '').toString().trim();
     const first_name = (body.first_name || '').toString().trim();
@@ -266,6 +275,9 @@ exports.handler = async (event) => {
     if (!email) return { statusCode: 400, headers, body: 'Missing required field: email' };
     if (request_type === 'demo' && (!first_name || !last_name)) {
       return { statusCode: 400, headers, body: 'Missing required fields: first_name, last_name' };
+    }
+    if (request_type === 'demo' && !feature_interest) {
+      return { statusCode: 400, headers, body: 'Missing required field: feature_interest' };
     }
     if (request_type === 'contact' && (!name || !message)) {
       return { statusCode: 400, headers, body: 'Missing required fields: name, message' };
@@ -290,6 +302,7 @@ exports.handler = async (event) => {
         name,
         phone,
         country,
+        feature_interest,
         company,
         message,
       });
@@ -316,6 +329,7 @@ exports.handler = async (event) => {
                 name,
                 phone,
                 country,
+                feature_interest,
                 company,
                 message,
                 created_at: new Date().toISOString(),
@@ -358,6 +372,7 @@ exports.handler = async (event) => {
         email,
         phone,
         country,
+        featureInterest: feature_interest,
         company,
         message,
       });
@@ -382,6 +397,7 @@ exports.handler = async (event) => {
           email,
           phone,
           country,
+          feature_interest,
           company,
           message,
           request_type,

@@ -18,6 +18,7 @@ interface DemoRequestEmailProps {
   email: string;
   phone?: string;
   country?: string;
+  featureInterest?: string;
   company?: string;
   message?: string;
 }
@@ -30,6 +31,7 @@ export default function DemoRequestEmail({
   email,
   phone,
   country,
+  featureInterest,
   company,
   message,
 }: DemoRequestEmailProps) {
@@ -75,6 +77,12 @@ export default function DemoRequestEmail({
             <Section style={section}>
               <Text style={label}>Country:</Text>
               <Text style={value}>{country}</Text>
+            </Section>
+          )}
+          {featureInterest && (
+            <Section style={section}>
+              <Text style={label}>Feature interest:</Text>
+              <Text style={value}>{featureInterest}</Text>
             </Section>
           )}
           {message && (
