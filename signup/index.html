@@ -1158,6 +1158,7 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             console.log('Signup form initialized - login required after account creation');
             document.getElementById('signupForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+            window.FlowIQWebsiteAnalytics?.track('web_signup_start', { form_name: 'signupForm' });
             
             const submitButton = document.getElementById('submitButton');
             const buttonText = document.getElementById('buttonText');
@@ -1443,6 +1444,10 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 } catch (e) {}
 
                 // ✅ SUCCESS: Account created with organization (no email confirmation required)
+                window.FlowIQWebsiteAnalytics?.track('web_signup_complete', {
+                    form_name: 'signupForm',
+                    selected_plan: selectedPlanValue
+                });
                 messageDiv.className = 'p-4 rounded-lg bg-green-500/20 border border-green-500/30';
                 messageDiv.innerHTML = `
                     <div class="space-y-3">
@@ -1472,6 +1477,10 @@ This policy may be updated at any time. Continued use constitutes acceptance.
 
             } catch (error) {
                 console.error('Signup error:', error);
+                window.FlowIQWebsiteAnalytics?.track('web_signup_error', {
+                    form_name: 'signupForm',
+                    error_message: (error?.message || 'unknown').slice(0, 200)
+                });
                 
                 // Show error
                 messageDiv.className = 'p-4 rounded-lg bg-red-500/20 border border-red-500/30';
@@ -1504,5 +1513,6 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             });
         });
     </script>
+    <script src="/assets/website-analytics.js"></script>
 </body>
 </html>
