@@ -1,7 +1,8 @@
 (function () {
   const SUPABASE_FUNCTION_URL = 'https://yvbhjlmvpipniedwvdji.supabase.co/functions/v1/public-website-analytics';
-  const GTM_CONTAINER_ID = 'GTM-XXXXXXX'; // Replace with your real GTM container
-  const GA4_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Optional direct GA4 fallback
+  const runtimeConfig = window.FlowIQAnalyticsConfig || {};
+  const GTM_CONTAINER_ID = runtimeConfig.gtmContainerId || 'GTM-XXXXXXX'; // Replace with your real GTM container
+  const GA4_MEASUREMENT_ID = runtimeConfig.ga4MeasurementId || 'G-XXXXXXXXXX'; // Optional direct GA4 fallback
 
   function getOrCreateSessionId() {
     const key = 'flowiq_web_session_id';
@@ -131,4 +132,3 @@
     setupFormTracking();
   });
 })();
-
