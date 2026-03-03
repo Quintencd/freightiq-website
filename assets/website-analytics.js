@@ -75,6 +75,7 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
+        credentials: 'omit',
         keepalive: true
       });
     } catch (_) {
