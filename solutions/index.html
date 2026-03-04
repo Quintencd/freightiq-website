@@ -69,7 +69,11 @@
     <section class="text-center mb-16">
       <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Solutions by Business Type</h1>
       <p class="text-xl text-slate-600 mb-8">Built for importers first, and powerful enough for distributors and manufacturers.</p>
-      <a href="/book-demo.html" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Book Demo</a>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/signup" data-analytics-event="trial_signup_click" class="inline-flex items-center justify-center bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Start Free Trial</a>
+        <a href="/tools/" data-analytics-event="calculator_use" class="inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-semibold shadow-sm hover:shadow-md transition-all">Try Free Calculators</a>
+        <a href="/book-demo.html" data-analytics-event="demo_request" class="inline-flex items-center justify-center border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 px-8 py-4 rounded-xl font-semibold shadow-sm transition-all">Book Demo</a>
+      </div>
     </section>
 
     <section class="mb-16">
@@ -97,6 +101,36 @@
           <a href="/solutions/multi-branch.html" class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/50 transition-colors text-slate-700 hover:text-orange-700 font-medium">
             <i data-lucide="git-branch" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>
             Multi-Branch Operations
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">Popular Pages</h2>
+      <ul class="space-y-4">
+        <li>
+          <a href="/freight-forwarder-software.html" class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/50 transition-colors text-slate-700 hover:text-orange-700 font-medium">
+            <i data-lucide="ship" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>
+            Freight Forwarder Software
+          </a>
+        </li>
+        <li>
+          <a href="/inventory-software-for-importers.html" class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/50 transition-colors text-slate-700 hover:text-orange-700 font-medium">
+            <i data-lucide="package" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>
+            Inventory Software for Importers
+          </a>
+        </li>
+        <li>
+          <a href="/inventory-forecasting-software.html" class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/50 transition-colors text-slate-700 hover:text-orange-700 font-medium">
+            <i data-lucide="trending-up" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>
+            Inventory Forecasting Software
+          </a>
+        </li>
+        <li>
+          <a href="/import-erp-software.html" class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/50 transition-colors text-slate-700 hover:text-orange-700 font-medium">
+            <i data-lucide="layout-dashboard" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>
+            Import ERP Software
           </a>
         </li>
       </ul>
@@ -131,5 +165,14 @@
     });
     if (typeof lucide !== 'undefined') lucide.createIcons();
   </script>
+  <script>
+    window.FlowIQAnalyticsConfig = {
+      gtmContainerId: 'GTM-5L45DPGL',
+      ga4MeasurementId: 'G-1QJKZJ7V0T',
+      clarityProjectId: 'vqjuz4ha1k'
+    };
+  </script>
+  <script src="/assets/website-analytics.js"></script>
+  <script src="/assets/growth-analytics.js"></script>
 </body>
 </html>

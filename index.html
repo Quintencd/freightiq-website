@@ -113,17 +113,27 @@
     <section id="hero" class="text-center mb-20 md:mb-32 relative">
       <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
         <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
-          Import intelligence for businesses that can't afford costing mistakes
+          Calculate your true import costs instantly
         </h1>
         <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Built import-first for landed cost accuracy, and powerful enough for distributors and manufacturers who need
-          clean inventory, margin visibility, and forecasting without ERP complexity.
+          FlowIQ automatically calculates landed costs, freight expenses, and supply chain profitability for importers
+          and manufacturers, so you can price confidently and protect margin.
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-          <a href="/book-demo.html"
+          <a href="/signup" data-analytics-event="trial_signup_click"
             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-orange-500/20 hover:shadow-2xl hover:shadow-orange-500/30 hover:-translate-y-1 transition-all">
-            Book Demo
+            Start Free Trial
             <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+          <a href="/tools/" data-analytics-event="calculator_use"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-900 px-8 py-4 rounded-xl font-bold text-lg border border-slate-200 shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
+            Try Free Calculators
+            <i data-lucide="calculator" class="w-5 h-5 text-orange-600"></i>
+          </a>
+          <a href="/book-demo.html" data-analytics-event="demo_request"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 px-8 py-4 rounded-xl font-bold text-lg shadow-sm transition-all">
+            Book Demo
+            <i data-lucide="calendar" class="w-5 h-5 text-slate-700"></i>
           </a>
           <p class="mt-4 sm:mt-0 text-slate-600 font-medium">
             <a href="/solutions/importers.html" class="text-orange-600 hover:underline">For Importers</a>
@@ -712,10 +722,12 @@
   <script>
     window.FlowIQAnalyticsConfig = {
       gtmContainerId: 'GTM-5L45DPGL',
-      ga4MeasurementId: 'G-1QJKZJ7V0T'
+      ga4MeasurementId: 'G-1QJKZJ7V0T',
+      clarityProjectId: 'vqjuz4ha1k'
     };
   </script>
   <script src="/assets/website-analytics.js"></script>
+  <script src="/assets/growth-analytics.js"></script>
 </body>
 
 </html>

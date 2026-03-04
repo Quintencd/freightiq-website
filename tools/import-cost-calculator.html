@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Import Cost Calculator | FlowIQ</title>
+  <meta name="description" content="Estimate total import cost by combining supplier, freight, duties, and clearance charges. Free FlowIQ import cost calculator for importers." />
+  <link rel="canonical" href="https://www.flowiq.info/tools/import-cost-calculator.html" />
+  <link rel="icon" href="/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{font-family:Inter,sans-serif}.bg-freight-orange{background:#f97316}.hover\:bg-freight-orange-dark:hover{background:#ea580c}</style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <a href="/tools/" class="text-sm text-orange-600">Back to Tools</a>
+    <h1 class="text-3xl font-bold mt-4 mb-3">Import Cost Calculator</h1>
+    <p class="text-slate-600 mb-6">Use this free calculator to estimate total import spend before stock lands. This helps importers compare suppliers, test freight scenarios, and protect margins.</p>
+
+    <section class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm mb-6">
+      <h2 class="text-xl font-semibold mb-4">Calculator</h2>
+      <div class="grid gap-4">
+        <input id="supplier" type="number" step="0.01" min="0" placeholder="Supplier cost" class="border rounded-lg px-3 py-2" />
+        <input id="freight" type="number" step="0.01" min="0" placeholder="Freight cost" class="border rounded-lg px-3 py-2" />
+        <input id="duty" type="number" step="0.01" min="0" placeholder="Duty and VAT" class="border rounded-lg px-3 py-2" />
+        <input id="clearance" type="number" step="0.01" min="0" placeholder="Clearance and local fees" class="border rounded-lg px-3 py-2" />
+        <button id="calc-submit" data-analytics-event="calculator_use" class="bg-freight-orange hover:bg-freight-orange-dark text-white rounded-lg py-3 font-semibold">Calculate</button>
+      </div>
+      <p id="result" class="mt-4 text-lg font-semibold text-orange-600"></p>
+    </section>
+
+    <section class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm mb-6">
+      <h2 class="text-xl font-semibold mb-2">Save this calculation</h2>
+      <p class="text-slate-600 mb-4">Enter your email to receive this result and a breakdown template.</p>
+      <form id="lead-form" name="import-cost-lead" method="POST" data-netlify="true" class="grid gap-3">
+        <input type="hidden" name="form-name" value="import-cost-lead" />
+        <input id="lead-email" name="email" type="email" required placeholder="you@company.com" class="border rounded-lg px-3 py-2" />
+        <input id="lead-company" name="company" type="text" placeholder="Company" class="border rounded-lg px-3 py-2" />
+        <input id="lead-result" name="estimated_total_import_cost" type="hidden" />
+        <button type="submit" class="bg-slate-900 text-white rounded-lg py-2 font-semibold">Email me this result</button>
+      </form>
+    </section>
+
+    <section class="prose prose-slate max-w-none">
+      <h2>How this import cost calculator works</h2>
+      <p>Total import cost is the sum of supplier cost, freight, duty, and clearance costs. Many import teams track these in separate sheets, which causes errors in landed pricing decisions.</p>
+      <p>This tool gives a fast estimate for planning. FlowIQ then allocates costs per SKU and updates inventory and margin reporting automatically.</p>
+      <h3>Related tools</h3>
+      <p><a href="/tools/container-cost-calculator.html">Container Cost Calculator</a> · <a href="/tools/freight-cost-calculator.html">Freight Cost Calculator</a> · <a href="/tools/import-duty-calculator.html">Import Duty Calculator</a></p>
+    </section>
+
+    <div class="mt-10 flex gap-3 flex-wrap">
+      <a href="/signup" data-analytics-event="trial_signup_click" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-3 rounded-lg font-semibold">Start Free Trial</a>
+      <a href="/book-demo.html" data-analytics-event="demo_request" class="border border-slate-300 px-5 py-3 rounded-lg font-semibold">Book Demo</a>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      var btn = document.getElementById('calc-submit');
+      var result = document.getElementById('result');
+      var leadResult = document.getElementById('lead-result');
+      btn?.addEventListener('click', function(){
+        var supplier = parseFloat(document.getElementById('supplier').value) || 0;
+        var freight = parseFloat(document.getElementById('freight').value) || 0;
+        var duty = parseFloat(document.getElementById('duty').value) || 0;
+        var clearance = parseFloat(document.getElementById('clearance').value) || 0;
+        var total = supplier + freight + duty + clearance;
+        result.textContent = 'Estimated total import cost: R ' + total.toLocaleString('en-ZA', {maximumFractionDigits:2});
+        if (leadResult) leadResult.value = total.toFixed(2);
+      });
+    })();
+  </script>
+  <script>
+    window.FlowIQAnalyticsConfig = { gtmContainerId: 'GTM-5L45DPGL', ga4MeasurementId: 'G-1QJKZJ7V0T', clarityProjectId: 'vqjuz4ha1k' };
+  </script>
+  <script src="/assets/website-analytics.js"></script>
+  <script src="/assets/growth-analytics.js"></script>
+</body>
+</html>

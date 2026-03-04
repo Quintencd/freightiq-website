@@ -68,8 +68,48 @@
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
     <section class="text-center mb-16">
       <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Software for Manufacturers</h1>
-      <p class="text-xl text-slate-600 mb-8">Inventory, costing, and margin control for manufacturers who import or distribute.</p>
-      <a href="/book-demo.html" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Book Demo</a>
+      <p class="text-xl text-slate-600 mb-8">Planning, inventory, and costing for manufacturers who import components or distribute finished goods.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/signup" data-analytics-event="trial_signup_click" class="inline-flex items-center justify-center bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Start Free Trial</a>
+        <a href="/tools/" data-analytics-event="calculator_use" class="inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-semibold shadow-sm hover:shadow-md transition-all">Try Free Calculators</a>
+        <a href="/book-demo.html" data-analytics-event="demo_request" class="inline-flex items-center justify-center border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 px-8 py-4 rounded-xl font-semibold shadow-sm transition-all">Book Demo</a>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-4">The manufacturing cost problem</h2>
+      <p class="text-slate-600 mb-3">Manufacturers often have accurate shop-floor processes but unreliable cost visibility. Component prices change, freight changes, FX changes, and a small variance per unit becomes a large variance per batch.</p>
+      <p class="text-slate-600 mb-3">When inventory valuation, landed cost, and BOM costing are managed in separate systems (or spreadsheets), your margin reporting drifts. That leads to overconfidence in pricing, late detection of cost creep, and missed reorder timing.</p>
+      <p class="text-slate-600">FlowIQ keeps purchasing, inventory, and landed cost in one workflow so you can see true cost and profit in real time.</p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-4">What FlowIQ helps you control</h2>
+      <ul class="list-disc list-inside text-slate-600 space-y-2">
+        <li>Inventory accuracy across warehouses and production locations.</li>
+        <li>True per-unit cost by capturing landed costs on imported components.</li>
+        <li>BOM and manufacturing visibility (where applicable) without ERP heaviness.</li>
+        <li>Forecast-driven planning to reduce stockouts and overstock.</li>
+        <li>Margin visibility that matches inventory valuation and accounting outcomes.</li>
+      </ul>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-4">Start with a quick estimate</h2>
+      <p class="text-slate-600 mb-4">If you're evaluating pricing or batch profitability, start with a fast estimate and then see how FlowIQ operationalizes it.</p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="/tools/landed-cost-calculator.html" class="inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 px-6 py-3 rounded-xl font-semibold shadow-sm">Landed Cost Calculator</a>
+        <a href="/tools/supply-chain-profit-calculator.html" class="inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 px-6 py-3 rounded-xl font-semibold shadow-sm">Supply Chain Profit Calculator</a>
+        <a href="/tools/inventory-forecast-calculator.html" class="inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 px-6 py-3 rounded-xl font-semibold shadow-sm">Inventory Forecast Calculator</a>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-slate-900 mb-4">FAQs</h2>
+      <div class="space-y-4">
+        <div><h3 class="font-semibold text-slate-900">Is FlowIQ only for importers?</h3><p class="text-slate-600">No. FlowIQ is built import-first, but manufacturers and distributors use it to keep inventory and margin accurate as costs change.</p></div>
+        <div><h3 class="font-semibold text-slate-900">Can we use FlowIQ without complex ERP implementation?</h3><p class="text-slate-600">Yes. The goal is operational clarity without ERP drag, while still maintaining auditable records and clean reporting.</p></div>
+      </div>
     </section>
     <section class="text-center pt-8 pb-4 border-t border-slate-200">
       <h2 class="text-2xl font-semibold text-slate-900 mb-4">See FlowIQ in Action</h2>
@@ -100,5 +140,14 @@
     });
     if (typeof lucide !== 'undefined') lucide.createIcons();
   </script>
+  <script>
+    window.FlowIQAnalyticsConfig = {
+      gtmContainerId: 'GTM-5L45DPGL',
+      ga4MeasurementId: 'G-1QJKZJ7V0T',
+      clarityProjectId: 'vqjuz4ha1k'
+    };
+  </script>
+  <script src="/assets/website-analytics.js"></script>
+  <script src="/assets/growth-analytics.js"></script>
 </body>
 </html>

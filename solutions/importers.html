@@ -75,23 +75,40 @@
     </section>
     <section class="mb-12">
       <h2 class="text-2xl font-semibold text-slate-900 mb-4">Importer pain points</h2>
-      <p class="text-slate-600">Content placeholder.</p>
+      <p class="text-slate-600 mb-3">Most importers do not lose margin on sales volume. They lose margin on hidden landed costs, poor allocation logic, and delayed visibility. Supplier invoices, freight invoices, duty, and clearance charges are often spread manually across SKUs, and small errors compound across every shipment.</p>
+      <p class="text-slate-600 mb-3">By the time finance reconciles true costs, pricing decisions were already made using incomplete numbers. That means teams unintentionally underprice products, overstock low-margin SKUs, and miss reorder windows for high-demand lines.</p>
+      <p class="text-slate-600">FlowIQ fixes this by giving importers one operating view from PO to receipt, with shipment-level and SKU-level cost attribution built into the workflow.</p>
     </section>
     <section class="mb-12">
       <h2 class="text-2xl font-semibold text-slate-900 mb-4">Why spreadsheets fail</h2>
-      <p class="text-slate-600">Content placeholder.</p>
+      <p class="text-slate-600 mb-3">Spreadsheets are flexible, but they are not durable import infrastructure. They break under version drift, handovers, and growing volume. Teams duplicate formulas, hardcode rates, and maintain separate files for pricing, stock, and shipment costing, which creates reporting mismatch.</p>
+      <p class="text-slate-600 mb-3">Spreadsheet models also struggle with mixed container loads, split shipments, partial receipts, and FX variance across payment dates. These are exactly the cases that matter most for profitability.</p>
+      <p class="text-slate-600">FlowIQ replaces this with controlled allocation rules, auditable records, and live margin visibility connected to the same operational data your team already captures.</p>
     </section>
     <section class="mb-12">
       <h2 class="text-2xl font-semibold text-slate-900 mb-4">How FlowIQ handles freight, duty, clearance, FX</h2>
-      <p class="text-slate-600">Content placeholder.</p>
+      <p class="text-slate-600 mb-3">FlowIQ captures all shipment costs in one import job: supplier value, freight components, customs duty, port and clearing charges, insurance, and FX differences. Costs can be allocated using value, weight, CBM, or custom logic depending on your commercial model.</p>
+      <p class="text-slate-600 mb-3">When stock is receipted, landed cost is applied at SKU level so inventory valuation and margin reporting stay aligned. No post-hoc patching required.</p>
+      <p class="text-slate-600">If you want a quick estimate first, start with the <a href="/tools/landed-cost-calculator.html" class="text-orange-600 hover:underline font-medium">Landed Cost Calculator</a> or <a href="/tools/import-cost-calculator.html" class="text-orange-600 hover:underline font-medium">Import Cost Calculator</a>.</p>
     </section>
     <section class="mb-12">
       <h2 class="text-2xl font-semibold text-slate-900 mb-4">Workflow: PO → Import → Inventory → Margin</h2>
-      <p class="text-slate-600">Content placeholder.</p>
+      <ol class="list-decimal list-inside text-slate-600 space-y-2">
+        <li>Create and approve purchase orders with supplier terms and expected lead times.</li>
+        <li>Track import jobs and attach freight, duty, and clearing charges as they occur.</li>
+        <li>Receive stock with landed cost allocated per SKU and posted to inventory valuation.</li>
+        <li>Monitor gross margin by product, shipment, customer, and channel in real time.</li>
+        <li>Use ForecastIQ to plan reorders based on demand and lead-time risk.</li>
+      </ol>
     </section>
     <section class="mb-12">
       <h2 class="text-2xl font-semibold text-slate-900 mb-4">FAQs</h2>
-      <p class="text-slate-600">Content placeholder (5–8 FAQs).</p>
+      <div class="space-y-4">
+        <div><h3 class="font-semibold text-slate-900">Can FlowIQ handle multi-currency imports?</h3><p class="text-slate-600">Yes. FlowIQ supports FX-aware import workflows so you can include exchange-rate impact in landed cost and reporting.</p></div>
+        <div><h3 class="font-semibold text-slate-900">Can we allocate by CBM and weight?</h3><p class="text-slate-600">Yes. You can use multiple allocation methods depending on shipment structure and costing policy.</p></div>
+        <div><h3 class="font-semibold text-slate-900">Will this replace our spreadsheet process?</h3><p class="text-slate-600">Yes. Most clients move from manual spreadsheet costing to standardized import workflows in FlowIQ with auditable history.</p></div>
+        <div><h3 class="font-semibold text-slate-900">Does FlowIQ integrate with Xero?</h3><p class="text-slate-600">Yes. Journals and accounting data can be synced to keep finance and operations aligned.</p></div>
+      </div>
     </section>
     <section class="text-center pt-8 pb-4 border-t border-slate-200">
       <h2 class="text-2xl font-semibold text-slate-900 mb-4">See FlowIQ in Action</h2>
@@ -122,5 +139,14 @@
     });
     if (typeof lucide !== 'undefined') lucide.createIcons();
   </script>
+  <script>
+    window.FlowIQAnalyticsConfig = {
+      gtmContainerId: 'GTM-5L45DPGL',
+      ga4MeasurementId: 'G-1QJKZJ7V0T',
+      clarityProjectId: 'vqjuz4ha1k'
+    };
+  </script>
+  <script src="/assets/website-analytics.js"></script>
+  <script src="/assets/growth-analytics.js"></script>
 </body>
 </html>
