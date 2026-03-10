@@ -190,16 +190,15 @@
       sameAs: ['https://linkedin.com/company/flowiq']
     };
 
-    var softwareSchema = {
+    var websiteSchema = {
       '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
+      '@type': 'WebSite',
       name: 'FlowIQ',
-      applicationCategory: 'BusinessApplication',
-      operatingSystem: 'Web',
-      offers: {
-        '@type': 'Offer',
-        price: '29',
-        priceCurrency: 'USD'
+      url: 'https://www.flowiq.info/',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: 'https://www.flowiq.info/glossary/{search_term_string}.html',
+        'query-input': 'required name=search_term_string'
       }
     };
 
@@ -209,11 +208,13 @@
     orgScript.text = JSON.stringify(orgSchema);
     document.head.appendChild(orgScript);
 
-    var softwareScript = document.createElement('script');
-    softwareScript.id = 'flowiq-software-schema';
-    softwareScript.type = 'application/ld+json';
-    softwareScript.text = JSON.stringify(softwareSchema);
-    document.head.appendChild(softwareScript);
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+      var websiteScript = document.createElement('script');
+      websiteScript.id = 'flowiq-website-schema';
+      websiteScript.type = 'application/ld+json';
+      websiteScript.text = JSON.stringify(websiteSchema);
+      document.head.appendChild(websiteScript);
+    }
 
     if (window.location.pathname.indexOf('calculator') >= 0) {
       var toolSchema = {
