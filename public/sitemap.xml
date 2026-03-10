@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Canonical host for GSC: https://www.flowiq.info - all loc must use www -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.flowiq.info/</loc></url>
   <url><loc>https://www.flowiq.info/pricing.html</loc></url>
-  <url><loc>https://www.flowiq.info/solutions/</loc></url>
-  <url><loc>https://www.flowiq.info/solutions/wholesale-distribution.html</loc></url>
-  <url><loc>https://www.flowiq.info/public/roadmap.html</loc></url>
-  <url><loc>https://www.flowiq.info/solutions/freight-logistics.html</loc></url>
+  <url><loc>https://www.flowiq.info/book-demo.html</loc></url>
+  <url><loc>https://www.flowiq.info/modules.html</loc></url>
   <url><loc>https://www.flowiq.info/import-erp-software.html</loc></url>
   <url><loc>https://www.flowiq.info/inventory-software-for-importers.html</loc></url>
   <url><loc>https://www.flowiq.info/inventory-forecasting-software.html</loc></url>
   <url><loc>https://www.flowiq.info/manufacturing-inventory-software.html</loc></url>
   <url><loc>https://www.flowiq.info/freight-forwarder-software.html</loc></url>
   <url><loc>https://www.flowiq.info/shipping-cost-calculator.html</loc></url>
+  <url><loc>https://www.flowiq.info/solutions/</loc></url>
+  <url><loc>https://www.flowiq.info/solutions/importers.html</loc></url>
+  <url><loc>https://www.flowiq.info/solutions/distributors.html</loc></url>
+  <url><loc>https://www.flowiq.info/solutions/manufacturers.html</loc></url>
+  <url><loc>https://www.flowiq.info/solutions/multi-branch.html</loc></url>
+  <url><loc>https://www.flowiq.info/use-cases/</loc></url>
+  <url><loc>https://www.flowiq.info/use-cases/true-landed-cost.html</loc></url>
+  <url><loc>https://www.flowiq.info/use-cases/supplier-price-creep.html</loc></url>
   <url><loc>https://www.flowiq.info/tools/</loc></url>
   <url><loc>https://www.flowiq.info/tools/landed-cost-calculator.html</loc></url>
   <url><loc>https://www.flowiq.info/tools/import-cost-calculator.html</loc></url>
@@ -21,11 +26,14 @@
   <url><loc>https://www.flowiq.info/tools/import-duty-calculator.html</loc></url>
   <url><loc>https://www.flowiq.info/tools/supply-chain-profit-calculator.html</loc></url>
   <url><loc>https://www.flowiq.info/tools/inventory-forecast-calculator.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/inventoryiq.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/purchaseiq.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/manufacturing.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/invoiceiq.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/reportsiq.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/journaliq.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/taskiq.html</loc></url>
+  <url><loc>https://www.flowiq.info/compare/</loc></url>
+  <url><loc>https://www.flowiq.info/compare/flowiq-vs-spreadsheets.html</loc></url>
+  <url><loc>https://www.flowiq.info/compare/flowiq-vs-odoo.html</loc></url>
+  <url><loc>https://www.flowiq.info/compare/flowiq-vs-legacy-erp.html</loc></url>
+  <url><loc>https://www.flowiq.info/glossary/</loc></url>
+  <url><loc>https://www.flowiq.info/glossary/landed-cost.html</loc></url>
+  <url><loc>https://www.flowiq.info/glossary/incoterms.html</loc></url>
+  <url><loc>https://www.flowiq.info/glossary/customs-duty.html</loc></url>
+  <url><loc>https://www.flowiq.info/glossary/fifo.html</loc></url>
+  <url><loc>https://www.flowiq.info/glossary/cbm.html</loc></url>
 </urlset>

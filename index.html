@@ -8,13 +8,14 @@
   <meta name="description"
     content="FlowIQ helps importers calculate true landed cost, manage inventory, and replace spreadsheets with real-time import intelligence." />
   <link rel="canonical" href="https://www.flowiq.info/" />
-  <link rel="icon" type="image/png" href="/flowiq-logo.png">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+  <link rel="icon" type="image/png" href="/flowiq-logo.png?v=2">
+  <link rel="shortcut icon" href="/favicon.ico?v=2">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="/flowiq-light.css?v=2">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
     body {
       font-family: 'Inter', sans-serif;
@@ -32,14 +33,41 @@
       background-color: #ea580c;
     }
 
-    /* Smooth Scroll */
     html {
       scroll-behavior: smooth;
     }
-    .module-image-modal { display: none; align-items: center; justify-content: center; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.75); padding: 1rem; }
-    .module-image-modal.is-open { display: flex; }
-    .module-image-modal .modal-content { position: relative; max-width: 90vw; max-height: 90vh; display: flex; flex-direction: column; align-items: center; }
-    .module-image-modal img { max-width: 100%; max-height: 85vh; object-fit: contain; border-radius: 0.5rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+
+    .module-image-modal {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.75);
+      padding: 1rem;
+    }
+
+    .module-image-modal.is-open {
+      display: flex;
+    }
+
+    .module-image-modal .modal-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .module-image-modal img {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 0.75rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/","description":"Inventory and import cost software focused on landed cost accuracy, margin visibility, and scalable operations for importers, distributors, and manufacturers."}
@@ -47,11 +75,12 @@
   <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 
-<body class="bg-slate-50 text-slate-900 selection:bg-orange-100 selection:text-orange-900 overflow-x-hidden">
-  <!-- Dynamic Background Mesh -->
+<body class="marketing-shell bg-slate-50 text-slate-900 selection:bg-orange-100 selection:text-orange-900 overflow-x-hidden">
+  <div class="cursor-glow" aria-hidden="true"></div>
   <div
     class="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.15),rgba(255,255,255,0))]">
   </div>
+
   <nav
     class="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm supports-[backdrop-filter]:bg-white/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,8 +112,16 @@
             class="bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-orange-500/20 transition-all hover:shadow-orange-500/40 hover:-translate-y-0.5">Start
             Free Trial</a>
         </div>
-        <button id="mobileMenuBtn" class="md:hidden flex-shrink-0 p-3 -mr-1 text-slate-600 hover:text-slate-900 touch-manipulation" aria-label="Open menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        <button id="mobileMenuBtn"
+          class="md:hidden flex-shrink-0 p-3 -mr-1 text-slate-600 hover:text-slate-900 touch-manipulation"
+          aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"
+            aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
         </button>
       </div>
     </div>
@@ -107,559 +144,323 @@
     </div>
   </nav>
 
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
-    <!-- Hero -->
-    <!-- Hero -->
-    <section id="hero" class="text-center mb-20 md:mb-32 relative">
-      <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
-          Calculate your true import costs instantly
-        </h1>
-        <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-          FlowIQ automatically calculates landed costs, freight expenses, and supply chain profitability for importers
-          and manufacturers, so you can price confidently and protect margin.
-        </p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-          <a href="/signup" data-analytics-event="trial_signup_click"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-orange-500/20 hover:shadow-2xl hover:shadow-orange-500/30 hover:-translate-y-1 transition-all">
-            Start Free Trial
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-          </a>
-          <a href="/tools/" data-analytics-event="calculator_use"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-900 px-8 py-4 rounded-xl font-bold text-lg border border-slate-200 shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
-            Try Free Calculators
-            <i data-lucide="calculator" class="w-5 h-5 text-orange-600"></i>
-          </a>
-          <a href="/book-demo.html" data-analytics-event="demo_request"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 px-8 py-4 rounded-xl font-bold text-lg shadow-sm transition-all">
-            Book Demo
-            <i data-lucide="calendar" class="w-5 h-5 text-slate-700"></i>
-          </a>
-          <p class="mt-4 sm:mt-0 text-slate-600 font-medium">
-            <a href="/solutions/importers.html" class="text-orange-600 hover:underline">For Importers</a>
-            <span class="mx-2">·</span>
-            <a href="/use-cases/true-landed-cost.html" class="text-orange-600 hover:underline">True Landed Cost</a>
-            <span class="mx-2">·</span>
-            <a href="/tools/landed-cost-calculator.html" class="text-orange-600 hover:underline">Landed Cost
-              Calculator</a>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
+    <section id="hero" class="relative mb-24">
+      <div class="mesh-lines"></div>
+      <div class="editorial-grid editorial-grid--hero gap-10">
+        <div data-aos="fade-up" data-aos-duration="900">
+          <span class="section-kicker">Operational Intelligence</span>
+          <h1 class="mt-6 text-5xl md:text-7xl font-black text-slate-900 tracking-[-0.04em] leading-[0.95]">
+            Landed cost clarity
+            <span class="block text-freight-orange">with a proper point of view.</span>
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg md:text-xl text-slate-600 leading-relaxed">
+            FlowIQ turns messy imports, disconnected stock data, and margin guesswork into one control layer for importers,
+            distributors, and manufacturers who are done running on spreadsheets.
           </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a href="/signup" data-analytics-event="trial_signup_click"
+              class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-orange-500/20 hover:-translate-y-1 transition-all">
+              Start Free Trial
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+            <a href="/book-demo.html" data-analytics-event="demo_request"
+              class="inline-flex items-center justify-center gap-2 glass-panel px-8 py-4 rounded-full font-bold text-lg text-slate-900 hover:-translate-y-0.5 transition-all">
+              Book Demo
+              <i data-lucide="calendar" class="w-5 h-5 text-freight-orange"></i>
+            </a>
+          </div>
+          <div class="mt-8 hero-chip-row">
+            <span class="hero-chip"><i data-lucide="ship" class="w-4 h-4"></i> True landed cost per shipment</span>
+            <span class="hero-chip"><i data-lucide="package-check" class="w-4 h-4"></i> Stock, purchasing, and margin in
+              one flow</span>
+            <span class="hero-chip"><i data-lucide="badge-check" class="w-4 h-4"></i> Local support. Live fast.</span>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-4 text-sm font-semibold text-slate-600">
+            <a href="/solutions/importers.html" class="hover:text-orange-600 transition-colors">For Importers</a>
+            <span>·</span>
+            <a href="/use-cases/true-landed-cost.html" class="hover:text-orange-600 transition-colors">True Landed Cost</a>
+            <span>·</span>
+            <a href="/tools/landed-cost-calculator.html" class="hover:text-orange-600 transition-colors">Free Landed Cost
+              Calculator</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Hero Visual -->
-      <div class="relative max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
-        <!-- Glow Effect -->
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-orange-400 via-pink-400 to-blue-500 rounded-2xl blur-[40px] opacity-20 animate-pulse">
-        </div>
-        <div class="absolute -inset-4 bg-orange-500/10 rounded-[2rem] blur-2xl -z-10"></div>
-
-        <img src="assets/dashboard-preview.png" alt="FlowIQ Dashboard Interface"
-          class="relative rounded-xl shadow-2xl border border-slate-200/50 w-full bg-white ring-1 ring-slate-900/5 items-center justify-center flex overflow-hidden">
-      </div>
-
-      <div class="mt-12 flex flex-wrap justify-center gap-4 text-sm font-medium text-slate-500" data-aos="fade-in"
-        data-aos-delay="400">
-        <span class="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-100 shadow-sm"><i
-            data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Local Support</span>
-        <span class="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-100 shadow-sm"><i
-            data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Setup in 24hrs</span>
-        <span class="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-100 shadow-sm"><i
-            data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> No Credit Card Required</span>
-      </div>
-    </section>
-
-    <!-- Problems you face -->
-    <section class="mb-24">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">The Problems You Face Every Day</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto text-lg">Running an import or distribution business shouldn't feel
-          like fighting fires.</p>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Card 1 -->
-        <div
-          class="group p-6 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="0">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
-              <i data-lucide="file-spreadsheet"
-                class="w-6 h-6 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-2 text-lg">Spreadsheet chaos</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Costs scattered across files, no single source of truth,
-                manual errors.</p>
-            </div>
+        <div class="hero-stack" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000">
+          <div class="hero-surface hero-surface--note glass-panel is-magnetic" data-depth="18">
+            <p class="text-xs font-black uppercase tracking-[0.28em] text-orange-600">Workflow</p>
+            <p class="mt-3 text-sm font-semibold text-slate-900">Purchase order → shipment costing → inventory → invoice
+              margin.</p>
+            <p class="mt-2 text-sm text-slate-600">One connected operating story instead of five disconnected tools.</p>
           </div>
-        </div>
-        <!-- Card 2 -->
-        <div
-          class="group p-6 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="100">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
-              <i data-lucide="trending-down"
-                class="w-6 h-6 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-2 text-lg">Margin mystery</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">True landed costs are guesses; margins unknown until
-                month-end.</p>
-            </div>
+          <div class="hero-surface hero-surface--main module-thumb-wrap is-magnetic" data-depth="10" role="button" tabindex="0"
+            aria-label="View full screenshot">
+            <img src="assets/dashboard-preview.png" alt="FlowIQ dashboard and landed cost workspace"
+              class="h-full w-full object-cover bg-white">
           </div>
-        </div>
-        <!-- Card 3 -->
-        <div
-          class="group p-6 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="200">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
-              <i data-lucide="package" class="w-6 h-6 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-2 text-lg">Supply chain blindness</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Zero visibility on shipments on the water; freight
-                allocation is a nightmare.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Card 4 -->
-        <div
-          class="group p-6 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="300">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
-              <i data-lucide="puzzle" class="w-6 h-6 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-2 text-lg">System fragmentation</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Too many tools that don't talk; manual re-entry
-                everywhere.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Card 5 -->
-        <div
-          class="group p-6 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="400">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
-              <i data-lucide="bar-chart-2" class="w-6 h-6 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-2 text-lg">Growth constraints</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Can't scale without more staff; decisions delayed by
-                lack of data.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Card 6 -->
-        <div
-          class="group p-6 rounded-2xl border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="500">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
-              <i data-lucide="clock" class="w-6 h-6 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-2 text-lg">Time drain</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Weeks to close books; team hunting for information.</p>
+          <div class="hero-surface hero-surface--metric glass-panel is-magnetic" data-depth="22">
+            <p class="text-xs font-black uppercase tracking-[0.28em] text-orange-600">What changes</p>
+            <div class="mt-3 grid gap-3">
+              <div class="metric-block">
+                <p class="text-3xl font-black text-slate-900">2-day</p>
+                <p class="mt-1 text-sm text-slate-600">month-end instead of a week of reconciliations</p>
+              </div>
+              <div class="metric-block">
+                <p class="text-3xl font-black text-slate-900">Live</p>
+                <p class="mt-1 text-sm text-slate-600">margin visibility before pricing decisions are made</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- The FlowIQ solution -->
-    <section class="mb-24 rounded-3xl bg-slate-900 relative overflow-hidden p-10 md:p-16 text-center text-white"
-      data-aos="fade-up">
-      <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-orange-500/20 blur-[100px] rounded-full"></div>
-      <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-blue-500/20 blur-[100px] rounded-full"></div>
+    <section class="mb-24 editorial-grid lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] gap-8 items-start">
+      <div class="story-card p-8 md:p-10" data-aos="fade-up">
+        <span class="section-kicker">The Tension</span>
+        <h2 class="mt-5 text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Your current workflow looks busy,
+          but it is structurally blind.</h2>
+        <div class="mt-8 grid sm:grid-cols-2 gap-4">
+          <div class="glass-panel rounded-2xl p-5">
+            <p class="text-xs font-black uppercase tracking-[0.24em] text-orange-600">Before FlowIQ</p>
+            <p class="mt-3 text-lg font-bold text-slate-900">Spreadsheet chaos</p>
+            <p class="mt-2 text-sm text-slate-600">Freight, FX, supplier pricing, and stock decisions are split across files
+              and inboxes.</p>
+          </div>
+          <div class="glass-panel rounded-2xl p-5">
+            <p class="text-xs font-black uppercase tracking-[0.24em] text-orange-600">Margin risk</p>
+            <p class="mt-3 text-lg font-bold text-slate-900">Too late to react</p>
+            <p class="mt-2 text-sm text-slate-600">You only find the leak after goods are sold or month-end closes.</p>
+          </div>
+          <div class="glass-panel rounded-2xl p-5">
+            <p class="text-xs font-black uppercase tracking-[0.24em] text-orange-600">Ops friction</p>
+            <p class="mt-3 text-lg font-bold text-slate-900">Manual handoffs everywhere</p>
+            <p class="mt-2 text-sm text-slate-600">Teams keep re-entering the same operational data into different systems.
+            </p>
+          </div>
+          <div class="glass-panel rounded-2xl p-5">
+            <p class="text-xs font-black uppercase tracking-[0.24em] text-orange-600">Leadership pain</p>
+            <p class="mt-3 text-lg font-bold text-slate-900">No control room</p>
+            <p class="mt-2 text-sm text-slate-600">There is no single surface showing what is happening, what slipped, and
+              what to do next.</p>
+          </div>
+        </div>
+      </div>
 
-      <div class="relative z-10 max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">The FlowIQ Solution</h2>
-        <p class="text-slate-300 text-lg md:text-xl leading-relaxed">One unified platform that replaces spreadsheets,
-          disconnected tools, and guesswork with automated intelligence, real-time visibility, and complete control —
-          from purchase orders to profitability.</p>
+      <div class="feature-rail" data-aos="fade-up" data-aos-delay="120">
+        <article>
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Built For Real Operations</p>
+          <h3 class="mt-2 text-xl font-black text-slate-900">FlowIQ fits businesses where timing, costing, and stock movement all affect margin.</h3>
+          <p class="mt-3 text-sm text-slate-600">It gives operators and managers a clearer picture of what is happening now and what needs attention next.</p>
+        </article>
+        <article>
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">What Gets Cleaner</p>
+          <p class="mt-3 text-sm text-slate-600">Shipment costing, inventory control, and pricing decisions stop living in disconnected files and side processes.</p>
+        </article>
+        <article>
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">What Teams Get</p>
+          <p class="mt-3 text-sm text-slate-600">A calmer workflow, clearer accountability, and faster answers when something shifts in the supply chain.</p>
+        </article>
       </div>
     </section>
 
-    <!-- Modules -->
+    <section class="mb-24 story-card p-8 md:p-12" data-aos="fade-up">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div class="max-w-3xl">
+          <span class="section-kicker">The FlowIQ System</span>
+          <h2 class="mt-5 text-3xl md:text-4xl font-black text-slate-900 tracking-tight">One operating surface for
+            purchasing, inventory, landed cost, forecasting, and profitability.</h2>
+        </div>
+        <div class="accent-divider"></div>
+      </div>
+      <div class="mt-8 module-stat-strip">
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Step 01</p>
+          <p class="mt-3 text-lg font-bold text-slate-900">Capture the shipment story</p>
+          <p class="mt-2 text-sm text-slate-600">From PO to freight and FX, every cost has context before goods land.</p>
+        </div>
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Step 02</p>
+          <p class="mt-3 text-lg font-bold text-slate-900">Turn movement into visibility</p>
+          <p class="mt-2 text-sm text-slate-600">Inventory, sales, margins, and exceptions all stay connected instead of
+            drifting apart.</p>
+        </div>
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Step 03</p>
+          <p class="mt-3 text-lg font-bold text-slate-900">Make smarter next moves</p>
+          <p class="mt-2 text-sm text-slate-600">Forecast demand, defend price, and decide with data while there is still
+            time to act.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="modules" class="mb-24">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">Complete Module Suite</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto text-lg">Every module works together to give you total control over
-          operations.</p>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        <a href="/modules.html#dashboardiq"
-          class="group flex flex-col rounded-2xl border border-slate-100 bg-white hover:border-orange-200 hover:bg-orange-50/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="0">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-dashboardiq.png" alt="DashboardIQ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors">
-              <i data-lucide="layout-dashboard" class="w-5 h-5 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">DashboardIQ</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Command center for performance visibility, KPIs, and branch comparison.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/modules/companiesiq.html"
-          class="group flex flex-col rounded-2xl border border-slate-100 bg-white hover:border-orange-200 hover:bg-orange-50/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="50">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-companiesiq.png" alt="CompaniesIQ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors">
-              <i data-lucide="building-2" class="w-5 h-5 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">CompaniesIQ</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Unified customer and supplier management with complete history.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/modules/inventoryiq.html"
-          class="group flex flex-col rounded-2xl border border-slate-100 bg-white hover:border-orange-200 hover:bg-orange-50/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="100">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-inventoryiq.png" alt="InventoryIQ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors">
-              <i data-lucide="package" class="w-5 h-5 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">InventoryIQ</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Multi-warehouse stock with FIFO costing, BOM, and kitsets.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/modules/purchaseiq.html"
-          class="group flex flex-col rounded-2xl border border-slate-100 bg-white hover:border-orange-200 hover:bg-orange-50/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="150">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-purchaseiq.png" alt="PurchaseIQ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors">
-              <i data-lucide="shopping-cart" class="w-5 h-5 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">PurchaseIQ</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Purchase orders and supplier planning.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/modules/invoiceiq.html"
-          class="group flex flex-col rounded-2xl border border-slate-100 bg-white hover:border-orange-200 hover:bg-orange-50/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="200">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-invoiceiq.png" alt="InvoiceIQ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors">
-              <i data-lucide="file-text" class="w-5 h-5 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">InvoiceIQ</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Quotes to invoices, credit notes, payments, Xero sync.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/modules.html#importiq"
-          class="group flex flex-col rounded-2xl border-2 border-orange-200 bg-orange-50/50 hover:border-orange-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="250">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-importiq.png" alt="ImportIQ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
-              <i data-lucide="ship" class="w-5 h-5 text-orange-600"></i>
-            </div>
-            <div>
-              <span class="text-[10px] font-bold text-orange-600 uppercase tracking-wider bg-white/50 px-2 py-0.5 rounded-full">Flagship</span>
-              <h3 class="font-bold text-slate-900 mb-1 mt-1">ImportIQ</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Import shipment management and landed cost tracking.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/modules.html#exportiq"
-          class="group flex flex-col rounded-2xl border-2 border-orange-200 bg-orange-50/50 hover:border-orange-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="300">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-exportiq.png" alt="ExportIQ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
-              <i data-lucide="plane" class="w-5 h-5 text-orange-600"></i>
-            </div>
-            <div>
-              <span class="text-[10px] font-bold text-orange-600 uppercase tracking-wider bg-white/50 px-2 py-0.5 rounded-full">Flagship</span>
-              <h3 class="font-bold text-slate-900 mb-1 mt-1">ExportIQ</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Export shipment management and FX inflow tracking.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/modules.html#forecastiq"
-          class="group flex flex-col rounded-2xl border-2 border-orange-200 bg-orange-50/50 hover:border-orange-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="350">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-forecastiq.png" alt="ForecastIQ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
-              <i data-lucide="trending-up" class="w-5 h-5 text-orange-600"></i>
-            </div>
-            <div>
-              <span class="text-[10px] font-bold text-orange-600 uppercase tracking-wider bg-white/50 px-2 py-0.5 rounded-full">Flagship</span>
-              <h3 class="font-bold text-slate-900 mb-1 mt-1">ForecastIQ</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Advanced demand forecasting and inventory planning.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/modules.html#priceiq"
-          class="group flex flex-col rounded-2xl border border-slate-100 bg-white hover:border-orange-200 hover:bg-orange-50/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="400">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-priceiq.png" alt="PriceIQ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors">
-              <i data-lucide="dollar-sign" class="w-5 h-5 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">PriceIQ</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Manage product pricing, margins and custom price lists in one place.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/modules.html#projectsiq"
-          class="group flex flex-col rounded-2xl border border-slate-100 bg-white hover:border-orange-200 hover:bg-orange-50/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="450">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-projectsiq.png" alt="ProjectsIQ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors">
-              <i data-lucide="folder-kanban" class="w-5 h-5 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">ProjectsIQ</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Job costing and project management for contractors.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/modules/manufacturing.html"
-          class="group flex flex-col rounded-2xl border border-slate-100 bg-white hover:border-orange-200 hover:bg-orange-50/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="500">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-manufacturing.png" alt="Manufacturing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors">
-              <i data-lucide="factory" class="w-5 h-5 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">Manufacturing</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">BOM, production jobs, WIP, manufacturing cost calculation.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/modules/reportsiq.html"
-          class="group flex flex-col rounded-2xl border border-slate-100 bg-white hover:border-orange-200 hover:bg-orange-50/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="550">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-reportsiq.png" alt="ReportsIQ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors">
-              <i data-lucide="bar-chart-2" class="w-5 h-5 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">ReportsIQ</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Generate and view operational and financial reports.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/modules/journaliq.html"
-          class="group flex flex-col rounded-2xl border border-slate-100 bg-white hover:border-orange-200 hover:bg-orange-50/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="600">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-journaliq.png" alt="JournalIQ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors">
-              <i data-lucide="book-open" class="w-5 h-5 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">JournalIQ</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Manage journal entries and sync with Xero.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/modules/taskiq.html"
-          class="group flex flex-col rounded-2xl border border-slate-100 bg-white hover:border-orange-200 hover:bg-orange-50/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="650">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-taskiq.png" alt="TaskIQ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors">
-              <i data-lucide="check-square" class="w-5 h-5 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">TaskIQ</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Team tasks and workflow automation.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/modules.html#warrantyiq"
-          class="group flex flex-col rounded-2xl border border-slate-100 bg-white hover:border-orange-200 hover:bg-orange-50/30 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          data-aos="fade-up" data-aos-delay="700">
-          <div class="module-thumb-wrap relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-warrantyiq.png" alt="WarrantyIQ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="flex items-start gap-4 p-6">
-            <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors">
-              <i data-lucide="shield-check" class="w-5 h-5 text-orange-600 group-hover:text-white transition-colors"></i>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">WarrantyIQ</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Manage warranty claims and customer support.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <p class="text-center mt-12" data-aos="fade-in" data-aos-delay="200">
-        <a href="/modules.html"
-          class="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-bold hover:underline">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-12" data-aos="fade-up">
+        <div class="max-w-3xl">
+          <span class="section-kicker">Flagship Modules</span>
+          <h2 class="mt-5 text-3xl md:text-4xl font-black text-slate-900 tracking-tight">The parts people actually buy are
+            the parts that need to look serious.</h2>
+        </div>
+        <a href="/modules.html" class="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-bold">
           View all modules
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
-      </p>
+      </div>
+
+      <div class="grid gap-6">
+        <article class="module-feature story-card p-6 md:p-8" data-aos="fade-up">
+          <div class="module-feature__copy">
+            <span class="section-kicker">ImportIQ</span>
+            <h3 class="mt-5 text-3xl font-black text-slate-900">The landed cost engine that stops margin leakage before it
+              starts.</h3>
+            <p class="mt-4 text-base text-slate-600 leading-relaxed">Track supplier pricing, freight, duty, and FX inside
+              the same workflow so your landed cost is not a spreadsheet guess after the fact.</p>
+            <ul class="checklist mt-6">
+              <li>Shipment-level costing with operational context</li>
+              <li>Cost allocation that stays attached to inventory movement</li>
+              <li>Cleaner handoff into pricing and profitability analysis</li>
+            </ul>
+            <div class="mt-6">
+              <a href="/modules.html#importiq" class="inline-flex items-center gap-2 text-orange-600 font-bold">Explore
+                ImportIQ <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+          <div class="module-feature__visual module-thumb-wrap rounded-[1.5rem] overflow-hidden border border-slate-200 cursor-pointer"
+            role="button" tabindex="0" aria-label="View full screenshot">
+            <img src="/assets/img/modules/thumb-importiq.png" alt="ImportIQ module screenshot"
+              class="w-full h-full object-cover">
+          </div>
+        </article>
+
+        <article class="module-feature story-card p-6 md:p-8" data-aos="fade-up">
+          <div class="module-feature__copy">
+            <span class="section-kicker">InventoryIQ</span>
+            <h3 class="mt-5 text-3xl font-black text-slate-900">Stock control that understands cost, not just quantity.</h3>
+            <p class="mt-4 text-base text-slate-600 leading-relaxed">FIFO, multi-warehouse movement, BOM, and kitsets are
+              already hard. FlowIQ keeps the inventory picture connected to what it is worth and what it is about to do.</p>
+            <ul class="checklist mt-6">
+              <li>Multi-warehouse stock with cleaner operational discipline</li>
+              <li>Transfers and manufacturing tied to the same cost story</li>
+              <li>Less chasing, less reconciliation, less “which sheet is right?”</li>
+            </ul>
+            <div class="mt-6">
+              <a href="/modules/inventoryiq.html" class="inline-flex items-center gap-2 text-orange-600 font-bold">Explore
+                InventoryIQ <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+          <div class="module-feature__visual module-thumb-wrap rounded-[1.5rem] overflow-hidden border border-slate-200 cursor-pointer"
+            role="button" tabindex="0" aria-label="View full screenshot">
+            <img src="/assets/img/modules/thumb-inventoryiq.png" alt="InventoryIQ module screenshot"
+              class="w-full h-full object-cover">
+          </div>
+        </article>
+
+        <article class="module-feature story-card p-6 md:p-8" data-aos="fade-up">
+          <div class="module-feature__copy">
+            <span class="section-kicker">ForecastIQ</span>
+            <h3 class="mt-5 text-3xl font-black text-slate-900">Planning that moves from hindsight to next decision.</h3>
+            <p class="mt-4 text-base text-slate-600 leading-relaxed">ForecastIQ gives buyers and operators a real reason to
+              stay inside the system: it translates history and movement into better replenishment and pricing decisions.
+            </p>
+            <ul class="checklist mt-6">
+              <li>Demand planning linked to real inventory history</li>
+              <li>Less overstock, fewer stockouts, better buying confidence</li>
+              <li>A more persuasive story for why the platform should win</li>
+            </ul>
+            <div class="mt-6">
+              <a href="/modules.html#forecastiq" class="inline-flex items-center gap-2 text-orange-600 font-bold">Explore
+                ForecastIQ <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+          <div class="module-feature__visual module-thumb-wrap rounded-[1.5rem] overflow-hidden border border-slate-200 cursor-pointer"
+            role="button" tabindex="0" aria-label="View full screenshot">
+            <img src="/assets/img/modules/thumb-forecastiq.png" alt="ForecastIQ module screenshot"
+              class="w-full h-full object-cover">
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- Who it's for + Use cases -->
-    <section class="mb-20 grid sm:grid-cols-2 gap-6">
-      <a href="/who-flowiq-is-for.html"
-        class="p-6 rounded-xl border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/20 transition-colors">
-        <h2 class="text-xl font-bold text-slate-900 mb-2">Who FlowIQ is For</h2>
-        <p class="text-slate-600 mb-4">Importers, distributors, multi-branch inventory businesses, and light
-          manufacturing — built for real decision intelligence.</p>
-        <span class="text-orange-600 font-medium text-sm">Learn more →</span>
-      </a>
-      <a href="/use-cases/"
-        class="p-6 rounded-xl border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/20 transition-colors">
-        <h2 class="text-xl font-bold text-slate-900 mb-2">Use Cases</h2>
-        <p class="text-slate-600 mb-4">True landed cost per SKU, supplier price creep, margin tracking, inventory
-          reorder and forecasting.</p>
-        <span class="text-orange-600 font-medium text-sm">Explore use cases →</span>
-      </a>
-    </section>
-
-    <!-- Why FlowIQ stands apart -->
-    <section class="mb-20">
-      <h2 class="text-2xl font-bold text-slate-900 text-center mb-8">Why FlowIQ Stands Apart</h2>
-      <div class="grid sm:grid-cols-3 gap-6">
-        <div class="p-6 rounded-xl border border-slate-200 bg-white">
-          <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center mb-4">
-            <i data-lucide="target" class="w-5 h-5 text-orange-600"></i>
-          </div>
-          <h3 class="font-semibold text-slate-900 mb-2">Operational excellence</h3>
-          <ul class="text-slate-600 text-sm space-y-1">
-            <li>Live in 24 hours — no IT required</li>
-            <li>Role-based access</li>
-            <li>Multi-branch support</li>
-            <li>Guided workflows</li>
-          </ul>
+    <section class="mb-24 editorial-grid lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] gap-8 items-start">
+      <div class="story-card p-8 md:p-10" data-aos="fade-up">
+        <span class="section-kicker">Why It Converts</span>
+        <h2 class="mt-5 text-3xl font-black text-slate-900">Confidence matters before rollout.</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">Teams adopt faster when the product already feels organized, trustworthy, and operationally mature from the first visit.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <span class="proof-chip"><i data-lucide="shield-check" class="w-4 h-4"></i> Bank-level security</span>
+          <span class="proof-chip"><i data-lucide="clock-3" class="w-4 h-4"></i> Live in 24 hours</span>
+          <span class="proof-chip"><i data-lucide="headphones" class="w-4 h-4"></i> Local support</span>
         </div>
-        <div class="p-6 rounded-xl border border-slate-200 bg-white">
-          <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center mb-4">
-            <i data-lucide="wallet" class="w-5 h-5 text-orange-600"></i>
+      </div>
+      <div class="story-card p-8 md:p-10" data-aos="fade-up" data-aos-delay="120">
+        <span class="section-kicker">Integrations</span>
+        <h2 class="mt-5 text-3xl font-black text-slate-900">FlowIQ fits around the tools your team already touches.</h2>
+        <div class="mt-8 grid sm:grid-cols-2 gap-4">
+          <div class="glass-panel rounded-2xl p-5">
+            <p class="font-bold text-slate-900">Xero sync</p>
+            <p class="mt-2 text-sm text-slate-600">Journals, mappings, and cleaner finance handoff.</p>
           </div>
-          <h3 class="font-semibold text-slate-900 mb-2">Financial intelligence</h3>
-          <ul class="text-slate-600 text-sm space-y-1">
-            <li>Real-time profitability per sale</li>
-            <li>Price creep alerts</li>
-            <li>Multi-currency and FX</li>
-            <li>2-day month-end</li>
-          </ul>
-        </div>
-        <div class="p-6 rounded-xl border border-slate-200 bg-white">
-          <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center mb-4">
-            <i data-lucide="pie-chart" class="w-5 h-5 text-orange-600"></i>
+          <div class="glass-panel rounded-2xl p-5">
+            <p class="font-bold text-slate-900">CSV import/export</p>
+            <p class="mt-2 text-sm text-slate-600">Useful when teams are still transitioning off old workflows.</p>
           </div>
-          <h3 class="font-semibold text-slate-900 mb-2">Data &amp; analytics</h3>
-          <ul class="text-slate-600 text-sm space-y-1">
-            <li>Customizable dashboards</li>
-            <li>Commission calculations</li>
-            <li>Historical and trend analysis</li>
-            <li>Export to Excel</li>
-          </ul>
+          <div class="glass-panel rounded-2xl p-5">
+            <p class="font-bold text-slate-900">API-ready foundations</p>
+            <p class="mt-2 text-sm text-slate-600">Built to play nicely with adjacent operational systems.</p>
+          </div>
+          <div class="glass-panel rounded-2xl p-5">
+            <p class="font-bold text-slate-900">Document capture</p>
+            <p class="mt-2 text-sm text-slate-600">Keep operational evidence attached to the work itself.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Integrations -->
-    <section class="mb-20 rounded-xl border border-slate-200 bg-white p-6">
-      <h2 class="text-lg font-bold text-slate-900 text-center mb-4">Seamless integrations</h2>
-      <div class="flex flex-wrap justify-center gap-6 text-slate-600 text-sm">
-        <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-orange-500"></i> Xero —
-          two-way sync</span>
-        <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-orange-500"></i> CSV
-          import/export</span>
-        <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-orange-500"></i> API
-          access</span>
-        <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-orange-500"></i> Email
-          capture for docs</span>
+    <section class="story-card p-8 md:p-12 text-center mb-8" data-aos="fade-up">
+      <span class="section-kicker">Next Step</span>
+      <h2 class="mt-5 text-3xl md:text-4xl font-black text-slate-900">If the current workflow feels patched together,
+        that is the signal.</h2>
+      <p class="mt-4 max-w-2xl mx-auto text-slate-600 text-lg">Start a trial if you already know the pain, or book a
+        guided demo if you want the workflow mapped to your operation.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/signup"
+          class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-full font-bold shadow-xl shadow-orange-500/20 transition-all">Start
+          Free Trial <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+        <a href="/book-demo.html"
+          class="inline-flex items-center justify-center gap-2 glass-panel px-8 py-4 rounded-full font-bold text-slate-900 transition-all">Book
+          Demo <i data-lucide="calendar" class="w-5 h-5 text-freight-orange"></i></a>
       </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="text-center pt-8 pb-4 border-t border-slate-200">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-4">See FlowIQ in Action</h2>
-      <p class="text-slate-600 mb-6">Get a guided demo focused on your workflow.</p>
-      <a href="/book-demo.html"
-        class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Book
-        Demo</a>
     </section>
   </main>
 
-  <footer class="border-t border-slate-200 py-8 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
-      <a href="/solutions/" class="text-slate-600 hover:text-orange-600">Solutions</a>
-      <span class="mx-2">·</span>
-      <a href="/use-cases/" class="text-slate-600 hover:text-orange-600">Use Cases</a>
-      <span class="mx-2">·</span>
-      <a href="/tools/" class="text-slate-600 hover:text-orange-600">Tools</a>
-      <span class="mx-2">·</span>
-      <a href="/compare/" class="text-slate-600 hover:text-orange-600">Compare</a>
-      <span class="mx-2">·</span>
-      <a href="/glossary/" class="text-slate-600 hover:text-orange-600">Glossary</a>
-      <span class="mx-2">·</span>
-      <a href="/privacy.html" class="text-slate-600 hover:text-orange-600">Privacy Policy</a>
-      <span class="mx-2">·</span>
-      <a href="/terms.html" class="text-slate-600 hover:text-orange-600">Terms</a>
-      <p class="mt-4">Your data remains private and is never shared.</p>
+  <footer class="border-t border-slate-200 py-10 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.24em] text-orange-600">FlowIQ</p>
+          <p class="mt-3 text-2xl font-black text-slate-900">Smarter business in motion.</p>
+          <p class="mt-2 max-w-xl text-sm text-slate-600">Operational intelligence for importers, distributors, and
+            manufacturers who need landed cost truth, inventory control, and sharper commercial decisions.</p>
+        </div>
+        <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium text-slate-600">
+          <a href="/solutions/" class="hover:text-orange-600">Solutions</a>
+          <a href="/use-cases/" class="hover:text-orange-600">Use Cases</a>
+          <a href="/tools/" class="hover:text-orange-600">Tools</a>
+          <a href="/compare/" class="hover:text-orange-600">Compare</a>
+          <a href="/glossary/" class="hover:text-orange-600">Glossary</a>
+          <a href="/privacy.html" class="hover:text-orange-600">Privacy Policy</a>
+          <a href="/terms.html" class="hover:text-orange-600">Terms</a>
+        </div>
+      </div>
+      <p class="mt-6 text-sm text-slate-500">Your data remains private and is never shared.</p>
     </div>
   </footer>
 
   <div id="moduleImageModal" class="module-image-modal" role="dialog" aria-modal="true" aria-label="Module screenshot">
     <div class="modal-content">
-      <button type="button" id="moduleImageModalClose" class="absolute top-2 right-2 z-10 text-white hover:text-orange-300 text-3xl font-light leading-none w-10 h-10 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-orange-400 rounded-full bg-black/40" aria-label="Close">&times;</button>
+      <button type="button" id="moduleImageModalClose"
+        class="absolute top-2 right-2 z-10 text-white hover:text-orange-300 text-3xl font-light leading-none w-10 h-10 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-orange-400 rounded-full bg-black/40"
+        aria-label="Close">&times;</button>
       <img id="moduleImageModalImg" src="" alt="">
       <p id="moduleImageModalTitle" class="mt-3 text-white font-semibold text-center text-sm"></p>
     </div>
@@ -717,6 +518,19 @@
       if (e.key === 'Escape' && modal?.classList.contains('is-open')) closeModuleModal();
     });
 
+    document.querySelectorAll('.is-magnetic').forEach(function (el) {
+      var depth = Number(el.getAttribute('data-depth') || 10);
+      el.addEventListener('pointermove', function (e) {
+        var rect = el.getBoundingClientRect();
+        var x = ((e.clientX - rect.left) / rect.width) - 0.5;
+        var y = ((e.clientY - rect.top) / rect.height) - 0.5;
+        el.style.transform = 'translate3d(' + (x * depth) + 'px,' + (y * depth) + 'px,0)';
+      });
+      el.addEventListener('pointerleave', function () {
+        el.style.transform = '';
+      });
+    });
+
     if (typeof lucide !== 'undefined') lucide.createIcons();
   </script>
   <script>
@@ -728,6 +542,7 @@
   </script>
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
+  <script src="/assets/js/cursor-trail.js"></script>
 </body>
 
 </html>

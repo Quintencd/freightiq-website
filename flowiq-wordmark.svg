@@ -2,7 +2,7 @@
   <title>FlowIQ Wordmark</title>
   <desc>FlowIQ logo with Flow text and highlighted IQ badge</desc>
   <rect width="260" height="56" fill="none"/>
-  <text x="0" y="38" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="600" letter-spacing="0.5" fill="#F8FAFC">
+  <text x="0" y="38" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="0.5" fill="#0F172A">
     Flow
   </text>
   <rect x="146" y="8" width="96" height="40" rx="10" fill="#F97316"/>

@@ -6,12 +6,13 @@
   <title>FlowIQ Pricing | Import Costing Software Plans</title>
   <meta name="description" content="Simple pricing for importers who need accurate landed cost, inventory clarity, and forecasting without ERP complexity." />
   <link rel="canonical" href="https://www.flowiq.info/pricing.html" />
-  <link rel="icon" type="image/png" href="/flowiq-logo.png">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+  <link rel="icon" type="image/png" href="/flowiq-logo.png?v=2">
+  <link rel="shortcut icon" href="/favicon.ico?v=2">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/flowiq-light.css?v=2">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
     body { font-family: 'Inter', sans-serif; }
     .text-freight-orange { color: #f97316; }
     .bg-freight-orange { background-color: #f97316; }
@@ -22,7 +23,8 @@
   </script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
-<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+<body class="marketing-shell bg-slate-50 text-slate-900 overflow-x-hidden">
+  <div class="cursor-glow" aria-hidden="true"></div>
   <div class="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.15),rgba(255,255,255,0))]"></div>
   <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,334 +64,187 @@
   </nav>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
-    <!-- Hero: 30-Day Free Trial -->
-    <div class="text-center mb-8">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-orange-500/10 border border-orange-500/20 rounded-full mb-4">
-        <span class="text-xs font-semibold text-orange-600">30-Day Free Trial</span>
-      </div>
-      <h1 class="text-3xl md:text-4xl font-black text-slate-900 mb-3 tracking-tight">
-        Simple pricing for importers who need clarity, not complexity
-      </h1>
-      <p class="text-base text-slate-600 max-w-3xl mx-auto mb-2">
-        Full access. No credit card required. Your data stays. Upgrade only if it adds value.
-      </p>
-    </div>
-
-    <!-- Billing toggle: Monthly / Annual (match app) -->
-    <div class="flex justify-center mb-6">
-      <div class="inline-flex rounded-full border border-slate-200 bg-white p-1">
-        <button type="button" id="billingMonthly" class="billing-toggle px-4 py-2 rounded-full text-xs font-bold transition bg-orange-500 text-white">Monthly</button>
-        <button type="button" id="billingAnnual" class="billing-toggle px-4 py-2 rounded-full text-xs font-bold transition text-slate-600 hover:text-slate-900">Annual</button>
-      </div>
-    </div>
-
-    <!-- Unified comparison table (same layout as app settings) -->
-    <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm mb-12">
-      <table class="min-w-[1100px] w-full text-sm">
-        <thead class="bg-slate-50">
-          <tr>
-            <th class="text-left px-5 py-5 text-xs font-black uppercase tracking-widest text-orange-600">FEATURES</th>
-            <th class="align-top px-5 py-5 text-center min-w-[160px]">
-              <div class="grid grid-rows-[28px,32px,78px,1fr] items-center text-center min-h-[210px]">
-                <div class="text-sm font-black text-slate-900">Starter</div>
-                <div class="text-[11px] font-semibold text-slate-500 leading-snug">Core workflows for small teams — PurchaseIQ, InvoiceIQ, ReportsIQ. 1 user · 1 warehouse · 500 SKUs</div>
-                <div class="h-[78px] flex flex-col items-center justify-center">
-                  <div class="flex items-baseline justify-center gap-1">
-                    <span class="text-slate-500 text-xs">R</span>
-                    <span class="price-starter text-2xl font-black leading-none text-slate-900">490</span>
-                  </div>
-                  <div class="price-label-starter text-[11px] font-semibold text-slate-500">per month</div>
-                </div>
-                <div class="w-full pt-3">
-                  <a href="/signup?plan=starter" class="flex w-full h-12 items-center justify-center whitespace-nowrap rounded-lg text-sm font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition">Start 30-Day Free Trial</a>
-                </div>
-              </div>
-            </th>
-            <th class="align-top px-5 py-5 text-center min-w-[160px]">
-              <div class="grid grid-rows-[28px,32px,78px,1fr] items-center text-center min-h-[210px]">
-                <div class="text-sm font-black text-slate-900">Growth</div>
-                <div class="text-[11px] font-semibold text-slate-500 leading-snug">Operational intelligence without forecasting</div>
-                <div class="h-[78px] flex flex-col items-center justify-center">
-                  <div class="flex items-baseline justify-center gap-1">
-                    <span class="text-slate-500 text-xs">R</span>
-                    <span class="price-growth text-2xl font-black leading-none text-slate-900">5,990</span>
-                  </div>
-                  <div class="price-label-growth text-[11px] font-semibold text-slate-500">per month</div>
-                </div>
-                <div class="w-full pt-3">
-                  <a href="/signup?plan=growth" class="flex w-full h-12 items-center justify-center whitespace-nowrap rounded-lg text-sm font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition">Start 30-Day Free Trial</a>
-                </div>
-              </div>
-            </th>
-            <th class="align-top px-5 py-5 text-center min-w-[160px] bg-orange-50/60">
-              <div class="grid grid-rows-[28px,32px,78px,1fr] items-center text-center min-h-[210px]">
-                <div class="flex items-center justify-center gap-2">
-                  <div class="text-sm font-black text-slate-900">Professional</div>
-                  <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-orange-500 text-white">Popular</span>
-                </div>
-                <div class="text-[11px] font-semibold text-slate-500 leading-snug">Where real forecasting begins</div>
-                <div class="h-[78px] flex flex-col items-center justify-center">
-                  <div class="flex items-baseline justify-center gap-1">
-                    <span class="text-slate-500 text-xs">R</span>
-                    <span class="price-professional text-2xl font-black leading-none text-orange-600">10,900</span>
-                  </div>
-                  <div class="price-label-professional text-[11px] font-semibold text-slate-500">per month</div>
-                </div>
-                <div class="w-full pt-3">
-                  <a href="/signup?plan=professional" class="flex w-full h-12 items-center justify-center whitespace-nowrap rounded-lg text-sm font-bold bg-orange-500 hover:bg-orange-600 text-white transition">Start 30-Day Free Trial</a>
-                </div>
-              </div>
-            </th>
-            <th class="align-top px-5 py-5 text-center min-w-[160px]">
-              <div class="grid grid-rows-[28px,32px,78px,1fr] items-center text-center min-h-[210px]">
-                <div class="text-sm font-black text-slate-900">Scale</div>
-                <div class="text-[11px] font-semibold text-slate-500 leading-snug">AI-driven planning for complex operations</div>
-                <div class="h-[78px] flex flex-col items-center justify-center">
-                  <div class="flex items-baseline justify-center gap-1">
-                    <span class="text-slate-500 text-xs">R</span>
-                    <span class="price-scale text-2xl font-black leading-none text-slate-900">19,900</span>
-                  </div>
-                  <div class="price-label-scale text-[11px] font-semibold text-slate-500">per month</div>
-                </div>
-                <div class="w-full pt-3">
-                  <a href="/signup?plan=scale" class="flex w-full h-12 items-center justify-center whitespace-nowrap rounded-lg text-sm font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition">Start 30-Day Free Trial</a>
-                </div>
-              </div>
-            </th>
-            <th class="align-top px-5 py-5 text-center min-w-[160px]">
-              <div class="grid grid-rows-[28px,32px,78px,1fr] items-center text-center min-h-[210px]">
-                <div class="text-sm font-black text-slate-900">Enterprise</div>
-                <div class="text-[11px] font-semibold text-slate-500 leading-snug">Custom everything</div>
-                <div class="h-[78px] flex flex-col items-center justify-center">
-                  <div class="text-2xl font-black text-slate-900 leading-none">Price on Request</div>
-                  <div class="text-[11px] font-semibold text-slate-500 opacity-0">per month</div>
-                </div>
-                <div class="w-full pt-3">
-                  <a href="/signup?plan=enterprise" class="flex w-full h-12 items-center justify-center whitespace-nowrap rounded-lg text-sm font-bold bg-slate-900 hover:bg-slate-800 text-white transition">Start 30-Day Free Trial</a>
-                </div>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="bg-orange-50/30 border-t border-slate-200">
-            <td colspan="6" class="px-5 py-3 text-[11px] font-black uppercase tracking-widest text-orange-600">CAPACITY</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">Users</td>
-            <td class="px-5 py-3 text-center text-slate-600">1</td>
-            <td class="px-5 py-3 text-center text-slate-600">3</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">10</td>
-            <td class="px-5 py-3 text-center text-slate-600">50</td>
-            <td class="px-5 py-3 text-center text-slate-600">Unlimited</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">SKUs</td>
-            <td class="px-5 py-3 text-center text-slate-600">500</td>
-            <td class="px-5 py-3 text-center font-black text-emerald-600">1,000</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-black text-emerald-600">3,000</td>
-            <td class="px-5 py-3 text-center font-black text-emerald-600">10,000</td>
-            <td class="px-5 py-3 text-center text-slate-600">Unlimited</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">Warehouses</td>
-            <td class="px-5 py-3 text-center text-slate-600">1</td>
-            <td class="px-5 py-3 text-center text-slate-600">2</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">5</td>
-            <td class="px-5 py-3 text-center text-slate-600">10</td>
-            <td class="px-5 py-3 text-center text-slate-600">Unlimited</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">Import/Export jobs per month</td>
-            <td class="px-5 py-3 text-center text-slate-600">Not available</td>
-            <td class="px-5 py-3 text-center text-slate-600">3 inbound + 3 outbound</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-black text-emerald-600">10 inbound + 10 outbound</td>
-            <td class="px-5 py-3 text-center text-slate-600">30 inbound + 30 outbound</td>
-            <td class="px-5 py-3 text-center text-slate-600">Unlimited</td>
-          </tr>
-          <tr class="bg-orange-50/30 border-t border-slate-200">
-            <td colspan="6" class="px-5 py-3 text-[11px] font-black uppercase tracking-widest text-orange-600">DOCUMENTS &amp; PRICING</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">Invoices per month</td>
-            <td class="px-5 py-3 text-center text-slate-600">200</td>
-            <td class="px-5 py-3 text-center font-black text-emerald-600">500</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">Unlimited</td>
-            <td class="px-5 py-3 text-center text-slate-600">Unlimited</td>
-            <td class="px-5 py-3 text-center text-slate-600">Unlimited</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">Purchase orders per month</td>
-            <td class="px-5 py-3 text-center text-slate-600">200</td>
-            <td class="px-5 py-3 text-center font-black text-emerald-600">500</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">Unlimited</td>
-            <td class="px-5 py-3 text-center text-slate-600">Unlimited</td>
-            <td class="px-5 py-3 text-center text-slate-600">Unlimited</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">Custom price lists</td>
-            <td class="px-5 py-3 text-center text-slate-600"></td>
-            <td class="px-5 py-3 text-center text-slate-600">3</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">Unlimited</td>
-            <td class="px-5 py-3 text-center text-slate-600">Unlimited</td>
-            <td class="px-5 py-3 text-center text-slate-600">Unlimited</td>
-          </tr>
-          <tr class="bg-orange-50/30 border-t border-slate-200">
-            <td colspan="6" class="px-5 py-3 text-[11px] font-black uppercase tracking-widest text-orange-600">FORECASTING &amp; AI</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">ForecastIQ</td>
-            <td class="px-5 py-3 text-center text-slate-600"></td>
-            <td class="px-5 py-3 text-center text-slate-600"></td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">ForecastIQ (Standard)</td>
-            <td class="px-5 py-3 text-center font-black text-emerald-600">ForecastIQ AI Engine</td>
-            <td class="px-5 py-3 text-center text-slate-600">Custom Models</td>
-          </tr>
-          <tr class="bg-orange-50/30 border-t border-slate-200">
-            <td colspan="6" class="px-5 py-3 text-[11px] font-black uppercase tracking-widest text-orange-600">INTEGRATIONS</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">Xero integration</td>
-            <td class="px-5 py-3 text-center text-slate-600">Journals + mappings (standard)</td>
-            <td class="px-5 py-3 text-center text-slate-600">Journals + mappings (standard)</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">Journals + mappings (standard)</td>
-            <td class="px-5 py-3 text-center text-slate-600">Journals + mappings (standard)</td>
-            <td class="px-5 py-3 text-center text-slate-600">Standard + custom mappings</td>
-          </tr>
-          <tr class="bg-orange-50/30 border-t border-slate-200">
-            <td colspan="6" class="px-5 py-3 text-[11px] font-black uppercase tracking-widest text-orange-600">MODULES</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">Import/Export</td>
-            <td class="px-5 py-3 text-center text-slate-600">—</td>
-            <td class="px-5 py-3 text-center font-black text-emerald-600">✓</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">Manufacturing (BOM)</td>
-            <td class="px-5 py-3 text-center text-slate-600">—</td>
-            <td class="px-5 py-3 text-center font-black text-emerald-600">✓</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">InventoryIQ</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">InvoiceIQ</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">PurchaseIQ</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">SalesIQ (CRM)</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">CompaniesIQ</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">ReportsIQ &amp; JournalIQ</td>
-            <td class="px-5 py-3 text-center text-slate-600">View-only</td>
-            <td class="px-5 py-3 text-center text-slate-600">View-only</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓</td>
-            <td class="px-5 py-3 text-center text-slate-600">✓ (Custom)</td>
-          </tr>
-          <tr class="bg-orange-50/30 border-t border-slate-200">
-            <td colspan="6" class="px-5 py-3 text-[11px] font-black uppercase tracking-widest text-orange-600">SUPPORT</td>
-          </tr>
-          <tr class="border-t border-slate-100">
-            <td class="px-5 py-3 font-semibold text-slate-700">Support level</td>
-            <td class="px-5 py-3 text-center text-slate-600">Email only</td>
-            <td class="px-5 py-3 text-center text-slate-600">Email + Chat</td>
-            <td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">Phone support (business hours)</td>
-            <td class="px-5 py-3 text-center text-slate-600">Priority phone support</td>
-            <td class="px-5 py-3 text-center text-slate-600">Dedicated 24/7 support</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Trust signals (match app) -->
-    <div class="grid md:grid-cols-3 gap-4 text-center mb-12">
-      <div class="flex flex-col items-center">
-        <div class="w-10 h-10 bg-emerald-500/10 rounded-full flex items-center justify-center mb-2">
-          <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500"></i>
+    <section class="relative mb-12">
+      <div class="mesh-lines"></div>
+      <div class="story-card p-8 md:p-12">
+        <div class="max-w-4xl">
+          <span class="section-kicker">30-Day Free Trial</span>
+          <h1 class="mt-5 text-4xl md:text-6xl font-black text-slate-900 tracking-tight">Pricing that reads by business stage, not just by rows in a table.</h1>
+          <p class="mt-5 text-lg text-slate-600 leading-relaxed">Choose the plan that matches your current operating stage, then use the comparison table below for the exact detail.</p>
         </div>
-        <h4 class="text-slate-900 font-bold text-sm mb-1">30-Day Free Trial</h4>
-        <p class="text-slate-600 text-xs">No credit card required</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <div class="w-10 h-10 bg-blue-500/10 rounded-full flex items-center justify-center mb-2">
-          <i data-lucide="shield-check" class="w-5 h-5 text-blue-500"></i>
+        <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
+          <div class="inline-flex rounded-full border border-slate-200 bg-white p-1">
+            <button type="button" id="billingMonthly" class="billing-toggle px-4 py-2 rounded-full text-xs font-bold transition bg-orange-500 text-white">Monthly</button>
+            <button type="button" id="billingAnnual" class="billing-toggle px-4 py-2 rounded-full text-xs font-bold transition text-slate-600 hover:text-slate-900">Annual</button>
+          </div>
+          <p class="text-sm font-semibold text-slate-500">Full access during trial. No credit card required.</p>
         </div>
-        <h4 class="text-slate-900 font-bold text-sm mb-1">Bank-Level Security</h4>
-        <p class="text-slate-600 text-xs">256-bit encryption</p>
       </div>
-      <div class="flex flex-col items-center">
-        <div class="w-10 h-10 bg-purple-500/10 rounded-full flex items-center justify-center mb-2">
-          <i data-lucide="zap" class="w-5 h-5 text-purple-500"></i>
-        </div>
-        <h4 class="text-slate-900 font-bold text-sm mb-1">Live in 24 Hours</h4>
-        <p class="text-slate-600 text-xs">Quick setup support</p>
-      </div>
-    </div>
+    </section>
 
-    <!-- CTA -->
-    <section class="rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 p-8 sm:p-10 text-center">
-      <h2 class="text-2xl font-bold text-white mb-2">Start Your 30-Day Free Trial</h2>
-      <p class="text-orange-100 max-w-2xl mx-auto mb-6">No credit card required. Try any plan free for 30 days.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/signup?plan=professional" class="inline-flex items-center justify-center bg-white hover:bg-slate-100 text-orange-600 px-8 py-3 rounded-lg font-semibold transition-colors">Start 30-Day Free Trial</a>
-        <a href="/book-demo.html" class="inline-flex items-center justify-center border-2 border-white hover:bg-white hover:text-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">Request Demo</a>
+    <section class="pricing-stage-grid mb-12">
+      <article class="pricing-stage-card">
+        <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Stage 01</p>
+        <h2 class="mt-4 text-2xl font-black text-slate-900">Starter / Growth</h2>
+        <p class="mt-3 text-sm text-slate-600">Best for teams replacing spreadsheets and getting operational discipline in place fast.</p>
+        <ul>
+          <li>Core transaction flow and visibility</li>
+          <li>Good fit for smaller buying teams</li>
+          <li>Strong entry point before advanced forecasting</li>
+        </ul>
+      </article>
+      <article class="pricing-stage-card pricing-stage-card--featured">
+        <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Most Likely Fit</p>
+        <h2 class="mt-4 text-2xl font-black text-slate-900">Professional</h2>
+        <p class="mt-3 text-sm text-slate-600">This is where the full FlowIQ story starts to show: operational control plus forecasting and commercial intelligence.</p>
+        <ul>
+          <li>Best value for established import and distribution ops</li>
+          <li>Forecasting starts to matter here</li>
+          <li>Usually the clearest “yes” plan in demos</li>
+        </ul>
+      </article>
+      <article class="pricing-stage-card">
+        <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Advanced Ops</p>
+        <h2 class="mt-4 text-2xl font-black text-slate-900">Scale / Enterprise</h2>
+        <p class="mt-3 text-sm text-slate-600">For businesses with more branches, more users, and more planning complexity across the operation.</p>
+        <ul>
+          <li>Higher volume teams and broader rollout</li>
+          <li>Advanced planning and support expectations</li>
+          <li>Enterprise path when the operation is highly customized</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="mb-12 story-card p-6 md:p-8">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-6">
+        <div>
+          <span class="section-kicker">Full Comparison</span>
+          <h2 class="mt-4 text-3xl font-black text-slate-900">Every plan detail, still easy to scan.</h2>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <span class="proof-chip"><i data-lucide="shield-check" class="w-4 h-4"></i> Secure</span>
+          <span class="proof-chip"><i data-lucide="zap" class="w-4 h-4"></i> Live quickly</span>
+          <span class="proof-chip"><i data-lucide="headphones" class="w-4 h-4"></i> Supported</span>
+        </div>
+      </div>
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <table class="min-w-[1100px] w-full text-sm">
+          <thead class="bg-slate-50">
+            <tr>
+              <th class="text-left px-5 py-5 text-xs font-black uppercase tracking-widest text-orange-600">FEATURES</th>
+              <th class="align-top px-5 py-5 text-center min-w-[160px]">
+                <div class="grid grid-rows-[28px,32px,78px,1fr] items-center text-center min-h-[210px]">
+                  <div class="text-sm font-black text-slate-900">Starter</div>
+                  <div class="text-[11px] font-semibold text-slate-500 leading-snug">Core workflows for small teams — PurchaseIQ, InvoiceIQ, ReportsIQ. 1 user · 1 warehouse · 500 SKUs</div>
+                  <div class="h-[78px] flex flex-col items-center justify-center">
+                    <div class="flex items-baseline justify-center gap-1"><span class="text-slate-500 text-xs">R</span><span class="price-starter text-2xl font-black leading-none text-slate-900">490</span></div>
+                    <div class="price-label-starter text-[11px] font-semibold text-slate-500">per month</div>
+                  </div>
+                  <div class="w-full pt-3"><a href="/signup?plan=starter" class="flex w-full h-12 items-center justify-center whitespace-nowrap rounded-lg text-sm font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition">Start 30-Day Free Trial</a></div>
+                </div>
+              </th>
+              <th class="align-top px-5 py-5 text-center min-w-[160px]">
+                <div class="grid grid-rows-[28px,32px,78px,1fr] items-center text-center min-h-[210px]">
+                  <div class="text-sm font-black text-slate-900">Growth</div>
+                  <div class="text-[11px] font-semibold text-slate-500 leading-snug">Operational intelligence without forecasting</div>
+                  <div class="h-[78px] flex flex-col items-center justify-center">
+                    <div class="flex items-baseline justify-center gap-1"><span class="text-slate-500 text-xs">R</span><span class="price-growth text-2xl font-black leading-none text-slate-900">5,990</span></div>
+                    <div class="price-label-growth text-[11px] font-semibold text-slate-500">per month</div>
+                  </div>
+                  <div class="w-full pt-3"><a href="/signup?plan=growth" class="flex w-full h-12 items-center justify-center whitespace-nowrap rounded-lg text-sm font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition">Start 30-Day Free Trial</a></div>
+                </div>
+              </th>
+              <th class="align-top px-5 py-5 text-center min-w-[160px] bg-orange-50/60">
+                <div class="grid grid-rows-[28px,32px,78px,1fr] items-center text-center min-h-[210px]">
+                  <div class="flex items-center justify-center gap-2"><div class="text-sm font-black text-slate-900">Professional</div><span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-orange-500 text-white">Popular</span></div>
+                  <div class="text-[11px] font-semibold text-slate-500 leading-snug">Where real forecasting begins</div>
+                  <div class="h-[78px] flex flex-col items-center justify-center">
+                    <div class="flex items-baseline justify-center gap-1"><span class="text-slate-500 text-xs">R</span><span class="price-professional text-2xl font-black leading-none text-orange-600">10,900</span></div>
+                    <div class="price-label-professional text-[11px] font-semibold text-slate-500">per month</div>
+                  </div>
+                  <div class="w-full pt-3"><a href="/signup?plan=professional" class="flex w-full h-12 items-center justify-center whitespace-nowrap rounded-lg text-sm font-bold bg-orange-500 hover:bg-orange-600 text-white transition">Start 30-Day Free Trial</a></div>
+                </div>
+              </th>
+              <th class="align-top px-5 py-5 text-center min-w-[160px]">
+                <div class="grid grid-rows-[28px,32px,78px,1fr] items-center text-center min-h-[210px]">
+                  <div class="text-sm font-black text-slate-900">Scale</div>
+                  <div class="text-[11px] font-semibold text-slate-500 leading-snug">AI-driven planning for complex operations</div>
+                  <div class="h-[78px] flex flex-col items-center justify-center">
+                    <div class="flex items-baseline justify-center gap-1"><span class="text-slate-500 text-xs">R</span><span class="price-scale text-2xl font-black leading-none text-slate-900">19,900</span></div>
+                    <div class="price-label-scale text-[11px] font-semibold text-slate-500">per month</div>
+                  </div>
+                  <div class="w-full pt-3"><a href="/signup?plan=scale" class="flex w-full h-12 items-center justify-center whitespace-nowrap rounded-lg text-sm font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 transition">Start 30-Day Free Trial</a></div>
+                </div>
+              </th>
+              <th class="align-top px-5 py-5 text-center min-w-[160px]">
+                <div class="grid grid-rows-[28px,32px,78px,1fr] items-center text-center min-h-[210px]">
+                  <div class="text-sm font-black text-slate-900">Enterprise</div>
+                  <div class="text-[11px] font-semibold text-slate-500 leading-snug">Custom everything</div>
+                  <div class="h-[78px] flex flex-col items-center justify-center"><div class="text-2xl font-black text-slate-900 leading-none">Price on Request</div><div class="text-[11px] font-semibold text-slate-500 opacity-0">per month</div></div>
+                  <div class="w-full pt-3"><a href="/signup?plan=enterprise" class="flex w-full h-12 items-center justify-center whitespace-nowrap rounded-lg text-sm font-bold bg-slate-900 hover:bg-slate-800 text-white transition">Start 30-Day Free Trial</a></div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-orange-50/30 border-t border-slate-200"><td colspan="6" class="px-5 py-3 text-[11px] font-black uppercase tracking-widest text-orange-600">CAPACITY</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">Users</td><td class="px-5 py-3 text-center text-slate-600">1</td><td class="px-5 py-3 text-center text-slate-600">3</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">10</td><td class="px-5 py-3 text-center text-slate-600">50</td><td class="px-5 py-3 text-center text-slate-600">Unlimited</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">SKUs</td><td class="px-5 py-3 text-center text-slate-600">500</td><td class="px-5 py-3 text-center font-black text-emerald-600">1,000</td><td class="px-5 py-3 text-center bg-orange-50/40 font-black text-emerald-600">3,000</td><td class="px-5 py-3 text-center font-black text-emerald-600">10,000</td><td class="px-5 py-3 text-center text-slate-600">Unlimited</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">Warehouses</td><td class="px-5 py-3 text-center text-slate-600">1</td><td class="px-5 py-3 text-center text-slate-600">2</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">5</td><td class="px-5 py-3 text-center text-slate-600">10</td><td class="px-5 py-3 text-center text-slate-600">Unlimited</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">Import/Export jobs per month</td><td class="px-5 py-3 text-center text-slate-600">Not available</td><td class="px-5 py-3 text-center text-slate-600">3 inbound + 3 outbound</td><td class="px-5 py-3 text-center bg-orange-50/40 font-black text-emerald-600">10 inbound + 10 outbound</td><td class="px-5 py-3 text-center text-slate-600">30 inbound + 30 outbound</td><td class="px-5 py-3 text-center text-slate-600">Unlimited</td></tr>
+            <tr class="bg-orange-50/30 border-t border-slate-200"><td colspan="6" class="px-5 py-3 text-[11px] font-black uppercase tracking-widest text-orange-600">DOCUMENTS &amp; PRICING</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">Invoices per month</td><td class="px-5 py-3 text-center text-slate-600">200</td><td class="px-5 py-3 text-center font-black text-emerald-600">500</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">Unlimited</td><td class="px-5 py-3 text-center text-slate-600">Unlimited</td><td class="px-5 py-3 text-center text-slate-600">Unlimited</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">Purchase orders per month</td><td class="px-5 py-3 text-center text-slate-600">200</td><td class="px-5 py-3 text-center font-black text-emerald-600">500</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">Unlimited</td><td class="px-5 py-3 text-center text-slate-600">Unlimited</td><td class="px-5 py-3 text-center text-slate-600">Unlimited</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">Custom price lists</td><td class="px-5 py-3 text-center text-slate-600"></td><td class="px-5 py-3 text-center text-slate-600">3</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">Unlimited</td><td class="px-5 py-3 text-center text-slate-600">Unlimited</td><td class="px-5 py-3 text-center text-slate-600">Unlimited</td></tr>
+            <tr class="bg-orange-50/30 border-t border-slate-200"><td colspan="6" class="px-5 py-3 text-[11px] font-black uppercase tracking-widest text-orange-600">FORECASTING &amp; AI</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">ForecastIQ</td><td class="px-5 py-3 text-center text-slate-600"></td><td class="px-5 py-3 text-center text-slate-600"></td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">ForecastIQ (Standard)</td><td class="px-5 py-3 text-center font-black text-emerald-600">ForecastIQ AI Engine</td><td class="px-5 py-3 text-center text-slate-600">Custom Models</td></tr>
+            <tr class="bg-orange-50/30 border-t border-slate-200"><td colspan="6" class="px-5 py-3 text-[11px] font-black uppercase tracking-widest text-orange-600">INTEGRATIONS</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">Xero integration</td><td class="px-5 py-3 text-center text-slate-600">Journals + mappings (standard)</td><td class="px-5 py-3 text-center text-slate-600">Journals + mappings (standard)</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">Journals + mappings (standard)</td><td class="px-5 py-3 text-center text-slate-600">Journals + mappings (standard)</td><td class="px-5 py-3 text-center text-slate-600">Standard + custom mappings</td></tr>
+            <tr class="bg-orange-50/30 border-t border-slate-200"><td colspan="6" class="px-5 py-3 text-[11px] font-black uppercase tracking-widest text-orange-600">MODULES</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">Import/Export</td><td class="px-5 py-3 text-center text-slate-600">—</td><td class="px-5 py-3 text-center font-black text-emerald-600">✓</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">Manufacturing (BOM)</td><td class="px-5 py-3 text-center text-slate-600">—</td><td class="px-5 py-3 text-center font-black text-emerald-600">✓</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">InventoryIQ</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">InvoiceIQ</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">PurchaseIQ</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">SalesIQ (CRM)</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">CompaniesIQ</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">ReportsIQ &amp; JournalIQ</td><td class="px-5 py-3 text-center text-slate-600">View-only</td><td class="px-5 py-3 text-center text-slate-600">View-only</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">✓</td><td class="px-5 py-3 text-center text-slate-600">✓</td><td class="px-5 py-3 text-center text-slate-600">✓ (Custom)</td></tr>
+            <tr class="bg-orange-50/30 border-t border-slate-200"><td colspan="6" class="px-5 py-3 text-[11px] font-black uppercase tracking-widest text-orange-600">SUPPORT</td></tr>
+            <tr class="border-t border-slate-100"><td class="px-5 py-3 font-semibold text-slate-700">Support level</td><td class="px-5 py-3 text-center text-slate-600">Email only</td><td class="px-5 py-3 text-center text-slate-600">Email + Chat</td><td class="px-5 py-3 text-center bg-orange-50/40 font-semibold text-slate-900">Phone support (business hours)</td><td class="px-5 py-3 text-center text-slate-600">Priority phone support</td><td class="px-5 py-3 text-center text-slate-600">Dedicated 24/7 support</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="story-card p-8 md:p-10 text-center">
+      <span class="section-kicker">Decision Support</span>
+      <h2 class="mt-5 text-3xl font-black text-slate-900">Still not sure which plan is right?</h2>
+      <p class="mt-4 max-w-2xl mx-auto text-slate-600">Book a demo if you want us to map the plan to your current workflow and operational complexity. Start a trial if you already know what level you need.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/signup?plan=professional" class="inline-flex items-center justify-center bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-3 rounded-full font-semibold transition-colors">Start 30-Day Free Trial</a>
+        <a href="/book-demo.html" class="inline-flex items-center justify-center glass-panel text-slate-900 px-8 py-3 rounded-full font-semibold transition-colors">Request Demo</a>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-slate-200 py-8 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
-      <a href="/solutions/" class="text-slate-600 hover:text-orange-600">Solutions</a>
-      <span class="mx-2">·</span>
-      <a href="/use-cases/" class="text-slate-600 hover:text-orange-600">Use Cases</a>
-      <span class="mx-2">·</span>
-      <a href="/tools/" class="text-slate-600 hover:text-orange-600">Tools</a>
-      <span class="mx-2">·</span>
-      <a href="/compare/" class="text-slate-600 hover:text-orange-600">Compare</a>
-      <span class="mx-2">·</span>
-      <a href="/glossary/" class="text-slate-600 hover:text-orange-600">Glossary</a>
-      <span class="mx-2">·</span>
-      <a href="/privacy.html" class="text-slate-600 hover:text-orange-600">Privacy Policy</a>
-      <span class="mx-2">·</span>
-      <a href="/terms.html" class="text-slate-600 hover:text-orange-600">Terms</a>
-      <p class="mt-4">Your data remains private and is never shared.</p>
+  <footer class="border-t border-slate-200 py-10 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.24em] text-orange-600">FlowIQ Pricing</p>
+          <p class="mt-3 text-2xl font-black text-slate-900">Clearer entry points, same operational depth.</p>
+        </div>
+        <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium text-slate-600">
+          <a href="/solutions/" class="hover:text-orange-600">Solutions</a>
+          <a href="/use-cases/" class="hover:text-orange-600">Use Cases</a>
+          <a href="/tools/" class="hover:text-orange-600">Tools</a>
+          <a href="/compare/" class="hover:text-orange-600">Compare</a>
+          <a href="/glossary/" class="hover:text-orange-600">Glossary</a>
+          <a href="/privacy.html" class="hover:text-orange-600">Privacy Policy</a>
+          <a href="/terms.html" class="hover:text-orange-600">Terms</a>
+        </div>
+      </div>
+      <p class="mt-6 text-sm text-slate-500">Your data remains private and is never shared.</p>
     </div>
   </footer>
 
@@ -400,7 +255,6 @@
     });
     if (typeof lucide !== 'undefined') lucide.createIcons();
 
-    // Billing toggle: Monthly / Annual (match app)
     var billing = 'monthly';
     var prices = {
       monthly: { starter: '490', growth: '5,990', professional: '10,900', scale: '19,900' },
@@ -445,5 +299,6 @@
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
   <script src="/assets/pricing-currency.js"></script>
+  <script src="/assets/js/cursor-trail.js"></script>
 </body>
 </html>

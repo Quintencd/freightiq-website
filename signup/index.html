@@ -9,11 +9,12 @@
     <meta property="og:title" content="Sign Up for Flow IQ — Complete Business Management Platform">
     <meta property="og:description" content="Create your Flow IQ account and start managing your entire business with our unified ERP platform.">
     <!-- Favicon - Multiple formats for maximum browser compatibility -->
-    <link rel="icon" type="image/png" href="/flowiq-logo.png">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3">
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=3">
-    <link rel="apple-touch-icon" href="/flowiq-logo.png">
-    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico?v=3">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+    <link rel="icon" type="image/png" href="/flowiq-logo.png?v=2">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="/flowiq-logo.png?v=2">
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico?v=2">
     <!-- Preconnect to ensure favicon loads quickly -->
     <link rel="preconnect" href="https://www.flowiq.info">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -49,10 +50,11 @@
             margin-top: 0.25rem;
         }
     </style>
-    <link rel="stylesheet" href="/flowiq-light.css?v=1">
+    <link rel="stylesheet" href="/flowiq-light.css?v=2">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="gradient-bg min-h-screen text-slate-100">
+<body class="marketing-shell gradient-bg min-h-screen text-slate-100">
+    <div class="cursor-glow" aria-hidden="true"></div>
     <!-- Navigation: full site menu (same as homepage, pricing, etc.) -->
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,19 +96,45 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="pt-16 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div class="max-w-md w-full space-y-8">
-            <!-- Header -->
-            <div class="text-center">
-                <div class="mx-auto h-16 w-16 bg-freight-orange/20 rounded-full flex items-center justify-center mb-6">
-                    <i data-lucide="building-2" class="text-freight-orange" style="width:32px;height:32px"></i>
+    <div class="pt-24 min-h-screen px-4 sm:px-6 lg:px-8 pb-12">
+        <div class="max-w-7xl mx-auto signup-shell">
+            <aside class="signup-aside space-y-6">
+                <div class="story-card p-8">
+                    <span class="section-kicker">Start Clean</span>
+                    <h1 class="mt-5 text-4xl font-black text-slate-900 tracking-tight">Create your account with confidence.</h1>
+                    <p class="mt-4 text-slate-600 leading-relaxed">This page should feel like the handoff into a proper operating system, not just the end of a marketing funnel. You get full access for 30 days, and you can change plans during trial.</p>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <span class="proof-chip"><i data-lucide="shield-check" class="w-4 h-4"></i> Secure by default</span>
+                        <span class="proof-chip"><i data-lucide="clock-3" class="w-4 h-4"></i> Live fast</span>
+                        <span class="proof-chip"><i data-lucide="headphones" class="w-4 h-4"></i> Local support</span>
+                    </div>
                 </div>
-                <h2 class="text-3xl font-bold text-white mb-2">Create Your Account</h2>
-                <p class="text-slate-300">Start your 30-day free trial. No credit card required. Your data stays. Upgrade only if it adds value.</p>
-            </div>
 
-            <!-- Plan Selection (optional) -->
-            <div id="planCard" class="bg-freight-slate-light/70 rounded-xl border border-slate-700 p-5">
+                <div class="quote-card">
+                    <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">What happens next</p>
+                    <ul class="checklist mt-4">
+                        <li>Create your company and admin user</li>
+                        <li>Sign in immediately after signup</li>
+                        <li>Choose the workflow areas you want help setting up first</li>
+                    </ul>
+                </div>
+
+                <div class="quote-card">
+                    <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Why people complete this step</p>
+                    <p class="mt-3 text-sm text-slate-600">They already know their current workflow is patched together. The signup page should reassure them that setup is guided, reversible, and worth the switch.</p>
+                </div>
+            </aside>
+
+            <div class="w-full space-y-8">
+                <div class="text-left">
+                    <div class="inline-flex h-16 w-16 bg-freight-orange/20 rounded-full items-center justify-center mb-6">
+                        <i data-lucide="building-2" class="text-freight-orange" style="width:32px;height:32px"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-2">Create Your Account</h2>
+                    <p class="text-slate-300 max-w-2xl">Start your 30-day free trial. No credit card required. Your data stays. Upgrade only if it adds value.</p>
+                </div>
+
+                <div id="planCard" class="bg-freight-slate-light/70 rounded-xl border border-slate-700 p-5">
                 <div class="flex items-start justify-between gap-4">
                     <div>
                         <div class="flex items-center gap-2">
@@ -145,8 +173,7 @@
                 </div>
             </div>
 
-            <!-- Signup Form -->
-            <div class="bg-freight-slate-light rounded-xl shadow-2xl p-8 border border-slate-700">
+                <div class="bg-freight-slate-light rounded-xl shadow-2xl p-8 border border-slate-700">
                 <form id="signupForm" class="space-y-6">
                     <input type="hidden" id="selectedPlan" name="selectedPlan" value="growth" />
                     <!-- Company Information -->
@@ -1526,5 +1553,6 @@ This policy may be updated at any time. Continued use constitutes acceptance.
     </script>
     <script src="/assets/website-analytics.js"></script>
     <script src="/assets/growth-analytics.js"></script>
+    <script src="/assets/js/cursor-trail.js"></script>
 </body>
 </html>
