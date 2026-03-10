@@ -76,10 +76,7 @@
 </head>
 
 <body class="marketing-shell bg-slate-50 text-slate-900 selection:bg-orange-100 selection:text-orange-900 overflow-x-hidden">
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <div
-    class="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.15),rgba(255,255,255,0))]">
-  </div>
+  <div class="site-atmosphere fixed inset-0 z-[-1] h-full w-full" aria-hidden="true"></div>
 
   <nav
     class="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm supports-[backdrop-filter]:bg-white/60">
@@ -146,6 +143,8 @@
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
     <section id="hero" class="relative mb-24">
+      <div class="hero-ambient hero-ambient--warm" aria-hidden="true"></div>
+      <div class="hero-ambient hero-ambient--cool" aria-hidden="true"></div>
       <div class="mesh-lines"></div>
       <div class="editorial-grid editorial-grid--hero gap-10">
         <div data-aos="fade-up" data-aos-duration="900">
@@ -542,7 +541,6 @@
   </script>
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
-  <script src="/assets/js/cursor-trail.js"></script>
 </body>
 
 </html>
