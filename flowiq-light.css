@@ -151,7 +151,7 @@
   height: 28rem;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(249, 115, 22, 0.24) 0%, rgba(249, 115, 22, 0.12) 30%, rgba(255, 255, 255, 0) 76%);
+  background: radial-gradient(circle, rgba(234, 88, 12, 0.22) 0%, rgba(234, 88, 12, 0.11) 30%, rgba(255, 255, 255, 0) 76%);
   filter: blur(24px);
   opacity: 1;
   transition: left 240ms ease-out, top 240ms ease-out, opacity 220ms ease-out;
@@ -169,7 +169,7 @@
   pointer-events: none;
   z-index: 5;
   opacity: 0;
-  background: radial-gradient(circle, rgba(249, 115, 22, 0.42) 0%, rgba(249, 115, 22, 0.18) 46%, rgba(249, 115, 22, 0) 82%);
+  background: radial-gradient(circle, rgba(234, 88, 12, 0.38) 0%, rgba(234, 88, 12, 0.17) 46%, rgba(234, 88, 12, 0) 82%);
   filter: blur(12px);
   transition: opacity 220ms ease-out;
   will-change: transform, opacity;
