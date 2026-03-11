@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowIQ Affiliate Proposal</title>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <link rel="canonical" href="https://www.flowiq.info/proposals/accountant-affiliate.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+  <link rel="icon" type="image/png" href="/flowiq-logo.png?v=2">
+  <link rel="shortcut icon" href="/favicon.ico?v=2">
+  <link rel="stylesheet" href="/flowiq-light.css?v=2" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    :root {
+      --proposal-ink: #0f172a;
+      --proposal-copy: #334155;
+      --proposal-muted: #64748b;
+      --proposal-line: rgba(148, 163, 184, 0.22);
+      --proposal-orange: #f97316;
+      --proposal-orange-dark: #ea580c;
+      --proposal-cyan: #0891b2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--proposal-ink);
+      background: #f8fafc;
+    }
+
+    .proposal-shell {
+      position: relative;
+      isolation: isolate;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 32px 16px 48px;
+    }
+
+    .proposal-wrap {
+      position: relative;
+      max-width: 1180px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+
+    .proposal-frame {
+      overflow: hidden;
+      border-radius: 32px;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 34px 90px rgba(15, 23, 42, 0.12);
+      backdrop-filter: blur(18px);
+    }
+
+    .proposal-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 24px 28px 0;
+      margin-bottom: 8px;
+    }
+
+    .proposal-topbar img,
+    .proposal-footer img {
+      display: block;
+      height: 52px;
+      width: auto;
+      max-width: 205px;
+      object-fit: contain;
+    }
+
+    .proposal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.75rem 1.15rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--proposal-orange), #fb923c);
+      color: #fff;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      box-shadow: 0 18px 44px rgba(249, 115, 22, 0.22);
+    }
+
+    .proposal-hero {
+      position: relative;
+      margin: 0 24px 0;
+      padding: 18px 28px 28px;
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: auto;
+    }
+
+    .proposal-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(249, 115, 22, 0.16), transparent 20rem),
+        radial-gradient(circle at 84% 16%, rgba(14, 165, 233, 0.14), transparent 18rem),
+        linear-gradient(120deg, rgba(249, 115, 22, 0.09), transparent 34%, rgba(8, 145, 178, 0.08) 74%, transparent 100%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.84));
+      pointer-events: none;
+    }
+
+    .proposal-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+      background-size: 34px 34px;
+      opacity: 0.38;
+      mask-image: radial-gradient(circle at 22% 16%, rgba(0, 0, 0, 0.96), transparent 72%);
+      pointer-events: none;
+    }
+
+    .proposal-hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .proposal-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr);
+      gap: 1.75rem;
+      align-items: start;
+      min-height: auto;
+    }
+
+    .proposal-spotlight {
+      position: relative;
+      z-index: 1;
+      padding: 1.2rem;
+      border-radius: 1.75rem;
+      align-self: start;
+    }
+
+    .proposal-headline {
+      margin: 0.55rem 0 1.1rem;
+      max-width: 740px;
+      font-size: clamp(2.6rem, 5.1vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+      color: var(--proposal-ink);
+    }
+
+    .proposal-headline .headline-accent {
+      display: block;
+      margin-top: 0.14em;
+      background: linear-gradient(135deg, #0f172a 0%, #0f172a 20%, #f97316 60%, #ea580c 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-wrap: balance;
+    }
+
+    .proposal-copy {
+      max-width: 760px;
+      margin: 0 0 1.4rem;
+      color: var(--proposal-copy);
+      font-size: 1.1rem;
+      line-height: 1.75;
+    }
+
+    .proposal-hero-copy {
+      align-self: start;
+      min-height: auto;
+    }
+
+    .proposal-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .proposal-card-grid,
+    .proposal-module-grid,
+    .proposal-two-col {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .proposal-card-grid,
+    .proposal-module-grid,
+    .proposal-two-col {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .proposal-section {
+      margin: 0 24px;
+      padding: 0 0 24px;
+    }
+
+    .proposal-section + .proposal-section {
+      padding-top: 4px;
+    }
+
+    .proposal-section .story-card {
+      padding: 1.6rem;
+    }
+
+    .proposal-body {
+      padding: 24px;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .proposal-list,
+    .proposal-steps {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .proposal-list li {
+      position: relative;
+      padding-left: 1.2rem;
+      color: var(--proposal-copy);
+      line-height: 1.65;
+    }
+
+    .proposal-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62rem;
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 999px;
+      background: var(--proposal-orange);
+      box-shadow: 0 0 0 6px rgba(249, 115, 22, 0.12);
+    }
+
+    .proposal-steps {
+      counter-reset: proposal-step;
+    }
+
+    .proposal-steps li {
+      position: relative;
+      padding-left: 3rem;
+      color: var(--proposal-copy);
+      line-height: 1.65;
+      min-height: 2rem;
+    }
+
+    .proposal-steps li::before {
+      counter-increment: proposal-step;
+      content: counter(proposal-step);
+      position: absolute;
+      left: 0;
+      top: 0.05rem;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(135deg, var(--proposal-orange), var(--proposal-cyan));
+      box-shadow: 0 16px 34px rgba(15, 23, 42, 0.12);
+    }
+
+    .proposal-module {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .proposal-module-media {
+      height: 180px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--proposal-line);
+      background: #fff;
+    }
+
+    .proposal-module-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .proposal-module-copy {
+      padding: 1.2rem 1.2rem 1.1rem;
+    }
+
+    .proposal-module-copy strong {
+      display: block;
+      margin-top: 0.45rem;
+      margin-bottom: 0.45rem;
+      color: var(--proposal-ink);
+      font-size: 1.1rem;
+    }
+
+    .proposal-module-copy p {
+      margin: 0;
+      color: var(--proposal-copy);
+      line-height: 1.65;
+    }
+
+    .proposal-contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.15rem;
+    }
+
+    .proposal-contact-row a {
+      text-decoration: none;
+      color: var(--proposal-ink);
+    }
+
+    .proposal-hero-stage {
+      display: grid;
+      gap: 1rem;
+      align-content: start;
+    }
+
+    .proposal-hero-stage-card {
+      overflow: hidden;
+      border-radius: 1.55rem;
+      border: 1px solid rgba(226, 232, 240, 0.92);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+    }
+
+    .proposal-hero-stage-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+
+    .proposal-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 0 24px 24px;
+      padding: 1.2rem 1.4rem;
+      border-radius: 22px;
+    }
+
+    .proposal-footer-note {
+      color: var(--proposal-muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+      text-align: right;
+    }
+
+    .proposal-footer-copy {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .proposal-footer-line {
+      margin: 0;
+      color: var(--proposal-ink);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .proposal-footer-subline {
+      margin: 0;
+      color: var(--proposal-muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+      max-width: 520px;
+    }
+
+    .proposal-divider {
+      height: 1px;
+      margin: 0 24px;
+      background: linear-gradient(90deg, rgba(249, 115, 22, 0.35), rgba(148, 163, 184, 0.26), rgba(14, 165, 233, 0.25));
+    }
+
+    @media (max-width: 980px) {
+      .proposal-grid,
+      .proposal-card-grid,
+      .proposal-module-grid,
+      .proposal-two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .proposal-shell {
+        padding: 14px 8px 28px;
+      }
+
+      .proposal-topbar,
+      .proposal-hero,
+      .proposal-section,
+      .proposal-footer,
+      .proposal-divider {
+        margin-left: 12px;
+        margin-right: 12px;
+      }
+
+      .proposal-topbar {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .proposal-hero,
+      .proposal-body {
+        padding: 18px;
+      }
+
+      .proposal-headline {
+        font-size: 2.5rem;
+      }
+
+      .proposal-footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .proposal-footer-note {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="proposal-shell marketing-shell">
+    <div class="site-atmosphere" aria-hidden="true" style="position:fixed; inset:0; z-index:-1; width:100%; height:100%;"></div>
+
+    <div class="proposal-wrap">
+      <div class="proposal-frame">
+        <div class="proposal-topbar">
+          <img src="/flowiq-logo.png" alt="FlowIQ - Smarter business in motion" />
+          <div class="proposal-badge">Affiliate Proposal</div>
+        </div>
+
+        <section class="proposal-hero story-card">
+          <div class="proposal-grid">
+            <div class="proposal-hero-copy">
+              <span class="section-kicker">For Chartered Accountants and Advisory Firms</span>
+              <h1 class="proposal-headline">
+                Open the door to the right clients.
+                <span class="headline-accent">We handle the demos, rollout, training, and onboarding.</span>
+              </h1>
+              <p class="proposal-copy">
+                FlowIQ gives your firm a practical partner model: you introduce suitable businesses from your client base,
+                and we take responsibility for the commercial presentation, implementation support, staff training,
+                and data import assistance.
+              </p>
+              <div class="proposal-chip-row hero-chip-row">
+                <span class="hero-chip">10% recurring affiliate share</span>
+                <span class="hero-chip">Warm introductions only</span>
+                <span class="hero-chip">FlowIQ handles delivery</span>
+                <span class="hero-chip">Designed for operational businesses</span>
+              </div>
+            </div>
+
+            <div class="proposal-hero-stage">
+              <div class="proposal-hero-stage-card">
+                <img src="/assets/img/modules/thumb-importiq.png" alt="ImportIQ live brochure image" />
+              </div>
+              <div class="proposal-spotlight glass-panel">
+                <p class="text-xs font-black uppercase tracking-[0.28em] text-orange-600" style="margin:0; color:#f97316; font-size:0.78rem; font-weight:900; letter-spacing:0.24em; text-transform:uppercase;">
+                  Commercial Snapshot
+                </p>
+                <div class="metric-block" style="margin-top:1rem;">
+                  <p style="margin:0; font-size:3.4rem; line-height:1; font-weight:900; color:#0f172a;">10% Monthly</p>
+                  <p style="margin:0.75rem 0 0; color:#475569; font-size:1.02rem; line-height:1.7;">
+                    Recurring affiliate share on collected subscription revenue from active referred clients,
+                    with clear reporting and low operational lift for your firm.
+                  </p>
+                </div>
+                <div class="proposal-contact-row">
+                  <a class="proof-chip" href="mailto:quinten@flowiq.info">quinten@flowiq.info</a>
+                  <a class="proof-chip" href="tel:+27836390595">083 639 0595</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="proposal-divider"></div>
+
+        <div class="proposal-body">
+          <section class="proposal-section">
+            <div class="proposal-card-grid">
+              <article class="story-card">
+                <span class="section-kicker">Your role</span>
+                <p class="proposal-copy" style="margin-top:1rem; margin-bottom:0;">
+                  Identify relevant clients, make warm introductions, and encourage selected businesses to review the platform.
+                </p>
+              </article>
+              <article class="story-card">
+                <span class="section-kicker">Our role</span>
+                <p class="proposal-copy" style="margin-top:1rem; margin-bottom:0;">
+                  Run demos, scope fit, guide the process, support imports, train staff, and carry onboarding through to adoption.
+                </p>
+              </article>
+              <article class="story-card">
+                <span class="section-kicker">Why it works</span>
+                <p class="proposal-copy" style="margin-top:1rem; margin-bottom:0;">
+                  Your recommendation opens the conversation. Our team handles the execution. The client gains a better operating system.
+                </p>
+              </article>
+              <article class="story-card">
+                <span class="section-kicker">What your firm gains</span>
+                <p class="proposal-copy" style="margin-top:1rem; margin-bottom:0;">
+                  A recurring revenue stream, stronger advisory positioning, and a useful value-add for the right clients in your book.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section class="proposal-section">
+            <div class="proposal-two-col">
+              <article class="story-card">
+                <span class="section-kicker">The Partnership Opportunity</span>
+                <p class="proposal-copy" style="margin-top:1rem;">
+                  FlowIQ is a modular operational platform for businesses that need stronger control, better visibility, and tighter workflow discipline.
+                  This partner model allows your firm to recommend the platform without carrying the implementation burden.
+                </p>
+                <ul class="proposal-list">
+                  <li>Your firm identifies suitable clients and opens the door.</li>
+                  <li>You position FlowIQ as a practical system worth reviewing where the fit is right.</li>
+                  <li>We handle the product demonstration, commercial discussion, onboarding, training, and import support.</li>
+                  <li>Your firm remains the trusted advisor while FlowIQ handles the delivery process end to end.</li>
+                </ul>
+              </article>
+
+              <article class="story-card">
+                <span class="section-kicker">Commercial Structure</span>
+                <ul class="proposal-list" style="margin-top:1.1rem;">
+                  <li>10% of collected monthly subscription revenue from active referred clients.</li>
+                  <li>Recurring commission model for the duration of the active client relationship, subject to agreement.</li>
+                  <li>Clear monthly reporting on referred accounts, active subscriptions, and commission due.</li>
+                  <li>No requirement for your firm to provide product support, implementation, or training services.</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section class="proposal-section">
+            <div class="proposal-two-col">
+              <article class="story-card">
+                <span class="section-kicker">Why This Makes Sense</span>
+                <ul class="proposal-list">
+                  <li>It gives your clients access to a practical system that improves reporting discipline and operational visibility.</li>
+                  <li>It strengthens your role as a proactive commercial advisor, not only a compliance-focused service provider.</li>
+                  <li>It creates recurring revenue from businesses you already know and understand.</li>
+                  <li>It keeps effort low for your team because FlowIQ handles demos, onboarding, training, and implementation support.</li>
+                </ul>
+              </article>
+
+              <article class="story-card">
+                <span class="section-kicker">Best-Fit Clients</span>
+                <ul class="proposal-list">
+                  <li>Stock-holding businesses with multiple moving parts.</li>
+                  <li>Companies relying on spreadsheets or disconnected systems.</li>
+                  <li>Operations needing stronger accountability across teams.</li>
+                  <li>Businesses that would benefit from cleaner reporting and live operational oversight.</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section class="proposal-section">
+            <article class="story-card">
+              <span class="section-kicker">FlowIQ Modules</span>
+              <p class="proposal-copy" style="margin-top:1rem;">
+                FlowIQ is modular, so clients can start with the operational areas that matter most and expand as the business grows.
+              </p>
+
+              <div class="proposal-module-grid">
+                <article class="proposal-module story-card">
+                  <div class="proposal-module-media">
+                    <img src="/assets/img/modules/thumb-importiq.png" alt="ImportIQ live brochure image" />
+                  </div>
+                  <div class="proposal-module-copy">
+                    <span class="section-kicker">Operations</span>
+                    <strong>ImportIQ</strong>
+                    <p>Manages import shipments from supplier invoice capture through landed-cost finalisation.</p>
+                  </div>
+                </article>
+
+                <article class="proposal-module story-card">
+                  <div class="proposal-module-media">
+                    <img src="/assets/img/modules/thumb-exportiq.png" alt="ExportIQ live brochure image" />
+                  </div>
+                  <div class="proposal-module-copy">
+                    <span class="section-kicker">Operations</span>
+                    <strong>ExportIQ</strong>
+                    <p>Runs export workflows, shipment milestones, and export-related document processes.</p>
+                  </div>
+                </article>
+
+                <article class="proposal-module story-card">
+                  <div class="proposal-module-media">
+                    <img src="/assets/img/modules/thumb-dashboardiq.png" alt="DashboardIQ live brochure image" />
+                  </div>
+                  <div class="proposal-module-copy">
+                    <span class="section-kicker">Fulfilment</span>
+                    <strong>DeliveryIQ</strong>
+                    <p>Plans and monitors deliveries with operational status tracking and cost visibility.</p>
+                  </div>
+                </article>
+
+                <article class="proposal-module story-card">
+                  <div class="proposal-module-media">
+                    <img src="/assets/img/modules/thumb-salesiq.png" alt="SalesIQ live brochure image" />
+                  </div>
+                  <div class="proposal-module-copy">
+                    <span class="section-kicker">Fulfilment</span>
+                    <strong>CourierIQ</strong>
+                    <p>Compares courier options and improves control over carrier and address configuration.</p>
+                  </div>
+                </article>
+
+                <article class="proposal-module story-card">
+                  <div class="proposal-module-media">
+                    <img src="/assets/img/modules/thumb-priceiq.png" alt="PriceIQ live brochure image" />
+                  </div>
+                  <div class="proposal-module-copy">
+                    <span class="section-kicker">Commercial</span>
+                    <strong>PriceIQ</strong>
+                    <p>Controls customer-specific pricing, fallback lists, and promotions with clear pricing logic.</p>
+                  </div>
+                </article>
+
+                <article class="proposal-module story-card">
+                  <div class="proposal-module-media">
+                    <img src="/assets/img/modules/thumb-forecastiq.png" alt="ForecastIQ live brochure image" />
+                  </div>
+                  <div class="proposal-module-copy">
+                    <span class="section-kicker">Planning</span>
+                    <strong>ForecastIQ</strong>
+                    <p>Improves planning with demand, replenishment, and stock-risk forecasting by SKU and period.</p>
+                  </div>
+                </article>
+
+                <article class="proposal-module story-card">
+                  <div class="proposal-module-media">
+                    <img src="/assets/img/modules/thumb-dashboardiq.png" alt="DashboardIQ live brochure image" />
+                  </div>
+                  <div class="proposal-module-copy">
+                    <span class="section-kicker">Visibility</span>
+                    <strong>DashboardIQ</strong>
+                    <p>Gives management a clear view of revenue, margin, stock, and performance trends.</p>
+                  </div>
+                </article>
+
+                <article class="proposal-module story-card">
+                  <div class="proposal-module-media">
+                    <img src="/assets/img/modules/thumb-taskiq.png" alt="TaskIQ live brochure image" />
+                  </div>
+                  <div class="proposal-module-copy">
+                    <span class="section-kicker">Execution</span>
+                    <strong>TaskIQ</strong>
+                    <p>Builds accountability through operational tasks, subtasks, and team-level follow-through.</p>
+                  </div>
+                </article>
+              </div>
+            </article>
+          </section>
+
+          <section class="proposal-section">
+            <div class="proposal-two-col">
+              <article class="story-card">
+                <span class="section-kicker">How We Would Work Together</span>
+                <ol class="proposal-steps">
+                  <li>Your firm identifies clients in the existing book that are strong candidates for the platform.</li>
+                  <li>You make a warm introduction and encourage a short review conversation.</li>
+                  <li>We run a tailored demo based on the client’s operational and reporting pain points.</li>
+                  <li>We handle the proposal, commercial discussion, and implementation scope where there is a fit.</li>
+                  <li>We support onboarding, staff training, and data imports to make adoption smooth.</li>
+                  <li>We continue supporting the client while your firm receives clear affiliate reporting.</li>
+                </ol>
+              </article>
+
+              <article class="story-card">
+                <span class="section-kicker">Suggested Pilot Approach</span>
+                <p class="proposal-copy" style="margin-top:1rem;">
+                  The cleanest way to launch this channel is to start with a focused pilot. A shortlist of 5 to 10 suitable clients
+                  is enough to test the model, validate conversion quality, and build momentum without creating noise.
+                </p>
+                <ul class="proposal-list">
+                  <li>Select a small group of suitable businesses.</li>
+                  <li>Arrange short introductory conversations.</li>
+                  <li>Allow us to run tailored demos for interested parties.</li>
+                  <li>Review the early outcomes together and scale from there.</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <footer class="proposal-footer glass-panel">
+          <div class="proposal-footer-copy">
+            <img src="/flowiq-logo.png" alt="FlowIQ - Smarter business in motion" />
+            <p class="proposal-footer-line">Together, we can help more businesses operate with clarity, control, and confidence.</p>
+            <p class="proposal-footer-subline">That creates better outcomes for your clients, stronger advisory value for your firm, and measurable operational progress where it matters most.</p>
+          </div>
+          <div class="proposal-footer-note">
+            quinten@flowiq.info<br />
+            083 639 0595
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

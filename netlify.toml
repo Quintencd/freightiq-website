@@ -154,6 +154,12 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+[[headers]]
+  for = "/proposals/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
+
 # Favicon files - cache with versioning
 [[headers]]
   for = "/flowiq-iq-badge.svg"
