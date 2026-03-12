@@ -9,6 +9,38 @@
   <link rel="icon" type="image/png" href="/flowiq-logo.png?v=2">
   <link rel="shortcut icon" href="/favicon.ico?v=2">
   <link rel="stylesheet" href="/assets/css/seo-pages.css?v=1">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why do importers need different inventory forecasting software?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Importers plan against long lead times, shipment delays, FX movement, and landed cost changes. Forecasting software for importers needs inbound shipment visibility and cost context, not just historical sales averages."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does forecasting connect to landed cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Forecasting determines what to reorder and when, while landed cost determines what those decisions do to margin and stock value. When the two are disconnected, teams often reorder the wrong products or misread profitability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should a forecasting workflow show before a reorder is placed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A useful forecasting workflow should show weeks of cover, open purchase orders, expected arrivals, lead time risk, and the commercial impact of delaying or accelerating a reorder."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="landing-shell">
@@ -76,6 +108,23 @@
         </section>
 
         <section class="content-card">
+          <h2>Example: forecasting for a container-based importer</h2>
+          <p>A distributor ordering every 8 to 12 weeks cannot wait for a weekly stockout report. They need to know which SKUs will fall below cover before the next container closes, which purchase orders are already on the water, and whether demand shifts justify adding stock to the next shipment.</p>
+          <p>That decision changes again when freight, duty, or FX moves. A forecast that ignores landed cost can preserve fill rate while quietly damaging gross margin. FlowIQ connects forecast timing, inbound visibility, and landed cost so planners can decide with one commercial view instead of stitching spreadsheets together.</p>
+          <p>If your operation is still deciding after stock lands, review the <a href="/import-erp-software.html" class="resource-link">import ERP software</a> page to see how the upstream workflow connects into planning.</p>
+        </section>
+
+        <section class="content-card">
+          <h2>What good forecasting software changes operationally</h2>
+          <ul>
+            <li>Planners stop relying on static reorder points that ignore inbound shipment changes.</li>
+            <li>Buyers see forecast risk early enough to adjust quantities before supplier cut-off.</li>
+            <li>Stock teams align warehouse cover with what is actually arriving, not what was expected last month.</li>
+            <li>Commercial teams can prioritise reorders using both service level risk and margin reality.</li>
+          </ul>
+        </section>
+
+        <section class="content-card">
           <h2>Related resources</h2>
           <p>If you are validating assumptions, these tools help before you move the workflow into FlowIQ.</p>
           <div class="resource-row">
@@ -88,8 +137,19 @@
         </section>
 
         <section class="content-card">
+          <h2>Common forecasting questions</h2>
+          <h3>Why do importers need different forecasting logic?</h3>
+          <p>Because lead times are longer, supplier cut-offs matter, and shipment delays change availability. Import-focused forecasting has to model inbound timing, not just reorder from historical averages.</p>
+          <h3>What should the team see before raising a purchase order?</h3>
+          <p>At minimum: projected stock cover, open purchase orders, in-transit inventory, lead time assumptions, and the margin effect of the next reorder.</p>
+          <h3>How does this connect to inventory valuation?</h3>
+          <p>Forecasts influence what arrives next; landed cost determines what that stock is worth once received. If those views are disconnected, planning and profitability drift apart.</p>
+        </section>
+
+        <section class="content-card">
           <h2>See FlowIQ in action</h2>
           <p>A guided demo focused on replenishment planning, inbound timing, and how the forecast connects back to costing and stock decisions.</p>
+          <p>If your bigger problem is stock visibility after landed cost is posted, the <a href="/inventory-software-for-importers.html" class="resource-link">inventory software for importers</a> page covers that side of the workflow.</p>
           <div class="button-row">
             <a href="/book-demo.html" data-analytics-event="demo_request" class="button button--primary">Book Demo</a>
           </div>
