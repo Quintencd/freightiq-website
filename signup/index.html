@@ -49,6 +49,74 @@
             font-size: 0.75rem;
             margin-top: 0.25rem;
         }
+        .flowiq-select-btn {
+            width: 100%;
+            min-height: 52px;
+            padding: 0.75rem 1rem;
+            background: #0f172a;
+            border: 1px solid #475569;
+            border-radius: 0.5rem;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .flowiq-select-btn:hover {
+            border-color: #64748b;
+        }
+        .flowiq-select-btn:focus-visible {
+            outline: none;
+            border-color: #f97316;
+            box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+        }
+        .flowiq-select-btn.is-placeholder {
+            color: #94a3b8;
+        }
+        .flowiq-select-menu {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: calc(100% + 0.375rem);
+            background: #0f172a;
+            border: 1px solid #475569;
+            border-radius: 0.75rem;
+            box-shadow: 0 12px 32px rgba(2, 6, 23, 0.55);
+            max-height: 17rem;
+            overflow-y: auto;
+            z-index: 70;
+        }
+        .flowiq-select-option {
+            width: 100%;
+            border: 0;
+            background: transparent;
+            color: #e2e8f0;
+            text-align: left;
+            padding: 0.7rem 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: background-color 0.15s ease;
+        }
+        .flowiq-select-option:hover,
+        .flowiq-select-option:focus-visible {
+            outline: none;
+            background: rgba(148, 163, 184, 0.16);
+        }
+        .flowiq-select-option.is-selected {
+            background: rgba(249, 115, 22, 0.22);
+            color: #fff;
+        }
+        .flowiq-select-check {
+            width: 1rem;
+            min-width: 1rem;
+            text-align: center;
+            opacity: 0;
+        }
+        .flowiq-select-option.is-selected .flowiq-select-check {
+            opacity: 1;
+        }
     </style>
     <link rel="stylesheet" href="/flowiq-light.css?v=2">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -195,20 +263,20 @@
 
                         <div>
                             <label for="industry" class="block text-sm font-medium text-slate-300 mb-2">Industry *</label>
-                            <select 
-                                id="industry" 
-                                name="industry" 
-                                required
-                                class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
-                            >
-                                <option value="">Select your industry</option>
-                                <option value="freight-logistics">Freight & Logistics</option>
-                                <option value="wholesale-distribution">Wholesale Distribution</option>
-                                <option value="manufacturing">Manufacturing</option>
-                                <option value="retail">Retail</option>
-                                <option value="import-export">Import/Export</option>
-                                <option value="other">Other</option>
-                            </select>
+                            <input id="industry" name="industry" type="hidden" required>
+                            <div class="relative" data-industry-select>
+                                <button
+                                    id="industryButton"
+                                    type="button"
+                                    aria-haspopup="listbox"
+                                    aria-expanded="false"
+                                    class="flowiq-select-btn is-placeholder"
+                                >
+                                    <span id="industryButtonLabel">Select your industry</span>
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                                </button>
+                                <div id="industryMenu" class="flowiq-select-menu hidden" role="listbox" aria-label="Industry options"></div>
+                            </div>
                         </div>
 
                         <div class="grid grid-cols-2 gap-4">
@@ -334,19 +402,19 @@
                                 <p class="text-xs font-medium text-slate-300 mb-1">Password must contain:</p>
                                 <ul class="text-xs space-y-0.5">
                                     <li id="req-length" class="text-slate-400 flex items-center gap-1">
-                                        <i data-lucide="x" class="w-3 h-3"></i>
+                                        <span class="password-rule-icon inline-block w-3 text-center text-slate-400">×</span>
                                         <span>At least 8 characters</span>
                                     </li>
                                     <li id="req-lowercase" class="text-slate-400 flex items-center gap-1">
-                                        <i data-lucide="x" class="w-3 h-3"></i>
+                                        <span class="password-rule-icon inline-block w-3 text-center text-slate-400">×</span>
                                         <span>One lowercase letter (a-z)</span>
                                     </li>
                                     <li id="req-uppercase" class="text-slate-400 flex items-center gap-1">
-                                        <i data-lucide="x" class="w-3 h-3"></i>
+                                        <span class="password-rule-icon inline-block w-3 text-center text-slate-400">×</span>
                                         <span>One uppercase letter (A-Z)</span>
                                     </li>
                                     <li id="req-number" class="text-slate-400 flex items-center gap-1">
-                                        <i data-lucide="x" class="w-3 h-3"></i>
+                                        <span class="password-rule-icon inline-block w-3 text-center text-slate-400">×</span>
                                         <span>One number (0-9)</span>
                                     </li>
                                 </ul>
@@ -917,24 +985,20 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 Object.entries(requirements).forEach(([id, met]) => {
                     const element = document.getElementById(id);
                     if (element) {
-                        const icon = element.querySelector('i[data-lucide]');
+                        const icon = element.querySelector('.password-rule-icon');
                         if (icon) {
                             if (met) {
-                                icon.setAttribute('data-lucide', 'check');
                                 icon.classList.remove('text-slate-400');
                                 icon.classList.add('text-green-500');
+                                icon.textContent = '✓';
                                 element.classList.remove('text-slate-400');
                                 element.classList.add('text-green-400');
                             } else {
-                                icon.setAttribute('data-lucide', 'x');
                                 icon.classList.remove('text-green-500');
                                 icon.classList.add('text-slate-400');
+                                icon.textContent = '×';
                                 element.classList.remove('text-green-400');
                                 element.classList.add('text-slate-400');
-                            }
-                            // Re-render Lucide icon
-                            if (window.lucide) {
-                                window.lucide.createIcons();
                             }
                         }
                     }
@@ -952,6 +1016,85 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     clearFieldError('password');
                 });
             }
+
+            // FlowIQ custom selector for industry (keeps hidden input name="industry")
+            (function setupIndustrySelect() {
+                const hiddenInput = document.getElementById('industry');
+                const button = document.getElementById('industryButton');
+                const label = document.getElementById('industryButtonLabel');
+                const menu = document.getElementById('industryMenu');
+                const wrapper = document.querySelector('[data-industry-select]');
+                if (!hiddenInput || !button || !label || !menu || !wrapper) return;
+
+                const options = [
+                    { value: 'freight-logistics', text: 'Freight & Logistics' },
+                    { value: 'wholesale-distribution', text: 'Wholesale Distribution' },
+                    { value: 'manufacturing', text: 'Manufacturing' },
+                    { value: 'retail', text: 'Retail' },
+                    { value: 'import-export', text: 'Import/Export' },
+                    { value: 'other', text: 'Other' }
+                ];
+
+                function closeMenu() {
+                    menu.classList.add('hidden');
+                    button.setAttribute('aria-expanded', 'false');
+                }
+
+                function openMenu() {
+                    menu.classList.remove('hidden');
+                    button.setAttribute('aria-expanded', 'true');
+                }
+
+                function renderOptions(selectedValue) {
+                    menu.innerHTML = '';
+                    options.forEach((opt) => {
+                        const row = document.createElement('button');
+                        row.type = 'button';
+                        row.className = 'flowiq-select-option';
+                        row.setAttribute('role', 'option');
+                        row.setAttribute('aria-selected', String(opt.value === selectedValue));
+                        row.innerHTML = '<span class="flowiq-select-check">✓</span><span>' + opt.text + '</span>';
+                        if (opt.value === selectedValue) row.classList.add('is-selected');
+                        row.addEventListener('click', () => {
+                            hiddenInput.value = opt.value;
+                            label.textContent = opt.text;
+                            button.classList.remove('is-placeholder');
+                            closeMenu();
+                            hiddenInput.dispatchEvent(new Event('input', { bubbles: true }));
+                            hiddenInput.dispatchEvent(new Event('change', { bubbles: true }));
+                        });
+                        menu.appendChild(row);
+                    });
+                }
+
+                function resetIndustrySelection() {
+                    hiddenInput.value = '';
+                    label.textContent = 'Select your industry';
+                    button.classList.add('is-placeholder');
+                    renderOptions('');
+                }
+
+                renderOptions('');
+                window.FlowIQSignupResetIndustrySelect = resetIndustrySelection;
+
+                button.addEventListener('click', function () {
+                    const isOpen = !menu.classList.contains('hidden');
+                    if (isOpen) {
+                        closeMenu();
+                    } else {
+                        renderOptions(hiddenInput.value || '');
+                        openMenu();
+                    }
+                });
+
+                button.addEventListener('keydown', function (event) {
+                    if (event.key === 'Escape') closeMenu();
+                });
+
+                document.addEventListener('click', function (event) {
+                    if (!wrapper.contains(event.target)) closeMenu();
+                });
+            })();
 
             // Custom checkbox behavior - simplified and robust
             function wireCustomCheckbox(id) {
@@ -1080,6 +1223,22 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     return;
                 }
 
+                // Special handling for custom industry selector
+                if (fieldId === 'industry') {
+                    const industryButton = document.getElementById('industryButton');
+                    if (industryButton) {
+                        industryButton.classList.add('field-error');
+                    }
+                    const industryWrapper = document.querySelector('[data-industry-select]');
+                    if (industryWrapper && !industryWrapper.querySelector('.error-message')) {
+                        const errorMsg = document.createElement('p');
+                        errorMsg.className = 'error-message';
+                        errorMsg.textContent = 'Please select your industry';
+                        industryWrapper.appendChild(errorMsg);
+                    }
+                    return;
+                }
+
                 // Special handling for checkboxes
                 if (fieldId === 'terms' || fieldId === 'privacy') {
                     const checkboxLabel = document.querySelector(`label[for="${fieldId}"]:not(.checkbox-label)`);
@@ -1130,6 +1289,14 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                         btn.style.borderColor = '';
                         btn.style.boxShadow = '';
                     });
+                }
+
+                if (fieldId === 'industry') {
+                    const industryButton = document.getElementById('industryButton');
+                    if (industryButton) industryButton.classList.remove('field-error');
+                    const industryWrapper = document.querySelector('[data-industry-select]');
+                    const industryError = industryWrapper?.querySelector('.error-message');
+                    if (industryError) industryError.remove();
                 }
             }
 
@@ -1504,6 +1671,9 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 
                 // Reset form
                 this.reset();
+                if (typeof window.FlowIQSignupResetIndustrySelect === 'function') {
+                    window.FlowIQSignupResetIndustrySelect();
+                }
                 // No auto-login / no auto-redirect: user explicitly clicks "Go to Sign In".
 
             } catch (error) {

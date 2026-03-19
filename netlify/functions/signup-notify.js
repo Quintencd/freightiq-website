@@ -110,7 +110,7 @@ exports.handler = async (event) => {
       };
     }
 
-    const from = 'onboarding@resend.dev';
+    const from = (process.env.RESEND_FROM || 'onboarding@resend.dev').toString().trim();
     const subject = 'FlowIQ – New organization signup';
     const text = buildEmailText({
       email,
@@ -139,19 +139,32 @@ exports.handler = async (event) => {
 
     if (!resendRes.ok) {
       const errText = await resendRes.text().catch(() => '');
+      console.error('signup-notify resend failed', {
+        status: resendRes.status,
+        details: errText,
+      });
       return {
-        statusCode: 502,
+        statusCode: 202,
         headers,
-        body: JSON.stringify({ error: `Email send failed (${resendRes.status}): ${errText}` }),
+        body: JSON.stringify({
+          status: 'accepted',
+          notified: false,
+          warning: `Email send failed (${resendRes.status})`,
+        }),
       };
     }
 
-    return { statusCode: 200, headers, body: JSON.stringify({ status: 'ok' }) };
+    return { statusCode: 200, headers, body: JSON.stringify({ status: 'ok', notified: true }) };
   } catch (err) {
+    console.error('signup-notify error', err);
     return {
-      statusCode: 500,
+      statusCode: 202,
       headers,
-      body: JSON.stringify({ error: err?.message || 'Unknown error' }),
+      body: JSON.stringify({
+        status: 'accepted',
+        notified: false,
+        warning: err?.message || 'Unknown error',
+      }),
     };
   }
 };
