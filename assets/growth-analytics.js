@@ -2,6 +2,42 @@
   var runtimeConfig = window.FlowIQAnalyticsConfig || {};
   var clarityProjectId = runtimeConfig.clarityProjectId || '';
 
+  function readBodyDataset(key, fallback) {
+    try {
+      if (!document.body || !document.body.dataset) return fallback || null;
+      return document.body.dataset[key] || fallback || null;
+    } catch (_) {
+      return fallback || null;
+    }
+  }
+
+  function inferSearchEngine(referrer) {
+    if (!referrer) return null;
+    var value = referrer.toLowerCase();
+    if (value.indexOf('google.') >= 0) return 'google';
+    if (value.indexOf('bing.com') >= 0) return 'bing';
+    if (value.indexOf('duckduckgo.com') >= 0) return 'duckduckgo';
+    if (value.indexOf('search.yahoo.com') >= 0) return 'yahoo';
+    if (value.indexOf('baidu.com') >= 0) return 'baidu';
+    return null;
+  }
+
+  function buildPageMetadata() {
+    return {
+      page_path: window.location.pathname,
+      page_title: document.title || '',
+      page_template: readBodyDataset('pageTemplate', 'marketing'),
+      page_intent: readBodyDataset('pageIntent', 'general'),
+      page_topic: readBodyDataset('pageTopic', 'flowiq'),
+      search_engine: inferSearchEngine(document.referrer || ''),
+      cta_position: readBodyDataset('defaultCtaPosition', null)
+    };
+  }
+
+  function withPageMetadata(params, overrides) {
+    return Object.assign({}, buildPageMetadata(), params || {}, overrides || {});
+  }
+
   function safePushDataLayer(eventName, params) {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(Object.assign({ event: eventName }, params || {}));
@@ -30,17 +66,18 @@
   }
 
   function trackGrowthEvent(eventName, params) {
-    var payload = params || {};
+    var payload = withPageMetadata(params);
     trackEvent(eventName, payload);
 
-    if (eventName === 'trial_signup_click') emitWebEvent('web_signup_start', { source: 'growth_analytics', trigger: 'trial_cta_click' });
-    if (eventName === 'pricing_page_view') emitWebEvent('web_page_view', { source: 'growth_analytics', intent: 'pricing' });
-    if (eventName === 'calculator_use') emitWebEvent('web_cta_click', { source: 'growth_analytics', cta_name: 'calculator_use' });
-    if (eventName === 'demo_request') emitWebEvent('web_demo_request_submit', { source: 'growth_analytics' });
-    if (eventName === 'contact_submit') emitWebEvent('web_demo_request_submit', { source: 'growth_analytics', subtype: 'contact_submit' });
-    if (eventName === 'account_created') emitWebEvent('web_signup_complete', { source: 'growth_analytics' });
-    if (eventName === 'landing_visit') emitWebEvent('web_page_view', { source: 'growth_analytics', funnel_step: 'landing' });
-    if (eventName === 'module_view') emitWebEvent('web_cta_click', { source: 'growth_analytics', cta_name: 'module_view' });
+    if (eventName === 'trial_signup_click') emitWebEvent('web_signup_start', withPageMetadata({ source: 'growth_analytics', trigger: 'trial_cta_click' }, payload));
+    if (eventName === 'pricing_page_view') emitWebEvent('web_page_view', withPageMetadata({ source: 'growth_analytics', funnel_step: 'pricing' }, payload));
+    if (eventName === 'calculator_use') emitWebEvent('web_cta_click', withPageMetadata({ source: 'growth_analytics', cta_name: 'calculator_use' }, payload));
+    if (eventName === 'demo_request') emitWebEvent('web_demo_request_submit', withPageMetadata({ source: 'growth_analytics' }, payload));
+    if (eventName === 'contact_submit') emitWebEvent('web_demo_request_submit', withPageMetadata({ source: 'growth_analytics', subtype: 'contact_submit' }, payload));
+    if (eventName === 'account_created') emitWebEvent('web_signup_complete', withPageMetadata({ source: 'growth_analytics' }, payload));
+    if (eventName === 'landing_visit') emitWebEvent('web_page_view', withPageMetadata({ source: 'growth_analytics', funnel_step: 'landing' }, payload));
+    if (eventName === 'module_view') emitWebEvent('web_cta_click', withPageMetadata({ source: 'growth_analytics', cta_name: 'module_view' }, payload));
+    if (eventName === 'seo_landing_view') emitWebEvent('web_page_view', withPageMetadata({ source: 'growth_analytics', funnel_step: 'seo_landing', landing_channel: 'organic_search' }, payload));
   }
 
   function getSessionFlagKey(suffix) {
@@ -72,6 +109,7 @@
   function installFunnelTracking() {
     var path = window.location.pathname;
     var title = document.title || '';
+    var searchEngine = inferSearchEngine(document.referrer || '');
 
     if (path === '/' || path === '/index.html' || path === '/landing.html') {
       trackOncePerSession('landing_visit', 'landing_visit', { page_path: path, page_title: title });
@@ -83,6 +121,13 @@
 
     if (path.indexOf('/modules') >= 0) {
       trackOncePerSession('module_view_page', 'module_view', { module_name: 'modules_page', page_path: path });
+    }
+
+    if (readBodyDataset('pageTemplate', '') === 'seo-landing' && searchEngine) {
+      trackOncePerSession('seo_landing_' + path, 'seo_landing_view', {
+        landing_channel: 'organic_search',
+        search_engine: searchEngine
+      });
     }
   }
 
@@ -119,26 +164,29 @@
       var href = target.getAttribute('href') || '';
       var text = (target.textContent || '').trim().toLowerCase();
       var analyticsEvent = target.getAttribute('data-analytics-event');
+      var commonParams = {
+        link_target: href || null,
+        label: (target.getAttribute('data-analytics-label') || (target.textContent || '').trim()).slice(0, 120),
+        cta_position: target.getAttribute('data-analytics-position') || null,
+        cta_context: target.getAttribute('data-analytics-context') || readBodyDataset('pageIntent', null),
+        page_path: window.location.pathname
+      };
 
       if (analyticsEvent) {
-        trackGrowthEvent(analyticsEvent, {
-          link_target: href || null,
-          label: (target.textContent || '').trim().slice(0, 120),
-          page_path: window.location.pathname
-        });
+        trackGrowthEvent(analyticsEvent, commonParams);
         return;
       }
 
       if (href.indexOf('/signup') >= 0 || /start free trial|free trial|start trial/.test(text)) {
-        trackGrowthEvent('trial_signup_click', { cta_text: text.slice(0, 120), page_path: window.location.pathname });
+        trackGrowthEvent('trial_signup_click', Object.assign({}, commonParams, { cta_text: text.slice(0, 120) }));
       }
 
       if (href.indexOf('/modules') >= 0 || href.indexOf('#') >= 0 && window.location.pathname.indexOf('/modules') >= 0) {
-        trackGrowthEvent('module_view', { module_name: inferModuleNameFromHref(href), link_target: href });
+        trackGrowthEvent('module_view', Object.assign({}, commonParams, { module_name: inferModuleNameFromHref(href) }));
       }
 
       if (href.indexOf('/tools/') >= 0 && href.indexOf('calculator') >= 0) {
-        trackGrowthEvent('calculator_use', { tool_path: href });
+        trackGrowthEvent('calculator_use', Object.assign({}, commonParams, { tool_path: href }));
       }
     }, { passive: true });
   }
@@ -148,24 +196,29 @@
       form.addEventListener('submit', function () {
         var formName = (form.getAttribute('name') || form.getAttribute('id') || '').toLowerCase();
         var action = (form.getAttribute('action') || '').toLowerCase();
+        var formParams = {
+          form_name: formName || 'unnamed_form',
+          page_path: window.location.pathname,
+          cta_position: form.getAttribute('data-analytics-position') || 'form_submit'
+        };
 
         if (formName.indexOf('demo') >= 0 || action.indexOf('public-lead') >= 0) {
-          trackGrowthEvent('demo_request', { form_name: formName || 'demo_form', page_path: window.location.pathname });
+          trackGrowthEvent('demo_request', formParams);
           return;
         }
 
         if (formName.indexOf('contact') >= 0) {
-          trackGrowthEvent('contact_submit', { form_name: formName, page_path: window.location.pathname });
+          trackGrowthEvent('contact_submit', formParams);
           return;
         }
 
         if (formName.indexOf('signup') >= 0) {
-          trackGrowthEvent('trial_signup_click', { form_name: formName, page_path: window.location.pathname });
+          trackGrowthEvent('trial_signup_click', formParams);
           return;
         }
 
         if (formName.indexOf('lead') >= 0 || formName.indexOf('calculator') >= 0) {
-          trackGrowthEvent('calculator_use', { form_name: formName, page_path: window.location.pathname });
+          trackGrowthEvent('calculator_use', formParams);
         }
       });
     });

@@ -23,7 +23,7 @@
   </script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
-<body class="marketing-shell bg-slate-50 text-slate-900 overflow-x-hidden">
+<body class="marketing-shell bg-slate-50 text-slate-900 overflow-x-hidden" data-page-template="pricing" data-page-intent="pricing_decision" data-page-topic="flowiq pricing">
   <div class="cursor-glow" aria-hidden="true"></div>
   <div class="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.15),rgba(255,255,255,0))]"></div>
   <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
@@ -221,8 +221,8 @@
       <h2 class="mt-5 text-3xl font-black text-slate-900">Still not sure which plan is right?</h2>
       <p class="mt-4 max-w-2xl mx-auto text-slate-600">Book a demo if you want us to map the plan to your current workflow and operational complexity. Start a trial if you already know what level you need.</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/signup?plan=professional" class="inline-flex items-center justify-center bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-3 rounded-full font-semibold transition-colors">Start 30-Day Free Trial</a>
-        <a href="/book-demo.html" class="inline-flex items-center justify-center glass-panel text-slate-900 px-8 py-3 rounded-full font-semibold transition-colors">Request Demo</a>
+        <a href="/signup?plan=professional" data-analytics-event="trial_signup_click" data-analytics-position="pricing_bottom_primary" data-analytics-label="pricing decision trial" class="inline-flex items-center justify-center bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-3 rounded-full font-semibold transition-colors">Start 30-Day Free Trial</a>
+        <a href="/book-demo.html" data-analytics-event="demo_request" data-analytics-position="pricing_bottom_secondary" data-analytics-label="pricing decision demo" class="inline-flex items-center justify-center glass-panel text-slate-900 px-8 py-3 rounded-full font-semibold transition-colors">Request Demo</a>
       </div>
     </section>
   </main>
