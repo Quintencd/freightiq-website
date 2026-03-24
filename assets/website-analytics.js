@@ -4,6 +4,9 @@
   const GTM_CONTAINER_ID = runtimeConfig.gtmContainerId || 'GTM-XXXXXXX'; // Replace with your real GTM container
   const GA4_MEASUREMENT_ID = runtimeConfig.ga4MeasurementId || 'G-XXXXXXXXXX'; // Optional direct GA4 fallback
   const FIRST_TOUCH_KEY = 'flowiq_web_first_touch';
+  const GEO_CACHE_KEY = 'flowiq_web_geo';
+  const GEO_CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
+  let geoLookupPromise = null;
 
   function getSiteEnvironment() {
     const host = window.location.hostname.toLowerCase();
@@ -38,6 +41,60 @@
     } catch (_) {
       return `${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
     }
+  }
+
+  function getStoredGeo() {
+    try {
+      const raw = localStorage.getItem(GEO_CACHE_KEY);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== 'object') return null;
+      if (!parsed.country) return null;
+      if (!parsed.fetched_at || (Date.now() - new Date(parsed.fetched_at).getTime()) > GEO_CACHE_TTL_MS) return null;
+      return parsed;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function storeGeo(geo) {
+    try {
+      localStorage.setItem(GEO_CACHE_KEY, JSON.stringify({
+        country: geo.country || null,
+        country_name: geo.country_name || null,
+        fetched_at: new Date().toISOString()
+      }));
+    } catch (_) {
+      // ignore storage issues
+    }
+  }
+
+  async function resolveGeo() {
+    const cached = getStoredGeo();
+    if (cached) return cached;
+    if (geoLookupPromise) return geoLookupPromise;
+
+    geoLookupPromise = fetch('https://ipapi.co/json/', { cache: 'force-cache' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('geo lookup failed');
+        return res.json();
+      })
+      .then(function (data) {
+        const geo = {
+          country: data && typeof data.country === 'string' ? data.country : null,
+          country_name: data && typeof data.country_name === 'string' ? data.country_name : null
+        };
+        if (geo.country) storeGeo(geo);
+        return geo;
+      })
+      .catch(function () {
+        return { country: null, country_name: null };
+      })
+      .finally(function () {
+        geoLookupPromise = null;
+      });
+
+    return geoLookupPromise;
   }
 
   function getUtmParams() {
@@ -170,6 +227,7 @@
     const firstTouch = getFirstTouchAttribution();
     const searchEngine = inferSearchEngine(document.referrer || '');
     const trafficSourceCategory = inferTrafficSourceCategory(currentUtm, document.referrer || '');
+    const geo = await resolveGeo();
     const payload = {
       event_type: eventType,
       event_data: {
@@ -192,6 +250,8 @@
         page_topic: readBodyDataset('pageTopic', 'flowiq'),
         traffic_source_category: trafficSourceCategory,
         search_engine: searchEngine,
+        country: geo.country || null,
+        country_name: geo.country_name || null,
         first_touch_utm_source: firstTouch.utm_source || null,
         first_touch_utm_medium: firstTouch.utm_medium || null,
         first_touch_utm_campaign: firstTouch.utm_campaign || null,

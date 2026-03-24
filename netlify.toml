@@ -41,11 +41,13 @@
   from = "/modules"
   to = "/modules.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/modules/"
   to = "/modules.html"
   status = 301
+  force = true
 
 # Signup should be served from ONE canonical file.
 # `/signup` and `/signup/` should render the same page as `/signup/index.html`.
