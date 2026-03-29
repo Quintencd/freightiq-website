@@ -244,6 +244,23 @@
                 <div class="bg-freight-slate-light rounded-xl shadow-2xl p-8 border border-slate-700">
                 <form id="signupForm" class="space-y-6">
                     <input type="hidden" id="selectedPlan" name="selectedPlan" value="growth" />
+                    <input type="hidden" id="accountType" name="accountType" value="organization" />
+
+                    <div class="space-y-3">
+                        <h3 class="text-lg font-semibold text-white border-b border-slate-600 pb-2">Account Type</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" role="radiogroup" aria-label="Select account type">
+                            <button type="button" class="account-type-option border border-freight-orange bg-freight-orange/10 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-account-type="organization">
+                                <div class="text-white font-semibold">Organization</div>
+                                <div class="text-xs text-slate-300">Standard company workspace with plan trial</div>
+                            </button>
+                            <button type="button" class="account-type-option border border-slate-600 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-account-type="accountant_firm">
+                                <div class="text-white font-semibold">Accountant Firm</div>
+                                <div class="text-xs text-slate-300">Free FlowIQ HQ dashboard for client switching</div>
+                            </button>
+                        </div>
+                        <p id="accountTypeHint" class="text-xs text-slate-400">Organization signup includes a 30-day trial on the selected plan.</p>
+                    </div>
+
                     <!-- Company Information -->
                     <div class="space-y-4">
                         <h3 class="text-lg font-semibold text-white border-b border-slate-600 pb-2">Company Information</h3>
@@ -259,6 +276,32 @@
                                 class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
                                 placeholder="Your Company Name"
                             >
+                        </div>
+
+                        <div id="accountantFirmDetails" class="hidden space-y-4 rounded-lg border border-slate-700 bg-freight-slate/60 p-4">
+                            <p class="text-xs font-semibold uppercase tracking-wide text-orange-300">Accountant Firm Profile</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="accountantProfessionalBody" class="block text-sm font-medium text-slate-300 mb-2">Professional Body *</label>
+                                    <input
+                                        id="accountantProfessionalBody"
+                                        name="accountantProfessionalBody"
+                                        type="text"
+                                        class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
+                                        placeholder="SAICA / SAIPA / CIBA"
+                                    >
+                                </div>
+                                <div>
+                                    <label for="accountantRegistrationNumber" class="block text-sm font-medium text-slate-300 mb-2">Tax Practitioner / Registration Number *</label>
+                                    <input
+                                        id="accountantRegistrationNumber"
+                                        name="accountantRegistrationNumber"
+                                        type="text"
+                                        class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
+                                        placeholder="SARS practitioner or firm registration code"
+                                    >
+                                </div>
+                            </div>
                         </div>
 
                         <div>
@@ -464,6 +507,66 @@
                             <label for="privacy" class="text-sm text-slate-300 cursor-pointer leading-relaxed flex-1">
                                 I have read and agree to the <span class="text-freight-orange hover:underline">FlowIQ Privacy Policy (POPIA)</span>.
                             </label>
+                        </div>
+
+                        <div id="accountantLegalSection" class="hidden space-y-3 rounded-lg border border-slate-700 bg-freight-slate/70 p-3">
+                            <p class="text-xs font-semibold uppercase tracking-wide text-orange-300">Accountant Compliance Declarations</p>
+
+                            <div class="flex items-start gap-3">
+                                <div class="relative flex-shrink-0 mt-0.5">
+                                    <input id="accountantOperatorTerms" name="accountantOperatorTerms" type="checkbox" class="sr-only">
+                                    <label for="accountantOperatorTerms" class="checkbox-label flex items-center justify-center w-5 h-5 bg-freight-slate border border-slate-600 rounded cursor-pointer transition-all duration-200 hover:border-freight-orange focus-within:ring-2 focus-within:ring-freight-orange focus-within:ring-opacity-20">
+                                        <svg class="checkbox-icon w-3.5 h-3.5 text-freight-orange opacity-0 transition-opacity duration-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <path d="M4.6 10.4l3.1 3.1L15.6 5.9"></path>
+                                        </svg>
+                                    </label>
+                                </div>
+                                <label for="accountantOperatorTerms" class="text-sm text-slate-300 cursor-pointer leading-relaxed flex-1">
+                                    I accept POPIA operator obligations and processor terms for accountant processing (sections 20/21).
+                                </label>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="relative flex-shrink-0 mt-0.5">
+                                    <input id="accountantBreachProcess" name="accountantBreachProcess" type="checkbox" class="sr-only">
+                                    <label for="accountantBreachProcess" class="checkbox-label flex items-center justify-center w-5 h-5 bg-freight-slate border border-slate-600 rounded cursor-pointer transition-all duration-200 hover:border-freight-orange focus-within:ring-2 focus-within:ring-freight-orange focus-within:ring-opacity-20">
+                                        <svg class="checkbox-icon w-3.5 h-3.5 text-freight-orange opacity-0 transition-opacity duration-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <path d="M4.6 10.4l3.1 3.1L15.6 5.9"></path>
+                                        </svg>
+                                    </label>
+                                </div>
+                                <label for="accountantBreachProcess" class="text-sm text-slate-300 cursor-pointer leading-relaxed flex-1">
+                                    I confirm our firm will follow POPIA breach reporting and incident response obligations (section 22).
+                                </label>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="relative flex-shrink-0 mt-0.5">
+                                    <input id="accountantCrossBorderControls" name="accountantCrossBorderControls" type="checkbox" class="sr-only">
+                                    <label for="accountantCrossBorderControls" class="checkbox-label flex items-center justify-center w-5 h-5 bg-freight-slate border border-slate-600 rounded cursor-pointer transition-all duration-200 hover:border-freight-orange focus-within:ring-2 focus-within:ring-freight-orange focus-within:ring-opacity-20">
+                                        <svg class="checkbox-icon w-3.5 h-3.5 text-freight-orange opacity-0 transition-opacity duration-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <path d="M4.6 10.4l3.1 3.1L15.6 5.9"></path>
+                                        </svg>
+                                    </label>
+                                </div>
+                                <label for="accountantCrossBorderControls" class="text-sm text-slate-300 cursor-pointer leading-relaxed flex-1">
+                                    I confirm we apply cross-border transfer controls for client data where required (section 72).
+                                </label>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="relative flex-shrink-0 mt-0.5">
+                                    <input id="accountantPractitionerDeclaration" name="accountantPractitionerDeclaration" type="checkbox" class="sr-only">
+                                    <label for="accountantPractitionerDeclaration" class="checkbox-label flex items-center justify-center w-5 h-5 bg-freight-slate border border-slate-600 rounded cursor-pointer transition-all duration-200 hover:border-freight-orange focus-within:ring-2 focus-within:ring-freight-orange focus-within:ring-opacity-20">
+                                        <svg class="checkbox-icon w-3.5 h-3.5 text-freight-orange opacity-0 transition-opacity duration-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                            <path d="M4.6 10.4l3.1 3.1L15.6 5.9"></path>
+                                        </svg>
+                                    </label>
+                                </div>
+                                <label for="accountantPractitionerDeclaration" class="text-sm text-slate-300 cursor-pointer leading-relaxed flex-1">
+                                    I declare practitioner details are accurate and understand tax filing actions require valid SARS/controlling-body alignment.
+                                </label>
+                            </div>
                         </div>
 
                         <details class="rounded-lg border border-slate-700 bg-freight-slate p-3">
@@ -889,6 +992,17 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             const selectedPlanInline = document.getElementById('selectedPlanInline');
             const planButtons = Array.from(document.querySelectorAll('.plan-option[data-plan]'));
             const buttonTextEl = document.getElementById('buttonText');
+            const accountTypeInput = document.getElementById('accountType');
+
+            function updateButtonText() {
+                if (!buttonTextEl) return;
+                const accountTypeValue = (accountTypeInput?.value || 'organization').toLowerCase();
+                if (accountTypeValue === 'accountant_firm') {
+                    buttonTextEl.textContent = 'Create Free FlowIQ HQ Account';
+                    return;
+                }
+                buttonTextEl.textContent = planCtaLabels[activePlan] || 'Start Your Free Trial';
+            }
 
             function render() {
                 // Always ensure hidden input has the current plan value
@@ -920,9 +1034,7 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                         btn.style.borderColor = '#475569';
                     }
                 });
-                if (buttonTextEl) {
-                    buttonTextEl.textContent = planCtaLabels[activePlan] || 'Start Your Free Trial';
-                }
+                updateButtonText();
             }
 
             function setPlan(next) {
@@ -942,7 +1054,105 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 btn.addEventListener('click', () => setPlan((btn.getAttribute('data-plan') || '').toLowerCase()));
             });
 
+            window.FlowIQSignupRefreshPlanUI = render;
+            window.FlowIQSignupSetPlan = setPlan;
+            window.FlowIQSignupGetActivePlan = () => activePlan;
             render();
+            })();
+
+            ;(function initAccountTypeSelection() {
+                const accountTypeInput = document.getElementById('accountType');
+                const accountTypeHint = document.getElementById('accountTypeHint');
+                const accountTypeButtons = Array.from(document.querySelectorAll('.account-type-option[data-account-type]'));
+                const planCard = document.getElementById('planCard');
+                const selectedPlanInlineWrap = document.getElementById('selectedPlanInline')?.closest('p');
+                const accountantFirmDetails = document.getElementById('accountantFirmDetails');
+                const accountantLegalSection = document.getElementById('accountantLegalSection');
+                const accountantRequiredFieldIds = ['accountantProfessionalBody', 'accountantRegistrationNumber'];
+                const accountantCheckboxIds = [
+                    'accountantOperatorTerms',
+                    'accountantBreachProcess',
+                    'accountantCrossBorderControls',
+                    'accountantPractitionerDeclaration',
+                ];
+
+                function styleButtons(activeType) {
+                    accountTypeButtons.forEach((btn) => {
+                        const type = (btn.getAttribute('data-account-type') || '').toLowerCase();
+                        const isActive = type === activeType;
+                        btn.classList.remove('border-freight-orange', 'bg-freight-orange/10', 'border-slate-600');
+                        btn.style.borderColor = '';
+                        btn.style.backgroundColor = '';
+                        btn.style.boxShadow = '';
+                        if (isActive) {
+                            btn.classList.add('border-freight-orange', 'bg-freight-orange/10');
+                            btn.style.borderColor = '#f97316';
+                            btn.style.backgroundColor = 'rgba(249, 115, 22, 0.1)';
+                            btn.style.boxShadow = '0 0 0 2px rgba(249, 115, 22, 0.35), 0 0 10px rgba(249, 115, 22, 0.4)';
+                        } else {
+                            btn.classList.add('border-slate-600');
+                            btn.style.borderColor = '#475569';
+                        }
+                    });
+                }
+
+                function applyAccountType(nextType) {
+                    const normalizedType = nextType === 'accountant_firm' ? 'accountant_firm' : 'organization';
+                    if (accountTypeInput) accountTypeInput.value = normalizedType;
+                    styleButtons(normalizedType);
+
+                    const isAccountant = normalizedType === 'accountant_firm';
+                    if (planCard) planCard.classList.toggle('hidden', isAccountant);
+                    if (selectedPlanInlineWrap) selectedPlanInlineWrap.classList.toggle('hidden', isAccountant);
+                    if (accountantFirmDetails) accountantFirmDetails.classList.toggle('hidden', !isAccountant);
+                    if (accountantLegalSection) accountantLegalSection.classList.toggle('hidden', !isAccountant);
+
+                    accountantRequiredFieldIds.forEach((id) => {
+                        const input = document.getElementById(id);
+                        if (!input) return;
+                        input.required = isAccountant;
+                        if (!isAccountant) {
+                            input.value = '';
+                            clearFieldError(id);
+                        }
+                    });
+
+                    accountantCheckboxIds.forEach((id) => {
+                        const input = document.getElementById(id);
+                        if (!input) return;
+                        input.required = isAccountant;
+                        if (!isAccountant) {
+                            input.checked = false;
+                        }
+                    });
+
+                    if (isAccountant) {
+                        const selectedPlanInput = document.getElementById('selectedPlan');
+                        if (selectedPlanInput) selectedPlanInput.value = 'starter';
+                        clearFieldError('selectedPlan');
+                    }
+
+                    if (accountTypeHint) {
+                        accountTypeHint.textContent = isAccountant
+                            ? 'Accountant firms are not charged for HQ access. Billing applies only when client orgs are shared and billed by plan.'
+                            : 'Organization signup includes a 30-day trial on the selected plan.';
+                    }
+
+                    if (typeof window.FlowIQSignupRefreshPlanUI === 'function') {
+                        window.FlowIQSignupRefreshPlanUI();
+                    }
+                }
+
+                accountTypeButtons.forEach((btn) => {
+                    btn.addEventListener('click', () => {
+                        applyAccountType((btn.getAttribute('data-account-type') || '').toLowerCase());
+                        clearFieldError('accountType');
+                    });
+                });
+
+                window.FlowIQSignupApplyAccountType = applyAccountType;
+                const initialType = (accountTypeInput?.value || 'organization').toLowerCase();
+                applyAccountType(initialType === 'accountant_firm' ? 'accountant_firm' : 'organization');
             })();
 
             // Password visibility toggle
@@ -1146,6 +1356,10 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             setTimeout(() => {
                 wireCustomCheckbox('terms');
                 wireCustomCheckbox('privacy');
+                wireCustomCheckbox('accountantOperatorTerms');
+                wireCustomCheckbox('accountantBreachProcess');
+                wireCustomCheckbox('accountantCrossBorderControls');
+                wireCustomCheckbox('accountantPractitionerDeclaration');
             }, 100);
 
             // Field error highlighting functions
@@ -1167,6 +1381,22 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 'phone': 'phone',
                 'plan selection': 'selectedPlan',
                 'selectedPlan': 'selectedPlan',
+                'account type': 'accountType',
+                'account_type': 'accountType',
+                'accountant operator terms': 'accountantOperatorTerms',
+                'operator_terms': 'accountantOperatorTerms',
+                'accountant breach process': 'accountantBreachProcess',
+                'breach_process': 'accountantBreachProcess',
+                'accountant cross border controls': 'accountantCrossBorderControls',
+                'cross_border_controls': 'accountantCrossBorderControls',
+                'accountant practitioner declaration': 'accountantPractitionerDeclaration',
+                'practitioner_declaration': 'accountantPractitionerDeclaration',
+                'accountant professional body': 'accountantProfessionalBody',
+                'accountant registration number': 'accountantRegistrationNumber',
+                'accountant tax controlling body': 'accountantProfessionalBody',
+                'accountant_tax_controlling_body': 'accountantProfessionalBody',
+                'accountant tax practitioner registration number': 'accountantRegistrationNumber',
+                'accountant_tax_practitioner_registration_number': 'accountantRegistrationNumber',
                 'terms': 'terms',
                 'privacy': 'privacy'
             };
@@ -1223,6 +1453,17 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     return;
                 }
 
+                if (fieldId === 'accountType') {
+                    const accountTypeSection = field?.closest('.space-y-3');
+                    if (accountTypeSection && !accountTypeSection.querySelector('.error-message')) {
+                        const errorMsg = document.createElement('p');
+                        errorMsg.className = 'error-message mt-1';
+                        errorMsg.textContent = 'Please select an account type';
+                        accountTypeSection.appendChild(errorMsg);
+                    }
+                    return;
+                }
+
                 // Special handling for custom industry selector
                 if (fieldId === 'industry') {
                     const industryButton = document.getElementById('industryButton');
@@ -1240,12 +1481,20 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 }
 
                 // Special handling for checkboxes
-                if (fieldId === 'terms' || fieldId === 'privacy') {
+                const checkboxErrorMessages = {
+                    terms: 'Please accept the Terms and Conditions',
+                    privacy: 'Please accept the Privacy Policy',
+                    accountantOperatorTerms: 'Please accept the POPIA operator terms declaration',
+                    accountantBreachProcess: 'Please accept the breach process declaration',
+                    accountantCrossBorderControls: 'Please accept the cross-border controls declaration',
+                    accountantPractitionerDeclaration: 'Please accept the practitioner declaration',
+                };
+                if (checkboxErrorMessages[fieldId]) {
                     const checkboxLabel = document.querySelector(`label[for="${fieldId}"]:not(.checkbox-label)`);
                     if (checkboxLabel && !checkboxLabel.querySelector('.error-message')) {
                         const errorMsg = document.createElement('span');
                         errorMsg.className = 'error-message block mt-1';
-                        errorMsg.textContent = `Please accept the ${fieldId === 'terms' ? 'Terms and Conditions' : 'Privacy Policy'}`;
+                        errorMsg.textContent = checkboxErrorMessages[fieldId];
                         checkboxLabel.appendChild(errorMsg);
                     }
                     return;
@@ -1298,6 +1547,13 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     const industryError = industryWrapper?.querySelector('.error-message');
                     if (industryError) industryError.remove();
                 }
+
+                if (fieldId === 'accountType') {
+                    const accountTypeInput = document.getElementById('accountType');
+                    const accountTypeSection = accountTypeInput?.closest('.space-y-3');
+                    const accountTypeError = accountTypeSection?.querySelector('.error-message');
+                    if (accountTypeError) accountTypeError.remove();
+                }
             }
 
             function clearAllFieldErrors() {
@@ -1317,7 +1573,20 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             }
 
             // Add event listeners to clear errors when user interacts with fields
-            const formFields = ['email', 'password', 'companyName', 'firstName', 'lastName', 'industry', 'employees', 'country', 'phone'];
+            const formFields = [
+                'email',
+                'password',
+                'companyName',
+                'firstName',
+                'lastName',
+                'industry',
+                'employees',
+                'country',
+                'phone',
+                'accountType',
+                'accountantProfessionalBody',
+                'accountantRegistrationNumber',
+            ];
             formFields.forEach(fieldId => {
                 const field = document.getElementById(fieldId);
                 if (field) {
@@ -1340,7 +1609,14 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             });
 
             // Clear checkbox errors when user checks them
-            ['terms', 'privacy'].forEach(checkboxId => {
+            [
+                'terms',
+                'privacy',
+                'accountantOperatorTerms',
+                'accountantBreachProcess',
+                'accountantCrossBorderControls',
+                'accountantPractitionerDeclaration',
+            ].forEach(checkboxId => {
                 const checkbox = document.getElementById(checkboxId);
                 if (checkbox) {
                     checkbox.addEventListener('change', () => clearFieldError(checkboxId));
@@ -1352,7 +1628,10 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             console.log('Signup form initialized - login required after account creation');
             document.getElementById('signupForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            window.FlowIQWebsiteAnalytics?.track('web_signup_start', { form_name: 'signupForm' });
+            window.FlowIQWebsiteAnalytics?.track('web_signup_start', {
+                form_name: 'signupForm',
+                account_type: (document.getElementById('accountType')?.value || 'organization').toLowerCase()
+            });
             
             const submitButton = document.getElementById('submitButton');
             const buttonText = document.getElementById('buttonText');
@@ -1387,6 +1666,17 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 
                 // Generate UUID for organization (required by database)
                 const orgId = crypto.randomUUID();
+                const accountTypeValue = (document.getElementById('accountType')?.value || 'organization').toLowerCase() === 'accountant_firm'
+                    ? 'accountant_firm'
+                    : 'organization';
+                const isAccountantFirm = accountTypeValue === 'accountant_firm';
+                const accountantProfessionalBodyValue = (formData.get('accountantProfessionalBody') || '').toString().trim();
+                const accountantRegistrationNumberValue = (formData.get('accountantRegistrationNumber') || '').toString().trim();
+                const accountantOperatorTermsAccepted = document.getElementById('accountantOperatorTerms')?.checked === true;
+                const accountantBreachProcessAccepted = document.getElementById('accountantBreachProcess')?.checked === true;
+                const accountantCrossBorderControlsAccepted = document.getElementById('accountantCrossBorderControls')?.checked === true;
+                const accountantPractitionerDeclarationAccepted = document.getElementById('accountantPractitionerDeclaration')?.checked === true;
+                const legalAcceptedAt = new Date().toISOString();
                 
                 // Get selected plan - read directly from DOM element as fallback if FormData doesn't have it
                 const selectedPlanInput = document.getElementById('selectedPlan');
@@ -1407,9 +1697,14 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     // Update the hidden input for consistency
                     if (selectedPlanInput) selectedPlanInput.value = selectedPlanValue;
                 }
+
+                if (isAccountantFirm) {
+                    selectedPlanValue = 'starter';
+                    if (selectedPlanInput) selectedPlanInput.value = selectedPlanValue;
+                }
                 
                 // Log for debugging
-                console.log('Submitting with plan:', selectedPlanValue, 'from input:', selectedPlanInput?.value);
+                console.log('Submitting signup with account type:', accountTypeValue, 'and plan:', selectedPlanValue, 'from input:', selectedPlanInput?.value);
                 
                 // Client-side validation before submission
                 const validationErrors = [];
@@ -1475,8 +1770,12 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 if (!formData.get('phone') || !formData.get('phone').toString().trim()) {
                     validationErrors.push('phone number');
                 }
+
+                if (!['organization', 'accountant_firm'].includes(accountTypeValue)) {
+                    validationErrors.push('account type');
+                }
                 
-                if (!selectedPlanValue || !['starter', 'growth', 'professional', 'scale'].includes(selectedPlanValue)) {
+                if (!isAccountantFirm && (!selectedPlanValue || !['starter', 'growth', 'professional', 'scale'].includes(selectedPlanValue))) {
                     validationErrors.push('plan selection');
                 }
                 
@@ -1486,6 +1785,27 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 
                 if (!document.getElementById('privacy')?.checked) {
                     validationErrors.push('privacy');
+                }
+
+                if (isAccountantFirm) {
+                    if (!accountantProfessionalBodyValue) {
+                        validationErrors.push('accountant professional body');
+                    }
+                    if (!accountantRegistrationNumberValue) {
+                        validationErrors.push('accountant registration number');
+                    }
+                    if (!accountantOperatorTermsAccepted) {
+                        validationErrors.push('operator_terms');
+                    }
+                    if (!accountantBreachProcessAccepted) {
+                        validationErrors.push('breach_process');
+                    }
+                    if (!accountantCrossBorderControlsAccepted) {
+                        validationErrors.push('cross_border_controls');
+                    }
+                    if (!accountantPractitionerDeclarationAccepted) {
+                        validationErrors.push('practitioner_declaration');
+                    }
                 }
                 
                 // If there are validation errors, highlight them and stop submission
@@ -1507,6 +1827,8 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     },
                     body: JSON.stringify({
                         selectedPlan: selectedPlanValue,
+                        accountType: accountTypeValue,
+                        account_type: accountTypeValue,
                         email: emailValue,
                         password: formData.get('password'),
                         org_id: orgId,  // Required by edge function
@@ -1518,13 +1840,26 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                         first_name: formData.get('firstName'),
                         last_name: formData.get('lastName'),
                         surname: formData.get('lastName'),
+                        accountant_professional_body: isAccountantFirm ? accountantProfessionalBodyValue : null,
+                        accountant_registration_number: isAccountantFirm ? accountantRegistrationNumberValue : null,
+                        accountant_tax_practitioner_registration_number: isAccountantFirm ? accountantRegistrationNumberValue : null,
+                        accountant_tax_controlling_body: isAccountantFirm ? accountantProfessionalBodyValue : null,
                         // ✅ Legal acceptance (required)
                         terms_accepted: document.getElementById('terms')?.checked === true,
                         terms_version: '2026-01-08',
-                        terms_accepted_at: new Date().toISOString(),
+                        terms_accepted_at: legalAcceptedAt,
                         privacy_accepted: document.getElementById('privacy')?.checked === true,
                         privacy_version: '2026-01-08',
-                        privacy_accepted_at: new Date().toISOString()
+                        privacy_accepted_at: legalAcceptedAt,
+                        accountant_operator_terms_accepted: isAccountantFirm ? accountantOperatorTermsAccepted : null,
+                        accountant_operator_terms_version: isAccountantFirm ? '2026-01-08' : null,
+                        accountant_operator_terms_accepted_at: isAccountantFirm && accountantOperatorTermsAccepted ? legalAcceptedAt : null,
+                        accountant_popia_breach_process_accepted: isAccountantFirm ? accountantBreachProcessAccepted : null,
+                        accountant_cross_border_controls_accepted: isAccountantFirm ? accountantCrossBorderControlsAccepted : null,
+                        accountant_practitioner_declaration_accepted: isAccountantFirm ? accountantPractitionerDeclarationAccepted : null,
+                        accountant_practitioner_declaration_accepted_at:
+                            isAccountantFirm && accountantPractitionerDeclarationAccepted ? legalAcceptedAt : null,
+                        accountant_compliance_version: isAccountantFirm ? '2026-01-08' : null
                     })
                 });
 
@@ -1602,6 +1937,16 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                         highlightFieldError('terms');
                         highlightFieldError('privacy');
                     }
+                    if (errorText.includes('accountant compliance declarations')) {
+                        highlightFieldError('operator_terms');
+                        highlightFieldError('breach_process');
+                        highlightFieldError('cross_border_controls');
+                        highlightFieldError('practitioner_declaration');
+                    }
+                    if (errorText.includes('accountant registration details required')) {
+                        highlightFieldError('accountant_tax_controlling_body');
+                        highlightFieldError('accountant_tax_practitioner_registration_number');
+                    }
                     if (errorText.includes('already registered') || errorText.includes('email already exists')) {
                         highlightFieldError('email');
                     }
@@ -1625,14 +1970,22 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                             industry: formData.get('industry'),
                             employees: formData.get('employees'),
                             country: formData.get('country'),
+                            account_type: accountTypeValue,
+                            accountant_firm_name: isAccountantFirm ? formData.get('companyName') : null,
+                            accountant_professional_body: isAccountantFirm ? accountantProfessionalBodyValue : null,
+                            accountant_registration_number: isAccountantFirm ? accountantRegistrationNumberValue : null,
                             selected_plan: selectedPlanValue,
                             signup_source: 'website_signup',
                             terms_accepted: document.getElementById('terms')?.checked === true,
                             terms_version: '2026-01-08',
-                            terms_accepted_at: new Date().toISOString(),
+                            terms_accepted_at: legalAcceptedAt,
                             privacy_accepted: document.getElementById('privacy')?.checked === true,
                             privacy_version: '2026-01-08',
-                            privacy_accepted_at: new Date().toISOString()
+                            privacy_accepted_at: legalAcceptedAt,
+                            accountant_operator_terms_accepted: isAccountantFirm ? accountantOperatorTermsAccepted : null,
+                            accountant_popia_breach_process_accepted: isAccountantFirm ? accountantBreachProcessAccepted : null,
+                            accountant_cross_border_controls_accepted: isAccountantFirm ? accountantCrossBorderControlsAccepted : null,
+                            accountant_practitioner_declaration_accepted: isAccountantFirm ? accountantPractitionerDeclarationAccepted : null
                         })
                     }).catch(function() {});
                 } catch (e) {}
@@ -1640,11 +1993,13 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 // ✅ SUCCESS: Account created with organization (no email confirmation required)
                 window.FlowIQWebsiteAnalytics?.track('web_signup_complete', {
                     form_name: 'signupForm',
-                    selected_plan: selectedPlanValue
+                    selected_plan: selectedPlanValue,
+                    account_type: accountTypeValue
                 });
                 window.FlowIQGrowthAnalytics?.trackAccountCreated({
                     selected_plan: selectedPlanValue,
-                    form_name: 'signupForm'
+                    form_name: 'signupForm',
+                    account_type: accountTypeValue
                 });
                 messageDiv.className = 'p-4 rounded-lg bg-green-500/20 border border-green-500/30';
                 messageDiv.innerHTML = `
@@ -1653,7 +2008,7 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                             <i data-lucide="check-circle" class="text-green-500" style="width:20px;height:20px"></i>
                             <div class="flex-1">
                                 <p class="text-green-400 font-semibold">Account created!</p>
-                                <p class="text-green-300 text-sm mt-1">You can sign in now using ${emailValue} and your password.</p>
+                                <p class="text-green-300 text-sm mt-1">${isAccountantFirm ? 'Your free FlowIQ HQ accountant account is ready. ' : ''}You can sign in now using ${emailValue} and your password.</p>
                             </div>
                         </div>
                         <div class="pt-2">
@@ -1674,13 +2029,17 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 if (typeof window.FlowIQSignupResetIndustrySelect === 'function') {
                     window.FlowIQSignupResetIndustrySelect();
                 }
+                if (typeof window.FlowIQSignupApplyAccountType === 'function') {
+                    window.FlowIQSignupApplyAccountType('organization');
+                }
                 // No auto-login / no auto-redirect: user explicitly clicks "Go to Sign In".
 
             } catch (error) {
                 console.error('Signup error:', error);
                 window.FlowIQWebsiteAnalytics?.track('web_signup_error', {
                     form_name: 'signupForm',
-                    error_message: (error?.message || 'unknown').slice(0, 200)
+                    error_message: (error?.message || 'unknown').slice(0, 200),
+                    account_type: (document.getElementById('accountType')?.value || 'organization').toLowerCase()
                 });
                 
                 // Show error
@@ -1698,15 +2057,11 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             } finally {
                 // Reset button state
                 submitButton.disabled = false;
-                // Respect selected plan label after submission attempt
-                const planFromState = (document.getElementById('selectedPlan')?.value || '').toLowerCase();
-                const planToCta = {
-                    starter: 'Start Starter Free Trial',
-                    growth: 'Start Growth Free Trial',
-                    professional: 'Start Professional Free Trial',
-                    scale: 'Start Scale Free Trial'
-                };
-                buttonText.textContent = planToCta[planFromState] || 'Start Your Free Trial';
+                if (typeof window.FlowIQSignupRefreshPlanUI === 'function') {
+                    window.FlowIQSignupRefreshPlanUI();
+                } else {
+                    buttonText.textContent = 'Start Your Free Trial';
+                }
                 loadingSpinner.classList.add('hidden');
                 
                 if (window.lucide) { window.lucide.createIcons(); }
