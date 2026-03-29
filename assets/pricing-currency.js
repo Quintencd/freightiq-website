@@ -8,8 +8,8 @@
   };
 
   var basePrices = {
-    monthly: { starter: 490, growth: 5990, professional: 10900, scale: 19900 },
-    annual: { starter: 5292, growth: 64692, professional: 117720, scale: 214920 }
+    monthly: { starter: 790, growth: 5990, professional: 10900, scale: 19900 },
+    annual: { starter: 8532, growth: 64692, professional: 117720, scale: 214920 }
   };
 
   var symbols = { ZAR: 'R', USD: '$', EUR: 'EUR ' };
