@@ -43,6 +43,13 @@ function buildEmailText(payload) {
   lines.push(`Terms accepted at: ${payload.terms_accepted_at || 'n/a'}`);
   lines.push(`Privacy accepted: ${payload.privacy_accepted !== false ? 'Yes' : 'No'} (version: ${payload.privacy_version || 'n/a'})`);
   lines.push(`Privacy accepted at: ${payload.privacy_accepted_at || 'n/a'}`);
+  lines.push(`Data risk acknowledged: ${payload.data_responsibility_acknowledged === true ? 'Yes' : 'No'}`);
+  lines.push(`Terms URL: ${payload.legal_terms_url || 'n/a'}`);
+  lines.push(`Privacy URL: ${payload.legal_privacy_url || 'n/a'}`);
+  lines.push(`Acceptance method: ${payload.legal_acceptance_method || 'n/a'}`);
+  lines.push(`Acceptance source URL: ${payload.legal_acceptance_source_url || 'n/a'}`);
+  lines.push(`Acceptance locale: ${payload.legal_acceptance_locale || 'n/a'}`);
+  lines.push(`Acceptance user agent: ${payload.legal_acceptance_user_agent || 'n/a'}`);
   lines.push('');
   lines.push('---');
   lines.push('Sent from FlowIQ signup (Netlify function signup-notify)');
@@ -126,6 +133,13 @@ exports.handler = async (event) => {
       privacy_accepted: body.privacy_accepted,
       privacy_version: (body.privacy_version || '').toString().trim(),
       privacy_accepted_at: (body.privacy_accepted_at || '').toString().trim(),
+      data_responsibility_acknowledged: body.data_responsibility_acknowledged === true,
+      legal_terms_url: (body.legal_terms_url || '').toString().trim(),
+      legal_privacy_url: (body.legal_privacy_url || '').toString().trim(),
+      legal_acceptance_method: (body.legal_acceptance_method || '').toString().trim(),
+      legal_acceptance_source_url: (body.legal_acceptance_source_url || '').toString().trim(),
+      legal_acceptance_locale: (body.legal_acceptance_locale || '').toString().trim(),
+      legal_acceptance_user_agent: (body.legal_acceptance_user_agent || '').toString().trim(),
     });
 
     const resendRes = await sendViaResend({

@@ -138,9 +138,8 @@
                     <a href="/modules.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Modules</a>
                     <a href="/pricing.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Pricing</a>
                     <a href="/brochure.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Brochure</a>
-                    <a href="https://app.flowiq.info/login" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Login</a>
                     <a href="/book-demo.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Book a Demo</a>
-                    <a href="https://app.flowiq.info/login" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Already have an account? Sign In</a>
+                    <a href="https://app.flowiq.info/login" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Sign in</a>
                     <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-2.5 rounded-lg font-semibold shadow-sm transition-all hover:shadow-md">Start your 30-day free trial</a>
                 </div>
                 <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu">
@@ -155,9 +154,8 @@
                 <a href="/modules.html" class="block text-slate-600 hover:text-orange-600 font-medium">Modules</a>
                 <a href="/pricing.html" class="block text-slate-600 hover:text-orange-600 font-medium">Pricing</a>
                 <a href="/brochure.html" class="block text-slate-600 hover:text-orange-600 font-medium">Brochure</a>
-                <a href="https://app.flowiq.info/login" class="block text-slate-600 hover:text-orange-600 font-medium">Login</a>
                 <a href="/book-demo.html" class="block text-slate-600 hover:text-orange-600 font-medium">Book a Demo</a>
-                <a href="https://app.flowiq.info/login" class="block text-slate-600 hover:text-orange-600 font-medium">Already have an account? Sign In</a>
+                <a href="https://app.flowiq.info/login" class="block text-slate-600 hover:text-orange-600 font-medium">Sign in</a>
                 <a href="/signup" class="block bg-freight-orange text-white px-4 py-2 rounded-lg text-center font-medium">Start your 30-day free trial</a>
             </div>
         </div>
@@ -255,7 +253,7 @@
                             </button>
                             <button type="button" class="account-type-option border border-slate-600 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-account-type="accountant_firm">
                                 <div class="text-white font-semibold">Accountant Firm</div>
-                                <div class="text-xs text-slate-300">Free FlowIQ HQ dashboard for client switching</div>
+                                <div class="text-xs text-slate-300">FlowIQ HQ dashboard for client switching</div>
                             </button>
                         </div>
                         <p id="accountTypeHint" class="text-xs text-slate-400">Organization signup includes a 30-day trial on the selected plan.</p>
@@ -307,7 +305,7 @@
                         <div>
                             <label for="industry" class="block text-sm font-medium text-slate-300 mb-2">Industry *</label>
                             <input id="industry" name="industry" type="hidden" required>
-                            <div class="relative" data-industry-select>
+                            <div class="relative" data-flowiq-select data-flowiq-select-for="industry">
                                 <button
                                     id="industryButton"
                                     type="button"
@@ -325,38 +323,38 @@
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label for="employees" class="block text-sm font-medium text-slate-300 mb-2">Company Size *</label>
-                                <select 
-                                    id="employees" 
-                                    name="employees" 
-                                    required
-                                    class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
-                                >
-                                    <option value="">Select size</option>
-                                    <option value="1-5">1-5 employees</option>
-                                    <option value="6-15">6-15 employees</option>
-                                    <option value="16-50">16-50 employees</option>
-                                    <option value="51-200">51-200 employees</option>
-                                    <option value="200+">200+ employees</option>
-                                </select>
+                                <input id="employees" name="employees" type="hidden" required>
+                                <div class="relative" data-flowiq-select data-flowiq-select-for="employees">
+                                    <button
+                                        id="employeesButton"
+                                        type="button"
+                                        aria-haspopup="listbox"
+                                        aria-expanded="false"
+                                        class="flowiq-select-btn is-placeholder"
+                                    >
+                                        <span id="employeesButtonLabel">Select size</span>
+                                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                                    </button>
+                                    <div id="employeesMenu" class="flowiq-select-menu hidden" role="listbox" aria-label="Company size options"></div>
+                                </div>
                             </div>
 
                             <div>
                                 <label for="country" class="block text-sm font-medium text-slate-300 mb-2">Country *</label>
-                                <select 
-                                    id="country" 
-                                    name="country" 
-                                    required
-                                    class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
-                                >
-                                    <option value="">Select country</option>
-                                    <option value="US">United States</option>
-                                    <option value="CA">Canada</option>
-                                    <option value="GB">United Kingdom</option>
-                                    <option value="AU">Australia</option>
-                                    <option value="ZA">South Africa</option>
-                                    <option value="NZ">New Zealand</option>
-                                    <option value="other">Other</option>
-                                </select>
+                                <input id="country" name="country" type="hidden" required>
+                                <div class="relative" data-flowiq-select data-flowiq-select-for="country">
+                                    <button
+                                        id="countryButton"
+                                        type="button"
+                                        aria-haspopup="listbox"
+                                        aria-expanded="false"
+                                        class="flowiq-select-btn is-placeholder"
+                                    >
+                                        <span id="countryButtonLabel">Select country</span>
+                                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                                    </button>
+                                    <div id="countryMenu" class="flowiq-select-menu hidden" role="listbox" aria-label="Country options"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -484,7 +482,8 @@
                                 </label>
                             </div>
                             <label for="terms" class="text-sm text-slate-300 cursor-pointer leading-relaxed flex-1">
-                                I have read and agree to the <span class="text-freight-orange hover:underline">FlowIQ Terms and Conditions</span>.
+                                I have read and agree to the
+                                <a href="/terms.html" target="_blank" rel="noopener noreferrer" class="text-freight-orange hover:underline">FlowIQ Terms and Conditions</a>.
                             </label>
                         </div>
 
@@ -505,7 +504,28 @@
                                 </label>
                             </div>
                             <label for="privacy" class="text-sm text-slate-300 cursor-pointer leading-relaxed flex-1">
-                                I have read and agree to the <span class="text-freight-orange hover:underline">FlowIQ Privacy Policy (POPIA)</span>.
+                                I have read and agree to the
+                                <a href="/privacy.html" target="_blank" rel="noopener noreferrer" class="text-freight-orange hover:underline">FlowIQ Privacy Policy (POPIA)</a>.
+                            </label>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="relative flex-shrink-0 mt-0.5">
+                                <input
+                                    id="dataRiskAcknowledgement"
+                                    name="dataRiskAcknowledgement"
+                                    type="checkbox"
+                                    required
+                                    class="sr-only"
+                                >
+                                <label for="dataRiskAcknowledgement" class="checkbox-label flex items-center justify-center w-5 h-5 bg-freight-slate border border-slate-600 rounded cursor-pointer transition-all duration-200 hover:border-freight-orange focus-within:ring-2 focus-within:ring-freight-orange focus-within:ring-opacity-20">
+                                    <svg class="checkbox-icon w-3.5 h-3.5 text-freight-orange opacity-0 transition-opacity duration-200" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M4.6 10.4l3.1 3.1L15.6 5.9"></path>
+                                    </svg>
+                                </label>
+                            </div>
+                            <label for="dataRiskAcknowledgement" class="text-sm text-slate-300 cursor-pointer leading-relaxed flex-1">
+                                I understand service interruptions, data loss, and third-party outages can occur, and I am responsible for maintaining backups and disaster recovery controls.
                             </label>
                         </div>
 
@@ -570,330 +590,15 @@
                         </div>
 
                         <details class="rounded-lg border border-slate-700 bg-freight-slate p-3">
-                            <summary class="cursor-pointer text-sm text-freight-orange">View FlowIQ Terms & Conditions + Privacy Policy (POPIA)</summary>
-                            <div class="mt-3 max-h-56 overflow-auto whitespace-pre-wrap text-xs text-slate-200">
-FLOWIQ
-
-TERMS AND CONDITIONS OF USE
-
-Last Updated: 8 January 2026
-Governing Law: Republic of South Africa
-
-⸻
-
-IMPORTANT – LEGALLY BINDING AGREEMENT
-
-By clicking “Create Account”, “Sign Up”, “Register”, or any similar action, you confirm that:
-	•	You have read, understood, and agreed to these Terms and Conditions
-	•	You are legally authorised to bind yourself or the entity you represent
-	•	Your use of FlowIQ is entirely at your own risk
-
-If you do not agree, do not use the Platform.
-
-⸻
-
-1. DEFINITIONS
-
-“Platform” means the FlowIQ software platform, including all modules, dashboards, tools, AI components, calculations, reports, forecasts, integrations, and interfaces.
-
-“Company” means FlowIQ (Pty) Ltd, including its directors, officers, shareholders, employees, contractors, licensors, and agents.
-
-“User” means any individual or entity accessing or using the Platform.
-
-“Data” means all information uploaded, imported, entered, processed, generated, or exported by the User.
-
-⸻
-
-2. PLATFORM PURPOSE – NO ADVICE
-
-FlowIQ is provided solely as a software-as-a-service (SaaS) tool.
-
-FlowIQ does not provide:
-	•	Financial advice
-	•	Accounting advice
-	•	Tax advice
-	•	Legal advice
-	•	Logistics advice
-	•	Business or commercial advice
-
-All outputs, calculations, analytics, projections, insights, recommendations, and reports are:
-	•	Informational only
-	•	Indicative
-	•	Dependent entirely on user-supplied data
-	•	Not guaranteed to be accurate, complete, or fit for any purpose
-
-The User remains fully and solely responsible for:
-	•	Verifying all outputs
-	•	Consulting qualified professionals
-	•	All decisions, actions, and consequences arising from Platform use
-
-⸻
-
-3. USER DATA RESPONSIBILITY
-
-The User:
-	•	Warrants they have the legal right to upload and use all Data
-	•	Accepts full responsibility for the accuracy, completeness, and legality of all Data
-	•	Acknowledges that incorrect or incomplete Data will produce incorrect outputs
-
-The Company does not audit, validate, or verify User Data.
-
-⸻
-
-4. DATA STORAGE, SECURITY & LOSS
-
-While reasonable technical and organisational safeguards are applied:
-
-The Company does not warrant that:
-	•	Data will be error-free
-	•	Data will not be lost, corrupted, delayed, or accessed unlawfully
-	•	The Platform will be uninterrupted or fully secure
-
-The User expressly acknowledges that:
-	•	Data loss may occur
-	•	Backups are the User’s responsibility
-	•	FlowIQ is not a system of record
-
-⸻
-
-5. AI, AUTOMATION & FORECASTING DISCLAIMER
-
-Where the Platform uses:
-	•	Artificial intelligence
-	•	Automation
-	•	Forecasting
-	•	Predictive analytics
-	•	Optimisation logic
-
-Such outputs:
-	•	Are probabilistic and non-deterministic
-	•	May be incomplete, inaccurate, or misleading
-	•	Must never be relied upon as guarantees or factual outcomes
-
-The User assumes all risk arising from reliance on AI-assisted or automated outputs.
-
-⸻
-
-6. LIMITATION OF LIABILITY (CRITICAL)
-
-To the maximum extent permitted by law, the Company shall not be liable for any:
-	•	Loss of income
-	•	Loss of profits
-	•	Loss of business or contracts
-	•	Loss of data
-	•	Loss of goodwill
-	•	Business interruption
-	•	Indirect, incidental, special, or consequential damages
-	•	Errors, omissions, or inaccuracies
-	•	Decisions made based on Platform outputs
-	•	Failures of third-party services or integrations
-
-Total aggregate liability, if any, is strictly limited to:
-
-➡ The fees actually paid by the User to FlowIQ in the preceding three (3) months
-
-If no fees were paid:
-
-➡ Total liability is zero
-
-⸻
-
-7. INDEMNITY
-
-The User indemnifies and holds harmless the Company against all claims, damages, losses, costs, and legal expenses arising from or related to:
-	•	Use of the Platform
-	•	Reliance on any outputs
-	•	Uploaded or processed Data
-	•	Breach of these Terms
-	•	Claims by third parties
-
-⸻
-
-8. AVAILABILITY & CHANGES
-
-The Company may:
-	•	Modify, suspend, or discontinue any feature at any time
-	•	Deploy updates or changes without notice
-	•	Alter functionality, logic, or availability
-
-No uptime, availability, or feature-continuity guarantees are provided.
-
-⸻
-
-9. THIRD-PARTY SERVICES
-
-The Platform may integrate with third-party services.
-
-The Company:
-	•	Does not control third-party systems
-	•	Makes no warranties regarding them
-	•	Bears no liability for third-party failures, interruptions, or losses
-
-⸻
-
-10. CONFIDENTIALITY & INTELLECTUAL PROPERTY
-
-All Platform logic, calculations, architecture, workflows, designs, and documentation are proprietary and confidential.
-
-The User may not:
-	•	Reverse engineer
-	•	Copy, resell, or sublicense
-	•	Extract or replicate logic
-	•	Use the Platform to compete
-
-⸻
-
-11. TERMINATION
-
-The Company may suspend or terminate access:
-	•	For breach of these Terms
-	•	For misuse
-	•	For risk exposure
-	•	At its sole discretion
-
-All disclaimers, limitations, and indemnities survive termination.
-
-⸻
-
-12. GOVERNING LAW & JURISDICTION
-
-These Terms are governed by the laws of the Republic of South Africa.
-
-The courts of South Africa have exclusive jurisdiction.
-
-⸻
-
-13. SEVERABILITY
-
-If any provision is found unenforceable, the remaining provisions remain fully enforceable.
-
-⸻
-
-14. ENTIRE AGREEMENT
-
-These Terms constitute the entire agreement between the User and the Company and override all prior discussions or representations.
-
-⸻
-
-15. CONTACT
-
-Legal notices:
-info@flowiq.co.za
-
-
-⸻
-
-ENTERPRISE & CUSTOM AGREEMENTS
-
-Notwithstanding anything in these Terms:
-	•	Enterprise or high-value clients may be subject to a separately negotiated written agreement
-	•	Only a document signed by an authorised director of FlowIQ may override these Terms
-	•	Verbal assurances, emails, proposals, or sales discussions do not modify liability
-	•	In the event of conflict, the signed enterprise agreement prevails only for that client
-
-All other provisions remain fully enforceable.
-
-
-FLOWIQ
-
-PRIVACY POLICY (POPIA)
-
-Last Updated: 8 January 2026
-Applicable Law: Protection of Personal Information Act, 4 of 2013 (POPIA)
-
-⸻
-
-1. PURPOSE
-
-FlowIQ respects user privacy and processes personal information in accordance with POPIA.
-
-This policy explains how personal information is collected, used, stored, and protected.
-
-⸻
-
-2. INFORMATION WE COLLECT
-
-FlowIQ may process:
-	•	Account details (name, email, company name)
-	•	Login credentials (encrypted)
-	•	Usage and interaction data
-	•	Business and operational data uploaded by users
-	•	Technical data (IP address, browser type, device data)
-
-FlowIQ does not verify the accuracy of uploaded data.
-
-⸻
-
-3. PURPOSE OF PROCESSING
-
-Personal information is processed to:
-	•	Provide and operate the Platform
-	•	Authenticate users
-	•	Improve performance and features
-	•	Communicate service-related notices
-	•	Comply with legal obligations
-
-⸻
-
-4. DATA OWNERSHIP
-	•	Users retain ownership of all uploaded data
-	•	FlowIQ acts as a data operator, not a data owner
-	•	Users confirm they have lawful authority to upload all data
-
-⸻
-
-5. DATA SECURITY
-
-FlowIQ implements reasonable technical and organisational safeguards.
-
-However:
-	•	No system is completely secure
-	•	FlowIQ does not guarantee prevention of breaches or data loss
-	•	Users remain responsible for backups and redundancy
-
-⸻
-
-6. DATA RETENTION
-	•	Data is retained only as long as necessary for platform operation or legal compliance
-	•	Upon account termination, data may be deleted or anonymised at FlowIQ’s discretion unless legally required otherwise
-
-⸻
-
-7. DATA SHARING
-
-FlowIQ:
-	•	Does not sell personal data
-	•	May share data with trusted service providers strictly for platform operation
-	•	May disclose data if legally required
-
-⸻
-
-8. USER RIGHTS (POPIA)
-
-Users may request to:
-	•	Access personal data
-	•	Correct inaccurate data
-	•	Delete personal data (subject to legal limits)
-
-Requests can be sent to:
-legal@flowiq.co.za
-
-⸻
-
-9. LIMITATION
-
-FlowIQ is not responsible for:
-	•	Data uploaded by users about third parties
-	•	User misuse of personal information
-	•	Compliance failures caused by user actions
-
-⸻
-
-10. CHANGES
-
-This policy may be updated at any time. Continued use constitutes acceptance.
-
-⸻
+                            <summary class="cursor-pointer text-sm text-freight-orange">Review legal documents</summary>
+                            <div class="mt-3 text-xs text-slate-200 space-y-2">
+                                <p>Legal version: <span class="font-semibold text-slate-100" id="legalVersionLabel">2026-03-30</span></p>
+                                <p>Please review the full legal documents before creating your account:</p>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li><a href="/terms.html" target="_blank" rel="noopener noreferrer" class="text-freight-orange hover:underline">FlowIQ Terms and Conditions</a></li>
+                                    <li><a href="/privacy.html" target="_blank" rel="noopener noreferrer" class="text-freight-orange hover:underline">FlowIQ Privacy Policy (POPIA)</a></li>
+                                </ul>
+                                <p class="text-slate-400">By continuing, you acknowledge backup/disaster-recovery responsibility and acceptance of FlowIQ risk-allocation clauses.</p>
                             </div>
                         </details>
                     </div>
@@ -961,6 +666,11 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             // IMPORTANT: Supabase Edge Functions require a JWT in the Authorization header.
             // Use the project's anon key (JWT), NOT the sb_publishable_* key.
             const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2YmhqbG12cGlwbmllZHd2ZGppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwNzcxODAsImV4cCI6MjA2MzY1MzE4MH0.nnITbcUjg_J33oK_1JCU82wMTr5Ko501JEHSW_3medw';
+            const FLOWIQ_LEGAL_VERSION = '2026-03-30';
+            const FLOWIQ_TERMS_URL = '/terms.html';
+            const FLOWIQ_PRIVACY_URL = '/privacy.html';
+            const legalVersionLabel = document.getElementById('legalVersionLabel');
+            if (legalVersionLabel) legalVersionLabel.textContent = FLOWIQ_LEGAL_VERSION;
         // NOTE: This marketing signup page does not need a Supabase JS client instance.
         // Creating one via the CDN bundle was crashing the page in production, which prevented
         // plan selection + checkbox visuals + password toggle from working.
@@ -998,7 +708,7 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 if (!buttonTextEl) return;
                 const accountTypeValue = (accountTypeInput?.value || 'organization').toLowerCase();
                 if (accountTypeValue === 'accountant_firm') {
-                    buttonTextEl.textContent = 'Create Free FlowIQ HQ Account';
+                    buttonTextEl.textContent = 'Create FlowIQ HQ Account';
                     return;
                 }
                 buttonTextEl.textContent = planCtaLabels[activePlan] || 'Start Your Free Trial';
@@ -1227,23 +937,24 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 });
             }
 
-            // FlowIQ custom selector for industry (keeps hidden input name="industry")
-            (function setupIndustrySelect() {
-                const hiddenInput = document.getElementById('industry');
-                const button = document.getElementById('industryButton');
-                const label = document.getElementById('industryButtonLabel');
-                const menu = document.getElementById('industryMenu');
-                const wrapper = document.querySelector('[data-industry-select]');
-                if (!hiddenInput || !button || !label || !menu || !wrapper) return;
+            // FlowIQ custom selectors for industry/company size/country
+            const flowiqSelectWrappers = Array.from(document.querySelectorAll('[data-flowiq-select]'));
+            function closeAllFlowIQSelects() {
+                flowiqSelectWrappers.forEach((wrapper) => {
+                    const button = wrapper.querySelector('.flowiq-select-btn');
+                    const menu = wrapper.querySelector('.flowiq-select-menu');
+                    if (menu) menu.classList.add('hidden');
+                    if (button) button.setAttribute('aria-expanded', 'false');
+                });
+            }
 
-                const options = [
-                    { value: 'freight-logistics', text: 'Freight & Logistics' },
-                    { value: 'wholesale-distribution', text: 'Wholesale Distribution' },
-                    { value: 'manufacturing', text: 'Manufacturing' },
-                    { value: 'retail', text: 'Retail' },
-                    { value: 'import-export', text: 'Import/Export' },
-                    { value: 'other', text: 'Other' }
-                ];
+            function setupFlowIQSelect(config) {
+                const hiddenInput = document.getElementById(config.fieldId);
+                const button = document.getElementById(config.buttonId);
+                const label = document.getElementById(config.labelId);
+                const menu = document.getElementById(config.menuId);
+                const wrapper = document.querySelector('[data-flowiq-select-for="' + config.fieldId + '"]');
+                if (!hiddenInput || !button || !label || !menu || !wrapper) return;
 
                 function closeMenu() {
                     menu.classList.add('hidden');
@@ -1257,7 +968,7 @@ This policy may be updated at any time. Continued use constitutes acceptance.
 
                 function renderOptions(selectedValue) {
                     menu.innerHTML = '';
-                    options.forEach((opt) => {
+                    config.options.forEach((opt) => {
                         const row = document.createElement('button');
                         row.type = 'button';
                         row.className = 'flowiq-select-option';
@@ -1277,21 +988,24 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     });
                 }
 
-                function resetIndustrySelection() {
+                function resetSelection() {
                     hiddenInput.value = '';
-                    label.textContent = 'Select your industry';
+                    label.textContent = config.placeholder;
                     button.classList.add('is-placeholder');
                     renderOptions('');
                 }
 
                 renderOptions('');
-                window.FlowIQSignupResetIndustrySelect = resetIndustrySelection;
+                if (config.fieldId === 'industry') {
+                    window.FlowIQSignupResetIndustrySelect = resetSelection;
+                }
 
                 button.addEventListener('click', function () {
                     const isOpen = !menu.classList.contains('hidden');
                     if (isOpen) {
                         closeMenu();
                     } else {
+                        closeAllFlowIQSelects();
                         renderOptions(hiddenInput.value || '');
                         openMenu();
                     }
@@ -1304,7 +1018,55 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 document.addEventListener('click', function (event) {
                     if (!wrapper.contains(event.target)) closeMenu();
                 });
-            })();
+            }
+
+            setupFlowIQSelect({
+                fieldId: 'industry',
+                buttonId: 'industryButton',
+                labelId: 'industryButtonLabel',
+                menuId: 'industryMenu',
+                placeholder: 'Select your industry',
+                options: [
+                    { value: 'freight-logistics', text: 'Freight & Logistics' },
+                    { value: 'wholesale-distribution', text: 'Wholesale Distribution' },
+                    { value: 'manufacturing', text: 'Manufacturing' },
+                    { value: 'retail', text: 'Retail' },
+                    { value: 'import-export', text: 'Import/Export' },
+                    { value: 'other', text: 'Other' }
+                ],
+            });
+
+            setupFlowIQSelect({
+                fieldId: 'employees',
+                buttonId: 'employeesButton',
+                labelId: 'employeesButtonLabel',
+                menuId: 'employeesMenu',
+                placeholder: 'Select size',
+                options: [
+                    { value: '1-5', text: '1-5 employees' },
+                    { value: '6-15', text: '6-15 employees' },
+                    { value: '16-50', text: '16-50 employees' },
+                    { value: '51-200', text: '51-200 employees' },
+                    { value: '200+', text: '200+ employees' }
+                ],
+            });
+
+            setupFlowIQSelect({
+                fieldId: 'country',
+                buttonId: 'countryButton',
+                labelId: 'countryButtonLabel',
+                menuId: 'countryMenu',
+                placeholder: 'Select country',
+                options: [
+                    { value: 'US', text: 'United States' },
+                    { value: 'CA', text: 'Canada' },
+                    { value: 'GB', text: 'United Kingdom' },
+                    { value: 'AU', text: 'Australia' },
+                    { value: 'ZA', text: 'South Africa' },
+                    { value: 'NZ', text: 'New Zealand' },
+                    { value: 'other', text: 'Other' }
+                ],
+            });
 
             // Custom checkbox behavior - simplified and robust
             function wireCustomCheckbox(id) {
@@ -1356,6 +1118,7 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             setTimeout(() => {
                 wireCustomCheckbox('terms');
                 wireCustomCheckbox('privacy');
+                wireCustomCheckbox('dataRiskAcknowledgement');
                 wireCustomCheckbox('accountantOperatorTerms');
                 wireCustomCheckbox('accountantBreachProcess');
                 wireCustomCheckbox('accountantCrossBorderControls');
@@ -1398,7 +1161,9 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 'accountant tax practitioner registration number': 'accountantRegistrationNumber',
                 'accountant_tax_practitioner_registration_number': 'accountantRegistrationNumber',
                 'terms': 'terms',
-                'privacy': 'privacy'
+                'privacy': 'privacy',
+                'data risk acknowledgement': 'dataRiskAcknowledgement',
+                'data_responsibility_acknowledged': 'dataRiskAcknowledgement',
             };
 
             function highlightFieldError(fieldName) {
@@ -1464,18 +1229,21 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     return;
                 }
 
-                // Special handling for custom industry selector
-                if (fieldId === 'industry') {
-                    const industryButton = document.getElementById('industryButton');
-                    if (industryButton) {
-                        industryButton.classList.add('field-error');
-                    }
-                    const industryWrapper = document.querySelector('[data-industry-select]');
-                    if (industryWrapper && !industryWrapper.querySelector('.error-message')) {
+                // Special handling for FlowIQ custom selectors
+                if (fieldId === 'industry' || fieldId === 'employees' || fieldId === 'country') {
+                    const config = {
+                        industry: { buttonId: 'industryButton', wrapper: '[data-flowiq-select-for="industry"]', message: 'Please select your industry' },
+                        employees: { buttonId: 'employeesButton', wrapper: '[data-flowiq-select-for="employees"]', message: 'Please select your company size' },
+                        country: { buttonId: 'countryButton', wrapper: '[data-flowiq-select-for="country"]', message: 'Please select your country' },
+                    }[fieldId];
+                    const customButton = config ? document.getElementById(config.buttonId) : null;
+                    if (customButton) customButton.classList.add('field-error');
+                    const selectWrapper = config ? document.querySelector(config.wrapper) : null;
+                    if (selectWrapper && !selectWrapper.querySelector('.error-message')) {
                         const errorMsg = document.createElement('p');
                         errorMsg.className = 'error-message';
-                        errorMsg.textContent = 'Please select your industry';
-                        industryWrapper.appendChild(errorMsg);
+                        errorMsg.textContent = config.message;
+                        selectWrapper.appendChild(errorMsg);
                     }
                     return;
                 }
@@ -1484,6 +1252,7 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 const checkboxErrorMessages = {
                     terms: 'Please accept the Terms and Conditions',
                     privacy: 'Please accept the Privacy Policy',
+                    dataRiskAcknowledgement: 'Please acknowledge data loss/outage and backup responsibility',
                     accountantOperatorTerms: 'Please accept the POPIA operator terms declaration',
                     accountantBreachProcess: 'Please accept the breach process declaration',
                     accountantCrossBorderControls: 'Please accept the cross-border controls declaration',
@@ -1540,12 +1309,17 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                     });
                 }
 
-                if (fieldId === 'industry') {
-                    const industryButton = document.getElementById('industryButton');
-                    if (industryButton) industryButton.classList.remove('field-error');
-                    const industryWrapper = document.querySelector('[data-industry-select]');
-                    const industryError = industryWrapper?.querySelector('.error-message');
-                    if (industryError) industryError.remove();
+                if (fieldId === 'industry' || fieldId === 'employees' || fieldId === 'country') {
+                    const config = {
+                        industry: { buttonId: 'industryButton', wrapper: '[data-flowiq-select-for="industry"]' },
+                        employees: { buttonId: 'employeesButton', wrapper: '[data-flowiq-select-for="employees"]' },
+                        country: { buttonId: 'countryButton', wrapper: '[data-flowiq-select-for="country"]' },
+                    }[fieldId];
+                    const customButton = config ? document.getElementById(config.buttonId) : null;
+                    if (customButton) customButton.classList.remove('field-error');
+                    const selectWrapper = config ? document.querySelector(config.wrapper) : null;
+                    const selectError = selectWrapper?.querySelector('.error-message');
+                    if (selectError) selectError.remove();
                 }
 
                 if (fieldId === 'accountType') {
@@ -1612,6 +1386,7 @@ This policy may be updated at any time. Continued use constitutes acceptance.
             [
                 'terms',
                 'privacy',
+                'dataRiskAcknowledgement',
                 'accountantOperatorTerms',
                 'accountantBreachProcess',
                 'accountantCrossBorderControls',
@@ -1676,7 +1451,11 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 const accountantBreachProcessAccepted = document.getElementById('accountantBreachProcess')?.checked === true;
                 const accountantCrossBorderControlsAccepted = document.getElementById('accountantCrossBorderControls')?.checked === true;
                 const accountantPractitionerDeclarationAccepted = document.getElementById('accountantPractitionerDeclaration')?.checked === true;
+                const dataRiskAcknowledgementAccepted = document.getElementById('dataRiskAcknowledgement')?.checked === true;
                 const legalAcceptedAt = new Date().toISOString();
+                const legalAcceptanceSourceUrl = window.location.href;
+                const legalAcceptanceLocale = navigator.language || null;
+                const legalAcceptanceUserAgent = navigator.userAgent || null;
                 
                 // Get selected plan - read directly from DOM element as fallback if FormData doesn't have it
                 const selectedPlanInput = document.getElementById('selectedPlan');
@@ -1786,6 +1565,9 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                 if (!document.getElementById('privacy')?.checked) {
                     validationErrors.push('privacy');
                 }
+                if (!dataRiskAcknowledgementAccepted) {
+                    validationErrors.push('dataRiskAcknowledgement');
+                }
 
                 if (isAccountantFirm) {
                     if (!accountantProfessionalBodyValue) {
@@ -1846,20 +1628,27 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                         accountant_tax_controlling_body: isAccountantFirm ? accountantProfessionalBodyValue : null,
                         // ✅ Legal acceptance (required)
                         terms_accepted: document.getElementById('terms')?.checked === true,
-                        terms_version: '2026-01-08',
+                        terms_version: FLOWIQ_LEGAL_VERSION,
                         terms_accepted_at: legalAcceptedAt,
                         privacy_accepted: document.getElementById('privacy')?.checked === true,
-                        privacy_version: '2026-01-08',
+                        privacy_version: FLOWIQ_LEGAL_VERSION,
                         privacy_accepted_at: legalAcceptedAt,
+                        data_responsibility_acknowledged: dataRiskAcknowledgementAccepted,
+                        legal_terms_url: FLOWIQ_TERMS_URL,
+                        legal_privacy_url: FLOWIQ_PRIVACY_URL,
+                        legal_acceptance_method: 'clickwrap_signup',
+                        legal_acceptance_source_url: legalAcceptanceSourceUrl,
+                        legal_acceptance_locale: legalAcceptanceLocale,
+                        legal_acceptance_user_agent: legalAcceptanceUserAgent,
                         accountant_operator_terms_accepted: isAccountantFirm ? accountantOperatorTermsAccepted : null,
-                        accountant_operator_terms_version: isAccountantFirm ? '2026-01-08' : null,
+                        accountant_operator_terms_version: isAccountantFirm ? FLOWIQ_LEGAL_VERSION : null,
                         accountant_operator_terms_accepted_at: isAccountantFirm && accountantOperatorTermsAccepted ? legalAcceptedAt : null,
                         accountant_popia_breach_process_accepted: isAccountantFirm ? accountantBreachProcessAccepted : null,
                         accountant_cross_border_controls_accepted: isAccountantFirm ? accountantCrossBorderControlsAccepted : null,
                         accountant_practitioner_declaration_accepted: isAccountantFirm ? accountantPractitionerDeclarationAccepted : null,
                         accountant_practitioner_declaration_accepted_at:
                             isAccountantFirm && accountantPractitionerDeclarationAccepted ? legalAcceptedAt : null,
-                        accountant_compliance_version: isAccountantFirm ? '2026-01-08' : null
+                        accountant_compliance_version: isAccountantFirm ? FLOWIQ_LEGAL_VERSION : null
                     })
                 });
 
@@ -1933,9 +1722,10 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                             }
                         }
                     }
-                    if (errorText.includes('terms not accepted') || errorText.includes('must accept')) {
+                    if (errorText.includes('terms not accepted') || errorText.includes('must accept') || errorText.includes('please accept')) {
                         highlightFieldError('terms');
                         highlightFieldError('privacy');
+                        highlightFieldError('dataRiskAcknowledgement');
                     }
                     if (errorText.includes('accountant compliance declarations')) {
                         highlightFieldError('operator_terms');
@@ -1977,11 +1767,16 @@ This policy may be updated at any time. Continued use constitutes acceptance.
                             selected_plan: selectedPlanValue,
                             signup_source: 'website_signup',
                             terms_accepted: document.getElementById('terms')?.checked === true,
-                            terms_version: '2026-01-08',
+                            terms_version: FLOWIQ_LEGAL_VERSION,
                             terms_accepted_at: legalAcceptedAt,
                             privacy_accepted: document.getElementById('privacy')?.checked === true,
-                            privacy_version: '2026-01-08',
+                            privacy_version: FLOWIQ_LEGAL_VERSION,
                             privacy_accepted_at: legalAcceptedAt,
+                            data_responsibility_acknowledged: dataRiskAcknowledgementAccepted,
+                            legal_terms_url: FLOWIQ_TERMS_URL,
+                            legal_privacy_url: FLOWIQ_PRIVACY_URL,
+                            legal_acceptance_source_url: legalAcceptanceSourceUrl,
+                            legal_acceptance_locale: legalAcceptanceLocale,
                             accountant_operator_terms_accepted: isAccountantFirm ? accountantOperatorTermsAccepted : null,
                             accountant_popia_breach_process_accepted: isAccountantFirm ? accountantBreachProcessAccepted : null,
                             accountant_cross_border_controls_accepted: isAccountantFirm ? accountantCrossBorderControlsAccepted : null,
