@@ -137,6 +137,15 @@
       <!-- Plans will be rendered here by JavaScript -->
     </div>
 
+    <!-- Comparison Table -->
+    <div class="max-w-7xl mx-auto mb-12">
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50">
+        <table id="pricing-comparison-table" class="min-w-[1100px] w-full text-sm">
+          <!-- Comparison table rendered by JavaScript -->
+        </table>
+      </div>
+    </div>
+
     <!-- Trust Signals -->
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="grid md:grid-cols-3 gap-6 text-center">
@@ -353,7 +362,7 @@
             <div class="p-4">
               <div class="text-center mb-4">
                 <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1.5 leading-tight">${plan.name}</h3>
-                <p class="text-slate-600 dark:text-slate-400 text-[11px] leading-snug mb-4 min-h-12 px-1">${plan.tagline}</p>
+                <p class="text-slate-600 dark:text-slate-400 text-[10px] leading-snug mb-4 min-h-[3.25rem] px-1">${plan.tagline}</p>
                 
                 <div class="mb-4">
                   ${isEnterprise || pricing.custom ? `
@@ -412,6 +421,150 @@
       }).join('');
     }
 
+    function formatLimit(value) {
+      if (value === null) return 'Unlimited';
+      if (value === 0) return 'Not available';
+      if (typeof value === 'number') return value.toLocaleString();
+      return value ?? '—';
+    }
+
+    function hasFeature(plan, featureKey) {
+      return Array.isArray(plan?.features) && plan.features.includes(featureKey);
+    }
+
+    function yesNo(plan, featureKey) {
+      return hasFeature(plan, featureKey) ? '✓' : '—';
+    }
+
+    function getSupportLabel(support) {
+      if (!support) return '—';
+      if (support === 'email') return 'Email only';
+      if (support === 'email_chat' || support === 'email+chat') return 'Email + Chat';
+      if (support === 'email_phone' || support === 'email+phone') return 'Phone support (business hours)';
+      if (support === 'premium') return 'Priority phone support';
+      if (support === '24/7' || support === '24x7') return 'Dedicated 24/7 support';
+      return String(support);
+    }
+
+    function renderComparisonTable() {
+      const table = document.getElementById('pricing-comparison-table');
+      if (!table) return;
+
+      const comparisonRows = [
+        { type: 'section', label: 'Capacity' },
+        { type: 'row', label: 'Users', get: (p) => formatLimit(p?.limits?.users), center: true },
+        { type: 'row', label: 'SKUs', get: (p) => formatLimit(p?.limits?.skus), center: true },
+        { type: 'row', label: 'Warehouses', get: (p) => formatLimit(p?.limits?.warehouses), center: true },
+        {
+          type: 'row',
+          label: 'Import/Export jobs per month',
+          center: true,
+          get: (p) => {
+            const i = p?.limits?.import_shipments_monthly;
+            const e = p?.limits?.export_shipments_monthly;
+            if (i === null && e === null) return 'Unlimited';
+            if ((!i || i === 0) && (!e || e === 0)) return 'Not available';
+            return `${i || 0} inbound + ${e || 0} outbound`;
+          }
+        },
+        { type: 'section', label: 'Documents & Pricing' },
+        { type: 'row', label: 'Invoices per month', get: (p) => formatLimit(p?.limits?.invoices_monthly), center: true },
+        { type: 'row', label: 'Purchase orders per month', get: (p) => formatLimit(p?.limits?.purchase_orders_monthly), center: true },
+        { type: 'row', label: 'PriceIQ custom price lists', get: (p) => formatLimit(p?.limits?.custom_price_lists), center: true },
+        { type: 'section', label: 'Modules' },
+        { type: 'row', label: 'Import/Export', get: (p) => (hasFeature(p, 'importiq') || hasFeature(p, 'exportiq')) ? '✓' : '—', tick: true, center: true },
+        { type: 'row', label: 'InventoryIQ', get: (p) => yesNo(p, 'inventoryiq'), tick: true, center: true },
+        { type: 'row', label: 'InvoiceIQ', get: (p) => yesNo(p, 'invoiceiq'), tick: true, center: true },
+        { type: 'row', label: 'PurchaseIQ', get: (p) => yesNo(p, 'purchaseiq'), tick: true, center: true },
+        { type: 'row', label: 'SalesIQ', get: (p) => yesNo(p, 'salesiq'), tick: true, center: true },
+        { type: 'row', label: 'CompaniesIQ', get: (p) => yesNo(p, 'companiesiq'), tick: true, center: true },
+        { type: 'row', label: 'AccountingIQ', get: (p) => yesNo(p, 'accountingiq'), tick: true, center: true },
+        { type: 'row', label: 'ProjectsIQ', get: (p) => yesNo(p, 'projectsiq'), tick: true, center: true },
+        { type: 'row', label: 'PriceIQ', get: (p) => yesNo(p, 'priceiq'), tick: true, center: true },
+        { type: 'row', label: 'PayrollIQ', get: (p) => yesNo(p, 'payrolliq'), tick: true, center: true },
+        { type: 'row', label: 'EcomIQ', get: (p) => yesNo(p, 'ecomiq'), tick: true, center: true },
+        { type: 'row', label: 'WarrantyIQ', get: (p) => yesNo(p, 'warrantyiq'), tick: true, center: true },
+        {
+          type: 'row',
+          label: 'ReportsIQ & JournalIQ',
+          get: (p) => (hasFeature(p, 'reportsiq') && hasFeature(p, 'journaliq')) ? '✓' : '—',
+          tick: true,
+          center: true
+        },
+        { type: 'section', label: 'Commissions & Automation' },
+        {
+          type: 'row',
+          label: 'Commission automation',
+          get: (p) => (
+            hasFeature(p, 'commission') &&
+            hasFeature(p, 'auto_commission') &&
+            hasFeature(p, 'commission_automation') &&
+            hasFeature(p, 'rep_commission_automation')
+          ) ? '✓' : '—',
+          tick: true,
+          center: true
+        },
+        { type: 'row', label: 'Auto rebate/settlement automation', get: (p) => yesNo(p, 'auto_rebate_settlement_automation'), tick: true, center: true },
+        { type: 'section', label: 'Support' },
+        { type: 'row', label: 'Support level', get: (p) => getSupportLabel(p?.capabilities?.support), center: true },
+      ];
+
+      const headerCells = planOrder.map((planKey) => {
+        const plan = plans[planKey];
+        const highlight = plan?.popular
+          ? 'bg-orange-50 dark:bg-orange-500/10'
+          : '';
+        return `
+          <th class="align-middle px-4 py-4 text-center ${highlight}">
+            <div class="text-sm font-black text-slate-900 dark:text-white">${plan?.name || planKey}</div>
+          </th>
+        `;
+      }).join('');
+
+      const bodyRows = comparisonRows.map((row) => {
+        if (row.type === 'section') {
+          return `
+            <tr class="bg-slate-50 dark:bg-slate-900/30">
+              <th colspan="${planOrder.length + 1}" class="text-left px-5 py-3 text-xs font-black uppercase tracking-widest text-orange-600 dark:text-orange-400">
+                ${row.label}
+              </th>
+            </tr>
+          `;
+        }
+
+        const valueCells = planOrder.map((planKey) => {
+          const plan = plans[planKey];
+          const value = row.get(plan);
+          const popularHighlight = plan?.popular ? 'bg-orange-50/60 dark:bg-orange-500/5' : '';
+          const isTick = row.tick && value === '✓';
+          const cellClass = isTick
+            ? 'text-emerald-700 dark:text-emerald-400 font-black'
+            : 'text-slate-700 dark:text-slate-300';
+          const alignClass = row.center ? 'text-center' : 'text-left';
+          return `<td class="px-4 py-3 border-t border-slate-200 dark:border-slate-700 ${popularHighlight} ${alignClass} ${cellClass}">${value}</td>`;
+        }).join('');
+
+        return `
+          <tr>
+            <td class="px-5 py-3 border-t border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold">
+              ${row.label}
+            </td>
+            ${valueCells}
+          </tr>
+        `;
+      }).join('');
+
+      table.innerHTML = `
+        <thead class="bg-white dark:bg-slate-800">
+          <tr>
+            <th class="text-left px-5 py-4 text-xs font-black uppercase tracking-widest text-slate-500 dark:text-slate-400">Feature</th>
+            ${headerCells}
+          </tr>
+        </thead>
+        <tbody>${bodyRows}</tbody>
+      `;
+    }
+
     async function loadPricingData() {
       const response = await fetch('/pricing-data.json', { cache: 'no-cache' });
       if (!response.ok) throw new Error(`Failed to load pricing data (${response.status})`);
@@ -426,6 +579,7 @@
     loadPricingData()
       .then(() => {
         renderPlans();
+        renderComparisonTable();
       })
       .catch((error) => {
         console.error('Pricing page failed to load canonical data', error);
