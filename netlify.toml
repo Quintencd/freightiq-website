@@ -33,6 +33,12 @@
   status = 301
 
 [[redirects]]
+  from = "/pricing-new-5-tiers.html"
+  to = "/pricing.html"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/who-flowiq-is-for"
   to = "/who-flowiq-is-for.html"
   status = 301

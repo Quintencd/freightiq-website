@@ -212,10 +212,14 @@
                     <a class='text-sm text-slate-300 hover:text-white transition-colors whitespace-nowrap' href='/pricing'>View pricing</a>
                 </div>
 
-                <div class="mt-4 grid grid-cols-2 gap-3" role="radiogroup" aria-label="Select a FlowIQ plan">
+                <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3" role="radiogroup" aria-label="Select a FlowIQ plan">
                     <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="starter">
                         <div class="text-white font-semibold">Starter</div>
                         <div class="text-xs text-slate-300">Solo founders</div>
+                    </button>
+                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="growth_lite">
+                        <div class="text-white font-semibold">Growth Lite</div>
+                        <div class="text-xs text-slate-300">Early sales teams</div>
                     </button>
                     <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="growth">
                         <div class="text-white font-semibold">Growth</div>
@@ -677,15 +681,17 @@
 
             // Plan preselection (pricing -> signup). Safe: does NOT change backend signup payload.
             ;(function initPlanSelection() {
-            const allowedPlans = ['starter', 'growth', 'professional', 'scale'];
+            const allowedPlans = ['starter', 'growth_lite', 'growth', 'professional', 'scale'];
             const planLabels = {
                 starter: 'Starter',
+                growth_lite: 'Growth Lite',
                 growth: 'Growth',
                 professional: 'Professional',
                 scale: 'Scale'
             };
             const planCtaLabels = {
                 starter: 'Start Starter Free Trial',
+                growth_lite: 'Start Growth Lite Free Trial',
                 growth: 'Start Growth Free Trial',
                 professional: 'Start Professional Free Trial',
                 scale: 'Start Scale Free Trial'
@@ -1474,7 +1480,7 @@
                 }
                 
                 // Final fallback to 'growth' if still empty
-                if (!selectedPlanValue || !['starter', 'growth', 'professional', 'scale'].includes(selectedPlanValue)) {
+                if (!selectedPlanValue || !['starter', 'growth_lite', 'growth', 'professional', 'scale'].includes(selectedPlanValue)) {
                     selectedPlanValue = 'growth';
                     // Update the hidden input for consistency
                     if (selectedPlanInput) selectedPlanInput.value = selectedPlanValue;
@@ -1557,7 +1563,7 @@
                     validationErrors.push('account type');
                 }
                 
-                if (!isAccountantFirm && (!selectedPlanValue || !['starter', 'growth', 'professional', 'scale'].includes(selectedPlanValue))) {
+                if (!isAccountantFirm && (!selectedPlanValue || !['starter', 'growth_lite', 'growth', 'professional', 'scale'].includes(selectedPlanValue))) {
                     validationErrors.push('plan selection');
                 }
                 
