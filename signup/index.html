@@ -53,36 +53,39 @@
             width: 100%;
             min-height: 52px;
             padding: 0.75rem 1rem;
-            background: #0f172a;
-            border: 1px solid #475569;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
             border-radius: 0.5rem;
-            color: #e2e8f0;
+            color: #0f172a;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 0.75rem;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
         }
         .flowiq-select-btn:hover {
-            border-color: #64748b;
+            background: #ffffff;
+            border-color: #94a3b8;
         }
         .flowiq-select-btn:focus-visible {
             outline: none;
             border-color: #f97316;
-            box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.16);
         }
         .flowiq-select-btn.is-placeholder {
-            color: #94a3b8;
+            color: #64748b;
         }
         .flowiq-select-menu {
             position: absolute;
             left: 0;
             right: 0;
             top: calc(100% + 0.375rem);
-            background: #0f172a;
-            border: 1px solid #475569;
+            background: rgba(255, 255, 255, 0.98);
+            border: 1px solid #cbd5e1;
             border-radius: 0.75rem;
-            box-shadow: 0 12px 32px rgba(2, 6, 23, 0.55);
+            box-shadow: 0 22px 48px rgba(15, 23, 42, 0.14);
+            backdrop-filter: blur(14px);
             max-height: 17rem;
             overflow-y: auto;
             z-index: 70;
@@ -91,22 +94,22 @@
             width: 100%;
             border: 0;
             background: transparent;
-            color: #e2e8f0;
+            color: #0f172a;
             text-align: left;
             padding: 0.7rem 0.9rem;
             display: flex;
             align-items: center;
             gap: 0.6rem;
-            transition: background-color 0.15s ease;
+            transition: background-color 0.15s ease, color 0.15s ease;
         }
         .flowiq-select-option:hover,
         .flowiq-select-option:focus-visible {
             outline: none;
-            background: rgba(148, 163, 184, 0.16);
+            background: rgba(241, 245, 249, 0.96);
         }
         .flowiq-select-option.is-selected {
-            background: rgba(249, 115, 22, 0.22);
-            color: #fff;
+            background: rgba(249, 115, 22, 0.12);
+            color: #c2410c;
         }
         .flowiq-select-check {
             width: 1rem;
