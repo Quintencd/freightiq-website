@@ -132,13 +132,8 @@
       </div>
     </div>
 
-    <!-- Pricing Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 max-w-7xl mx-auto mb-12" id="pricing-cards">
-      <!-- Plans will be rendered here by JavaScript -->
-    </div>
-
     <!-- Comparison Table -->
-    <div class="max-w-7xl mx-auto mb-12">
+    <div id="pricing-table-wrap" class="max-w-7xl mx-auto mb-12">
       <div class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50">
         <table id="pricing-comparison-table" class="min-w-[1100px] w-full text-sm">
           <!-- Comparison table rendered by JavaScript -->
@@ -198,123 +193,6 @@
     let plans = {};
     let planOrder = [];
 
-    function buildFeatures(plan) {
-      const features = [];
-      const { limits, capabilities, features: enabledModules } = plan;
-
-      // Users
-      if (limits.users === 1) features.push('✨ 1 user (solo founder)');
-      else if (limits.users && limits.users < 100) features.push(`✨ Up to ${limits.users} users`);
-      else if (limits.users === null) features.push('✨ Unlimited users');
-
-      // SKUs
-      if (limits.skus && limits.skus < 100000) features.push(`📦 ${limits.skus.toLocaleString()} SKUs`);
-      else if (limits.skus === null) features.push('📦 Unlimited SKUs');
-
-      // Warehouses
-      if (limits.warehouses === 1) features.push('🏢 1 warehouse');
-      else if (limits.warehouses && limits.warehouses < 100) features.push(`🏢 Up to ${limits.warehouses} warehouses`);
-      else if (limits.warehouses === null) features.push('🏢 Unlimited warehouses');
-
-      // Shipments
-      if (limits.import_shipments_monthly === 0 && limits.export_shipments_monthly === 0) {
-        // Don't show anything - local only
-      } else if ((limits.import_shipments_monthly && limits.import_shipments_monthly > 0) || (limits.export_shipments_monthly && limits.export_shipments_monthly > 0)) {
-        features.push(`🚢 ${limits.import_shipments_monthly || 0} import + ${limits.export_shipments_monthly || 0} export shipments/month`);
-      } else if (limits.import_shipments_monthly === null) {
-        features.push('🚢 Unlimited shipments');
-      }
-
-      // Documents
-      if (limits.invoices_monthly && limits.invoices_monthly < 1000) {
-        features.push(`📄 ${limits.invoices_monthly.toLocaleString()} invoices/month`);
-      } else if (limits.invoices_monthly === null) {
-        features.push('📄 Unlimited invoices/month');
-      }
-      if (limits.purchase_orders_monthly && limits.purchase_orders_monthly < 1000) {
-        features.push(`📝 ${limits.purchase_orders_monthly.toLocaleString()} purchase orders/month`);
-      } else if (limits.purchase_orders_monthly === null) {
-        features.push('📝 Unlimited purchase orders/month');
-      }
-
-      // Price Lists
-      if (limits.custom_price_lists === 0) {
-        // Don't show - not available
-      } else if (limits.custom_price_lists && limits.custom_price_lists > 0 && limits.custom_price_lists < 100) {
-        features.push(`💰 ${limits.custom_price_lists} custom price lists`);
-      } else if (limits.custom_price_lists === null) {
-        features.push('💰 Unlimited custom price lists');
-      }
-
-      // Support
-      if (capabilities.support === 'email') features.push('📧 Email support only');
-      else if (capabilities.support === 'email_chat' || capabilities.support === 'email+chat') features.push('💬 Email & chat support');
-      else if (capabilities.support === 'email_phone' || capabilities.support === 'email+phone') features.push('📞 Email & phone support');
-      else if (capabilities.support === 'premium') features.push('🎯 Premium support (priority)');
-      else if (capabilities.support === '24/7' || capabilities.support === '24x7') features.push('🕒 24/7 support (SLA)');
-
-      // Forecasting
-      if (capabilities.forecasting === 'baseline' || capabilities.forecasting === 'standard') features.push('📊 ForecastIQ (Standard) – demand planning');
-      else if (capabilities.forecasting === 'advanced') features.push('🤖 ForecastIQ Pro – AI p10/p50/p90 scenarios');
-      else if (capabilities.forecasting === 'premium') features.push('🤖 ForecastIQ Pro+ – advanced scenarios & analytics');
-      else if (capabilities.forecasting === 'custom') features.push('🤖 ForecastIQ (Custom) – bespoke forecasting models');
-
-      // BOM
-      if (capabilities.bom_manufacturing) features.push('🏭 BOM & Manufacturing workflows');
-
-      // Xero Integration
-      if (capabilities.xero_sync === 'manual_export') features.push('📥 Xero – Manual export only');
-      else if (capabilities.xero_sync === 'basic') features.push('🔄 Xero – Auto-sync (standard)');
-      else if (capabilities.xero_sync === 'advanced') features.push('⚡ Xero – Advanced sync (journals + mappings)');
-      else if (capabilities.xero_sync === 'premium') features.push('⚡ Xero – Premium automation');
-      else if (capabilities.xero_sync === 'custom') features.push('⚡ Xero – Custom automation & mappings');
-      else if (capabilities.xero_sync === 'realtime') features.push('⚡ Xero – Real-time 2-way sync');
-
-      // Automation
-      if (capabilities.automation === 'basic') features.push('🤖 Automation (Basic)');
-      else if (capabilities.automation === 'advanced') features.push('🚀 Automation (Advanced)');
-      else if (capabilities.automation === 'premium') features.push('🚀 Automation (Premium)');
-      else if (capabilities.automation === 'custom') features.push('🚀 Automation (Custom workflows)');
-
-      // Dashboard
-      if (capabilities.dashboard_level === 'basic') features.push('📊 DashboardIQ – Core metrics');
-      else if (capabilities.dashboard_level === 'standard') features.push('📊 DashboardIQ – Standard analytics');
-      else if (capabilities.dashboard_level === 'advanced') features.push('📈 DashboardIQ+ – Multi-branch analytics');
-      else if (capabilities.dashboard_level === 'premium') features.push('📈 DashboardIQ Pro – Advanced analytics');
-      else if (capabilities.dashboard_level === 'custom') features.push('📈 DashboardIQ Enterprise – Custom dashboards');
-
-      // Modules
-      const has = (k) => enabledModules.includes(k);
-      if (has('inventoryiq')) features.push('📋 InventoryIQ – Stock tracking with FIFO costing');
-      if (has('accountingiq')) features.push('🧮 AccountingIQ – Reporting and controls workspace');
-      if (has('invoiceiq')) features.push('💵 InvoiceIQ – Customer billing & invoicing');
-      if (has('purchaseiq')) features.push('🛒 PurchaseIQ – Supplier bills & purchase orders');
-      if (has('salesiq')) features.push('🤝 SalesIQ – CRM & sales pipeline');
-      if (has('companiesiq')) features.push('🏢 CompaniesIQ – Customer & supplier master');
-      if (has('priceiq')) features.push('💰 PriceIQ – Margin tracking & pricing');
-      if (has('projectsiq')) features.push('📁 ProjectsIQ – Projects & allocations');
-      if (has('importiq')) features.push('🌍 ImportIQ – Landed cost & FX management');
-      if (has('exportiq')) features.push('📤 ExportIQ – Export planning & invoicing');
-      if (has('forecastiq')) features.push('📈 ForecastIQ – Demand forecasting & planning');
-      if (has('payrolliq')) features.push('💼 PayrollIQ – Payroll runs, leave, SARS workpapers & payslips');
-      if (has('ecomiq')) features.push('🛍️ EcomIQ – Website commerce sync, orders & analytics');
-      if (has('reportsiq')) features.push('📊 ReportsIQ – Reporting suite');
-      if (has('journaliq')) features.push('🧾 JournalIQ – Journals & ledgers');
-      if (has('warrantyiq')) features.push('🔧 WarrantyIQ – Warranty & claims management');
-      if (has('admin_tools') || has('labs')) features.push('⚙️ Admin Tools & Labs');
-      
-      features.push('🌐 Multi-currency support');
-      features.push('🔒 Bank-level security & encryption');
-
-      // Enterprise extras
-      if (capabilities.custom_integrations) features.push('🔌 Custom integrations (SAP, NetSuite, Oracle)');
-      if (capabilities.white_labeling) features.push('🎨 White-labeling available');
-      if (capabilities.regional_hosting) features.push('🌍 Regional hosting (EU, US, SA)');
-      if (capabilities.sla) features.push(`⚡ ${capabilities.sla} SLA guarantee`);
-
-      return features;
-    }
-
     let billingInterval = 'monthly';
 
     function setBillingInterval(interval) {
@@ -330,95 +208,7 @@
         annualBtn.className = 'px-4 py-2 rounded-full text-xs font-bold transition bg-orange-500 text-white';
       }
       
-      renderPlans();
-    }
-
-    function renderPlans() {
-      const container = document.getElementById('pricing-cards');
-      container.innerHTML = planOrder.map(planKey => {
-        const plan = plans[planKey];
-        const pricing = billingInterval === 'annual' ? plan.annual : plan.monthly;
-        const features = buildFeatures(plan);
-        const isEnterprise = planKey === 'enterprise';
-        const priceDisplay = isEnterprise || pricing.custom 
-          ? 'Price on Request' 
-          : `R${pricing.amount.toLocaleString()}`;
-        const pricePeriod = billingInterval === 'annual' ? 'per year' : 'per month';
-
-        return `
-          <div class="relative rounded-xl transition-all duration-300 ${
-            plan.popular
-              ? 'bg-gradient-to-b from-orange-500/5 to-orange-500/10 dark:from-orange-500/10 dark:to-slate-800/50 border-2 border-orange-500/50 shadow-xl shadow-orange-500/10 dark:shadow-orange-500/20'
-              : 'bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 hover:border-slate-300 dark:hover:border-slate-600/50'
-          }">
-            ${plan.popular ? `
-              <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
-                <div class="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg shadow-orange-500/50">
-                  ⭐ Popular
-                </div>
-              </div>
-            ` : ''}
-            
-            <div class="p-4">
-              <div class="text-center mb-4">
-                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1.5 leading-tight">${plan.name}</h3>
-                <p class="text-slate-600 dark:text-slate-400 text-[10px] leading-snug mb-4 min-h-[3.25rem] px-1">${plan.tagline}</p>
-                
-                <div class="mb-4">
-                  ${isEnterprise || pricing.custom ? `
-                    <span class="text-xl font-bold text-slate-900 dark:text-white">${priceDisplay}</span>
-                  ` : `
-                    <div>
-                      <div class="flex items-baseline justify-center gap-1">
-                        <span class="text-slate-500 dark:text-slate-400 text-sm">R</span>
-                        <span class="text-3xl font-black ${plan.popular ? 'text-orange-500' : 'text-slate-900 dark:text-white'}">
-                          ${pricing.amount.toLocaleString()}
-                        </span>
-                      </div>
-                      <span class="text-slate-500 dark:text-slate-400 text-xs mt-1 block">
-                        ${pricePeriod}
-                      </span>
-                      ${billingInterval === 'annual' && pricing.discount ? `
-                        <span class="text-xs mt-1 inline-block text-emerald-600 dark:text-emerald-400 font-semibold">
-                          Save ${pricing.discount}%
-                        </span>
-                      ` : ''}
-                    </div>
-                  `}
-                </div>
-
-                <a href="/signup?plan=${planKey}" class="block w-full py-2.5 rounded-lg text-sm font-bold transition-all duration-200 ${
-                  plan.popular
-                    ? 'bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white'
-                    : isEnterprise
-                    ? 'bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900'
-                    : 'bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900'
-                }">
-                  ${isEnterprise ? 'Contact Sales' : 'Start Free Trial'}
-                </a>
-              </div>
-
-              <div class="space-y-2 max-h-96 overflow-y-auto pr-2 scrollbar-thin">
-                <div class="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-3 pb-2 border-b border-slate-200 dark:border-slate-700">
-                  What's Included
-                </div>
-                ${features.map(feature => {
-                  const isHighlight = feature.includes('AI') || feature.includes('Unlimited') || feature.includes('Advanced') || feature.includes('Premium');
-                  return `
-                    <div class="flex items-start gap-2 py-1 px-2 rounded-lg transition-all ${
-                      isHighlight
-                        ? 'text-slate-900 dark:text-white font-semibold bg-orange-50 dark:bg-orange-500/5'
-                        : 'text-slate-700 dark:text-slate-300'
-                    }">
-                      <span class="text-xs leading-relaxed flex-1 font-medium">${feature}</span>
-                    </div>
-                  `;
-                }).join('')}
-              </div>
-            </div>
-          </div>
-        `;
-      }).join('');
+      renderComparisonTable();
     }
 
     function formatLimit(value) {
@@ -578,15 +368,14 @@
 
     loadPricingData()
       .then(() => {
-        renderPlans();
         renderComparisonTable();
       })
       .catch((error) => {
         console.error('Pricing page failed to load canonical data', error);
-        const container = document.getElementById('pricing-cards');
+        const container = document.getElementById('pricing-table-wrap');
         if (container) {
           container.innerHTML = `
-            <div class="col-span-full rounded-xl border border-rose-300 bg-rose-50 dark:border-rose-500/40 dark:bg-rose-500/10 p-6 text-center">
+            <div class="rounded-xl border border-rose-300 bg-rose-50 dark:border-rose-500/40 dark:bg-rose-500/10 p-6 text-center">
               <p class="text-sm font-semibold text-rose-700 dark:text-rose-300">Pricing is temporarily unavailable.</p>
               <p class="mt-2 text-xs text-slate-600 dark:text-slate-300">Please refresh or contact support@flowiq.info.</p>
             </div>

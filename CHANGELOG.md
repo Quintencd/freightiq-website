@@ -1,5 +1,14 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.1] - April 19, 2026
+
+### Pricing UX Simplification (Cards Removed)
+
+- Removed the top pricing snapshot card strip from `pricing.html`.
+- Kept the pricing comparison table as the single pricing surface.
+- Updated billing toggle behavior to refresh table only.
+- Updated error fallback rendering to target the pricing table wrapper.
+
 ## [1.3.0] - April 19, 2026
 
 ### ✅ Marketing Workspace Separation + Correct Site Baseline Restore
