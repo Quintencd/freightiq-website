@@ -301,12 +301,23 @@
 
       const headerCells = planOrder.map((planKey) => {
         const plan = plans[planKey];
+        const pricing = billingInterval === 'annual' ? plan?.annual : plan?.monthly;
+        const isEnterprise = planKey === 'enterprise' || Boolean(pricing?.custom);
+        const amount = typeof pricing?.amount === 'number' ? pricing.amount.toLocaleString() : null;
         const highlight = plan?.popular
           ? 'bg-orange-50 dark:bg-orange-500/10'
           : '';
         return `
           <th class="align-middle px-4 py-4 text-center ${highlight}">
             <div class="text-sm font-black text-slate-900 dark:text-white">${plan?.name || planKey}</div>
+            <div class="mt-1 text-xs font-semibold ${plan?.popular ? 'text-orange-600 dark:text-orange-300' : 'text-slate-600 dark:text-slate-300'}">
+              ${isEnterprise ? 'Price on Request' : `R${amount} ${billingInterval === 'annual' ? '/year' : '/month'}`}
+            </div>
+            ${
+              billingInterval === 'annual' && !isEnterprise && pricing?.discount
+                ? `<div class="mt-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">Save ${pricing.discount}%</div>`
+                : ''
+            }
           </th>
         `;
       }).join('');

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-05T10:24:53.960Z",
+  "generated_at_utc": "2026-04-19T12:14:21.670Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter",
@@ -38,7 +38,6 @@
         "bom_manufacturing": false,
         "forecasting": false,
         "import_export": false,
-        "xero_sync": "advanced",
         "automation": false,
         "support": "email",
         "dashboard_level": "basic",
@@ -57,7 +56,6 @@
         "inventoryiq",
         "reportsiq",
         "journaliq",
-        "xero_sync_advanced",
         "settings",
         "user_management"
       ]
@@ -90,7 +88,6 @@
         "bom_manufacturing": false,
         "forecasting": false,
         "import_export": false,
-        "xero_sync": "advanced",
         "automation": false,
         "support": "email_chat",
         "dashboard_level": "standard",
@@ -112,7 +109,7 @@
         "custom_price_lists",
         "reportsiq",
         "journaliq",
-        "xero_sync_advanced",
+        "accounting_bank_feed_api",
         "settings",
         "user_management"
       ]
@@ -145,7 +142,6 @@
         "bom_manufacturing": true,
         "forecasting": false,
         "import_export": "basic",
-        "xero_sync": "advanced",
         "automation": false,
         "support": "email_chat",
         "dashboard_level": "standard",
@@ -163,7 +159,6 @@
         "invoiceiq",
         "purchaseiq",
         "projectsiq",
-        "workiq",
         "timeiq",
         "inventoryiq",
         "priceiq",
@@ -177,13 +172,16 @@
         "shipments",
         "bom_manufacturing",
         "custom_price_lists",
-        "xero_sync_advanced",
         "chatiq",
         "barcode_scanning",
         "commission",
         "auto_commission",
         "commission_automation",
-        "rep_commission_automation"
+        "rep_commission_automation",
+        "accounting_bank_feed_api",
+        "accounting_recon_advanced",
+        "accounting_recon_bulk_confidence",
+        "accounting_anomaly_detection"
       ]
     },
     "professional": {
@@ -214,7 +212,6 @@
         "bom_manufacturing": true,
         "forecasting": "standard",
         "import_export": "advanced",
-        "xero_sync": "advanced",
         "automation": "advanced",
         "support": "email_phone",
         "dashboard_level": "advanced",
@@ -247,7 +244,6 @@
         "shipments",
         "bom_manufacturing",
         "custom_price_lists",
-        "xero_sync_advanced",
         "automation_basic",
         "chatiq",
         "barcode_scanning",
@@ -257,7 +253,13 @@
         "auto_commission",
         "commission_automation",
         "rep_commission_automation",
-        "auto_rebate_settlement_automation"
+        "auto_rebate_settlement_automation",
+        "accounting_bank_feed_api",
+        "accounting_recon_advanced",
+        "accounting_recon_bulk_confidence",
+        "accounting_anomaly_detection",
+        "whatsapp_web_messaging",
+        "whatsapp_api_messaging"
       ]
     },
     "scale": {
@@ -288,7 +290,6 @@
         "bom_manufacturing": true,
         "forecasting": "advanced",
         "import_export": "advanced",
-        "xero_sync": "advanced",
         "automation": "advanced",
         "support": "premium",
         "dashboard_level": "premium",
@@ -330,12 +331,16 @@
         "forecastiq_advanced",
         "bom_manufacturing",
         "custom_price_lists",
-        "xero_sync_basic",
-        "xero_sync_advanced",
         "automation_basic",
         "automation_advanced",
         "barcode_scanning",
         "timeiq_finance_bridge",
+        "accounting_bank_feed_api",
+        "accounting_recon_advanced",
+        "accounting_recon_bulk_confidence",
+        "accounting_anomaly_detection",
+        "whatsapp_web_messaging",
+        "whatsapp_api_messaging",
         "forecastiq_advanced"
       ]
     },
@@ -367,7 +372,6 @@
         "bom_manufacturing": true,
         "forecasting": "custom",
         "import_export": "custom",
-        "xero_sync": "custom",
         "automation": "custom",
         "support": "24/7",
         "dashboard_level": "custom",
@@ -410,12 +414,16 @@
         "forecastiq_advanced",
         "bom_manufacturing",
         "custom_price_lists",
-        "xero_sync_basic",
-        "xero_sync_advanced",
         "automation_basic",
         "automation_advanced",
         "barcode_scanning",
-        "timeiq_finance_bridge"
+        "timeiq_finance_bridge",
+        "accounting_bank_feed_api",
+        "accounting_recon_advanced",
+        "accounting_recon_bulk_confidence",
+        "accounting_anomaly_detection",
+        "whatsapp_web_messaging",
+        "whatsapp_api_messaging"
       ]
     }
   }

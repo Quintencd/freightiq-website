@@ -9,6 +9,12 @@
 - Updated billing toggle behavior to refresh table only.
 - Updated error fallback rendering to target the pricing table wrapper.
 
+### App Parity Pricing Visibility
+
+- Synced `pricing-data.json` from app canonical source (`src/config/subscriptionPlans.js`).
+- Added explicit plan price display in the pricing table header for Monthly/Annual views.
+- Annual mode now shows discount labels directly in header cells (matching app pricing values).
+
 ## [1.3.0] - April 19, 2026
 
 ### ✅ Marketing Workspace Separation + Correct Site Baseline Restore
