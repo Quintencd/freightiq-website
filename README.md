@@ -2,6 +2,20 @@
 
 **This folder is the live marketing site for www.flowiq.info.**
 
+## Workspace and Deploy Workflow
+
+- Local folder: `/Users/quintenmac/dev/FreightIQ/flowiq_website`
+- GitHub repo: `https://github.com/Quintencd/freightiq-website`
+- Netlify site: `flowiq-website` (`https://www.flowiq.info`)
+- Netlify site id: `e6a1f747-13f1-4856-83c1-b69104047578`
+
+Commands:
+- `npm run dev` (local static preview on `http://127.0.0.1:3333`)
+- `npm run deploy:preview` (Netlify draft deploy)
+- `npm run deploy:prod` (publish to production)
+
+This folder is intentionally separate from app code changes so marketing releases can be pushed independently.
+
 - **Edit here** for homepage, pricing, solutions, use-cases, tools, compare, glossary, signup, login, book-demo, modules, and all SEO pages.
 - **Styles:** `assets/css/styles.css` + inline fallback in each HTML file (see `docs/website-styling-setup.md`).
 - **Deploy:** Netlify with base directory = `flowiq_website`, publish = `.` (see `netlify.toml` in this folder).

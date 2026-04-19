@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "npx serve . -l 3333",
-    "start": "npx serve . -l 3333"
+    "start": "npx serve . -l 3333",
+    "deploy:preview": "netlify deploy --site e6a1f747-13f1-4856-83c1-b69104047578 --dir .",
+    "deploy:prod": "netlify deploy --site e6a1f747-13f1-4856-83c1-b69104047578 --dir . --prod"
   },
   "dependencies": {
     "@react-email/components": "^0.0.20"

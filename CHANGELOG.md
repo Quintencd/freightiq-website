@@ -1,5 +1,27 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.0] - April 19, 2026
+
+### ✅ Marketing Workspace Separation + Correct Site Baseline Restore
+
+- Set up dedicated local marketing folder at `flowiq_website/` (separate from app code workflows).
+- Confirmed git remote points to marketing repo:
+  - `https://github.com/Quintencd/freightiq-website`
+- Re-linked Netlify in this folder to the correct marketing site:
+  - `flowiq-website` (`e6a1f747-13f1-4856-83c1-b69104047578`)
+- Restored the approved full-site variant (Landed Cost / editorial layout family) into this folder for homepage and core marketing pages.
+- Added explicit deploy scripts in `package.json`:
+  - `npm run deploy:preview`
+  - `npm run deploy:prod`
+- Updated `README.md` with the canonical local/GitHub/Netlify workflow.
+
+### Regression Risk Notes (>10%)
+
+- **18%**: If deployment is triggered from app workspace instead of `flowiq_website/`, mixed content can reappear.
+  - Mitigation: only deploy marketing from `flowiq_website/`.
+- **14%**: If route aliases are edited without matching redirects, pretty URLs can diverge from `.html` pages.
+  - Mitigation: keep `netlify.toml` redirects aligned with page files.
+
 ## [1.2.0] - October 11, 2025
 
 ### 🎨 Major UX Enhancements
@@ -140,4 +162,3 @@ gtag('event', 'click_cta', { 'plan': plan });
 **Last Updated:** October 11, 2025  
 **Version:** 1.2.0  
 **Deployed:** www.flowiq.info
-
