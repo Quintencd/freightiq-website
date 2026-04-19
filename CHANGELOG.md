@@ -1,5 +1,14 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.2] - April 19, 2026
+
+### App Pricing Matrix Parity + TimeIQ Display Removal
+
+- Aligned `pricing.html` comparison matrix rows and bundle logic to match app billing matrix semantics.
+- Synced `pricing-data.json` from app canonical source (`src/config/subscriptionPlans.js`).
+- Removed `TimeIQ` module mention from pricing module bundle display:
+  - Now shown as `Execution (ProjectsIQ/WorkIQ)`.
+
 ## [1.3.1] - April 19, 2026
 
 ### Pricing UX Simplification (Cards Removed)
