@@ -1,0 +1,54 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="accBg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#EEF3F8"/>
+    </linearGradient>
+    <filter id="accShadow" x="0" y="0" width="1600" height="900" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#CFD9E6" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" rx="36" fill="url(#accBg)"/>
+  <rect x="0" y="0" width="1600" height="116" fill="#0F172A"/>
+  <rect x="1088" y="30" width="154" height="56" rx="16" fill="#1B2C4A"/>
+  <text x="1120" y="66" fill="#F97316" font-size="29" font-family="Inter, Arial, sans-serif" font-weight="700">Finance</text>
+  <g filter="url(#accShadow)">
+    <rect x="54" y="172" width="1492" height="108" rx="30" fill="#FFFFFF"/>
+    <text x="92" y="238" fill="#1E293B" font-size="48" font-family="Inter, Arial, sans-serif" font-weight="800">AccountingIQ</text>
+    <text x="430" y="238" fill="#64748B" font-size="26" font-family="Inter, Arial, sans-serif" font-weight="500">GL, VAT, payables, receivables, and reporting controls.</text>
+    <g>
+      <rect x="56" y="332" width="278" height="158" rx="22" fill="#FFFFFF" stroke="#22C55E" stroke-width="3"/>
+      <text x="88" y="394" fill="#059669" font-size="66" font-family="Inter, Arial, sans-serif" font-weight="800">R 0,00</text>
+      <text x="88" y="436" fill="#1E293B" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="800">TB Variance</text>
+    </g>
+    <g>
+      <rect x="354" y="332" width="278" height="158" rx="22" fill="#FFFFFF" stroke="#3B82F6" stroke-width="3"/>
+      <text x="386" y="394" fill="#3B82F6" font-size="46" font-family="Inter, Arial, sans-serif" font-weight="800">R 1.66m</text>
+      <text x="386" y="436" fill="#1E293B" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="800">AR Outstanding</text>
+    </g>
+    <g>
+      <rect x="652" y="332" width="278" height="158" rx="22" fill="#FFFFFF" stroke="#A855F7" stroke-width="3"/>
+      <text x="684" y="394" fill="#A855F7" font-size="46" font-family="Inter, Arial, sans-serif" font-weight="800">R 8.15m</text>
+      <text x="684" y="436" fill="#1E293B" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="800">AP Outstanding</text>
+    </g>
+    <g>
+      <rect x="950" y="332" width="278" height="158" rx="22" fill="#FFFFFF" stroke="#F97316" stroke-width="3"/>
+      <text x="982" y="394" fill="#047857" font-size="46" font-family="Inter, Arial, sans-serif" font-weight="800">R 123.40</text>
+      <text x="982" y="436" fill="#1E293B" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="800">VAT Payable</text>
+    </g>
+    <g>
+      <rect x="1248" y="332" width="298" height="158" rx="22" fill="#FFFFFF" stroke="#22C55E" stroke-width="3"/>
+      <text x="1280" y="394" fill="#047857" font-size="42" font-family="Inter, Arial, sans-serif" font-weight="800">R 2.76m</text>
+      <text x="1280" y="436" fill="#1E293B" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="800">Net Profit</text>
+    </g>
+    <rect x="56" y="536" width="1490" height="210" rx="26" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="3"/>
+    <text x="88" y="600" fill="#1E293B" font-size="34" font-family="Inter, Arial, sans-serif" font-weight="800">Reporting Period</text>
+    <rect x="90" y="640" width="390" height="72" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="3"/>
+    <rect x="500" y="640" width="332" height="72" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="3"/>
+    <rect x="852" y="640" width="332" height="72" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="3"/>
+    <rect x="1204" y="640" width="290" height="72" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="3"/>
+    <rect x="90" y="770" width="476" height="78" rx="18" fill="#FFF7ED" stroke="#FED7AA" stroke-width="3"/>
+    <rect x="590" y="770" width="476" height="78" rx="18" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="3"/>
+    <rect x="1090" y="770" width="404" height="78" rx="18" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="3"/>
+  </g>
+</svg>

@@ -1,0 +1,58 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ecomBg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#EEF4FB"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1600" height="900" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#C8D5E6" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" rx="36" fill="url(#ecomBg)"/>
+  <rect x="0" y="0" width="1600" height="116" fill="#0F172A"/>
+  <rect x="1088" y="30" width="132" height="56" rx="16" fill="#1B2C4A" stroke="#F97316" stroke-width="4"/>
+  <text x="1119" y="66" fill="#F97316" font-size="29" font-family="Inter, Arial, sans-serif" font-weight="700">EcomIQ</text>
+  <g filter="url(#shadow)">
+    <rect x="50" y="160" width="1500" height="96" rx="28" fill="#FFFFFF"/>
+    <text x="84" y="220" fill="#1E293B" font-size="48" font-family="Inter, Arial, sans-serif" font-weight="800">EcomIQ</text>
+    <text x="274" y="220" fill="#64748B" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="500">Website orders, sync, and media workflow.</text>
+    <rect x="50" y="304" width="660" height="74" rx="24" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="3"/>
+    <rect x="68" y="318" width="112" height="46" rx="23" fill="#F97316"/>
+    <text x="93" y="349" fill="#FFFFFF" font-size="30" font-family="Inter, Arial, sans-serif" font-weight="700">Orders</text>
+    <text x="224" y="349" fill="#475569" font-size="30" font-family="Inter, Arial, sans-serif" font-weight="700">Catalog</text>
+    <text x="387" y="349" fill="#475569" font-size="30" font-family="Inter, Arial, sans-serif" font-weight="700">Media</text>
+    <rect x="50" y="430" width="1500" height="86" rx="28" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="3"/>
+    <text x="86" y="484" fill="#334155" font-size="30" font-family="Inter, Arial, sans-serif" font-weight="800">Workflow guardrails:</text>
+    <text x="393" y="484" fill="#64748B" font-size="26" font-family="Inter, Arial, sans-serif" font-weight="500">Draft changes stay staged until they are approved.</text>
+    <g>
+      <rect x="50" y="566" width="226" height="168" rx="24" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="3"/>
+      <text x="84" y="620" fill="#64748B" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="800">WEBSITE ORDERS</text>
+      <text x="84" y="684" fill="#2563EB" font-size="76" font-family="Inter, Arial, sans-serif" font-weight="800">0</text>
+    </g>
+    <g>
+      <rect x="304" y="566" width="226" height="168" rx="24" fill="#FFFFFF" stroke="#FED7AA" stroke-width="3"/>
+      <text x="338" y="620" fill="#64748B" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="800">IN PROGRESS</text>
+      <text x="338" y="684" fill="#EA580C" font-size="76" font-family="Inter, Arial, sans-serif" font-weight="800">0</text>
+    </g>
+    <g>
+      <rect x="558" y="566" width="226" height="168" rx="24" fill="#FFFFFF" stroke="#E9D5FF" stroke-width="3"/>
+      <text x="592" y="620" fill="#64748B" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="800">AWAITING PAYMENT</text>
+      <text x="592" y="684" fill="#9333EA" font-size="76" font-family="Inter, Arial, sans-serif" font-weight="800">0</text>
+    </g>
+    <g>
+      <rect x="812" y="566" width="226" height="168" rx="24" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="3"/>
+      <text x="846" y="620" fill="#64748B" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="800">PAID ORDERS</text>
+      <text x="846" y="684" fill="#16A34A" font-size="76" font-family="Inter, Arial, sans-serif" font-weight="800">0</text>
+    </g>
+    <g>
+      <rect x="1066" y="566" width="226" height="168" rx="24" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="3"/>
+      <text x="1100" y="620" fill="#64748B" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="800">PROFORMAS READY</text>
+      <text x="1100" y="684" fill="#0284C7" font-size="76" font-family="Inter, Arial, sans-serif" font-weight="800">0</text>
+    </g>
+    <g>
+      <rect x="1320" y="566" width="230" height="168" rx="24" fill="#FFFFFF" stroke="#FECACA" stroke-width="3"/>
+      <text x="1352" y="620" fill="#64748B" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="800">SYNC HEALTH</text>
+      <text x="1352" y="684" fill="#E11D48" font-size="76" font-family="Inter, Arial, sans-serif" font-weight="800">0</text>
+    </g>
+  </g>
+</svg>

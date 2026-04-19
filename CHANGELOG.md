@@ -1,5 +1,20 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.4] - April 19, 2026
+
+### Module Preview Swap + Pricing Header Cleanup
+
+- Replaced the `EcomIQ` and `AccountingIQ` module placeholder cards with branded UI preview assets based on the supplied app screenshots.
+- Updated `modules.html` to use the new preview assets instead of placeholder SVGs.
+- Removed the top-left `FlowIQ` wordmark from the pricing-page navigation to reduce clutter.
+- Tightened pricing table plan headers and shortened plan suffixes from `/month` to `/m` and `/year` to `/yr`.
+- Verified the local marketing site now serves the new module asset references and compact pricing header labels.
+
+### Regression Risk Notes (>10%)
+
+- **12%**: Module preview SVGs may drift from the live app UI if app screens evolve and the website previews are not refreshed with them.
+- **11%**: Shortening price suffixes improves scan speed, but a small subset of visitors may find `/m` and `/yr` slightly less explicit on first glance.
+
 ## [1.3.3] - April 19, 2026
 
 ### Homepage Clarity + Mobile UX Pass
