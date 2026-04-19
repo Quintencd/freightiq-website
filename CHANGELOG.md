@@ -1,5 +1,35 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.3] - April 19, 2026
+
+### Homepage Clarity + Mobile UX Pass
+
+- Reworked `index.html` into an overview-first structure to reduce cognitive overload.
+- Removed duplicated high-density homepage sections:
+  - `The Tension`
+  - `The FlowIQ System`
+  - long screenshot-heavy module deep-dives
+- Added clearer conversion flow:
+  - concise hero copy
+  - `What Changes Fast`
+  - `Choose Your Path` cards (`Who it's for`, `Modules`, `Pricing`)
+  - compact module snapshot cards
+  - trust/integration summary
+- Removed non-essential interaction complexity on homepage:
+  - screenshot modal/lightbox markup + JS
+  - magnetic hover movement script
+- Performed visual checks in Chrome:
+  - desktop pass
+  - mobile pass via responsive device mode
+  - pricing page mobile verification to confirm table-only model still holds
+- Confirmed clean local route behavior (`/pricing`, `/modules`, etc.) when served with `npx serve` on `:5180`.
+
+### Regression Risk Notes (>10%)
+
+- **18%**: Reduced homepage internal-link density may slightly lower long-tail SEO discovery from the homepage.
+- **14%**: Some visitors wanting detailed module copy above the fold may need one extra click.
+- **12%**: Removed motion/lightbox effects may reduce perceived interactivity for a subset of users.
+
 ## [1.3.2] - April 19, 2026
 
 ### App Pricing Matrix Parity + TimeIQ Display Removal

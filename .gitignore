@@ -29,6 +29,11 @@ yarn-error.log*
 
 # Sensitive documentation
 *.md
+!README.md
+!CHANGELOG.md
+!docs/
+!docs/Website/
+!docs/Website/*.md
 assets/ai/
 deployment-trigger.txt
 

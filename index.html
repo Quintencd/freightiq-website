@@ -47,37 +47,6 @@
       scroll-behavior: smooth;
     }
 
-    .module-image-modal {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      background: rgba(0, 0, 0, 0.75);
-      padding: 1rem;
-    }
-
-    .module-image-modal.is-open {
-      display: flex;
-    }
-
-    .module-image-modal .modal-content {
-      position: relative;
-      max-width: 90vw;
-      max-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .module-image-modal img {
-      max-width: 100%;
-      max-height: 85vh;
-      object-fit: contain;
-      border-radius: 0.75rem;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"FlowIQ ERP Software","url":"https://www.flowiq.info/","description":"ERP software for South African importers and distributors with accounting, bookkeeping, payroll, inventory, landed cost, and margin visibility in one platform."},{"@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/","description":"Operational ERP software that connects accounting, bookkeeping, payroll, inventory, landed-cost workflows, forecasting, and margin visibility in one platform.","offers":{"@type":"Offer","price":"29","priceCurrency":"USD"}}]}
@@ -148,7 +117,7 @@
   </nav>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
-    <section id="hero" class="relative mb-24">
+    <section id="hero" class="relative mb-20">
       <div class="hero-ambient hero-ambient--warm" aria-hidden="true"></div>
       <div class="hero-ambient hero-ambient--cool" aria-hidden="true"></div>
       <div class="mesh-lines"></div>
@@ -156,12 +125,12 @@
         <div>
           <span class="section-kicker">Operational Intelligence</span>
           <h1 class="mt-6 text-5xl md:text-7xl font-black text-slate-900 tracking-[-0.04em] leading-[0.95]">
-            Landed cost software
-            <span class="block text-freight-orange">for importers with a proper point of view.</span>
+            See landed cost,
+            <span class="block text-freight-orange">stock, and margin clearly.</span>
           </h1>
           <p class="mt-6 max-w-2xl text-lg md:text-xl text-slate-600 leading-relaxed">
-            FlowIQ turns messy imports, disconnected stock data, and margin guesswork into one control layer for importers,
-            distributors, and manufacturers who are done running on spreadsheets.
+            FlowIQ gives importers and distributors one clear operating surface for purchasing, inventory, accounting, and
+            pricing decisions, without spreadsheet chaos.
           </p>
           <div class="mt-8 flex flex-col sm:flex-row gap-4">
             <a href="/signup" data-analytics-event="trial_signup_click" data-analytics-position="hero_primary" data-analytics-label="homepage hero trial"
@@ -176,223 +145,128 @@
           </div>
           <div class="mt-8 hero-chip-row">
             <span class="hero-chip"><i data-lucide="ship" class="w-4 h-4"></i> True landed cost per shipment</span>
-            <span class="hero-chip"><i data-lucide="package-check" class="w-4 h-4"></i> Stock, purchasing, and margin in
-              one flow</span>
+            <span class="hero-chip"><i data-lucide="package-check" class="w-4 h-4"></i> One flow from purchase to margin</span>
             <span class="hero-chip"><i data-lucide="badge-check" class="w-4 h-4"></i> Local support. Live fast.</span>
           </div>
-          <div class="mt-8 flex flex-wrap gap-4 text-sm font-semibold text-slate-600">
-            <a class='hover:text-orange-600 transition-colors' href='/solutions/importers'>Software for Importers</a>
-            <span>·</span>
-            <a class='hover:text-orange-600 transition-colors' href='/import-erp-software'>Import ERP Software</a>
-            <span>·</span>
-            <a class='hover:text-orange-600 transition-colors' href='/inventory-software-for-importers'>Inventory Software for Importers</a>
-            <span>·</span>
-            <a class='hover:text-orange-600 transition-colors' href='/inventory-forecasting-software'>Inventory Forecasting Software</a>
-            <span>·</span>
-            <a class='hover:text-orange-600 transition-colors' href='/tools/landed-cost-calculator'>Landed Cost Calculator</a>
+          <div class="mt-8 flex flex-wrap gap-3 text-sm font-semibold">
+            <a href="/who-flowiq-is-for" class="glass-panel rounded-full px-4 py-2 text-slate-700 hover:text-orange-600 transition-colors">Who it's for</a>
+            <a href="/modules" class="glass-panel rounded-full px-4 py-2 text-slate-700 hover:text-orange-600 transition-colors">Explore modules</a>
+            <a href="/pricing" class="glass-panel rounded-full px-4 py-2 text-slate-700 hover:text-orange-600 transition-colors">View pricing</a>
           </div>
         </div>
 
         <div class="hero-stack">
-          <div class="hero-surface hero-surface--note glass-panel is-magnetic" data-depth="18">
+          <div class="hero-surface hero-surface--note glass-panel">
             <p class="text-xs font-black uppercase tracking-[0.28em] text-orange-600">Workflow</p>
-            <p class="mt-3 text-sm font-semibold text-slate-900">Purchase order → shipment costing → inventory → invoice
-              margin.</p>
-            <p class="mt-2 text-sm text-slate-600">One connected operating story instead of five disconnected tools.</p>
+            <p class="mt-3 text-sm font-semibold text-slate-900">Purchase order → shipment costing → inventory → invoice margin.</p>
+            <p class="mt-2 text-sm text-slate-600">One connected story instead of disconnected tools and handoffs.</p>
           </div>
-          <div class="hero-surface hero-surface--main module-thumb-wrap is-magnetic" data-depth="10" role="button" tabindex="0"
-            aria-label="View full screenshot">
+          <div class="hero-surface hero-surface--main rounded-[1.5rem] overflow-hidden border border-slate-200">
             <img src="assets/dashboard-preview.webp" alt="FlowIQ dashboard and landed cost workspace"
               class="h-full w-full object-cover bg-white" width="1916" height="1044" fetchpriority="high" decoding="async">
           </div>
-          <div class="hero-surface hero-surface--metric glass-panel is-magnetic" data-depth="22">
-            <p class="text-xs font-black uppercase tracking-[0.28em] text-orange-600">What changes</p>
-            <div class="mt-3 grid gap-3">
-              <div class="metric-block">
-                <p class="text-3xl font-black text-slate-900">2-day</p>
-                <p class="mt-1 text-sm text-slate-600">month-end instead of a week of reconciliations</p>
-              </div>
-              <div class="metric-block">
-                <p class="text-3xl font-black text-slate-900">Live</p>
-                <p class="mt-1 text-sm text-slate-600">margin visibility before pricing decisions are made</p>
-              </div>
-            </div>
+          <div class="hero-surface hero-surface--metric glass-panel">
+            <p class="text-xs font-black uppercase tracking-[0.28em] text-orange-600">First 14 days</p>
+            <ul class="checklist mt-3">
+              <li>Unify purchasing, inventory, and invoice visibility</li>
+              <li>Expose margin leaks before month-end</li>
+              <li>Give each team one source of truth</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="mb-24 editorial-grid lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] gap-8 items-start">
-      <div class="story-card p-8 md:p-10">
-        <span class="section-kicker">The Tension</span>
-        <h2 class="mt-5 text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Your current workflow looks busy,
-          but it is structurally blind.</h2>
-        <div class="mt-8 grid sm:grid-cols-2 gap-4">
-          <div class="glass-panel rounded-2xl p-5">
-            <p class="text-xs font-black uppercase tracking-[0.24em] text-orange-600">Before FlowIQ</p>
-            <p class="mt-3 text-lg font-bold text-slate-900">Spreadsheet chaos</p>
-            <p class="mt-2 text-sm text-slate-600">Freight, FX, supplier pricing, and stock decisions are split across files
-              and inboxes.</p>
-          </div>
-          <div class="glass-panel rounded-2xl p-5">
-            <p class="text-xs font-black uppercase tracking-[0.24em] text-orange-600">Margin risk</p>
-            <p class="mt-3 text-lg font-bold text-slate-900">Too late to react</p>
-            <p class="mt-2 text-sm text-slate-600">You only find the leak after goods are sold or month-end closes.</p>
-          </div>
-          <div class="glass-panel rounded-2xl p-5">
-            <p class="text-xs font-black uppercase tracking-[0.24em] text-orange-600">Ops friction</p>
-            <p class="mt-3 text-lg font-bold text-slate-900">Manual handoffs everywhere</p>
-            <p class="mt-2 text-sm text-slate-600">Teams keep re-entering the same operational data into different systems.
-            </p>
-          </div>
-          <div class="glass-panel rounded-2xl p-5">
-            <p class="text-xs font-black uppercase tracking-[0.24em] text-orange-600">Leadership pain</p>
-            <p class="mt-3 text-lg font-bold text-slate-900">No control room</p>
-            <p class="mt-2 text-sm text-slate-600">There is no single surface showing what is happening, what slipped, and
-              what to do next.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="feature-rail">
-        <article>
-          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Built For Real Operations</p>
-          <h3 class="mt-2 text-xl font-black text-slate-900">FlowIQ fits businesses where timing, costing, and stock movement all affect margin.</h3>
-          <p class="mt-3 text-sm text-slate-600">It gives operators and managers a clearer picture of what is happening now and what needs attention next.</p>
+    <section class="mb-20 story-card p-8 md:p-10">
+      <span class="section-kicker">What Changes Fast</span>
+      <h2 class="mt-5 text-3xl md:text-4xl font-black text-slate-900 tracking-tight">A calmer control room for your operation.</h2>
+      <p class="mt-4 max-w-3xl text-slate-600 text-lg">This homepage stays high-level by design. Go deeper only where needed through modules, pricing, and use-case pages.</p>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <article class="glass-panel rounded-2xl p-5">
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Visibility</p>
+          <p class="mt-3 text-lg font-bold text-slate-900">Know what is happening now</p>
+          <p class="mt-2 text-sm text-slate-600">Track shipments, stock, and profitability in one place.</p>
         </article>
-        <article>
-          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">What Gets Cleaner</p>
-          <p class="mt-3 text-sm text-slate-600">Core workflows run under one umbrella in FlowIQ.</p>
+        <article class="glass-panel rounded-2xl p-5">
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Speed</p>
+          <p class="mt-3 text-lg font-bold text-slate-900">Decide earlier, not at close</p>
+          <p class="mt-2 text-sm text-slate-600">Spot issues while there is still time to act.</p>
         </article>
-        <article>
-          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">What Teams Get</p>
-          <p class="mt-3 text-sm text-slate-600">A calmer workflow, clearer accountability, and faster answers when something shifts in the supply chain.</p>
+        <article class="glass-panel rounded-2xl p-5">
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Control</p>
+          <p class="mt-3 text-lg font-bold text-slate-900">Reduce handoff friction</p>
+          <p class="mt-2 text-sm text-slate-600">Keep teams aligned on the same operational data.</p>
         </article>
       </div>
     </section>
 
-    <section class="mb-24 story-card p-8 md:p-12">
-      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+    <section class="mb-20">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8">
         <div class="max-w-3xl">
-          <span class="section-kicker">The FlowIQ System</span>
-          <h2 class="mt-5 text-3xl md:text-4xl font-black text-slate-900 tracking-tight">One operating surface for
-            accounting, payroll, ecommerce, purchasing, inventory, landed cost, forecasting, and profitability.</h2>
+          <span class="section-kicker">Choose Your Path</span>
+          <h2 class="mt-5 text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Go straight to the detail you need.</h2>
         </div>
-        <div class="accent-divider"></div>
       </div>
-      <div class="mt-8 module-stat-strip">
-        <div>
-          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Step 01</p>
-          <p class="mt-3 text-lg font-bold text-slate-900">Capture the shipment story</p>
-          <p class="mt-2 text-sm text-slate-600">From PO to freight and FX, every cost has context before goods land.</p>
-        </div>
-        <div>
-          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Step 02</p>
-          <p class="mt-3 text-lg font-bold text-slate-900">Turn movement into visibility</p>
-          <p class="mt-2 text-sm text-slate-600">Inventory, sales, margins, and exceptions all stay connected instead of
-            drifting apart.</p>
-        </div>
-        <div>
-          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Step 03</p>
-          <p class="mt-3 text-lg font-bold text-slate-900">Make smarter next moves</p>
-          <p class="mt-2 text-sm text-slate-600">Forecast demand, defend price, and decide with data while there is still
-            time to act.</p>
-        </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <article class="story-card p-6">
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Use Cases</p>
+          <h3 class="mt-3 text-2xl font-black text-slate-900">Who FlowIQ is for</h3>
+          <p class="mt-3 text-sm text-slate-600">See the best-fit team profiles and operational scenarios.</p>
+          <a href="/who-flowiq-is-for" class="mt-5 inline-flex items-center gap-2 text-orange-600 font-bold">Open use cases <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </article>
+        <article class="story-card p-6">
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Product</p>
+          <h3 class="mt-3 text-2xl font-black text-slate-900">Explore modules</h3>
+          <p class="mt-3 text-sm text-slate-600">Review each module only when you are ready for technical detail.</p>
+          <a href="/modules" class="mt-5 inline-flex items-center gap-2 text-orange-600 font-bold">Open modules <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </article>
+        <article class="story-card p-6">
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-orange-600">Commercial</p>
+          <h3 class="mt-3 text-2xl font-black text-slate-900">See pricing plans</h3>
+          <p class="mt-3 text-sm text-slate-600">Compare plans in one transparent matrix with no card clutter.</p>
+          <a href="/pricing" class="mt-5 inline-flex items-center gap-2 text-orange-600 font-bold">Open pricing <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </article>
       </div>
     </section>
 
-    <section id="modules" class="mb-24">
-      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-12">
+    <section id="modules" class="mb-20">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8">
         <div class="max-w-3xl">
-          <span class="section-kicker">Flagship Modules</span>
-          <h2 class="mt-5 text-3xl md:text-4xl font-black text-slate-900 tracking-tight">The parts people actually buy are
-            the parts that need to look serious.</h2>
+          <span class="section-kicker">Module Snapshot</span>
+          <h2 class="mt-5 text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Three modules that drive outcomes.</h2>
         </div>
         <a class='inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-bold' href='/modules'>
           View all modules
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
       </div>
-
-      <div class="grid gap-6">
-        <article class="module-feature story-card p-6 md:p-8">
-          <div class="module-feature__copy">
-            <span class="section-kicker">ImportIQ</span>
-            <h3 class="mt-5 text-3xl font-black text-slate-900">The landed cost engine that stops margin leakage before it
-              starts.</h3>
-            <p class="mt-4 text-base text-slate-600 leading-relaxed">Track supplier pricing, freight, duty, and FX inside
-              the same workflow so your landed cost is not a spreadsheet guess after the fact.</p>
-            <ul class="checklist mt-6">
-              <li>Shipment-level costing with operational context</li>
-              <li>Cost allocation that stays attached to inventory movement</li>
-              <li>Cleaner handoff into pricing and profitability analysis</li>
-            </ul>
-            <div class="mt-6">
-              <a class='inline-flex items-center gap-2 text-orange-600 font-bold' href='/modules#importiq'>Explore
-                ImportIQ <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-            </div>
-          </div>
-          <div class="module-feature__visual module-thumb-wrap rounded-[1.5rem] overflow-hidden border border-slate-200 cursor-pointer"
-            role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-importiq.png" alt="ImportIQ module screenshot"
-              class="w-full h-full object-cover">
-          </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <article class="story-card p-6">
+          <span class="section-kicker">ImportIQ</span>
+          <h3 class="mt-4 text-2xl font-black text-slate-900">Landed cost confidence</h3>
+          <p class="mt-3 text-sm text-slate-600">Track supplier pricing, freight, duty, and FX in one connected flow.</p>
+          <a href="/modules#importiq" class="mt-5 inline-flex items-center gap-2 text-orange-600 font-bold">Explore ImportIQ <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </article>
-
-        <article class="module-feature story-card p-6 md:p-8">
-          <div class="module-feature__copy">
-            <span class="section-kicker">InventoryIQ</span>
-            <h3 class="mt-5 text-3xl font-black text-slate-900">Stock control that understands cost, not just quantity.</h3>
-            <p class="mt-4 text-base text-slate-600 leading-relaxed">FIFO, multi-warehouse movement, BOM, and kitsets are
-              already hard. FlowIQ keeps the inventory picture connected to what it is worth and what it is about to do.</p>
-            <ul class="checklist mt-6">
-              <li>Multi-warehouse stock with cleaner operational discipline</li>
-              <li>Transfers and manufacturing tied to the same cost story</li>
-              <li>Less chasing, less reconciliation, less “which sheet is right?”</li>
-            </ul>
-            <div class="mt-6">
-              <a class='inline-flex items-center gap-2 text-orange-600 font-bold' href='/modules/inventoryiq'>Explore
-                InventoryIQ <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-            </div>
-          </div>
-          <div class="module-feature__visual module-thumb-wrap rounded-[1.5rem] overflow-hidden border border-slate-200 cursor-pointer"
-            role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-inventoryiq.png" alt="InventoryIQ module screenshot"
-              class="w-full h-full object-cover">
-          </div>
+        <article class="story-card p-6">
+          <span class="section-kicker">InventoryIQ</span>
+          <h3 class="mt-4 text-2xl font-black text-slate-900">Cost-aware stock control</h3>
+          <p class="mt-3 text-sm text-slate-600">Manage warehouses, movements, and stock value with cleaner discipline.</p>
+          <a href="/modules/inventoryiq" class="mt-5 inline-flex items-center gap-2 text-orange-600 font-bold">Explore InventoryIQ <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </article>
-
-        <article class="module-feature story-card p-6 md:p-8">
-          <div class="module-feature__copy">
-            <span class="section-kicker">ForecastIQ</span>
-            <h3 class="mt-5 text-3xl font-black text-slate-900">Planning that moves from hindsight to next decision.</h3>
-            <p class="mt-4 text-base text-slate-600 leading-relaxed">ForecastIQ gives buyers and operators a real reason to
-              stay inside the system: it translates history and movement into better replenishment and pricing decisions.
-            </p>
-            <ul class="checklist mt-6">
-              <li>Demand planning linked to real inventory history</li>
-              <li>Less overstock, fewer stockouts, better buying confidence</li>
-              <li>A more persuasive story for why the platform should win</li>
-            </ul>
-            <div class="mt-6">
-              <a class='inline-flex items-center gap-2 text-orange-600 font-bold' href='/modules#forecastiq'>Explore
-                ForecastIQ <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-            </div>
-          </div>
-          <div class="module-feature__visual module-thumb-wrap rounded-[1.5rem] overflow-hidden border border-slate-200 cursor-pointer"
-            role="button" tabindex="0" aria-label="View full screenshot">
-            <img src="/assets/img/modules/thumb-forecastiq.png" alt="ForecastIQ module screenshot"
-              class="w-full h-full object-cover">
-          </div>
+        <article class="story-card p-6">
+          <span class="section-kicker">ForecastIQ</span>
+          <h3 class="mt-4 text-2xl font-black text-slate-900">Planning before pressure</h3>
+          <p class="mt-3 text-sm text-slate-600">Turn historical movement into smarter purchasing and replenishment decisions.</p>
+          <a href="/modules#forecastiq" class="mt-5 inline-flex items-center gap-2 text-orange-600 font-bold">Explore ForecastIQ <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </article>
       </div>
     </section>
 
-    <section class="mb-24 editorial-grid lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] gap-8 items-start">
+    <section class="mb-20 editorial-grid lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] gap-8 items-start">
       <div class="story-card p-8 md:p-10">
-        <span class="section-kicker">Why It Converts</span>
+        <span class="section-kicker">Trust Signals</span>
         <h2 class="mt-5 text-3xl font-black text-slate-900">Confidence matters before rollout.</h2>
-        <p class="mt-4 text-slate-600 leading-relaxed">Teams adopt faster when the product already feels organized, trustworthy, and operationally mature from the first visit.</p>
+        <p class="mt-4 text-slate-600 leading-relaxed">Teams move faster when the platform already feels organized and operationally mature.</p>
         <div class="mt-8 flex flex-wrap gap-3">
           <span class="proof-chip"><i data-lucide="shield-check" class="w-4 h-4"></i> Bank-level security</span>
           <span class="proof-chip"><i data-lucide="clock-3" class="w-4 h-4"></i> Live in 24 hours</span>
@@ -401,23 +275,15 @@
       </div>
       <div class="story-card p-8 md:p-10">
         <span class="section-kicker">Integrations</span>
-        <h2 class="mt-5 text-3xl font-black text-slate-900">FlowIQ fits around the tools your team already touches.</h2>
+        <h2 class="mt-5 text-3xl font-black text-slate-900">FlowIQ fits around your existing stack.</h2>
         <div class="mt-8 grid sm:grid-cols-2 gap-4">
           <div class="glass-panel rounded-2xl p-5">
             <p class="font-bold text-slate-900">Accounting handoff</p>
             <p class="mt-2 text-sm text-slate-600">Journals, mappings, and cleaner finance workflows.</p>
           </div>
           <div class="glass-panel rounded-2xl p-5">
-            <p class="font-bold text-slate-900">CSV import/export</p>
-            <p class="mt-2 text-sm text-slate-600">Useful when teams are still transitioning off old workflows.</p>
-          </div>
-          <div class="glass-panel rounded-2xl p-5">
-            <p class="font-bold text-slate-900">API-ready foundations</p>
-            <p class="mt-2 text-sm text-slate-600">Built to play nicely with adjacent operational systems.</p>
-          </div>
-          <div class="glass-panel rounded-2xl p-5">
-            <p class="font-bold text-slate-900">Document capture</p>
-            <p class="mt-2 text-sm text-slate-600">Keep operational evidence attached to the work itself.</p>
+            <p class="font-bold text-slate-900">CSV and API-ready</p>
+            <p class="mt-2 text-sm text-slate-600">Adopt gradually while staying connected to adjacent systems.</p>
           </div>
         </div>
       </div>
@@ -462,71 +328,10 @@
     </div>
   </footer>
 
-  <div id="moduleImageModal" class="module-image-modal" role="dialog" aria-modal="true" aria-label="Module screenshot">
-    <div class="modal-content">
-      <button type="button" id="moduleImageModalClose"
-        class="absolute top-2 right-2 z-10 text-white hover:text-orange-300 text-3xl font-light leading-none w-10 h-10 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-orange-400 rounded-full bg-black/40"
-        aria-label="Close">&times;</button>
-      <img id="moduleImageModalImg" src="" alt="">
-      <p id="moduleImageModalTitle" class="mt-3 text-white font-semibold text-center text-sm"></p>
-    </div>
-  </div>
-
   <script>
     document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
       var menu = document.getElementById('mobileMenu');
       menu?.classList.toggle('hidden');
-    });
-
-    var modal = document.getElementById('moduleImageModal');
-    var modalImg = document.getElementById('moduleImageModalImg');
-    var modalTitle = document.getElementById('moduleImageModalTitle');
-    function openModuleModal(src, title) {
-      if (!modal || !modalImg) return;
-      modalImg.src = src;
-      modalImg.alt = title || '';
-      modalTitle.textContent = title || '';
-      modal.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModuleModal() {
-      if (!modal) return;
-      modal.classList.remove('is-open');
-      document.body.style.overflow = '';
-    }
-    document.querySelectorAll('.module-thumb-wrap').forEach(function (el) {
-      el.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        var img = this.querySelector('img');
-        if (img && img.src) openModuleModal(img.src, img.alt);
-      });
-      el.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          this.click();
-        }
-      });
-    });
-    document.getElementById('moduleImageModalClose')?.addEventListener('click', closeModuleModal);
-    modal?.addEventListener('click', function (e) {
-      if (e.target === modal) closeModuleModal();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && modal?.classList.contains('is-open')) closeModuleModal();
-    });
-
-    document.querySelectorAll('.is-magnetic').forEach(function (el) {
-      var depth = Number(el.getAttribute('data-depth') || 10);
-      el.addEventListener('pointermove', function (e) {
-        var rect = el.getBoundingClientRect();
-        var x = ((e.clientX - rect.left) / rect.width) - 0.5;
-        var y = ((e.clientY - rect.top) / rect.height) - 0.5;
-        el.style.transform = 'translate3d(' + (x * depth) + 'px,' + (y * depth) + 'px,0)';
-      });
-      el.addEventListener('pointerleave', function () {
-        el.style.transform = '';
-      });
     });
 
     if (typeof lucide !== 'undefined') lucide.createIcons();
