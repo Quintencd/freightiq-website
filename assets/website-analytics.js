@@ -288,18 +288,67 @@
     return txt.slice(0, 60);
   }
 
+  function buildSignupAttributionParams(ctaName, ctaPosition) {
+    const params = new URLSearchParams(window.location.search || '');
+    const sessionId = getOrCreateSessionId();
+    const pagePath = window.location.pathname || '/';
+    const pageSection = ctaPosition || readBodyDataset('defaultCtaPosition', 'unknown');
+
+    const out = new URLSearchParams();
+    out.set('session_id', sessionId);
+    out.set('website_source_page', pagePath);
+    out.set('website_source_section', pageSection || 'unknown');
+    out.set('funnel_scope', 'public_website');
+    out.set('site_hostname', window.location.hostname.toLowerCase());
+    if (ctaName) out.set('website_cta', String(ctaName).slice(0, 80));
+
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'plan'].forEach(function (key) {
+      const val = params.get(key);
+      if (val) out.set(key, val);
+    });
+
+    return out;
+  }
+
+  function decorateSignupHref(el) {
+    if (!el || !el.getAttribute) return;
+    const href = el.getAttribute('href') || '';
+    if (!href || href.indexOf('/signup') !== 0) return;
+
+    try {
+      const ctaName = el.getAttribute('data-analytics') || inferCtaName(el);
+      const ctaPosition = el.getAttribute('data-analytics-position') || null;
+      const url = new URL(href, window.location.origin);
+      const attr = buildSignupAttributionParams(ctaName, ctaPosition);
+      attr.forEach(function (value, key) {
+        if (!url.searchParams.has(key)) {
+          url.searchParams.set(key, value);
+        }
+      });
+      el.setAttribute('href', url.pathname + url.search + url.hash);
+    } catch (_) {
+      // never block UX
+    }
+  }
+
   function setupClickTracking() {
     document.addEventListener('click', function (e) {
       const target = e.target.closest('a,button');
       if (!target) return;
       const href = target.getAttribute('href') || '';
       const ctaName = target.getAttribute('data-analytics') || inferCtaName(target);
+      const ctaPosition = target.getAttribute('data-analytics-position') || null;
       const isLikelyCta = /signup|trial|pricing|demo|contact|login|book|start/i.test(ctaName + ' ' + href);
       if (!isLikelyCta) return;
 
+      if (href.indexOf('/signup') === 0) {
+        decorateSignupHref(target);
+      }
+
       track('web_cta_click', {
         cta_name: ctaName,
-        href: href || null
+        cta_position: ctaPosition,
+        href: target.getAttribute('href') || href || null
       });
     }, { passive: true });
   }
@@ -322,6 +371,7 @@
   };
 
   document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href^="/signup"]').forEach(decorateSignupHref);
     track('web_page_view', { entry_type: 'page_load' });
     setupClickTracking();
     setupFormTracking();
