@@ -32,3 +32,11 @@ Do **not** use the other folder `website/` for flowiq.info updates — that is a
 - Founder Console website reporting now depends on this stream being clean and production-aware.
 - Tracking hardening notes:
   - `docs/WEBSITE_ANALYTICS_TRACKING_HARDENING_2026-03-23.md`
+
+## FlowIQ Repo Ownership Quick Map
+
+- Website repo: this folder, `/Users/quintenmac/dev/FreightIQ/flowiq_website`
+- App repo: `/Users/quintenmac/dev/FreightIQ`
+- Founder console repo: `/Users/quintenmac/dev/FreightIQ/flowiq-admin-console`
+
+Edit public-site pages and website analytics here. Do not place marketing-site HTML or website-only docs in the app repo.

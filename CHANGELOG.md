@@ -1,5 +1,17 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.5] - April 22, 2026
+
+### Repo Ownership Hardening
+
+- Documented the live marketing workspace as `/Users/quintenmac/dev/FreightIQ/flowiq_website`.
+- Added repo routing notes so public-site work stays in the marketing repo, app flow work stays in `FreightIQ`, and founder console UI stays in `flowiq-admin-console`.
+- Added canonical website pass notes under `docs/Website/` to avoid future wrong-folder edits.
+
+### Regression Risk Notes (>10%)
+
+- **15%**: If another local clone of the same GitHub repo is edited instead of this workspace, documentation and live-site work can drift again.
+
 ## [1.3.4] - April 19, 2026
 
 ### Module Preview Swap + Pricing Header Cleanup
