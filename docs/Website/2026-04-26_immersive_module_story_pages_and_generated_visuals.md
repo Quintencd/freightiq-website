@@ -20,7 +20,7 @@ Date: 2026-04-26
   - `assets/img/generated/importiq-story.webp`
   - `assets/img/generated/inventory-forecast-story.webp`
   - `assets/img/generated/finance-decision-story.webp`
-  - `assets/img/generated/business-command-story.webp`
+  - `assets/img/generated/operations-command-story.webp`
   - `assets/img/generated/finance-relationship-story.webp`
   - `assets/img/generated/ecommerce-retail-story.webp`
   - `assets/img/generated/homepage-support/homepage-visibility-light.webp`
@@ -98,12 +98,12 @@ Date: 2026-04-26
   - AccountingIQ, CompaniesIQ, and InvoiceIQ use finance/customer/supplier relationship visuals in an office/admin operations setting.
   - EcomIQ uses ecommerce, retail, pricing, order, and fulfillment visuals.
   This avoids positioning FlowIQ as freight-only while still letting import and landed-cost pages feel strong.
-- The homepage now uses `business-command-story.webp` to signal broad business operations first. Import and landed-cost messaging is retained as specialist depth, not the main front-page identity.
+- The homepage now uses `operations-command-story.webp` to signal broad business operations first. Import and landed-cost messaging is retained as specialist depth, not the main front-page identity.
 - General business and finance/admin images were regenerated again to avoid all-white/generic-office visuals. They now intentionally show mixed-race, globally relevant teams in business operations and management contexts.
 - The lower homepage now uses a lighter object-led support image set for visibility, speed, control, and confidence. These images avoid repeated office/team/dashboard scenes and are placed as smaller reading aids rather than full-page brochure panels.
 - Homepage support images now use a very slight premium fade treatment with softer saturation, mild brightness lift, and lighter image shadowing so the visuals sit more polished inside the white card system.
 - The shared nav script now defensively loads the shared FlowIQ stylesheet and includes critical dropdown hiding rules. This prevents injected Solutions dropdown content from appearing unstyled on pages that did not already include the shared stylesheet.
-- All solution pages now include `flowiq-light.css?v=10` directly in the document head, plus a tiny inline dropdown visibility guard. This prevents the Solutions menu content from flashing or rendering as page text before the shared navigation script finishes.
+- All solution pages now include `flowiq-light.css?v=11` directly in the document head, plus a tiny inline dropdown visibility guard. This prevents the Solutions menu content from flashing or rendering as page text before the shared navigation script finishes.
 - The signup account creation layout now centers the single-column signup content and header when the page has no right-hand aside, keeping the "Create Your Account" section balanced on wide screens.
 - The solution pages were restored/enriched in place after a regression left some pages too thin:
   - `solutions/multi-branch.html` now has a full branch-control story with smart business flow, branch execution benefits, and connected module links.
@@ -186,7 +186,7 @@ Date: 2026-04-26
 - Scanned solution pages for internal/developer-facing wording such as "visitors", "the page should", "should feel", and "perception" after the solution enrichment pass.
 - Verified `assets/js/main.js` and `assets/js/module-story.js` with `node --check` after the shared navigation and AccountingIQ screenshot updates.
 - Scanned marketing HTML and JS for internal/developer-facing phrases after the customer-copy cleanup.
-- Marketing pages now cache-bust `assets/js/main.js?v=7`, shared styling now cache-busts `flowiq-light.css?v=10`, and module story pages cache-bust `assets/js/module-story.js?v=7`.
+- Marketing pages now cache-bust `assets/js/main.js?v=8`, shared styling now cache-busts `flowiq-light.css?v=11`, and module story pages cache-bust `assets/js/module-story.js?v=7`.
 - Navigation is rendered through a shared `assets/js/main.js` helper so module pages, solution pages, and the homepage present the same top menu items: Home, Who it's for, Solutions, Modules, Pricing, Brochure, Login, Book a Demo, and Start Free Trial.
 - Captured Chrome headless screenshots for:
   - Homepage desktop.
@@ -258,6 +258,22 @@ Date: 2026-04-26
   - `solutions/multi-branch.html`
   - `solutions/wholesale-distribution.html`
   - `solutions/freight-logistics.html`
+
+## 2026-04-27 Mobile Navigation And Image Delivery Fix
+
+- Fixed the mobile Solutions menu so it expands into the same customer-facing solution choices as desktop navigation instead of acting as a single link.
+- Replaced the homepage hero reference from `business-command-story.webp` to `operations-command-story.webp` because the website `.gitignore` excludes filenames containing `business`, which prevented the live deployment from including the old hero asset.
+- Added `operations-command-story-960.webp` and 960px responsive variants for the large generated story visuals so mobile browsers can download smaller images.
+- Added 1200px WebP versions for module screenshots used in the modules grid and module story proof sections. This keeps real FlowIQ dashboard images crisp while reducing download size from hundreds of KB to roughly 18-49 KB per screenshot.
+- Added preload, explicit dimensions, `srcset`, and `sizes` attributes to generated homepage and solution visuals to reduce blank image time and layout shift.
+- Added Netlify immutable cache headers for `/assets/img/*`, `/assets/js/*`, and `/flowiq-light.css`; marketing JS is now cache-busted with `assets/js/main.js?v=8`, and shared CSS with `flowiq-light.css?v=11`.
+
+### Regression Risks Over 10%
+
+- **14%**: Long-lived immutable cache headers can show an older image or script if a future change reuses the same filename.
+  - Mitigation: marketing asset references now use versioned query strings for JS/CSS, and new visual assets should use new filenames or a bumped query when changed.
+- **12%**: Mobile users may need one extra tap to open a specific solution because Solutions is now an expandable group.
+  - Mitigation: the expanded menu presents all solution routes directly in the first mobile menu instead of sending users to a generic Solutions page.
   - `solutions/retail-outlets.html`
 - Kept the deeper buyer/SEO copy lower on each page so Google still gets crawlable detail without making the first screen feel like a text article.
 - Converted `solutions/freight-logistics.html` from its older dark template into the shared light FlowIQ visual-story pattern.

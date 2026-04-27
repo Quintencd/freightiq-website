@@ -51,7 +51,7 @@
 
     var link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = '/flowiq-light.css?v=10';
+    link.href = '/flowiq-light.css?v=11';
     document.head.appendChild(link);
   }
 
@@ -97,7 +97,17 @@
           '<div class="px-6 py-6 space-y-4">' +
             '<a href="/" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Home</a>' +
             "<a href=\"/who-flowiq-is-for\" class=\"block text-slate-600 hover:text-orange-600 font-medium text-lg\">Who it's for</a>" +
-            '<a href="/solutions/" class="block text-orange-600 font-medium text-lg">Solutions</a>' +
+            '<div class="mobile-solutions-group">' +
+              '<button type="button" class="mobile-solutions-toggle" aria-expanded="false" aria-controls="mobileSolutionsPanel">Solutions <i data-lucide="chevron-down" class="w-5 h-5"></i></button>' +
+              '<div id="mobileSolutionsPanel" class="mobile-solutions-panel" hidden>' +
+                '<a href="/solutions/importers.html"><i data-lucide="ship" class="w-4 h-4"></i><span><strong>Import operations</strong><small>Landed cost, stock, and margin</small></span></a>' +
+                '<a href="/solutions/distributors.html"><i data-lucide="warehouse" class="w-4 h-4"></i><span><strong>Distribution control</strong><small>Stock, branches, buying, and sales</small></span></a>' +
+                '<a href="/solutions/manufacturers.html"><i data-lucide="factory" class="w-4 h-4"></i><span><strong>Manufacturing operations</strong><small>BOM, WIP, costing, and planning</small></span></a>' +
+                '<a href="/solutions/multi-branch.html"><i data-lucide="network" class="w-4 h-4"></i><span><strong>Multi-branch management</strong><small>Branches, teams, stock, and finance</small></span></a>' +
+                '<a href="/modules/accountingiq.html"><i data-lucide="calculator" class="w-4 h-4"></i><span><strong>Finance and accounting</strong><small>Invoices, VAT, payroll, and reports</small></span></a>' +
+                '<a href="/modules/ecomiq.html"><i data-lucide="target" class="w-4 h-4"></i><span><strong>Ecommerce operations</strong><small>Orders, stock, dispatch, and invoicing</small></span></a>' +
+              '</div>' +
+            '</div>' +
             '<a href="/modules" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Modules</a>' +
             '<a href="/pricing" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Pricing</a>' +
             '<a href="/brochure" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Brochure</a>' +
@@ -107,6 +117,22 @@
           '</div>' +
         '</div>' +
       '</nav>';
+  }
+
+  function initMobileSolutionsDropdown() {
+    var mobileMenu = document.getElementById('mobileMenu');
+    if (!mobileMenu) return;
+
+    var toggle = mobileMenu.querySelector('.mobile-solutions-toggle');
+    var panel = mobileMenu.querySelector('.mobile-solutions-panel');
+    if (!toggle || !panel) return;
+
+    toggle.addEventListener('click', function () {
+      var shouldOpen = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+      panel.hidden = !shouldOpen;
+      toggle.classList.toggle('is-open', shouldOpen);
+    });
   }
 
   function initSiteNav() {
@@ -123,6 +149,8 @@
         mobileMenu.classList.toggle('hidden');
       });
     }
+
+    initMobileSolutionsDropdown();
 
     if (window.lucide) window.lucide.createIcons();
   }

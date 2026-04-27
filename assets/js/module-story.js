@@ -8,7 +8,7 @@
       description: 'Turn every shipment into a clear cost story before stock is received, priced, and sold.',
       image: '/assets/img/generated/importiq-story.webp',
       imageAlt: 'ImportIQ landed cost story with containers, supplier invoice, freight, duty, FX, and stock receiving cards',
-      screen: '/assets/img/modules/thumb-importiq.png',
+      screen: '/assets/img/modules/thumb-importiq.webp',
       icon: 'ship',
       lead: 'ImportIQ keeps freight, customs, FX, and true landed cost visible without making the workflow feel heavy.',
 	      relatedModules: ['PurchaseIQ', 'ForecastIQ', 'InventoryIQ', 'PriceIQ', 'DashboardIQ', 'AccountingIQ'],
@@ -30,7 +30,7 @@
       description: 'Know what is on hand, where it sits, what it cost, and what needs attention next.',
       image: '/assets/img/generated/inventory-forecast-story.webp',
       imageAlt: 'InventoryIQ warehouse planning scene with stock health, FIFO layers, branch transfers, and reorder recommendations',
-      screen: '/assets/img/modules/thumb-inventoryiq.png',
+      screen: '/assets/img/modules/thumb-inventoryiq.webp',
       icon: 'package',
       lead: 'InventoryIQ connects landed cost, branches, FIFO, transfers, and warehouse decisions in one stock control layer.',
 	      relatedModules: ['ImportIQ', 'ForecastIQ', 'Manufacturing', 'WarrantyIQ', 'InvoiceIQ', 'AccountingIQ', 'DashboardIQ'],
@@ -52,7 +52,7 @@
       description: 'Turn inventory history into replenishment decisions before stockouts and overbuying hurt cash.',
       image: '/assets/img/generated/inventory-forecast-story.webp',
       imageAlt: 'ForecastIQ demand forecast and replenishment recommendation scene in a warehouse',
-      screen: '/assets/img/modules/thumb-forecastiq.png',
+      screen: '/assets/img/modules/thumb-forecastiq.webp',
       icon: 'trending-up',
       lead: 'ForecastIQ turns operational history into forward-looking signals for purchasing, manufacturing, replenishment, and stock planning.',
 	      relatedModules: ['InventoryIQ', 'PurchaseIQ', 'Manufacturing', 'PriceIQ', 'DashboardIQ', 'ReportsIQ'],
@@ -72,9 +72,9 @@
       title: 'DashboardIQ',
       eyebrow: 'Performance Story',
       description: 'See sales, margin, stock, branch health, and operational exceptions in one executive surface.',
-      image: '/assets/img/generated/business-command-story.webp',
+      image: '/assets/img/generated/operations-command-story.webp',
       imageAlt: 'DashboardIQ cross-industry business command center with branch performance, stock health, tasks, customer activity, and reporting cards',
-      screen: '/assets/img/modules/thumb-dashboardiq.png',
+      screen: '/assets/img/modules/thumb-dashboardiq.webp',
       icon: 'layout-dashboard',
       lead: 'DashboardIQ gives owners and managers a clear operating picture without waiting for exported spreadsheets.',
 	      relatedModules: ['ImportIQ', 'InventoryIQ', 'InvoiceIQ', 'PurchaseIQ', 'AccountingIQ', 'ReportsIQ'],
@@ -96,7 +96,7 @@
       description: 'Keep customers, suppliers, parent groups, terms, and history connected to the operational workflow.',
       image: '/assets/img/generated/finance-relationship-story.webp',
       imageAlt: 'CompaniesIQ customer and supplier relationship workspace connected to invoices, payments, finance, and reports',
-      screen: '/assets/img/modules/thumb-companiesiq.png',
+      screen: '/assets/img/modules/thumb-companiesiq.webp',
       icon: 'building-2',
       lead: 'CompaniesIQ gives every transaction a proper business context so customer, supplier, and branch relationships do not disappear into disconnected records.',
 	      relatedModules: ['SalesIQ', 'InvoiceIQ', 'PurchaseIQ', 'AccountingIQ', 'DashboardIQ', 'ReportsIQ'],
@@ -118,7 +118,7 @@
       description: 'Connect operational transactions to GL, VAT, reconciliation, reports, and close control.',
       image: '/assets/img/generated/finance-relationship-story.webp',
       imageAlt: 'AccountingIQ finance control workspace with VAT, reconciliations, journals, cash position, customer and supplier account cards',
-      screen: '/assets/img/modules/accountingiq-real-positive.png',
+      screen: '/assets/img/modules/accountingiq-real-positive.webp',
       icon: 'calculator',
       lead: 'AccountingIQ positions FlowIQ as more than operations software. It closes the loop from stock and invoices into financial truth.',
 	      relatedModules: ['InvoiceIQ', 'PurchaseIQ', 'PayrollIQ', 'JournalIQ', 'DashboardIQ', 'ReportsIQ'],
@@ -140,7 +140,7 @@
       description: 'Pull ecommerce demand into the same stock, invoice, and fulfillment story as the rest of the business.',
       image: '/assets/img/generated/ecommerce-retail-story.webp',
       imageAlt: 'EcomIQ ecommerce and retail operations workspace with orders, price lists, customer activity, reservations, fulfillment tasks, and dashboards',
-      screen: '/assets/img/modules/ecomiq-real.png',
+      screen: '/assets/img/modules/ecomiq-real.webp',
       icon: 'shopping-bag',
       lead: 'EcomIQ helps online orders stop feeling like a separate island. Orders, stock pressure, fulfillment, and margin can move through the same FlowIQ surface.',
 	      relatedModules: ['InventoryIQ', 'InvoiceIQ', 'CompaniesIQ', 'AccountingIQ', 'DashboardIQ', 'ReportsIQ'],
@@ -160,9 +160,9 @@
       title: 'PurchaseIQ',
       eyebrow: 'Buying Story',
       description: 'Bring supplier planning, purchase orders, and receiving discipline into the same operating trail.',
-      image: '/assets/img/generated/business-command-story.webp',
+      image: '/assets/img/generated/operations-command-story.webp',
       imageAlt: 'PurchaseIQ supplier purchasing and branch operations workspace with stock health, tasks, purchasing, and customer activity',
-      screen: '/assets/img/modules/thumb-purchaseiq.png',
+      screen: '/assets/img/modules/thumb-purchaseiq.webp',
       icon: 'shopping-cart',
       lead: 'PurchaseIQ is where buying decisions start becoming operational truth: supplier choices, expected costs, and follow-through into imports or local receiving.',
 	      relatedModules: ['ForecastIQ', 'CompaniesIQ', 'ImportIQ', 'InventoryIQ', 'AccountingIQ', 'ReportsIQ'],
@@ -184,7 +184,7 @@
       description: 'Move from quote to invoice to payment while keeping stock, margin, and customer context in view.',
       image: '/assets/img/generated/finance-relationship-story.webp',
       imageAlt: 'InvoiceIQ finance and customer workspace with invoices, payments, customer accounts, supplier accounts, and dashboards',
-      screen: '/assets/img/modules/thumb-invoiceiq.png',
+      screen: '/assets/img/modules/thumb-invoiceiq.webp',
       icon: 'file-text',
       lead: 'InvoiceIQ shows the revenue side of the FlowIQ story: documents, credits, collections, and margin should all read from the same operational truth.',
 	      relatedModules: ['CompaniesIQ', 'InventoryIQ', 'PriceIQ', 'AccountingIQ', 'DashboardIQ', 'ReportsIQ'],
@@ -204,9 +204,9 @@
       title: 'ReportsIQ',
       eyebrow: 'Reporting Story',
       description: 'Turn operating data into management packs, statements, and decision-ready reporting.',
-      image: '/assets/img/generated/business-command-story.webp',
+      image: '/assets/img/generated/operations-command-story.webp',
       imageAlt: 'ReportsIQ cross-industry reporting and dashboard workspace with branch performance, stock health, tasks, and management reports',
-      screen: '/assets/img/modules/thumb-reportsiq.png',
+      screen: '/assets/img/modules/thumb-reportsiq.webp',
       icon: 'file-bar-chart',
       lead: 'ReportsIQ gives teams the confidence that the data they worked on all month can become the reports they actually need.',
 	      relatedModules: ['DashboardIQ', 'AccountingIQ', 'InvoiceIQ', 'CompaniesIQ', 'PayrollIQ', 'InventoryIQ'],
@@ -381,6 +381,10 @@
     }).join('');
   }
 
+  function responsiveStoryImage(path) {
+    return path.replace(/\.webp$/, '-960.webp') + ' 960w, ' + path + ' 1672w';
+  }
+
   function connectedModuleCard(item, index) {
     return '<article class="system-module-card live-card" style="--step:' + index + '">' +
       moduleTitle(item[0]) +
@@ -417,7 +421,7 @@
             '<p class="mt-4 max-w-xl text-base md:text-lg text-slate-700 leading-relaxed">' + story.description + '</p>' +
             '<div class="module-name-strip">' + modulePills(story) + '</div>' +
           '</div>' +
-          '<div class="solution-story-visual__image module-story-split__image"><img src="' + story.image + '" alt="' + story.imageAlt + '" width="1536" height="864" fetchpriority="high" decoding="async"></div>' +
+          '<div class="solution-story-visual__image module-story-split__image"><img src="' + story.image + '" srcset="' + responsiveStoryImage(story.image) + '" sizes="(max-width: 900px) 100vw, 50vw" alt="' + story.imageAlt + '" width="1672" height="941" loading="eager" fetchpriority="high" decoding="async"></div>' +
         '</div>' +
       '</section>' +
       '<section class="story-card p-8 md:p-10 story-reveal">' +
@@ -430,7 +434,7 @@
         '</div>' +
         '<div class="flowiq-screen-proof module-story-intro__screen" aria-label="FlowIQ product screen">' +
           '<div class="flowiq-screen-proof__bar"><span>Real FlowIQ UI</span><span>' + story.title + '</span></div>' +
-          '<img src="' + story.screen + '" alt="' + story.title + ' FlowIQ dashboard screen" loading="eager" decoding="async">' +
+          '<img src="' + story.screen + '" alt="' + story.title + ' FlowIQ dashboard screen" width="1200" height="752" loading="lazy" decoding="async">' +
         '</div>' +
       '</section>' +
       '<section class="story-card p-8 md:p-10 story-reveal">' +
