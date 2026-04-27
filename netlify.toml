@@ -55,6 +55,107 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/modules/importiq"
+  to = "/modules/importiq.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/inventoryiq"
+  to = "/modules/inventoryiq.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/forecastiq"
+  to = "/modules/forecastiq.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/dashboardiq"
+  to = "/modules/dashboardiq.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/companiesiq"
+  to = "/modules/companiesiq.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/accountingiq"
+  to = "/modules/accountingiq.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/ecomiq"
+  to = "/modules/ecomiq.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/purchaseiq"
+  to = "/modules/purchaseiq.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/invoiceiq"
+  to = "/modules/invoiceiq.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/reportsiq"
+  to = "/modules/reportsiq.html"
+  status = 200
+
+[[redirects]]
+  from = "/accounting-software"
+  to = "/accounting-software.html"
+  status = 301
+
+[[redirects]]
+  from = "/bookkeeping-software"
+  to = "/bookkeeping-software.html"
+  status = 301
+
+[[redirects]]
+  from = "/payroll-software"
+  to = "/payroll-software.html"
+  status = 301
+
+[[redirects]]
+  from = "/accounting-software-south-africa"
+  to = "/accounting-software.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/accounting-software-south-africa.html"
+  to = "/accounting-software.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bookkeeping-software-south-africa"
+  to = "/bookkeeping-software.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bookkeeping-software-south-africa.html"
+  to = "/bookkeeping-software.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/payroll-software-south-africa"
+  to = "/payroll-software.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/payroll-software-south-africa.html"
+  to = "/payroll-software.html"
+  status = 301
+  force = true
+
 # Signup should be served from ONE canonical file.
 # `/signup` and `/signup/` should render the same page as `/signup/index.html`.
 [[redirects]]

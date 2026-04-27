@@ -16,11 +16,15 @@
     .text-freight-orange { color: #f97316; }
     .bg-freight-orange { background-color: #f97316; }
     .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+  
+    /* Keep the marketing menu visible above page visuals. */
+    .nav-dropdown{position:relative}.nav-dropdown__menu{position:absolute;top:100%;left:50%;opacity:0;visibility:hidden;pointer-events:none;transform:translateX(-50%) translateY(.5rem)}.nav-dropdown:hover .nav-dropdown__menu,.nav-dropdown:focus-within .nav-dropdown__menu,.nav-dropdown.is-open .nav-dropdown__menu{opacity:1;visibility:visible;pointer-events:auto}nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"FlowIQ Retail Operations","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/solutions/retail-outlets.html","description":"Retail outlet inventory platform with barcode-assisted workflows, head-office visibility, forecasting, and multi-location stock control."}
   </script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
+  <link rel="stylesheet" href="/flowiq-light.css?v=10">
 </head>
 <body class="bg-slate-50 text-slate-900 overflow-x-hidden">
   <div class="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.15),rgba(255,255,255,0))]"></div>
@@ -62,16 +66,37 @@
   </nav>
 
   <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
-    <section class="text-center mb-14">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-semibold uppercase tracking-wide mb-5">
-        <i data-lucide="store" class="w-4 h-4"></i>
-        Retail Groups & Chains
+    <section class="solution-story-visual mb-14 story-reveal">
+      <div class="grid lg:grid-cols-[0.88fr_1.12fr]">
+        <div class="p-6 sm:p-8">
+          <p class="inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-orange-600">Outlet operations</p>
+          <h1 class="mt-4 text-4xl sm:text-5xl font-bold text-slate-900 leading-tight">Outlet stock, ecommerce orders, transfers, and margin stay connected.</h1>
+          <p class="mt-4 text-slate-600 text-lg">For outlet groups and branch teams, FlowIQ connects stock movement, replenishment, ecommerce order flow, invoicing, and finance without making each location work in isolation.</p>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">InventoryIQ</span>
+            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">ForecastIQ</span>
+            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">EcomIQ</span>
+            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">InvoiceIQ</span>
+          </div>
+        </div>
+        <div class="solution-story-visual__image">
+          <img src="/assets/img/generated/ecommerce-retail-story.webp" alt="FlowIQ outlet and ecommerce operations visual showing stock, orders, dispatch, invoicing, and finance connected" loading="lazy" decoding="async">
+        </div>
       </div>
-      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Retail outlet control with barcode workflows and head-office visibility</h1>
-      <p class="text-xl text-slate-600 mb-8">Run every outlet from one operating layer. Capture stock movement faster, transfer stock with control, and use forecasting to prevent stockouts and dead stock.</p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/book-demo.html" data-analytics-event="demo_request" data-analytics-position="retail_hero_primary" data-analytics-label="retail outlets hero demo" class="inline-flex items-center justify-center bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Book Retail Demo</a>
-        <a href="/signup" data-analytics-event="trial_signup_click" data-analytics-position="retail_hero_secondary" data-analytics-label="retail outlets hero trial" class="inline-flex items-center justify-center border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 px-8 py-4 rounded-xl font-semibold shadow-sm transition-all">Start Free Trial</a>
+    </section>
+
+    <section class="mb-14">
+      <p class="inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-orange-600">Smart business flow in action</p>
+      <h2 class="mt-4 text-3xl font-bold text-slate-900">Branch and online demand feed the same stock picture.</h2>
+      <div class="solution-flow-panel mt-6">
+        <div class="solution-flow-lane">
+          <article class="solution-flow-step"><i data-lucide="trending-up"></i><h3>Forecast</h3><p>Seasonality, fast movers, service levels, and dead-stock risk show early.</p></article>
+          <article class="solution-flow-step"><i data-lucide="shopping-cart"></i><h3>Buy</h3><p>Replenishment, supplier orders, and stock commitments stay controlled.</p></article>
+          <article class="solution-flow-step"><i data-lucide="package-check"></i><h3>Control Stock</h3><p>Outlet counts, transfers, adjustments, and availability stay visible.</p></article>
+          <article class="solution-flow-step"><i data-lucide="target"></i><h3>Sell</h3><p>Customer orders, ecommerce orders, pricing, and margin use live stock truth.</p></article>
+          <article class="solution-flow-step"><i data-lucide="truck"></i><h3>Dispatch</h3><p>Fulfilment, returns, exceptions, and customer updates stay in sequence.</p></article>
+          <article class="solution-flow-step"><i data-lucide="calculator"></i><h3>Account</h3><p>Invoices, VAT, journals, stock value, and reports stay connected.</p></article>
+        </div>
       </div>
     </section>
 
@@ -116,6 +141,24 @@
             <li>Task assignment for counters and authorizers</li>
             <li>Auditability for stock-impacting actions</li>
           </ul>
+        </div>
+      </div>
+    </section>
+    <section class="mb-14 rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+      <p class="text-xs font-black uppercase tracking-[0.18em] text-orange-600">Business software fit</p>
+      <h2 class="mt-3 text-2xl font-bold text-slate-900">Inventory management software and ecommerce ERP support for outlet groups.</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-3">
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <h3 class="font-bold text-slate-900">Global inventory management software</h3>
+          <p class="mt-2 text-sm text-slate-600">Outlet stock, branch transfers, stock takes, adjustments, and replenishment are easier to govern from head office.</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <h3 class="font-bold text-slate-900">Ecommerce ERP</h3>
+          <p class="mt-2 text-sm text-slate-600">Online orders, outlet availability, dispatch, invoices, returns, and customer service can stay connected to stock truth.</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <h3 class="font-bold text-slate-900">Accounting and inventory software</h3>
+          <p class="mt-2 text-sm text-slate-600">Stock movement, margin, VAT, reports, and accounting handoff stay aligned across locations.</p>
         </div>
       </div>
     </section>
@@ -205,5 +248,6 @@
   </script>
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
+  <script src="/assets/js/main.js?v=7"></script>
 </body>
 </html>

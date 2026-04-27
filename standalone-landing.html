@@ -20,8 +20,11 @@
         .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-    </style>
-    <link rel="stylesheet" href="/flowiq-light.css?v=1">
+    
+    /* Keep the marketing menu visible above page visuals. */
+    nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
+  </style>
+    <link rel="stylesheet" href="/flowiq-light.css?v=10">
 </head>
 <body class="bg-freight-slate text-slate-100">
     <!-- Navigation -->
@@ -361,5 +364,6 @@
             if (menu) menu.classList.toggle('hidden');
         });
     </script>
+  <script src="/assets/js/main.js?v=7"></script>
 </body>
 </html>

@@ -61,7 +61,10 @@
                 transform: translateY(-10px);
             }
         }
-    </style>
+    
+    /* Keep the marketing menu visible above page visuals. */
+    nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
+  </style>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -414,6 +417,7 @@
     </script>
     <script src="/assets/website-analytics.js"></script>
     <script src="/assets/growth-analytics.js"></script>
+  <script src="/assets/js/main.js?v=7"></script>
 </body>
 
 </html>

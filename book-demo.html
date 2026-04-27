@@ -17,6 +17,9 @@
     .text-freight-orange { color: #f97316; }
     .bg-freight-orange { background-color: #f97316; }
     .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+  
+    /* Keep the marketing menu visible above page visuals. */
+    nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/","description":"Inventory and import cost software focused on landed cost accuracy, margin visibility, and scalable operations for importers, distributors, and manufacturers."}
@@ -200,5 +203,6 @@
     </script>
     <script src="/assets/website-analytics.js"></script>
     <script src="/assets/growth-analytics.js"></script>
+  <script src="/assets/js/main.js?v=7"></script>
 </body>
 </html>

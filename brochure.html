@@ -1182,6 +1182,83 @@
             display: none;
         }
 
+        @media (max-width: 900px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            .page {
+                width: calc(100vw - 1rem);
+                min-height: auto;
+                margin: 0.75rem auto;
+                border-radius: 18px;
+            }
+
+            .cover,
+            .content-page,
+            .back-page {
+                padding: 1.25rem;
+            }
+
+            .page-header,
+            .cta-section,
+            .roi-calculator {
+                padding: 1.25rem;
+            }
+
+            .cover-title {
+                margin-top: 3rem;
+            }
+
+            .cover-title h1,
+            .back-page h2,
+            .page-header h2 {
+                font-size: clamp(2rem, 11vw, 3rem);
+                line-height: 1.05;
+                letter-spacing: 0;
+            }
+
+            .cover-subtitle,
+            .page-header p,
+            .back-page p {
+                font-size: 1rem;
+            }
+
+            .cover-stats,
+            .features-grid,
+            .modules-grid,
+            .benefits-grid,
+            .workflow-grid,
+            .roi-grid,
+            .comparison-grid,
+            .testimonial-grid,
+            .contact-grid,
+            div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            .stat-card,
+            .feature-card,
+            .module-card,
+            .benefit-card,
+            .workflow-step {
+                padding: 1rem;
+            }
+
+            .brochure-logo-img,
+            .logo img {
+                max-width: 12rem;
+                height: auto !important;
+            }
+
+            .cover::before,
+            .cover::after,
+            .back-page::before {
+                width: 18rem;
+                height: 18rem;
+            }
+        }
+
         /* Watermark */
         .watermark {
             position: absolute;

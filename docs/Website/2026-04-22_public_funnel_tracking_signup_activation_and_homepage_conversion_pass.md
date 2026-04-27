@@ -14,7 +14,7 @@ The related app-side work remains in the app repo for:
 
 The canonical public website owns:
 
-- root marketing pages such as `index.html`, `landing.html`, `pricing.html`, and `payroll-software-south-africa.html`
+- root marketing pages such as `index.html`, `landing.html`, `pricing.html`, and `payroll-software.html`
 - analytics scripts in `assets/website-analytics.js` and `assets/growth-analytics.js`
 - public demo / trial CTA wiring
 

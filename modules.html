@@ -7,7 +7,7 @@
   <title>FlowIQ Modules | Accounting, Payroll, Inventory & ERP Modules</title>
   <meta name="description"
     content="Explore FlowIQ modules including AccountingIQ, PayrollIQ, EcomIQ, inventory, purchasing, forecasting, and operations workflows under one umbrella platform." />
-  <meta name="keywords" content="ERP modules, accounting software south africa, payroll software south africa, bookkeeping software, inventory management software, ecommerce ERP, FlowIQ modules" />
+  <meta name="keywords" content="ERP modules, accounting software, payroll software, bookkeeping software, inventory management software, ecommerce ERP, FlowIQ modules" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://www.flowiq.info/modules.html" />
   <meta property="og:type" content="website" />
@@ -24,7 +24,7 @@
   <link rel="icon" type="image/png" href="/flowiq-logo.png?v=2">
   <link rel="shortcut icon" href="/favicon.ico?v=2">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/flowiq-light.css?v=2">
+  <link rel="stylesheet" href="/flowiq-light.css?v=10">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -75,6 +75,9 @@
       border-radius: 0.75rem;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
+  
+    /* Keep the marketing menu visible above page visuals. */
+    nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"FlowIQ Modules","url":"https://www.flowiq.info/modules.html","description":"FlowIQ modules across accounting, payroll, ecommerce, inventory, forecasting, and operations workflows in one platform."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.flowiq.info/"},{"@type":"ListItem","position":2,"name":"Modules","item":"https://www.flowiq.info/modules.html"}]},{"@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/modules.html","description":"Unified ERP platform connecting accounting, payroll, ecommerce, purchasing, inventory, forecasting, and reporting workflows.","featureList":["AccountingIQ financial control","PayrollIQ pay run and leave workflows","EcomIQ marketplace operations","InventoryIQ stock and warehouse control","ForecastIQ planning engine","ImportIQ landed-cost workflows"]}]}
@@ -96,6 +99,24 @@
         <div class="hidden md:flex items-center space-x-6">
           <a href="/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Home</a>
           <a class='text-slate-600 hover:text-orange-600 font-medium transition-colors' href='/who-flowiq-is-for'>Who it's for</a>
+          <div class="nav-dropdown">
+            <a class="nav-dropdown__trigger" href="/solutions/">
+              Solutions
+              <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </a>
+            <div class="nav-dropdown__menu">
+              <div class="nav-dropdown__panel">
+                <div class="nav-dropdown__links">
+                  <a class="nav-dropdown__link" href="/modules/importiq"><i data-lucide="ship" class="w-5 h-5"></i><span><strong>ImportIQ</strong><br><small>Landed cost and shipments</small></span></a>
+                  <a class="nav-dropdown__link" href="/modules/inventoryiq"><i data-lucide="package" class="w-5 h-5"></i><span><strong>InventoryIQ</strong><br><small>Stock, FIFO, branches</small></span></a>
+                  <a class="nav-dropdown__link" href="/modules/forecastiq"><i data-lucide="trending-up" class="w-5 h-5"></i><span><strong>ForecastIQ</strong><br><small>Demand and replenishment</small></span></a>
+                  
+                  <a class="nav-dropdown__link" href="/modules/companiesiq"><i data-lucide="building-2" class="w-5 h-5"></i><span><strong>CompaniesIQ</strong><br><small>Customers and suppliers</small></span></a>
+                  <a class="nav-dropdown__link" href="/modules/accountingiq"><i data-lucide="calculator" class="w-5 h-5"></i><span><strong>AccountingIQ</strong><br><small>GL, VAT, close controls</small></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
           <a class='text-orange-600 font-medium' href='/modules'>Modules</a>
           <a class='text-slate-600 hover:text-orange-600 font-medium transition-colors' href='/pricing'>Pricing</a>
           <a class='text-slate-600 hover:text-orange-600 font-medium transition-colors' href='/brochure'>Brochure</a>
@@ -112,6 +133,7 @@
       <div class="px-4 py-4 space-y-4 shadow-lg">
         <a href="/" class="block text-slate-600 hover:text-orange-600 font-medium">Home</a>
         <a class='block text-slate-600 hover:text-orange-600 font-medium' href='/who-flowiq-is-for'>Who it's for</a>
+        <a class='block text-slate-600 hover:text-orange-600 font-medium' href='/solutions/'>Solutions</a>
         <a class='block text-orange-600 font-medium' href='/modules'>Modules</a>
         <a class='block text-slate-600 hover:text-orange-600 font-medium' href='/pricing'>Pricing</a>
         <a class='block text-slate-600 hover:text-orange-600 font-medium' href='/brochure'>Brochure</a>
@@ -130,7 +152,7 @@
           <div>
             <span class="section-kicker">Product Architecture</span>
             <h1 class="mt-5 text-4xl md:text-6xl font-black text-slate-900 tracking-tight">Modules with a shared operating language.</h1>
-            <p class="mt-5 max-w-2xl text-lg text-slate-600 leading-relaxed">FlowIQ is strongest when the modules feel connected. This page now leads with the modules that shape perception first, then lets people browse the full suite without losing that premium narrative.</p>
+            <p class="mt-5 max-w-2xl text-lg text-slate-600 leading-relaxed">FlowIQ is strongest when every module feels connected. Start with the core operating areas, then move into the specialist workflows that fit how your business runs.</p>
             <div class="mt-8 flex flex-wrap gap-3">
               <span class="proof-chip"><i data-lucide="ship" class="w-4 h-4"></i> Imports</span>
               <span class="proof-chip"><i data-lucide="package" class="w-4 h-4"></i> Inventory</span>
@@ -164,7 +186,7 @@
         <div class="module-feature__copy">
           <span class="section-kicker">Flagship</span>
           <h2 class="mt-5 text-3xl font-black text-slate-900">ImportIQ anchors the FlowIQ story.</h2>
-          <p class="mt-4 text-base text-slate-600 leading-relaxed">If visitors understand how you handle landed cost and shipment complexity, the rest of the suite becomes easier to trust. That is why ImportIQ should feel like a hero product, not just another tile.</p>
+          <p class="mt-4 text-base text-slate-600 leading-relaxed">When landed cost and shipment complexity are under control, the rest of the operation becomes easier to trust. ImportIQ connects that specialist import work into stock, pricing, accounting, and reporting.</p>
           <ul class="checklist mt-6">
             <li>Shipment costing with context</li>
             <li>Freight, FX, and landed cost visibility</li>
@@ -172,7 +194,7 @@
           </ul>
           <div class="mt-6">
             <div class="flex flex-wrap gap-4">
-              <a class='inline-flex items-center gap-2 text-orange-600 font-bold' href='/modules#importiq'>Jump to ImportIQ <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        <a class='inline-flex items-center gap-2 text-orange-600 font-bold' href='/modules/importiq'>Jump to ImportIQ <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
               <a class='inline-flex items-center gap-2 text-slate-700 font-semibold hover:text-orange-600' href='/inventory-forecasting-software'>See forecasting workflow <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
             </div>
           </div>
@@ -194,7 +216,7 @@
           </ul>
           <div class="mt-6 flex flex-wrap gap-4">
             <a class='inline-flex items-center gap-2 text-orange-600 font-bold' href='/modules/inventoryiq'>InventoryIQ <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-            <a class='inline-flex items-center gap-2 text-orange-600 font-bold' href='/modules#forecastiq'>ForecastIQ <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            <a class='inline-flex items-center gap-2 text-orange-600 font-bold' href='/modules/forecastiq'>ForecastIQ <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
           </div>
         </div>
         <div class="module-feature__visual">
@@ -220,7 +242,7 @@
         <a class='inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-full font-semibold shadow-lg transition-all' href='/book-demo'>Book Demo <i data-lucide="calendar" class="w-4 h-4"></i></a>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        <a class='flex flex-col rounded-xl border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/30 transition-colors text-left overflow-hidden group scroll-mt-24' href='/modules#dashboardiq' id='dashboardiq'>
+        <a class='flex flex-col rounded-xl border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/30 transition-colors text-left overflow-hidden group scroll-mt-24' href='/modules/dashboardiq' id='dashboardiq'>
           <div class="relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 module-thumb-wrap cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot"><img src="/assets/img/modules/thumb-dashboardiq.png" alt="DashboardIQ screenshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"><div class="hidden absolute inset-0 flex items-center justify-center bg-slate-200" aria-hidden="true"><i data-lucide="layout-dashboard" class="w-10 h-10 text-slate-400"></i></div></div>
           <div class="flex items-start gap-3 p-4"><i data-lucide="layout-dashboard" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><div class="min-w-0"><h3 class="font-semibold text-slate-900">DashboardIQ</h3><p class="text-slate-600 text-sm">Command center for performance visibility, KPIs, and branch comparison.</p></div></div>
         </a>
@@ -244,7 +266,7 @@
           <div class="relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 module-thumb-wrap cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot"><img src="/assets/img/modules/thumb-invoiceiq.png" alt="InvoiceIQ screenshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"><div class="hidden absolute inset-0 flex items-center justify-center bg-slate-200" aria-hidden="true"><i data-lucide="file-text" class="w-10 h-10 text-slate-400"></i></div></div>
           <div class="flex items-start gap-3 p-4"><i data-lucide="file-text" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><div class="min-w-0"><h3 class="font-semibold text-slate-900">InvoiceIQ</h3><p class="text-slate-600 text-sm">Quotes to invoices, credit notes, payments, and collections visibility.</p></div></div>
         </a>
-        <a class='flex flex-col rounded-xl border-2 border-orange-200 bg-orange-50/50 hover:border-orange-300 transition-colors text-left overflow-hidden group scroll-mt-24' href='/modules#importiq' id='importiq'>
+        <a class='flex flex-col rounded-xl border-2 border-orange-200 bg-orange-50/50 hover:border-orange-300 transition-colors text-left overflow-hidden group scroll-mt-24' href='/modules/importiq' id='importiq'>
           <div class="relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 module-thumb-wrap cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot"><img src="/assets/img/modules/thumb-importiq.png" alt="ImportIQ screenshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"><div class="hidden absolute inset-0 flex items-center justify-center bg-slate-200" aria-hidden="true"><i data-lucide="ship" class="w-10 h-10 text-slate-400"></i></div></div>
           <div class="flex items-start gap-3 p-4"><i data-lucide="ship" class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5"></i><div class="min-w-0"><span class="text-xs font-semibold text-orange-600 uppercase tracking-wide">Flagship</span><h3 class="font-semibold text-slate-900">ImportIQ</h3><p class="text-slate-600 text-sm">Import shipment management and landed cost tracking.</p></div></div>
         </a>
@@ -252,7 +274,7 @@
           <div class="relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 module-thumb-wrap cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot"><img src="/assets/img/modules/thumb-exportiq.png" alt="ExportIQ screenshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"><div class="hidden absolute inset-0 flex items-center justify-center bg-slate-200" aria-hidden="true"><i data-lucide="plane" class="w-10 h-10 text-slate-400"></i></div></div>
           <div class="flex items-start gap-3 p-4"><i data-lucide="plane" class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5"></i><div class="min-w-0"><span class="text-xs font-semibold text-orange-600 uppercase tracking-wide">Flagship</span><h3 class="font-semibold text-slate-900">ExportIQ</h3><p class="text-slate-600 text-sm">Export shipment management and FX inflow tracking.</p></div></div>
         </a>
-        <a class='flex flex-col rounded-xl border-2 border-orange-200 bg-orange-50/50 hover:border-orange-300 transition-colors text-left overflow-hidden group scroll-mt-24' href='/modules#forecastiq' id='forecastiq'>
+        <a class='flex flex-col rounded-xl border-2 border-orange-200 bg-orange-50/50 hover:border-orange-300 transition-colors text-left overflow-hidden group scroll-mt-24' href='/modules/forecastiq' id='forecastiq'>
           <div class="relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 module-thumb-wrap cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot"><img src="/assets/img/modules/thumb-forecastiq.png" alt="ForecastIQ screenshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"><div class="hidden absolute inset-0 flex items-center justify-center bg-slate-200" aria-hidden="true"><i data-lucide="trending-up" class="w-10 h-10 text-slate-400"></i></div></div>
           <div class="flex items-start gap-3 p-4"><i data-lucide="trending-up" class="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5"></i><div class="min-w-0"><span class="text-xs font-semibold text-orange-600 uppercase tracking-wide">Flagship</span><h3 class="font-semibold text-slate-900">ForecastIQ</h3><p class="text-slate-600 text-sm">Advanced demand forecasting and inventory planning.</p></div></div>
         </a>
@@ -268,16 +290,16 @@
           <div class="relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 module-thumb-wrap cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot"><img src="/assets/img/modules/thumb-manufacturing.png" alt="Manufacturing screenshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"><div class="hidden absolute inset-0 flex items-center justify-center bg-slate-200" aria-hidden="true"><i data-lucide="factory" class="w-10 h-10 text-slate-400"></i></div></div>
           <div class="flex items-start gap-3 p-4"><i data-lucide="factory" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><div class="min-w-0"><h3 class="font-semibold text-slate-900">Manufacturing</h3><p class="text-slate-600 text-sm">BOM, production jobs, WIP, manufacturing cost calculation.</p></div></div>
         </a>
-        <a class='flex flex-col rounded-xl border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/30 transition-colors text-left overflow-hidden group' href='/payroll-software-south-africa'>
+        <a class='flex flex-col rounded-xl border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/30 transition-colors text-left overflow-hidden group' href='/payroll-software'>
           <div class="relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 module-thumb-wrap cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot"><img src="/assets/img/modules/thumb-payrolliq.png" alt="PayrollIQ screenshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"><div class="hidden absolute inset-0 flex items-center justify-center bg-slate-200" aria-hidden="true"><i data-lucide="wallet" class="w-10 h-10 text-slate-400"></i></div></div>
           <div class="flex items-start gap-3 p-4"><i data-lucide="wallet" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><div class="min-w-0"><h3 class="font-semibold text-slate-900">PayrollIQ</h3><p class="text-slate-600 text-sm">Employees, pay runs, leave workflows, and compliance-ready payroll calculations.</p></div></div>
         </a>
-        <a class='flex flex-col rounded-xl border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/30 transition-colors text-left overflow-hidden group scroll-mt-24' href='/modules#ecomiq' id='ecomiq'>
-          <div class="relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 module-thumb-wrap cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot"><img src="/assets/img/modules/thumb-ecomiq-ui.svg" alt="EcomIQ workflow preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"><div class="hidden absolute inset-0 flex items-center justify-center bg-slate-200" aria-hidden="true"><i data-lucide="shopping-bag" class="w-10 h-10 text-slate-400"></i></div></div>
+        <a class='flex flex-col rounded-xl border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/30 transition-colors text-left overflow-hidden group scroll-mt-24' href='/modules/ecomiq' id='ecomiq'>
+          <div class="relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 module-thumb-wrap cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot"><img src="/assets/img/modules/ecomiq-real.png" alt="EcomIQ screenshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"><div class="hidden absolute inset-0 flex items-center justify-center bg-slate-200" aria-hidden="true"><i data-lucide="shopping-bag" class="w-10 h-10 text-slate-400"></i></div></div>
           <div class="flex items-start gap-3 p-4"><i data-lucide="shopping-bag" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><div class="min-w-0"><h3 class="font-semibold text-slate-900">EcomIQ</h3><p class="text-slate-600 text-sm">Marketplace and ecommerce operations in the same operational workflow.</p></div></div>
         </a>
-        <a class='flex flex-col rounded-xl border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/30 transition-colors text-left overflow-hidden group scroll-mt-24' href='/accounting-software-south-africa' id='accountingiq'>
-          <div class="relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 module-thumb-wrap cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot"><img src="/assets/img/modules/thumb-accountingiq-ui.svg" alt="AccountingIQ workflow preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"><div class="hidden absolute inset-0 flex items-center justify-center bg-slate-200" aria-hidden="true"><i data-lucide="calculator" class="w-10 h-10 text-slate-400"></i></div></div>
+        <a class='flex flex-col rounded-xl border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/30 transition-colors text-left overflow-hidden group scroll-mt-24' href='/modules/accountingiq' id='accountingiq'>
+          <div class="relative aspect-video bg-slate-100 overflow-hidden flex-shrink-0 module-thumb-wrap cursor-pointer" role="button" tabindex="0" aria-label="View full screenshot"><img src="/assets/img/modules/accountingiq-real-positive.png" alt="AccountingIQ screenshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"><div class="hidden absolute inset-0 flex items-center justify-center bg-slate-200" aria-hidden="true"><i data-lucide="calculator" class="w-10 h-10 text-slate-400"></i></div></div>
           <div class="flex items-start gap-3 p-4"><i data-lucide="calculator" class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"></i><div class="min-w-0"><h3 class="font-semibold text-slate-900">AccountingIQ</h3><p class="text-slate-600 text-sm">General ledger, VAT, financial statements, and close controls in one place.</p></div></div>
         </a>
         <a class='flex flex-col rounded-xl border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/30 transition-colors text-left overflow-hidden group' href='/modules/journaliq'>
@@ -386,6 +408,7 @@
   </script>
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
+  <script src="/assets/js/main.js?v=7"></script>
   <script src="/assets/js/cursor-trail.js"></script>
 </body>
 

@@ -121,7 +121,7 @@
             opacity: 1;
         }
     </style>
-    <link rel="stylesheet" href="/flowiq-light.css?v=2">
+    <link rel="stylesheet" href="/flowiq-light.css?v=10">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="marketing-shell gradient-bg min-h-screen text-slate-100">
@@ -254,32 +254,6 @@
                                 class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
                                 placeholder="Your Company Name"
                             >
-                        </div>
-
-                        <div id="accountantFirmDetails" class="hidden space-y-4 rounded-lg border border-slate-700 bg-freight-slate/60 p-4">
-                            <p class="text-xs font-semibold uppercase tracking-wide text-orange-300">Accountant Firm Profile</p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="accountantProfessionalBody" class="block text-sm font-medium text-slate-300 mb-2">Professional Body *</label>
-                                    <input
-                                        id="accountantProfessionalBody"
-                                        name="accountantProfessionalBody"
-                                        type="text"
-                                        class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
-                                        placeholder="SAICA / SAIPA / CIBA"
-                                    >
-                                </div>
-                                <div>
-                                    <label for="accountantRegistrationNumber" class="block text-sm font-medium text-slate-300 mb-2">Tax Practitioner / Registration Number *</label>
-                                    <input
-                                        id="accountantRegistrationNumber"
-                                        name="accountantRegistrationNumber"
-                                        type="text"
-                                        class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
-                                        placeholder="SARS practitioner or firm registration code"
-                                    >
-                                </div>
-                            </div>
                         </div>
 
                         <div>
@@ -564,7 +538,7 @@
                                     </label>
                                 </div>
                                 <label for="accountantPractitionerDeclaration" class="text-sm text-slate-300 cursor-pointer leading-relaxed flex-1">
-                                    I declare practitioner details are accurate and understand tax filing actions require valid SARS/controlling-body alignment.
+                                    I declare practitioner details are accurate and understand tax filing actions require valid registration and controlling-body alignment.
                                 </label>
                             </div>
                         </div>
@@ -758,9 +732,8 @@
                 const accountTypeButtons = Array.from(document.querySelectorAll('.account-type-option[data-account-type]'));
                 const planCard = document.getElementById('planCard');
                 const selectedPlanInlineWrap = document.getElementById('selectedPlanInline')?.closest('p');
-                const accountantFirmDetails = document.getElementById('accountantFirmDetails');
                 const accountantLegalSection = document.getElementById('accountantLegalSection');
-                const accountantRequiredFieldIds = ['accountantProfessionalBody', 'accountantRegistrationNumber'];
+                const accountantRequiredFieldIds = [];
                 const accountantCheckboxIds = [
                     'accountantOperatorTerms',
                     'accountantBreachProcess',
@@ -796,7 +769,6 @@
                     const isAccountant = normalizedType === 'accountant_firm';
                     if (planCard) planCard.classList.toggle('hidden', isAccountant);
                     if (selectedPlanInlineWrap) selectedPlanInlineWrap.classList.toggle('hidden', isAccountant);
-                    if (accountantFirmDetails) accountantFirmDetails.classList.toggle('hidden', !isAccountant);
                     if (accountantLegalSection) accountantLegalSection.classList.toggle('hidden', !isAccountant);
 
                     accountantRequiredFieldIds.forEach((id) => {
@@ -1139,12 +1111,6 @@
                 'cross_border_controls': 'accountantCrossBorderControls',
                 'accountant practitioner declaration': 'accountantPractitionerDeclaration',
                 'practitioner_declaration': 'accountantPractitionerDeclaration',
-                'accountant professional body': 'accountantProfessionalBody',
-                'accountant registration number': 'accountantRegistrationNumber',
-                'accountant tax controlling body': 'accountantProfessionalBody',
-                'accountant_tax_controlling_body': 'accountantProfessionalBody',
-                'accountant tax practitioner registration number': 'accountantRegistrationNumber',
-                'accountant_tax_practitioner_registration_number': 'accountantRegistrationNumber',
                 'terms': 'terms',
                 'privacy': 'privacy',
                 'data risk acknowledgement': 'dataRiskAcknowledgement',
@@ -1343,8 +1309,6 @@
                 'country',
                 'phone',
                 'accountType',
-                'accountantProfessionalBody',
-                'accountantRegistrationNumber',
             ];
             formFields.forEach(fieldId => {
                 const field = document.getElementById(fieldId);
@@ -1430,8 +1394,6 @@
                     ? 'accountant_firm'
                     : 'organization';
                 const isAccountantFirm = accountTypeValue === 'accountant_firm';
-                const accountantProfessionalBodyValue = (formData.get('accountantProfessionalBody') || '').toString().trim();
-                const accountantRegistrationNumberValue = (formData.get('accountantRegistrationNumber') || '').toString().trim();
                 const accountantOperatorTermsAccepted = document.getElementById('accountantOperatorTerms')?.checked === true;
                 const accountantBreachProcessAccepted = document.getElementById('accountantBreachProcess')?.checked === true;
                 const accountantCrossBorderControlsAccepted = document.getElementById('accountantCrossBorderControls')?.checked === true;
@@ -1555,12 +1517,6 @@
                 }
 
                 if (isAccountantFirm) {
-                    if (!accountantProfessionalBodyValue) {
-                        validationErrors.push('accountant professional body');
-                    }
-                    if (!accountantRegistrationNumberValue) {
-                        validationErrors.push('accountant registration number');
-                    }
                     if (!accountantOperatorTermsAccepted) {
                         validationErrors.push('operator_terms');
                     }
@@ -1607,10 +1563,6 @@
                         first_name: formData.get('firstName'),
                         last_name: formData.get('lastName'),
                         surname: formData.get('lastName'),
-                        accountant_professional_body: isAccountantFirm ? accountantProfessionalBodyValue : null,
-                        accountant_registration_number: isAccountantFirm ? accountantRegistrationNumberValue : null,
-                        accountant_tax_practitioner_registration_number: isAccountantFirm ? accountantRegistrationNumberValue : null,
-                        accountant_tax_controlling_body: isAccountantFirm ? accountantProfessionalBodyValue : null,
                         // ✅ Legal acceptance (required)
                         terms_accepted: document.getElementById('terms')?.checked === true,
                         terms_version: FLOWIQ_LEGAL_VERSION,
@@ -1718,10 +1670,6 @@
                         highlightFieldError('cross_border_controls');
                         highlightFieldError('practitioner_declaration');
                     }
-                    if (errorText.includes('accountant registration details required')) {
-                        highlightFieldError('accountant_tax_controlling_body');
-                        highlightFieldError('accountant_tax_practitioner_registration_number');
-                    }
                     if (errorText.includes('already registered') || errorText.includes('email already exists')) {
                         highlightFieldError('email');
                     }
@@ -1747,8 +1695,6 @@
                             country: formData.get('country'),
                             account_type: accountTypeValue,
                             accountant_firm_name: isAccountantFirm ? formData.get('companyName') : null,
-                            accountant_professional_body: isAccountantFirm ? accountantProfessionalBodyValue : null,
-                            accountant_registration_number: isAccountantFirm ? accountantRegistrationNumberValue : null,
                             selected_plan: selectedPlanValue,
                             signup_source: 'website_signup',
                             terms_accepted: document.getElementById('terms')?.checked === true,

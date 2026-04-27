@@ -15,6 +15,9 @@
     .text-freight-orange { color: #f97316; }
     .bg-freight-orange { background-color: #f97316; }
     .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+  
+    /* Keep the marketing menu visible above page visuals. */
+    nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
   </style>
   <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
@@ -101,5 +104,6 @@
     });
     if (typeof lucide !== 'undefined') lucide.createIcons();
   </script>
+  <script src="/assets/js/main.js?v=7"></script>
 </body>
 </html>

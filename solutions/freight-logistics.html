@@ -17,10 +17,15 @@
     .text-freight-orange { color: #f97316; }
     .bg-freight-orange { background-color: #f97316; }
     .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+  
+    /* Keep the marketing menu visible above page visuals. */
+    .nav-dropdown{position:relative}.nav-dropdown__menu{position:absolute;top:100%;left:50%;opacity:0;visibility:hidden;pointer-events:none;transform:translateX(-50%) translateY(.5rem)}.nav-dropdown:hover .nav-dropdown__menu,.nav-dropdown:focus-within .nav-dropdown__menu,.nav-dropdown.is-open .nav-dropdown__menu{opacity:1;visibility:visible;pointer-events:auto}nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
   </style>
   <script src="https://unpkg.com/lucide@latest" defer></script>
+  <link rel="stylesheet" href="/flowiq-light.css?v=10">
 </head>
-<body class="bg-freight-slate text-slate-100">
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+  <div class="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.14),rgba(255,255,255,0))]"></div>
   <nav
     class="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm supports-[backdrop-filter]:bg-white/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,80 +67,77 @@
     </div>
   </nav>
 
-  <header class="pt-20 bg-gradient-to-b from-slate-800 to-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-      <h1 class="text-4xl sm:text-5xl font-black mb-4 text-white">Freight & Logistics Solution</h1>
-      <p class="text-slate-300 text-lg max-w-3xl mx-auto">Plan, price, ship, and track freight end‑to‑end — fully integrated with Inventory, Purchasing, and Invoicing.</p>
-      <div class="mt-6 flex gap-4 justify-center">
-        <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-lg">Start Free Trial</a>
-        <a href="/index.html#demo" class="border border-slate-600 hover:border-freight-orange text-white px-6 py-3 rounded-lg">Request Demo</a>
-      </div>
-    </div>
-  </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
-    <section>
-      <h2 class="text-3xl font-bold text-white mb-6">What’s included</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
-          <h3 class="text-white font-semibold mb-2">ImportIQ</h3>
-          <p class="text-slate-300 text-sm">Landed cost calculator, containers, multi‑currency, supplier terms.</p>
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32 space-y-12">
+    <section class="solution-story-visual story-reveal">
+      <div class="grid lg:grid-cols-[0.88fr_1.12fr]">
+        <div class="p-6 sm:p-8">
+          <p class="inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-orange-600">Freight operations</p>
+          <h1 class="mt-4 text-4xl sm:text-5xl font-bold text-slate-900 leading-tight">Freight, landed cost, stock, and invoicing in one operating flow.</h1>
+          <p class="mt-4 text-slate-600 text-lg">Plan, price, ship, receive, and account for freight work without separating logistics from inventory, purchasing, margin, and finance.</p>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">ImportIQ</span>
+            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">PurchaseIQ</span>
+            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">InventoryIQ</span>
+            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">InvoiceIQ</span>
+          </div>
         </div>
-        <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
-          <h3 class="text-white font-semibold mb-2">ExportIQ</h3>
-          <p class="text-slate-300 text-sm">Export planning, documentation, container optimization.</p>
-        </div>
-        <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
-          <h3 class="text-white font-semibold mb-2">DeliveryIQ</h3>
-          <p class="text-slate-300 text-sm">Route optimization, delivery tracking, proof of delivery.</p>
-        </div>
-        <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">
-          <h3 class="text-white font-semibold mb-2">CourierIQ</h3>
-          <p class="text-slate-300 text-sm">Real‑time courier rates, selection, and booking.</p>
+        <div class="solution-story-visual__image">
+          <img src="/assets/img/generated/importiq-story.webp" alt="FlowIQ freight operations visual showing shipments, landed cost, receiving, margin, and accounting connected" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
 
     <section>
-      <h2 class="text-3xl font-bold text-white mb-6">Why this beats point solutions</h2>
-      <ul class="grid md:grid-cols-2 gap-6 text-slate-300">
-        <li class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">Unified with InventoryIQ and PurchaseIQ — no re‑keying data.</li>
-        <li class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">End‑to‑end landed cost → FIFO accuracy → healthy margins.</li>
-        <li class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">Accounting-ready invoice and journal outputs, no manual accounting rework.</li>
-        <li class="bg-freight-slate-light p-6 rounded-xl border border-slate-700">AI forecasting to plan containers and avoid stockouts.</li>
-      </ul>
+      <p class="inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-orange-600">Smart business flow in action</p>
+      <h2 class="mt-4 text-3xl font-bold text-slate-900">Freight stays connected to stock value and cash.</h2>
+      <p class="mt-3 max-w-3xl text-slate-600 text-lg">FlowIQ keeps shipment planning, landed cost, warehouse receiving, customer invoicing, and finance reporting on the same data story.</p>
+      <div class="solution-flow-panel mt-6">
+        <div class="solution-flow-lane">
+          <article class="solution-flow-step"><i data-lucide="clipboard-list"></i><h3>Plan</h3><p>Expected shipments, supplier timing, routes, and delivery commitments stay visible.</p></article>
+          <article class="solution-flow-step"><i data-lucide="ship"></i><h3>Ship</h3><p>Freight, duty, FX, clearance, and delivery costs remain attached to the job.</p></article>
+          <article class="solution-flow-step"><i data-lucide="package-check"></i><h3>Receive</h3><p>Inventory lands with the right cost story before stock is sold or transferred.</p></article>
+          <article class="solution-flow-step"><i data-lucide="truck"></i><h3>Deliver</h3><p>Dispatch, delivery status, and exceptions stay connected to customer promises.</p></article>
+          <article class="solution-flow-step"><i data-lucide="file-text"></i><h3>Invoice</h3><p>Charges, orders, and customer documents flow into invoice control.</p></article>
+          <article class="solution-flow-step"><i data-lucide="calculator"></i><h3>Account</h3><p>VAT, COGS, journals, margin, and reports follow the same operational record.</p></article>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2 class="text-3xl font-bold text-white mb-6">Results you can expect</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700 text-center">
-          <div class="text-4xl font-extrabold text-freight-orange">-23%</div>
-          <div class="text-slate-400 text-sm">Operational costs</div>
-        </div>
-        <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700 text-center">
-          <div class="text-4xl font-extrabold text-freight-orange">-100%</div>
-          <div class="text-slate-400 text-sm">Stockouts (eliminated)</div>
-        </div>
-        <div class="bg-freight-slate-light p-6 rounded-xl border border-slate-700 text-center">
-          <div class="text-4xl font-extrabold text-freight-orange">+40%</div>
-          <div class="text-slate-400 text-sm">Cash flow improvement</div>
-        </div>
+    <section class="rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-white to-orange-50/30 p-6 sm:p-8 shadow-sm">
+      <h2 class="text-2xl font-bold text-slate-900">The modules behind this freight solution.</h2>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a href="/modules/importiq.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:border-orange-300 hover:text-orange-600">ImportIQ</a>
+        <a href="/modules/purchaseiq.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:border-orange-300 hover:text-orange-600">PurchaseIQ</a>
+        <a href="/modules/inventoryiq.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:border-orange-300 hover:text-orange-600">InventoryIQ</a>
+        <a href="/modules/invoiceiq.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:border-orange-300 hover:text-orange-600">InvoiceIQ</a>
+        <a href="/modules/accountingiq.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:border-orange-300 hover:text-orange-600">AccountingIQ</a>
+        <a href="/modules/reportsiq.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:border-orange-300 hover:text-orange-600">ReportsIQ</a>
+      </div>
+    </section>
+
+    <section class="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+      <p class="text-xs font-black uppercase tracking-[0.18em] text-orange-600">Business software fit</p>
+      <h2 class="mt-3 text-2xl font-bold text-slate-900">Freight, inventory management software, and accounting can run as one operating flow.</h2>
+      <div class="mt-5 grid gap-4 md:grid-cols-3">
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="font-bold text-slate-900">Import ERP software</h3><p class="mt-2 text-sm text-slate-600">Freight planning, landed cost, duty, FX, receiving, inventory value, and shipment margin stay connected.</p></div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="font-bold text-slate-900">Global inventory management software</h3><p class="mt-2 text-sm text-slate-600">Stock availability, warehouse movement, replenishment, and supplier timing stay visible around freight delays.</p></div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><h3 class="font-bold text-slate-900">Accounting and inventory software</h3><p class="mt-2 text-sm text-slate-600">Invoices, journals, VAT, COGS, and landed cost reports can follow the same shipment and inventory trail.</p></div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-slate-700 py-8 mt-16 bg-freight-slate">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-400 text-sm">
-      <a href="/solutions/" class="text-orange-400 hover:text-orange-300">Solutions</a>
+  <footer class="border-t border-slate-200 py-8 mt-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
+      <a href="/solutions/" class="text-orange-600 hover:text-orange-700">Solutions</a>
       <span class="mx-2">·</span>
-      <a href="/use-cases/" class="text-slate-400 hover:text-orange-400">Use Cases</a>
+      <a href="/use-cases/" class="text-slate-600 hover:text-orange-600">Use Cases</a>
       <span class="mx-2">·</span>
-      <a href="/tools/" class="text-slate-400 hover:text-orange-400">Tools</a>
+      <a href="/tools/" class="text-slate-600 hover:text-orange-600">Tools</a>
       <span class="mx-2">·</span>
-      <a href="/compare/" class="text-slate-400 hover:text-orange-400">Compare</a>
+      <a href="/compare/" class="text-slate-600 hover:text-orange-600">Compare</a>
       <span class="mx-2">·</span>
-      <a href="/glossary/" class="text-slate-400 hover:text-orange-400">Glossary</a>
+      <a href="/glossary/" class="text-slate-600 hover:text-orange-600">Glossary</a>
       <p class="mt-4">Your data remains private and is never shared.</p>
     </div>
   </footer>
@@ -147,5 +149,6 @@
     });
     if (typeof lucide !== 'undefined') lucide.createIcons();
   </script>
+  <script src="/assets/js/main.js?v=7"></script>
 </body>
 </html>

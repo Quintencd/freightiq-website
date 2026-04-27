@@ -7,12 +7,16 @@
   <meta name="description" content="FlowIQ helps freight-forwarders and logistics operators track shipments, allocate costs, and give clients visibility without spreadsheet chaos." />
   <link rel="canonical" href="https://www.flowiq.info/freight-forwarder-software.html" />
   <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/seo-pages.css?v=2">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
     body { font-family: 'Inter', sans-serif; }
     .bg-freight-orange { background-color: #f97316; }
     .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
+  
+    /* Keep the marketing menu visible above page visuals. */
+    nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
   </style>
   <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
@@ -33,7 +37,7 @@
           <a href="/book-demo.html" class="text-slate-900 font-semibold hover:text-orange-600 transition-colors">Book a Demo</a>
           <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-orange-500/20 transition-all">Start Free Trial</a>
         </div>
-        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        <button id="mobileMenuBtn" type="button" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
       </div>
     </div>
     <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-20 shadow-xl">
@@ -48,49 +52,95 @@
     </div>
   </nav>
 
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
-    <section class="text-center mb-14">
-      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Freight forwarder software that keeps costs and client updates in sync</h1>
-      <p class="text-xl text-slate-600 mb-8">Track shipments, allocate costs, and give clients visibility without spreadsheet chaos. Built for operators who handle multiple jobs, multiple invoices, and constant exceptions.</p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/signup" data-analytics-event="trial_signup_click" class="inline-flex items-center justify-center bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Start Free Trial</a>
-        <a href="/tools/" data-analytics-event="calculator_use" class="inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-semibold shadow-sm hover:shadow-md transition-all">Try Free Calculators</a>
-        <a href="/book-demo.html" data-analytics-event="demo_request" class="inline-flex items-center justify-center border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 px-8 py-4 rounded-xl font-semibold shadow-sm transition-all">Book Demo</a>
+  <main class="page-shell pt-32">
+    <section class="page-hero page-hero--visual">
+      <div>
+        <span class="page-kicker">Freight operations</span>
+        <h1 class="page-title">Freight forwarder software <span class="accent">that keeps costs, stock, and clients in sync.</span></h1>
+        <p class="page-subtitle">Track shipments, allocate freight and duty, connect landed cost into inventory, and give teams one operating picture without spreadsheet chaos.</p>
+        <div class="button-row">
+          <a href="/signup" data-analytics-event="trial_signup_click" class="button button--primary">Start Free Trial</a>
+          <a href="/tools/" data-analytics-event="calculator_use" class="button button--secondary">Try Free Calculators</a>
+          <a href="/book-demo.html" data-analytics-event="demo_request" class="button button--secondary">Book Demo</a>
+        </div>
+      </div>
+      <div class="page-hero-media">
+        <img src="/assets/img/generated/importiq-story.webp" alt="FlowIQ freight and landed cost operations visual showing shipments, inventory, margin, and accounting connected" loading="eager" decoding="async">
+        <span class="page-hero-badge">Shipment cost truth</span>
       </div>
     </section>
 
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-4">The forwarding operations problem</h2>
-      <p class="text-slate-600 mb-3">Freight forwarders win on execution. But execution creates complexity: multiple invoices per job, split shipments, partial deliveries, carrier delays, and constant client queries. If job costing and status updates live in separate tools, margin accuracy and client experience both suffer.</p>
-      <p class="text-slate-600 mb-3">Most teams end up with a spreadsheet for job profitability, a WhatsApp chain for updates, and an inbox of exceptions. That works until volume increases.</p>
-      <p class="text-slate-600">FlowIQ is designed to reduce operational noise: one view for job costs, documents, and update-ready status information.</p>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-4">What you can measure and improve</h2>
-      <ul class="list-disc list-inside text-slate-600 space-y-2">
-        <li>Job profitability and cost completeness (did we capture every charge?).</li>
-        <li>Freight allocation to understand true landed cost outcomes.</li>
-        <li>Cycle time per leg and per carrier.</li>
-        <li>Exceptions and rework causes (documents missing, late clearance, etc.).</li>
-        <li>Client communication consistency (same data, fewer manual updates).</li>
-      </ul>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-4">Start with quick calculators</h2>
-      <p class="text-slate-600 mb-4">These are useful for quoting and scenario testing, and they align with how FlowIQ allocates costs in operational workflows.</p>
-      <div class="flex flex-col sm:flex-row gap-3">
-        <a href="/tools/container-cost-calculator.html" class="inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 px-6 py-3 rounded-xl font-semibold shadow-sm">Container Cost Calculator</a>
-        <a href="/tools/freight-cost-calculator.html" class="inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 px-6 py-3 rounded-xl font-semibold shadow-sm">Freight Cost Calculator</a>
-        <a href="/tools/import-duty-calculator.html" class="inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 px-6 py-3 rounded-xl font-semibold shadow-sm">Import Duty Calculator</a>
+    <section class="story-visual-card">
+      <div class="story-visual-copy">
+        <span class="page-kicker">Connected freight story</span>
+        <h2>Forwarding work becomes part of the business system.</h2>
+        <p>Freight, supplier charges, duty, FX, shipment status, inventory receipts, customer updates, and accounting outcomes stay connected, so every job has a clear cost story.</p>
+        <div class="module-chip-row">
+          <span class="module-chip">ImportIQ</span>
+          <span class="module-chip">InventoryIQ</span>
+          <span class="module-chip">PurchaseIQ</span>
+          <span class="module-chip">AccountingIQ</span>
+        </div>
+      </div>
+      <div class="story-visual-media">
+        <img src="/assets/img/generated/flowiq-control-room.webp" alt="FlowIQ operations control room visual for freight, purchasing, inventory, and finance workflows" loading="lazy" decoding="async">
       </div>
     </section>
 
-    <section class="text-center pt-8 pb-2 border-t border-slate-200">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-3">See FlowIQ in Action</h2>
-      <p class="text-slate-600 mb-6">Get a guided demo focused on your forwarding workflow.</p>
-      <a href="/book-demo.html" data-analytics-event="demo_request" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Book Demo</a>
+    <section class="flow-section">
+      <span class="page-kicker">Smart business flow in action</span>
+      <h2>Every shipment handoff stays visible.</h2>
+      <p>FlowIQ connects the freight job to the rest of the operating flow, so cost, documents, stock, margin, and reporting do not split into different spreadsheets.</p>
+      <div class="flow-panel">
+        <div class="flow-lane">
+          <article class="flow-step"><span class="flow-icon"><i data-lucide="clipboard-list"></i></span><h3>Book</h3><p>Supplier orders, shipment references, and expected charges start the job cleanly.</p></article>
+          <article class="flow-step"><span class="flow-icon"><i data-lucide="ship"></i></span><h3>Move</h3><p>Freight, carrier, clearance, documents, and status updates stay attached.</p></article>
+          <article class="flow-step"><span class="flow-icon"><i data-lucide="calculator"></i></span><h3>Cost</h3><p>Freight, duty, FX, insurance, and clearing charges build true landed cost.</p></article>
+          <article class="flow-step"><span class="flow-icon"><i data-lucide="package-check"></i></span><h3>Receive</h3><p>Inventory lands with the right cost base and FIFO value.</p></article>
+          <article class="flow-step"><span class="flow-icon"><i data-lucide="handshake"></i></span><h3>Update</h3><p>Teams and clients work from the same shipment and stock picture.</p></article>
+          <article class="flow-step"><span class="flow-icon"><i data-lucide="bar-chart-3"></i></span><h3>Report</h3><p>Margin, job performance, VAT, journals, and management reports line up.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <section class="content-card">
+        <h2>The forwarding operations problem</h2>
+        <p>Freight forwarders win on execution. But execution creates complexity: multiple invoices per job, split shipments, partial deliveries, carrier delays, and constant client queries. If job costing and status updates live in separate tools, margin accuracy and client experience both suffer.</p>
+        <p>FlowIQ reduces operational noise with one view for job costs, documents, shipment movement, inventory impact, and update-ready status information.</p>
+      </section>
+
+      <section class="content-card">
+        <h2>What you can measure and improve</h2>
+        <ul>
+          <li>Job profitability and cost completeness.</li>
+          <li>Freight allocation into true landed cost outcomes.</li>
+          <li>Cycle time per leg and per carrier.</li>
+          <li>Exceptions and rework causes such as missing documents or late clearance.</li>
+          <li>Client communication consistency from one shared data story.</li>
+        </ul>
+      </section>
+
+      <section class="content-card">
+        <h2>Start with quick calculators</h2>
+        <p>These are useful for quoting and scenario testing, and they align with how FlowIQ allocates costs in operational workflows.</p>
+        <div class="resource-row">
+          <a href="/tools/container-cost-calculator.html" class="resource-link">Container Cost Calculator</a>
+          <span>&middot;</span>
+          <a href="/tools/freight-cost-calculator.html" class="resource-link">Freight Cost Calculator</a>
+          <span>&middot;</span>
+          <a href="/tools/import-duty-calculator.html" class="resource-link">Import Duty Calculator</a>
+        </div>
+      </section>
+    </section>
+
+    <section class="conversion-strip">
+      <h2>See FlowIQ in action</h2>
+      <p>Get a guided demo focused on your forwarding workflow, landed cost handoff, and how freight connects into stock, margin, and finance.</p>
+      <div class="button-row">
+        <a href="/book-demo.html" data-analytics-event="demo_request" class="button button--primary">Book Demo</a>
+        <a href="/solutions/importers.html" class="button button--secondary">See import operations</a>
+      </div>
     </section>
   </main>
 
@@ -121,5 +171,6 @@
   </script>
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
+  <script src="/assets/js/main.js?v=7"></script>
 </body>
 </html>
