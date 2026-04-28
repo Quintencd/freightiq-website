@@ -3,251 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Retail Outlet Inventory & Barcode Platform | FlowIQ</title>
-  <meta name="description" content="FlowIQ for retail groups: barcode-enabled outlet workflows, head-office stock visibility, transfer control, and forecasting to reduce stockouts and dead stock." />
+  <title>Built for Retail and Ecommerce Businesses | FlowIQ</title>
+  <meta name="description" content="FlowIQ helps retail and ecommerce businesses manage stock, sales, orders, fulfilment, margin, and accounting in one business system." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://www.flowiq.info/solutions/retail-outlets.html" />
   <link rel="icon" type="image/png" href="/flowiq-logo.png">
   <link rel="icon" href="/favicon.ico">
   <link rel="shortcut icon" href="/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-    body { font-family: 'Inter', sans-serif; }
-    .text-freight-orange { color: #f97316; }
-    .bg-freight-orange { background-color: #f97316; }
-    .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
-  
-    /* Keep the marketing menu visible above page visuals. */
-    .nav-dropdown{position:relative}.nav-dropdown__menu{position:absolute;top:100%;left:50%;opacity:0;visibility:hidden;pointer-events:none;transform:translateX(-50%) translateY(.5rem)}.nav-dropdown:hover .nav-dropdown__menu,.nav-dropdown:focus-within .nav-dropdown__menu,.nav-dropdown.is-open .nav-dropdown__menu{opacity:1;visibility:visible;pointer-events:auto}nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
-  </style>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"FlowIQ Retail Operations","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/solutions/retail-outlets.html","description":"Retail outlet inventory platform with barcode-assisted workflows, head-office visibility, forecasting, and multi-location stock control."}
-  </script>
+  <link rel="stylesheet" href="/flowiq-light.css?v=12">
   <script src="https://unpkg.com/lucide@latest" defer></script>
-  <link rel="stylesheet" href="/flowiq-light.css?v=11">
 </head>
-<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
-  <div class="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.15),rgba(255,255,255,0))]"></div>
-  <nav class="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm supports-[backdrop-filter]:bg-white/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-20">
-        <div class="flex items-center">
-          <a href="/" class="flex items-center gap-2 group">
-            <img src="/flowiq-logo.png" alt="FlowIQ - Smarter business in motion" class="h-[52px] w-auto max-w-[205px] object-contain group-hover:opacity-90 transition-opacity" width="205" height="52" loading="eager">
-          </a>
-        </div>
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Home</a>
-          <a href="/who-flowiq-is-for.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Who it's for</a>
-          <a href="/modules.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Modules</a>
-          <a href="/pricing.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Pricing</a>
-          <a href="/brochure.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Brochure</a>
-          <a href="https://app.flowiq.info/login" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Login</a>
-          <a href="/book-demo.html" class="text-slate-900 font-semibold hover:text-orange-600 transition-colors">Book a Demo</a>
-          <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-orange-500/20 transition-all hover:shadow-orange-500/40 hover:-translate-y-0.5">Start Free Trial</a>
-        </div>
-        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
-      </div>
-    </div>
-    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-20 shadow-xl">
-      <div class="px-6 py-6 space-y-4">
-        <a href="/" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Home</a>
-        <a href="/who-flowiq-is-for.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Who it's for</a>
-        <a href="/modules.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Modules</a>
-        <a href="/pricing.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Pricing</a>
-        <a href="/brochure.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Brochure</a>
-        <a href="https://app.flowiq.info/login" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Login</a>
-        <a href="/book-demo.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Book a Demo</a>
-        <a href="/signup" class="block bg-freight-orange text-white px-4 py-3 rounded-xl text-center font-bold text-lg shadow-md">Start your 30-day free trial</a>
-      </div>
-    </div>
-  </nav>
+<body class="marketing-shell bg-slate-50 text-slate-900 overflow-x-hidden">
+  <div class="site-atmosphere fixed inset-0 z-[-1] h-full w-full" aria-hidden="true"></div>
+  <nav></nav>
 
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
-    <section class="solution-story-visual mb-14 story-reveal">
-      <div class="grid lg:grid-cols-[0.88fr_1.12fr]">
-        <div class="p-6 sm:p-8">
-          <p class="inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-orange-600">Outlet operations</p>
-          <h1 class="mt-4 text-4xl sm:text-5xl font-bold text-slate-900 leading-tight">Outlet stock, ecommerce orders, transfers, and margin stay connected.</h1>
-          <p class="mt-4 text-slate-600 text-lg">For outlet groups and branch teams, FlowIQ connects stock movement, replenishment, ecommerce order flow, invoicing, and finance without making each location work in isolation.</p>
-          <div class="mt-5 flex flex-wrap gap-2">
-            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">InventoryIQ</span>
-            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">ForecastIQ</span>
-            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">EcomIQ</span>
-            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">InvoiceIQ</span>
-          </div>
-        </div>
-        <div class="solution-story-visual__image">
-          <img src="/assets/img/generated/ecommerce-retail-story.webp" srcset="/assets/img/generated/ecommerce-retail-story-960.webp 960w, /assets/img/generated/ecommerce-retail-story.webp 1672w" sizes="(max-width: 900px) 100vw, 50vw" alt="FlowIQ outlet and ecommerce operations visual showing stock, orders, dispatch, invoicing, and finance connected" loading="lazy" width="1672" height="941" decoding="async">
-        </div>
+  <main class="solution-conversion-page mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
+    <section class="solution-conversion-hero mb-10 story-reveal">
+      <div>
+        <span class="section-kicker">Retail &amp; Ecommerce</span>
+        <h1>Built for retail and ecommerce businesses</h1>
+        <p class="mt-5">Manage stock, sales, fulfilment, customer orders, margin, and finance from one live operating system.</p>
+      </div>
+      <img src="/assets/img/generated/ecommerce-retail-story.webp" srcset="/assets/img/generated/ecommerce-retail-story-960.webp 960w, /assets/img/generated/ecommerce-retail-story.webp 1672w" sizes="(max-width: 900px) 100vw, 50vw" alt="FlowIQ ecommerce operations visual showing stock, orders, dispatch, customer activity, and margin connected" width="1672" height="941" loading="eager" fetchpriority="high" decoding="async">
+    </section>
+
+    <section class="solution-conversion-section mb-8">
+      <h2>Pain points</h2>
+      <ul class="solution-bullet-grid">
+        <li>Stock, orders, and sales reporting do not match.</li>
+        <li>Teams oversell, understock, or miss fast-moving products.</li>
+        <li>Ecommerce demand is separated from inventory and invoicing.</li>
+        <li>Margin visibility is unclear across products and channels.</li>
+      </ul>
+    </section>
+
+    <section class="solution-conversion-section mb-8">
+      <h2>FlowIQ solves this by:</h2>
+      <ul class="solution-bullet-grid">
+        <li>Centralising stock, customer orders, sales, fulfilment, and finance.</li>
+        <li>Giving real-time stock, sales, margin, and exception visibility.</li>
+        <li>Automating order progress, invoicing, stock movement, and reporting.</li>
+        <li>Keeping built-in accounting, inventory, and operations in one system.</li>
+      </ul>
+    </section>
+
+    <section class="solution-conversion-section mb-8">
+      <h2>Relevant features</h2>
+      <div class="solution-feature-grid">
+        <div class="solution-feature-card"><strong>EcomIQ</strong><span>Website orders, fulfilment progress, catalogue control, and sync visibility.</span></div>
+        <div class="solution-feature-card"><strong>InventoryIQ</strong><span>Available stock, transfers, stock takes, adjustments, and branch availability.</span></div>
+        <div class="solution-feature-card"><strong>InvoiceIQ</strong><span>Customer invoicing, order completion, payment visibility, and sales history.</span></div>
+        <div class="solution-feature-card"><strong>ReportsIQ</strong><span>Sales, stock, margin, and customer performance reporting in one view.</span></div>
       </div>
     </section>
 
-    <section class="mb-14">
-      <p class="inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-orange-600">Smart business flow in action</p>
-      <h2 class="mt-4 text-3xl font-bold text-slate-900">Branch and online demand feed the same stock picture.</h2>
-      <div class="solution-flow-panel mt-6">
-        <div class="solution-flow-lane">
-          <article class="solution-flow-step"><i data-lucide="trending-up"></i><h3>Forecast</h3><p>Seasonality, fast movers, service levels, and dead-stock risk show early.</p></article>
-          <article class="solution-flow-step"><i data-lucide="shopping-cart"></i><h3>Buy</h3><p>Replenishment, supplier orders, and stock commitments stay controlled.</p></article>
-          <article class="solution-flow-step"><i data-lucide="package-check"></i><h3>Control Stock</h3><p>Outlet counts, transfers, adjustments, and availability stay visible.</p></article>
-          <article class="solution-flow-step"><i data-lucide="target"></i><h3>Sell</h3><p>Customer orders, ecommerce orders, pricing, and margin use live stock truth.</p></article>
-          <article class="solution-flow-step"><i data-lucide="truck"></i><h3>Dispatch</h3><p>Fulfilment, returns, exceptions, and customer updates stay in sequence.</p></article>
-          <article class="solution-flow-step"><i data-lucide="calculator"></i><h3>Account</h3><p>Invoices, VAT, journals, stock value, and reports stay connected.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-14">
-      <div class="rounded-xl bg-white border border-slate-200 p-4 shadow-sm">
-        <p class="text-xs uppercase tracking-wide text-slate-500">Outlet Execution</p>
-        <p class="mt-2 text-2xl font-bold text-slate-900">Faster stock actions</p>
-        <p class="mt-2 text-sm text-slate-600">Barcode-assisted item selection in stock-taking and adjustment workflows.</p>
-      </div>
-      <div class="rounded-xl bg-white border border-slate-200 p-4 shadow-sm">
-        <p class="text-xs uppercase tracking-wide text-slate-500">Head Office</p>
-        <p class="mt-2 text-2xl font-bold text-slate-900">Cross-outlet visibility</p>
-        <p class="mt-2 text-sm text-slate-600">See inventory posture by location and action transfers with approvals.</p>
-      </div>
-      <div class="rounded-xl bg-white border border-slate-200 p-4 shadow-sm">
-        <p class="text-xs uppercase tracking-wide text-slate-500">Forecasting</p>
-        <p class="mt-2 text-2xl font-bold text-slate-900">Smarter replenishment</p>
-        <p class="mt-2 text-sm text-slate-600">Use seasonality, service-level targets, and dead-stock signals to improve buying timing.</p>
-      </div>
-      <div class="rounded-xl bg-white border border-slate-200 p-4 shadow-sm">
-        <p class="text-xs uppercase tracking-wide text-slate-500">Financial Control</p>
-        <p class="mt-2 text-2xl font-bold text-slate-900">Margin discipline</p>
-        <p class="mt-2 text-sm text-slate-600">Link stock decisions to pricing and margin reporting for cleaner commercial execution.</p>
-      </div>
-    </section>
-
-    <section class="mb-14 rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-5">What retail outlets get day to day</h2>
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4">
-          <p class="font-semibold text-slate-900 mb-2">Store-floor stock workflows</p>
-          <ul class="list-disc list-inside text-slate-600 text-sm space-y-1">
-            <li>Stock takes with cleaner SKU capture</li>
-            <li>Inventory adjustments with role-based control</li>
-            <li>Stock transfer counting and confirmation flows</li>
-          </ul>
-        </div>
-        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4">
-          <p class="font-semibold text-slate-900 mb-2">Head-office governance</p>
-          <ul class="list-disc list-inside text-slate-600 text-sm space-y-1">
-            <li>Outlet-to-outlet movement tracking</li>
-            <li>Task assignment for counters and authorizers</li>
-            <li>Auditability for stock-impacting actions</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="mb-14 rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
-      <p class="text-xs font-black uppercase tracking-[0.18em] text-orange-600">Business software fit</p>
-      <h2 class="mt-3 text-2xl font-bold text-slate-900">Inventory management software and ecommerce ERP support for outlet groups.</h2>
-      <div class="mt-5 grid gap-4 md:grid-cols-3">
-        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
-          <h3 class="font-bold text-slate-900">Global inventory management software</h3>
-          <p class="mt-2 text-sm text-slate-600">Outlet stock, branch transfers, stock takes, adjustments, and replenishment are easier to govern from head office.</p>
-        </div>
-        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
-          <h3 class="font-bold text-slate-900">Ecommerce ERP</h3>
-          <p class="mt-2 text-sm text-slate-600">Online orders, outlet availability, dispatch, invoices, returns, and customer service can stay connected to stock truth.</p>
-        </div>
-        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
-          <h3 class="font-bold text-slate-900">Accounting and inventory software</h3>
-          <p class="mt-2 text-sm text-slate-600">Stock movement, margin, VAT, reports, and accounting handoff stay aligned across locations.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-14">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-5">Why this matters for a 200-outlet group</h2>
-      <div class="grid gap-4 md:grid-cols-3">
-        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-700 flex items-center justify-center mb-3">
-            <i data-lucide="activity" class="w-5 h-5"></i>
-          </div>
-          <h3 class="font-semibold text-slate-900 mb-2">Reduce stockouts</h3>
-          <p class="text-sm text-slate-600">Forecast-driven planning plus transfer discipline helps keep high-velocity SKUs available at branch level.</p>
-        </div>
-        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-700 flex items-center justify-center mb-3">
-            <i data-lucide="package-x" class="w-5 h-5"></i>
-          </div>
-          <h3 class="font-semibold text-slate-900 mb-2">Cut dead stock</h3>
-          <p class="text-sm text-slate-600">Dead-stock and seasonality signals make over-ordering visible earlier and improve stock rotation decisions.</p>
-        </div>
-        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-700 flex items-center justify-center mb-3">
-            <i data-lucide="line-chart" class="w-5 h-5"></i>
-          </div>
-          <h3 class="font-semibold text-slate-900 mb-2">Protect margin</h3>
-          <p class="text-sm text-slate-600">Inventory and pricing intelligence stay connected so commercial decisions are based on current cost truth.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-14 rounded-2xl bg-slate-900 text-white p-8 shadow-xl">
-      <p class="text-xs uppercase tracking-wider text-orange-300 mb-2">Recommended Rollout</p>
-      <h2 class="text-3xl font-bold mb-4">Pilot fast, scale in waves</h2>
-      <div class="grid gap-4 md:grid-cols-3">
-        <div class="rounded-xl bg-slate-800/70 border border-slate-700 p-4">
-          <p class="text-orange-300 text-xs uppercase tracking-wider mb-2">Phase 1</p>
-          <p class="font-semibold mb-1">Pilot outlets</p>
-          <p class="text-sm text-slate-300">Launch core inventory + barcode-assisted workflows in a focused outlet group.</p>
-        </div>
-        <div class="rounded-xl bg-slate-800/70 border border-slate-700 p-4">
-          <p class="text-orange-300 text-xs uppercase tracking-wider mb-2">Phase 2</p>
-          <p class="font-semibold mb-1">Head-office cadence</p>
-          <p class="text-sm text-slate-300">Add forecast-led replenishment routines and transfer governance at central level.</p>
-        </div>
-        <div class="rounded-xl bg-slate-800/70 border border-slate-700 p-4">
-          <p class="text-orange-300 text-xs uppercase tracking-wider mb-2">Phase 3</p>
-          <p class="font-semibold mb-1">Rollout expansion</p>
-          <p class="text-sm text-slate-300">Scale by region with shared playbooks, performance visibility, and tighter stock control.</p>
-        </div>
-      </div>
-      <div class="mt-7 flex flex-col sm:flex-row gap-3">
-        <a href="/book-demo.html" data-analytics-event="demo_request" data-analytics-position="retail_bottom_primary" data-analytics-label="retail outlets bottom demo" class="inline-flex items-center justify-center bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-xl font-semibold transition-all">Book Retail Group Demo</a>
-        <a href="/solutions/" class="inline-flex items-center justify-center border border-slate-600 hover:border-slate-400 text-white px-6 py-3 rounded-xl font-semibold transition-all">Back to Solutions</a>
+    <section class="solution-conversion-cta">
+      <h2>Make every sale use the right stock picture.</h2>
+      <p class="mt-3">Connect demand, fulfilment, stock, and finance before margin leaks appear.</p>
+      <div class="mt-7 flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/signup" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-orange-500/20">Start Free Trial <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+        <a href="/book-demo" class="inline-flex items-center justify-center gap-2 glass-panel px-8 py-4 rounded-full font-bold text-slate-900">Book Demo <i data-lucide="calendar" class="w-5 h-5 text-freight-orange"></i></a>
       </div>
     </section>
   </main>
 
   <footer class="border-t border-slate-200 py-8 mt-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
-      <a href="/solutions/" class="text-orange-600 font-medium">Solutions</a>
+      <a href="/solutions/" class="text-slate-600 hover:text-orange-600">Solutions</a>
       <span class="mx-2">·</span>
-      <a href="/use-cases/" class="text-slate-600 hover:text-orange-600">Use Cases</a>
+      <a href="/modules" class="text-slate-600 hover:text-orange-600">Modules</a>
       <span class="mx-2">·</span>
-      <a href="/tools/" class="text-slate-600 hover:text-orange-600">Tools</a>
-      <span class="mx-2">·</span>
-      <a href="/compare/" class="text-slate-600 hover:text-orange-600">Compare</a>
-      <span class="mx-2">·</span>
-      <a href="/glossary/" class="text-slate-600 hover:text-orange-600">Glossary</a>
+      <a href="/pricing" class="text-slate-600 hover:text-orange-600">Pricing</a>
       <p class="mt-4">Your data remains private and is never shared.</p>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
-      var menu = document.getElementById('mobileMenu');
-      menu?.classList.toggle('hidden');
-    });
-    if (typeof lucide !== 'undefined') lucide.createIcons();
-  </script>
-  <script>
-    window.FlowIQAnalyticsConfig = {
-      gtmContainerId: 'GTM-5L45DPGL',
-      ga4MeasurementId: 'G-1QJKZJ7V0T',
-      clarityProjectId: 'vqjuz4ha1k'
-    };
-  </script>
+  <script>window.FlowIQAnalyticsConfig={gtmContainerId:'GTM-5L45DPGL',ga4MeasurementId:'G-1QJKZJ7V0T',clarityProjectId:'vqjuz4ha1k'};</script>
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
-  <script src="/assets/js/main.js?v=8"></script>
+  <script src="/assets/js/main.js?v=9"></script>
 </body>
 </html>

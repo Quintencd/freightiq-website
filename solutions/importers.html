@@ -3,182 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Import Costing Software for Accurate Landed Cost | FlowIQ</title>
-  <meta name="description" content="Calculate true landed cost, manage duties, freight, and FX, and eliminate spreadsheet errors with FlowIQ's import costing software." />
+  <title>Built for Importers and Distributors | FlowIQ</title>
+  <meta name="description" content="FlowIQ helps importers and distributors control landed cost, shipments, stock, margin, and accounting in one business system." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://www.flowiq.info/solutions/importers.html" />
   <link rel="icon" type="image/png" href="/flowiq-logo.png">
   <link rel="icon" href="/favicon.ico">
   <link rel="shortcut icon" href="/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-    body { font-family: 'Inter', sans-serif; }
-    .text-freight-orange { color: #f97316; }
-    .bg-freight-orange { background-color: #f97316; }
-    .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
-  
-    /* Keep the marketing menu visible above page visuals. */
-    .nav-dropdown{position:relative}.nav-dropdown__menu{position:absolute;top:100%;left:50%;opacity:0;visibility:hidden;pointer-events:none;transform:translateX(-50%) translateY(.5rem)}.nav-dropdown:hover .nav-dropdown__menu,.nav-dropdown:focus-within .nav-dropdown__menu,.nav-dropdown.is-open .nav-dropdown__menu{opacity:1;visibility:visible;pointer-events:auto}nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
-  </style>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/","description":"Inventory and import cost software focused on landed cost accuracy, margin visibility, and scalable operations for importers, distributors, and manufacturers."}
-  </script>
+  <link rel="stylesheet" href="/flowiq-light.css?v=12">
   <script src="https://unpkg.com/lucide@latest" defer></script>
-  <link rel="stylesheet" href="/flowiq-light.css?v=11">
 </head>
-<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
-  <div class="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.15),rgba(255,255,255,0))]"></div>
-  <nav
-    class="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm supports-[backdrop-filter]:bg-white/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-20">
-        <div class="flex items-center">
-          <a href="/" class="flex items-center gap-2 group">
-            <img src="/flowiq-logo.png" alt="FlowIQ - Smarter business in motion" class="h-[52px] w-auto max-w-[205px] object-contain group-hover:opacity-90 transition-opacity" width="205" height="52" loading="eager">
-          </a>
-        </div>
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Home</a>
-          <a href="/who-flowiq-is-for.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Who it's for</a>
-          <a href="/modules.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Modules</a>
-          <a href="/pricing.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Pricing</a>
-          <a href="/brochure.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Brochure</a>
-          <a href="https://app.flowiq.info/login" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Login</a>
-          <a href="/book-demo.html" class="text-slate-900 font-semibold hover:text-orange-600 transition-colors">Book a Demo</a>
-          <a href="/signup"
-            class="bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-orange-500/20 transition-all hover:shadow-orange-500/40 hover:-translate-y-0.5">Start Free Trial</a>
-        </div>
-        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
-      </div>
-    </div>
-    <div id="mobileMenu"
-      class="md:hidden hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-20 shadow-xl">
-      <div class="px-6 py-6 space-y-4">
-        <a href="/" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Home</a>
-        <a href="/who-flowiq-is-for.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Who it's for</a>
-        <a href="/modules.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Modules</a>
-        <a href="/pricing.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Pricing</a>
-        <a href="/brochure.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Brochure</a>
-        <a href="https://app.flowiq.info/login" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Login</a>
-        <a href="/book-demo.html" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Book a Demo</a>
-        <a href="/signup"
-          class="block bg-freight-orange text-white px-4 py-3 rounded-xl text-center font-bold text-lg shadow-md">Start your 30-day free trial</a>
-      </div>
-    </div>
-  </nav>
+<body class="marketing-shell bg-slate-50 text-slate-900 overflow-x-hidden">
+  <div class="site-atmosphere fixed inset-0 z-[-1] h-full w-full" aria-hidden="true"></div>
+  <nav></nav>
 
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
-    <section class="solution-story-visual mb-12 story-reveal">
-      <div class="grid lg:grid-cols-[0.88fr_1.12fr]">
-        <div class="p-6 sm:p-8">
-          <p class="inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-orange-600">Import story</p>
-          <h1 class="mt-4 text-4xl sm:text-5xl font-bold text-slate-900 leading-tight">Accurate import costing with landed cost, stock, and margin in one flow.</h1>
-          <p class="mt-4 text-slate-600 text-lg">Demand, supplier orders, freight, duty, FX, stock, price, and accounting stay connected so import costing is part of the live workflow.</p>
-          <div class="mt-5 flex flex-wrap gap-2">
-            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">ForecastIQ</span>
-            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">PurchaseIQ</span>
-            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">ImportIQ</span>
-            <span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-bold text-slate-700">InventoryIQ</span>
-          </div>
-        </div>
-        <div class="solution-story-visual__image">
-          <img src="/assets/img/generated/importiq-story.webp" srcset="/assets/img/generated/importiq-story-960.webp 960w, /assets/img/generated/importiq-story.webp 1672w" sizes="(max-width: 900px) 100vw, 50vw" alt="FlowIQ import costing visual showing purchasing, freight, landed cost, stock, margin, and accounting connected" loading="lazy" width="1672" height="941" decoding="async">
-        </div>
+  <main class="solution-conversion-page mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
+    <section class="solution-conversion-hero mb-10 story-reveal">
+      <div>
+        <span class="section-kicker">Importers &amp; Distributors</span>
+        <h1>Built for importers and distributors</h1>
+        <p class="mt-5">Track landed costs, shipments, stock value, sales margin, and accounting impact without running the business from disconnected spreadsheets.</p>
+      </div>
+      <img src="/assets/img/generated/importiq-story.webp" srcset="/assets/img/generated/importiq-story-960.webp 960w, /assets/img/generated/importiq-story.webp 1672w" sizes="(max-width: 900px) 100vw, 50vw" alt="FlowIQ import costing visual showing freight, duty, landed cost, stock, and margin connected" width="1672" height="941" loading="eager" fetchpriority="high" decoding="async">
+    </section>
+
+    <section class="solution-conversion-section mb-8">
+      <h2>Pain points</h2>
+      <ul class="solution-bullet-grid">
+        <li>You do not know your true landed cost until too late.</li>
+        <li>Margins change when freight, duty, FX, and supplier costs move.</li>
+        <li>Stock visibility is unreliable across inbound and available inventory.</li>
+        <li>Import costing lives outside the sales and finance workflow.</li>
+      </ul>
+    </section>
+
+    <section class="solution-conversion-section mb-8">
+      <h2>FlowIQ solves this by:</h2>
+      <ul class="solution-bullet-grid">
+        <li>Centralising purchase orders, shipments, receiving, stock, sales, and finance.</li>
+        <li>Giving real-time landed cost, stock value, and margin visibility.</li>
+        <li>Automating cost allocation, inventory movement, and financial tracking.</li>
+        <li>Keeping built-in accounting, inventory, and operations in one system.</li>
+      </ul>
+    </section>
+
+    <section class="solution-conversion-section mb-8">
+      <h2>Relevant features</h2>
+      <div class="solution-feature-grid">
+        <div class="solution-feature-card"><strong>ImportIQ</strong><span>Shipment costing, duty, freight, FX, and landed cost control.</span></div>
+        <div class="solution-feature-card"><strong>InventoryIQ</strong><span>Inbound stock, FIFO value, receiving, transfers, and availability.</span></div>
+        <div class="solution-feature-card"><strong>ForecastIQ</strong><span>Demand planning, replenishment pressure, seasonality, and dead-stock signals.</span></div>
+        <div class="solution-feature-card"><strong>AccountingIQ</strong><span>VAT, journals, reconciliation, stock value, and management reporting.</span></div>
       </div>
     </section>
 
-    <section class="mb-12">
-      <p class="inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-orange-600">Smart business flow in action</p>
-      <h2 class="mt-4 text-3xl font-bold text-slate-900">Import decisions feed the whole business.</h2>
-      <p class="mt-3 max-w-3xl text-slate-600 text-lg">FlowIQ connects demand, supplier orders, freight, duty, receiving, selling price, margin, and accounting so landed cost is not trapped in a spreadsheet.</p>
-      <div class="solution-flow-panel mt-6">
-        <div class="solution-flow-lane">
-          <article class="solution-flow-step"><i data-lucide="trending-up"></i><h3>Forecast</h3><p>Seasonal demand, reorder pressure, dead-stock risk, and lead-time planning become visible.</p></article>
-          <article class="solution-flow-step"><i data-lucide="clipboard-list"></i><h3>Purchase</h3><p>Supplier orders, approvals, expected quantities, and inbound commitments stay controlled.</p></article>
-          <article class="solution-flow-step"><i data-lucide="ship"></i><h3>Import</h3><p>Freight, duty, FX, clearance, and other shipment costs remain attached to the stock.</p></article>
-          <article class="solution-flow-step"><i data-lucide="package-check"></i><h3>Receive</h3><p>Inventory lands with SKU-level landed cost and FIFO value already in place.</p></article>
-          <article class="solution-flow-step"><i data-lucide="badge-dollar-sign"></i><h3>Price</h3><p>PriceIQ and sales teams see margin using the correct cost base.</p></article>
-          <article class="solution-flow-step"><i data-lucide="calculator"></i><h3>Account</h3><p>VAT, journals, reconciliations, reports, and cash controls use the same cost story.</p></article>
-        </div>
+    <section class="solution-conversion-cta">
+      <h2>Start with landed cost clarity.</h2>
+      <p class="mt-3">Move from shipment uncertainty to one live operating picture.</p>
+      <div class="mt-7 flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/signup" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-orange-500/20">Start Free Trial <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+        <a href="/book-demo" class="inline-flex items-center justify-center gap-2 glass-panel px-8 py-4 rounded-full font-bold text-slate-900">Book Demo <i data-lucide="calendar" class="w-5 h-5 text-freight-orange"></i></a>
       </div>
-    </section>
-
-    
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-4">Importer pain points</h2>
-      <p class="text-slate-600 mb-3">Most importers do not lose margin on sales volume. They lose margin on hidden landed costs, poor allocation logic, and delayed visibility. Supplier invoices, freight invoices, duty, and clearance charges are often spread manually across SKUs, and small errors compound across every shipment.</p>
-      <p class="text-slate-600 mb-3">By the time finance reconciles true costs, pricing decisions were already made using incomplete numbers. That means teams unintentionally underprice products, overstock low-margin SKUs, and miss reorder windows for high-demand lines.</p>
-      <p class="text-slate-600">FlowIQ fixes this by giving importers one operating view from PO to receipt, with shipment-level and SKU-level cost attribution built into the workflow.</p>
-    </section>
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-4">Why spreadsheets fail</h2>
-      <p class="text-slate-600 mb-3">Spreadsheets are flexible, but they are not durable import infrastructure. They break under version drift, handovers, and growing volume. Teams duplicate formulas, hardcode rates, and maintain separate files for pricing, stock, and shipment costing, which creates reporting mismatch.</p>
-      <p class="text-slate-600 mb-3">Spreadsheet models also struggle with mixed container loads, split shipments, partial receipts, and FX variance across payment dates. These are exactly the cases that matter most for profitability.</p>
-      <p class="text-slate-600">FlowIQ replaces this with controlled allocation rules, auditable records, and live margin visibility connected to the same operational data your team already captures.</p>
-    </section>
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-4">How FlowIQ handles freight, duty, clearance, FX</h2>
-      <p class="text-slate-600 mb-3">FlowIQ captures all shipment costs in one import job: supplier value, freight components, customs duty, port and clearing charges, insurance, and FX differences. Costs can be allocated using value, weight, CBM, or custom logic depending on your commercial model.</p>
-      <p class="text-slate-600 mb-3">When stock is receipted, landed cost is applied at SKU level so inventory valuation and margin reporting stay aligned. No post-hoc patching required.</p>
-      <p class="text-slate-600">If you want a quick estimate first, start with the <a href="/tools/landed-cost-calculator.html" class="text-orange-600 hover:underline font-medium">Landed Cost Calculator</a> or <a href="/tools/import-cost-calculator.html" class="text-orange-600 hover:underline font-medium">Import Cost Calculator</a>.</p>
-    </section>
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-4">Workflow: PO → Import → Inventory → Margin</h2>
-      <ol class="list-decimal list-inside text-slate-600 space-y-2">
-        <li>Create and approve purchase orders with supplier terms and expected lead times.</li>
-        <li>Track import jobs and attach freight, duty, and clearing charges as they occur.</li>
-        <li>Receive stock with landed cost allocated per SKU and posted to inventory valuation.</li>
-        <li>Monitor gross margin by product, shipment, customer, and channel in real time.</li>
-        <li>Use ForecastIQ to plan reorders based on demand and lead-time risk.</li>
-      </ol>
-    </section>
-    
-
-    
-    <section class="mb-12 rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-white to-orange-50/30 p-6 sm:p-8 shadow-sm">
-      <h2 class="text-2xl font-bold text-slate-900">The modules behind this import solution.</h2>
-      <div class="mt-5 flex flex-wrap gap-3">
-        <a href="/modules/forecastiq.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:border-orange-300 hover:text-orange-600">ForecastIQ</a>
-        <a href="/modules/purchaseiq.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:border-orange-300 hover:text-orange-600">PurchaseIQ</a>
-        <a href="/modules/importiq.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:border-orange-300 hover:text-orange-600">ImportIQ</a>
-        <a href="/modules/inventoryiq.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:border-orange-300 hover:text-orange-600">InventoryIQ</a>
-        <a href="/modules/accountingiq.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:border-orange-300 hover:text-orange-600">AccountingIQ</a>
-        <a href="/modules/reportsiq.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 font-bold text-slate-700 hover:border-orange-300 hover:text-orange-600">ReportsIQ</a>
-      </div>
-    </section>
-    <section class="mb-12 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
-      <p class="text-xs font-black uppercase tracking-[0.18em] text-orange-600">Business software fit</p>
-      <h2 class="mt-3 text-2xl font-bold text-slate-900">Global inventory management software teams can use for imports, stock, and finance.</h2>
-      <div class="mt-5 grid gap-4 md:grid-cols-3">
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-          <h3 class="font-bold text-slate-900">ERP for small business</h3>
-          <p class="mt-2 text-sm text-slate-600">FlowIQ gives growing importers ERP-style control without forcing a heavy implementation before the team is ready.</p>
-        </div>
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-          <h3 class="font-bold text-slate-900">Accounting and inventory software</h3>
-          <p class="mt-2 text-sm text-slate-600">Landed cost, inventory valuation, VAT, journals, reporting, and margin stay connected in the same operating flow.</p>
-        </div>
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-          <h3 class="font-bold text-slate-900">Import ERP software</h3>
-          <p class="mt-2 text-sm text-slate-600">Supplier orders, freight, duty, FX, receiving, pricing, and replenishment are visible before month-end surprises appear.</p>
-        </div>
-      </div>
-    </section>
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-4">FAQs</h2>
-      <div class="space-y-4">
-        <div><h3 class="font-semibold text-slate-900">Can FlowIQ handle multi-currency imports?</h3><p class="text-slate-600">Yes. FlowIQ supports FX-aware import workflows so you can include exchange-rate impact in landed cost and reporting.</p></div>
-        <div><h3 class="font-semibold text-slate-900">Can we allocate by CBM and weight?</h3><p class="text-slate-600">Yes. You can use multiple allocation methods depending on shipment structure and costing policy.</p></div>
-        <div><h3 class="font-semibold text-slate-900">Will this replace our spreadsheet process?</h3><p class="text-slate-600">Yes. Most clients move from manual spreadsheet costing to standardized import workflows in FlowIQ with auditable history.</p></div>
-        <div><h3 class="font-semibold text-slate-900">Does FlowIQ support accounting handoff?</h3><p class="text-slate-600">Yes. Journals and accounting data can be exported or synced through configured finance workflows to keep finance and operations aligned.</p></div>
-      </div>
-    </section>
-    <section class="text-center pt-8 pb-4 border-t border-slate-200">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-4">See FlowIQ in Action</h2>
-      <p class="text-slate-600 mb-6">Get a guided demo focused on your workflow.</p>
-      <a href="/book-demo.html" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Book Demo</a>
     </section>
   </main>
 
@@ -186,33 +72,16 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
       <a href="/solutions/" class="text-slate-600 hover:text-orange-600">Solutions</a>
       <span class="mx-2">·</span>
-      <a href="/use-cases/" class="text-slate-600 hover:text-orange-600">Use Cases</a>
+      <a href="/modules" class="text-slate-600 hover:text-orange-600">Modules</a>
       <span class="mx-2">·</span>
-      <a href="/tools/" class="text-slate-600 hover:text-orange-600">Tools</a>
-      <span class="mx-2">·</span>
-      <a href="/compare/" class="text-slate-600 hover:text-orange-600">Compare</a>
-      <span class="mx-2">·</span>
-      <a href="/glossary/" class="text-slate-600 hover:text-orange-600">Glossary</a>
+      <a href="/pricing" class="text-slate-600 hover:text-orange-600">Pricing</a>
       <p class="mt-4">Your data remains private and is never shared.</p>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
-      var menu = document.getElementById('mobileMenu');
-      menu?.classList.toggle('hidden');
-    });
-    if (typeof lucide !== 'undefined') lucide.createIcons();
-  </script>
-  <script>
-    window.FlowIQAnalyticsConfig = {
-      gtmContainerId: 'GTM-5L45DPGL',
-      ga4MeasurementId: 'G-1QJKZJ7V0T',
-      clarityProjectId: 'vqjuz4ha1k'
-    };
-  </script>
+  <script>window.FlowIQAnalyticsConfig={gtmContainerId:'GTM-5L45DPGL',ga4MeasurementId:'G-1QJKZJ7V0T',clarityProjectId:'vqjuz4ha1k'};</script>
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
-  <script src="/assets/js/main.js?v=8"></script>
+  <script src="/assets/js/main.js?v=9"></script>
 </body>
 </html>

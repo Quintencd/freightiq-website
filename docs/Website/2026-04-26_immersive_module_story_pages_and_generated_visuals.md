@@ -305,3 +305,42 @@ Date: 2026-04-26
 - Moved the real FlowIQ screenshot proof into its own section below the generated story panel so the page still shows the real product without making the first viewport feel like two separate pages.
 - Applied the change through `assets/js/module-story.js` so AccountingIQ, EcomIQ, ImportIQ, InventoryIQ, ForecastIQ, DashboardIQ, CompaniesIQ, PurchaseIQ, InvoiceIQ, and ReportsIQ inherit the same pattern.
 - Bumped module pages to `assets/js/module-story.js?v=8` and `flowiq-light.css?v=11` so the browser loads the updated layout instead of the cached old banner.
+
+## 2026-04-28 Conversion Funnel Baseline
+
+- Repositioned the homepage around the agreed headline: `Run your entire product business on one system`.
+- Simplified the homepage hero to two conversion actions only: `Start Free Trial` and `Find Your Solution`.
+- Added the primary segmentation funnel directly below the hero:
+  - Importers & Distributors
+  - Retail & Ecommerce Businesses
+  - Multi-Branch Operations
+  - Manufacturing & Assembly
+- Added a concise homepage proof section focused on real-time system, full business visibility, and scalability across teams.
+- Reduced homepage module/tool exploration so the primary path is now `Homepage -> Industry solution -> Trial`.
+- Cleaned shared desktop and mobile navigation to focus on Home, Solutions, Modules, Pricing, and the trial CTA.
+- Updated the shared Solutions dropdown to the four primary solution paths only.
+- Rebuilt the four primary solution pages around the agreed structure:
+  - headline
+  - pain points
+  - FlowIQ solution
+  - relevant features only
+  - trial/demo CTA
+- Kept generated visual story assets on each solution page, but reduced surrounding content so the pages read as conversion pages rather than long research pages.
+- Replaced legacy extra solution pages with canonical redirects into the closest primary solution page so old internal or search links do not show the regressed layout.
+- Bumped shared CSS to `v=12` and shared JS to `v=9` across HTML pages so cached browsers load the cleaned navigation and new page layout.
+- Removed South Africa-specific marketing keyword positioning from AccountingIQ; remaining South Africa references are legal terms and the signup country selector.
+
+### Verification
+
+- `node --check assets/js/main.js`
+- Browser verified homepage plus all four primary solution pages on `http://localhost:3333`.
+- HTTP checked homepage, `/solutions/`, all four solution pages, and the three legacy solution aliases through the local static server.
+
+### Regression Risks Over 10%
+
+- **18%**: Removing homepage module/tool detail may reduce clicks from technical buyers who want to browse feature depth first.
+  - Mitigation: Modules remains in the top navigation and solution pages show only relevant module capabilities.
+- **14%**: The proof section uses role-based buyer feedback because no approved named customer testimonials were found in the repo.
+  - Mitigation: replace with approved customer names/logos once available.
+- **12%**: Legacy solution aliases now redirect to the closest primary page, which may reduce page-specific SEO granularity for those older URLs.
+  - Mitigation: canonical redirects avoid visitors seeing stale layouts while preserving the cleaner conversion funnel.

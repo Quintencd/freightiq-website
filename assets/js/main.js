@@ -51,7 +51,7 @@
 
     var link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = '/flowiq-light.css?v=11';
+    link.href = '/flowiq-light.css?v=12';
     document.head.appendChild(link);
   }
 
@@ -67,27 +67,21 @@
             '</div>' +
             '<div class="hidden md:flex items-center space-x-8 flex-shrink-0">' +
               '<a href="/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Home</a>' +
-              "<a href=\"/who-flowiq-is-for\" class=\"text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide\">Who it's for</a>" +
               '<div class="nav-dropdown">' +
                 '<button type="button" class="nav-dropdown__trigger">Solutions <i data-lucide="chevron-down" class="w-4 h-4"></i></button>' +
                 '<div class="nav-dropdown__menu">' +
                   '<div class="nav-dropdown__panel">' +
                     '<div class="nav-dropdown__links">' +
-                      '<a class="nav-dropdown__link" href="/solutions/importers.html"><i data-lucide="ship" class="w-5 h-5"></i><span><strong>Import operations</strong><br><small>Landed cost, stock, and margin</small></span></a>' +
-                      '<a class="nav-dropdown__link" href="/solutions/distributors.html"><i data-lucide="warehouse" class="w-5 h-5"></i><span><strong>Distribution control</strong><br><small>Stock, branches, buying, and sales</small></span></a>' +
-                      '<a class="nav-dropdown__link" href="/solutions/manufacturers.html"><i data-lucide="factory" class="w-5 h-5"></i><span><strong>Manufacturing operations</strong><br><small>BOM, WIP, costing, and planning</small></span></a>' +
-                      '<a class="nav-dropdown__link" href="/solutions/multi-branch.html"><i data-lucide="network" class="w-5 h-5"></i><span><strong>Multi-branch management</strong><br><small>Branches, teams, stock, and finance</small></span></a>' +
-                      '<a class="nav-dropdown__link" href="/modules/accountingiq.html"><i data-lucide="calculator" class="w-5 h-5"></i><span><strong>Finance and accounting</strong><br><small>Invoices, VAT, payroll, and reports</small></span></a>' +
-                      '<a class="nav-dropdown__link" href="/modules/ecomiq.html"><i data-lucide="target" class="w-5 h-5"></i><span><strong>Ecommerce operations</strong><br><small>Orders, stock, dispatch, and invoicing</small></span></a>' +
+                      '<a class="nav-dropdown__link" href="/solutions/importers.html"><i data-lucide="ship" class="w-5 h-5"></i><span><strong>Importers</strong><br><small>Landed cost, shipments, and margin</small></span></a>' +
+                      '<a class="nav-dropdown__link" href="/solutions/retail-outlets.html"><i data-lucide="shopping-bag" class="w-5 h-5"></i><span><strong>Retail</strong><br><small>Stock, sales, and ecommerce</small></span></a>' +
+                      '<a class="nav-dropdown__link" href="/solutions/multi-branch.html"><i data-lucide="network" class="w-5 h-5"></i><span><strong>Multi-branch</strong><br><small>Locations, inventory, and visibility</small></span></a>' +
+                      '<a class="nav-dropdown__link" href="/solutions/manufacturers.html"><i data-lucide="factory" class="w-5 h-5"></i><span><strong>Manufacturing</strong><br><small>Production, costing, and stock flow</small></span></a>' +
                     '</div>' +
                   '</div>' +
                 '</div>' +
               '</div>' +
               '<a href="/modules" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Modules</a>' +
               '<a href="/pricing" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Pricing</a>' +
-              '<a href="/brochure" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Brochure</a>' +
-              '<a href="https://app.flowiq.info/login" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Login</a>' +
-              '<a href="/book-demo" class="text-slate-900 font-semibold hover:text-orange-600 transition-colors">Book a Demo</a>' +
               '<a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-orange-500/20 transition-all hover:shadow-orange-500/40 hover:-translate-y-0.5">Start Free Trial</a>' +
             '</div>' +
             '<button id="mobileMenuBtn" class="md:hidden flex-shrink-0 p-3 -mr-1 text-slate-600 hover:text-slate-900 touch-manipulation" aria-label="Open menu"><i data-lucide="menu" class="w-6 h-6"></i></button>' +
@@ -96,23 +90,17 @@
         '<div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-20 shadow-xl">' +
           '<div class="px-6 py-6 space-y-4">' +
             '<a href="/" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Home</a>' +
-            "<a href=\"/who-flowiq-is-for\" class=\"block text-slate-600 hover:text-orange-600 font-medium text-lg\">Who it's for</a>" +
             '<div class="mobile-solutions-group">' +
               '<button type="button" class="mobile-solutions-toggle" aria-expanded="false" aria-controls="mobileSolutionsPanel">Solutions <i data-lucide="chevron-down" class="w-5 h-5"></i></button>' +
               '<div id="mobileSolutionsPanel" class="mobile-solutions-panel" hidden>' +
-                '<a href="/solutions/importers.html"><i data-lucide="ship" class="w-4 h-4"></i><span><strong>Import operations</strong><small>Landed cost, stock, and margin</small></span></a>' +
-                '<a href="/solutions/distributors.html"><i data-lucide="warehouse" class="w-4 h-4"></i><span><strong>Distribution control</strong><small>Stock, branches, buying, and sales</small></span></a>' +
-                '<a href="/solutions/manufacturers.html"><i data-lucide="factory" class="w-4 h-4"></i><span><strong>Manufacturing operations</strong><small>BOM, WIP, costing, and planning</small></span></a>' +
-                '<a href="/solutions/multi-branch.html"><i data-lucide="network" class="w-4 h-4"></i><span><strong>Multi-branch management</strong><small>Branches, teams, stock, and finance</small></span></a>' +
-                '<a href="/modules/accountingiq.html"><i data-lucide="calculator" class="w-4 h-4"></i><span><strong>Finance and accounting</strong><small>Invoices, VAT, payroll, and reports</small></span></a>' +
-                '<a href="/modules/ecomiq.html"><i data-lucide="target" class="w-4 h-4"></i><span><strong>Ecommerce operations</strong><small>Orders, stock, dispatch, and invoicing</small></span></a>' +
+                '<a href="/solutions/importers.html"><i data-lucide="ship" class="w-4 h-4"></i><span><strong>Importers</strong><small>Landed cost, shipments, and margin</small></span></a>' +
+                '<a href="/solutions/retail-outlets.html"><i data-lucide="shopping-bag" class="w-4 h-4"></i><span><strong>Retail</strong><small>Stock, sales, and ecommerce</small></span></a>' +
+                '<a href="/solutions/multi-branch.html"><i data-lucide="network" class="w-4 h-4"></i><span><strong>Multi-branch</strong><small>Locations, inventory, and visibility</small></span></a>' +
+                '<a href="/solutions/manufacturers.html"><i data-lucide="factory" class="w-4 h-4"></i><span><strong>Manufacturing</strong><small>Production, costing, and stock flow</small></span></a>' +
               '</div>' +
             '</div>' +
             '<a href="/modules" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Modules</a>' +
             '<a href="/pricing" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Pricing</a>' +
-            '<a href="/brochure" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Brochure</a>' +
-            '<a href="https://app.flowiq.info/login" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Login</a>' +
-            '<a href="/book-demo" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Book Demo</a>' +
             '<a href="/signup" class="block bg-freight-orange text-white px-4 py-3 rounded-xl text-center font-bold text-lg shadow-md">Start Free Trial</a>' +
           '</div>' +
         '</div>' +
