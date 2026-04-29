@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FlowIQ Pricing – Payroll, Accounting, Inventory, and Operations Plans</title>
-  <meta name="description" content="Compare FlowIQ plans for inventory, accounting, logistics, and payroll software. PayrollIQ is included on Professional, Scale, and Enterprise.">
+  <meta name="description" content="Compare FlowIQ plans for inventory, accounting, logistics, payroll, and AgentsIQ automation. AgentsIQ is available from Growth upward with credits required for AI runs.">
   <meta name="keywords" content="payroll software pricing, accounting software pricing, inventory software pricing, operations platform pricing, FlowIQ pricing">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://www.flowiq.info/pricing">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FlowIQ">
   <meta property="og:title" content="FlowIQ Pricing – Payroll, Accounting, Inventory, and Operations Plans">
-  <meta property="og:description" content="Compare FlowIQ plans for inventory, accounting, logistics, and payroll software. PayrollIQ is included on Professional, Scale, and Enterprise.">
+  <meta property="og:description" content="Compare FlowIQ plans for inventory, accounting, logistics, payroll, and AgentsIQ automation. AgentsIQ is available from Growth upward with credits required for AI runs.">
   <meta property="og:url" content="https://www.flowiq.info/pricing">
   <meta property="og:image" content="https://www.flowiq.info/flowiq-logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="FlowIQ Pricing – Payroll, Accounting, Inventory, and Operations Plans">
-  <meta name="twitter:description" content="PayrollIQ is included on Professional, Scale, and Enterprise. Compare all FlowIQ plans.">
+  <meta name="twitter:description" content="AgentsIQ is available from Growth upward. AI runs require credits. Compare all FlowIQ plans.">
   <meta name="twitter:image" content="https://www.flowiq.info/flowiq-logo.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <script type="application/ld+json">
@@ -25,7 +25,7 @@
       "@type": "WebPage",
       "name": "FlowIQ Pricing",
       "url": "https://www.flowiq.info/pricing",
-      "description": "Compare FlowIQ plans for inventory, accounting, logistics, and payroll software. PayrollIQ is included on Professional, Scale, and Enterprise."
+      "description": "Compare FlowIQ plans for inventory, accounting, logistics, payroll, and AgentsIQ automation. AgentsIQ is available from Growth upward with credits required for AI runs."
     }
   </script>
   <script type="application/ld+json">
@@ -39,6 +39,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "PayrollIQ is included on the Professional, Scale, and Enterprise plans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which plans include AgentsIQ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AgentsIQ is available from Growth, Professional, Scale, and Enterprise. AI-powered runs require AgentsIQ usage credits."
           }
         },
         {
@@ -122,7 +130,7 @@
         Enterprise-grade operations software for inventory, accounting, logistics, and payroll.
       </p>
       <p class="text-sm font-semibold text-orange-500 dark:text-orange-400 max-w-3xl mx-auto mb-6">
-        PayrollIQ is included on Professional, Scale, and Enterprise.
+        AgentsIQ is available from Growth upward. AI runs require usage credits.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center mb-8">
         <a href="/signup" data-analytics-event="trial_signup_click" data-analytics-position="pricing_hero_primary" data-analytics-label="pricing hero trial" class="inline-flex items-center justify-center px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition">
@@ -349,6 +357,19 @@
         },
         { type: 'section', label: 'Intelligence & Automation' },
         { type: 'row', label: 'ForecastIQ', get: (p) => getForecastLabel(p?.capabilities?.forecasting) },
+        { type: 'row', label: 'AgentsIQ automation desk (Growth+)', get: (p) => hasFeature(p, 'agentsiq') ? 'Included' : '—', center: true },
+        {
+          type: 'row',
+          label: 'AI runs require AgentsIQ credits',
+          center: true,
+          get: (p) => {
+            const key = String(p?.key || p?.id || '').toLowerCase();
+            if (key === 'scale') return 'R300 included + top-ups';
+            if (key === 'enterprise') return 'Contracted';
+            if (hasFeature(p, 'agentsiq')) return 'Top-up required';
+            return '—';
+          }
+        },
         { type: 'row', label: 'Manufacturing & Kitsets (BOM)', get: (p) => hasManufacturingKitsets(p) ? '✓' : '—', tick: true, center: true },
         { type: 'row', label: 'AccountingIQ bank feed API connectors', get: (p) => yesNo(p, 'accounting_bank_feed_api'), tick: true, center: true },
         { type: 'row', label: 'AccountingIQ advanced reconciliation', get: (p) => hasAdvancedReconciliation(p) ? '✓' : '—', tick: true, center: true },

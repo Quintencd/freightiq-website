@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-19T12:19:53.686Z",
+  "generated_at_utc": "2026-04-29T12:28:05.409Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter",
@@ -11,6 +11,7 @@
   ],
   "plans": {
     "starter": {
+      "key": "starter",
       "name": "Starter",
       "tagline": "Get started with the basics",
       "popular": false,
@@ -61,6 +62,7 @@
       ]
     },
     "growth_lite": {
+      "key": "growth_lite",
       "name": "Growth Lite",
       "tagline": "Starter+ for early sales teams",
       "popular": false,
@@ -115,8 +117,9 @@
       ]
     },
     "growth": {
+      "key": "growth",
       "name": "Growth",
-      "tagline": "Operational intelligence without forecasting",
+      "tagline": "Operational intelligence with AgentsIQ",
       "popular": false,
       "monthly": {
         "amount": 5990,
@@ -172,6 +175,7 @@
         "shipments",
         "bom_manufacturing",
         "custom_price_lists",
+        "agentsiq",
         "chatiq",
         "barcode_scanning",
         "commission",
@@ -185,6 +189,7 @@
       ]
     },
     "professional": {
+      "key": "professional",
       "name": "Professional",
       "tagline": "Forecasting and payroll for growing operations",
       "popular": true,
@@ -245,6 +250,7 @@
         "bom_manufacturing",
         "custom_price_lists",
         "automation_basic",
+        "agentsiq",
         "chatiq",
         "barcode_scanning",
         "payrolliq",
@@ -263,6 +269,7 @@
       ]
     },
     "scale": {
+      "key": "scale",
       "name": "Scale",
       "tagline": "AI planning plus advanced payroll operations",
       "popular": false,
@@ -324,6 +331,7 @@
         "reportsiq",
         "journaliq",
         "warrantyiq",
+        "agentsiq",
         "settings",
         "shipments",
         "user_management",
@@ -345,6 +353,7 @@
       ]
     },
     "enterprise": {
+      "key": "enterprise",
       "name": "Enterprise",
       "tagline": "Custom operations, finance, and payroll",
       "popular": false,
@@ -406,6 +415,7 @@
         "reportsiq",
         "journaliq",
         "warrantyiq",
+        "agentsiq",
         "settings",
         "shipments",
         "user_management",
