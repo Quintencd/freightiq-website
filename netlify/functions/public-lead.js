@@ -8,7 +8,7 @@
  *
  * Behavior:
  * - Stores requests in database (primary method - always works)
- * - Sends an email to SUPPORT_EMAIL_TO via Resend (required)
+ * - Sends an email to SUPPORT_EMAIL_TO via platform SMTP
  * - Best-effort submits to Netlify Forms for dashboard visibility.
  * - Redirects user to `/thank-you.html` on success.
  *
@@ -16,9 +16,10 @@
  * - SUPABASE_URL
  * - SUPABASE_SERVICE_ROLE_KEY (for database storage)
  * - SUPPORT_EMAIL_TO (required - for email notifications)
- * - RESEND_API_KEY (required - for email notifications)
- * - RESEND_FROM (optional - defaults to onboarding@resend.dev)
+ * - PLATFORM_SMTP_HOST / PLATFORM_SMTP_PORT / PLATFORM_SMTP_USER / PLATFORM_SMTP_PASS
  */
+
+const { sendPlatformEmail } = require('./_platform-smtp');
 
 function isAllowedRequest({ origin = '', referer = '', host = '' }) {
   // Primary allowlist (production + netlify deploy URLs)
@@ -151,66 +152,19 @@ async function storeInDatabase({ supabaseUrl, serviceRoleKey, request_type, emai
   }
 }
 
-// Use Netlify Email Extension (configured via Netlify dashboard)
 async function sendEmail({ to, replyTo, subject, requestType, firstName, lastName, name, email, phone, country, featureInterest, company, message }) {
-  // Netlify Email Extension uses the @netlify/emails package
-  // The email provider and API key are configured in Netlify dashboard
   try {
-    // Dynamic import for ESM module
-    const netlifyEmails = await import('@netlify/emails').catch(() => null);
-    
-    if (netlifyEmails && netlifyEmails.sendEmail) {
-      // Import the email template
-      const DemoRequestEmail = (await import('../../emails/demo-request.tsx')).default;
-      
-      await netlifyEmails.sendEmail({
-        to,
-        from: process.env.EMAILS_FROM || process.env.RESEND_FROM || 'onboarding@resend.dev',
-        replyTo: replyTo || email,
-        subject,
-        component: DemoRequestEmail({
-          requestType,
-          firstName,
-          lastName,
-          name,
-          email,
-          phone,
-          country,
-          featureInterest,
-          company,
-          message,
-        }),
-      });
-      
-      return { ok: true, method: 'netlify-email-extension' };
-    }
-  } catch (netlifyError) {
-    console.log('Netlify Email Extension not available:', netlifyError.message);
-  }
-  
-  // Fallback: Direct Resend API (if Netlify Email Extension not configured)
-  const resendKey = process.env.RESEND_API_KEY;
-  if (resendKey) {
     const text = buildEmailText({ request_type: requestType, name, email, phone, country, feature_interest: featureInterest, company, message, first_name: firstName, last_name: lastName });
-    
-    const res = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${resendKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: process.env.RESEND_FROM || 'onboarding@resend.dev',
-        to: [to],
-        subject,
-        text,
-        reply_to: replyTo || undefined,
-      }),
+    await sendPlatformEmail({
+      to,
+      replyTo: replyTo || email,
+      subject,
+      text,
     });
-    return { ok: res.ok, status: res.status, method: 'resend-direct', response: res };
+    return { ok: true, method: 'platform-smtp' };
+  } catch (error) {
+    return { ok: false, error: error && error.message ? error.message : String(error || 'Platform SMTP failed') };
   }
-  
-  return { ok: false, error: 'No email service configured' };
 }
 
 async function submitToNetlifyForms({ netlifySiteUrl, formName, fields }) {
@@ -351,9 +305,8 @@ exports.handler = async (event) => {
     // Send email (best-effort - Supabase function will also send via database trigger)
     // If Netlify email fails, that's okay since Supabase function handles it
     const to = process.env.SUPPORT_EMAIL_TO;
-    const resendKey = process.env.RESEND_API_KEY;
 
-    if (to && resendKey) {
+    if (to && process.env.PLATFORM_SMTP_HOST && process.env.PLATFORM_SMTP_USER && process.env.PLATFORM_SMTP_PASS) {
       const subject =
         request_type === 'deck'
           ? 'FlowIQ – Deck request'
@@ -379,7 +332,7 @@ exports.handler = async (event) => {
 
       if (!emailResult.ok) {
         // Log error but don't fail - Supabase function will send email via database trigger
-        console.warn('Netlify email send failed (Supabase function will handle it):', emailResult.error || 'Resend error');
+        console.warn('Netlify email send failed (Supabase function will handle it):', emailResult.error || 'Platform SMTP error');
       }
     } else {
       console.log('Netlify email not configured - Supabase function will send email via database trigger');

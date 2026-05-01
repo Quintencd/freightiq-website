@@ -3,12 +3,14 @@
  * Called by flowiq_website/signup/index.html after successful public-signup.
  *
  * Sends an email to support with signup details. If SUPPORT_EMAIL_TO or
- * RESEND_API_KEY are not set, returns 200 and skips sending (no 502/500).
+ * platform SMTP are not set, returns 200 and skips sending (no 502/500).
  *
  * Netlify env vars (optional):
  * - SUPPORT_EMAIL_TO   (e.g. support@flowiq.info)
- * - RESEND_API_KEY     (Resend API key)
+ * - PLATFORM_SMTP_HOST / PLATFORM_SMTP_PORT / PLATFORM_SMTP_USER / PLATFORM_SMTP_PASS
  */
+
+const { sendPlatformEmail } = require('./_platform-smtp');
 
 function isAllowedOrigin(referer = '') {
   return (
@@ -56,24 +58,6 @@ function buildEmailText(payload) {
   return lines.join('\n');
 }
 
-async function sendViaResend({ apiKey, to, from, replyTo, subject, text }) {
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from,
-      to: [to],
-      subject,
-      text,
-      reply_to: replyTo || undefined,
-    }),
-  });
-  return res;
-}
-
 exports.handler = async (event) => {
   const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -106,18 +90,16 @@ exports.handler = async (event) => {
     }
 
     const to = process.env.SUPPORT_EMAIL_TO;
-    const resendKey = process.env.RESEND_API_KEY;
 
     // If not configured, return 200 so signup flow never sees 502
-    if (!to || !resendKey) {
+    if (!to || !process.env.PLATFORM_SMTP_HOST || !process.env.PLATFORM_SMTP_USER || !process.env.PLATFORM_SMTP_PASS) {
       return {
         statusCode: 200,
         headers,
-        body: JSON.stringify({ status: 'ok', skipped: 'SUPPORT_EMAIL_TO or RESEND_API_KEY not set' }),
+        body: JSON.stringify({ status: 'ok', skipped: 'SUPPORT_EMAIL_TO or platform SMTP not set' }),
       };
     }
 
-    const from = (process.env.RESEND_FROM || 'onboarding@resend.dev').toString().trim();
     const subject = 'FlowIQ – New organization signup';
     const text = buildEmailText({
       email,
@@ -142,31 +124,12 @@ exports.handler = async (event) => {
       legal_acceptance_user_agent: (body.legal_acceptance_user_agent || '').toString().trim(),
     });
 
-    const resendRes = await sendViaResend({
-      apiKey: resendKey,
+    await sendPlatformEmail({
       to,
-      from,
       replyTo: email,
       subject,
       text,
     });
-
-    if (!resendRes.ok) {
-      const errText = await resendRes.text().catch(() => '');
-      console.error('signup-notify resend failed', {
-        status: resendRes.status,
-        details: errText,
-      });
-      return {
-        statusCode: 202,
-        headers,
-        body: JSON.stringify({
-          status: 'accepted',
-          notified: false,
-          warning: `Email send failed (${resendRes.status})`,
-        }),
-      };
-    }
 
     return { statusCode: 200, headers, body: JSON.stringify({ status: 'ok', notified: true }) };
   } catch (err) {
