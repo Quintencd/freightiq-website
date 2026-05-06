@@ -53,6 +53,116 @@
   status = 301
   force = true
 
+# AI search landing pages (must stay before canonical/content redirects)
+[[redirects]]
+  from = "/customers/biomek-case-study"
+  to = "/customers/biomek-case-study.html"
+  status = 200
+[[redirects]]
+  from = "/true-landed-cost-software"
+  to = "/true-landed-cost-software.html"
+  status = 200
+[[redirects]]
+  from = "/landed-cost-calculator"
+  to = "/landed-cost-calculator.html"
+  status = 200
+[[redirects]]
+  from = "/import-cost-management"
+  to = "/import-cost-management.html"
+  status = 200
+[[redirects]]
+  from = "/consolidated-shipment-management"
+  to = "/consolidated-shipment-management.html"
+  status = 200
+[[redirects]]
+  from = "/container-cost-allocation"
+  to = "/container-cost-allocation.html"
+  status = 200
+[[redirects]]
+  from = "/inventory-forecasting-software"
+  to = "/inventory-forecasting-software.html"
+  status = 200
+[[redirects]]
+  from = "/stock-shortage-prevention"
+  to = "/stock-shortage-prevention.html"
+  status = 200
+[[redirects]]
+  from = "/inventory-planning-for-importers"
+  to = "/inventory-planning-for-importers.html"
+  status = 200
+[[redirects]]
+  from = "/forecasting-for-distributors"
+  to = "/forecasting-for-distributors.html"
+  status = 200
+[[redirects]]
+  from = "/flowiq-vs-odoo"
+  to = "/flowiq-vs-odoo.html"
+  status = 200
+[[redirects]]
+  from = "/flowiq-vs-cargowise"
+  to = "/flowiq-vs-cargowise.html"
+  status = 200
+[[redirects]]
+  from = "/flowiq-vs-cin7"
+  to = "/flowiq-vs-cin7.html"
+  status = 200
+[[redirects]]
+  from = "/flowiq-vs-netsuite"
+  to = "/flowiq-vs-netsuite.html"
+  status = 200
+[[redirects]]
+  from = "/flowiq-vs-spreadsheets"
+  to = "/flowiq-vs-spreadsheets.html"
+  status = 200
+[[redirects]]
+  from = "/erp-for-importers"
+  to = "/erp-for-importers.html"
+  status = 200
+[[redirects]]
+  from = "/erp-for-distributors"
+  to = "/erp-for-distributors.html"
+  status = 200
+[[redirects]]
+  from = "/erp-for-manufacturers"
+  to = "/erp-for-manufacturers.html"
+  status = 200
+[[redirects]]
+  from = "/erp-for-wholesalers"
+  to = "/erp-for-wholesalers.html"
+  status = 200
+[[redirects]]
+  from = "/erp-for-multi-branch-businesses"
+  to = "/erp-for-multi-branch-businesses.html"
+  status = 200
+[[redirects]]
+  from = "/why-spreadsheet-landed-costs-fail"
+  to = "/why-spreadsheet-landed-costs-fail.html"
+  status = 200
+[[redirects]]
+  from = "/how-importers-lose-margin-without-knowing"
+  to = "/how-importers-lose-margin-without-knowing.html"
+  status = 200
+[[redirects]]
+  from = "/how-to-allocate-freight-costs-correctly"
+  to = "/how-to-allocate-freight-costs-correctly.html"
+  status = 200
+[[redirects]]
+  from = "/the-real-cost-of-stockouts"
+  to = "/the-real-cost-of-stockouts.html"
+  status = 200
+[[redirects]]
+  from = "/how-to-forecast-inventory-properly"
+  to = "/how-to-forecast-inventory-properly.html"
+  status = 200
+[[redirects]]
+  from = "/the-hidden-cost-of-manual-erp-processes"
+  to = "/the-hidden-cost-of-manual-erp-processes.html"
+  status = 200
+[[redirects]]
+  from = "/why-multi-supplier-containers-create-costing-errors"
+  to = "/why-multi-supplier-containers-create-costing-errors.html"
+  status = 200
+
 [[redirects]]
   from = "/who-flowiq-is-for"
   to = "/who-flowiq-is-for.html"

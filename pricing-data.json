@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-01T10:31:22.190Z",
+  "generated_at_utc": "2026-05-06T07:23:10.652Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter",
@@ -52,6 +52,7 @@
         "taskiq",
         "companiesiq",
         "accountingiq",
+        "cashiq",
         "invoiceiq",
         "purchaseiq",
         "inventoryiq",
@@ -59,7 +60,39 @@
         "journaliq",
         "settings",
         "user_management"
-      ]
+      ],
+      "add_ons": {
+        "extra_users": {
+          "price": 890,
+          "limit": 2,
+          "unit": "user",
+          "description": "1 additional user"
+        },
+        "extra_skus": {
+          "price": 2250,
+          "limit": 2,
+          "unit": "250 SKUs",
+          "description": "250 additional SKUs"
+        },
+        "extra_invoices": {
+          "price": 590,
+          "limit": null,
+          "unit": "50 invoices",
+          "description": "50 additional invoices/month"
+        },
+        "workiq_addon": {
+          "price": 990,
+          "limit": 1,
+          "unit": "bundle",
+          "description": "WorkIQ add-on (job cards and execution queues)"
+        },
+        "agentsiq_usage_pack": {
+          "price": 220,
+          "limit": 20,
+          "unit": "R100 usage credit",
+          "description": "ChatIQ / AgentsIQ monthly usage credit pack"
+        }
+      }
     },
     "growth_lite": {
       "key": "growth_lite",
@@ -104,6 +137,7 @@
         "salesiq",
         "companiesiq",
         "accountingiq",
+        "cashiq",
         "invoiceiq",
         "purchaseiq",
         "inventoryiq",
@@ -114,7 +148,39 @@
         "accounting_bank_feed_api",
         "settings",
         "user_management"
-      ]
+      ],
+      "add_ons": {
+        "extra_users": {
+          "price": 790,
+          "limit": 2,
+          "unit": "user",
+          "description": "1 additional user"
+        },
+        "extra_skus": {
+          "price": 1950,
+          "limit": 1,
+          "unit": "250 SKUs",
+          "description": "250 additional SKUs"
+        },
+        "extra_invoices": {
+          "price": 590,
+          "limit": 2,
+          "unit": "50 invoices",
+          "description": "50 additional invoices/month"
+        },
+        "workiq_addon": {
+          "price": 990,
+          "limit": 1,
+          "unit": "bundle",
+          "description": "WorkIQ add-on (job cards and execution queues)"
+        },
+        "agentsiq_usage_pack": {
+          "price": 220,
+          "limit": 20,
+          "unit": "R100 usage credit",
+          "description": "ChatIQ / AgentsIQ monthly usage credit pack"
+        }
+      }
     },
     "growth": {
       "key": "growth",
@@ -159,6 +225,7 @@
         "salesiq",
         "companiesiq",
         "accountingiq",
+        "cashiq",
         "invoiceiq",
         "purchaseiq",
         "projectsiq",
@@ -186,7 +253,45 @@
         "accounting_recon_advanced",
         "accounting_recon_bulk_confidence",
         "accounting_anomaly_detection"
-      ]
+      ],
+      "add_ons": {
+        "extra_users": {
+          "price": 590,
+          "limit": 5,
+          "unit": "user",
+          "description": "1 additional user"
+        },
+        "extra_skus": {
+          "price": 1650,
+          "limit": 2,
+          "unit": "500 SKUs",
+          "description": "500 additional SKUs"
+        },
+        "extra_shipments": {
+          "price": 1350,
+          "limit": 2,
+          "unit": "3+3 jobs",
+          "description": "3 import + 3 export jobs/month"
+        },
+        "extra_price_lists": {
+          "price": 990,
+          "limit": 2,
+          "unit": "3 price lists",
+          "description": "3 additional custom price lists"
+        },
+        "workiq_addon": {
+          "price": 990,
+          "limit": 1,
+          "unit": "bundle",
+          "description": "WorkIQ add-on (job cards and execution queues)"
+        },
+        "agentsiq_usage_pack": {
+          "price": 220,
+          "limit": 20,
+          "unit": "R100 usage credit",
+          "description": "ChatIQ / AgentsIQ monthly usage credit pack"
+        }
+      }
     },
     "professional": {
       "key": "professional",
@@ -231,6 +336,7 @@
         "salesiq",
         "companiesiq",
         "accountingiq",
+        "cashiq",
         "invoiceiq",
         "purchaseiq",
         "projectsiq",
@@ -266,7 +372,33 @@
         "accounting_anomaly_detection",
         "whatsapp_web_messaging",
         "whatsapp_api_messaging"
-      ]
+      ],
+      "add_ons": {
+        "extra_users": {
+          "price": 490,
+          "limit": 10,
+          "unit": "user",
+          "description": "1 additional user"
+        },
+        "extra_skus": {
+          "price": 2200,
+          "limit": 2,
+          "unit": "1,000 SKUs",
+          "description": "1,000 additional SKUs"
+        },
+        "extra_shipments": {
+          "price": 1750,
+          "limit": 2,
+          "unit": "10+10 jobs",
+          "description": "10 import + 10 export jobs/month"
+        },
+        "agentsiq_usage_pack": {
+          "price": 220,
+          "limit": 20,
+          "unit": "R100 usage credit",
+          "description": "ChatIQ / AgentsIQ monthly usage credit pack"
+        }
+      }
     },
     "scale": {
       "key": "scale",
@@ -311,6 +443,7 @@
         "salesiq",
         "companiesiq",
         "accountingiq",
+        "cashiq",
         "invoiceiq",
         "purchaseiq",
         "projectsiq",
@@ -350,7 +483,15 @@
         "whatsapp_web_messaging",
         "whatsapp_api_messaging",
         "forecastiq_advanced"
-      ]
+      ],
+      "add_ons": {
+        "agentsiq_usage_pack": {
+          "price": 220,
+          "limit": 50,
+          "unit": "R100 usage credit",
+          "description": "ChatIQ / AgentsIQ monthly usage credit pack"
+        }
+      }
     },
     "enterprise": {
       "key": "enterprise",
@@ -395,6 +536,7 @@
         "salesiq",
         "companiesiq",
         "accountingiq",
+        "cashiq",
         "invoiceiq",
         "purchaseiq",
         "projectsiq",
@@ -434,7 +576,15 @@
         "accounting_anomaly_detection",
         "whatsapp_web_messaging",
         "whatsapp_api_messaging"
-      ]
+      ],
+      "add_ons": {
+        "agentsiq_usage_pack": {
+          "price": 220,
+          "limit": 100,
+          "unit": "R100 usage credit",
+          "description": "ChatIQ / AgentsIQ monthly usage credit pack"
+        }
+      }
     }
   }
 }
