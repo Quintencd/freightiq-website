@@ -30,6 +30,15 @@ Added lightweight homepage motion sections so the FlowIQ marketing site feels mo
   - Homepage HTML includes `homepage-live-flow-section`, `homepage-module-motion-section` and `hero-motion-stack`.
   - `https://www.flowiq.info/flowiq-light.css?v=13` includes the new motion CSS and reduced-motion handling.
 
+## Corrective Styling Update
+
+After production review, the live business flow block could render as plain document flow if the external stylesheet was stale in the browser. The homepage now includes page-level critical CSS for the motion block and bumps the stylesheet reference to `flowiq-light.css?v=14`.
+
+- Corrective deployment: Netlify production deploy `69fb479bb6bb2c8e5897e18a`.
+- Live verification:
+  - `https://www.flowiq.info/` serves `flowiq-light.css?v=14`.
+  - Homepage HTML includes the critical `homepage-live-flow-section`, `live-window` and `live-pipeline` styling.
+
 ## Video Readiness
 
 The new sections create natural drop zones for future module walkthrough videos. The motion-card structure can later swap screenshot cards for short compressed WebM/MP4 loops or YouTube links without redesigning the homepage.

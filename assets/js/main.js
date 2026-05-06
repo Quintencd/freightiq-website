@@ -51,7 +51,7 @@
 
     var link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = '/flowiq-light.css?v=12';
+    link.href = '/flowiq-light.css?v=15';
     document.head.appendChild(link);
   }
 
@@ -81,6 +81,7 @@
                 '</div>' +
               '</div>' +
               '<a href="/modules" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Modules</a>' +
+              '<a href="/walkthroughs" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Walkthroughs</a>' +
               '<a href="/tools/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Tools</a>' +
               '<a href="/pricing" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Pricing</a>' +
               '<a href="https://app.flowiq.info/login" class="text-slate-600 hover:text-orange-600 font-semibold transition-colors text-sm uppercase tracking-wide">Login</a>' +
@@ -102,6 +103,7 @@
               '</div>' +
             '</div>' +
             '<a href="/modules" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Modules</a>' +
+            '<a href="/walkthroughs" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Walkthroughs</a>' +
             '<a href="/tools/" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Tools</a>' +
             '<a href="/pricing" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Pricing</a>' +
             '<a href="https://app.flowiq.info/login" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Login</a>' +

@@ -473,6 +473,143 @@ nav.sticky {
   font-weight: 900;
 }
 
+.live-window--scenario {
+  min-height: 34rem;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(249, 115, 22, 0.2), transparent 18rem),
+    radial-gradient(circle at 88% 28%, rgba(14, 165, 233, 0.16), transparent 18rem),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.9));
+  box-shadow: 0 30px 86px rgba(15, 23, 42, 0.25);
+}
+
+.scenario-stage {
+  position: relative;
+  min-height: 27rem;
+  padding: 1.25rem;
+  perspective: 1200px;
+}
+
+.scenario-slide {
+  position: absolute;
+  inset: 1.25rem;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(12rem, 0.55fr);
+  gap: 1rem;
+  align-items: end;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.35rem;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.2), transparent 18rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+  padding: 1.35rem;
+  opacity: 0;
+  transform: translateX(2rem) rotateY(-8deg) scale(0.96);
+  animation: scenario-cycle 16s ease-in-out infinite;
+}
+
+.scenario-slide:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.scenario-slide:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.scenario-slide:nth-child(4) {
+  animation-delay: 12s;
+}
+
+.scenario-slide__icon {
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 1rem;
+  background: rgba(249, 115, 22, 0.16);
+  color: #fb923c;
+}
+
+.scenario-slide h3 {
+  margin: 0.85rem 0 0.5rem;
+  color: #fff;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 0.96;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.scenario-slide p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.scenario-metric {
+  display: grid;
+  gap: 0.35rem;
+  align-content: center;
+  min-height: 10.5rem;
+  border-radius: 1.15rem;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1rem;
+}
+
+.scenario-metric strong {
+  color: #fff;
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  line-height: 1;
+  font-weight: 900;
+}
+
+.scenario-metric span {
+  color: #93c5fd;
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.scenario-flow {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.scenario-flow span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.09);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.55rem 0.72rem;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.scenario-rail {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.55rem;
+  padding: 0 1.25rem 1.25rem;
+}
+
+.scenario-rail span {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.55rem 0.65rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
 .module-motion-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

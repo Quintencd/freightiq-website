@@ -24,7 +24,7 @@
   <link rel="shortcut icon" href="/favicon.ico?v=2">
   <link rel="preload" as="image" href="/assets/img/generated/operations-command-story.webp" imagesrcset="/assets/img/generated/operations-command-story-960.webp 960w, /assets/img/generated/operations-command-story.webp 1672w" imagesizes="(max-width: 900px) 100vw, 50vw" type="image/webp" fetchpriority="high">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/flowiq-light.css?v=13">
+  <link rel="stylesheet" href="/flowiq-light.css?v=18">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -51,6 +51,48 @@
   
     /* Keep the marketing menu visible above page visuals. */
     nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
+
+    /* Critical homepage motion styling. Kept here so the premium sections render even when cached CSS lags. */
+    .homepage-live-flow-section{display:grid!important;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)!important;align-items:center!important;gap:clamp(1.5rem,4vw,3rem)!important;border:1px solid rgba(148,163,184,.22)!important;border-radius:2rem!important;background:radial-gradient(circle at 10% 0%,rgba(249,115,22,.15),transparent 20rem),linear-gradient(180deg,rgba(255,255,255,.94),rgba(248,250,252,.92))!important;box-shadow:0 24px 80px rgba(15,23,42,.08)!important;padding:clamp(1.5rem,4vw,3rem)!important}
+    .homepage-live-flow-section h2{margin-top:1rem!important;color:#0f172a!important;font-size:clamp(2.15rem,4vw,4.2rem)!important;line-height:.98!important;font-weight:900!important;letter-spacing:-.035em!important}
+    .homepage-live-flow-section p{margin:1.2rem 0 1.5rem!important;color:#475569!important;font-size:1.12rem!important;line-height:1.62!important}
+    .live-flow-stats{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:.75rem!important}
+    .live-flow-stats span{min-height:5.5rem!important;display:grid!important;align-content:center!important;gap:.25rem!important;border:1px solid rgba(148,163,184,.24)!important;border-radius:1rem!important;background:rgba(255,255,255,.84)!important;color:#64748b!important;padding:.85rem!important;font-size:.83rem!important;font-weight:800!important;line-height:1.25!important}
+    .live-flow-stats strong{color:#0f172a!important;font-size:1.5rem!important;line-height:1!important;font-weight:900!important}
+    .live-window{position:relative!important;overflow:hidden!important;border:1px solid rgba(148,163,184,.24)!important;border-radius:1.45rem!important;background:linear-gradient(180deg,rgba(15,23,42,.96),rgba(15,23,42,.9))!important;box-shadow:0 28px 80px rgba(15,23,42,.24)!important}
+    .live-window::before{content:"";position:absolute;inset:2.8rem 0 auto;height:.16rem;background:linear-gradient(90deg,transparent,rgba(249,115,22,.9),rgba(56,189,248,.6),transparent);animation:live-scan 4.5s ease-in-out infinite;z-index:3}
+    .live-window__bar{display:flex!important;align-items:center!important;gap:.45rem!important;padding:.9rem 1rem!important;border-bottom:1px solid rgba(255,255,255,.12)!important;background:rgba(255,255,255,.06)!important}
+    .live-window__bar span{width:.65rem!important;height:.65rem!important;border-radius:999px!important;background:#64748b!important}.live-window__bar span:first-child{background:#f97316!important}.live-window__bar span:nth-child(2){background:#38bdf8!important}.live-window__bar span:nth-child(3){background:#22c55e!important}.live-window__bar strong{margin-left:.45rem!important;color:#f8fafc!important;font-size:.82rem!important;font-weight:900!important}
+    .live-pipeline{position:relative!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:.85rem!important;padding:1.15rem!important}.live-pipeline::before{content:"";position:absolute;left:2rem;right:2rem;top:50%;height:2px;background:linear-gradient(90deg,rgba(249,115,22,.18),rgba(249,115,22,.8),rgba(56,189,248,.55))}.live-pipeline::after{content:"";position:absolute;top:50%;left:2rem;width:.72rem;height:.72rem;border-radius:999px;background:#f97316;box-shadow:0 0 0 8px rgba(249,115,22,.14),0 0 30px rgba(249,115,22,.75);transform:translateY(-50%);animation:live-flow-dot 7s linear infinite;z-index:3}
+    .live-pipeline article{position:relative!important;z-index:2!important;display:grid!important;gap:.45rem!important;min-height:8.2rem!important;padding:1rem!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:1rem!important;background:rgba(255,255,255,.08)!important;box-shadow:0 16px 42px rgba(0,0,0,.16)!important;animation:live-float 5.6s ease-in-out infinite!important}.live-pipeline article:nth-child(2n){animation-delay:-1.4s!important}.live-pipeline article:nth-child(3n){animation-delay:-2.5s!important}
+    .live-pipeline i{color:#fb923c!important}.live-pipeline strong{color:#fff!important;line-height:1.1!important;font-weight:900!important}.live-pipeline span{color:#cbd5e1!important;font-size:.82rem!important;font-weight:800!important;line-height:1.3!important}
+    .live-alert-row{display:flex!important;flex-wrap:wrap!important;gap:.65rem!important;padding:0 1.15rem 1.15rem!important}.live-alert-row span{display:inline-flex!important;align-items:center!important;gap:.4rem!important;border:1px solid rgba(134,239,172,.22)!important;border-radius:999px!important;background:rgba(22,163,74,.12)!important;color:#bbf7d0!important;padding:.55rem .75rem!important;font-size:.78rem!important;font-weight:900!important}
+    .case-study-link-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:1rem!important;margin-top:1.25rem!important}.case-study-link-card{display:grid!important;gap:.55rem!important;padding:1.25rem!important;border:1px solid rgba(249,115,22,.26)!important;border-radius:1.25rem!important;background:linear-gradient(145deg,rgba(255,247,237,.9),rgba(255,255,255,.96))!important;color:#0f172a!important;text-decoration:none!important;box-shadow:0 16px 42px rgba(15,23,42,.07)!important}.case-study-link-card strong{color:#0f172a!important;font-size:clamp(1.25rem,2vw,1.65rem)!important;line-height:1.1!important;font-weight:900!important}.case-study-link-card span{color:#475569!important;line-height:1.5!important;font-weight:700!important}.case-study-link-card__eyebrow{color:#ea580c!important;font-size:.74rem!important;font-weight:900!important;letter-spacing:.16em!important;text-transform:uppercase!important}.case-study-link-card em{display:inline-flex!important;align-items:center!important;gap:.45rem!important;color:#ea580c!important;font-style:normal!important;font-weight:900!important}
+    .live-window--scenario{min-height:34rem!important}.scenario-stage{position:relative!important;min-height:27rem!important;padding:1.25rem!important;perspective:1200px!important}.scenario-slide{position:absolute!important;inset:1.25rem!important;display:grid!important;grid-template-columns:minmax(0,.95fr) minmax(12rem,.55fr)!important;gap:1rem!important;align-items:end!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:1.35rem!important;background:radial-gradient(circle at 0% 0%,rgba(249,115,22,.2),transparent 18rem),linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.06))!important;box-shadow:0 24px 70px rgba(0,0,0,.18)!important;padding:1.35rem!important;opacity:0!important;transform:translateX(2rem) rotateY(-8deg) scale(.96)!important;animation:scenario-cycle 16s ease-in-out infinite!important}.scenario-slide:nth-child(2){animation-delay:4s!important}.scenario-slide:nth-child(3){animation-delay:8s!important}.scenario-slide:nth-child(4){animation-delay:12s!important}.scenario-slide__icon{width:3rem!important;height:3rem!important;display:grid!important;place-items:center!important;border-radius:1rem!important;background:rgba(249,115,22,.16)!important;color:#fb923c!important}.scenario-slide h3{margin:.85rem 0 .5rem!important;color:#fff!important;font-size:clamp(1.8rem,3vw,3rem)!important;line-height:.96!important;font-weight:900!important;letter-spacing:-.04em!important}.scenario-slide p{margin:0!important;color:#cbd5e1!important;font-size:1rem!important;line-height:1.55!important}.scenario-metric{display:grid!important;gap:.35rem!important;align-content:center!important;min-height:10.5rem!important;border-radius:1.15rem!important;background:rgba(15,23,42,.72)!important;border:1px solid rgba(255,255,255,.12)!important;padding:1rem!important}.scenario-metric strong{color:#fff!important;font-size:clamp(2.1rem,4vw,4rem)!important;line-height:1!important;font-weight:900!important}.scenario-metric span{color:#93c5fd!important;font-size:.82rem!important;font-weight:900!important;text-transform:uppercase!important;letter-spacing:.12em!important}.scenario-flow{grid-column:1/-1!important;display:flex!important;flex-wrap:wrap!important;gap:.55rem!important}.scenario-flow span{display:inline-flex!important;align-items:center!important;gap:.35rem!important;border-radius:999px!important;background:rgba(255,255,255,.09)!important;color:#e2e8f0!important;border:1px solid rgba(255,255,255,.12)!important;padding:.55rem .72rem!important;font-size:.78rem!important;font-weight:900!important}.scenario-rail{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:.55rem!important;padding:0 1.25rem 1.25rem!important}.scenario-rail span{border-radius:999px!important;background:rgba(255,255,255,.08)!important;color:#cbd5e1!important;border:1px solid rgba(255,255,255,.1)!important;padding:.55rem .65rem!important;text-align:center!important;font-size:.75rem!important;font-weight:900!important}
+    .fresh-home{max-width:1320px;margin:0 auto;padding:7.2rem 1.5rem 4rem}.fresh-hero{min-height:calc(100vh - 7.2rem);display:grid;grid-template-columns:minmax(0,.95fr) minmax(22rem,.9fr);align-items:center;gap:clamp(2rem,6vw,5rem)}.fresh-hero h1{max-width:52rem;color:#0f172a;font-size:clamp(3.8rem,8vw,7.8rem);line-height:.9;font-weight:900;letter-spacing:-.055em}.fresh-hero h1 span{display:block;background:linear-gradient(90deg,#f97316,#38bdf8,#22c55e);-webkit-background-clip:text;background-clip:text;color:transparent}.fresh-hero p{max-width:43rem;color:#475569;font-size:clamp(1.12rem,2vw,1.35rem);line-height:1.55}.fresh-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem}.fresh-proof-row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem}.fresh-proof-row span{display:inline-flex;align-items:center;gap:.45rem;border:1px solid rgba(148,163,184,.24);border-radius:999px;background:rgba(255,255,255,.78);padding:.65rem .85rem;color:#334155;font-size:.86rem;font-weight:900;box-shadow:0 12px 30px rgba(15,23,42,.06)}.motion-reel{position:relative;min-height:35rem;border-radius:2.4rem;background:linear-gradient(180deg,#f8fafc,#fff);box-shadow:0 32px 90px rgba(15,23,42,.12);overflow:hidden;border:1px solid rgba(148,163,184,.2)}.motion-reel:before{content:"";position:absolute;inset:auto -8rem -8rem auto;width:26rem;height:26rem;border-radius:999px;background:rgba(249,115,22,.18);filter:blur(40px)}.motion-phone{position:absolute;inset:2rem 2rem 2rem auto;width:min(22rem,48%);border-radius:2.2rem;background:#0f172a;border:10px solid #1f2937;box-shadow:0 30px 80px rgba(15,23,42,.24);overflow:hidden}.motion-phone__screen{position:absolute;inset:0;background:radial-gradient(circle at 30% 8%,rgba(59,130,246,.22),transparent 16rem),linear-gradient(180deg,#fff,#f8fafc);padding:1.2rem}.motion-wave{position:absolute;left:-18%;right:-18%;top:38%;height:7rem;background:linear-gradient(90deg,transparent,#f97316,#38bdf8,#22c55e,transparent);clip-path:polygon(0 52%,8% 38%,16% 61%,24% 30%,32% 58%,40% 42%,48% 63%,56% 30%,64% 54%,72% 40%,80% 59%,88% 35%,100% 52%,100% 62%,0 62%);opacity:.8;animation:wave-drift 5s ease-in-out infinite}.reel-card{position:absolute;left:2rem;right:calc(48% + 3.5rem);display:grid;gap:.6rem;border-radius:1.5rem;background:rgba(255,255,255,.86);border:1px solid rgba(148,163,184,.22);box-shadow:0 18px 48px rgba(15,23,42,.1);padding:1.2rem;backdrop-filter:blur(16px);opacity:0;animation:reel-cycle 16s ease-in-out infinite}.reel-card:nth-child(1){top:2rem}.reel-card:nth-child(2){top:10.5rem;animation-delay:4s}.reel-card:nth-child(3){top:19rem;animation-delay:8s}.reel-card:nth-child(4){top:27.5rem;animation-delay:12s}.reel-card strong{color:#0f172a;font-size:1.2rem;line-height:1.1;font-weight:900}.reel-card span{color:#64748b;font-weight:800}.fresh-section{margin-top:clamp(3rem,7vw,6rem)}.fresh-section__head{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:1.15rem}.fresh-section h2{color:#0f172a;font-size:clamp(2rem,4vw,4rem);line-height:1;font-weight:900;letter-spacing:-.04em}.route-cards,.proof-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.route-card,.proof-card{display:grid;gap:.7rem;min-height:14rem;border:1px solid rgba(148,163,184,.22);border-radius:1.5rem;background:#fff;padding:1.35rem;text-decoration:none;color:#0f172a;box-shadow:0 18px 54px rgba(15,23,42,.07);transition:transform .18s ease,box-shadow .18s ease}.route-card:hover,.proof-card:hover{transform:translateY(-4px);box-shadow:0 28px 70px rgba(15,23,42,.1)}.route-card i,.proof-card i{color:#f97316}.route-card strong,.proof-card strong{font-size:1.45rem;line-height:1.08;font-weight:900}.route-card span,.proof-card span{color:#64748b;font-weight:750;line-height:1.45}.fresh-cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.5rem;align-items:center;margin-top:clamp(3rem,7vw,6rem);border-radius:2rem;background:#0f172a;color:#fff;padding:clamp(1.5rem,5vw,3.5rem);box-shadow:0 28px 90px rgba(15,23,42,.2)}.fresh-cta h2{font-size:clamp(2.2rem,5vw,4.8rem);line-height:.96;font-weight:900;letter-spacing:-.045em}.fresh-cta p{margin-top:.7rem;color:#cbd5e1;font-size:1.1rem}.fresh-cta a{white-space:nowrap}
+    @keyframes wave-drift{0%,100%{transform:translateX(-4%) scaleY(.9)}50%{transform:translateX(4%) scaleY(1.15)}}@keyframes reel-cycle{0%,100%{opacity:.3;transform:translateY(.5rem) scale(.98)}8%,24%{opacity:1;transform:translateY(0) scale(1)}32%{opacity:.3;transform:translateY(-.5rem) scale(.98)}}
+    @keyframes scenario-cycle{0%,100%{opacity:0;transform:translateX(2rem) rotateY(-8deg) scale(.96)}5%,23%{opacity:1;transform:translateX(0) rotateY(0) scale(1)}28%{opacity:0;transform:translateX(-1.5rem) rotateY(7deg) scale(.98)}}
+    @media(max-width:960px){.homepage-live-flow-section,.fresh-hero,.fresh-cta{grid-template-columns:1fr!important}.route-cards,.proof-cards{grid-template-columns:1fr}.motion-phone{position:relative;inset:auto;width:auto;height:30rem;margin:1.5rem}.reel-card{position:relative;left:auto;right:auto;top:auto!important;margin:1rem 1.5rem}.motion-reel{min-height:auto;padding-top:.5rem}}@media(max-width:640px){.live-pipeline,.live-flow-stats,.case-study-link-grid,.scenario-slide,.scenario-rail{grid-template-columns:1fr!important}.scenario-slide{align-items:start!important}.live-window--scenario{min-height:43rem!important}.scenario-stage{min-height:36rem!important}.fresh-home{padding-inline:1rem}.fresh-hero h1{font-size:clamp(3rem,15vw,4.5rem)}.fresh-section__head{display:grid}.fresh-actions a,.fresh-cta a{width:100%}}
+    .fresh-hero h1 span{background:none!important;-webkit-background-clip:initial!important;background-clip:initial!important;color:#f97316!important}
+    .fresh-hero p{max-width:45rem!important;color:#40516a!important}
+    .fresh-proof-row span{background:#fff!important;border-color:#e2e8f0!important;color:#172033!important}
+    .fresh-flow-band{position:relative;margin-top:clamp(3rem,6vw,5rem);overflow:hidden;border:1px solid #e2e8f0;border-radius:1.75rem;background:linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);box-shadow:0 28px 80px rgba(15,23,42,.08)}
+    .fresh-flow-band__head{display:flex;align-items:end;justify-content:space-between;gap:1rem;padding:clamp(1.25rem,3vw,2rem) clamp(1.25rem,3vw,2rem) .75rem}
+    .fresh-flow-band h2{max-width:48rem;color:#0f172a;font-size:clamp(2rem,4.2vw,4rem);line-height:.98;font-weight:900;letter-spacing:-.04em}
+    .fresh-flow-band p{max-width:34rem;color:#64748b;font-size:1rem;line-height:1.55;font-weight:700}
+    .flow-marquee{position:relative;overflow:hidden;padding:1rem 0 1.35rem}
+    .flow-marquee:before,.flow-marquee:after{content:"";position:absolute;top:0;bottom:0;width:8rem;z-index:2;pointer-events:none}
+    .flow-marquee:before{left:0;background:linear-gradient(90deg,#fff,rgba(255,255,255,0))}
+    .flow-marquee:after{right:0;background:linear-gradient(270deg,#fff,rgba(255,255,255,0))}
+    .flow-marquee__track{display:flex;width:max-content;gap:.85rem;animation:flow-scroll 34s linear infinite}
+    .flow-marquee:hover .flow-marquee__track{animation-play-state:paused}
+    .flow-card{width:18rem;min-height:8rem;display:grid;align-content:start;gap:.55rem;border:1px solid #e2e8f0;border-radius:1.1rem;background:#fff;padding:1rem;box-shadow:0 16px 40px rgba(15,23,42,.07)}
+    .flow-card i{color:#f97316}.flow-card strong{color:#0f172a;font-size:1.08rem;line-height:1.1;font-weight:900}.flow-card span{color:#64748b;font-size:.88rem;line-height:1.35;font-weight:750}
+    .flow-card--dark{background:#0f172a;border-color:#1e293b;box-shadow:0 22px 60px rgba(15,23,42,.22)}
+    .flow-card--dark strong{color:#fff}.flow-card--dark span{color:#cbd5e1}
+    .flow-connector{align-self:center;width:2.2rem;height:2px;background:linear-gradient(90deg,#f97316,#fdba74);opacity:.9}
+    @keyframes flow-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @media(max-width:960px){.fresh-flow-band__head{display:grid}.flow-card{width:16rem}.flow-marquee:before,.flow-marquee:after{width:3rem}}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"FlowIQ Operational Profit Recovery Software","url":"https://www.flowiq.info/","description":"FlowIQ helps importers, distributors and manufacturers calculate true landed cost, forecast inventory, manage shipments and recover operational profit without spreadsheet chaos."},{"@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/","description":"Operational profit recovery software for true landed cost, import management, inventory forecasting, shipments, pricing and margin control.","offers":{"@type":"Offer","price":"29","priceCurrency":"USD"}}]}
@@ -63,218 +105,105 @@
 
   <nav></nav>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
-    <section id="hero" class="relative mb-14">
-      <div class="hero-ambient hero-ambient--warm" aria-hidden="true"></div>
-      <div class="hero-ambient hero-ambient--cool" aria-hidden="true"></div>
-      <div class="mesh-lines"></div>
-      <div class="editorial-grid editorial-grid--hero gap-10">
+  <main class="fresh-home">
+    <section id="hero" class="fresh-hero">
+      <div class="story-reveal">
+        <span class="section-kicker">Operational profit recovery</span>
+        <h1 class="mt-6">Stop losing margin. <span>See what to fix.</span></h1>
+        <p class="mt-6">FlowIQ is an operating system for growing businesses that need landed cost, stock, sales, invoicing, accounting, payroll, tasks, reporting and branch control in one connected platform.</p>
+        <div class="fresh-actions">
+          <a href="/book-demo.html" data-analytics-event="demo_click" data-analytics-position="fresh_hero_primary" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-orange-500/20 hover:-translate-y-1 transition-all">Book Demo <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+          <a href="/customers" class="inline-flex items-center justify-center gap-2 glass-panel px-8 py-4 rounded-full font-bold text-lg text-slate-900 hover:-translate-y-0.5 transition-all">Customer Proof <i data-lucide="star" class="w-5 h-5 text-freight-orange"></i></a>
+        </div>
+        <div class="fresh-proof-row" aria-label="FlowIQ proof points">
+          <span><i data-lucide="check-circle-2" class="w-4 h-4 text-green-600"></i> R60k-R70k/month reported saving</span>
+          <span><i data-lucide="boxes" class="w-4 h-4 text-orange-600"></i> 1,200+ SKUs managed</span>
+          <span><i data-lucide="star" class="w-4 h-4 text-orange-600"></i> 5/5 customer reviews</span>
+        </div>
+      </div>
+
+      <div class="generated-hero-panel story-reveal">
+        <img src="/assets/img/generated/operations-command-story.webp" srcset="/assets/img/generated/operations-command-story-960.webp 960w, /assets/img/generated/operations-command-story.webp 1672w" sizes="(max-width: 900px) 100vw, 50vw" alt="FlowIQ business operations command scene showing office, factory, warehouse, stock, tasks, finance, and reporting dashboards"
+          width="1672" height="941" loading="eager" fetchpriority="high" decoding="async">
+        <div class="hero-motion-stack" aria-hidden="true">
+          <span>Import cost updated</span>
+          <span>Stock risk detected</span>
+          <span>Month-end ready</span>
+        </div>
+        <span class="hero-live-badge">Landed cost, stock and margin control</span>
+      </div>
+    </section>
+
+    <section id="solutions" class="fresh-section story-reveal">
+      <div class="fresh-section__head">
         <div>
-          <span class="section-kicker">Operational profit recovery</span>
-          <h1 class="mt-6 text-5xl md:text-7xl font-black text-slate-900 tracking-[-0.04em] leading-[0.95]">
-            Stop losing margin across imports, inventory and operations.
-          </h1>
-          <p class="mt-6 max-w-2xl text-lg md:text-xl text-slate-600 leading-relaxed">
-            FlowIQ helps importers, distributors and manufacturers calculate true landed cost, forecast inventory,
-            manage shipments and improve profitability &mdash; without spreadsheet chaos.
-          </p>
-          <div class="mt-8 flex flex-col sm:flex-row gap-4">
-            <a href="/signup" data-analytics-event="trial_signup_click" data-analytics-position="hero_primary" data-analytics-label="homepage hero trial"
-              class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-orange-500/20 hover:-translate-y-1 transition-all">
-              Book Demo
-              <i data-lucide="arrow-right" class="w-5 h-5"></i>
-            </a>
-            <a href="/landed-cost-calculator" data-analytics-event="calculator_click" data-analytics-position="hero_secondary" data-analytics-label="homepage calculate savings"
-              class="inline-flex items-center justify-center gap-2 glass-panel px-8 py-4 rounded-full font-bold text-lg text-slate-900 hover:-translate-y-0.5 transition-all">
-              Calculate Savings
-              <i data-lucide="calculator" class="w-5 h-5 text-freight-orange"></i>
-            </a>
-            <a href="/book-demo.html" data-analytics-event="demo_click" data-analytics-position="hero_tertiary" data-analytics-label="homepage watch demo"
-              class="inline-flex items-center justify-center gap-2 glass-panel px-8 py-4 rounded-full font-bold text-lg text-slate-900 hover:-translate-y-0.5 transition-all">
-              Watch Demo
-              <i data-lucide="play-circle" class="w-5 h-5 text-freight-orange"></i>
-            </a>
-          </div>
+          <span class="section-kicker">Choose your path</span>
+          <h2>What FlowIQ helps you control.</h2>
         </div>
+        <a href="/solutions/" class="inline-flex items-center gap-2 text-slate-700 hover:text-orange-600 font-black">All solutions <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <div class="route-cards">
+        <a href="/solutions/importers.html" class="route-card"><i data-lucide="ship" class="w-7 h-7"></i><strong>Imports and landed cost</strong><span>Know true cost, shipment status and margin before pricing goes wrong.</span></a>
+        <a href="/inventory-forecasting-software" class="route-card"><i data-lucide="trending-up" class="w-7 h-7"></i><strong>Inventory forecasting</strong><span>Reduce stockouts, slow movers and warehouse imbalance.</span></a>
+        <a href="/customers" class="route-card"><i data-lucide="badge-check" class="w-7 h-7"></i><strong>Customer outcomes</strong><span>See real reviews, ROI proof and operational capacity gains.</span></a>
+      </div>
+    </section>
 
-        <div class="generated-hero-panel story-reveal">
-          <img src="/assets/img/generated/operations-command-story.webp" srcset="/assets/img/generated/operations-command-story-960.webp 960w, /assets/img/generated/operations-command-story.webp 1672w" sizes="(max-width: 900px) 100vw, 50vw" alt="FlowIQ business operations command scene showing office, factory, warehouse, stock, tasks, finance, and reporting dashboards"
-            width="1672" height="941" loading="eager" fetchpriority="high" decoding="async">
-          <div class="hero-motion-stack" aria-hidden="true">
-            <span>Shipment cost updated</span>
-            <span>Forecast risk detected</span>
-            <span>Month-end ready</span>
-          </div>
-          <span class="hero-live-badge">Landed cost, stock and margin control</span>
+    <section class="fresh-flow-band story-reveal" aria-label="Moving FlowIQ module flow">
+      <div class="fresh-flow-band__head">
+        <div>
+          <span class="section-kicker">Connected FlowIQ modules</span>
+          <h2>One flow from stock planning to month-end.</h2>
+        </div>
+        <p>These are the business functions FlowIQ brings together so teams stop jumping between spreadsheets, disconnected apps and manual follow-ups.</p>
+      </div>
+      <div class="flow-marquee" aria-hidden="true">
+        <div class="flow-marquee__track">
+          <article class="flow-card flow-card--dark"><i data-lucide="ship" class="w-6 h-6"></i><strong>ImportIQ</strong><span>Shipment tracking, supplier payments and true landed cost.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="boxes" class="w-6 h-6"></i><strong>InventoryIQ</strong><span>SKU, warehouse, transfer and stock movement control.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="trending-up" class="w-6 h-6"></i><strong>ForecastIQ</strong><span>Fast movers, slow movers, reorder planning and stock risk.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="handshake" class="w-6 h-6"></i><strong>SalesIQ</strong><span>Pipelines, customer activity and sales follow-ups.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="file-text" class="w-6 h-6"></i><strong>InvoiceIQ</strong><span>Quotes, invoices, delivery notes, settlements and rebates.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--dark"><i data-lucide="calculator" class="w-6 h-6"></i><strong>AccountingIQ</strong><span>Bank matching, journals, month-end and management accounts.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="users" class="w-6 h-6"></i><strong>PayrollIQ</strong><span>Payslips, commissions, payroll journals and staff workflows.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="list-checks" class="w-6 h-6"></i><strong>TaskIQ</strong><span>Tasks, bottlenecks, approvals and operational accountability.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="factory" class="w-6 h-6"></i><strong>Manufacturing</strong><span>BOMs, work orders, production stock and replenishment.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="bar-chart-3" class="w-6 h-6"></i><strong>ReportsIQ</strong><span>Performance, margin, stock, sales and operational reporting.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--dark"><i data-lucide="ship" class="w-6 h-6"></i><strong>ImportIQ</strong><span>Shipment tracking, supplier payments and true landed cost.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="boxes" class="w-6 h-6"></i><strong>InventoryIQ</strong><span>SKU, warehouse, transfer and stock movement control.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="trending-up" class="w-6 h-6"></i><strong>ForecastIQ</strong><span>Fast movers, slow movers, reorder planning and stock risk.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="handshake" class="w-6 h-6"></i><strong>SalesIQ</strong><span>Pipelines, customer activity and sales follow-ups.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="file-text" class="w-6 h-6"></i><strong>InvoiceIQ</strong><span>Quotes, invoices, delivery notes, settlements and rebates.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--dark"><i data-lucide="calculator" class="w-6 h-6"></i><strong>AccountingIQ</strong><span>Bank matching, journals, month-end and management accounts.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="users" class="w-6 h-6"></i><strong>PayrollIQ</strong><span>Payslips, commissions, payroll journals and staff workflows.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="list-checks" class="w-6 h-6"></i><strong>TaskIQ</strong><span>Tasks, bottlenecks, approvals and operational accountability.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="factory" class="w-6 h-6"></i><strong>Manufacturing</strong><span>BOMs, work orders, production stock and replenishment.</span></article><span class="flow-connector"></span>
+          <article class="flow-card"><i data-lucide="bar-chart-3" class="w-6 h-6"></i><strong>ReportsIQ</strong><span>Performance, margin, stock, sales and operational reporting.</span></article>
         </div>
       </div>
     </section>
 
-    <section class="homepage-live-flow-section mb-16 story-reveal">
+    <section class="fresh-section story-reveal">
+      <div class="fresh-section__head">
+        <div>
+          <span class="section-kicker">Proof</span>
+          <h2>Real businesses use it.</h2>
+        </div>
+        <a href="/customers" class="inline-flex items-center gap-2 text-slate-700 hover:text-orange-600 font-black">Read reviews <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <div class="proof-cards">
+        <a href="/customers/biomek-case-study" class="proof-card"><i data-lucide="star" class="w-7 h-7"></i><strong>Biomek Pty Ltd</strong><span>Moved off spreadsheets across imports, inventory, accounting, payroll and branch operations.</span></a>
+        <a href="/customers/ce-legal-case-study" class="proof-card"><i data-lucide="briefcase-business" class="w-7 h-7"></i><strong>C&amp;E Legal</strong><span>Replaced five disconnected apps with one FlowIQ ecosystem and AccountingIQ HQ.</span></a>
+        <a href="/walkthroughs" class="proof-card"><i data-lucide="play-circle" class="w-7 h-7"></i><strong>Product walkthroughs</strong><span>View focused module tours without crowding the homepage.</span></a>
+      </div>
+    </section>
+
+    <section class="fresh-cta story-reveal">
       <div>
-        <span class="section-kicker">Live Business Flow</span>
-        <h2>See the work moving across your business.</h2>
-        <p>FlowIQ connects import cost, stock planning, sales, invoicing, accounting and payroll so teams can see what changed, what needs attention and where margin is being recovered.</p>
-        <div class="live-flow-stats" aria-label="FlowIQ live workflow signals">
-          <span><strong>6</strong> connected workflows</span>
-          <span><strong>1</strong> operating view</span>
-          <span><strong>Live</strong> exceptions and follow-ups</span>
-        </div>
+        <h2>See if FlowIQ can recover margin in your operation.</h2>
+        <p>Book a focused walkthrough around imports, stock planning, accounting and workflow control.</p>
       </div>
-      <div class="live-flow-visual" aria-label="Animated FlowIQ operating workflow">
-        <div class="live-window">
-          <div class="live-window__bar"><span></span><span></span><span></span><strong>FlowIQ operations layer</strong></div>
-          <div class="live-pipeline">
-            <article>
-              <i data-lucide="ship" class="w-5 h-5"></i>
-              <strong>ImportIQ</strong>
-              <span>Landed cost confirmed</span>
-            </article>
-            <article>
-              <i data-lucide="boxes" class="w-5 h-5"></i>
-              <strong>InventoryIQ</strong>
-              <span>Warehouse stock rebalanced</span>
-            </article>
-            <article>
-              <i data-lucide="trending-up" class="w-5 h-5"></i>
-              <strong>ForecastIQ</strong>
-              <span>Fast movers flagged</span>
-            </article>
-            <article>
-              <i data-lucide="file-text" class="w-5 h-5"></i>
-              <strong>InvoiceIQ</strong>
-              <span>Customer invoice ready</span>
-            </article>
-            <article>
-              <i data-lucide="calculator" class="w-5 h-5"></i>
-              <strong>AccountingIQ</strong>
-              <span>Journal posted</span>
-            </article>
-            <article>
-              <i data-lucide="users" class="w-5 h-5"></i>
-              <strong>PayrollIQ</strong>
-              <span>Commission synced</span>
-            </article>
-          </div>
-          <div class="live-alert-row">
-            <span><i data-lucide="check-circle-2" class="w-4 h-4"></i> Stock risk lowered</span>
-            <span><i data-lucide="circle-dollar-sign" class="w-4 h-4"></i> Margin visible</span>
-            <span><i data-lucide="clock-3" class="w-4 h-4"></i> Follow-up due today</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="solutions" class="homepage-segmentation-section mb-16 story-reveal">
-      <div class="homepage-section-heading">
-        <span class="section-kicker">Find Your Fit</span>
-        <h2>Who is FlowIQ built for?</h2>
-      </div>
-      <div class="solution-segment-grid">
-        <a href="/solutions/importers.html" class="solution-segment-card">
-          <i data-lucide="ship" class="w-7 h-7"></i>
-          <strong>Importers &amp; Distributors</strong>
-          <span>Track landed costs, shipments, and margins</span>
-        </a>
-        <a href="/solutions/retail-outlets.html" class="solution-segment-card">
-          <i data-lucide="shopping-bag" class="w-7 h-7"></i>
-          <strong>Retail &amp; Ecommerce Businesses</strong>
-          <span>Manage stock, sales, and profitability in one place</span>
-        </a>
-        <a href="/solutions/multi-branch.html" class="solution-segment-card">
-          <i data-lucide="network" class="w-7 h-7"></i>
-          <strong>Multi-Branch Operations</strong>
-          <span>Full visibility across locations and inventory</span>
-        </a>
-        <a href="/solutions/manufacturers.html" class="solution-segment-card">
-          <i data-lucide="factory" class="w-7 h-7"></i>
-          <strong>Manufacturing &amp; Assembly</strong>
-          <span>Control production, costing, and stock flow</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="homepage-module-motion-section mb-16 story-reveal">
-      <div class="homepage-section-heading">
-        <span class="section-kicker">Module walkthroughs</span>
-        <h2>Product stories that already feel ready for video.</h2>
-      </div>
-      <div class="module-motion-grid">
-        <a href="/modules/importiq.html" class="module-motion-card">
-          <img src="/assets/img/modules/thumb-importiq.webp" alt="ImportIQ landed cost workflow preview" loading="lazy" width="720" height="405">
-          <span>ImportIQ</span>
-          <strong>True landed cost and shipment visibility</strong>
-        </a>
-        <a href="/modules/forecastiq.html" class="module-motion-card">
-          <img src="/assets/img/modules/thumb-forecastiq.webp" alt="ForecastIQ stock planning preview" loading="lazy" width="720" height="405">
-          <span>ForecastIQ</span>
-          <strong>Stock forecasting and replenishment planning</strong>
-        </a>
-        <a href="/modules/accountingiq.html" class="module-motion-card">
-          <img src="/assets/img/modules/accountingiq-real-positive.webp" alt="AccountingIQ financial workflow preview" loading="lazy" width="720" height="405">
-          <span>AccountingIQ</span>
-          <strong>Accounting visibility and connected journals</strong>
-        </a>
-        <a href="/modules/taskiq.html" class="module-motion-card">
-          <img src="/assets/img/modules/thumb-taskiq.webp" alt="TaskIQ workflow tracking preview" loading="lazy" width="720" height="405">
-          <span>TaskIQ</span>
-          <strong>Tasks, bottlenecks and staff follow-up</strong>
-        </a>
-      </div>
-    </section>
-
-    <section class="homepage-proof-section mb-16 story-reveal">
-      <div class="homepage-section-heading">
-        <span class="section-kicker">Customer proof</span>
-        <h2>Real operators are replacing fragmented work with FlowIQ</h2>
-      </div>
-      <div class="proof-grid">
-        <article>
-          <p>"FlowIQ is a five-star system for us. It helped us move fully off spreadsheets and gave the team accurate landed cost, better stock visibility, faster payroll and a much faster month-end process."</p>
-          <span>Biomek Pty Ltd, Professional Enterprise customer</span>
-        </article>
-        <article>
-          <p>R60,000-R70,000 per month in operational capacity and system-cost savings, with holistic impact closer to R100,000/month when dead stock, cash flow and capital cost are included.</p>
-          <span>Reported Biomek ROI outcome</span>
-        </article>
-        <article>
-          <p>C&amp;E Legal replaced five disconnected subscriptions and apps with one FlowIQ ecosystem across sales, work, invoicing, tasks, accounting, payroll and AccountingIQ HQ.</p>
-          <span>C&amp;E Legal, Growth Plan customer</span>
-        </article>
-      </div>
-      <div class="proof-bullets" aria-label="FlowIQ platform proof points">
-        <span><i data-lucide="activity" class="w-4 h-4"></i> 1,200+ SKUs</span>
-        <span><i data-lucide="warehouse" class="w-4 h-4"></i> 5 warehouses</span>
-        <span><i data-lucide="network" class="w-4 h-4"></i> 5 branches</span>
-        <span><i data-lucide="briefcase-business" class="w-4 h-4"></i> 18 AccountingIQ HQ clients</span>
-      </div>
-      <div class="case-study-link-grid" aria-label="Customer case studies">
-        <a href="/customers/biomek-case-study" class="case-study-link-card">
-          <span class="case-study-link-card__eyebrow">5/5 customer review</span>
-          <strong>Biomek Pty Ltd case study</strong>
-          <span>Importing, inventory, landed cost, forecasting, payroll and month-end ROI.</span>
-          <em>Read Biomek case study <i data-lucide="arrow-right" class="w-4 h-4"></i></em>
-        </a>
-        <a href="/customers/ce-legal-case-study" class="case-study-link-card">
-          <span class="case-study-link-card__eyebrow">5/5 customer review</span>
-          <strong>C&amp;E Legal case study</strong>
-          <span>Legal operations, AccountingIQ HQ, client financials, payroll and task visibility.</span>
-          <em>Read C&amp;E Legal case study <i data-lucide="arrow-right" class="w-4 h-4"></i></em>
-        </a>
-      </div>
-      <div class="mt-5">
-        <a href="/customers" class="inline-flex items-center gap-2 text-slate-700 hover:text-orange-600 font-black">View all customer reviews <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-      </div>
-    </section>
-
-    <section class="homepage-system-section story-reveal">
-      <img src="/assets/img/generated/homepage-support/homepage-control-light.webp" alt="Operational stock, barcode, finance, and control objects representing one FlowIQ business system" loading="lazy" width="720" height="540" decoding="async">
-      <div>
-        <span class="section-kicker">One System</span>
-        <h2>Built-in accounting, inventory, and operations &mdash; all in one system</h2>
-        <p>FlowIQ keeps the work connected from stock movement and customer orders to margin, accounting, reporting, and management visibility.</p>
-        <a href="#solutions" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-7 py-3 rounded-full font-bold shadow-lg shadow-orange-500/20 transition-all">Find Your Solution <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
-      </div>
+      <a href="/book-demo.html" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-orange-500/20 hover:-translate-y-1 transition-all">Book Demo <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
     </section>
   </main>
 
@@ -289,6 +218,7 @@
         <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium text-slate-600">
           <a href="/solutions/" class="hover:text-orange-600">Solutions</a>
           <a href="/modules" class="hover:text-orange-600">Modules</a>
+          <a href="/walkthroughs" class="hover:text-orange-600">Walkthroughs</a>
           <a href="/pricing" class="hover:text-orange-600">Pricing</a>
           <a class='hover:text-orange-600' href='/privacy'>Privacy Policy</a>
           <a class='hover:text-orange-600' href='/terms'>Terms</a>
@@ -315,7 +245,7 @@
   </script>
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
-  <script src="/assets/js/main.js?v=9"></script>
+  <script src="/assets/js/main.js?v=10"></script>
 </body>
 
 </html>
