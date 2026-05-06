@@ -39,11 +39,18 @@
     .section { margin-top: 42px; }
     .case-shell h2 { font-size: clamp(28px, 4vw, 46px); line-height: 1.03; letter-spacing: -.035em; margin: 0 0 16px; font-weight: 900; color: #0f172a; }
     .copy { color: #475569; font-size: 17px; line-height: 1.75; max-width: 850px; }
+    .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 0; }
+    .trust-badges span { display: inline-flex; align-items: center; gap: 7px; border: 1px solid rgba(249,115,22,.22); border-radius: 999px; background: #fff7ed; color: #9a3412; padding: 8px 12px; font-size: 13px; font-weight: 900; }
+    .proof-label { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; border: 1px solid rgba(22,163,74,.22); border-radius: 999px; background: #f0fdf4; color: #166534; padding: 8px 12px; font-size: 13px; font-weight: 900; }
     .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
     .panel { padding: 22px; }
     .panel h3 { margin: 0 0 8px; font-size: 19px; }
     .panel p, .panel li { color: #475569; line-height: 1.65; }
     .panel ul { padding-left: 18px; margin: 12px 0 0; }
+    .before-after { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+    .before-after article { padding: 22px; border: 1px solid rgba(148,163,184,.24); border-radius: 12px; background: #fff; }
+    .before-after h3 { margin: 0 0 12px; font-size: 20px; }
+    .before-after ul { margin: 0; padding-left: 18px; color: #475569; line-height: 1.65; }
     .quote-card { padding: 28px; margin-top: 34px; border-left: 5px solid #f97316; }
     .case-shell blockquote { margin: 0; font-size: clamp(22px, 3vw, 34px); line-height: 1.2; letter-spacing: -.02em; font-weight: 900; }
     .quote-card cite { display: block; margin-top: 14px; color: #64748b; font-style: normal; font-weight: 800; }
@@ -57,7 +64,7 @@
     .fine-print { color: #64748b; font-size: 13px; line-height: 1.6; margin-top: 18px; }
     footer { max-width: 1120px; margin: 0 auto; padding: 28px 20px 42px; border-top: 1px solid rgba(148,163,184,.24); color: #64748b; display: flex; gap: 16px; flex-wrap: wrap; }
     footer a { color: #475569; font-weight: 700; text-decoration: none; }
-    @media (max-width: 820px) { .hero, .grid, .outcome-list { grid-template-columns: 1fr; } .case-shell { padding-top: 98px; } }
+    @media (max-width: 820px) { .hero, .grid, .outcome-list, .before-after { grid-template-columns: 1fr; } .case-shell { padding-top: 98px; } }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Biomek Pty Ltd Case Study: Moving off spreadsheets with FlowIQ","description":"Biomek Pty Ltd uses FlowIQ to manage imports, inventory, forecasting, accounting, payroll and branch operations with R60,000-R70,000 monthly operational capacity and system-cost savings, plus broader holistic impact approaching R100,000/month when stock, cash-flow and capital-cost effects are included.","image":"https://www.flowiq.info/assets/img/customers/biomek-logo.png","datePublished":"2026-05-06","dateModified":"2026-05-06","author":{"@type":"Organization","name":"FlowIQ"},"publisher":{"@type":"Organization","name":"FlowIQ","logo":{"@type":"ImageObject","url":"https://www.flowiq.info/flowiq-logo.png"}},"mainEntityOfPage":"https://www.flowiq.info/customers/biomek-case-study"},{"@type":"Review","itemReviewed":{"@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web"},"author":{"@type":"Organization","name":"Biomek Pty Ltd","logo":"https://www.flowiq.info/assets/img/customers/biomek-logo.png"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"FlowIQ helped Biomek Pty Ltd move fully off spreadsheets, speed up payroll and month-end, improve landed cost visibility, reduce out-of-stock risk, improve cash-flow planning, and create R60,000-R70,000 per month in operational capacity and system-cost savings, with broader holistic impact approaching R100,000/month when stock, cash-flow and capital-cost effects are included."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"FlowIQ","item":"https://www.flowiq.info/"},{"@type":"ListItem","position":2,"name":"Customers","item":"https://www.flowiq.info/customers/biomek-case-study"},{"@type":"ListItem","position":3,"name":"Biomek Pty Ltd Case Study","item":"https://www.flowiq.info/customers/biomek-case-study"}]}]}
@@ -78,6 +85,13 @@
         <p class="kicker">Customer Case Study</p>
         <h1>How Biomek Pty Ltd moved off spreadsheets and recovered operational capacity with FlowIQ.</h1>
         <p class="lead">Biomek Pty Ltd runs on FlowIQ Professional Enterprise across the full system: imports, inventory, forecasting, accounting, payroll, manufacturing, stock transfers, task management, reporting and branch operations. The team now manages 1,200+ SKUs, five warehouses and five branches with better landed cost visibility, faster month-end reconciliation, stronger cash-flow planning and R60,000-R70,000 per month in operational capacity and system-cost savings.</p>
+        <div class="trust-badges" aria-label="Biomek trust markers">
+          <span>Public customer case study</span>
+          <span>Founder-attributed review</span>
+          <span>Customer-reported results</span>
+          <span>Live FlowIQ usage</span>
+        </div>
+        <div class="proof-label">Verified customer proof: outcomes are based on Biomek's live use of FlowIQ.</div>
         <p class="fine-print">The R60,000-R70,000 monthly saving reflects actual capacity and system-cost savings from avoided extra admin hiring, less manual bookkeeping workload and replaced legacy ERP cost. Biomek also avoided potential additional employment costs of about R50,000/month by scaling operations without adding planned admin capacity. The broader R100,000/month figure is a holistic business-impact estimate that also considers dead-stock holding, cash-flow, interest/capital-cost effects and faster stock allocation. These are customer outcomes, not generic guarantees.</p>
       </div>
       <aside class="metric-card" aria-label="Biomek FlowIQ outcomes">
@@ -94,6 +108,26 @@
     <section class="section">
       <h2>The Operational Problem</h2>
       <p class="copy">Before FlowIQ, Biomek Pty Ltd relied heavily on spreadsheets for imports, landed cost calculations, supplier ordering, sales forecasts, SKU forecasts, sales history, stock projections, stock takes, stock transfers and warehouse-level landed cost recalculations. Tasks were managed manually through email, and disconnected workflows forced staff to cross-check formulas, spreadsheets, supplier orders, warehouse movement and reporting manually. The business had one full-time bookkeeping/accounting role and one part-time person supporting paperwork-heavy processes, while also looking at two extra warehouse admin hires to keep up with operational load.</p>
+      <div class="before-after">
+        <article>
+          <h3>Before FlowIQ</h3>
+          <ul>
+            <li>Imports, landed cost, stock takes and stock transfers managed through spreadsheets.</li>
+            <li>Month-end and bookkeeping work required heavy manual checking.</li>
+            <li>Warehouse-level stock decisions were harder to make quickly.</li>
+            <li>Leadership spent more time cross-checking reports and staff inputs.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>After FlowIQ</h3>
+          <ul>
+            <li>One operating view across imports, inventory, forecasting, payroll and accounting.</li>
+            <li>R60,000-R70,000/month operational capacity and system-cost savings reported.</li>
+            <li>Better landed cost visibility, cash-flow planning and stock allocation.</li>
+            <li>Founder time shifted toward business growth instead of manual system management.</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
     <section class="section grid">
@@ -128,7 +162,7 @@
 
     <section class="quote-card">
       <blockquote>“FlowIQ helped us move off spreadsheets, speed up payroll and month-end, avoid extra admin capacity as the business scales, and reduce CEO time spent managing manual systems and processes. It has been a game changer for the business and for my own stress and mental capacity. Based on the value FlowIQ has brought to the business, the Professional package has paid for itself many times over.”</blockquote>
-      <cite>Biomek Pty Ltd operational result, using FlowIQ Professional Enterprise</cite>
+      <cite>Founder, Biomek Pty Ltd, FlowIQ Professional Enterprise customer</cite>
     </section>
 
     <section class="section grid">
@@ -158,6 +192,8 @@
         </ul>
       </article>
     </section>
+
+    <p class="fine-print">Results are customer-reported and not guaranteed. Savings and capacity gains depend on company size, operational complexity, implementation quality, workflow adoption and the processes being replaced.</p>
 
     <section class="final-cta">
       <h2>Want to see where FlowIQ can recover operational capacity in your business?</h2>

@@ -55,8 +55,16 @@
 
 # AI search landing pages (must stay before canonical/content redirects)
 [[redirects]]
+  from = "/customers"
+  to = "/customers/index.html"
+  status = 200
+[[redirects]]
   from = "/customers/biomek-case-study"
   to = "/customers/biomek-case-study.html"
+  status = 200
+[[redirects]]
+  from = "/customers/ce-legal-case-study"
+  to = "/customers/ce-legal-case-study.html"
   status = 200
 [[redirects]]
   from = "/true-landed-cost-software"

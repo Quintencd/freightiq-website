@@ -24,7 +24,7 @@
   <link rel="shortcut icon" href="/favicon.ico?v=2">
   <link rel="preload" as="image" href="/assets/img/generated/operations-command-story.webp" imagesrcset="/assets/img/generated/operations-command-story-960.webp 960w, /assets/img/generated/operations-command-story.webp 1672w" imagesizes="(max-width: 900px) 100vw, 50vw" type="image/webp" fetchpriority="high">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/flowiq-light.css?v=12">
+  <link rel="stylesheet" href="/flowiq-light.css?v=13">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -100,7 +100,67 @@
         <div class="generated-hero-panel story-reveal">
           <img src="/assets/img/generated/operations-command-story.webp" srcset="/assets/img/generated/operations-command-story-960.webp 960w, /assets/img/generated/operations-command-story.webp 1672w" sizes="(max-width: 900px) 100vw, 50vw" alt="FlowIQ business operations command scene showing office, factory, warehouse, stock, tasks, finance, and reporting dashboards"
             width="1672" height="941" loading="eager" fetchpriority="high" decoding="async">
+          <div class="hero-motion-stack" aria-hidden="true">
+            <span>Shipment cost updated</span>
+            <span>Forecast risk detected</span>
+            <span>Month-end ready</span>
+          </div>
           <span class="hero-live-badge">Landed cost, stock and margin control</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="homepage-live-flow-section mb-16 story-reveal">
+      <div>
+        <span class="section-kicker">Live Business Flow</span>
+        <h2>See the work moving across your business.</h2>
+        <p>FlowIQ connects import cost, stock planning, sales, invoicing, accounting and payroll so teams can see what changed, what needs attention and where margin is being recovered.</p>
+        <div class="live-flow-stats" aria-label="FlowIQ live workflow signals">
+          <span><strong>6</strong> connected workflows</span>
+          <span><strong>1</strong> operating view</span>
+          <span><strong>Live</strong> exceptions and follow-ups</span>
+        </div>
+      </div>
+      <div class="live-flow-visual" aria-label="Animated FlowIQ operating workflow">
+        <div class="live-window">
+          <div class="live-window__bar"><span></span><span></span><span></span><strong>FlowIQ operations layer</strong></div>
+          <div class="live-pipeline">
+            <article>
+              <i data-lucide="ship" class="w-5 h-5"></i>
+              <strong>ImportIQ</strong>
+              <span>Landed cost confirmed</span>
+            </article>
+            <article>
+              <i data-lucide="boxes" class="w-5 h-5"></i>
+              <strong>InventoryIQ</strong>
+              <span>Warehouse stock rebalanced</span>
+            </article>
+            <article>
+              <i data-lucide="trending-up" class="w-5 h-5"></i>
+              <strong>ForecastIQ</strong>
+              <span>Fast movers flagged</span>
+            </article>
+            <article>
+              <i data-lucide="file-text" class="w-5 h-5"></i>
+              <strong>InvoiceIQ</strong>
+              <span>Customer invoice ready</span>
+            </article>
+            <article>
+              <i data-lucide="calculator" class="w-5 h-5"></i>
+              <strong>AccountingIQ</strong>
+              <span>Journal posted</span>
+            </article>
+            <article>
+              <i data-lucide="users" class="w-5 h-5"></i>
+              <strong>PayrollIQ</strong>
+              <span>Commission synced</span>
+            </article>
+          </div>
+          <div class="live-alert-row">
+            <span><i data-lucide="check-circle-2" class="w-4 h-4"></i> Stock risk lowered</span>
+            <span><i data-lucide="circle-dollar-sign" class="w-4 h-4"></i> Margin visible</span>
+            <span><i data-lucide="clock-3" class="w-4 h-4"></i> Follow-up due today</span>
+          </div>
         </div>
       </div>
     </section>
@@ -134,10 +194,39 @@
       </div>
     </section>
 
+    <section class="homepage-module-motion-section mb-16 story-reveal">
+      <div class="homepage-section-heading">
+        <span class="section-kicker">Module walkthroughs</span>
+        <h2>Product stories that already feel ready for video.</h2>
+      </div>
+      <div class="module-motion-grid">
+        <a href="/modules/importiq.html" class="module-motion-card">
+          <img src="/assets/img/modules/thumb-importiq.webp" alt="ImportIQ landed cost workflow preview" loading="lazy" width="720" height="405">
+          <span>ImportIQ</span>
+          <strong>True landed cost and shipment visibility</strong>
+        </a>
+        <a href="/modules/forecastiq.html" class="module-motion-card">
+          <img src="/assets/img/modules/thumb-forecastiq.webp" alt="ForecastIQ stock planning preview" loading="lazy" width="720" height="405">
+          <span>ForecastIQ</span>
+          <strong>Stock forecasting and replenishment planning</strong>
+        </a>
+        <a href="/modules/accountingiq.html" class="module-motion-card">
+          <img src="/assets/img/modules/accountingiq-real-positive.webp" alt="AccountingIQ financial workflow preview" loading="lazy" width="720" height="405">
+          <span>AccountingIQ</span>
+          <strong>Accounting visibility and connected journals</strong>
+        </a>
+        <a href="/modules/taskiq.html" class="module-motion-card">
+          <img src="/assets/img/modules/thumb-taskiq.webp" alt="TaskIQ workflow tracking preview" loading="lazy" width="720" height="405">
+          <span>TaskIQ</span>
+          <strong>Tasks, bottlenecks and staff follow-up</strong>
+        </a>
+      </div>
+    </section>
+
     <section class="homepage-proof-section mb-16 story-reveal">
       <div class="homepage-section-heading">
         <span class="section-kicker">Customer proof</span>
-        <h2>Biomek moved off spreadsheets and recovered operational capacity</h2>
+        <h2>Real operators are replacing fragmented work with FlowIQ</h2>
       </div>
       <div class="proof-grid">
         <article>
@@ -149,15 +238,32 @@
           <span>Reported Biomek ROI outcome</span>
         </article>
         <article>
-          <p>ForecastIQ helped reduce out-of-stock liability by 80% while improving replenishment decisions and freeing cash from slow-moving stock.</p>
-          <span>Forecasting and stock planning impact</span>
+          <p>C&amp;E Legal replaced five disconnected subscriptions and apps with one FlowIQ ecosystem across sales, work, invoicing, tasks, accounting, payroll and AccountingIQ HQ.</p>
+          <span>C&amp;E Legal, Growth Plan customer</span>
         </article>
       </div>
       <div class="proof-bullets" aria-label="FlowIQ platform proof points">
         <span><i data-lucide="activity" class="w-4 h-4"></i> 1,200+ SKUs</span>
         <span><i data-lucide="warehouse" class="w-4 h-4"></i> 5 warehouses</span>
         <span><i data-lucide="network" class="w-4 h-4"></i> 5 branches</span>
-        <a href="/customers/biomek-case-study" class="inline-flex items-center gap-2 text-orange-600 font-black">Read the case study <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        <span><i data-lucide="briefcase-business" class="w-4 h-4"></i> 18 AccountingIQ HQ clients</span>
+      </div>
+      <div class="case-study-link-grid" aria-label="Customer case studies">
+        <a href="/customers/biomek-case-study" class="case-study-link-card">
+          <span class="case-study-link-card__eyebrow">5/5 customer review</span>
+          <strong>Biomek Pty Ltd case study</strong>
+          <span>Importing, inventory, landed cost, forecasting, payroll and month-end ROI.</span>
+          <em>Read Biomek case study <i data-lucide="arrow-right" class="w-4 h-4"></i></em>
+        </a>
+        <a href="/customers/ce-legal-case-study" class="case-study-link-card">
+          <span class="case-study-link-card__eyebrow">5/5 customer review</span>
+          <strong>C&amp;E Legal case study</strong>
+          <span>Legal operations, AccountingIQ HQ, client financials, payroll and task visibility.</span>
+          <em>Read C&amp;E Legal case study <i data-lucide="arrow-right" class="w-4 h-4"></i></em>
+        </a>
+      </div>
+      <div class="mt-5">
+        <a href="/customers" class="inline-flex items-center gap-2 text-slate-700 hover:text-orange-600 font-black">View all customer reviews <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
       </div>
     </section>
 
