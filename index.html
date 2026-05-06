@@ -86,10 +86,20 @@
     .flow-marquee:after{right:0;background:linear-gradient(270deg,#fff,rgba(255,255,255,0))}
     .flow-marquee__track{display:flex;width:max-content;gap:.85rem;animation:flow-scroll 34s linear infinite}
     .flow-marquee:hover .flow-marquee__track{animation-play-state:paused}
-    .flow-card{width:18rem;min-height:8rem;display:grid;align-content:start;gap:.55rem;border:1px solid #e2e8f0;border-radius:1.1rem;background:#fff;padding:1rem;box-shadow:0 16px 40px rgba(15,23,42,.07)}
-    .flow-card i{color:#f97316}.flow-card strong{color:#0f172a;font-size:1.08rem;line-height:1.1;font-weight:900}.flow-card span{color:#64748b;font-size:.88rem;line-height:1.35;font-weight:750}
-    .flow-card--dark{background:#0f172a;border-color:#1e293b;box-shadow:0 22px 60px rgba(15,23,42,.22)}
-    .flow-card--dark strong{color:#fff}.flow-card--dark span{color:#cbd5e1}
+    .flow-card{--flow-accent:#f97316;--flow-glow:rgba(249,115,22,.16);--flow-border:#fed7aa;--flow-soft:#fff7ed;--flow-icon:#ffedd5;width:18rem;min-height:8rem;display:grid;align-content:start;gap:.55rem;border:1px solid var(--flow-border);border-radius:1.1rem;background:linear-gradient(145deg,#fff 0%,var(--flow-soft) 100%);padding:1rem;box-shadow:0 16px 40px rgba(15,23,42,.07),0 0 0 1px rgba(255,255,255,.72) inset,0 0 30px var(--flow-glow)}
+    .flow-card i{width:2.45rem!important;height:2.45rem!important;display:grid!important;place-items:center!important;border-radius:.85rem!important;background:var(--flow-icon)!important;border:1px solid var(--flow-border)!important;color:var(--flow-accent)!important;padding:.45rem!important;box-shadow:0 10px 24px var(--flow-glow)!important}.flow-card strong{color:#0f172a;font-size:1.08rem;line-height:1.1;font-weight:900}.flow-card span{color:#64748b;font-size:.88rem;line-height:1.35;font-weight:750}
+    .flow-card--import{--flow-accent:#f97316;--flow-glow:rgba(249,115,22,.22);--flow-border:#fed7aa;--flow-soft:#fff7ed;--flow-icon:#ffedd5}
+    .flow-card--inventory{--flow-accent:#2563eb;--flow-glow:rgba(37,99,235,.18);--flow-border:#bfdbfe;--flow-soft:#eff6ff;--flow-icon:#dbeafe}
+    .flow-card--forecast{--flow-accent:#16a34a;--flow-glow:rgba(22,163,74,.18);--flow-border:#bbf7d0;--flow-soft:#f0fdf4;--flow-icon:#dcfce7}
+    .flow-card--sales{--flow-accent:#0891b2;--flow-glow:rgba(8,145,178,.18);--flow-border:#a5f3fc;--flow-soft:#ecfeff;--flow-icon:#cffafe}
+    .flow-card--invoice{--flow-accent:#7c3aed;--flow-glow:rgba(124,58,237,.16);--flow-border:#ddd6fe;--flow-soft:#f5f3ff;--flow-icon:#ede9fe}
+    .flow-card--accounting{--flow-accent:#f59e0b;--flow-glow:rgba(245,158,11,.2);--flow-border:#fde68a;--flow-soft:#fffbeb;--flow-icon:#fef3c7}
+    .flow-card--payroll{--flow-accent:#0f766e;--flow-glow:rgba(15,118,110,.18);--flow-border:#99f6e4;--flow-soft:#f0fdfa;--flow-icon:#ccfbf1}
+    .flow-card--task{--flow-accent:#db2777;--flow-glow:rgba(219,39,119,.15);--flow-border:#fbcfe8;--flow-soft:#fdf2f8;--flow-icon:#fce7f3}
+    .flow-card--manufacturing{--flow-accent:#475569;--flow-glow:rgba(71,85,105,.16);--flow-border:#cbd5e1;--flow-soft:#f8fafc;--flow-icon:#e2e8f0}
+    .flow-card--reports{--flow-accent:#ea580c;--flow-glow:rgba(234,88,12,.18);--flow-border:#fed7aa;--flow-soft:#fff7ed;--flow-icon:#ffedd5}
+    .flow-card--dark{background:radial-gradient(circle at 0% 0%,var(--flow-glow),transparent 12rem),linear-gradient(145deg,#0f172a,#172033);border-color:var(--flow-accent);box-shadow:0 22px 60px rgba(15,23,42,.22),0 0 34px var(--flow-glow)}
+    .flow-card--dark strong{color:#fff}.flow-card--dark span{color:#cbd5e1}.flow-card--dark i{background:rgba(255,255,255,.08)!important;border-color:var(--flow-accent)!important}
     .flow-connector{align-self:center;width:2.2rem;height:2px;background:linear-gradient(90deg,#f97316,#fdba74);opacity:.9}
     @keyframes flow-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
     @media(max-width:960px){.fresh-flow-band__head{display:grid}.flow-card{width:16rem}.flow-marquee:before,.flow-marquee:after{width:3rem}}
@@ -159,26 +169,26 @@
       </div>
       <div class="flow-marquee" aria-hidden="true">
         <div class="flow-marquee__track">
-          <article class="flow-card flow-card--dark"><i data-lucide="ship" class="w-6 h-6"></i><strong>ImportIQ</strong><span>Shipment tracking, supplier payments and true landed cost.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="boxes" class="w-6 h-6"></i><strong>InventoryIQ</strong><span>SKU, warehouse, transfer and stock movement control.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="trending-up" class="w-6 h-6"></i><strong>ForecastIQ</strong><span>Fast movers, slow movers, reorder planning and stock risk.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="handshake" class="w-6 h-6"></i><strong>SalesIQ</strong><span>Pipelines, customer activity and sales follow-ups.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="file-text" class="w-6 h-6"></i><strong>InvoiceIQ</strong><span>Quotes, invoices, delivery notes, settlements and rebates.</span></article><span class="flow-connector"></span>
-          <article class="flow-card flow-card--dark"><i data-lucide="calculator" class="w-6 h-6"></i><strong>AccountingIQ</strong><span>Bank matching, journals, month-end and management accounts.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="users" class="w-6 h-6"></i><strong>PayrollIQ</strong><span>Payslips, commissions, payroll journals and staff workflows.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="list-checks" class="w-6 h-6"></i><strong>TaskIQ</strong><span>Tasks, bottlenecks, approvals and operational accountability.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="factory" class="w-6 h-6"></i><strong>Manufacturing</strong><span>BOMs, work orders, production stock and replenishment.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="bar-chart-3" class="w-6 h-6"></i><strong>ReportsIQ</strong><span>Performance, margin, stock, sales and operational reporting.</span></article><span class="flow-connector"></span>
-          <article class="flow-card flow-card--dark"><i data-lucide="ship" class="w-6 h-6"></i><strong>ImportIQ</strong><span>Shipment tracking, supplier payments and true landed cost.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="boxes" class="w-6 h-6"></i><strong>InventoryIQ</strong><span>SKU, warehouse, transfer and stock movement control.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="trending-up" class="w-6 h-6"></i><strong>ForecastIQ</strong><span>Fast movers, slow movers, reorder planning and stock risk.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="handshake" class="w-6 h-6"></i><strong>SalesIQ</strong><span>Pipelines, customer activity and sales follow-ups.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="file-text" class="w-6 h-6"></i><strong>InvoiceIQ</strong><span>Quotes, invoices, delivery notes, settlements and rebates.</span></article><span class="flow-connector"></span>
-          <article class="flow-card flow-card--dark"><i data-lucide="calculator" class="w-6 h-6"></i><strong>AccountingIQ</strong><span>Bank matching, journals, month-end and management accounts.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="users" class="w-6 h-6"></i><strong>PayrollIQ</strong><span>Payslips, commissions, payroll journals and staff workflows.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="list-checks" class="w-6 h-6"></i><strong>TaskIQ</strong><span>Tasks, bottlenecks, approvals and operational accountability.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="factory" class="w-6 h-6"></i><strong>Manufacturing</strong><span>BOMs, work orders, production stock and replenishment.</span></article><span class="flow-connector"></span>
-          <article class="flow-card"><i data-lucide="bar-chart-3" class="w-6 h-6"></i><strong>ReportsIQ</strong><span>Performance, margin, stock, sales and operational reporting.</span></article>
+          <article class="flow-card flow-card--import flow-card--dark"><i data-lucide="ship" class="w-6 h-6"></i><strong>ImportIQ</strong><span>Shipment tracking, supplier payments and true landed cost.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--inventory"><i data-lucide="boxes" class="w-6 h-6"></i><strong>InventoryIQ</strong><span>SKU, warehouse, transfer and stock movement control.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--forecast"><i data-lucide="trending-up" class="w-6 h-6"></i><strong>ForecastIQ</strong><span>Fast movers, slow movers, reorder planning and stock risk.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--sales"><i data-lucide="handshake" class="w-6 h-6"></i><strong>SalesIQ</strong><span>Pipelines, customer activity and sales follow-ups.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--invoice"><i data-lucide="file-text" class="w-6 h-6"></i><strong>InvoiceIQ</strong><span>Quotes, invoices, delivery notes, settlements and rebates.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--accounting flow-card--dark"><i data-lucide="calculator" class="w-6 h-6"></i><strong>AccountingIQ</strong><span>Bank matching, journals, month-end and management accounts.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--payroll"><i data-lucide="users" class="w-6 h-6"></i><strong>PayrollIQ</strong><span>Payslips, commissions, payroll journals and staff workflows.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--task"><i data-lucide="list-checks" class="w-6 h-6"></i><strong>TaskIQ</strong><span>Tasks, bottlenecks, approvals and operational accountability.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--manufacturing"><i data-lucide="factory" class="w-6 h-6"></i><strong>Manufacturing</strong><span>BOMs, work orders, production stock and replenishment.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--reports"><i data-lucide="bar-chart-3" class="w-6 h-6"></i><strong>ReportsIQ</strong><span>Performance, margin, stock, sales and operational reporting.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--import flow-card--dark"><i data-lucide="ship" class="w-6 h-6"></i><strong>ImportIQ</strong><span>Shipment tracking, supplier payments and true landed cost.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--inventory"><i data-lucide="boxes" class="w-6 h-6"></i><strong>InventoryIQ</strong><span>SKU, warehouse, transfer and stock movement control.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--forecast"><i data-lucide="trending-up" class="w-6 h-6"></i><strong>ForecastIQ</strong><span>Fast movers, slow movers, reorder planning and stock risk.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--sales"><i data-lucide="handshake" class="w-6 h-6"></i><strong>SalesIQ</strong><span>Pipelines, customer activity and sales follow-ups.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--invoice"><i data-lucide="file-text" class="w-6 h-6"></i><strong>InvoiceIQ</strong><span>Quotes, invoices, delivery notes, settlements and rebates.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--accounting flow-card--dark"><i data-lucide="calculator" class="w-6 h-6"></i><strong>AccountingIQ</strong><span>Bank matching, journals, month-end and management accounts.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--payroll"><i data-lucide="users" class="w-6 h-6"></i><strong>PayrollIQ</strong><span>Payslips, commissions, payroll journals and staff workflows.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--task"><i data-lucide="list-checks" class="w-6 h-6"></i><strong>TaskIQ</strong><span>Tasks, bottlenecks, approvals and operational accountability.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--manufacturing"><i data-lucide="factory" class="w-6 h-6"></i><strong>Manufacturing</strong><span>BOMs, work orders, production stock and replenishment.</span></article><span class="flow-connector"></span>
+          <article class="flow-card flow-card--reports"><i data-lucide="bar-chart-3" class="w-6 h-6"></i><strong>ReportsIQ</strong><span>Performance, margin, stock, sales and operational reporting.</span></article>
         </div>
       </div>
     </section>

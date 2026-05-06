@@ -22,6 +22,18 @@ Adjusted the local homepage design after review so the first page explains what 
   - Manufacturing
   - ReportsIQ
 - Kept colours constrained to FlowIQ navy, orange, white and slate neutrals.
+- Added per-module icon accents, matching card borders and soft glow treatments so each moving card is easier to scan:
+  - ImportIQ: orange/navy
+  - InventoryIQ: blue
+  - ForecastIQ: green
+  - SalesIQ: cyan
+  - InvoiceIQ: violet
+  - AccountingIQ: amber/navy
+  - PayrollIQ: teal
+  - TaskIQ: pink
+  - Manufacturing: slate
+  - ReportsIQ: orange
+- Used explicit colour variables instead of newer `color-mix()` CSS so the accent cards render more consistently across browsers.
 
 ## Rationale
 
@@ -31,8 +43,10 @@ The homepage needed to feel more alive without becoming cluttered. A horizontal 
 
 - 10-15%: The marquee motion may distract some visitors if it feels too busy. Mitigation: animation is slow, pauses on hover, and uses restrained FlowIQ colours.
 - 10-15%: The repeated hidden duplicate card set increases homepage HTML size. Mitigation: this avoids JavaScript and keeps the animation reliable for static hosting.
+- 10-15%: More colour in the module cards can become visually noisy if overused. Mitigation: accents are limited to icons, borders and soft glows while the cards remain mostly white/navy.
 
 ## Verification
 
-- Pending local build and visual check.
-- No Netlify deployment should be run from this change; founder will deploy manually.
+- `npm run build` completed successfully.
+- Local browser check at `http://127.0.0.1:3333/` confirmed the new module flow band renders between the solution cards and the customer proof section.
+- No Netlify deployment was run; founder will deploy manually.
