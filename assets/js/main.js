@@ -81,6 +81,7 @@
                 '</div>' +
               '</div>' +
               '<a href="/modules" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Modules</a>' +
+              '<a href="/tools/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Tools</a>' +
               '<a href="/pricing" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Pricing</a>' +
               '<a href="https://app.flowiq.info/login" class="text-slate-600 hover:text-orange-600 font-semibold transition-colors text-sm uppercase tracking-wide">Login</a>' +
               '<a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-orange-500/20 transition-all hover:shadow-orange-500/40 hover:-translate-y-0.5">Start Free Trial</a>' +
@@ -101,6 +102,7 @@
               '</div>' +
             '</div>' +
             '<a href="/modules" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Modules</a>' +
+            '<a href="/tools/" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Tools</a>' +
             '<a href="/pricing" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Pricing</a>' +
             '<a href="https://app.flowiq.info/login" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Login</a>' +
             '<a href="/signup" class="block bg-freight-orange text-white px-4 py-3 rounded-xl text-center font-bold text-lg shadow-md">Start Free Trial</a>' +
