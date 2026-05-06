@@ -16,19 +16,17 @@
   <meta property="og:image" content="https://www.flowiq.info/assets/img/customers/biomek-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+  <link rel="icon" type="image/png" href="/flowiq-logo.png?v=2">
+  <link rel="shortcut icon" href="/favicon.ico?v=2">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="/flowiq-light.css?v=12">
   <style>
     body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
     .case-shell { max-width: 1120px; margin: 0 auto; padding: 110px 20px 56px; }
-    .case-nav { position: fixed; inset: 0 0 auto; z-index: 20; background: rgba(255,255,255,.9); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(148,163,184,.22); }
-    .case-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; gap: 18px; }
-    .brand { font-weight: 900; text-decoration: none; color: #0f172a; }
-    .nav-links { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; font-size: 14px; font-weight: 700; }
-    .nav-links a { color: #475569; text-decoration: none; }
     .nav-cta, .primary { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: #f97316; color: #fff !important; padding: 11px 18px; text-decoration: none; font-weight: 900; }
     .kicker { color: #ea580c; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; font-weight: 900; }
     .hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr); gap: 34px; align-items: start; }
-    h1 { font-size: clamp(42px, 7vw, 72px); line-height: .95; letter-spacing: -.04em; margin: 18px 0; }
+    .case-shell h1 { font-size: clamp(42px, 7vw, 72px); line-height: .95; letter-spacing: -.04em; margin: 18px 0; font-weight: 900; color: #0f172a; }
     .lead { color: #475569; font-size: clamp(18px, 2.2vw, 23px); line-height: 1.55; max-width: 760px; }
     .metric-card, .panel, .quote-card { background: rgba(255,255,255,.86); border: 1px solid rgba(148,163,184,.24); border-radius: 12px; box-shadow: 0 24px 70px rgba(15,23,42,.08); }
     .customer-logo { display: inline-flex; align-items: center; justify-content: center; padding: 0; margin: 0 0 18px; background: transparent; border: 0; box-shadow: none; }
@@ -39,7 +37,7 @@
     .metric strong { display: block; font-size: clamp(30px, 5vw, 50px); line-height: 1; color: #0f172a; }
     .metric span { display: block; margin-top: 7px; color: #64748b; font-weight: 700; }
     .section { margin-top: 42px; }
-    h2 { font-size: clamp(28px, 4vw, 46px); line-height: 1.03; letter-spacing: -.035em; margin: 0 0 16px; }
+    .case-shell h2 { font-size: clamp(28px, 4vw, 46px); line-height: 1.03; letter-spacing: -.035em; margin: 0 0 16px; font-weight: 900; color: #0f172a; }
     .copy { color: #475569; font-size: 17px; line-height: 1.75; max-width: 850px; }
     .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
     .panel { padding: 22px; }
@@ -47,7 +45,7 @@
     .panel p, .panel li { color: #475569; line-height: 1.65; }
     .panel ul { padding-left: 18px; margin: 12px 0 0; }
     .quote-card { padding: 28px; margin-top: 34px; border-left: 5px solid #f97316; }
-    blockquote { margin: 0; font-size: clamp(22px, 3vw, 34px); line-height: 1.2; letter-spacing: -.02em; font-weight: 900; }
+    .case-shell blockquote { margin: 0; font-size: clamp(22px, 3vw, 34px); line-height: 1.2; letter-spacing: -.02em; font-weight: 900; }
     .quote-card cite { display: block; margin-top: 14px; color: #64748b; font-style: normal; font-weight: 800; }
     .outcome-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     .outcome-list div { padding: 18px; background: #fff; border: 1px solid rgba(148,163,184,.24); border-radius: 12px; }
@@ -58,25 +56,17 @@
     .fine-print { color: #64748b; font-size: 13px; line-height: 1.6; margin-top: 18px; }
     footer { max-width: 1120px; margin: 0 auto; padding: 28px 20px 42px; border-top: 1px solid rgba(148,163,184,.24); color: #64748b; display: flex; gap: 16px; flex-wrap: wrap; }
     footer a { color: #475569; font-weight: 700; text-decoration: none; }
-    @media (max-width: 820px) { .hero, .grid, .outcome-list { grid-template-columns: 1fr; } .case-shell { padding-top: 98px; } .case-nav-inner { align-items: flex-start; flex-direction: column; } }
+    @media (max-width: 820px) { .hero, .grid, .outcome-list { grid-template-columns: 1fr; } .case-shell { padding-top: 98px; } }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Biomek Pty Ltd Case Study: Moving off spreadsheets with FlowIQ","description":"Biomek Pty Ltd uses FlowIQ to manage imports, inventory, forecasting, accounting, payroll and branch operations with R60,000-R70,000 monthly operational capacity and system-cost savings, plus broader holistic impact approaching R100,000/month when stock, cash-flow and capital-cost effects are included.","image":"https://www.flowiq.info/assets/img/customers/biomek-logo.png","datePublished":"2026-05-06","dateModified":"2026-05-06","author":{"@type":"Organization","name":"FlowIQ"},"publisher":{"@type":"Organization","name":"FlowIQ","logo":{"@type":"ImageObject","url":"https://www.flowiq.info/flowiq-logo.png"}},"mainEntityOfPage":"https://www.flowiq.info/customers/biomek-case-study"},{"@type":"Review","itemReviewed":{"@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web"},"author":{"@type":"Organization","name":"Biomek Pty Ltd","logo":"https://www.flowiq.info/assets/img/customers/biomek-logo.png"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"FlowIQ helped Biomek Pty Ltd move fully off spreadsheets, speed up payroll and month-end, improve landed cost visibility, reduce out-of-stock risk, improve cash-flow planning, and create R60,000-R70,000 per month in operational capacity and system-cost savings, with broader holistic impact approaching R100,000/month when stock, cash-flow and capital-cost effects are included."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"FlowIQ","item":"https://www.flowiq.info/"},{"@type":"ListItem","position":2,"name":"Customers","item":"https://www.flowiq.info/customers/biomek-case-study"},{"@type":"ListItem","position":3,"name":"Biomek Pty Ltd Case Study","item":"https://www.flowiq.info/customers/biomek-case-study"}]}]}
   </script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 
-<body data-page-template="case-study" data-page-intent="customer_proof" data-page-topic="Biomek FlowIQ ROI case study">
-  <nav class="case-nav">
-    <div class="case-nav-inner">
-      <a class="brand" href="/">FlowIQ</a>
-      <div class="nav-links">
-        <a href="/landed-cost-calculator">Landed Cost</a>
-        <a href="/erp-for-importers">Importers</a>
-        <a href="/pricing">Pricing</a>
-        <a class="nav-cta" href="/signup" data-analytics="book_demo" data-analytics-position="case_study_nav">Book Demo</a>
-      </div>
-    </div>
-  </nav>
+<body class="marketing-shell bg-slate-50 text-slate-900 selection:bg-orange-100 selection:text-orange-900 overflow-x-hidden" data-page-template="case-study" data-page-intent="customer_proof" data-page-topic="Biomek FlowIQ ROI case study">
+  <div class="site-atmosphere fixed inset-0 z-[-1] h-full w-full" aria-hidden="true"></div>
+  <nav></nav>
 
   <main class="case-shell">
     <section class="hero">
@@ -189,6 +179,7 @@
       clarityProjectId: 'vqjuz4ha1k'
     };
   </script>
+  <script src="/assets/js/main.js" defer></script>
   <script src="/assets/website-analytics.js"></script>
 </body>
 </html>

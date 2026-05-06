@@ -1,54 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.flowiq.info/</loc></url>
-  <url><loc>https://www.flowiq.info/pricing.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/importiq.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/inventoryiq.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/forecastiq.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/dashboardiq.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/companiesiq.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/accountingiq.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/ecomiq.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/purchaseiq.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/invoiceiq.html</loc></url>
-  <url><loc>https://www.flowiq.info/modules/reportsiq.html</loc></url>
-  <url><loc>https://www.flowiq.info/accounting-software.html</loc></url>
-  <url><loc>https://www.flowiq.info/bookkeeping-software.html</loc></url>
-  <url><loc>https://www.flowiq.info/payroll-software.html</loc></url>
-  <url><loc>https://www.flowiq.info/import-erp-software.html</loc></url>
-  <url><loc>https://www.flowiq.info/inventory-software-for-importers.html</loc></url>
-  <url><loc>https://www.flowiq.info/inventory-forecasting-software.html</loc></url>
-  <url><loc>https://www.flowiq.info/manufacturing-inventory-software.html</loc></url>
-  <url><loc>https://www.flowiq.info/freight-forwarder-software.html</loc></url>
-  <url><loc>https://www.flowiq.info/shipping-cost-calculator.html</loc></url>
-  <url><loc>https://www.flowiq.info/solutions/</loc></url>
-  <url><loc>https://www.flowiq.info/solutions/importers.html</loc></url>
-  <url><loc>https://www.flowiq.info/solutions/distributors.html</loc></url>
-  <url><loc>https://www.flowiq.info/solutions/manufacturers.html</loc></url>
-  <url><loc>https://www.flowiq.info/solutions/multi-branch.html</loc></url>
-  <url><loc>https://www.flowiq.info/solutions/retail-outlets.html</loc></url>
-  <url><loc>https://www.flowiq.info/use-cases/</loc></url>
-  <url><loc>https://www.flowiq.info/use-cases/true-landed-cost.html</loc></url>
-  <url><loc>https://www.flowiq.info/use-cases/supplier-price-creep.html</loc></url>
-  <url><loc>https://www.flowiq.info/tools/</loc></url>
-  <url><loc>https://www.flowiq.info/tools/landed-cost-calculator.html</loc></url>
-  <url><loc>https://www.flowiq.info/tools/import-cost-calculator.html</loc></url>
-  <url><loc>https://www.flowiq.info/tools/container-cost-calculator.html</loc></url>
-  <url><loc>https://www.flowiq.info/tools/freight-cost-calculator.html</loc></url>
-  <url><loc>https://www.flowiq.info/tools/import-duty-calculator.html</loc></url>
-  <url><loc>https://www.flowiq.info/tools/supply-chain-profit-calculator.html</loc></url>
-  <url><loc>https://www.flowiq.info/tools/inventory-forecast-calculator.html</loc></url>
-  <url><loc>https://www.flowiq.info/compare/</loc></url>
-  <url><loc>https://www.flowiq.info/compare/flowiq-vs-spreadsheets.html</loc></url>
-  <url><loc>https://www.flowiq.info/compare/flowiq-vs-odoo.html</loc></url>
-  <url><loc>https://www.flowiq.info/compare/flowiq-vs-legacy-erp.html</loc></url>
-  <url><loc>https://www.flowiq.info/glossary/</loc></url>
-  <url><loc>https://www.flowiq.info/glossary/landed-cost.html</loc></url>
-  <url><loc>https://www.flowiq.info/glossary/incoterms.html</loc></url>
-  <url><loc>https://www.flowiq.info/glossary/customs-duty.html</loc></url>
-  <url><loc>https://www.flowiq.info/glossary/fifo.html</loc></url>
-  <url><loc>https://www.flowiq.info/glossary/cbm.html</loc></url>
+  <url><loc>https://www.flowiq.info/</loc><lastmod>2026-05-06</lastmod></url>
+  <url><loc>https://www.flowiq.info/landing.html</loc><lastmod>2026-05-06</lastmod></url>
+  <url><loc>https://www.flowiq.info/pricing.html</loc><lastmod>2026-05-06</lastmod></url>
+  <url><loc>https://www.flowiq.info/payroll-software-south-africa.html</loc><lastmod>2026-05-06</lastmod></url>
+  <url><loc>https://www.flowiq.info/customers/biomek-case-study</loc><lastmod>2026-05-06</lastmod></url>
   <url><loc>https://www.flowiq.info/true-landed-cost-software</loc><lastmod>2026-05-06</lastmod></url>
   <url><loc>https://www.flowiq.info/landed-cost-calculator</loc><lastmod>2026-05-06</lastmod></url>
   <url><loc>https://www.flowiq.info/import-cost-management</loc><lastmod>2026-05-06</lastmod></url>
@@ -75,5 +31,4 @@
   <url><loc>https://www.flowiq.info/how-to-forecast-inventory-properly</loc><lastmod>2026-05-06</lastmod></url>
   <url><loc>https://www.flowiq.info/the-hidden-cost-of-manual-erp-processes</loc><lastmod>2026-05-06</lastmod></url>
   <url><loc>https://www.flowiq.info/why-multi-supplier-containers-create-costing-errors</loc><lastmod>2026-05-06</lastmod></url>
-  <url><loc>https://www.flowiq.info/customers/biomek-case-study</loc><lastmod>2026-05-06</lastmod></url>
 </urlset>
