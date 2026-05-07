@@ -34,10 +34,14 @@ Set production build-scope `SECRETS_SCAN_OMIT_KEYS` for non-sensitive keys only:
 - `PLATFORM_SMTP_PORT`
 - `PLATFORM_SMTP_SECURE`
 - `PLATFORM_SMTP_USER`
+- `BUG_REPORT_EMAIL_TO`
+- `SUPPORT_EMAIL_TO`
 
 Real credential-like keys such as SMTP password and Supabase service role were not omitted.
 
 Update: the next production build still failed because Netlify detected `PLATFORM_SMTP_USER` in public pages. That value appears to be a public email/user value already present in website content, so it was added to the omit list. SMTP password and Supabase service role remain unomitted.
+
+Second update: the following production build then failed on `BUG_REPORT_EMAIL_TO`, which is another public contact-recipient email value found in website pages and email templates. Added `BUG_REPORT_EMAIL_TO` and `SUPPORT_EMAIL_TO` to the omit list while keeping credential-bearing keys protected.
 
 ## Verification
 
