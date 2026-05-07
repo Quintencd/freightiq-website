@@ -34,6 +34,7 @@ Adjusted the local homepage design after review so the first page explains what 
   - Manufacturing: slate
   - ReportsIQ: orange
 - Used explicit colour variables instead of newer `color-mix()` CSS so the accent cards render more consistently across browsers.
+- Removed the dark-card override from ImportIQ and AccountingIQ so every moving module card stays bright, tinted and consistent with the light FlowIQ homepage.
 
 ## Rationale
 
@@ -44,6 +45,7 @@ The homepage needed to feel more alive without becoming cluttered. A horizontal 
 - 10-15%: The marquee motion may distract some visitors if it feels too busy. Mitigation: animation is slow, pauses on hover, and uses restrained FlowIQ colours.
 - 10-15%: The repeated hidden duplicate card set increases homepage HTML size. Mitigation: this avoids JavaScript and keeps the animation reliable for static hosting.
 - 10-15%: More colour in the module cards can become visually noisy if overused. Mitigation: accents are limited to icons, borders and soft glows while the cards remain mostly white/navy.
+- 10-15%: The brighter per-module backgrounds could compete with the proof section if reused broadly. Mitigation: the stronger colour treatment is scoped to the moving module belt only.
 
 ## Verification
 
