@@ -188,10 +188,14 @@
                     <a class='text-sm text-slate-300 hover:text-white transition-colors whitespace-nowrap' href='/pricing'>View pricing</a>
                 </div>
 
-                <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3" role="radiogroup" aria-label="Select a FlowIQ plan">
+                <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3" role="radiogroup" aria-label="Select a FlowIQ plan">
+                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="starter_lite">
+                        <div class="text-white font-semibold">Starter Lite</div>
+                        <div class="text-xs text-slate-300">Startups and solo founders</div>
+                    </button>
                     <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="starter">
                         <div class="text-white font-semibold">Starter</div>
-                        <div class="text-xs text-slate-300">Solo founders</div>
+                        <div class="text-xs text-slate-300">Operational starter teams</div>
                     </button>
                     <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="growth_lite">
                         <div class="text-white font-semibold">Growth Lite</div>
@@ -631,8 +635,9 @@
 
             // Plan preselection (pricing -> signup). Safe: does NOT change backend signup payload.
             ;(function initPlanSelection() {
-            const allowedPlans = ['starter', 'growth_lite', 'growth', 'professional', 'scale'];
+            const allowedPlans = ['starter_lite', 'starter', 'growth_lite', 'growth', 'professional', 'scale'];
             const planLabels = {
+                starter_lite: 'Starter Lite',
                 starter: 'Starter',
                 growth_lite: 'Growth Lite',
                 growth: 'Growth',
@@ -640,6 +645,7 @@
                 scale: 'Scale'
             };
             const planCtaLabels = {
+                starter_lite: 'Start Starter Lite Free Trial',
                 starter: 'Start Starter Free Trial',
                 growth_lite: 'Start Growth Lite Free Trial',
                 growth: 'Start Growth Free Trial',

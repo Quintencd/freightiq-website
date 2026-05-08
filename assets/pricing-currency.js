@@ -8,8 +8,8 @@
   };
 
   var basePrices = {
-    monthly: { starter: 790, growth: 5990, professional: 10900, scale: 19900 },
-    annual: { starter: 8532, growth: 64692, professional: 117720, scale: 214920 }
+    monthly: { starter_lite: 299, starter: 790, growth: 5990, professional: 10900, scale: 19900 },
+    annual: { starter_lite: 3229, starter: 8532, growth: 64692, professional: 117720, scale: 214920 }
   };
 
   var symbols = { ZAR: 'R', USD: '$', EUR: 'EUR ' };
@@ -33,7 +33,7 @@
   function applyCurrency() {
     var interval = getBillingInterval();
 
-    ['starter', 'growth', 'professional', 'scale'].forEach(function (plan) {
+    ['starter_lite', 'starter', 'growth', 'professional', 'scale'].forEach(function (plan) {
       var numEl = document.querySelector('.price-' + plan);
       var row = numEl && numEl.closest('div.flex.items-baseline');
       var symEl = row ? row.querySelector('span.text-slate-500.text-xs') : null;

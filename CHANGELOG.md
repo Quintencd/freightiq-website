@@ -1,5 +1,21 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.6] - May 8, 2026
+
+### Starter Lite Positioning
+
+- Updated homepage messaging to lead with `Start simple. Scale smarter.` and the business-platform growth path.
+- Updated pricing page messaging around `Starter Lite` at `R299/month`, natural upgrades, competitor outgrowth, and free migration assistance from Xero, Sage, QuickBooks, and Pastel.
+- Kept the existing `Starter` package available above Starter Lite as the stronger operational entry plan.
+- Added pricing comparison upgrade triggers for multi-warehouse, import costing, forecasting, delivery management, operational dashboards, and inventory intelligence.
+- Updated marketing signup labels to include both `Starter Lite` and `Starter`.
+- Regenerated `pricing-data.json` from the canonical app pricing config.
+
+### Regression Risk Notes (>10%)
+
+- **12-18%**: Homepage CTA attribution may shift because trial signup is now primary instead of demo-first.
+- **10-14%**: Cached pricing data can briefly show older Starter values until deployment/cache refresh.
+
 ## [1.3.5] - April 22, 2026
 
 ### Repo Ownership Hardening

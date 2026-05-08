@@ -4,20 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FlowIQ | Import Cost, Inventory Forecasting & Operational Profit Recovery</title>
+  <title>FlowIQ | Business Platform for Startups, SMEs and Scaling Teams</title>
   <meta name="description"
-    content="FlowIQ helps importers, distributors and manufacturers calculate true landed cost, forecast inventory, manage shipments and recover operational profit without spreadsheet chaos." />
-  <meta name="keywords" content="landed cost software, import cost management, inventory forecasting software, ERP for importers, logistics profitability, operational profit recovery" />
+    content="FlowIQ is the business operating platform that starts simple and scales with you across accounting, inventory, purchasing, sales, operations, and reporting." />
+  <meta name="keywords" content="business operating platform, small business accounting software, inventory software, Xero alternative, Sage alternative, QuickBooks alternative, FlowIQ pricing" />
   <link rel="canonical" href="https://www.flowiq.info/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FlowIQ" />
-  <meta property="og:title" content="FlowIQ | Stop Losing Margin Across Imports, Inventory and Operations" />
-  <meta property="og:description" content="Calculate true landed cost, forecast inventory, manage shipments and recover operational profit without spreadsheet chaos." />
+  <meta property="og:title" content="FlowIQ | Start Simple. Scale Smarter." />
+  <meta property="og:description" content="Accounting and operations in one business platform that grows with you." />
   <meta property="og:url" content="https://www.flowiq.info/" />
   <meta property="og:image" content="https://www.flowiq.info/assets/img/generated/operations-command-story.webp" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="FlowIQ | Import Cost, Inventory Forecasting and Profit Control" />
-  <meta name="twitter:description" content="Operational profit recovery software for importers, distributors and manufacturers." />
+  <meta name="twitter:title" content="FlowIQ | Start Simple. Scale Smarter." />
+  <meta name="twitter:description" content="The business platform that grows with you." />
   <meta name="twitter:image" content="https://www.flowiq.info/assets/img/generated/operations-command-story.webp" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
   <link rel="icon" type="image/png" href="/flowiq-logo.png?v=2">
@@ -100,22 +100,30 @@
     .flow-card--manufacturing{--flow-accent:#4f46e5;--flow-glow:rgba(79,70,229,.22);--flow-border:#c7d2fe;--flow-soft:#f3f4ff;--flow-icon:#e0e7ff}
     .flow-card--reports{--flow-accent:#ea580c;--flow-glow:rgba(234,88,12,.24);--flow-border:#fdba74;--flow-soft:#fff7ed;--flow-icon:#ffedd5}
     .flow-connector{align-self:center;width:2.2rem;height:2px;background:linear-gradient(90deg,#f97316,#fdba74);opacity:.9}
-    .homepage-tour-band{display:grid;grid-template-columns:minmax(0,.72fr) minmax(30rem,1.05fr);align-items:center;gap:clamp(1.5rem,4vw,3rem);margin-top:clamp(3rem,6vw,5rem);border:1px solid #e2e8f0;border-radius:1.9rem;background:radial-gradient(circle at 12% 0%,rgba(249,115,22,.13),transparent 22rem),linear-gradient(180deg,#fff,#f8fafc);box-shadow:0 30px 90px rgba(15,23,42,.09);padding:clamp(1.35rem,4vw,3rem);overflow:hidden}
-    .homepage-tour-band h2{max-width:42rem;color:#0f172a;font-size:clamp(2.3rem,4.8vw,5rem);line-height:.96;font-weight:900;letter-spacing:-.045em}
+    .homepage-tour-band{display:grid;grid-template-columns:minmax(0,1fr) minmax(17rem,.48fr);align-items:center;gap:clamp(1.25rem,3vw,2.5rem);margin-top:clamp(3rem,6vw,5rem);border:1px solid #e2e8f0;border-radius:1.9rem;background:radial-gradient(circle at 12% 0%,rgba(249,115,22,.13),transparent 22rem),linear-gradient(180deg,#fff,#f8fafc);box-shadow:0 30px 90px rgba(15,23,42,.09);padding:clamp(1.35rem,4vw,3rem);overflow:hidden}
+    .homepage-tour-band h2{max-width:42rem;color:#0f172a;font-size:clamp(2.2rem,4.1vw,4.35rem);line-height:.96;font-weight:900;letter-spacing:-.045em}
     .homepage-tour-band p{margin-top:1rem;max-width:37rem;color:#526174;font-size:clamp(1rem,1.6vw,1.18rem);line-height:1.58;font-weight:700}
-    .homepage-tour-band__media{position:relative;border:1px solid rgba(148,163,184,.24);border-radius:1.45rem;background:#fff;box-shadow:0 26px 76px rgba(15,23,42,.13);overflow:hidden}
-    .homepage-tour-band__media img{display:block;width:100%;height:auto}
+    .homepage-tour-preview{position:relative;display:block;width:100%;border:0;border-radius:1.35rem;background:#fff;padding:.55rem;box-shadow:0 24px 70px rgba(15,23,42,.13);overflow:hidden;cursor:pointer;text-align:left}
+    .homepage-tour-preview img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:1rem}
+    .homepage-tour-preview__play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,rgba(15,23,42,.04),rgba(15,23,42,.34));color:#fff;transition:background .18s ease}
+    .homepage-tour-preview:hover .homepage-tour-preview__play{background:linear-gradient(180deg,rgba(15,23,42,.02),rgba(15,23,42,.44))}
+    .homepage-tour-preview__play span{display:inline-flex;align-items:center;gap:.65rem;border-radius:999px;background:#ff7214;padding:.9rem 1.2rem;font-weight:950;box-shadow:0 18px 42px rgba(249,115,22,.34)}
+    .video-modal{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;background:rgba(7,17,38,.78);padding:clamp(1rem,3vw,2.5rem);backdrop-filter:blur(12px)}
+    .video-modal.is-open{display:flex}
+    .video-modal__panel{position:relative;width:min(112rem,96vw);border-radius:1.5rem;background:#020617;padding:.6rem;box-shadow:0 30px 120px rgba(2,6,23,.5)}
+    .video-modal video{display:block;width:100%;height:auto;max-height:88vh;border-radius:1rem;background:#020617}
+    .video-modal__close{position:absolute;right:.75rem;top:.75rem;z-index:2;display:grid;place-items:center;width:2.75rem;height:2.75rem;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(15,23,42,.78);color:#fff}
     .homepage-tour-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.45rem}
     @keyframes flow-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
     @media(max-width:960px){.fresh-flow-band__head,.homepage-tour-band{display:grid;grid-template-columns:1fr}.flow-card{width:16rem}.flow-marquee:before,.flow-marquee:after{width:3rem}}
   </style>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"FlowIQ Operational Profit Recovery Software","url":"https://www.flowiq.info/","description":"FlowIQ helps importers, distributors and manufacturers calculate true landed cost, forecast inventory, manage shipments and recover operational profit without spreadsheet chaos."},{"@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/","description":"Operational profit recovery software for true landed cost, import management, inventory forecasting, shipments, pricing and margin control.","offers":{"@type":"Offer","price":"29","priceCurrency":"USD"}}]}
+  {"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"FlowIQ Business Operating Platform","url":"https://www.flowiq.info/","description":"FlowIQ is the business operating platform that starts simple and scales with you across accounting, inventory, purchasing, sales, operations, and reporting."},{"@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/","description":"Accounting and operations in one business platform for startups, SMEs, and scaling teams.","offers":{"@type":"Offer","price":"299","priceCurrency":"ZAR"}}]}
   </script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 
-<body class="marketing-shell bg-slate-50 text-slate-900 selection:bg-orange-100 selection:text-orange-900 overflow-x-hidden" data-page-template="homepage" data-page-intent="operational_profit_recovery" data-page-topic="landed cost inventory forecasting import operations">
+<body class="marketing-shell bg-slate-50 text-slate-900 selection:bg-orange-100 selection:text-orange-900 overflow-x-hidden" data-page-template="homepage" data-page-intent="business_platform_growth" data-page-topic="accounting inventory operations small business platform">
   <div class="site-atmosphere fixed inset-0 z-[-1] h-full w-full" aria-hidden="true"></div>
 
   <nav></nav>
@@ -123,17 +131,17 @@
   <main class="fresh-home">
     <section id="hero" class="fresh-hero">
       <div class="story-reveal">
-        <span class="section-kicker">Operational profit recovery</span>
-        <h1 class="mt-6">Stop losing margin. <span>See what to fix.</span></h1>
-        <p class="mt-6">FlowIQ is an operating system for growing businesses that need landed cost, stock, sales, invoicing, accounting, payroll, tasks, reporting and branch control in one connected platform.</p>
+        <span class="section-kicker">Start simple. Scale smarter.</span>
+        <h1 class="mt-6">The business platform that grows with you.</h1>
+        <p class="mt-6">FlowIQ brings accounting, stock, purchasing, sales, operations and reporting into one platform, so you can start lean and scale without changing systems later.</p>
         <div class="fresh-actions">
-          <a href="/book-demo.html" data-analytics-event="demo_click" data-analytics-position="fresh_hero_primary" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-orange-500/20 hover:-translate-y-1 transition-all">Book Demo <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
-          <a href="/customers" class="inline-flex items-center justify-center gap-2 glass-panel px-8 py-4 rounded-full font-bold text-lg text-slate-900 hover:-translate-y-0.5 transition-all">Customer Proof <i data-lucide="star" class="w-5 h-5 text-freight-orange"></i></a>
+          <a href="/signup" data-analytics-event="trial_signup_click" data-analytics-position="fresh_hero_primary" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-orange-500/20 hover:-translate-y-1 transition-all">Start Free Trial <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+          <a href="/pricing.html#scale-path" data-analytics-event="view_pricing" data-analytics-position="fresh_hero_secondary" class="inline-flex items-center justify-center gap-2 glass-panel px-8 py-4 rounded-full font-bold text-lg text-slate-900 hover:-translate-y-0.5 transition-all">See How FlowIQ Scales <i data-lucide="trending-up" class="w-5 h-5 text-freight-orange"></i></a>
         </div>
         <div class="fresh-proof-row" aria-label="FlowIQ proof points">
-          <span><i data-lucide="check-circle-2" class="w-4 h-4 text-green-600"></i> R60k-R70k/month reported saving</span>
-          <span><i data-lucide="boxes" class="w-4 h-4 text-orange-600"></i> 1,200+ SKUs managed</span>
-          <span><i data-lucide="star" class="w-4 h-4 text-orange-600"></i> 5/5 customer reviews</span>
+          <span><i data-lucide="check-circle-2" class="w-4 h-4 text-green-600"></i> Accounting + operations together</span>
+          <span><i data-lucide="boxes" class="w-4 h-4 text-orange-600"></i> From 100 SKUs to multi-warehouse scale</span>
+          <span><i data-lucide="star" class="w-4 h-4 text-orange-600"></i> Free migration assistance available</span>
         </div>
       </div>
 
@@ -145,7 +153,7 @@
           <span>Stock risk detected</span>
           <span>Month-end ready</span>
         </div>
-        <span class="hero-live-badge">Landed cost, stock and margin control</span>
+        <span class="hero-live-badge">Accounting, stock and operations in one platform</span>
       </div>
     </section>
 
@@ -208,9 +216,10 @@
           <a href="/book-demo.html" data-analytics-event="demo_click" data-analytics-position="homepage_tour_band" class="inline-flex items-center justify-center gap-2 glass-panel px-7 py-3 rounded-full font-bold text-slate-900 transition-all">Book Demo <i data-lucide="calendar-check" class="w-5 h-5 text-freight-orange"></i></a>
         </div>
       </div>
-      <a href="/walkthroughs" class="homepage-tour-band__media" aria-label="Open FlowIQ walkthroughs">
-        <img src="/assets/walkthroughs/flowiq-module-tour.webp" alt="Animated FlowIQ module walkthrough showing connected FlowIQ modules" width="1920" height="1080" loading="lazy" decoding="async">
-      </a>
+      <button type="button" class="homepage-tour-preview" data-video-open aria-label="Play FlowIQ product overview video">
+        <img src="/assets/videos/flowiq-overview-sales-pitch-v12-poster.jpg" alt="FlowIQ product overview video preview" width="1920" height="1080" loading="lazy" decoding="async">
+        <span class="homepage-tour-preview__play"><span><i data-lucide="play" class="w-5 h-5"></i> Watch overview</span></span>
+      </button>
     </section>
 
     <section class="fresh-section story-reveal">
@@ -258,10 +267,52 @@
     </div>
   </footer>
 
+  <div class="video-modal" id="homepageVideoModal" role="dialog" aria-modal="true" aria-label="FlowIQ product overview video">
+    <div class="video-modal__panel">
+      <button type="button" class="video-modal__close" data-video-close aria-label="Close video"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <video id="homepageOverviewVideo" controls playsinline preload="none" poster="/assets/videos/flowiq-overview-sales-pitch-v12-poster.jpg">
+        <source src="/assets/videos/flowiq-overview-sales-pitch-v12.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
   <script>
     document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
       var menu = document.getElementById('mobileMenu');
       menu?.classList.toggle('hidden');
+    });
+
+    var videoModal = document.getElementById('homepageVideoModal');
+    var overviewVideo = document.getElementById('homepageOverviewVideo');
+    var openVideoButton = document.querySelector('[data-video-open]');
+    var closeVideoButton = document.querySelector('[data-video-close]');
+
+    function closeOverviewVideo() {
+      if (!videoModal) return;
+      videoModal.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (overviewVideo) {
+        overviewVideo.pause();
+        overviewVideo.currentTime = 0;
+      }
+      openVideoButton?.focus();
+    }
+
+    openVideoButton?.addEventListener('click', function () {
+      videoModal?.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      if (overviewVideo) {
+        overviewVideo.play().catch(function () {});
+      }
+      closeVideoButton?.focus();
+    });
+
+    closeVideoButton?.addEventListener('click', closeOverviewVideo);
+    videoModal?.addEventListener('click', function (event) {
+      if (event.target === videoModal) closeOverviewVideo();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && videoModal?.classList.contains('is-open')) closeOverviewVideo();
     });
 
     if (typeof lucide !== 'undefined') lucide.createIcons();

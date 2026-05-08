@@ -1,7 +1,8 @@
 {
-  "generated_at_utc": "2026-05-07T10:35:38.985Z",
+  "generated_at_utc": "2026-05-08T11:24:48.426Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
+    "starter_lite",
     "starter",
     "growth_lite",
     "growth",
@@ -10,6 +11,58 @@
     "enterprise"
   ],
   "plans": {
+    "starter_lite": {
+      "key": "starter_lite",
+      "name": "Starter Lite",
+      "tagline": "Start simple. Scale without changing systems.",
+      "popular": false,
+      "monthly": {
+        "amount": 299,
+        "discount": null,
+        "custom": false
+      },
+      "annual": {
+        "amount": 3229,
+        "discount": 10,
+        "custom": false
+      },
+      "limits": {
+        "users": 1,
+        "skus": 100,
+        "warehouses": 1,
+        "import_shipments_monthly": 0,
+        "export_shipments_monthly": 0,
+        "invoices_monthly": 80,
+        "purchase_orders_monthly": 80,
+        "custom_price_lists": 0
+      },
+      "capabilities": {
+        "bom_manufacturing": false,
+        "forecasting": false,
+        "import_export": false,
+        "automation": false,
+        "support": "email",
+        "dashboard_level": "basic",
+        "custom_integrations": false,
+        "white_labeling": false,
+        "regional_hosting": false,
+        "sla": null
+      },
+      "features": [
+        "dashboard",
+        "taskiq",
+        "companiesiq",
+        "accountingiq",
+        "cashiq",
+        "invoiceiq",
+        "purchaseiq",
+        "inventoryiq",
+        "journaliq",
+        "settings",
+        "user_management"
+      ],
+      "add_ons": {}
+    },
     "starter": {
       "key": "starter",
       "name": "Starter",
@@ -97,7 +150,7 @@
     "growth_lite": {
       "key": "growth_lite",
       "name": "Growth Lite",
-      "tagline": "Starter+ for early sales teams",
+      "tagline": "Starter Lite+ for early sales teams",
       "popular": false,
       "monthly": {
         "amount": 2490,

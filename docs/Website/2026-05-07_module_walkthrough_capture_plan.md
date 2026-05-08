@@ -21,6 +21,56 @@ The `/walkthroughs` page now embeds the animated WebP in the hero as a large mod
 - Enlarged the `/walkthroughs` hero media so the product motion carries more of the first screen.
 - Added the same animated module preview to the homepage as a dedicated "Product tour" band that links to `/walkthroughs` and demo booking.
 
+2026-05-08 sample voiceover video:
+
+- Created `assets/videos/flowiq-overview-sample-voiceover.mp4` as a 58 second 1080p review sample.
+- Created `assets/videos/flowiq-overview-sample-voiceover-poster.jpg` as the matching poster frame.
+- The sample uses public module preview screenshots and local macOS Samantha text-to-speech voiceover. It does not use raw live-org screen captures or private customer data.
+- Treat this as a style-review asset before producing the final module walkthrough set with a polished AI voiceover and approved demo-org screens.
+
+2026-05-08 v2 sample voiceover video:
+
+- Created `assets/videos/flowiq-overview-sample-voiceover-v2.mp4` as a 65 second 1080p review sample.
+- Created `assets/videos/flowiq-overview-sample-voiceover-v2-poster.jpg` as the matching poster frame.
+- Reworked the opening and closing frames to use a cleaner FlowIQ operating-layer visual instead of the simpler static flow graphic.
+- Replaced the macOS voice with a more natural neural voice generated into the local sample asset.
+- This is still a style-review sample, not the final public module walkthrough set.
+
+2026-05-08 sales-pitch samples:
+
+- Created `assets/videos/flowiq-overview-sales-pitch-v3.mp4` using the founder meeting pitch as the voiceover direction.
+- Created `assets/videos/flowiq-overview-sales-pitch-v3-poster.jpg` as its matching poster frame.
+- Created `assets/videos/flowiq-overview-sales-pitch-v4.mp4` as the polished iteration after reviewing the opening frame.
+- Created `assets/videos/flowiq-overview-sales-pitch-v4-poster.jpg` as its matching poster frame.
+- The v4 opening uses a cleaner FlowIQ command-center visual with spaced module cards, route lines behind cards, coloured module accents, glow, and subtle scan motion so the first screen can work as a loop-ready hero asset.
+- The v4 script adds the sales narrative: disconnected systems create delays, inaccurate costing, poor forecasting, cash-flow pressure and blind spots; FlowIQ gives enterprise-level capability without ERP complexity.
+- Created `assets/videos/flowiq-overview-sales-pitch-v5.mp4` as the next iteration with the live homepage-style operations image, polished floating insight cards and a cleaner final demo CTA.
+- Created `assets/videos/flowiq-overview-sales-pitch-v5-poster.jpg` as its matching poster frame.
+- The v5 voice script uses "Flow I Q", "Import I Q", "Forecast I Q" and "E R P" phrasing for better pronunciation while keeping the on-screen brand spelling as FlowIQ.
+- The v5 ending includes a dedicated "See FlowIQ in action" and "Book Demo" closing slide plus a 2.8 second silent hold so the video does not cut off abruptly.
+- Created `assets/img/generated/flowiq-video-premium-ops-hero-v1.png` using the built-in image generation workflow as a premium real-world operations backdrop for the video.
+- Created `assets/videos/flowiq-overview-sales-pitch-v6.mp4` using the generated premium operations backdrop, glass insight cards and corrected final CTA wrapping.
+- Created `assets/videos/flowiq-overview-sales-pitch-v6-poster.jpg` as the matching poster frame.
+- The v6 problem slide was changed away from a plain list-card style and now uses the same premium operations backdrop so it feels closer to a website hero image than a presentation slide.
+- Created `assets/img/generated/flowiq-video-existing-image-contact-sheet.jpg` to compare available generated website imagery for video use.
+- Created `assets/videos/flowiq-overview-sales-pitch-v7.mp4` with different premium visuals mapped to the topic being discussed: premium ops for the intro, finance relationship for the problem, business command for the complete solution, control room for enterprise simplicity, and finance decision for the final demo CTA.
+- Created `assets/videos/flowiq-overview-sales-pitch-v7-poster.jpg` as the matching poster frame.
+- Kept the module-specific slides on actual FlowIQ product screenshots rather than replacing those with generated marketing imagery.
+- Created the `assets/img/generated/video-v8/` image set with seven generated real-world photos mapped to the video story: intro operations, manual-work problem, solution command, import logistics, inventory forecasting, finance/payroll and demo closing.
+- Created `assets/img/generated/video-v8/flowiq-video-v8-contact-sheet.jpg` to review those generated images together.
+- Created `assets/videos/flowiq-overview-sales-pitch-v8.mp4` using real generated photos on every right-side visual instead of dark UI cards or flat slide diagrams.
+- Created `assets/videos/flowiq-overview-sales-pitch-v8-poster.jpg` as the matching poster frame.
+- The v8 module sections now use relevant real-world imagery for imports, inventory/forecasting and finance/payroll, while the voiceover still explains the corresponding FlowIQ modules.
+- Created `assets/videos/flowiq-overview-sales-pitch-v9.mp4` after fixing the image compositor bug that caused the v8 right-side photos to render as a dark blank panel.
+- Created `assets/videos/flowiq-overview-sales-pitch-v9-poster.jpg` as the matching poster frame.
+- The v9 render uses the same v8 real-world generated photos, but applies the bottom readability overlay with proper alpha compositing so the photos remain visible.
+- Created `assets/videos/flowiq-overview-sales-pitch-v10.mp4` and matching poster after moving the closing "Book Demo" button out of the right-side photo card so the CTA no longer overlaps the image caption area.
+- Created `assets/videos/flowiq-overview-sales-pitch-v11.mp4` and matching poster after removing the filled IQ badge treatment from the drawn video logo.
+- Created `assets/videos/flowiq-overview-sales-pitch-v12.mp4` and matching poster as the current final review asset using the real transparent `flowiq-logo.png` asset in each frame, generated real-world right-side photos, the approved sales-pitch voice track, and the fixed closing CTA layout.
+- Verified v12 locally as a 97.04 second, 1920x1080, 24fps MP4 with audio. The opening poster and closing frame were visually checked for logo transparency treatment and CTA spacing.
+- Embedded v12 on the homepage product-tour band and `/walkthroughs` hero with `preload="metadata"` and the v12 poster so users can watch it without forcing a full upfront video download.
+- Updated the homepage placement to a compact poster preview that opens v12 in a full-screen modal. The homepage no longer gives the video the full inline page width, but users can still open, play, close with Escape/click-outside, and return to the preview button.
+
 ## Current App State
 
 The first logged-in org was useful for route mapping, but it was not ideal for public sales walkthroughs:
@@ -125,3 +175,13 @@ Do not record final public videos from this empty org. Use either:
 - 15-20%: Real business data could expose private customer, supplier, payroll or financial details. Mitigation: use a demo org or review/mask frames before publishing.
 - 10-15%: Long videos may reduce conversion if placed on the homepage. Mitigation: keep the homepage to one short motion proof and move detailed walkthroughs to `/walkthroughs`.
 - 10-15%: Using a silent animated WebP instead of a narrated MP4 may feel less like a full demo. Mitigation: treat the WebP as the immediate motion asset and record narrated MP4 module videos once the demo org and capture environment are stable.
+- 10-15%: The sample MP4 uses local text-to-speech and static public screenshots, so it may not feel as premium as the final narrated app walkthroughs. Mitigation: use it only for direction approval, then record final clips from approved demo data with a higher-quality voiceover.
+- 10-15%: The v2 voice is more natural than macOS text-to-speech, but final production voice choice still needs founder approval before adding videos across the website and YouTube.
+- 10-15%: The v4 command-center visual is intentionally more polished and illustrative than a raw app screen, so it should be used as a marketing overview/hero asset rather than a literal product demo clip.
+- 10-15%: The v5 opening is closer to the website hero image style and less literal than app footage. Use it as a high-level marketing overview and keep module-specific pages for actual screen walkthroughs.
+- 10-15%: The v6 generated operations image is AI-created marketing imagery, so it should not be treated as a literal customer site or real FlowIQ screen capture. It is appropriate for overview/hero use, while final module walkthroughs should still use approved product footage.
+- 10-15%: The v7 video mixes generated marketing visuals with real product screenshots. Keep that separation clear on final website placement: generated visuals for narrative/positioning, screenshots for product proof.
+- 10-15%: The v8 video leans fully into generated real-world photos for marketing impact. Use separate actual product walkthrough videos when users need to inspect the software screens in detail.
+- 10-15%: The v8 export should not be used because its right-side photo compositor rendered the image area as a dark panel. Use v9 or later for review/public placement.
+- 10-15%: The v9 closing CTA overlapped the right-side image caption area. Use v10 or later when reviewing the final sales-pitch video.
+- 10-15%: The v10/v11 logo treatment was closer to a drawn approximation than the real website logo. Use v12 or later where the transparent FlowIQ PNG is required.
