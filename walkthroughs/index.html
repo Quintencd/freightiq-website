@@ -21,9 +21,11 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
     body { font-family: 'Inter', sans-serif; }
     nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
-    .walkthrough-hero{border:1px solid rgba(148,163,184,.22);border-radius:2rem;background:radial-gradient(circle at 8% 0%,rgba(249,115,22,.16),transparent 22rem),linear-gradient(180deg,rgba(255,255,255,.96),rgba(248,250,252,.92));box-shadow:0 24px 80px rgba(15,23,42,.08);padding:clamp(1.75rem,5vw,4rem)}
-    .walkthrough-hero h1{max-width:58rem;color:#0f172a;font-size:clamp(3rem,7vw,6.5rem);line-height:.92;font-weight:900;letter-spacing:-.045em}
+    .walkthrough-hero{display:grid;grid-template-columns:minmax(0,.68fr) minmax(34rem,1.08fr);align-items:center;gap:clamp(1.75rem,4vw,3.5rem);border:1px solid rgba(148,163,184,.22);border-radius:2rem;background:radial-gradient(circle at 8% 0%,rgba(249,115,22,.16),transparent 22rem),linear-gradient(180deg,rgba(255,255,255,.96),rgba(248,250,252,.92));box-shadow:0 24px 80px rgba(15,23,42,.08);padding:clamp(1.75rem,5vw,4rem)}
+    .walkthrough-hero h1{max-width:46rem;color:#0f172a;font-size:clamp(3rem,6vw,5.8rem);line-height:.92;font-weight:900;letter-spacing:-.045em}
     .walkthrough-hero p{max-width:50rem;color:#475569;font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.6}
+    .walkthrough-hero__media{position:relative;overflow:hidden;border:1px solid rgba(148,163,184,.24);border-radius:1.5rem;background:#fff;box-shadow:0 30px 90px rgba(15,23,42,.15)}
+    .walkthrough-hero__media img{display:block;width:100%;height:auto}
     .walkthrough-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
     .walkthrough-card{position:relative;overflow:hidden;border:1px solid rgba(148,163,184,.24);border-radius:1.5rem;background:#fff;box-shadow:0 18px 58px rgba(15,23,42,.08);text-decoration:none;color:#0f172a;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
     .walkthrough-card:hover,.walkthrough-card:focus-visible{transform:translateY(-4px);border-color:rgba(249,115,22,.42);box-shadow:0 26px 70px rgba(15,23,42,.12)}
@@ -40,7 +42,7 @@
     .walkthrough-cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.5rem;align-items:center;border-radius:1.5rem;background:#0f172a;color:#fff;padding:clamp(1.5rem,4vw,3rem);box-shadow:0 24px 70px rgba(15,23,42,.2)}
     .walkthrough-cta h2{font-size:clamp(2rem,4vw,3.6rem);line-height:1;font-weight:900;letter-spacing:-.035em}
     .walkthrough-cta p{margin-top:.75rem;color:#cbd5e1;font-size:1.08rem;line-height:1.55}
-    @media(max-width:900px){.walkthrough-grid,.walkthrough-cta{grid-template-columns:1fr}}
+    @media(max-width:900px){.walkthrough-hero,.walkthrough-grid,.walkthrough-cta{grid-template-columns:1fr}}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"CollectionPage","name":"FlowIQ Product Walkthroughs","url":"https://www.flowiq.info/walkthroughs","description":"FlowIQ product walkthroughs for imports, forecasting, accounting and workflow control."}
@@ -52,14 +54,19 @@
   <div class="site-atmosphere fixed inset-0 z-[-1] h-full w-full" aria-hidden="true"></div>
   <nav></nav>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
+  <main class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
     <section class="walkthrough-hero mb-10 story-reveal">
-      <span class="section-kicker">Product walkthroughs</span>
-      <h1 class="mt-6">See how FlowIQ works before a demo.</h1>
-      <p class="mt-6">These walkthroughs are the product-tour library for FlowIQ. Today they use current module previews; next we can replace each card with a recorded walkthrough and AI voiceover without cluttering the homepage.</p>
-      <div class="mt-8 flex flex-col sm:flex-row gap-4">
-        <a href="/book-demo.html" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-orange-500/20 hover:-translate-y-1 transition-all">Book Demo <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
-        <a href="/customers" class="inline-flex items-center justify-center gap-2 glass-panel px-8 py-4 rounded-full font-bold text-lg text-slate-900 hover:-translate-y-0.5 transition-all">View Customer Proof <i data-lucide="star" class="w-5 h-5 text-freight-orange"></i></a>
+      <div>
+        <span class="section-kicker">Product walkthroughs</span>
+        <h1 class="mt-6">See how FlowIQ works before a demo.</h1>
+        <p class="mt-6">Start with a quick visual tour of how FlowIQ connects imports, inventory, forecasting, sales, invoicing, accounting, payroll and reporting. Focused module walkthroughs sit below so the homepage stays clean.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="/book-demo.html" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-orange-500/20 hover:-translate-y-1 transition-all">Book Demo <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+          <a href="/customers" class="inline-flex items-center justify-center gap-2 glass-panel px-8 py-4 rounded-full font-bold text-lg text-slate-900 hover:-translate-y-0.5 transition-all">View Customer Proof <i data-lucide="star" class="w-5 h-5 text-freight-orange"></i></a>
+        </div>
+      </div>
+      <div class="walkthrough-hero__media" aria-label="FlowIQ module motion loop">
+        <img src="/assets/walkthroughs/flowiq-module-tour.webp" alt="Animated FlowIQ module walkthrough showing ImportIQ, InventoryIQ, ForecastIQ, SalesIQ, InvoiceIQ, AccountingIQ, PayrollIQ and ReportsIQ" width="1920" height="1080" loading="eager" decoding="async">
       </div>
     </section>
 
@@ -116,7 +123,7 @@
     <section class="walkthrough-cta story-reveal">
       <div>
         <h2>Want the proper narrated demo?</h2>
-        <p>The page is ready for real module videos. The right next step is recording ImportIQ, ForecastIQ, AccountingIQ and TaskIQ first because those prove landed cost, stock planning, month-end and management control fastest.</p>
+        <p>The page is ready for narrated module videos. The right next step is recording ImportIQ, ForecastIQ, AccountingIQ and TaskIQ first because those prove landed cost, stock planning, month-end and management control fastest.</p>
       </div>
       <a href="/book-demo.html" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-7 py-3 rounded-full font-bold shadow-lg shadow-orange-500/20 transition-all">Book Demo <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
     </section>

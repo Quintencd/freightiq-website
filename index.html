@@ -100,8 +100,14 @@
     .flow-card--manufacturing{--flow-accent:#4f46e5;--flow-glow:rgba(79,70,229,.22);--flow-border:#c7d2fe;--flow-soft:#f3f4ff;--flow-icon:#e0e7ff}
     .flow-card--reports{--flow-accent:#ea580c;--flow-glow:rgba(234,88,12,.24);--flow-border:#fdba74;--flow-soft:#fff7ed;--flow-icon:#ffedd5}
     .flow-connector{align-self:center;width:2.2rem;height:2px;background:linear-gradient(90deg,#f97316,#fdba74);opacity:.9}
+    .homepage-tour-band{display:grid;grid-template-columns:minmax(0,.72fr) minmax(30rem,1.05fr);align-items:center;gap:clamp(1.5rem,4vw,3rem);margin-top:clamp(3rem,6vw,5rem);border:1px solid #e2e8f0;border-radius:1.9rem;background:radial-gradient(circle at 12% 0%,rgba(249,115,22,.13),transparent 22rem),linear-gradient(180deg,#fff,#f8fafc);box-shadow:0 30px 90px rgba(15,23,42,.09);padding:clamp(1.35rem,4vw,3rem);overflow:hidden}
+    .homepage-tour-band h2{max-width:42rem;color:#0f172a;font-size:clamp(2.3rem,4.8vw,5rem);line-height:.96;font-weight:900;letter-spacing:-.045em}
+    .homepage-tour-band p{margin-top:1rem;max-width:37rem;color:#526174;font-size:clamp(1rem,1.6vw,1.18rem);line-height:1.58;font-weight:700}
+    .homepage-tour-band__media{position:relative;border:1px solid rgba(148,163,184,.24);border-radius:1.45rem;background:#fff;box-shadow:0 26px 76px rgba(15,23,42,.13);overflow:hidden}
+    .homepage-tour-band__media img{display:block;width:100%;height:auto}
+    .homepage-tour-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.45rem}
     @keyframes flow-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-    @media(max-width:960px){.fresh-flow-band__head{display:grid}.flow-card{width:16rem}.flow-marquee:before,.flow-marquee:after{width:3rem}}
+    @media(max-width:960px){.fresh-flow-band__head,.homepage-tour-band{display:grid;grid-template-columns:1fr}.flow-card{width:16rem}.flow-marquee:before,.flow-marquee:after{width:3rem}}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"FlowIQ Operational Profit Recovery Software","url":"https://www.flowiq.info/","description":"FlowIQ helps importers, distributors and manufacturers calculate true landed cost, forecast inventory, manage shipments and recover operational profit without spreadsheet chaos."},{"@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/","description":"Operational profit recovery software for true landed cost, import management, inventory forecasting, shipments, pricing and margin control.","offers":{"@type":"Offer","price":"29","priceCurrency":"USD"}}]}
@@ -190,6 +196,21 @@
           <article class="flow-card flow-card--reports"><i data-lucide="bar-chart-3" class="w-6 h-6"></i><strong>ReportsIQ</strong><span>Performance, margin, stock, sales and operational reporting.</span></article>
         </div>
       </div>
+    </section>
+
+    <section class="homepage-tour-band story-reveal" aria-label="FlowIQ product walkthrough preview">
+      <div>
+        <span class="section-kicker">Product tour</span>
+        <h2>See FlowIQ modules working together.</h2>
+        <p>Watch the connected FlowIQ view move through imports, inventory, forecasting, sales, invoicing, accounting, payroll and reporting before booking a deeper walkthrough.</p>
+        <div class="homepage-tour-actions">
+          <a href="/walkthroughs" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-7 py-3 rounded-full font-bold shadow-lg shadow-orange-500/20 transition-all">View Walkthroughs <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+          <a href="/book-demo.html" data-analytics-event="demo_click" data-analytics-position="homepage_tour_band" class="inline-flex items-center justify-center gap-2 glass-panel px-7 py-3 rounded-full font-bold text-slate-900 transition-all">Book Demo <i data-lucide="calendar-check" class="w-5 h-5 text-freight-orange"></i></a>
+        </div>
+      </div>
+      <a href="/walkthroughs" class="homepage-tour-band__media" aria-label="Open FlowIQ walkthroughs">
+        <img src="/assets/walkthroughs/flowiq-module-tour.webp" alt="Animated FlowIQ module walkthrough showing connected FlowIQ modules" width="1920" height="1080" loading="lazy" decoding="async">
+      </a>
     </section>
 
     <section class="fresh-section story-reveal">
