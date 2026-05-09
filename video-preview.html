@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowIQ Advert Preview | Creative Video Direction</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="/flowiq-logo.png?v=2">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f8fafc;
+      --muted: #94a3b8;
+      --line: rgba(148, 163, 184, .28);
+      --orange: #f97316;
+      --accent: #f97316;
+      --navy: #071126;
+      --charcoal: #101827;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 10% 5%, rgba(249, 115, 22, .16), transparent 28rem),
+        radial-gradient(circle at 88% 0%, rgba(249, 115, 22, .12), transparent 24rem),
+        linear-gradient(135deg, #050816 0%, #071126 45%, #101827 100%);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(1480px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 28px 0 44px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 138px;
+      height: auto;
+      display: block;
+    }
+
+    .kicker {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .status-pill {
+      border: 1px solid rgba(249, 115, 22, .42);
+      border-radius: 999px;
+      background: rgba(249, 115, 22, .1);
+      color: #fed7aa;
+      padding: 9px 13px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .stage-wrap {
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, .22);
+      border-radius: 22px;
+      background: #020617;
+      box-shadow: 0 38px 120px rgba(0, 0, 0, .38);
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #020617;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
+      gap: 14px;
+      align-items: center;
+      padding: 14px;
+      border-top: 1px solid rgba(148, 163, 184, .2);
+      background: rgba(2, 6, 23, .9);
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      background: var(--orange);
+      color: #fff;
+      padding: 11px 18px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 16px 34px rgba(249, 115, 22, .28);
+    }
+
+    button.secondary {
+      border: 1px solid rgba(148, 163, 184, .28);
+      background: rgba(15, 23, 42, .82);
+      color: var(--ink);
+      box-shadow: none;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--orange);
+    }
+
+    .time {
+      min-width: 92px;
+      color: #cbd5e1;
+      font-variant-numeric: tabular-nums;
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .notes {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .panel {
+      border: 1px solid rgba(148, 163, 184, .18);
+      border-radius: 18px;
+      background: rgba(15, 23, 42, .58);
+      padding: 18px;
+    }
+
+    .panel h1,
+    .panel h2 {
+      margin: 0;
+      letter-spacing: -.03em;
+    }
+
+    .panel h1 {
+      font-size: clamp(28px, 4vw, 52px);
+      line-height: .96;
+    }
+
+    .panel h2 {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .panel p {
+      color: #cbd5e1;
+      line-height: 1.65;
+      margin: 12px 0 0;
+    }
+
+    .scene-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .scene-chip {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border: 1px solid rgba(148, 163, 184, .16);
+      border-radius: 12px;
+      background: rgba(2, 6, 23, .42);
+      padding: 10px 12px;
+      color: #cbd5e1;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .scene-chip span:last-child {
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    @media (max-width: 860px) {
+      main { width: min(100vw - 20px, 1480px); padding-top: 14px; }
+      .topbar,
+      .controls,
+      .notes { grid-template-columns: 1fr; }
+      .topbar { align-items: flex-start; }
+      .controls { display: flex; flex-wrap: wrap; }
+      .controls input { min-width: 100%; order: 3; }
+      .time { text-align: left; }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="topbar">
+      <div class="brand">
+        <img src="/flowiq-logo-dark.png?v=2" alt="FlowIQ">
+        <div>
+          <div class="kicker">Creative video preview</div>
+          <div>TV advert direction, not the live website MP4</div>
+        </div>
+      </div>
+      <div class="status-pill">Review cut v13 concept</div>
+    </div>
+
+    <section class="stage-wrap" aria-label="FlowIQ advert preview player">
+      <canvas id="film" width="1920" height="1080"></canvas>
+      <div class="controls">
+        <button type="button" id="playPause">Pause</button>
+        <input id="scrub" type="range" min="0" max="97.04" step="0.01" value="0" aria-label="Video timeline">
+        <div class="time" id="time">00:00 / 01:37</div>
+        <button type="button" class="secondary" id="restart">Replay</button>
+      </div>
+    </section>
+
+    <section class="notes">
+      <div class="panel">
+        <h1>Make the marketing video feel like a polished product film.</h1>
+        <p>This v13 review cut keeps the previous website sales narration and builds a more cinematic product film around it: a faster operational hook, FlowIQ snapping the moving parts together, stronger product-proof UI moments and a cleaner final conversion. FlowIQ orange now behaves as the action accent, while the middle of the film avoids repetitive logo-heavy slides.</p>
+      </div>
+      <div class="panel">
+        <h2>Scene map</h2>
+        <div class="scene-list">
+          <div class="scene-chip"><span>Operational tension hook</span><span>00-08s</span></div>
+          <div class="scene-chip"><span>FlowIQ system snap</span><span>08-20s</span></div>
+          <div class="scene-chip"><span>Landed cost control</span><span>20-34s</span></div>
+          <div class="scene-chip"><span>Inventory and forecasting</span><span>34-48s</span></div>
+          <div class="scene-chip"><span>Sales to invoicing</span><span>48-62s</span></div>
+          <div class="scene-chip"><span>Finance and payroll</span><span>62-76s</span></div>
+          <div class="scene-chip"><span>Task and branch control</span><span>76-88s</span></div>
+          <div class="scene-chip"><span>Book demo CTA</span><span>88-97s</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const canvas = document.getElementById('film');
+    const ctx = canvas.getContext('2d');
+    const playPause = document.getElementById('playPause');
+    const restart = document.getElementById('restart');
+    const scrub = document.getElementById('scrub');
+    const timeLabel = document.getElementById('time');
+    const DURATION = 97.04;
+    const W = canvas.width;
+    const H = canvas.height;
+    const images = {};
+    const videos = {};
+    const imageSources = {
+      logo: '/flowiq-logo.png',
+      logoDark: '/flowiq-logo-dark.png?v=2',
+      problem: '/assets/img/generated/video-v8/flowiq-video-v8-problem-manual-work.png',
+      intro: '/assets/img/generated/video-v8/flowiq-video-v8-intro-operations.png',
+      import: '/assets/img/generated/video-v8/flowiq-video-v8-import-logistics.png',
+      forecast: '/assets/img/generated/video-v8/flowiq-video-v8-inventory-forecast.png',
+      finance: '/assets/img/generated/video-v8/flowiq-video-v8-finance-payroll.png',
+      command: '/assets/img/generated/flowiq-control-room.webp',
+      closing: '/assets/img/generated/video-v8/flowiq-video-v8-demo-closing.png',
+      dashboard: '/assets/img/modules/thumb-dashboardiq.webp',
+      invoice: '/assets/img/modules/thumb-invoiceiq.webp',
+      task: '/assets/img/modules/thumb-taskiq.webp',
+      creatiWarehouse1: '/assets/img/generated/video-v13-creati-stills/warehouse-1.jpg',
+      creatiWarehouse2: '/assets/img/generated/video-v13-creati-stills/warehouse-2.jpg',
+      creatiWarehouse3: '/assets/img/generated/video-v13-creati-stills/warehouse-3.jpg',
+      creatiImport1: '/assets/img/generated/video-v13-creati-stills/import-1.jpg',
+      creatiImport2: '/assets/img/generated/video-v13-creati-stills/import-2.jpg',
+      creatiImport3: '/assets/img/generated/video-v13-creati-stills/import-3.jpg',
+      creatiInventory1: '/assets/img/generated/video-v13-creati-stills/inventory-1.jpg',
+      creatiInventory2: '/assets/img/generated/video-v13-creati-stills/inventory-2.jpg',
+      creatiInventory3: '/assets/img/generated/video-v13-creati-stills/inventory-3.jpg'
+    };
+    const videoSources = {
+      creatiWarehouse: '/assets/videos/flowiq-creati-warehouse-stabilized.mp4',
+      creatiImport: '/assets/videos/flowiq-creati-import-logistics-stabilized.mp4',
+      creatiInventory: '/assets/videos/flowiq-creati-inventory-planning-stabilized.mp4'
+    };
+    const creatiStillSequences = {
+      creatiWarehouse: ['creatiWarehouse1', 'creatiWarehouse2', 'creatiWarehouse3'],
+      creatiImport: ['creatiImport1', 'creatiImport2', 'creatiImport3'],
+      creatiInventory: ['creatiInventory1', 'creatiInventory2', 'creatiInventory3']
+    };
+
+    const scenes = [
+      { start: 0, end: 8, name: 'Operational tension', draw: drawHook },
+      { start: 8, end: 20, name: 'System snap', draw: drawReveal },
+      { start: 20, end: 34, name: 'Landed cost', draw: drawImport },
+      { start: 34, end: 48, name: 'Forecasting', draw: drawForecast },
+      { start: 48, end: 62, name: 'Sales to invoice', draw: drawSales },
+      { start: 62, end: 76, name: 'Finance and payroll', draw: drawFinance },
+      { start: 76, end: 88, name: 'Branch control', draw: drawBranch },
+      { start: 88, end: 97.04, name: 'CTA', draw: drawCta }
+    ];
+    const voiceCaptions = [
+      { start: 0, end: 8, lines: ['Most businesses still run critical operations across disconnected spreadsheets,', 'outdated ERP systems and manual processes.'] },
+      { start: 8, end: 16, lines: ['That creates delays, inaccurate costing, poor forecasting,', 'cash-flow pressure and blind spots across the business.'] },
+      { start: 16, end: 20, lines: ['That is why we built FlowIQ.'] },
+      { start: 20, end: 33, lines: ['FlowIQ helps businesses manage imports, inventory, logistics,', 'forecasting, costing, deliveries, accounting, payroll and workflows.'] },
+      { start: 33, end: 41, lines: ['It is not just software.', 'It is a complete operational solution focused on visibility and profitability.'] },
+      { start: 41, end: 50, lines: ['With ImportIQ, teams see shipment progress, supplier payments,', 'and true landed cost before margin decisions go wrong.'] },
+      { start: 50, end: 60, lines: ['InventoryIQ and ForecastIQ help reduce slow movers,', 'protect cash flow and plan around what is actually selling.'] },
+      { start: 60, end: 70, lines: ['SalesIQ, InvoiceIQ, AccountingIQ and PayrollIQ connect the work', 'from customer activity through to month end and reporting.'] },
+      { start: 70, end: 78, lines: ['Enterprise level capability.', 'Without enterprise level complexity.'] },
+      { start: 78, end: 88, lines: ['Most ERP systems are powerful, but painful to use.', 'FlowIQ gives SMB teams control, speed and better decisions.'] },
+      { start: 88, end: 97.04, lines: ['Book a demo and see how FlowIQ can recover margin', 'across your operation.'] }
+    ];
+
+    let playing = true;
+    let started = performance.now();
+    let pausedAt = 0;
+    let manualTime = 0;
+
+    Object.entries(imageSources).forEach(([key, src]) => {
+      const img = new Image();
+      img.src = src;
+      images[key] = img;
+    });
+
+    Object.entries(videoSources).forEach(([key, src]) => {
+      const video = document.createElement('video');
+      video.src = src;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.preload = 'auto';
+      video.crossOrigin = 'anonymous';
+      videos[key] = video;
+      video.play().catch(() => {});
+    });
+    window.previewVideos = videos;
+
+    const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
+    const ease = value => 1 - Math.pow(1 - clamp(value), 3);
+    const lerp = (a, b, t) => a + (b - a) * t;
+    const sceneProgress = (time, scene) => clamp((time - scene.start) / (scene.end - scene.start));
+
+    function timeAt(now) {
+      if (!playing) return manualTime;
+      return ((now - started) / 1000) % DURATION;
+    }
+
+    function mmss(value) {
+      const seconds = Math.floor(value);
+      return `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
+    }
+
+    function roundedRect(x, y, w, h, r) {
+      const radius = Math.min(r, w / 2, h / 2);
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.arcTo(x + w, y, x + w, y + h, radius);
+      ctx.arcTo(x + w, y + h, x, y + h, radius);
+      ctx.arcTo(x, y + h, x, y, radius);
+      ctx.arcTo(x, y, x + w, y, radius);
+      ctx.closePath();
+    }
+
+    function fillRound(x, y, w, h, r, fill, stroke) {
+      roundedRect(x, y, w, h, r);
+      ctx.fillStyle = fill;
+      ctx.fill();
+      if (stroke) {
+        ctx.strokeStyle = stroke;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+    }
+
+    function coverImage(img, x, y, w, h, zoom = 1, ox = .5, oy = .5) {
+      if (!img || !img.complete || !img.naturalWidth) return;
+      const iw = img.naturalWidth;
+      const ih = img.naturalHeight;
+      const scale = Math.max(w / iw, h / ih) * zoom;
+      const sw = w / scale;
+      const sh = h / scale;
+      const sx = clamp(ox) * (iw - sw);
+      const sy = clamp(oy) * (ih - sh);
+      ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
+    }
+
+    function coverVideo(video, x, y, w, h, zoom = 1, ox = .5, oy = .5) {
+      if (!video || !video.videoWidth || !video.videoHeight || video.readyState < 2) return false;
+      const iw = video.videoWidth;
+      const ih = video.videoHeight;
+      const scale = Math.max(w / iw, h / ih) * zoom;
+      const sw = w / scale;
+      const sh = h / scale;
+      const sx = clamp(ox) * (iw - sw);
+      const sy = clamp(oy) * (ih - sh);
+      ctx.drawImage(video, sx, sy, sw, sh, x, y, w, h);
+      return true;
+    }
+
+    function coverStillSequence(keys, x, y, w, h, t, zoom = 1, ox = .5, oy = .5) {
+      const loaded = (keys || []).map(key => images[key]).filter(img => img && img.complete && img.naturalWidth);
+      if (!loaded.length) return false;
+      ctx.save();
+      ctx.filter = 'brightness(1.12) contrast(1.08) saturate(1.08)';
+      if (loaded.length === 1) {
+        coverImage(loaded[0], x, y, w, h, zoom, ox, oy);
+        ctx.restore();
+        return true;
+      }
+      const phase = clamp(t) * (loaded.length - 1);
+      const current = Math.min(loaded.length - 2, Math.floor(phase));
+      const blend = ease(phase - current);
+      coverImage(loaded[current], x, y, w, h, zoom, ox, oy);
+      ctx.save();
+      ctx.globalAlpha = blend;
+      coverImage(loaded[current + 1], x, y, w, h, zoom + .015, ox + .02, oy);
+      ctx.restore();
+      ctx.restore();
+      return true;
+    }
+
+    function seekVideo(video, target) {
+      return new Promise(resolve => {
+        if (!video || !Number.isFinite(video.duration) || !video.duration) {
+          resolve();
+          return;
+        }
+        const clampedTarget = Math.min(Math.max(target, 0), Math.max(video.duration - .05, 0));
+        if (Math.abs(video.currentTime - clampedTarget) < .04 && video.readyState >= 2) {
+          resolve();
+          return;
+        }
+        const done = () => resolve();
+        video.addEventListener('seeked', done, { once: true });
+        try {
+          video.currentTime = clampedTarget;
+        } catch {
+          video.removeEventListener('seeked', done);
+          resolve();
+        }
+        window.setTimeout(() => {
+          video.removeEventListener('seeked', done);
+          resolve();
+        }, 220);
+      });
+    }
+
+    function gradientBg(a, b, c) {
+      const g = ctx.createLinearGradient(0, 0, W, H);
+      g.addColorStop(0, a);
+      g.addColorStop(.52, b);
+      g.addColorStop(1, c);
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, W, H);
+    }
+
+    function glow(x, y, r, color) {
+      const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+      g.addColorStop(0, color);
+      g.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(x - r, y - r, r * 2, r * 2);
+    }
+
+    function filmTexture(time, strength = .08) {
+      ctx.save();
+      ctx.globalAlpha = strength;
+      for (let i = 0; i < 34; i++) {
+        const y = (i * 37 + time * 18) % H;
+        ctx.fillStyle = i % 2 ? 'rgba(255,255,255,.16)' : 'rgba(15,23,42,.18)';
+        ctx.fillRect(0, y, W, 1);
+      }
+      ctx.globalAlpha = strength * 1.3;
+      const sweep = ctx.createLinearGradient(-260 + (time * 92) % (W + 520), 0, 180 + (time * 92) % (W + 520), H);
+      sweep.addColorStop(0, 'rgba(255,255,255,0)');
+      sweep.addColorStop(.5, 'rgba(255,255,255,.2)');
+      sweep.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = sweep;
+      ctx.fillRect(0, 0, W, H);
+      ctx.restore();
+    }
+
+    function drawSceneTransition(p, isFirstScene = false) {
+      const intro = isFirstScene ? 0 : 1 - clamp(p / .12);
+      const outro = clamp((p - .88) / .12);
+      const alpha = Math.max(intro, outro);
+      if (alpha <= 0) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      const g = ctx.createLinearGradient(0, 0, W, H);
+      g.addColorStop(0, '#020617');
+      g.addColorStop(.5, '#071126');
+      g.addColorStop(1, '#0f172a');
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, W, H);
+      ctx.restore();
+    }
+
+    function drawBrandMark(time, sceneName) {
+      if (sceneName === 'System snap' || sceneName === 'CTA') return;
+      const lightScene = ['Landed cost', 'Forecasting', 'Finance and payroll'].includes(sceneName);
+      const logoImg = lightScene ? images.logo : images.logoDark;
+      ctx.save();
+      ctx.globalAlpha = .92;
+      if (logoImg.complete) {
+        const logoW = 172;
+        const logoH = logoW * (logoImg.naturalHeight / logoImg.naturalWidth);
+        ctx.drawImage(logoImg, 56, 34, logoW, logoH);
+      } else {
+        label('FlowIQ', 56, 78, 28, lightScene ? '#0f172a' : '#fff', 'left', 950);
+      }
+      ctx.restore();
+    }
+
+    function drawVoiceCaption(time) {
+      const caption = voiceCaptions.find(item => time >= item.start && time < item.end);
+      if (!caption) return;
+      const p = clamp(Math.min((time - caption.start) / .45, (caption.end - time) / .45));
+      const alpha = ease(p);
+      const w = Math.min(1340, W - 220);
+      const h = caption.lines.length > 1 ? 106 : 78;
+      const x = (W - w) / 2;
+      const y = H - 62 - h;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      fillRound(x, y, w, h, 28, 'rgba(2,6,23,.92)', 'rgba(249,115,22,.66)');
+      ctx.fillStyle = '#f97316';
+      ctx.fillRect(x + 34, y + 22, 6, h - 44);
+      label(caption.lines[0], x + 66, y + 46, 28, '#ff8a1d', 'left', 950);
+      if (caption.lines[1]) label(caption.lines[1], x + 66, y + 80, 24, '#fff7ed', 'left', 850);
+      ctx.restore();
+    }
+
+    function label(text, x, y, size = 34, color = '#f8fafc', align = 'left', weight = 900) {
+      ctx.fillStyle = color;
+      ctx.textAlign = align;
+      ctx.font = `${weight} ${size}px Inter, system-ui, sans-serif`;
+      ctx.fillText(text, x, y);
+    }
+
+    function paragraph(lines, x, y, size = 34, gap = 46, color = '#cbd5e1') {
+      lines.forEach((line, index) => label(line, x, y + index * gap, size, color, 'left', 750));
+    }
+
+    function badge(text, x, y, color = '#f97316') {
+      ctx.font = '900 24px Inter, system-ui, sans-serif';
+      const width = ctx.measureText(text).width + 34;
+      fillRound(x, y, width, 46, 23, 'rgba(249,115,22,.74)', 'rgba(255,237,213,.72)');
+      label(text, x + 17, y + 31, 20, '#fff7ed', 'left', 950);
+    }
+
+    function drawPhotoPanel(imgKey, x, y, w, h, t, tint = 'rgba(2,6,23,.36)') {
+      ctx.save();
+      fillRound(x, y, w, h, 34, '#0f172a', 'rgba(255,255,255,.16)');
+      ctx.clip();
+      coverImage(images[imgKey], x, y, w, h, 1.06 + t * .035, .5 + Math.sin(t * Math.PI) * .04, .52);
+      ctx.fillStyle = tint;
+      ctx.fillRect(x, y, w, h);
+      const glass = ctx.createLinearGradient(x, y, x + w, y + h);
+      glass.addColorStop(0, 'rgba(255,255,255,.14)');
+      glass.addColorStop(.35, 'rgba(255,255,255,0)');
+      glass.addColorStop(1, 'rgba(255,255,255,.08)');
+      ctx.fillStyle = glass;
+      ctx.fillRect(x, y, w, h);
+      ctx.restore();
+    }
+
+    function drawVideoPanel(videoKey, x, y, w, h, t, tint = 'rgba(2,6,23,.18)', zoom = 1.05) {
+      ctx.save();
+      fillRound(x, y, w, h, 34, '#0f172a', 'rgba(255,255,255,.2)');
+      ctx.clip();
+      const fallbackMap = {
+        creatiWarehouse: 'problem',
+        creatiImport: 'import',
+        creatiInventory: 'forecast'
+      };
+      const rendered = coverStillSequence(creatiStillSequences[videoKey], x, y, w, h, t, zoom + t * .025, .5 + Math.sin(t * Math.PI) * .035, .5);
+      if (!rendered) coverImage(images[fallbackMap[videoKey]], x, y, w, h, zoom + t * .018, .5, .5);
+      ctx.fillStyle = tint;
+      ctx.fillRect(x, y, w, h);
+      const glass = ctx.createLinearGradient(x, y, x + w, y + h);
+      glass.addColorStop(0, 'rgba(255,255,255,.18)');
+      glass.addColorStop(.38, 'rgba(255,255,255,0)');
+      glass.addColorStop(1, 'rgba(249,115,22,.12)');
+      ctx.fillStyle = glass;
+      ctx.fillRect(x, y, w, h);
+      ctx.restore();
+    }
+
+    function drawFlowNodes(t, connected = false) {
+      const nodes = [
+        [315, 235, 'Stock'], [710, 170, 'Sales'], [1120, 265, 'Invoices'],
+        [1510, 200, 'Branches'], [470, 690, 'Landed cost'], [960, 790, 'Tasks'], [1390, 670, 'Reports']
+      ];
+      ctx.lineCap = 'round';
+      nodes.forEach((node, i) => {
+        for (let j = i + 1; j < nodes.length; j += 2) {
+          const alpha = connected ? .28 : .08 + .06 * Math.sin(t * 4 + i);
+          ctx.strokeStyle = `rgba(${connected ? '249,115,22' : '148,163,184'},${alpha})`;
+          ctx.lineWidth = connected ? 5 : 2;
+          ctx.beginPath();
+          ctx.moveTo(node[0], node[1]);
+          ctx.lineTo(nodes[j][0], nodes[j][1]);
+          ctx.stroke();
+        }
+      });
+      nodes.forEach((node, i) => {
+        const pulse = .5 + .5 * Math.sin(t * 5 + i);
+        fillRound(node[0] - 82, node[1] - 28, 164, 56, 28, connected ? `rgba(249,115,22,${.34 + pulse * .1})` : 'rgba(15,23,42,.86)', connected ? 'rgba(255,237,213,.78)' : 'rgba(249,115,22,.55)');
+        label(node[2], node[0], node[1] + 8, 23, '#fff7ed', 'center', 950);
+      });
+    }
+
+    function drawAbstractRoutes(time) {
+      const routes = [
+        [[870, 230], [1090, 185], [1390, 210], [1640, 160]],
+        [[830, 390], [1110, 350], [1340, 470], [1700, 420]],
+        [[900, 710], [1130, 610], [1390, 700], [1660, 590]],
+        [[1040, 150], [1180, 440], [1540, 760]],
+        [[980, 830], [1260, 720], [1480, 820]]
+      ];
+      ctx.save();
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      routes.forEach((points, index) => {
+        const alpha = .14 + .06 * Math.sin(time * 2.4 + index);
+        ctx.strokeStyle = `rgba(249,115,22,${alpha})`;
+        ctx.lineWidth = index % 2 ? 3 : 2;
+        ctx.beginPath();
+        points.forEach((point, pointIndex) => {
+          if (pointIndex === 0) ctx.moveTo(point[0], point[1]);
+          else ctx.lineTo(point[0], point[1]);
+        });
+        ctx.stroke();
+      });
+      for (let i = 0; i < 12; i++) {
+        const x = 870 + ((time * 42 + i * 157) % 830);
+        const y = 190 + ((i * 83 + Math.sin(time + i) * 34) % 610);
+        ctx.fillStyle = `rgba(249,115,22,${.08 + .08 * Math.sin(time * 2 + i) ** 2})`;
+        ctx.beginPath();
+        ctx.arc(x, y, 4 + (i % 3), 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    function drawUiCard(x, y, w, h, title, metric, accent = '#f97316') {
+      fillRound(x, y, w, h, 24, 'rgba(255,255,255,.92)', 'rgba(148,163,184,.32)');
+      label(title, x + 30, y + 52, 24, '#475569', 'left', 900);
+      label(metric, x + 30, y + 116, 52, '#0f172a', 'left', 950);
+      ctx.strokeStyle = accent;
+      ctx.lineWidth = 8;
+      ctx.beginPath();
+      ctx.moveTo(x + 32, y + h - 42);
+      for (let i = 0; i < 6; i++) ctx.lineTo(x + 32 + i * ((w - 64) / 5), y + h - 52 - Math.sin(i * 1.3) * 38);
+      ctx.stroke();
+    }
+
+    function drawMetricCard(x, y, w, h, title, metric, values, accent = '#f97316') {
+      fillRound(x, y, w, h, 24, 'rgba(255,255,255,.94)', 'rgba(148,163,184,.32)');
+      label(title, x + 28, y + 48, 22, '#475569', 'left', 900);
+      label(metric, x + 28, y + 104, 44, '#0f172a', 'left', 950);
+      const chartX = x + 28;
+      const chartY = y + h - 86;
+      const chartW = w - 56;
+      const chartH = 48;
+      ctx.strokeStyle = 'rgba(148,163,184,.28)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(chartX, chartY + chartH);
+      ctx.lineTo(chartX + chartW, chartY + chartH);
+      ctx.stroke();
+      const max = Math.max(...values);
+      const min = Math.min(...values);
+      ctx.strokeStyle = accent;
+      ctx.lineWidth = 7;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.beginPath();
+      values.forEach((value, index) => {
+        const px = chartX + (chartW / (values.length - 1)) * index;
+        const normalized = (value - min) / Math.max(1, max - min);
+        const py = chartY + chartH - normalized * chartH;
+        if (index === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      });
+      ctx.stroke();
+      const last = values[values.length - 1];
+      const normalized = (last - min) / Math.max(1, max - min);
+      const dotX = chartX + chartW;
+      const dotY = chartY + chartH - normalized * chartH;
+      ctx.fillStyle = accent;
+      ctx.beginPath();
+      ctx.arc(dotX, dotY, 7, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.lineCap = 'butt';
+    }
+
+    function drawBarSparkline(x, y, w, h, values, accent = '#f97316') {
+      fillRound(x, y, w, h, 28, 'rgba(255,255,255,.92)', 'rgba(148,163,184,.32)');
+      label('Demand signal', x + 34, y + 58, 25, '#475569', 'left', 900);
+      const baseY = y + h - 46;
+      const max = Math.max(...values);
+      const min = Math.min(...values);
+      values.forEach((value, index) => {
+        const normalized = (value - min) / Math.max(1, max - min);
+        const barH = 30 + normalized * 82;
+        const bx = x + 56 + index * ((w - 112) / values.length);
+        fillRound(bx, baseY - barH, 28, barH, 12, accent, null);
+      });
+      ctx.strokeStyle = accent;
+      ctx.lineWidth = 6;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.beginPath();
+      values.forEach((value, index) => {
+        const normalized = (value - min) / Math.max(1, max - min);
+        const px = x + 70 + index * ((w - 112) / values.length);
+        const py = y + 166 - normalized * 72;
+        if (index === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      });
+      ctx.stroke();
+      ctx.lineCap = 'butt';
+    }
+
+    function drawProductScreen(x, y, w, h, title, rows, p, mode = 'dark') {
+      const dark = mode === 'dark';
+      fillRound(x, y, w, h, 30, dark ? 'rgba(2,6,23,.9)' : 'rgba(255,255,255,.94)', dark ? 'rgba(255,255,255,.16)' : 'rgba(148,163,184,.3)');
+      fillRound(x + 26, y + 24, w - 52, 46, 18, dark ? 'rgba(15,23,42,.92)' : 'rgba(241,245,249,.95)', null);
+      label(title, x + 52, y + 56, 22, dark ? '#e2e8f0' : '#0f172a', 'left', 900);
+      rows.forEach((row, i) => {
+        const rowY = y + 105 + i * 70;
+        const active = i / Math.max(1, rows.length - 1) <= p + .12;
+        fillRound(x + 28, rowY, w - 56, 46, 16, dark ? 'rgba(15,23,42,.86)' : 'rgba(248,250,252,.98)', active ? 'rgba(249,115,22,.52)' : 'rgba(148,163,184,.22)');
+        label(row[0], x + 52, rowY + 30, 18, dark ? '#cbd5e1' : '#334155', 'left', 850);
+        fillRound(x + w - 186, rowY + 12, 126, 22, 11, active ? 'rgba(249,115,22,.82)' : dark ? 'rgba(51,65,85,.9)' : 'rgba(226,232,240,.95)', active ? 'rgba(255,237,213,.6)' : null);
+        label(row[1], x + w - 123, rowY + 29, 15, active ? '#fff7ed' : dark ? '#e2e8f0' : '#334155', 'center', 950);
+      });
+    }
+
+    function drawHook(time, p) {
+      gradientBg('#111827', '#1f2937', '#334155');
+      const hasVideo = coverStillSequence(creatiStillSequences.creatiWarehouse, 0, 0, W, H, p, 1.18 + p * .035, .52 + Math.sin(p * Math.PI) * .035, .48);
+      if (!hasVideo) coverImage(images.problem, 0, 0, W, H, 1.1 + p * .025, .58, .5);
+      const shadow = ctx.createLinearGradient(0, 0, W, H);
+      shadow.addColorStop(0, 'rgba(2,6,23,.24)');
+      shadow.addColorStop(.42, 'rgba(2,6,23,.06)');
+      shadow.addColorStop(1, 'rgba(15,23,42,.22)');
+      ctx.fillStyle = shadow;
+      ctx.fillRect(0, 0, W, H);
+      glow(W * .48, H * .46, 360, 'rgba(249,115,22,.1)');
+      drawAbstractRoutes(time);
+      const tiles = [
+        ['Margin changed', 'unpriced freight', 92, 126],
+        ['Stock moved', 'forecast stale', 1160, 138],
+        ['Invoice waiting', 'manual handoff', 1330, 704],
+        ['Branch delay', 'late follow-up', 142, 728]
+      ];
+      tiles.forEach((tile, i) => {
+        const drift = Math.sin(time * 5 + i) * 10;
+        fillRound(tile[2] + drift, tile[3], 330, 104, 28, 'rgba(15,23,42,.92)', 'rgba(249,115,22,.82)');
+        label(tile[0], tile[2] + drift + 28, tile[3] + 43, 26, '#fff', 'left', 950);
+        label(tile[1], tile[2] + drift + 28, tile[3] + 78, 19, '#ffedd5', 'left', 850);
+      });
+      ctx.save();
+      ctx.globalAlpha = .94;
+      ctx.shadowColor = 'rgba(2,6,23,.82)';
+      ctx.shadowBlur = 28;
+      ctx.shadowOffsetY = 8;
+      label('Business moves fast.', W / 2, 468, 82, '#fff', 'center', 950);
+      label('Disconnected systems do not.', W / 2, 552, 64, '#e2e8f0', 'center', 900);
+      ctx.restore();
+    }
+
+    function drawProblem(time, p) {
+      drawHook(time, p);
+    }
+
+    function drawReveal(time, p) {
+      gradientBg('#06111f', '#0f172a', '#111827');
+      glow(W / 2, H / 2, 650, `rgba(249,115,22,${.2 + p * .2})`);
+      drawFlowNodes(time, p > .16);
+      const snap = ease(clamp((p - .08) / .42));
+      ctx.save();
+      ctx.globalAlpha = snap;
+      ctx.strokeStyle = `rgba(249,115,22,${.28 + snap * .3})`;
+      ctx.lineWidth = 8;
+      ctx.setLineDash([28, 18]);
+      ctx.beginPath();
+      ctx.arc(W / 2, H / 2, 300 - snap * 110, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      const logoW = lerp(250, 430, snap);
+      if (images.logoDark.complete) {
+        const logoH = logoW * (images.logoDark.naturalHeight / images.logoDark.naturalWidth);
+        ctx.drawImage(images.logoDark, W / 2 - logoW / 2, H / 2 - logoH / 2, logoW, logoH);
+      }
+      label('One operating layer', W / 2, 706, 70, '#fff', 'center', 950);
+      label('for stock, landed cost, finance, payroll and branch work.', W / 2, 778, 30, '#cbd5e1', 'center', 750);
+      ctx.restore();
+      for (let i = 0; i < 8; i++) {
+        ctx.strokeStyle = `rgba(249,115,22,${.08 + .14 * Math.sin(time * 3 + i) ** 2})`;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(W / 2, H / 2, 120 + i * 66 + p * 40, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+    }
+
+    function drawImport(time, p) {
+      gradientBg('#e8eef4', '#f8fafc', '#dbeafe');
+      drawVideoPanel('creatiImport', 1010, 78, 620, 820, p, 'rgba(2,6,23,.16)', 1.02);
+      drawPhotoPanel('import', 1460, 116, 300, 310, p, 'rgba(2,6,23,.18)');
+      badge('ImportIQ + true landed cost', 120, 120, '#f97316');
+      label('Know the real cost', 120, 240, 78, '#0f172a');
+      label('before pricing moves.', 120, 326, 78, '#0f172a');
+      paragraph(['Shipment charges, duties and supplier costs', 'attach to stock before margin gets guessed.'], 124, 414, 32, 48, '#475569');
+      drawMetricCard(124, 610, 340, 238, 'Container margin', '24.8%', [18, 27, 24, 12, 10, 20], '#f97316');
+      drawMetricCard(500, 650, 340, 218, 'Landed cost', 'Locked', [8, 16, 19, 13, 9, 15], '#f97316');
+      drawProductScreen(1042, 558, 520, 300, 'ImportIQ shipment cost stack', [
+        ['FOB value', 'captured'],
+        ['Freight + duty', 'allocated'],
+        ['Stock margin', 'updated']
+      ], p, 'light');
+      ctx.strokeStyle = '#f97316';
+      ctx.lineWidth = 6;
+      ctx.setLineDash([20, 18]);
+      ctx.beginPath();
+      ctx.moveTo(470 + p * 70, 520);
+      ctx.bezierCurveTo(760, 450, 925, 455, 1090, 395);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    function drawForecast(time, p) {
+      gradientBg('#f8fafc', '#f1f5f9', '#eef2ff');
+      drawVideoPanel('creatiInventory', 92, 88, 720, 740, p, 'rgba(2,6,23,.12)', 1.06);
+      badge('InventoryIQ + ForecastIQ', 1040, 124, '#f97316');
+      label('Stock planning', 1040, 238, 74, '#0f172a');
+      label('that moves with', 1040, 320, 74, '#0f172a');
+      label('demand.', 1040, 402, 74, '#0f172a');
+      paragraph(['Fast movers, slow stock and replenishment', 'signals update in one planning view.'], 1044, 482, 30, 44, '#475569');
+      const x = 1038;
+      const y = 630;
+      drawBarSparkline(x, y, 650, 260, [42, 55, 50, 68, 76, 70, 84, 92], '#f97316');
+      drawProductScreen(214, 598, 470, 250, 'InventoryIQ live movement', [
+        ['Fast mover', 'reorder'],
+        ['Aged stock', 'review']
+      ], p, 'light');
+    }
+
+    function drawSales(time, p) {
+      gradientBg('#0f172a', '#152033', '#111827');
+      drawPhotoPanel('invoice', 1030, 96, 700, 390, p, 'rgba(2,6,23,.32)');
+      glow(1280, 270, 380, 'rgba(249,115,22,.12)');
+      badge('SalesIQ + InvoiceIQ', 110, 112, '#f97316');
+      label('Orders become invoices', 110, 235, 76, '#fff');
+      label('without another handoff.', 110, 320, 76, '#fff');
+      paragraph(['A quote can move through approval, fulfilment', 'and invoicing without rebuilding the same data.'], 114, 402, 30, 44, '#cbd5e1');
+      const steps = ['Quote', 'Order', 'Pro-forma', 'Invoice', 'Paid'];
+      steps.forEach((step, i) => {
+        const x = 144 + i * 330;
+        const y = 676 + Math.sin(time * 2 + i) * 12;
+        const active = i / (steps.length - 1) <= p + .08;
+        fillRound(x, y, 220, 138, 24, active ? 'rgba(255,255,255,.97)' : 'rgba(255,255,255,.72)', active ? 'rgba(249,115,22,.56)' : 'rgba(255,255,255,.18)');
+        label(step, x + 105, y + 76, 30, '#0f172a', 'center', 950);
+        if (active) {
+          fillRound(x + 72, y + 94, 76, 20, 10, 'rgba(249,115,22,.82)', null);
+        }
+        if (i < steps.length - 1) {
+          ctx.strokeStyle = i / 4 < p ? '#f97316' : 'rgba(148,163,184,.25)';
+          ctx.lineWidth = 7;
+          ctx.beginPath();
+          ctx.moveTo(x + 220, y + 66);
+          ctx.lineTo(x + 300, y + 66);
+          ctx.stroke();
+        }
+      });
+    }
+
+    function drawFinance(time, p) {
+      gradientBg('#f4f4f5', '#ffffff', '#e2e8f0');
+      drawPhotoPanel('finance', 112, 96, 760, 720, p, 'rgba(2,6,23,.1)');
+      badge('AccountingIQ + PayrollIQ', 1030, 130, '#334155');
+      label('Finance closes', 1030, 246, 74, '#0f172a');
+      label('inside the same', 1030, 328, 74, '#0f172a');
+      label('system.', 1030, 410, 74, '#0f172a');
+      paragraph(['Journals, payroll, reporting and approvals', 'stay connected to real operational events.'], 1034, 492, 30, 44, '#475569');
+      drawMetricCard(1032, 626, 286, 210, 'Net profit', 'Live', [18, 28, 25, 16, 14, 22], '#f97316');
+      drawMetricCard(1360, 626, 286, 210, 'Payroll', 'Ready', [12, 20, 17, 9, 8, 15], '#f97316');
+      drawProductScreen(190, 592, 500, 246, 'AccountingIQ close status', [
+        ['Operational journals', 'posted'],
+        ['Payroll approval', 'ready']
+      ], p, 'light');
+    }
+
+    function drawBranch(time, p) {
+      gradientBg('#071126', '#0f172a', '#111827');
+      drawPhotoPanel('command', 0, 0, W, H, p, 'rgba(2,6,23,.48)');
+      badge('TaskIQ + branch control', 110, 112, '#f97316');
+      label('Managers see what is', 110, 238, 74, '#fff');
+      label('late, blocked or moving.', 110, 322, 74, '#fff');
+      const cards = [
+        ['Branch 1', '18 tasks moving', '#f97316'],
+        ['Branch 2', '4 overdue', '#f97316'],
+        ['Branch 3', '9 follow-ups', '#f97316']
+      ];
+      cards.forEach((card, i) => {
+        const x = 1040;
+        const y = 230 + i * 190 + Math.sin(time * 2 + i) * 8;
+        fillRound(x, y, 560, 136, 26, 'rgba(255,255,255,.9)', 'rgba(255,255,255,.22)');
+        label(card[0], x + 34, y + 54, 30, '#0f172a', 'left', 950);
+        label(card[1], x + 34, y + 98, 25, '#475569', 'left', 800);
+        fillRound(x + 438, y + 38, 82, 60, 20, 'rgba(249,115,22,.82)', 'rgba(255,237,213,.68)');
+        label(String(i + 1), x + 479, y + 78, 28, '#fff7ed', 'center', 950);
+      });
+    }
+
+    function drawCta(time, p) {
+      gradientBg('#f8fafc', '#ffffff', '#e2e8f0');
+      glow(W * .75, H * .18, 520, 'rgba(249,115,22,.16)');
+      ctx.save();
+      ctx.globalAlpha = ease(p);
+      drawPhotoPanel('closing', 1010, 88, 750, 790, p, 'rgba(2,6,23,.08)');
+      fillRound(82, 92, 820, 800, 42, 'rgba(255,255,255,.72)', 'rgba(148,163,184,.28)');
+      if (images.logo.complete) ctx.drawImage(images.logo, 122, 124, 330, 330 * (images.logo.naturalHeight / images.logo.naturalWidth));
+      badge('Connected operating system', 124, 378, '#f97316');
+      label('Run product', 124, 496, 70, '#0f172a');
+      label('operations, finance', 124, 572, 70, '#0f172a');
+      label('and work control', 124, 648, 70, '#0f172a');
+      label('in one FlowIQ layer.', 124, 724, 70, '#0f172a');
+      paragraph(['Real-time margin, stock, accounting, payroll', 'and task visibility for growing teams.'], 128, 778, 26, 37, '#475569');
+      fillRound(130, 848, 304, 76, 38, '#f97316', null);
+      label('Book Demo', 282, 897, 30, '#fff', 'center', 950);
+      ctx.restore();
+    }
+
+    function render(now) {
+      const time = timeAt(now);
+      if (playing) Object.values(videos).forEach(video => {
+        if (video.paused) video.play().catch(() => {});
+      });
+      const scene = scenes.find(item => time >= item.start && time < item.end) || scenes[scenes.length - 1];
+      const p = sceneProgress(time, scene);
+      scene.draw(time, p);
+      filmTexture(time, .045);
+      drawBrandMark(time, scene.name);
+      drawVoiceCaption(time);
+      drawSceneTransition(p, scene.start === 0);
+      scrub.value = String(time);
+      timeLabel.textContent = `${mmss(time)} / ${mmss(DURATION)}`;
+      requestAnimationFrame(render);
+    }
+
+    playPause.addEventListener('click', () => {
+      const now = performance.now();
+      if (playing) {
+        manualTime = timeAt(now);
+        playing = false;
+        playPause.textContent = 'Play';
+      } else {
+        started = now - manualTime * 1000;
+        playing = true;
+        playPause.textContent = 'Pause';
+      }
+    });
+
+    restart.addEventListener('click', () => {
+      started = performance.now();
+      manualTime = 0;
+      playing = true;
+      playPause.textContent = 'Pause';
+    });
+
+    scrub.addEventListener('input', () => {
+      manualTime = Number(scrub.value);
+      started = performance.now() - manualTime * 1000;
+      if (playing) return;
+      timeLabel.textContent = `${mmss(manualTime)} / ${mmss(DURATION)}`;
+    });
+
+    window.renderFrameAt = async seconds => {
+      const time = ((Number(seconds) % DURATION) + DURATION) % DURATION;
+      playing = false;
+      manualTime = time;
+      const scene = scenes.find(item => time >= item.start && time < item.end) || scenes[scenes.length - 1];
+      const activeVideos = [];
+      await Promise.all(activeVideos.map(key => seekVideo(videos[key], Math.max(0, time - scene.start))));
+      const p = sceneProgress(time, scene);
+      scene.draw(time, p);
+      filmTexture(time, .045);
+      drawBrandMark(time, scene.name);
+      drawVoiceCaption(time);
+      drawSceneTransition(p, scene.start === 0);
+      scrub.value = String(time);
+      timeLabel.textContent = `${mmss(time)} / ${mmss(DURATION)}`;
+    };
+
+    requestAnimationFrame(render);
+  </script>
+</body>
+
+</html>
