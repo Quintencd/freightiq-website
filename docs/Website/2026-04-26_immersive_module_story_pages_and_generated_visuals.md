@@ -344,3 +344,108 @@ Date: 2026-04-26
   - Mitigation: replace with approved customer names/logos once available.
 - **12%**: Legacy solution aliases now redirect to the closest primary page, which may reduce page-specific SEO granularity for those older URLs.
   - Mitigation: canonical redirects avoid visitors seeing stale layouts while preserving the cleaner conversion funnel.
+
+## 2026-05-09 Homepage Creati Hero Loop
+
+- Created a fresh Creati text-to-video clip for the homepage hero instead of reusing footage from the v13 overview advert.
+- Prompt direction: realistic importer/distributor operations, warehouse stock, purchasing desk, finance users, laptops/tablets, and subtle FlowIQ-orange data movement. The prompt explicitly avoided readable text, fake logos, fake brand names, fantasy, and futuristic sci-fi.
+- Added the source and compressed web assets:
+  - `assets/videos/homepage/flowiq-homepage-hero-creati-source.mp4`
+  - `assets/videos/homepage/flowiq-homepage-hero-loop.mp4`
+  - `assets/videos/homepage/flowiq-homepage-hero-loop.webm`
+  - `assets/img/generated/homepage-support/flowiq-homepage-hero-poster.jpg`
+  - `assets/img/generated/homepage-support/flowiq-homepage-hero-poster-960.jpg`
+- Updated the homepage hero panel to use a muted, autoplaying, looping video with `preload="metadata"` and a poster image fallback.
+- Added `prefers-reduced-motion` handling so motion-sensitive visitors fall back to the static poster.
+- Moved the small operational pills to the top-left of the hero video and kept the main platform badge at the bottom to avoid overlapping badges on desktop and mobile.
+- Bumped the homepage stylesheet reference to `flowiq-light.css?v=19`.
+
+### Verification
+
+- Inspected the generated poster and a five-frame contact sheet before wiring the clip into the site.
+- Verified the local homepage through the Codex in-app browser at `http://localhost:51355/`.
+- Checked desktop and mobile hero layouts after wiring the video; adjusted the overlay positions after the first mobile/desktop pass showed crowding.
+- Confirmed the homepage hero has one `.hero-loop-video` element and two source formats.
+
+### Regression Risks Over 10%
+
+- **14%**: A video hero can increase homepage bandwidth compared with a static image.
+  - Mitigation: compressed the loop to roughly 600 KB per MP4/WebM format, kept `preload="metadata"`, and retained a poster fallback.
+- **12%**: AI-generated homepage footage can drift generic if used too broadly.
+  - Mitigation: this clip is homepage-only, operationally grounded, and was generated fresh for importer/distributor operations rather than reused from the overview advert.
+
+## 2026-05-09 Homepage Flow Module Glass Animation
+
+- Restyled the homepage connected-module flow strip so it feels more premium and alive without adding another video payload.
+- Kept the existing marquee markup and module order intact, but changed the cards from solid panels to semi-transparent glass blocks with:
+  - module-specific translucent colour tints
+  - softer glass highlights and backdrop blur
+  - subtle card breathing animation
+  - animated bottom signal bars
+  - connector glints between modules
+  - a slow section-level sheen across the flow band
+- Added `prefers-reduced-motion` handling for the new card, signal, connector, and sheen animations.
+
+### Verification
+
+- Reloaded the local homepage and checked the flow section in the Codex in-app browser.
+- Confirmed the flow cards retain readable labels while looking lighter and less flat.
+- Confirmed the animation work is CSS-only and does not add extra media files or network payload.
+
+### Regression Risks Over 10%
+
+- **12%**: Multiple CSS animations in the flow strip could feel too busy for some visitors.
+  - Mitigation: kept motion subtle, pauses the marquee on hover, and disables the added effects for `prefers-reduced-motion`.
+
+## 2026-05-09 Homepage Flow Module Impact Pass
+
+- Increased the visual weight of the connected-module flow cards after review showed the first glass pass still looked too quiet.
+- Made the module cards wider and taller, strengthened the translucent colour fills, increased border opacity, and added a more visible top colour rail per card.
+- Increased the icon badge size and applied the badge styling to Lucide SVG output as well as the original `<i>` placeholders so icons render as coloured capsules after Lucide replaces them.
+- Strengthened route connectors and signal bars so the strip reads more like an animated operating-system flow rather than pale cards on a carousel.
+
+### Verification
+
+- Rechecked the local homepage flow strip in the in-app browser after the impact pass.
+- Confirmed the change remains CSS-only and keeps the existing module order and marquee behavior.
+
+### Regression Risks Over 10%
+
+- **12%**: Stronger colour and glow could become too visually loud beside the cleaner homepage sections.
+  - Mitigation: kept the cards translucent, retained white/glass layering, and left reduced-motion support in place.
+
+## 2026-05-09 Shared Flow Card Impact Rollout
+
+- Applied the stronger glass-block treatment beyond the homepage so the same flow-card language is consistent across the marketing site.
+- Updated shared solution page flow styles in `flowiq-light.css`:
+  - `solution-flow-panel`
+  - `solution-flow-lane`
+  - `solution-flow-step`
+- Updated module story flow styles in `flowiq-light.css`:
+  - `motion-lane`
+  - `motion-node`
+  - `system-module-card`
+- Updated SEO landing-page flow styles in `assets/css/seo-pages.css`:
+  - `flow-panel`
+  - `flow-lane`
+  - `flow-step`
+  - `flow-icon`
+- Bumped cache keys for the affected pages:
+  - solution flow pages now use `flowiq-light.css?v=14`
+  - module story pages now use `flowiq-light.css?v=13`
+  - SEO flow pages now use `assets/css/seo-pages.css?v=3`
+
+### Verification
+
+- Browser-checked representative pages locally:
+  - `solutions/importers.html`
+  - `modules/importiq.html`
+  - `import-erp-software.html`
+- Confirmed the shared changes are CSS-driven and do not add media payload.
+
+### Regression Risks Over 10%
+
+- **14%**: Stronger card sizing can make dense flow sections taller on tablet and mobile.
+  - Mitigation: reused the existing responsive breakpoints and preserved the current grid collapse rules.
+- **12%**: Applying the style globally can make some older SEO pages feel more visually premium than surrounding plain content.
+  - Mitigation: scoped the stronger treatment only to the existing flow panels/cards, not every content card on the page.

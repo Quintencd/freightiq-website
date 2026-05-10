@@ -394,6 +394,7 @@
         { type: 'row', label: 'Manufacturing & Kitsets (BOM)', get: (p) => hasManufacturingKitsets(p) ? '✓' : 'Available on Growth Plan', tick: true, center: true },
         { type: 'row', label: 'AccountingIQ bank feed API connectors', get: (p) => hasFeature(p, 'accounting_bank_feed_api') ? '✓' : 'Available on Growth Plan', tick: true, center: true },
         { type: 'row', label: 'AccountingIQ advanced reconciliation', get: (p) => hasAdvancedReconciliation(p) ? '✓' : 'Available on Growth Plan', tick: true, center: true },
+        { type: 'row', label: 'AccountingIQ customer/supplier payment automation', get: (p) => hasFeature(p, 'accounting_auto_payment_matching') ? 'Growth+ included' : 'Upgrade to Growth', center: true },
         { type: 'row', label: 'WhatsApp messaging', get: (p) => getWhatsAppLabel(p) },
         {
           type: 'row',

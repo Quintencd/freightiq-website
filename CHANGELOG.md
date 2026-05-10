@@ -1,5 +1,17 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.7] - May 9, 2026
+
+### AccountingIQ Payment Automation Pricing Visibility
+
+- Added `AccountingIQ customer/supplier payment automation` to the pricing comparison under `Intelligence & Automation`.
+- Growth+ plans show the feature as included; Starter Lite, Starter, and Growth Lite route to upgrade.
+- Kept the distinction between Growth Lite bank-feed connectors and Growth+ auto-payment allocation clear.
+
+### Regression Risk Notes (>10%)
+
+- **10-12%**: Growth Lite customers may see bank-feed API connectors included while payment automation remains upgrade-only.
+
 ## [1.3.6] - May 8, 2026
 
 ### Starter Lite Positioning

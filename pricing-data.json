@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-09T11:50:15.295Z",
+  "generated_at_utc": "2026-05-10T05:11:55.784Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -304,6 +304,7 @@
         "rep_commission_automation",
         "accounting_bank_feed_api",
         "accounting_recon_advanced",
+        "accounting_auto_payment_matching",
         "accounting_recon_bulk_confidence",
         "accounting_anomaly_detection"
       ],
@@ -421,6 +422,7 @@
         "auto_rebate_settlement_automation",
         "accounting_bank_feed_api",
         "accounting_recon_advanced",
+        "accounting_auto_payment_matching",
         "accounting_recon_bulk_confidence",
         "accounting_anomaly_detection",
         "whatsapp_web_messaging",
@@ -531,6 +533,7 @@
         "timeiq_finance_bridge",
         "accounting_bank_feed_api",
         "accounting_recon_advanced",
+        "accounting_auto_payment_matching",
         "accounting_recon_bulk_confidence",
         "accounting_anomaly_detection",
         "whatsapp_web_messaging",
@@ -625,6 +628,7 @@
         "timeiq_finance_bridge",
         "accounting_bank_feed_api",
         "accounting_recon_advanced",
+        "accounting_auto_payment_matching",
         "accounting_recon_bulk_confidence",
         "accounting_anomaly_detection",
         "whatsapp_web_messaging",

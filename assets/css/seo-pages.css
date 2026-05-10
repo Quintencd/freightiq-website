@@ -443,18 +443,22 @@ a {
   position: relative;
   overflow: hidden;
   margin-top: 1.5rem;
-  padding: 1.25rem;
+  padding: 1.45rem;
   border-radius: 1.75rem;
-  border: 1px solid rgba(226, 232, 240, 0.95);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.92));
-  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(203, 213, 225, 0.78);
+  background:
+    radial-gradient(circle at 18% 100%, rgba(249, 115, 22, 0.16), transparent 22rem),
+    radial-gradient(circle at 82% 86%, rgba(14, 165, 233, 0.14), transparent 24rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(241, 245, 249, 0.82));
+  box-shadow: 0 32px 90px rgba(15, 23, 42, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(18px);
 }
 
 .flow-lane {
   position: relative;
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.05rem;
 }
 
 .flow-lane::before {
@@ -463,8 +467,10 @@ a {
   left: 3%;
   right: 3%;
   top: 50%;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(249, 115, 22, 0.18), rgba(249, 115, 22, 0.58), rgba(14, 165, 233, 0.24));
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(249, 115, 22, 0.22), #ff7214, rgba(14, 165, 233, 0.45));
+  box-shadow: 0 0 24px rgba(249, 115, 22, 0.32);
   transform: translateY(-50%);
   z-index: 0;
 }
@@ -472,30 +478,134 @@ a {
 .flow-step {
   position: relative;
   z-index: 1;
-  min-height: 12.5rem;
-  padding: 1rem;
-  border: 1px solid rgba(226, 232, 240, 0.95);
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.07);
+  min-height: 13.25rem;
+  padding: 1.15rem;
+  border: 1.5px solid rgba(249, 115, 22, 0.42);
+  border-radius: 1.35rem;
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.4) 48%, rgba(255, 255, 255, 0.28)),
+    radial-gradient(circle at 14% 0%, rgba(255, 255, 255, 0.88), transparent 34%),
+    linear-gradient(145deg, rgba(255, 237, 213, 0.62), rgba(255, 255, 255, 0.18));
+  box-shadow: 0 28px 68px rgba(15, 23, 42, 0.11), 0 0 0 1px rgba(255, 255, 255, 0.82) inset, 0 0 56px rgba(249, 115, 22, 0.2);
+  backdrop-filter: blur(20px) saturate(1.28);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.flow-step:hover {
+  transform: translateY(-0.35rem) scale(1.012);
+  border-color: rgba(249, 115, 22, 0.72);
+  box-shadow: 0 34px 84px rgba(15, 23, 42, 0.15), 0 0 76px rgba(249, 115, 22, 0.26);
+}
+
+.flow-step::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(249, 115, 22, 0.48), transparent 3rem),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.72), transparent 36%, rgba(255, 255, 255, 0.22));
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.flow-step:nth-child(2) {
+  border-color: rgba(37, 99, 235, 0.5);
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.4) 48%, rgba(255, 255, 255, 0.28)),
+    radial-gradient(circle at 14% 0%, rgba(255, 255, 255, 0.88), transparent 34%),
+    linear-gradient(145deg, rgba(219, 234, 254, 0.68), rgba(255, 255, 255, 0.18));
+}
+
+.flow-step:nth-child(3) {
+  border-color: rgba(22, 163, 74, 0.5);
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.4) 48%, rgba(255, 255, 255, 0.28)),
+    radial-gradient(circle at 14% 0%, rgba(255, 255, 255, 0.88), transparent 34%),
+    linear-gradient(145deg, rgba(220, 252, 231, 0.66), rgba(255, 255, 255, 0.18));
+}
+
+.flow-step:nth-child(4) {
+  border-color: rgba(124, 58, 237, 0.5);
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.4) 48%, rgba(255, 255, 255, 0.28)),
+    radial-gradient(circle at 14% 0%, rgba(255, 255, 255, 0.88), transparent 34%),
+    linear-gradient(145deg, rgba(237, 233, 254, 0.68), rgba(255, 255, 255, 0.18));
+}
+
+.flow-step:nth-child(5) {
+  border-color: rgba(219, 39, 119, 0.48);
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.4) 48%, rgba(255, 255, 255, 0.28)),
+    radial-gradient(circle at 14% 0%, rgba(255, 255, 255, 0.88), transparent 34%),
+    linear-gradient(145deg, rgba(252, 231, 243, 0.66), rgba(255, 255, 255, 0.18));
+}
+
+.flow-step:nth-child(6) {
+  border-color: rgba(234, 88, 12, 0.58);
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.4) 48%, rgba(255, 255, 255, 0.28)),
+    radial-gradient(circle at 14% 0%, rgba(255, 255, 255, 0.88), transparent 34%),
+    linear-gradient(145deg, rgba(255, 237, 213, 0.7), rgba(255, 255, 255, 0.18));
 }
 
 .flow-step h3 {
   margin: 0.8rem 0 0;
-  font-size: 1.04rem;
-  line-height: 1.2;
+  color: var(--fiq-ink);
+  font-size: 1.18rem;
+  line-height: 1.08;
+  font-weight: 950;
+  letter-spacing: -0.02em;
 }
 
 .flow-step p {
   margin: 0.65rem 0 0;
-  color: var(--fiq-copy);
-  font-size: 0.92rem;
+  color: #263448;
+  font-size: 0.94rem;
   line-height: 1.45;
+  font-weight: 760;
 }
 
 .flow-icon {
   display: inline-flex;
-  color: var(--fiq-ink);
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  color: #fff;
+  background: linear-gradient(145deg, #f97316, #fb923c);
+  box-shadow: 0 16px 34px rgba(249, 115, 22, 0.3), 0 0 0 6px rgba(255, 255, 255, 0.48);
+}
+
+.flow-icon i,
+.flow-icon svg {
+  width: 100%;
+  height: 100%;
+  padding: 0.56rem;
+  color: #fff;
+  stroke: #fff;
+}
+
+.flow-step:nth-child(2) .flow-icon {
+  background: linear-gradient(145deg, #2563eb, #60a5fa);
+}
+
+.flow-step:nth-child(3) .flow-icon {
+  background: linear-gradient(145deg, #16a34a, #4ade80);
+}
+
+.flow-step:nth-child(4) .flow-icon {
+  background: linear-gradient(145deg, #7c3aed, #a78bfa);
+}
+
+.flow-step:nth-child(5) .flow-icon {
+  background: linear-gradient(145deg, #db2777, #f472b6);
+}
+
+.flow-step:nth-child(6) .flow-icon {
+  background: linear-gradient(145deg, #ea580c, #fb923c);
 }
 
 .content-card {
