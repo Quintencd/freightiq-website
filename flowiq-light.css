@@ -3136,3 +3136,898 @@ nav.sticky {
   0%, 18%, 100% { opacity: 0.22; }
   8% { opacity: 0.78; }
 }
+
+/* ------------------------------
+   Full-site premium light sweep
+-------------------------------- */
+.premium-light-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(249, 115, 22, 0.14), transparent 24rem),
+    radial-gradient(circle at 86% 12%, rgba(37, 99, 235, 0.09), transparent 24rem),
+    linear-gradient(145deg, #fffaf4 0%, #f8fafc 46%, #eef4ff 100%) !important;
+  color: var(--fiq-ink) !important;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+.premium-light-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at 50% 8%, #000 0%, transparent 72%);
+}
+
+.premium-light-page .site-atmosphere {
+  background:
+    radial-gradient(circle at 14% 18%, rgba(249, 115, 22, 0.16), transparent 24rem),
+    radial-gradient(circle at 84% 14%, rgba(37, 99, 235, 0.11), transparent 25rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 250, 252, 0.8));
+}
+
+.premium-light-page nav.fixed,
+.premium-light-page nav.sticky {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+  background: rgba(255, 255, 255, 0.76) !important;
+  box-shadow: 0 20px 54px rgba(15, 23, 42, 0.08) !important;
+  backdrop-filter: blur(24px) saturate(130%);
+}
+
+.premium-light-page nav img {
+  filter: drop-shadow(0 10px 18px rgba(15, 23, 42, 0.07));
+}
+
+.premium-light-page nav a,
+.premium-light-page .nav-dropdown__trigger {
+  color: #334155;
+}
+
+.premium-light-page nav a:hover,
+.premium-light-page .nav-dropdown__trigger:hover {
+  color: #ea580c;
+}
+
+.premium-light-page .premium-main {
+  position: relative;
+  z-index: 1;
+}
+
+.premium-light-page:not(.fiq-family-home) .premium-main {
+  padding-top: clamp(7.5rem, 10vw, 9rem) !important;
+  padding-bottom: clamp(3rem, 7vw, 5rem) !important;
+}
+
+.premium-light-page :where(h1, h2, h3) {
+  color: #111827;
+  letter-spacing: 0 !important;
+}
+
+.premium-light-page h1 {
+  font-weight: 900 !important;
+  line-height: 0.96 !important;
+}
+
+.premium-light-page h2 {
+  font-weight: 850 !important;
+}
+
+.premium-light-page p,
+.premium-light-page li {
+  color: #40516a;
+}
+
+.premium-light-page :where(.bg-white, .dark\:bg-slate-800, .dark\:bg-slate-900, .dark\:bg-slate-800\/50) {
+  background: rgba(255, 255, 255, 0.88) !important;
+}
+
+.premium-light-page :where(.border, .border-slate-200, .dark\:border-slate-700, .dark\:border-slate-600) {
+  border-color: rgba(15, 23, 42, 0.11) !important;
+}
+
+.premium-light-page :where(.rounded-lg, .rounded-xl, .rounded-2xl) {
+  border-radius: 1rem;
+}
+
+.premium-light-page :where(button, .bg-freight-orange, .bg-orange-500, a[href*="signup"], a[data-analytics-event="trial_signup_click"]) {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.premium-light-page :where(.bg-freight-orange, .bg-orange-500, a[href*="signup"].bg-freight-orange, a[data-analytics-event="trial_signup_click"].bg-freight-orange, button.bg-freight-orange, button.bg-orange-500) {
+  border: 1px solid rgba(234, 88, 12, 0.32) !important;
+  background: linear-gradient(180deg, #ffad5f 0%, #f97316 48%, #dc5f0f 100%) !important;
+  color: #ffffff !important;
+  box-shadow:
+    0 18px 42px rgba(249, 115, 22, 0.26),
+    0 4px 12px rgba(249, 115, 22, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42) !important;
+}
+
+.premium-light-page :where(.bg-freight-orange, .bg-orange-500, a[href*="signup"].bg-freight-orange, button.bg-freight-orange, button.bg-orange-500):hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 22px 56px rgba(249, 115, 22, 0.34),
+    0 0 0 5px rgba(249, 115, 22, 0.1) !important;
+}
+
+.premium-light-page :where(a.border, button.border, .glass-panel, .proof-chip, .fresh-proof-row span) {
+  background: linear-gradient(180deg, #ffffff, #f8fafc) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.92) !important;
+}
+
+.premium-light-page .fiq-auto-hero,
+.premium-light-page .fiq-premium-section,
+.premium-light-page :where(article.bg-white, section.bg-white) {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(249, 115, 22, 0.1), transparent 20rem),
+    radial-gradient(circle at 92% 8%, rgba(37, 99, 235, 0.08), transparent 22rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.93), rgba(248, 250, 252, 0.76)) !important;
+  box-shadow:
+    0 28px 80px rgba(15, 23, 42, 0.1),
+    0 2px 8px rgba(15, 23, 42, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(22px) saturate(130%);
+}
+
+.premium-light-page .fiq-auto-hero {
+  border-radius: clamp(1.4rem, 3vw, 2rem) !important;
+  padding: clamp(2rem, 5vw, 4rem) !important;
+}
+
+.premium-light-page .fiq-premium-section {
+  border-radius: clamp(1.15rem, 2vw, 1.75rem) !important;
+}
+
+.premium-light-page .fiq-auto-hero :where(h1, h2) {
+  max-width: 13ch;
+  font-size: clamp(3rem, 7vw, 6.4rem) !important;
+}
+
+.premium-light-page .fiq-auto-hero p {
+  max-width: 52rem;
+  font-size: clamp(1.08rem, 1.8vw, 1.35rem) !important;
+  line-height: 1.58 !important;
+}
+
+.premium-light-page :where(.grid > .rounded-xl, .grid > .rounded-2xl, .solution-segment-card, .route-card, .proof-card, .system-module-card, .pricing-stage-card) {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 250, 252, 0.74)),
+    rgba(255, 255, 255, 0.72) !important;
+  box-shadow: 0 22px 54px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.94) !important;
+}
+
+.premium-light-page :where(.grid > .rounded-xl, .grid > .rounded-2xl, .solution-segment-card, .route-card, .proof-card, .system-module-card):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 30px 74px rgba(15, 23, 42, 0.12), 0 0 0 5px rgba(249, 115, 22, 0.06) !important;
+}
+
+.premium-light-page input,
+.premium-light-page select,
+.premium-light-page textarea {
+  width: 100%;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  border-radius: 1rem !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #111827 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92), 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+
+.premium-light-page input:focus,
+.premium-light-page select:focus,
+.premium-light-page textarea:focus {
+  outline: 0;
+  border-color: rgba(249, 115, 22, 0.62) !important;
+  box-shadow: 0 0 0 5px rgba(249, 115, 22, 0.11), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.premium-light-page .fiq-premium-form {
+  border-radius: 1.35rem;
+}
+
+.fiq-family-pricing .premium-main {
+  width: min(100% - 2rem, 1440px);
+}
+
+.fiq-family-pricing #scale-path,
+.fiq-family-pricing h1 {
+  font-size: clamp(3rem, 5.7vw, 5.6rem) !important;
+  line-height: 0.95 !important;
+}
+
+.fiq-family-pricing #pricing-table-wrap > div {
+  border-radius: 1.6rem !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.94);
+}
+
+.fiq-family-pricing table th,
+.fiq-family-pricing table td {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.fiq-family-pricing table th {
+  color: #111827 !important;
+}
+
+.fiq-family-home .fresh-hero h1 {
+  font-size: clamp(3.6rem, 6.7vw, 6.4rem) !important;
+  line-height: 0.93 !important;
+  max-width: 48rem;
+}
+
+.fiq-family-home .fresh-hero p {
+  max-width: 43rem;
+}
+
+.fiq-family-tools main {
+  width: min(100% - 2rem, 1100px);
+}
+
+.fiq-family-tools main > h1,
+.fiq-family-tools .fiq-auto-hero h1 {
+  font-size: clamp(3rem, 6vw, 5.4rem) !important;
+}
+
+.fiq-family-tools main > a:first-child {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(249, 115, 22, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 247, 237, 0.86);
+  padding: 0.45rem 0.8rem;
+  color: #c2410c !important;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.fiq-family-tools main > .grid,
+.fiq-family-tools main section .grid {
+  gap: 1rem;
+}
+
+.fiq-family-tools main section,
+.fiq-family-legal main article,
+.fiq-family-article main section,
+.fiq-family-glossary main section,
+.fiq-family-compare main section,
+.fiq-family-use-cases main section {
+  border-radius: 1.45rem !important;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.08) !important;
+}
+
+.fiq-family-tools main section.prose {
+  padding: clamp(1.3rem, 3vw, 2rem) !important;
+}
+
+.fiq-family-article .premium-main,
+.fiq-family-glossary .premium-main,
+.fiq-family-compare .premium-main,
+.fiq-family-use-cases .premium-main,
+.fiq-family-legal .premium-main {
+  width: min(100% - 2rem, 1180px);
+}
+
+.fiq-family-article h1,
+.fiq-family-glossary h1,
+.fiq-family-compare h1,
+.fiq-family-use-cases h1,
+.fiq-family-legal h1 {
+  font-size: clamp(2.8rem, 6vw, 5.8rem) !important;
+}
+
+.fiq-family-article :where(article, .prose, section),
+.fiq-family-glossary :where(article, .prose, section),
+.fiq-family-compare :where(article, .prose, section),
+.fiq-family-use-cases :where(article, .prose, section),
+.fiq-family-legal article {
+  line-height: 1.68;
+}
+
+.premium-light-page footer {
+  border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(18px);
+}
+
+@media (max-width: 960px) {
+  .premium-light-page:not(.fiq-family-home) .premium-main {
+    padding-top: 6.5rem !important;
+  }
+
+  .premium-light-page .fiq-auto-hero {
+    padding: 1.5rem !important;
+  }
+
+  .premium-light-page .fiq-auto-hero :where(h1, h2),
+  .fiq-family-pricing h1 {
+    max-width: none;
+    font-size: clamp(2.6rem, 12vw, 4.5rem) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .premium-light-page:not(.fiq-family-home) .premium-main {
+    width: min(100% - 1.25rem, 100%) !important;
+    padding-inline: 0 !important;
+  }
+
+  .premium-light-page nav .h-20,
+  .premium-light-page nav .h-16 {
+    height: 5rem !important;
+  }
+
+  .premium-light-page :where(.fiq-auto-hero, .fiq-premium-section, article.bg-white, section.bg-white) {
+    border-radius: 1.15rem !important;
+  }
+}
+
+/* Premium light contrast guardrails for legacy dark utility markup. */
+.premium-light-page.bg-freight-slate,
+.premium-light-page.bg-slate-900,
+.premium-light-page.bg-slate-950,
+.premium-light-page.bg-black {
+  background:
+    radial-gradient(circle at 12% -8%, rgba(249, 115, 22, 0.11), transparent 28rem),
+    radial-gradient(circle at 84% 4%, rgba(14, 165, 233, 0.09), transparent 30rem),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #eef4fb 100%) !important;
+  color: var(--fiq-ink) !important;
+}
+
+.premium-light-page :where(
+  .bg-freight-slate,
+  .bg-slate-800,
+  .bg-slate-900,
+  .bg-slate-950,
+  .bg-gray-800,
+  .bg-gray-900,
+  .bg-zinc-900,
+  .bg-neutral-900,
+  .bg-black
+) {
+  border-color: rgba(15, 23, 42, 0.11) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.82)),
+    rgba(255, 255, 255, 0.86) !important;
+  color: var(--fiq-ink) !important;
+  box-shadow: 0 22px 58px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.92) !important;
+}
+
+.premium-light-page :where(.bg-slate-800\/50, .bg-slate-900\/30, .bg-slate-900\/60, .bg-black\/20, .bg-black\/40) {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  background: rgba(255, 255, 255, 0.84) !important;
+  color: var(--fiq-ink) !important;
+}
+
+.premium-light-page :where(
+  a.bg-slate-700,
+  a.bg-slate-800,
+  a.bg-slate-900,
+  a.bg-slate-950,
+  button.bg-slate-700,
+  button.bg-slate-800,
+  button.bg-slate-900,
+  button.bg-slate-950
+) {
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  background: linear-gradient(180deg, #ffffff, #f8fafc) !important;
+  color: var(--fiq-ink) !important;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.96) !important;
+}
+
+.premium-light-page :where(
+  a.bg-slate-700,
+  a.bg-slate-800,
+  a.bg-slate-900,
+  a.bg-slate-950,
+  button.bg-slate-700,
+  button.bg-slate-800,
+  button.bg-slate-900,
+  button.bg-slate-950
+):hover {
+  background: #fff7ed !important;
+  border-color: rgba(249, 115, 22, 0.28) !important;
+  color: #9a3412 !important;
+}
+
+.premium-light-page :where(.text-white, .text-slate-50, .text-slate-100, .text-slate-200) {
+  color: var(--fiq-ink) !important;
+}
+
+.premium-light-page :where(.text-slate-300, .text-slate-400, .text-slate-500) {
+  color: var(--fiq-muted) !important;
+}
+
+.premium-light-page footer,
+.premium-light-page footer[class*="bg-slate-"],
+.premium-light-page footer[class*="bg-black"],
+.premium-light-page footer.bg-freight-slate {
+  border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  color: var(--fiq-muted) !important;
+  box-shadow: none !important;
+}
+
+.premium-light-page footer :where(h1, h2, h3, h4, h5, h6, .text-white, .text-slate-50, .text-slate-100) {
+  color: var(--fiq-ink) !important;
+}
+
+.premium-light-page footer :where(a, .text-slate-300, .text-slate-400, .text-slate-500) {
+  color: var(--fiq-muted) !important;
+}
+
+.premium-light-page footer a:hover {
+  color: #c2410c !important;
+}
+
+.premium-light-page input::placeholder,
+.premium-light-page textarea::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1 !important;
+}
+
+.premium-light-page svg[data-lucide="quote"].absolute,
+.premium-light-page i[data-lucide="quote"].absolute {
+  display: none !important;
+}
+
+.premium-light-page :where(
+  .bg-freight-orange,
+  .bg-orange-500,
+  .bg-orange-600,
+  .bg-green-600,
+  .bg-blue-600,
+  .bg-red-600,
+  a.bg-freight-orange,
+  button.bg-freight-orange
+),
+.premium-light-page :where(
+  .bg-freight-orange,
+  .bg-orange-500,
+  .bg-orange-600,
+  .bg-green-600,
+  .bg-blue-600,
+  .bg-red-600,
+  a.bg-freight-orange,
+  button.bg-freight-orange
+) :where(span, strong, em, i, svg, .text-white, .text-slate-50, .text-slate-100) {
+  color: #ffffff !important;
+}
+
+.premium-light-page :where(
+  .bg-freight-orange,
+  .bg-orange-500,
+  .bg-orange-600,
+  a.bg-freight-orange,
+  button.bg-freight-orange
+) {
+  border-color: transparent !important;
+  background: linear-gradient(135deg, #f97316, #ea580c) !important;
+  box-shadow: 0 18px 40px rgba(249, 115, 22, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+}
+
+/* High-impact page redesign components. */
+.fiq-redesign-main {
+  width: min(100% - 2rem, 1240px);
+  margin-inline: auto;
+  padding: clamp(7rem, 10vw, 9rem) 0 clamp(3rem, 6vw, 5rem);
+}
+
+.fiq-redesign-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(19rem, 0.78fr);
+  gap: clamp(1.4rem, 4vw, 3rem);
+  align-items: stretch;
+  margin-bottom: clamp(1.6rem, 4vw, 3rem);
+  padding: clamp(1.35rem, 4vw, 3.2rem);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: clamp(1.4rem, 3vw, 2.1rem);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(249, 115, 22, 0.14), transparent 28rem),
+    radial-gradient(circle at 95% 12%, rgba(14, 165, 233, 0.09), transparent 28rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 250, 252, 0.8));
+  box-shadow: 0 34px 90px rgba(15, 23, 42, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.fiq-redesign-hero--center {
+  display: block;
+  text-align: center;
+}
+
+.fiq-redesign-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: fit-content;
+  margin-bottom: 1rem;
+  padding: 0.48rem 0.75rem;
+  border: 1px solid rgba(249, 115, 22, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 247, 237, 0.86);
+  color: #c2410c;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.fiq-redesign-hero--center .fiq-redesign-kicker {
+  margin-inline: auto;
+}
+
+.fiq-redesign-title {
+  max-width: 13ch;
+  color: var(--fiq-ink);
+  font-size: clamp(3rem, 7.4vw, 6.5rem);
+  line-height: 0.92;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+.fiq-redesign-hero--center .fiq-redesign-title {
+  max-width: 15ch;
+  margin-inline: auto;
+}
+
+.fiq-redesign-title span {
+  color: #f97316;
+}
+
+.fiq-redesign-lead {
+  max-width: 46rem;
+  margin-top: 1.2rem;
+  color: #475569;
+  font-size: clamp(1.06rem, 2vw, 1.32rem);
+  line-height: 1.58;
+  font-weight: 650;
+}
+
+.fiq-redesign-hero--center .fiq-redesign-lead {
+  margin-inline: auto;
+}
+
+.fiq-redesign-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+.fiq-redesign-hero--center .fiq-redesign-actions {
+  justify-content: center;
+}
+
+.fiq-redesign-button,
+.fiq-redesign-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3.35rem;
+  padding: 0.9rem 1.15rem;
+  border-radius: 0.9rem;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.fiq-redesign-button {
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #ffffff !important;
+  box-shadow: 0 18px 42px rgba(249, 115, 22, 0.24);
+}
+
+.fiq-redesign-button-secondary {
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--fiq-ink) !important;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.07);
+}
+
+.fiq-redesign-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.4rem;
+}
+
+.fiq-redesign-hero--center .fiq-redesign-proof {
+  justify-content: center;
+}
+
+.fiq-redesign-proof span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.62rem 0.78rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #334155;
+  font-size: 0.84rem;
+  font-weight: 850;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+
+.fiq-redesign-panel,
+.fiq-redesign-card,
+.fiq-redesign-stat {
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.82)),
+    rgba(255, 255, 255, 0.82);
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.fiq-redesign-panel {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  border-radius: 1.45rem;
+  padding: clamp(1.1rem, 3vw, 1.6rem);
+}
+
+.fiq-redesign-panel-title {
+  color: var(--fiq-ink);
+  font-size: 1rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.fiq-redesign-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.fiq-redesign-stat {
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.fiq-redesign-stat strong {
+  display: block;
+  color: var(--fiq-ink);
+  font-size: clamp(1.55rem, 3vw, 2.25rem);
+  line-height: 1;
+  font-weight: 950;
+}
+
+.fiq-redesign-stat span {
+  display: block;
+  margin-top: 0.4rem;
+  color: #64748b;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.fiq-redesign-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.fiq-redesign-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.fiq-redesign-card {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+  min-height: 12rem;
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.fiq-redesign-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(249, 115, 22, 0.32);
+  box-shadow: 0 30px 78px rgba(15, 23, 42, 0.12), 0 0 0 5px rgba(249, 115, 22, 0.06);
+}
+
+.fiq-redesign-card i,
+.fiq-redesign-card svg,
+.fiq-redesign-icon {
+  width: 2.6rem !important;
+  height: 2.6rem !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 0.6rem !important;
+  border-radius: 0.85rem !important;
+  background: rgba(255, 237, 213, 0.86) !important;
+  color: #ea580c !important;
+  stroke: currentColor !important;
+}
+
+.fiq-redesign-card strong {
+  color: var(--fiq-ink);
+  font-size: 1.25rem;
+  line-height: 1.12;
+  font-weight: 950;
+}
+
+.fiq-redesign-card span,
+.fiq-redesign-card p {
+  color: #53647a;
+  line-height: 1.5;
+  font-weight: 650;
+}
+
+.fiq-redesign-section {
+  margin-top: clamp(1.6rem, 4vw, 3rem);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: 1.55rem;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.07);
+}
+
+.fiq-redesign-section h2 {
+  max-width: 14ch;
+  color: var(--fiq-ink);
+  font-size: clamp(2rem, 4vw, 3.7rem);
+  line-height: 0.98;
+  font-weight: 950;
+}
+
+.fiq-redesign-section > p {
+  max-width: 50rem;
+  margin-top: 0.9rem;
+  color: #53647a;
+  font-size: 1.03rem;
+  line-height: 1.62;
+  font-weight: 650;
+}
+
+.fiq-redesign-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.fiq-redesign-checks {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fiq-redesign-checks li {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  color: #334155;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.fiq-redesign-checks li::before {
+  content: "";
+  width: 0.58rem;
+  height: 0.58rem;
+  flex: 0 0 0.58rem;
+  margin-top: 0.43rem;
+  border-radius: 999px;
+  background: #16a34a;
+  box-shadow: 0 0 0 5px rgba(22, 163, 74, 0.1);
+}
+
+.fiq-redesign-calculator-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(20rem, 0.82fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.fiq-redesign-calculator-shell .fiq-redesign-panel {
+  position: sticky;
+  top: 7rem;
+}
+
+.fiq-redesign-form-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.fiq-redesign-form-grid button {
+  min-height: 3.35rem;
+  border-radius: 0.95rem !important;
+}
+
+.fiq-redesign-result {
+  min-height: 2.4rem;
+  margin-top: 1rem;
+  padding: 0.8rem 0.95rem;
+  border-radius: 0.95rem;
+  background: #fff7ed;
+  color: #c2410c !important;
+  font-weight: 950 !important;
+}
+
+.fiq-redesign-result:empty {
+  display: none;
+}
+
+.fiq-redesign-footer-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  margin-top: clamp(1.6rem, 4vw, 3rem);
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  border-radius: 1.55rem;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.22), transparent 24rem),
+    linear-gradient(135deg, #111827, #1f2937);
+  box-shadow: 0 30px 90px rgba(15, 23, 42, 0.22);
+}
+
+.fiq-redesign-footer-cta h2 {
+  color: #ffffff !important;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 0.98;
+}
+
+.fiq-redesign-footer-cta p {
+  margin-top: 0.65rem;
+  color: #cbd5e1 !important;
+}
+
+@media (max-width: 960px) {
+  .fiq-redesign-hero,
+  .fiq-redesign-split,
+  .fiq-redesign-calculator-shell,
+  .fiq-redesign-footer-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .fiq-redesign-panel {
+    min-height: auto;
+  }
+
+  .fiq-redesign-calculator-shell .fiq-redesign-panel {
+    position: static;
+  }
+
+  .fiq-redesign-grid,
+  .fiq-redesign-grid--two,
+  .fiq-redesign-stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .fiq-redesign-main {
+    width: min(100% - 1.2rem, 100%);
+    padding-top: 6.4rem;
+  }
+
+  .fiq-redesign-title {
+    max-width: none;
+    font-size: clamp(2.6rem, 13vw, 4.2rem);
+  }
+
+  .fiq-redesign-actions a,
+  .fiq-redesign-footer-cta a {
+    width: 100%;
+  }
+}

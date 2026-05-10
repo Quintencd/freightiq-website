@@ -35,6 +35,57 @@
 
   window.FlowIQStoryReveal = initStoryReveals;
 
+  var LIGHT_CSS_VERSION = '21';
+
+  function getPageFamily(pathname) {
+    var path = pathname || window.location.pathname || '/';
+    if (path === '/' || path === '/index.html') return 'home';
+    if (/^\/pricing(?:\.html)?\/?$/.test(path)) return 'pricing';
+    if (path === '/modules' || path === '/modules.html' || path.indexOf('/modules/') === 0) return 'modules';
+    if (path.indexOf('/solutions/') === 0) return 'solutions';
+    if (path.indexOf('/customers/') === 0) return 'customers';
+    if (path.indexOf('/walkthroughs/') === 0) return 'walkthroughs';
+    if (path.indexOf('/tools/') === 0 || path.indexOf('calculator') !== -1) return 'tools';
+    if (path.indexOf('/compare/') === 0 || path.indexOf('/flowiq-vs-') === 0) return 'compare';
+    if (path.indexOf('/glossary/') === 0) return 'glossary';
+    if (path.indexOf('/use-cases/') === 0) return 'use-cases';
+    if (/software|erp-|inventory|forecast|landed-cost|stock-|bookkeeping|accounting|payroll|freight|import-cost|spreadsheet/.test(path)) return 'article';
+    if (/privacy|terms/.test(path)) return 'legal';
+    if (/signup|login|book-demo|thank-you/.test(path)) return 'conversion';
+    return 'standard';
+  }
+
+  function normalizeWebsiteShell() {
+    var family = getPageFamily(window.location.pathname);
+    document.body.classList.add('marketing-shell', 'premium-light-page', 'fiq-family-' + family);
+    document.body.setAttribute('data-page-family', family);
+
+    if (!document.querySelector('.site-atmosphere')) {
+      var atmosphere = document.createElement('div');
+      atmosphere.className = 'site-atmosphere fixed inset-0 z-[-1] h-full w-full';
+      atmosphere.setAttribute('aria-hidden', 'true');
+      document.body.insertBefore(atmosphere, document.body.firstChild);
+    }
+
+    var main = document.querySelector('main');
+    if (main) {
+      main.classList.add('premium-main');
+      var firstSection = main.querySelector(':scope > section:first-child');
+      if (firstSection && !firstSection.classList.contains('fresh-hero')) {
+        firstSection.classList.add('fiq-auto-hero');
+      }
+      main.querySelectorAll(':scope > article, :scope > section:not(.fresh-hero):not(.fresh-section):not(.fresh-flow-band):not(.fresh-cta)').forEach(function (section) {
+        if (!section.classList.contains('story-card') && !section.classList.contains('homepage-live-flow-section')) {
+          section.classList.add('fiq-premium-section');
+        }
+      });
+    }
+
+    document.querySelectorAll('form').forEach(function (form) {
+      form.classList.add('fiq-premium-form');
+    });
+  }
+
   function ensureSiteStyles() {
     if (!document.getElementById('flowiq-nav-critical-css')) {
       var style = document.createElement('style');
@@ -43,16 +94,30 @@
       document.head.appendChild(style);
     }
 
-    var hasStyles = Array.prototype.some.call(document.querySelectorAll('link[rel="stylesheet"]'), function (link) {
-      return /\/flowiq-light\.css(?:\?|$)/.test(link.getAttribute('href') || '');
+    var hasStyles = false;
+    Array.prototype.forEach.call(document.querySelectorAll('link[rel="stylesheet"]'), function (link) {
+      if (!/\/flowiq-light\.css(?:\?|$)/.test(link.getAttribute('href') || '')) return;
+      hasStyles = true;
+      link.setAttribute('href', '/flowiq-light.css?v=' + LIGHT_CSS_VERSION);
     });
 
     if (hasStyles) return;
 
     var link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = '/flowiq-light.css?v=15';
+    link.href = '/flowiq-light.css?v=' + LIGHT_CSS_VERSION;
     document.head.appendChild(link);
+  }
+
+  function ensureLucideScript() {
+    if (window.lucide || document.querySelector('script[src*="unpkg.com/lucide"]')) return;
+    var script = document.createElement('script');
+    script.src = 'https://unpkg.com/lucide@latest';
+    script.defer = true;
+    script.addEventListener('load', function () {
+      if (window.lucide) window.lucide.createIcons();
+    });
+    document.head.appendChild(script);
   }
 
   function getSiteNav() {
@@ -131,10 +196,15 @@
 
   function initSiteNav() {
     ensureSiteStyles();
+    ensureLucideScript();
+    normalizeWebsiteShell();
 
     var existingNav = document.querySelector('body > nav');
-    if (!existingNav) return;
-    existingNav.outerHTML = getSiteNav();
+    if (existingNav) {
+      existingNav.outerHTML = getSiteNav();
+    } else {
+      document.body.insertAdjacentHTML('afterbegin', getSiteNav());
+    }
 
     var mobileMenuButton = document.getElementById('mobileMenuBtn');
     var mobileMenu = document.getElementById('mobileMenu');

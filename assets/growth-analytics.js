@@ -70,14 +70,19 @@
     trackEvent(eventName, payload);
 
     if (eventName === 'trial_signup_click') emitWebEvent('web_signup_start', withPageMetadata({ source: 'growth_analytics', trigger: 'trial_cta_click' }, payload));
+    if (eventName === 'demo_click') emitWebEvent('web_demo_request_start', withPageMetadata({ source: 'growth_analytics', trigger: 'demo_cta_click' }, payload));
     if (eventName === 'pricing_page_view') emitWebEvent('web_page_view', withPageMetadata({ source: 'growth_analytics', funnel_step: 'pricing' }, payload));
+    if (eventName === 'view_pricing') emitWebEvent('web_pricing_view', withPageMetadata({ source: 'growth_analytics', trigger: 'pricing_cta_click' }, payload));
+    if (eventName === 'pricing_toggle') emitWebEvent('web_pricing_view', withPageMetadata({ source: 'growth_analytics', trigger: 'billing_toggle' }, payload));
     if (eventName === 'calculator_use') emitWebEvent('web_cta_click', withPageMetadata({ source: 'growth_analytics', cta_name: 'calculator_use' }, payload));
     if (eventName === 'demo_request') emitWebEvent('web_demo_request_submit', withPageMetadata({ source: 'growth_analytics' }, payload));
     if (eventName === 'contact_submit') emitWebEvent('web_demo_request_submit', withPageMetadata({ source: 'growth_analytics', subtype: 'contact_submit' }, payload));
     if (eventName === 'account_created') emitWebEvent('web_signup_complete', withPageMetadata({ source: 'growth_analytics' }, payload));
     if (eventName === 'landing_visit') emitWebEvent('web_page_view', withPageMetadata({ source: 'growth_analytics', funnel_step: 'landing' }, payload));
     if (eventName === 'module_view') emitWebEvent('web_cta_click', withPageMetadata({ source: 'growth_analytics', cta_name: 'module_view' }, payload));
+    if (eventName === 'module_engagement') emitWebEvent('web_module_engagement', withPageMetadata({ source: 'growth_analytics' }, payload));
     if (eventName === 'seo_landing_view') emitWebEvent('web_page_view', withPageMetadata({ source: 'growth_analytics', funnel_step: 'seo_landing', landing_channel: 'organic_search' }, payload));
+    if (eventName === 'video_engagement') emitWebEvent('web_video_engagement', withPageMetadata({ source: 'growth_analytics' }, payload));
   }
 
   function getSessionFlagKey(suffix) {
@@ -231,6 +236,89 @@
     }
   }
 
+  function installVideoTracking() {
+    var trackedMilestones = {};
+
+    function videoPayload(video, action, extra) {
+      return Object.assign({
+        video_id: video.getAttribute('id') || video.getAttribute('data-video-id') || 'flowiq_video',
+        video_action: action,
+        video_src: video.currentSrc || video.querySelector('source')?.getAttribute('src') || null,
+        page_path: window.location.pathname
+      }, extra || {});
+    }
+
+    document.querySelectorAll('[data-video-open]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        trackGrowthEvent('video_engagement', {
+          video_action: 'open',
+          video_id: button.getAttribute('data-video-id') || button.getAttribute('aria-label') || 'flowiq_video_modal',
+          cta_position: button.getAttribute('data-analytics-position') || 'video_preview',
+          page_path: window.location.pathname
+        });
+      });
+    });
+
+    document.querySelectorAll('video[id], video[data-video-id], video[controls]').forEach(function (video) {
+      var id = video.getAttribute('id') || video.getAttribute('data-video-id') || video.currentSrc || 'flowiq_video';
+      trackedMilestones[id] = {};
+
+      video.addEventListener('play', function () {
+        trackGrowthEvent('video_engagement', videoPayload(video, 'play'));
+      });
+
+      video.addEventListener('ended', function () {
+        trackGrowthEvent('video_engagement', videoPayload(video, 'complete'));
+      });
+
+      video.addEventListener('timeupdate', function () {
+        if (!video.duration || !isFinite(video.duration)) return;
+        var pct = Math.floor((video.currentTime / video.duration) * 100);
+        [25, 50, 75].forEach(function (mark) {
+          if (pct < mark || trackedMilestones[id][mark]) return;
+          trackedMilestones[id][mark] = true;
+          trackGrowthEvent('video_engagement', videoPayload(video, 'progress', { video_progress_pct: mark }));
+        });
+      });
+    });
+  }
+
+  function installModuleEngagementTracking() {
+    if (!('IntersectionObserver' in window)) return;
+
+    var candidates = Array.prototype.slice.call(document.querySelectorAll('[data-module-engagement], .flow-card, a[href*="/modules/"]'));
+    if (!candidates.length) return;
+
+    var seen = new Set();
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var target = entry.target;
+        var label = target.getAttribute('data-module-engagement') ||
+          target.querySelector('strong')?.textContent ||
+          target.textContent ||
+          target.getAttribute('href') ||
+          'module_engagement';
+        label = label.trim().slice(0, 80);
+        if (seen.has(label)) {
+          observer.unobserve(target);
+          return;
+        }
+        seen.add(label);
+        trackGrowthEvent('module_engagement', {
+          module_name: label,
+          engagement_type: 'visible',
+          page_path: window.location.pathname
+        });
+        observer.unobserve(target);
+      });
+    }, { threshold: 0.55, rootMargin: '0px 0px -10% 0px' });
+
+    candidates.forEach(function (item) {
+      observer.observe(item);
+    });
+  }
+
   function installSchema() {
     if (document.getElementById('flowiq-org-schema')) return;
 
@@ -310,6 +398,8 @@
     installScrollTracking();
     installClickTracking();
     installFormTracking();
+    installVideoTracking();
+    installModuleEngagementTracking();
     installClarity();
   });
 })();

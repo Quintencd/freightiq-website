@@ -21,8 +21,9 @@
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/","description":"Inventory and import cost software focused on landed cost accuracy, margin visibility, and scalable operations for importers, distributors, and manufacturers."}
   </script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
+  <link rel="stylesheet" href="/flowiq-light.css?v=21">
 </head>
-<body class="bg-slate-50 text-slate-900 overflow-x-hidden" data-page-template="tools-hub" data-page-intent="calculator_hub" data-page-topic="import cost tools">
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden marketing-shell premium-light-page" data-page-template="tools-hub" data-page-intent="calculator_hub" data-page-topic="import cost tools">
   <div class="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.15),rgba(255,255,255,0))]"></div>
   <nav
     class="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm supports-[backdrop-filter]:bg-white/60">
@@ -65,36 +66,55 @@
     </div>
   </nav>
 
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
-    <section class="text-center mb-16">
-      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Import Cost, Landed Cost &amp; Inventory Tools</h1>
-      <p class="text-xl text-slate-600 mb-8">Free calculators for landed cost, import duty, freight, profit, and inventory forecasting. Use the tools first, then move the workflow into FlowIQ.</p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="/book-demo.html" data-analytics-event="demo_request" data-analytics-position="tools_hub_hero_primary" data-analytics-label="tools hub hero demo" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Book Demo</a>
-        <a href="/signup" data-analytics-event="trial_signup_click" data-analytics-position="tools_hub_hero_secondary" data-analytics-label="tools hub hero trial" class="inline-flex items-center justify-center gap-2 border border-slate-200 bg-white text-slate-900 px-8 py-4 rounded-xl font-semibold shadow-sm hover:border-orange-300 hover:text-orange-700 transition-all">Start Free Trial</a>
+  <main class="fiq-redesign-main">
+    <section class="fiq-redesign-hero fiq-redesign-hero--center">
+      <p class="fiq-redesign-kicker">Free FlowIQ tools</p>
+      <h1 class="fiq-redesign-title">Import, landed cost and inventory calculators.</h1>
+      <p class="fiq-redesign-lead">Use the calculators to test costs, duties, freight, profit and stock planning. Then move the workflow into FlowIQ when spreadsheets stop being enough.</p>
+      <div class="fiq-redesign-actions">
+        <a href="/tools/import-cost-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_hero_primary" data-analytics-label="tools hub import calculator" class="fiq-redesign-button">Start With Import Cost <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+        <a href="/book-demo.html" data-analytics-event="demo_request" data-analytics-position="tools_hub_hero_secondary" data-analytics-label="tools hub hero demo" class="fiq-redesign-button-secondary">Book Demo</a>
+      </div>
+      <div class="fiq-redesign-proof">
+        <span>Free planning calculators</span>
+        <span>Built for importers and distributors</span>
+        <span>No spreadsheet upload required</span>
       </div>
     </section>
 
-    <section class="mb-16">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-6">Tools</h2>
-      <ul class="space-y-4">
-        <li><a href="/tools/landed-cost-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_list" data-analytics-label="tools hub landed cost calculator" class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/50 transition-colors text-slate-700 hover:text-orange-700 font-medium"><i data-lucide="calculator" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>Landed Cost Calculator</a></li>
-        <li><a href="/tools/import-cost-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_list" data-analytics-label="tools hub import cost calculator" class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/50 transition-colors text-slate-700 hover:text-orange-700 font-medium"><i data-lucide="package" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>Import Cost Calculator</a></li>
-        <li><a href="/tools/container-cost-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_list" data-analytics-label="tools hub container cost calculator" class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/50 transition-colors text-slate-700 hover:text-orange-700 font-medium"><i data-lucide="package" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>Container Cost Calculator</a></li>
-        <li><a href="/tools/freight-cost-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_list" data-analytics-label="tools hub freight cost calculator" class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/50 transition-colors text-slate-700 hover:text-orange-700 font-medium"><i data-lucide="ship" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>Freight Cost Calculator</a></li>
-        <li><a href="/tools/import-duty-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_list" data-analytics-label="tools hub import duty calculator" class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/50 transition-colors text-slate-700 hover:text-orange-700 font-medium"><i data-lucide="receipt" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>Import Duty Calculator</a></li>
-        <li><a href="/tools/supply-chain-profit-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_list" data-analytics-label="tools hub profit calculator" class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/50 transition-colors text-slate-700 hover:text-orange-700 font-medium"><i data-lucide="trending-up" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>Supply Chain Profit Calculator</a></li>
-        <li><a href="/tools/inventory-forecast-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_list" data-analytics-label="tools hub inventory forecast calculator" class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-orange-200 hover:bg-orange-50/50 transition-colors text-slate-700 hover:text-orange-700 font-medium"><i data-lucide="bar-chart-3" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>Inventory Forecast Calculator</a></li>
-      </ul>
+    <section class="fiq-redesign-section">
+      <h2>Choose the calculation you need.</h2>
+      <p>Each tool answers a practical operating question. Use them independently, or combine them to build a clearer picture of landed cost, margin and stock decisions.</p>
+      <div class="fiq-redesign-grid">
+        <a href="/tools/landed-cost-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_grid" data-analytics-label="landed cost calculator" class="fiq-redesign-card"><i data-lucide="calculator"></i><strong>Landed Cost Calculator</strong><span>Allocate supplier, freight, duty and local costs into true stock cost.</span></a>
+        <a href="/tools/import-cost-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_grid" data-analytics-label="import cost calculator" class="fiq-redesign-card"><i data-lucide="package"></i><strong>Import Cost Calculator</strong><span>Estimate the full import spend before stock lands.</span></a>
+        <a href="/tools/container-cost-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_grid" data-analytics-label="container cost calculator" class="fiq-redesign-card"><i data-lucide="container"></i><strong>Container Cost Calculator</strong><span>Work out container-level cost pressure and allocation.</span></a>
+        <a href="/tools/freight-cost-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_grid" data-analytics-label="freight cost calculator" class="fiq-redesign-card"><i data-lucide="ship"></i><strong>Freight Cost Calculator</strong><span>Compare freight scenarios before a shipment lands.</span></a>
+        <a href="/tools/import-duty-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_grid" data-analytics-label="import duty calculator" class="fiq-redesign-card"><i data-lucide="receipt"></i><strong>Import Duty Calculator</strong><span>Estimate duty and tax assumptions for imported goods.</span></a>
+        <a href="/tools/supply-chain-profit-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_grid" data-analytics-label="profit calculator" class="fiq-redesign-card"><i data-lucide="trending-up"></i><strong>Supply Chain Profit Calculator</strong><span>Model margin pressure across cost, price and operations.</span></a>
+        <a href="/tools/inventory-forecast-calculator.html" data-analytics-event="calculator_use" data-analytics-position="tools_hub_grid" data-analytics-label="inventory forecast calculator" class="fiq-redesign-card"><i data-lucide="bar-chart-3"></i><strong>Inventory Forecast Calculator</strong><span>Estimate reorder pressure, fast movers and stock planning needs.</span></a>
+      </div>
     </section>
 
-    <section class="text-center pt-8 pb-4 border-t border-slate-200">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-4">See FlowIQ in Action</h2>
-      <p class="text-slate-600 mb-6">Get a guided demo focused on your workflow.</p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="/book-demo.html" data-analytics-event="demo_request" data-analytics-position="tools_hub_bottom_primary" data-analytics-label="tools hub bottom demo" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">Book Demo</a>
-        <a href="/signup" data-analytics-event="trial_signup_click" data-analytics-position="tools_hub_bottom_secondary" data-analytics-label="tools hub bottom trial" class="inline-flex items-center justify-center gap-2 border border-slate-200 bg-white text-slate-900 px-8 py-4 rounded-xl font-semibold shadow-sm hover:border-orange-300 hover:text-orange-700 transition-all">Start Free Trial</a>
+    <section class="fiq-redesign-section fiq-redesign-split">
+      <div>
+        <h2>When tools become a system.</h2>
+        <p>Calculators help you test the numbers. FlowIQ helps your team run the process every day with the same cost logic connected to shipments, stock, pricing and finance.</p>
       </div>
+      <div class="fiq-redesign-grid fiq-redesign-grid--two">
+        <article class="fiq-redesign-card"><i data-lucide="ship"></i><strong>ImportIQ</strong><span>Moves landed cost from estimate to live shipment workflow.</span></article>
+        <article class="fiq-redesign-card"><i data-lucide="boxes"></i><strong>InventoryIQ</strong><span>Receives stock with cleaner cost and warehouse context.</span></article>
+        <article class="fiq-redesign-card"><i data-lucide="line-chart"></i><strong>ForecastIQ</strong><span>Turns demand and history into replenishment signals.</span></article>
+        <article class="fiq-redesign-card"><i data-lucide="file-text"></i><strong>InvoiceIQ</strong><span>Helps sales documents use better cost and margin context.</span></article>
+      </div>
+    </section>
+
+    <section class="fiq-redesign-footer-cta">
+      <div>
+        <h2>See the workflow behind the calculators.</h2>
+        <p>Get a guided demo focused on landed cost, stock control and margin visibility.</p>
+      </div>
+      <a href="/book-demo.html" data-analytics-event="demo_request" data-analytics-position="tools_hub_bottom_primary" data-analytics-label="tools hub bottom demo" class="fiq-redesign-button">Book Demo</a>
     </section>
   </main>
 
@@ -129,5 +149,6 @@
   </script>
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
+  <script src="/assets/js/main.js?v=10"></script>
 </body>
 </html>

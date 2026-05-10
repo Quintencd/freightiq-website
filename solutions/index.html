@@ -11,42 +11,77 @@
   <link rel="icon" href="/favicon.ico">
   <link rel="shortcut icon" href="/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/flowiq-light.css?v=12">
+  <link rel="stylesheet" href="/flowiq-light.css?v=21">
   <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
-<body class="marketing-shell bg-slate-50 text-slate-900 overflow-x-hidden">
+<body class="marketing-shell bg-slate-50 text-slate-900 overflow-x-hidden premium-light-page">
   <div class="site-atmosphere fixed inset-0 z-[-1] h-full w-full" aria-hidden="true"></div>
   <nav></nav>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
-    <section class="homepage-segmentation-section mb-14">
-      <div class="homepage-section-heading">
-        <span class="section-kicker">Solutions</span>
-        <h1 class="mt-4 text-5xl md:text-7xl font-black text-slate-900 tracking-[-0.04em] leading-[0.95]">Find the FlowIQ fit for your business</h1>
-        <p class="mt-6 max-w-3xl text-lg md:text-xl text-slate-600 leading-relaxed">Start with the operating model closest to your business, then move into the relevant FlowIQ workflow quickly.</p>
+  <main class="fiq-redesign-main">
+    <section class="fiq-redesign-hero">
+      <div>
+        <p class="fiq-redesign-kicker">Solutions</p>
+        <h1 class="fiq-redesign-title">Find the FlowIQ fit for <span>your operation</span>.</h1>
+        <p class="fiq-redesign-lead">Start with the business model closest to yours, then move into the modules and workflows that solve the real operating pressure: landed cost, stock control, branch visibility, manufacturing and margin.</p>
+        <div class="fiq-redesign-actions">
+          <a href="/book-demo.html" class="fiq-redesign-button" data-analytics-event="demo_request" data-analytics-position="solutions_hero">Book Demo</a>
+          <a href="/modules.html" class="fiq-redesign-button-secondary">Browse Modules</a>
+        </div>
       </div>
-      <div class="solution-segment-grid">
-        <a href="/solutions/importers.html" class="solution-segment-card">
-          <i data-lucide="ship" class="w-7 h-7"></i>
+      <aside class="fiq-redesign-panel">
+        <p class="fiq-redesign-panel-title">How to choose</p>
+        <ul class="fiq-redesign-checks">
+          <li>Importers should start with landed cost and shipment control.</li>
+          <li>Retail and ecommerce teams should start with stock and fulfilment.</li>
+          <li>Manufacturers should start with production, BOMs and cost discipline.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="fiq-redesign-section">
+      <h2>Choose your operating model.</h2>
+      <p>Each path keeps the message focused on what that type of business needs to control first.</p>
+      <div class="fiq-redesign-grid">
+        <a href="/solutions/importers.html" class="fiq-redesign-card">
+          <i data-lucide="ship"></i>
           <strong>Importers &amp; Distributors</strong>
-          <span>Track landed costs, shipments, and margins</span>
+          <span>Track landed costs, shipments, supplier orders, warehouse stock and margins.</span>
         </a>
-        <a href="/solutions/retail-outlets.html" class="solution-segment-card">
-          <i data-lucide="shopping-bag" class="w-7 h-7"></i>
-          <strong>Retail &amp; Ecommerce Businesses</strong>
-          <span>Manage stock, sales, and profitability in one place</span>
+        <a href="/solutions/retail-outlets.html" class="fiq-redesign-card">
+          <i data-lucide="shopping-bag"></i>
+          <strong>Retail &amp; Ecommerce</strong>
+          <span>Manage stock, fulfilment, customer orders and profitability in one place.</span>
         </a>
-        <a href="/solutions/multi-branch.html" class="solution-segment-card">
-          <i data-lucide="network" class="w-7 h-7"></i>
+        <a href="/solutions/multi-branch.html" class="fiq-redesign-card">
+          <i data-lucide="network"></i>
           <strong>Multi-Branch Operations</strong>
-          <span>Full visibility across locations and inventory</span>
+          <span>See stock, sales, tasks and performance across locations.</span>
         </a>
-        <a href="/solutions/manufacturers.html" class="solution-segment-card">
-          <i data-lucide="factory" class="w-7 h-7"></i>
+        <a href="/solutions/manufacturers.html" class="fiq-redesign-card">
+          <i data-lucide="factory"></i>
           <strong>Manufacturing &amp; Assembly</strong>
-          <span>Control production, costing, and stock flow</span>
+          <span>Control production, BOMs, replenishment, costing and stock flow.</span>
+        </a>
+        <a href="/solutions/wholesale-distribution.html" class="fiq-redesign-card">
+          <i data-lucide="warehouse"></i>
+          <strong>Wholesale Distribution</strong>
+          <span>Coordinate purchasing, inventory, dispatch, customer pricing and margin.</span>
+        </a>
+        <a href="/solutions/freight-logistics.html" class="fiq-redesign-card">
+          <i data-lucide="truck"></i>
+          <strong>Freight &amp; Logistics</strong>
+          <span>Connect operational movement, customer activity and reporting visibility.</span>
         </a>
       </div>
+    </section>
+
+    <section class="fiq-redesign-footer-cta">
+      <div>
+        <h2>Not sure where your business fits?</h2>
+        <p>Book a walkthrough and we will map your workflow to the smallest FlowIQ setup that makes sense.</p>
+      </div>
+      <a href="/book-demo.html" class="fiq-redesign-button" data-analytics-event="demo_request" data-analytics-position="solutions_bottom">Book a Demo</a>
     </section>
   </main>
 
@@ -64,6 +99,6 @@
   <script>window.FlowIQAnalyticsConfig={gtmContainerId:'GTM-5L45DPGL',ga4MeasurementId:'G-1QJKZJ7V0T',clarityProjectId:'vqjuz4ha1k'};</script>
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
-  <script src="/assets/js/main.js?v=9"></script>
+  <script src="/assets/js/main.js?v=10"></script>
 </body>
 </html>

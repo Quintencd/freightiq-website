@@ -85,9 +85,7 @@
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
+        tailwind.config = {            theme: {
                 extend: {
                     colors: {
                         'freight-orange': '#f97316',
@@ -109,8 +107,9 @@
     /* Keep the marketing menu visible above page visuals. */
     nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
   </style>
+  <link rel="stylesheet" href="/flowiq-light.css?v=21">
 </head>
-<body class="bg-freight-slate text-slate-100">
+<body class="bg-freight-slate text-slate-100 marketing-shell premium-light-page overflow-x-hidden">
     <nav class="fixed w-full z-50 bg-freight-slate/90 backdrop-blur-md border-b border-slate-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -257,6 +256,6 @@
     </script>
     <script src="/assets/website-analytics.js" defer></script>
     <script src="/assets/growth-analytics.js" defer></script>
-  <script src="/assets/js/main.js?v=9"></script>
+  <script src="/assets/js/main.js?v=10"></script>
 </body>
 </html>

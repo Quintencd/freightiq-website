@@ -25,8 +25,9 @@
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/","description":"Inventory and import cost software focused on landed cost accuracy, margin visibility, and scalable operations for importers, distributors, and manufacturers."}
   </script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
+  <link rel="stylesheet" href="/flowiq-light.css?v=21">
 </head>
-<body class="bg-slate-50 text-slate-900 overflow-x-hidden" data-page-template="conversion-form" data-page-intent="demo_booking" data-page-topic="book demo">
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden marketing-shell premium-light-page" data-page-template="conversion-form" data-page-intent="demo_booking" data-page-topic="book demo">
   <div class="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.15),rgba(255,255,255,0))]"></div>
   <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,11 +66,32 @@
     </div>
   </nav>
 
-  <main class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
-    <section class="mb-12">
-      <h1 class="text-3xl font-bold text-slate-900 mb-2">Book a Demo</h1>
-      <p class="text-slate-600 mb-8">Get a guided demo focused on your workflow. We’ll reach out to schedule.</p>
-      <form name="demo" method="POST" action="/.netlify/functions/public-lead" data-analytics-position="demo_form" class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-sm">
+  <main class="fiq-redesign-main">
+    <section class="fiq-redesign-hero">
+      <div>
+        <p class="fiq-redesign-kicker">Book a demo</p>
+        <h1 class="fiq-redesign-title">See FlowIQ on your <span>real workflow</span>.</h1>
+        <p class="fiq-redesign-lead">Tell us what you want to control first: landed cost, inventory, forecasting, accounting, payroll, reporting or the whole operating flow. We will shape the walkthrough around that.</p>
+        <div class="fiq-redesign-proof">
+          <span>Workflow-led demo</span>
+          <span>No generic sales deck</span>
+          <span>Migration path included</span>
+        </div>
+      </div>
+      <aside class="fiq-redesign-panel">
+        <p class="fiq-redesign-panel-title">What we cover</p>
+        <ul class="fiq-redesign-checks">
+          <li>Which FlowIQ modules fit your operation first.</li>
+          <li>How your current spreadsheets or tools could migrate.</li>
+          <li>What plan level is likely enough without overbuying.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="fiq-redesign-section">
+      <h2>Request your walkthrough.</h2>
+      <p>We’ll reach out to schedule a demo focused on your workflow.</p>
+      <form name="demo" method="POST" action="/.netlify/functions/public-lead" data-analytics-position="demo_form" class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-sm mt-6">
         <input type="hidden" name="form-name" value="demo" />
         <input type="hidden" name="request_type" value="demo" />
         <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
@@ -203,6 +225,6 @@
     </script>
     <script src="/assets/website-analytics.js"></script>
     <script src="/assets/growth-analytics.js"></script>
-  <script src="/assets/js/main.js?v=9"></script>
+  <script src="/assets/js/main.js?v=10"></script>
 </body>
 </html>

@@ -9,49 +9,77 @@
   <link rel="icon" href="/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>body{font-family:Inter,sans-serif}.bg-freight-orange{background:#f97316}.hover\:bg-freight-orange-dark:hover{background:#ea580c}</style>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <link rel="stylesheet" href="/flowiq-light.css?v=21">
 </head>
-<body class="bg-slate-50 text-slate-900">
-  <main class="max-w-3xl mx-auto px-4 py-10">
-    <a href="/tools/" class="text-sm text-orange-600">Back to Tools</a>
-    <h1 class="text-3xl font-bold mt-4 mb-3">Import Cost Calculator</h1>
-    <p class="text-slate-600 mb-6">Use this free calculator to estimate total import spend before stock lands. This helps importers compare suppliers, test freight scenarios, and protect margins.</p>
-
-    <section class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm mb-6">
-      <h2 class="text-xl font-semibold mb-4">Calculator</h2>
-      <div class="grid gap-4">
-        <input id="supplier" type="number" step="0.01" min="0" placeholder="Supplier cost" class="border rounded-lg px-3 py-2" />
-        <input id="freight" type="number" step="0.01" min="0" placeholder="Freight cost" class="border rounded-lg px-3 py-2" />
-        <input id="duty" type="number" step="0.01" min="0" placeholder="Duty and VAT" class="border rounded-lg px-3 py-2" />
-        <input id="clearance" type="number" step="0.01" min="0" placeholder="Clearance and local fees" class="border rounded-lg px-3 py-2" />
-        <button id="calc-submit" data-analytics-event="calculator_use" class="bg-freight-orange hover:bg-freight-orange-dark text-white rounded-lg py-3 font-semibold">Calculate</button>
+<body class="bg-slate-50 text-slate-900 marketing-shell premium-light-page overflow-x-hidden">
+  <main class="fiq-redesign-main">
+    <section class="fiq-redesign-hero">
+      <div>
+        <a href="/tools/" class="fiq-redesign-kicker">Back to Tools</a>
+        <h1 class="fiq-redesign-title">Import Cost <span>Calculator</span></h1>
+        <p class="fiq-redesign-lead">Estimate supplier, freight, duty, VAT and clearance cost before stock lands. Use it to compare scenarios, protect margin and decide when the workflow needs to move into FlowIQ.</p>
+        <div class="fiq-redesign-proof">
+          <span>Supplier cost</span>
+          <span>Freight and clearance</span>
+          <span>Duty and VAT</span>
+          <span>Total import spend</span>
+        </div>
       </div>
-      <p id="result" class="mt-4 text-lg font-semibold text-orange-600"></p>
+      <aside class="fiq-redesign-panel">
+        <p class="fiq-redesign-panel-title">Why this matters</p>
+        <ul class="fiq-redesign-checks">
+          <li>Catch cost pressure before quoting or pricing stock.</li>
+          <li>Compare supplier and freight scenarios quickly.</li>
+          <li>Give your team a cleaner starting point for landed cost.</li>
+        </ul>
+      </aside>
     </section>
 
-    <section class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm mb-6">
-      <h2 class="text-xl font-semibold mb-2">Save this calculation</h2>
-      <p class="text-slate-600 mb-4">Enter your email to receive this result and a breakdown template.</p>
-      <form id="lead-form" name="import-cost-lead" method="POST" data-netlify="true" class="grid gap-3">
-        <input type="hidden" name="form-name" value="import-cost-lead" />
-        <input id="lead-email" name="email" type="email" required placeholder="you@company.com" class="border rounded-lg px-3 py-2" />
-        <input id="lead-company" name="company" type="text" placeholder="Company" class="border rounded-lg px-3 py-2" />
-        <input id="lead-result" name="estimated_total_import_cost" type="hidden" />
-        <button type="submit" class="bg-slate-900 text-white rounded-lg py-2 font-semibold">Email me this result</button>
-      </form>
-    </section>
+    <div class="fiq-redesign-calculator-shell">
+      <section class="fiq-redesign-section">
+        <h2>Calculate total import cost.</h2>
+        <p>Enter the major cost buckets. The result gives a planning estimate before stock receives into your warehouse.</p>
+        <div class="fiq-redesign-form-grid mt-6">
+          <input id="supplier" type="number" step="0.01" min="0" placeholder="Supplier cost" class="border rounded-lg px-3 py-2" />
+          <input id="freight" type="number" step="0.01" min="0" placeholder="Freight cost" class="border rounded-lg px-3 py-2" />
+          <input id="duty" type="number" step="0.01" min="0" placeholder="Duty and VAT" class="border rounded-lg px-3 py-2" />
+          <input id="clearance" type="number" step="0.01" min="0" placeholder="Clearance and local fees" class="border rounded-lg px-3 py-2" />
+          <button id="calc-submit" data-analytics-event="calculator_use" class="bg-freight-orange hover:bg-freight-orange-dark text-white rounded-lg py-3 font-semibold">Calculate</button>
+        </div>
+        <p id="result" class="fiq-redesign-result"></p>
+      </section>
 
-    <section class="prose prose-slate max-w-none">
-      <h2>How this import cost calculator works</h2>
-      <p>Total import cost is the sum of supplier cost, freight, duty, and clearance costs. Many import teams track these in separate sheets, which causes errors in landed pricing decisions.</p>
-      <p>This tool gives a fast estimate for planning. FlowIQ then allocates costs per SKU and updates inventory and margin reporting automatically.</p>
-      <h3>Related tools</h3>
-      <p><a href="/tools/container-cost-calculator.html">Container Cost Calculator</a> · <a href="/tools/freight-cost-calculator.html">Freight Cost Calculator</a> · <a href="/tools/import-duty-calculator.html">Import Duty Calculator</a></p>
-    </section>
-
-    <div class="mt-10 flex gap-3 flex-wrap">
-      <a href="/signup" data-analytics-event="trial_signup_click" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-3 rounded-lg font-semibold">Start Free Trial</a>
-      <a href="/book-demo.html" data-analytics-event="demo_request" class="border border-slate-300 px-5 py-3 rounded-lg font-semibold">Book Demo</a>
+      <aside class="fiq-redesign-panel">
+        <h2 class="text-2xl font-black text-slate-900">Save this calculation</h2>
+        <p class="text-slate-600">Enter your email to receive this result and a breakdown template.</p>
+        <form id="lead-form" name="import-cost-lead" method="POST" data-netlify="true" class="fiq-redesign-form-grid">
+          <input type="hidden" name="form-name" value="import-cost-lead" />
+          <input id="lead-email" name="email" type="email" required placeholder="you@company.com" class="border rounded-lg px-3 py-2" />
+          <input id="lead-company" name="company" type="text" placeholder="Company" class="border rounded-lg px-3 py-2" />
+          <input id="lead-result" name="estimated_total_import_cost" type="hidden" />
+          <button type="submit" class="fiq-redesign-button-secondary">Email me this result</button>
+        </form>
+      </aside>
     </div>
+
+    <section class="fiq-redesign-section">
+      <h2>How this import cost calculator works.</h2>
+      <p>Total import cost is the sum of supplier cost, freight, duty, VAT and clearance costs. Many import teams track these in separate sheets, which creates errors in landed pricing decisions.</p>
+      <div class="fiq-redesign-grid">
+        <a class="fiq-redesign-card" href="/tools/container-cost-calculator.html"><i data-lucide="package"></i><strong>Container Cost Calculator</strong><span>Break down container-level cost allocation.</span></a>
+        <a class="fiq-redesign-card" href="/tools/freight-cost-calculator.html"><i data-lucide="ship"></i><strong>Freight Cost Calculator</strong><span>Compare freight scenarios before stock lands.</span></a>
+        <a class="fiq-redesign-card" href="/tools/import-duty-calculator.html"><i data-lucide="receipt"></i><strong>Import Duty Calculator</strong><span>Estimate duty and tax assumptions.</span></a>
+      </div>
+    </section>
+
+    <section class="fiq-redesign-footer-cta">
+      <div>
+        <h2>Ready to run this inside your workflow?</h2>
+        <p>FlowIQ allocates costs per SKU and connects import cost to inventory, price and reporting automatically.</p>
+      </div>
+      <a href="/book-demo.html" data-analytics-event="demo_request" class="fiq-redesign-button">Book Demo</a>
+    </section>
   </main>
 
   <script>
@@ -75,5 +103,6 @@
   </script>
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
+  <script src="/assets/js/main.js?v=10"></script>
 </body>
 </html>

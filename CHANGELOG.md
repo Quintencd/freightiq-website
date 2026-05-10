@@ -1,5 +1,22 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.8] - May 10, 2026
+
+### Weekly Growth Conversion Tracking Pass
+
+- Updated homepage SEO and hero copy to lead with ERP-style operating platform positioning for importers, distributors, manufacturers, and scaling teams.
+- Added a direct homepage hero demo CTA while preserving the trial CTA as primary and keeping pricing-path access.
+- Hardened growth analytics mapping for demo clicks, pricing CTA clicks, pricing billing toggles, module engagement, and product-video engagement.
+- Added video open/play/progress/complete tracking for homepage product overview videos.
+- Expanded pricing FAQ schema for upgrade path, migration assistance, and plan-fit walkthrough questions.
+- Added documentation under `docs/Website/2026-05-10_weekly_growth_conversion_tracking_pass.md`.
+- No Netlify deploy was run.
+
+### Regression Risk Notes (>10%)
+
+- **10-14%**: Homepage CTA attribution may shift because demo is now visible above the fold beside trial.
+- **10-12%**: Module visibility tracking may increase analytics event volume on module-heavy pages.
+
 ## [1.3.7] - May 9, 2026
 
 ### AccountingIQ Payment Automation Pricing Visibility
