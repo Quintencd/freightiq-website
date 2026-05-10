@@ -449,3 +449,16 @@ Date: 2026-04-26
   - Mitigation: reused the existing responsive breakpoints and preserved the current grid collapse rules.
 - **12%**: Applying the style globally can make some older SEO pages feel more visually premium than surrounding plain content.
   - Mitigation: scoped the stronger treatment only to the existing flow panels/cards, not every content card on the page.
+
+## 2026-05-10 Homepage Mobile Hero Overlay Polish
+
+- Fixed the small-screen homepage hero overlay where the floating status pills could stretch into large distorted ovals over the hero image.
+- The mobile status labels now unset the stretched bottom positioning, render as compact fixed-height chips, and use overflow protection on very narrow screens.
+- Tightened the bottom live badge spacing and type scale so it stays readable without covering too much of the hero video/image.
+- Bumped the homepage stylesheet cache key to `flowiq-light.css?v=20`.
+
+### Verification
+
+- Browser-checked the local homepage at 390px and 360px mobile widths; the hero status chips stay at 24px high and no longer stretch over the image.
+- `rg -n "flowiq-light.css\\?v=20|hero-motion-stack|hero-live-badge" index.html flowiq-light.css`
+- `git diff --check`
