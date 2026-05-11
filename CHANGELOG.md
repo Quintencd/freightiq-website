@@ -1,5 +1,20 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.9] - May 11, 2026
+
+### AI-SEO Conversion + Tracking Alignment
+
+- Fixed AI-SEO primary “Book Demo” CTAs that incorrectly routed to `/signup` by updating them to point to `/book-demo.html`.
+- Tagged AI-SEO pages with `data-page-template="seo-landing"` and `data-page-intent="seo_landing"` so `seo_landing_view` funnel tracking can fire.
+- Converted `/website-analytics.js` into a small bootstrapper that loads the canonical tracking stack (`/assets/website-analytics.js` + `/assets/growth-analytics.js`) and sets a default `FlowIQAnalyticsConfig` when missing.
+- Added documentation under `docs/Website/2026-05-11_weekly_growth_audit_ai_seo_tracking_alignment.md`.
+- No Netlify deploy was run.
+
+### Regression Risk Notes (>10%)
+
+- **12–18%**: AI-SEO demo-vs-trial attribution may shift because “Book Demo” now routes to the demo form instead of trial signup.
+- **10–15%**: AI-SEO pages now load the canonical analytics stack (GTM/GA4/Clarity if not explicitly configured), potentially increasing third-party requests on those routes.
+
 ## [1.3.8] - May 10, 2026
 
 ### Weekly Growth Conversion Tracking Pass

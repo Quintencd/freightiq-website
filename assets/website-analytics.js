@@ -370,10 +370,16 @@
     track
   };
 
-  document.addEventListener('DOMContentLoaded', function () {
+  function init() {
     document.querySelectorAll('a[href^="/signup"]').forEach(decorateSignupHref);
     track('web_page_view', { entry_type: 'page_load' });
     setupClickTracking();
     setupFormTracking();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
