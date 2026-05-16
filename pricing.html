@@ -300,6 +300,10 @@
       return Array.isArray(plan?.features) && plan.features.includes(featureKey);
     }
 
+    function hasAddOn(plan, addOnKey) {
+      return Boolean(plan?.add_ons?.[addOnKey]);
+    }
+
     function yesNo(plan, featureKey) {
       return hasFeature(plan, featureKey) ? '✓' : '—';
     }
@@ -410,6 +414,7 @@
         { type: 'section', label: 'Intelligence & Automation' },
         { type: 'row', label: 'ForecastIQ', get: (p) => getForecastLabel(p?.capabilities?.forecasting) === '—' ? 'Available on Growth Plan' : getForecastLabel(p?.capabilities?.forecasting) },
         { type: 'row', label: 'AgentsIQ automation desk (Growth+)', get: (p) => hasFeature(p, 'agentsiq') ? 'Included' : 'Available on Growth Plan', center: true },
+        { type: 'row', label: 'AI Auto Capture document scanning', get: (p) => hasAddOn(p, 'ai_auto_capture') ? 'Add-on available' : '—', center: true },
         {
           type: 'row',
           label: 'AI runs require AgentsIQ credits',

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-11T08:39:27.263Z",
+  "generated_at_utc": "2026-05-16T09:28:17.800Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -61,7 +61,20 @@
         "settings",
         "user_management"
       ],
-      "add_ons": {}
+      "add_ons": {
+        "agentsiq_usage_pack": {
+          "price": 200,
+          "limit": 20,
+          "unit": "100 capture credits",
+          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture"
+        },
+        "ai_auto_capture": {
+          "price": 519,
+          "limit": 1,
+          "unit": "50 capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits"
+        }
+      }
     },
     "starter": {
       "key": "starter",
@@ -140,10 +153,16 @@
           "description": "WorkIQ add-on (job cards and execution queues)"
         },
         "agentsiq_usage_pack": {
-          "price": 220,
+          "price": 200,
           "limit": 20,
-          "unit": "R100 usage credit",
-          "description": "ChatIQ / AgentsIQ monthly usage credit pack"
+          "unit": "100 capture credits",
+          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture"
+        },
+        "ai_auto_capture": {
+          "price": 519,
+          "limit": 1,
+          "unit": "50 capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits"
         }
       }
     },
@@ -228,10 +247,16 @@
           "description": "WorkIQ add-on (job cards and execution queues)"
         },
         "agentsiq_usage_pack": {
-          "price": 220,
+          "price": 200,
           "limit": 20,
-          "unit": "R100 usage credit",
-          "description": "ChatIQ / AgentsIQ monthly usage credit pack"
+          "unit": "100 capture credits",
+          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture"
+        },
+        "ai_auto_capture": {
+          "price": 519,
+          "limit": 1,
+          "unit": "50 capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits"
         }
       }
     },
@@ -340,10 +365,16 @@
           "description": "WorkIQ add-on (job cards and execution queues)"
         },
         "agentsiq_usage_pack": {
-          "price": 220,
+          "price": 200,
           "limit": 20,
-          "unit": "R100 usage credit",
-          "description": "ChatIQ / AgentsIQ monthly usage credit pack"
+          "unit": "100 capture credits",
+          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture"
+        },
+        "ai_auto_capture": {
+          "price": 519,
+          "limit": 1,
+          "unit": "50 capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits"
         }
       }
     },
@@ -448,10 +479,16 @@
           "description": "10 import + 10 export jobs/month"
         },
         "agentsiq_usage_pack": {
-          "price": 220,
+          "price": 200,
           "limit": 20,
-          "unit": "R100 usage credit",
-          "description": "ChatIQ / AgentsIQ monthly usage credit pack"
+          "unit": "100 capture credits",
+          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture"
+        },
+        "ai_auto_capture": {
+          "price": 519,
+          "limit": 1,
+          "unit": "50 capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits"
         }
       }
     },
@@ -542,10 +579,16 @@
       ],
       "add_ons": {
         "agentsiq_usage_pack": {
-          "price": 220,
+          "price": 200,
           "limit": 50,
-          "unit": "R100 usage credit",
-          "description": "ChatIQ / AgentsIQ monthly usage credit pack"
+          "unit": "100 capture credits",
+          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture"
+        },
+        "ai_auto_capture": {
+          "price": 519,
+          "limit": 1,
+          "unit": "50 capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits"
         }
       }
     },
@@ -636,10 +679,16 @@
       ],
       "add_ons": {
         "agentsiq_usage_pack": {
-          "price": 220,
+          "price": 200,
           "limit": 100,
-          "unit": "R100 usage credit",
-          "description": "ChatIQ / AgentsIQ monthly usage credit pack"
+          "unit": "100 capture credits",
+          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture"
+        },
+        "ai_auto_capture": {
+          "price": 519,
+          "limit": 1,
+          "unit": "50 capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits"
         }
       }
     }
