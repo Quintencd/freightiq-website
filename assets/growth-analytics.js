@@ -79,6 +79,8 @@
     if (eventName === 'contact_submit') emitWebEvent('web_demo_request_submit', withPageMetadata({ source: 'growth_analytics', subtype: 'contact_submit' }, payload));
     if (eventName === 'account_created') emitWebEvent('web_signup_complete', withPageMetadata({ source: 'growth_analytics' }, payload));
     if (eventName === 'landing_visit') emitWebEvent('web_page_view', withPageMetadata({ source: 'growth_analytics', funnel_step: 'landing' }, payload));
+    if (eventName === 'scroll_50_percent') emitWebEvent('web_scroll_depth', withPageMetadata({ source: 'growth_analytics', scroll_depth_pct: 50 }, payload));
+    if (eventName === 'scroll_90_percent') emitWebEvent('web_scroll_depth', withPageMetadata({ source: 'growth_analytics', scroll_depth_pct: 90 }, payload));
     if (eventName === 'module_view') emitWebEvent('web_cta_click', withPageMetadata({ source: 'growth_analytics', cta_name: 'module_view' }, payload));
     if (eventName === 'module_engagement') emitWebEvent('web_module_engagement', withPageMetadata({ source: 'growth_analytics' }, payload));
     if (eventName === 'seo_landing_view') emitWebEvent('web_page_view', withPageMetadata({ source: 'growth_analytics', funnel_step: 'seo_landing', landing_channel: 'organic_search' }, payload));

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-16T09:28:17.800Z",
+  "generated_at_utc": "2026-05-17T06:09:31.775Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -63,16 +63,26 @@
       ],
       "add_ons": {
         "agentsiq_usage_pack": {
+          "name": "AI Pack",
           "price": 200,
           "limit": 20,
           "unit": "100 capture credits",
-          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture"
+          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture",
+          "value_points": [
+            "Recurring monthly AI credit allowance for capture and agent usage",
+            "Lets customers scale AI usage in small, predictable increments"
+          ]
         },
         "ai_auto_capture": {
+          "name": "AI Auto Capture",
           "price": 519,
           "limit": 1,
           "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits"
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits",
+          "value_points": [
+            "Turns supplier documents and slips into review-ready drafts",
+            "Reduces manual capture while preserving human approval before posting"
+          ]
         }
       }
     },
@@ -129,40 +139,70 @@
       ],
       "add_ons": {
         "extra_users": {
+          "name": "Extra User Seat",
           "price": 890,
           "limit": 2,
           "unit": "user",
-          "description": "1 additional user"
+          "description": "Add one additional team member without forcing a full plan upgrade.",
+          "value_points": [
+            "Keeps daily users inside the same live workspace",
+            "Useful when operations teams grow before SKU or warehouse limits do"
+          ]
         },
         "extra_skus": {
+          "name": "Extra SKU Capacity",
           "price": 2250,
           "limit": 2,
           "unit": "250 SKUs",
-          "description": "250 additional SKUs"
+          "description": "250 additional SKUs",
+          "value_points": [
+            "Keeps inventory, costing, purchasing, and sales history in one system",
+            "Buys more catalogue headroom without paying for unused warehouses"
+          ]
         },
         "extra_invoices": {
+          "name": "Extra Invoice Capacity",
           "price": 590,
           "limit": null,
           "unit": "50 invoices",
-          "description": "50 additional invoices/month"
+          "description": "50 additional invoices/month",
+          "value_points": [
+            "Absorbs seasonal billing spikes without a full plan move",
+            "Keeps month-end billing moving when invoice volume jumps"
+          ]
         },
         "workiq_addon": {
+          "name": "WorkIQ Add-on",
           "price": 990,
           "limit": 1,
           "unit": "bundle",
-          "description": "WorkIQ add-on (job cards and execution queues)"
+          "description": "WorkIQ job cards, work queues, and execution tracking.",
+          "value_points": [
+            "Turns operational work into assignable job cards",
+            "Keeps execution queues visible alongside customers, invoices, and stock"
+          ]
         },
         "agentsiq_usage_pack": {
+          "name": "AI Pack",
           "price": 200,
           "limit": 20,
           "unit": "100 capture credits",
-          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture"
+          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture",
+          "value_points": [
+            "Recurring monthly AI credit allowance for capture and agent usage",
+            "Lets customers scale AI usage in small, predictable increments"
+          ]
         },
         "ai_auto_capture": {
+          "name": "AI Auto Capture",
           "price": 519,
           "limit": 1,
           "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits"
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits",
+          "value_points": [
+            "Turns supplier documents and slips into review-ready drafts",
+            "Reduces manual capture while preserving human approval before posting"
+          ]
         }
       }
     },
@@ -223,55 +263,85 @@
       ],
       "add_ons": {
         "extra_users": {
+          "name": "Extra User Seat",
           "price": 790,
           "limit": 2,
           "unit": "user",
-          "description": "1 additional user"
+          "description": "Add one additional team member without forcing a full plan upgrade.",
+          "value_points": [
+            "Keeps daily users inside the same live workspace",
+            "Useful when operations teams grow before SKU or warehouse limits do"
+          ]
         },
         "extra_skus": {
+          "name": "Extra SKU Capacity",
           "price": 1950,
           "limit": 1,
           "unit": "250 SKUs",
-          "description": "250 additional SKUs"
+          "description": "250 additional SKUs",
+          "value_points": [
+            "Keeps inventory, costing, purchasing, and sales history in one system",
+            "Buys more catalogue headroom without paying for unused warehouses"
+          ]
         },
         "extra_invoices": {
+          "name": "Extra Invoice Capacity",
           "price": 590,
-          "limit": 2,
+          "limit": null,
           "unit": "50 invoices",
-          "description": "50 additional invoices/month"
+          "description": "50 additional invoices/month",
+          "value_points": [
+            "Absorbs seasonal billing spikes without a full plan move",
+            "Keeps month-end billing moving when invoice volume jumps"
+          ]
         },
         "workiq_addon": {
+          "name": "WorkIQ Add-on",
           "price": 990,
           "limit": 1,
           "unit": "bundle",
-          "description": "WorkIQ add-on (job cards and execution queues)"
+          "description": "WorkIQ job cards, work queues, and execution tracking.",
+          "value_points": [
+            "Turns operational work into assignable job cards",
+            "Keeps execution queues visible alongside customers, invoices, and stock"
+          ]
         },
         "agentsiq_usage_pack": {
+          "name": "AI Pack",
           "price": 200,
           "limit": 20,
           "unit": "100 capture credits",
-          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture"
+          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture",
+          "value_points": [
+            "Recurring monthly AI credit allowance for capture and agent usage",
+            "Lets customers scale AI usage in small, predictable increments"
+          ]
         },
         "ai_auto_capture": {
+          "name": "AI Auto Capture",
           "price": 519,
           "limit": 1,
           "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits"
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits",
+          "value_points": [
+            "Turns supplier documents and slips into review-ready drafts",
+            "Reduces manual capture while preserving human approval before posting"
+          ]
         }
       }
     },
     "growth": {
       "key": "growth",
       "name": "Growth",
-      "tagline": "Operational intelligence with AgentsIQ",
+      "tagline": "Core operations with modular automation",
       "popular": false,
       "monthly": {
-        "amount": 5990,
+        "amount": 3990,
         "discount": null,
         "custom": false
       },
       "annual": {
-        "amount": 64692,
+        "amount": 43092,
         "discount": 10,
         "custom": false
       },
@@ -320,13 +390,7 @@
         "shipments",
         "bom_manufacturing",
         "custom_price_lists",
-        "agentsiq",
-        "chatiq",
         "barcode_scanning",
-        "commission",
-        "auto_commission",
-        "commission_automation",
-        "rep_commission_automation",
         "accounting_bank_feed_api",
         "accounting_recon_advanced",
         "accounting_auto_payment_matching",
@@ -335,66 +399,167 @@
       ],
       "add_ons": {
         "extra_users": {
-          "price": 590,
-          "limit": 5,
+          "name": "Extra User Seat",
+          "price": 490,
+          "limit": 2,
           "unit": "user",
-          "description": "1 additional user"
+          "description": "Add one additional team member without forcing a full plan upgrade.",
+          "value_points": [
+            "Keeps daily users inside the same live workspace",
+            "Useful when operations teams grow before SKU or warehouse limits do"
+          ]
         },
         "extra_skus": {
+          "name": "Extra SKU Capacity",
           "price": 1650,
           "limit": 2,
           "unit": "500 SKUs",
-          "description": "500 additional SKUs"
+          "description": "500 additional SKUs",
+          "value_points": [
+            "Keeps inventory, costing, purchasing, and sales history in one system",
+            "Buys more catalogue headroom without paying for unused warehouses"
+          ]
         },
         "extra_shipments": {
+          "name": "Extra Import/Export Jobs",
           "price": 1350,
           "limit": 2,
           "unit": "3+3 jobs",
-          "description": "3 import + 3 export jobs/month"
+          "description": "3 import + 3 export jobs/month",
+          "value_points": [
+            "Adds freight workflow volume without changing the whole plan",
+            "Good for seasonal import/export peaks"
+          ]
         },
         "extra_price_lists": {
+          "name": "Extra Price Lists",
           "price": 990,
           "limit": 2,
           "unit": "3 price lists",
-          "description": "3 additional custom price lists"
+          "description": "3 additional custom price lists",
+          "value_points": [
+            "Adds customer or channel pricing complexity without upgrading",
+            "Keeps margins controlled across more price books"
+          ]
         },
         "workiq_addon": {
+          "name": "WorkIQ Add-on",
           "price": 990,
           "limit": 1,
           "unit": "bundle",
-          "description": "WorkIQ add-on (job cards and execution queues)"
+          "description": "WorkIQ job cards, work queues, and execution tracking.",
+          "value_points": [
+            "Turns operational work into assignable job cards",
+            "Keeps execution queues visible alongside customers, invoices, and stock"
+          ]
         },
         "agentsiq_usage_pack": {
+          "name": "AI Pack",
           "price": 200,
           "limit": 20,
           "unit": "100 capture credits",
-          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture"
+          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture",
+          "value_points": [
+            "Recurring monthly AI credit allowance for capture and agent usage",
+            "Lets customers scale AI usage in small, predictable increments"
+          ]
         },
         "ai_auto_capture": {
+          "name": "AI Auto Capture",
           "price": 519,
           "limit": 1,
           "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits"
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits",
+          "value_points": [
+            "Turns supplier documents and slips into review-ready drafts",
+            "Reduces manual capture while preserving human approval before posting"
+          ]
+        },
+        "ai_agents_pack": {
+          "name": "AI Agents Pack",
+          "price": 490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Unlock AgentsIQ and ChatIQ automation workflows for proactive checks, follow-ups, and task generation. AI execution usage is controlled through AI Pack credits.",
+          "value_points": [
+            "Adds proactive operational checks without hiring another admin person",
+            "Uses the data already inside FlowIQ to surface next actions"
+          ]
+        },
+        "forecasting_intelligence_pack": {
+          "name": "Forecasting Intelligence Pack",
+          "price": 2990,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ForecastIQ planning intelligence for demand trends, stock risk, reorder planning, cash impact, and forward-looking operational decisions.",
+          "value_points": [
+            "Turns live stock and sales history into reorder and risk signals",
+            "Helps buyers prevent stockouts, dead stock, and cash tied up in the wrong products"
+          ]
+        },
+        "ecom_pack": {
+          "name": "Ecom Pack",
+          "price": 790,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
+          "value_points": [
+            "Connects ecommerce demand back into operational stock and invoice workflows",
+            "Reduces manual order and catalogue handling across online channels"
+          ]
+        },
+        "messaging_pack": {
+          "name": "Messaging Pack",
+          "price": 390,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
+          "value_points": [
+            "Adds customer messaging where invoice, quote, and follow-up work already happens",
+            "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
+          ]
+        },
+        "payroll_pack": {
+          "name": "Payroll Pack",
+          "price": 490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
+          "value_points": [
+            "Adds payroll operations without forcing unused warehouse or SKU capacity",
+            "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+          ]
+        },
+        "commission_rebate_automation_pack": {
+          "name": "Commission & Rebate Automation Pack",
+          "price": 590,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Automates commission, rebate, and settlement workflows so teams do not manually reconcile customer rebates and representative commission logic.",
+          "value_points": [
+            "Removes recurring manual rebate and commission reconciliation work",
+            "Keeps settlement and rebate automation tied to the live invoice/customer data"
+          ]
         }
       }
     },
     "professional": {
       "key": "professional",
       "name": "Professional",
-      "tagline": "Forecasting and payroll for growing operations",
+      "tagline": "More users, more warehouses, clean expansion path",
       "popular": true,
       "monthly": {
-        "amount": 10900,
+        "amount": 7900,
         "discount": null,
         "custom": false
       },
       "annual": {
-        "amount": 117720,
+        "amount": 85320,
         "discount": 10,
         "custom": false
       },
       "limits": {
-        "users": 10,
+        "users": 5,
         "skus": 3000,
         "warehouses": 5,
         "import_shipments_monthly": 10,
@@ -405,9 +570,9 @@
       },
       "capabilities": {
         "bom_manufacturing": true,
-        "forecasting": "standard",
+        "forecasting": false,
         "import_export": "advanced",
-        "automation": "advanced",
+        "automation": "basic",
         "support": "email_phone",
         "dashboard_level": "advanced",
         "custom_integrations": false,
@@ -431,7 +596,6 @@
         "priceiq",
         "importiq",
         "exportiq",
-        "forecastiq",
         "warrantyiq",
         "reportsiq",
         "journaliq",
@@ -441,74 +605,154 @@
         "bom_manufacturing",
         "custom_price_lists",
         "automation_basic",
-        "agentsiq",
-        "chatiq",
         "barcode_scanning",
-        "payrolliq",
-        "ecomiq",
-        "commission",
-        "auto_commission",
-        "commission_automation",
-        "rep_commission_automation",
-        "auto_rebate_settlement_automation",
         "accounting_bank_feed_api",
         "accounting_recon_advanced",
         "accounting_auto_payment_matching",
         "accounting_recon_bulk_confidence",
-        "accounting_anomaly_detection",
-        "whatsapp_web_messaging",
-        "whatsapp_api_messaging"
+        "accounting_anomaly_detection"
       ],
       "add_ons": {
         "extra_users": {
+          "name": "Extra User Seat",
           "price": 490,
-          "limit": 10,
+          "limit": 5,
           "unit": "user",
-          "description": "1 additional user"
+          "description": "Add one additional team member without forcing a full plan upgrade.",
+          "value_points": [
+            "Keeps daily users inside the same live workspace",
+            "Useful when operations teams grow before SKU or warehouse limits do"
+          ]
         },
         "extra_skus": {
+          "name": "Extra SKU Capacity",
           "price": 2200,
           "limit": 2,
           "unit": "1,000 SKUs",
-          "description": "1,000 additional SKUs"
+          "description": "1,000 additional SKUs",
+          "value_points": [
+            "Keeps inventory, costing, purchasing, and sales history in one system",
+            "Buys more catalogue headroom without paying for unused warehouses"
+          ]
         },
         "extra_shipments": {
+          "name": "Extra Import/Export Jobs",
           "price": 1750,
           "limit": 2,
           "unit": "10+10 jobs",
-          "description": "10 import + 10 export jobs/month"
+          "description": "10 import + 10 export jobs/month",
+          "value_points": [
+            "Adds freight workflow volume without changing the whole plan",
+            "Good for seasonal import/export peaks"
+          ]
         },
         "agentsiq_usage_pack": {
+          "name": "AI Pack",
           "price": 200,
           "limit": 20,
           "unit": "100 capture credits",
-          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture"
+          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture",
+          "value_points": [
+            "Recurring monthly AI credit allowance for capture and agent usage",
+            "Lets customers scale AI usage in small, predictable increments"
+          ]
         },
         "ai_auto_capture": {
+          "name": "AI Auto Capture",
           "price": 519,
           "limit": 1,
           "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits"
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits",
+          "value_points": [
+            "Turns supplier documents and slips into review-ready drafts",
+            "Reduces manual capture while preserving human approval before posting"
+          ]
+        },
+        "ai_agents_pack": {
+          "name": "AI Agents Pack",
+          "price": 490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Unlock AgentsIQ and ChatIQ automation workflows for proactive checks, follow-ups, and task generation. AI execution usage is controlled through AI Pack credits.",
+          "value_points": [
+            "Adds proactive operational checks without hiring another admin person",
+            "Uses the data already inside FlowIQ to surface next actions"
+          ]
+        },
+        "forecasting_intelligence_pack": {
+          "name": "Forecasting Intelligence Pack",
+          "price": 2990,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ForecastIQ planning intelligence for demand trends, stock risk, reorder planning, cash impact, and forward-looking operational decisions.",
+          "value_points": [
+            "Turns live stock and sales history into reorder and risk signals",
+            "Helps buyers prevent stockouts, dead stock, and cash tied up in the wrong products"
+          ]
+        },
+        "ecom_pack": {
+          "name": "Ecom Pack",
+          "price": 790,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
+          "value_points": [
+            "Connects ecommerce demand back into operational stock and invoice workflows",
+            "Reduces manual order and catalogue handling across online channels"
+          ]
+        },
+        "messaging_pack": {
+          "name": "Messaging Pack",
+          "price": 390,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
+          "value_points": [
+            "Adds customer messaging where invoice, quote, and follow-up work already happens",
+            "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
+          ]
+        },
+        "payroll_pack": {
+          "name": "Payroll Pack",
+          "price": 490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
+          "value_points": [
+            "Adds payroll operations without forcing unused warehouse or SKU capacity",
+            "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+          ]
+        },
+        "commission_rebate_automation_pack": {
+          "name": "Commission & Rebate Automation Pack",
+          "price": 590,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Automates commission, rebate, and settlement workflows so teams do not manually reconcile customer rebates and representative commission logic.",
+          "value_points": [
+            "Removes recurring manual rebate and commission reconciliation work",
+            "Keeps settlement and rebate automation tied to the live invoice/customer data"
+          ]
         }
       }
     },
     "scale": {
       "key": "scale",
       "name": "Scale",
-      "tagline": "AI planning plus advanced payroll operations",
+      "tagline": "Higher limits for multi-warehouse teams",
       "popular": false,
       "monthly": {
-        "amount": 19900,
+        "amount": 12900,
         "discount": null,
         "custom": false
       },
       "annual": {
-        "amount": 214920,
+        "amount": 139320,
         "discount": 10,
         "custom": false
       },
       "limits": {
-        "users": 50,
+        "users": 10,
         "skus": 10000,
         "warehouses": 10,
         "import_shipments_monthly": 30,
@@ -519,9 +763,9 @@
       },
       "capabilities": {
         "bom_manufacturing": true,
-        "forecasting": "advanced",
+        "forecasting": false,
         "import_export": "advanced",
-        "automation": "advanced",
+        "automation": "basic",
         "support": "premium",
         "dashboard_level": "premium",
         "custom_integrations": false,
@@ -545,23 +789,12 @@
         "priceiq",
         "importiq",
         "exportiq",
-        "payrolliq",
-        "ecomiq",
-        "commission",
-        "auto_commission",
-        "commission_automation",
-        "rep_commission_automation",
-        "auto_rebate_settlement_automation",
-        "forecastiq",
         "reportsiq",
         "journaliq",
         "warrantyiq",
-        "agentsiq",
         "settings",
         "shipments",
         "user_management",
-        "chatiq",
-        "forecastiq_advanced",
         "bom_manufacturing",
         "custom_price_lists",
         "automation_basic",
@@ -572,23 +805,107 @@
         "accounting_recon_advanced",
         "accounting_auto_payment_matching",
         "accounting_recon_bulk_confidence",
-        "accounting_anomaly_detection",
-        "whatsapp_web_messaging",
-        "whatsapp_api_messaging",
-        "forecastiq_advanced"
+        "accounting_anomaly_detection"
       ],
       "add_ons": {
+        "extra_users": {
+          "name": "Extra User Seat",
+          "price": 490,
+          "limit": 25,
+          "unit": "user",
+          "description": "Add one additional team member without forcing a full plan upgrade.",
+          "value_points": [
+            "Keeps daily users inside the same live workspace",
+            "Useful when operations teams grow before SKU or warehouse limits do"
+          ]
+        },
         "agentsiq_usage_pack": {
+          "name": "AI Pack",
           "price": 200,
           "limit": 50,
           "unit": "100 capture credits",
-          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture"
+          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture",
+          "value_points": [
+            "Recurring monthly AI credit allowance for capture and agent usage",
+            "Lets customers scale AI usage in small, predictable increments"
+          ]
         },
         "ai_auto_capture": {
+          "name": "AI Auto Capture",
           "price": 519,
           "limit": 1,
           "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits"
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits",
+          "value_points": [
+            "Turns supplier documents and slips into review-ready drafts",
+            "Reduces manual capture while preserving human approval before posting"
+          ]
+        },
+        "ai_agents_pack": {
+          "name": "AI Agents Pack",
+          "price": 490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Unlock AgentsIQ and ChatIQ automation workflows for proactive checks, follow-ups, and task generation. AI execution usage is controlled through AI Pack credits.",
+          "value_points": [
+            "Adds proactive operational checks without hiring another admin person",
+            "Uses the data already inside FlowIQ to surface next actions"
+          ]
+        },
+        "forecasting_intelligence_pack": {
+          "name": "Forecasting Intelligence Pack",
+          "price": 2990,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ForecastIQ planning intelligence for demand trends, stock risk, reorder planning, cash impact, and forward-looking operational decisions.",
+          "value_points": [
+            "Turns live stock and sales history into reorder and risk signals",
+            "Helps buyers prevent stockouts, dead stock, and cash tied up in the wrong products"
+          ]
+        },
+        "ecom_pack": {
+          "name": "Ecom Pack",
+          "price": 790,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
+          "value_points": [
+            "Connects ecommerce demand back into operational stock and invoice workflows",
+            "Reduces manual order and catalogue handling across online channels"
+          ]
+        },
+        "messaging_pack": {
+          "name": "Messaging Pack",
+          "price": 390,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
+          "value_points": [
+            "Adds customer messaging where invoice, quote, and follow-up work already happens",
+            "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
+          ]
+        },
+        "payroll_pack": {
+          "name": "Payroll Pack",
+          "price": 490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
+          "value_points": [
+            "Adds payroll operations without forcing unused warehouse or SKU capacity",
+            "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+          ]
+        },
+        "commission_rebate_automation_pack": {
+          "name": "Commission & Rebate Automation Pack",
+          "price": 590,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Automates commission, rebate, and settlement workflows so teams do not manually reconcile customer rebates and representative commission logic.",
+          "value_points": [
+            "Removes recurring manual rebate and commission reconciliation work",
+            "Keeps settlement and rebate automation tied to the live invoice/customer data"
+          ]
         }
       }
     },
@@ -679,16 +996,92 @@
       ],
       "add_ons": {
         "agentsiq_usage_pack": {
+          "name": "AI Pack",
           "price": 200,
           "limit": 100,
           "unit": "100 capture credits",
-          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture"
+          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture",
+          "value_points": [
+            "Recurring monthly AI credit allowance for capture and agent usage",
+            "Lets customers scale AI usage in small, predictable increments"
+          ]
         },
         "ai_auto_capture": {
+          "name": "AI Auto Capture",
           "price": 519,
           "limit": 1,
           "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits"
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits",
+          "value_points": [
+            "Turns supplier documents and slips into review-ready drafts",
+            "Reduces manual capture while preserving human approval before posting"
+          ]
+        },
+        "ai_agents_pack": {
+          "name": "AI Agents Pack",
+          "price": 490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Unlock AgentsIQ and ChatIQ automation workflows for proactive checks, follow-ups, and task generation. AI execution usage is controlled through AI Pack credits.",
+          "value_points": [
+            "Adds proactive operational checks without hiring another admin person",
+            "Uses the data already inside FlowIQ to surface next actions"
+          ]
+        },
+        "forecasting_intelligence_pack": {
+          "name": "Forecasting Intelligence Pack",
+          "price": 2990,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ForecastIQ planning intelligence for demand trends, stock risk, reorder planning, cash impact, and forward-looking operational decisions.",
+          "value_points": [
+            "Turns live stock and sales history into reorder and risk signals",
+            "Helps buyers prevent stockouts, dead stock, and cash tied up in the wrong products"
+          ]
+        },
+        "ecom_pack": {
+          "name": "Ecom Pack",
+          "price": 790,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
+          "value_points": [
+            "Connects ecommerce demand back into operational stock and invoice workflows",
+            "Reduces manual order and catalogue handling across online channels"
+          ]
+        },
+        "messaging_pack": {
+          "name": "Messaging Pack",
+          "price": 390,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
+          "value_points": [
+            "Adds customer messaging where invoice, quote, and follow-up work already happens",
+            "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
+          ]
+        },
+        "payroll_pack": {
+          "name": "Payroll Pack",
+          "price": 490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
+          "value_points": [
+            "Adds payroll operations without forcing unused warehouse or SKU capacity",
+            "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+          ]
+        },
+        "commission_rebate_automation_pack": {
+          "name": "Commission & Rebate Automation Pack",
+          "price": 590,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Automates commission, rebate, and settlement workflows so teams do not manually reconcile customer rebates and representative commission logic.",
+          "value_points": [
+            "Removes recurring manual rebate and commission reconciliation work",
+            "Keeps settlement and rebate automation tied to the live invoice/customer data"
+          ]
         }
       }
     }

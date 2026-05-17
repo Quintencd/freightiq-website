@@ -1,5 +1,21 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.10] - May 17, 2026
+
+### Source Attribution + Journey Tracking
+
+- Fixed the canonical website analytics sender to use authenticated `fetch` requests to Supabase instead of unauthenticated `sendBeacon`.
+- Added session-level journey tracking: anonymous visitor id, per-session id, landing page, previous page, page-view count, session age, and compact journey path.
+- Expanded attribution into first-touch and last-touch fields for UTM, paid click IDs, source category, source platform, search engines, social referrers, and AI assistant referrals.
+- Routed 50% and 90% scroll milestones into Supabase `web_scroll_depth` events.
+- Added documentation under `docs/Website/2026-05-17_source_attribution_and_journey_tracking_hardening.md`.
+- No Netlify deploy was run.
+
+### Regression Risk Notes (>10%)
+
+- **10-15%**: Supabase event volume may increase because scroll depth now reaches the internal event table.
+- **10-12%**: Session counts will not be directly comparable to the older persistent local-storage session baseline.
+
 ## [1.3.9] - May 11, 2026
 
 ### AI-SEO Conversion + Tracking Alignment

@@ -2,14 +2,14 @@
   if (window.location.pathname.indexOf('/pricing') === -1) return;
 
   var currencyState = {
-    selected: 'ZAR',
-    rates: { ZAR: 1, USD: 0.055, EUR: 0.051 },
-    detectedCountry: 'ZA'
+    selected: 'USD',
+    rates: { ZAR: 1, USD: 0.06, EUR: 0.055 },
+    detectedCountry: 'US'
   };
 
   var basePrices = {
-    monthly: { starter_lite: 299, starter: 790, growth: 5990, professional: 10900, scale: 19900 },
-    annual: { starter_lite: 3229, starter: 8532, growth: 64692, professional: 117720, scale: 214920 }
+    monthly: { starter_lite: 299, starter: 790, growth_lite: 2490, growth: 3990, professional: 7900, scale: 12900 },
+    annual: { starter_lite: 3229, starter: 8532, growth_lite: 26892, growth: 43092, professional: 85320, scale: 139320 }
   };
 
   var symbols = { ZAR: 'R', USD: '$', EUR: 'EUR ' };
@@ -33,7 +33,7 @@
   function applyCurrency() {
     var interval = getBillingInterval();
 
-    ['starter_lite', 'starter', 'growth', 'professional', 'scale'].forEach(function (plan) {
+    ['starter_lite', 'starter', 'growth_lite', 'growth', 'professional', 'scale'].forEach(function (plan) {
       var numEl = document.querySelector('.price-' + plan);
       var row = numEl && numEl.closest('div.flex.items-baseline');
       var symEl = row ? row.querySelector('span.text-slate-500.text-xs') : null;
@@ -100,7 +100,7 @@
       .then(function (data) {
         if (data && data.country) {
           currencyState.detectedCountry = data.country;
-          currencyState.selected = data.country === 'ZA' ? 'ZAR' : 'USD';
+          currencyState.selected = 'USD';
           var selector = document.getElementById('currencySelector');
           if (selector) selector.value = currencyState.selected;
           applyCurrency();
