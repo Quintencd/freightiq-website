@@ -14,8 +14,11 @@ The pricing comparison keeps the plan table simple, while the add-on section bel
 - Scale is `R12,900/month` with 10 users.
 - AI Agents Pack is `R490/month`.
 - Messaging Pack is `R390/month`.
-- Accounting automation is shown as included from Growth upward rather than as an add-on.
+- AccountingIQ advanced reconciliation and payment automation are sold as `AccountingIQ Reconciliation Pack` from Growth Lite upward.
 - Commission & Rebate Automation Pack is `R590/month`.
+- Follow-up alignment now makes Growth Lite eligible for the specialist add-ons, exposes EcomIQ and PayrollIQ add-ons on every plan, and adds `AccountingIQ Reconciliation Pack` from Growth Lite upward.
+- AccountingIQ bank feed API connectors are hidden from pricing until that connector surface is live.
+- The add-on section now uses buyer-facing copy instead of internal strategy language.
 - The public marketing website presents the same commercial model in USD for confidence and international comparison, starting at `$19/month`.
 - Website USD display prices are rounded marketing prices; in-app non-South-African billing profiles now see USD-first reference pricing, while PayFast subscription creation and upgrade payloads remain on the canonical ZAR model.
 - The app-side static `public/pricing.html` copy was realigned to the website USD presentation so public pricing pages do not mix Rand and dollar subscription messaging.
@@ -33,6 +36,7 @@ The pricing comparison keeps the plan table simple, while the add-on section bel
 - `public/pricing.html`
 - `public/pricing-data.json`
 - `tools/generate-public-pricing-data.mjs`
+- `docs/Billing/2026-05-17_pricing_addon_gate_alignment.md`
 
 ## Regression Risks Above 10%
 

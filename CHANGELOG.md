@@ -1,5 +1,19 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.11] - May 17, 2026
+
+### Pricing Add-on Alignment
+
+- Rewrote the modular add-on pricing copy so it reads as customer-facing buying guidance instead of internal packaging strategy.
+- Updated the pricing page to show Growth Lite as eligible for specialist add-ons.
+- Hid AccountingIQ bank feed API connector pricing until the connector surface is live.
+- Regenerated canonical website pricing data from the app subscription config.
+
+### Regression Risk Notes (>10%)
+
+- **10-14%**: Cached pricing data can briefly show the previous Growth-only add-on availability after deployment.
+- **12-18%**: Visitors comparing older screenshots or proposals may notice advanced reconciliation moving from bundled Growth+ wording to an add-on path.
+
 ## [1.3.10] - May 17, 2026
 
 ### Source Attribution + Journey Tracking

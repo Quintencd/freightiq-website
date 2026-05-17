@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-17T06:09:31.775Z",
+  "generated_at_utc": "2026-05-17T08:55:37.191Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -82,6 +82,28 @@
           "value_points": [
             "Turns supplier documents and slips into review-ready drafts",
             "Reduces manual capture while preserving human approval before posting"
+          ]
+        },
+        "ecom_pack": {
+          "name": "Ecom Pack",
+          "price": 790,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
+          "value_points": [
+            "Connects ecommerce demand back into operational stock and invoice workflows",
+            "Reduces manual order and catalogue handling across online channels"
+          ]
+        },
+        "payroll_pack": {
+          "name": "Payroll Pack",
+          "price": 490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
+          "value_points": [
+            "Adds payroll operations without forcing unused warehouse or SKU capacity",
+            "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
           ]
         }
       }
@@ -203,6 +225,28 @@
             "Turns supplier documents and slips into review-ready drafts",
             "Reduces manual capture while preserving human approval before posting"
           ]
+        },
+        "ecom_pack": {
+          "name": "Ecom Pack",
+          "price": 790,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
+          "value_points": [
+            "Connects ecommerce demand back into operational stock and invoice workflows",
+            "Reduces manual order and catalogue handling across online channels"
+          ]
+        },
+        "payroll_pack": {
+          "name": "Payroll Pack",
+          "price": 490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
+          "value_points": [
+            "Adds payroll operations without forcing unused warehouse or SKU capacity",
+            "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+          ]
         }
       }
     },
@@ -257,7 +301,6 @@
         "custom_price_lists",
         "reportsiq",
         "journaliq",
-        "accounting_bank_feed_api",
         "settings",
         "user_management"
       ],
@@ -287,7 +330,7 @@
         "extra_invoices": {
           "name": "Extra Invoice Capacity",
           "price": 590,
-          "limit": null,
+          "limit": 2,
           "unit": "50 invoices",
           "description": "50 additional invoices/month",
           "value_points": [
@@ -326,6 +369,83 @@
           "value_points": [
             "Turns supplier documents and slips into review-ready drafts",
             "Reduces manual capture while preserving human approval before posting"
+          ]
+        },
+        "ai_agents_pack": {
+          "name": "AI Agents Pack",
+          "price": 490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Unlock AgentsIQ and ChatIQ automation workflows for proactive checks, follow-ups, and task generation. AI execution usage is controlled through AI Pack credits.",
+          "value_points": [
+            "Adds proactive operational checks without hiring another admin person",
+            "Uses the data already inside FlowIQ to surface next actions"
+          ]
+        },
+        "forecasting_intelligence_pack": {
+          "name": "Forecasting Intelligence Pack",
+          "price": 2990,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ForecastIQ planning intelligence for demand trends, stock risk, reorder planning, cash impact, and forward-looking operational decisions.",
+          "value_points": [
+            "Turns live stock and sales history into reorder and risk signals",
+            "Helps buyers prevent stockouts, dead stock, and cash tied up in the wrong products"
+          ]
+        },
+        "ecom_pack": {
+          "name": "Ecom Pack",
+          "price": 790,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
+          "value_points": [
+            "Connects ecommerce demand back into operational stock and invoice workflows",
+            "Reduces manual order and catalogue handling across online channels"
+          ]
+        },
+        "messaging_pack": {
+          "name": "Messaging Pack",
+          "price": 390,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
+          "value_points": [
+            "Adds customer messaging where invoice, quote, and follow-up work already happens",
+            "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
+          ]
+        },
+        "payroll_pack": {
+          "name": "Payroll Pack",
+          "price": 490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
+          "value_points": [
+            "Adds payroll operations without forcing unused warehouse or SKU capacity",
+            "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+          ]
+        },
+        "accounting_reconciliation_pack": {
+          "name": "AccountingIQ Reconciliation Pack",
+          "price": 590,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "AccountingIQ advanced reconciliation, payment matching, confidence controls, and anomaly checks.",
+          "value_points": [
+            "Speeds up customer and supplier payment matching while keeping review controls in place",
+            "Adds reconciliation intelligence without forcing a full plan upgrade"
+          ]
+        },
+        "commission_rebate_automation_pack": {
+          "name": "Commission & Rebate Automation Pack",
+          "price": 590,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Automates commission, rebate, and settlement workflows so teams do not manually reconcile customer rebates and representative commission logic.",
+          "value_points": [
+            "Removes recurring manual rebate and commission reconciliation work",
+            "Keeps settlement and rebate automation tied to the live invoice/customer data"
           ]
         }
       }
@@ -390,12 +510,7 @@
         "shipments",
         "bom_manufacturing",
         "custom_price_lists",
-        "barcode_scanning",
-        "accounting_bank_feed_api",
-        "accounting_recon_advanced",
-        "accounting_auto_payment_matching",
-        "accounting_recon_bulk_confidence",
-        "accounting_anomaly_detection"
+        "barcode_scanning"
       ],
       "add_ons": {
         "extra_users": {
@@ -530,6 +645,17 @@
             "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
           ]
         },
+        "accounting_reconciliation_pack": {
+          "name": "AccountingIQ Reconciliation Pack",
+          "price": 590,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "AccountingIQ advanced reconciliation, payment matching, confidence controls, and anomaly checks.",
+          "value_points": [
+            "Speeds up customer and supplier payment matching while keeping review controls in place",
+            "Adds reconciliation intelligence without forcing a full plan upgrade"
+          ]
+        },
         "commission_rebate_automation_pack": {
           "name": "Commission & Rebate Automation Pack",
           "price": 590,
@@ -605,12 +731,7 @@
         "bom_manufacturing",
         "custom_price_lists",
         "automation_basic",
-        "barcode_scanning",
-        "accounting_bank_feed_api",
-        "accounting_recon_advanced",
-        "accounting_auto_payment_matching",
-        "accounting_recon_bulk_confidence",
-        "accounting_anomaly_detection"
+        "barcode_scanning"
       ],
       "add_ons": {
         "extra_users": {
@@ -723,6 +844,17 @@
             "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
           ]
         },
+        "accounting_reconciliation_pack": {
+          "name": "AccountingIQ Reconciliation Pack",
+          "price": 590,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "AccountingIQ advanced reconciliation, payment matching, confidence controls, and anomaly checks.",
+          "value_points": [
+            "Speeds up customer and supplier payment matching while keeping review controls in place",
+            "Adds reconciliation intelligence without forcing a full plan upgrade"
+          ]
+        },
         "commission_rebate_automation_pack": {
           "name": "Commission & Rebate Automation Pack",
           "price": 590,
@@ -800,12 +932,7 @@
         "automation_basic",
         "automation_advanced",
         "barcode_scanning",
-        "timeiq_finance_bridge",
-        "accounting_bank_feed_api",
-        "accounting_recon_advanced",
-        "accounting_auto_payment_matching",
-        "accounting_recon_bulk_confidence",
-        "accounting_anomaly_detection"
+        "timeiq_finance_bridge"
       ],
       "add_ons": {
         "extra_users": {
@@ -894,6 +1021,17 @@
           "value_points": [
             "Adds payroll operations without forcing unused warehouse or SKU capacity",
             "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+          ]
+        },
+        "accounting_reconciliation_pack": {
+          "name": "AccountingIQ Reconciliation Pack",
+          "price": 590,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "AccountingIQ advanced reconciliation, payment matching, confidence controls, and anomaly checks.",
+          "value_points": [
+            "Speeds up customer and supplier payment matching while keeping review controls in place",
+            "Adds reconciliation intelligence without forcing a full plan upgrade"
           ]
         },
         "commission_rebate_automation_pack": {
@@ -986,7 +1124,6 @@
         "automation_advanced",
         "barcode_scanning",
         "timeiq_finance_bridge",
-        "accounting_bank_feed_api",
         "accounting_recon_advanced",
         "accounting_auto_payment_matching",
         "accounting_recon_bulk_confidence",
@@ -1070,6 +1207,17 @@
           "value_points": [
             "Adds payroll operations without forcing unused warehouse or SKU capacity",
             "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+          ]
+        },
+        "accounting_reconciliation_pack": {
+          "name": "AccountingIQ Reconciliation Pack",
+          "price": 590,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "AccountingIQ advanced reconciliation, payment matching, confidence controls, and anomaly checks.",
+          "value_points": [
+            "Speeds up customer and supplier payment matching while keeping review controls in place",
+            "Adds reconciliation intelligence without forcing a full plan upgrade"
           ]
         },
         "commission_rebate_automation_pack": {
