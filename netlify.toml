@@ -45,7 +45,13 @@
 [[redirects]]
   from = "/pricing"
   to = "/pricing.html"
+  status = 200
+
+[[redirects]]
+  from = "/pricing.html"
+  to = "/pricing"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/pricing-new-5-tiers.html"
@@ -58,6 +64,12 @@
   from = "/customers"
   to = "/customers/index.html"
   status = 200
+
+[[redirects]]
+  from = "/customers/"
+  to = "/customers"
+  status = 301
+  force = true
 [[redirects]]
   from = "/customers/biomek-case-study"
   to = "/customers/biomek-case-study.html"
@@ -174,7 +186,24 @@
 [[redirects]]
   from = "/who-flowiq-is-for"
   to = "/who-flowiq-is-for.html"
+  status = 200
+
+[[redirects]]
+  from = "/who-flowiq-is-for.html"
+  to = "/who-flowiq-is-for"
   status = 301
+  force = true
+
+[[redirects]]
+  from = "/walkthroughs"
+  to = "/walkthroughs/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/walkthroughs/"
+  to = "/walkthroughs"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/modules"
