@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FlowIQ Pricing – Start Small and Scale Without Migrating Later</title>
-  <meta name="description" content="Compare FlowIQ plans from Starter Lite at $19/month through Starter, Growth, Professional, Scale, and Enterprise. Start with accounting and light operations, then scale without changing systems.">
+  <meta name="description" content="Compare FlowIQ plans from Starter Lite through Starter, Growth, Professional, Scale, and Enterprise. Start with accounting and light operations, then scale without changing systems.">
   <meta name="keywords" content="small business accounting pricing, Xero alternative, Sage alternative, QuickBooks alternative, business platform pricing, FlowIQ pricing">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://www.flowiq.info/pricing">
@@ -16,7 +16,7 @@
   <meta property="og:image" content="https://www.flowiq.info/flowiq-logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="FlowIQ Pricing – Start Small and Scale Without Migrating Later">
-  <meta name="twitter:description" content="Starter Lite begins at $19/month. FlowIQ grows from accounting into operations.">
+  <meta name="twitter:description" content="Starter Lite gives smaller teams an entry point. FlowIQ grows from accounting into operations.">
   <meta name="twitter:image" content="https://www.flowiq.info/flowiq-logo.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <script type="application/ld+json">
@@ -25,7 +25,7 @@
       "@type": "WebPage",
       "name": "FlowIQ Pricing",
       "url": "https://www.flowiq.info/pricing",
-      "description": "Compare FlowIQ plans from Starter Lite at $19/month through Starter, Growth, Professional, Scale, and Enterprise. Start with accounting and light operations, then scale without changing systems."
+      "description": "Compare FlowIQ plans from Starter Lite through Starter, Growth, Professional, Scale, and Enterprise. Start with accounting and light operations, then scale without changing systems."
     }
   </script>
   <script type="application/ld+json">
@@ -153,7 +153,7 @@
         Outgrow Xero, Sage, QuickBooks or Pastel? FlowIQ grows with you from accounting into inventory, importing, delivery, forecasting, automation and operational dashboards.
       </p>
       <p class="text-sm font-semibold text-orange-500 max-w-3xl mx-auto mb-6">
-        Start on Starter Lite at $19/month, step into Starter when you need stronger operations, then upgrade naturally as users, SKUs, warehouses, reports and operations become more complex.
+        Start on Starter Lite at <span id="starter-lite-inline-price">entry pricing</span>, step into Starter when you need stronger operations, then upgrade naturally as users, SKUs, warehouses, reports and operations become more complex.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center mb-8">
         <a href="/signup" data-analytics-event="trial_signup_click" data-analytics-position="pricing_hero_primary" data-analytics-label="pricing hero trial" class="inline-flex items-center justify-center px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition">
@@ -188,7 +188,7 @@
             Annual <span class="text-emerald-500">(Save 10%)</span>
           </button>
         </div>
-        <p class="sr-only" id="pricing-currency-note">Displayed in USD for international comparison. Local billing is confirmed in-app.</p>
+        <p class="sr-only" id="pricing-currency-note">South African visitors see Rand pricing. International visitors see USD pricing.</p>
       </div>
     </div>
 
@@ -352,11 +352,42 @@
       commission_rebate_automation_pack: 35,
       extra_users: 29
     };
+    const pricingCurrencyState = {
+      selected: detectInitialCurrency(),
+      country: ''
+    };
+
+    function detectInitialCurrency() {
+      const language = String(navigator.language || '').toLowerCase();
+      const languages = Array.isArray(navigator.languages) ? navigator.languages.map((entry) => String(entry || '').toLowerCase()) : [];
+      const timezone = String(Intl.DateTimeFormat().resolvedOptions().timeZone || '').toLowerCase();
+      if (language.endsWith('-za') || languages.some((entry) => entry.endsWith('-za')) || timezone === 'africa/johannesburg') return 'ZAR';
+      return 'USD';
+    }
 
     function formatUsdAmount(amount) {
       const value = Number(amount);
       if (!Number.isFinite(value)) return 'Custom';
       return `$${value.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+    }
+
+    function formatZarAmount(amount) {
+      const value = Number(amount);
+      if (!Number.isFinite(value)) return 'Custom';
+      return `R${value.toLocaleString('en-ZA', { maximumFractionDigits: 0 })}`;
+    }
+
+    function formatMarketingAmount(zarAmount, usdAmount) {
+      return pricingCurrencyState.selected === 'ZAR'
+        ? formatZarAmount(zarAmount)
+        : formatUsdAmount(usdAmount);
+    }
+
+    function renderInlineCurrencyCopy() {
+      const inlinePrice = document.getElementById('starter-lite-inline-price');
+      if (!inlinePrice) return;
+      const monthly = plans?.starter_lite?.monthly?.amount;
+      inlinePrice.textContent = `${formatMarketingAmount(monthly, MARKETING_USD_PLAN_PRICES.starter_lite.monthly)}/month`;
     }
 
     function roundedUsdFromZar(zarAmount) {
@@ -441,7 +472,7 @@
             ? addOn.value_points
             : (fallback.value_points || []);
           const name = addOn.name || fallback.name || addOnKey.replace(/_/g, ' ');
-          const price = typeof addOn.price === 'number' ? formatUsdAmount(getAddOnUsdAmount(addOnKey, addOn)) : 'Custom';
+          const price = typeof addOn.price === 'number' ? formatMarketingAmount(addOn.price, getAddOnUsdAmount(addOnKey, addOn)) : 'Custom';
           const unit = addOnKey === 'messaging_pack'
             ? 'per month + WhatsApp API fees'
             : 'per month';
@@ -640,7 +671,7 @@
         const pricing = billingInterval === 'annual' ? plan?.annual : plan?.monthly;
         const isEnterprise = planKey === 'enterprise' || Boolean(pricing?.custom);
         const usdAmount = getPlanUsdAmount(planKey, billingInterval, pricing);
-        const amount = typeof usdAmount === 'number' ? formatUsdAmount(usdAmount) : null;
+        const amount = typeof usdAmount === 'number' ? formatMarketingAmount(pricing?.amount, usdAmount) : null;
         const highlight = plan?.popular
           ? 'bg-orange-50'
           : '';
@@ -716,10 +747,30 @@
       }
     }
 
+    function applyDetectedPricingCurrency(countryCode) {
+      const normalized = String(countryCode || '').trim().toUpperCase();
+      pricingCurrencyState.country = normalized;
+      pricingCurrencyState.selected = normalized === 'ZA' ? 'ZAR' : 'USD';
+      renderInlineCurrencyCopy();
+      renderAddOns();
+      renderComparisonTable();
+    }
+
+    function detectPricingCountry() {
+      fetch('https://ipapi.co/json/')
+        .then((res) => res.ok ? res.json() : null)
+        .then((data) => {
+          if (data?.country) applyDetectedPricingCurrency(data.country);
+        })
+        .catch(() => {});
+    }
+
     loadPricingData()
       .then(() => {
+        renderInlineCurrencyCopy();
         renderAddOns();
         renderComparisonTable();
+        detectPricingCountry();
       })
       .catch((error) => {
         console.error('Pricing page failed to load canonical data', error);
