@@ -350,7 +350,7 @@
       payroll_pack: 29,
       accounting_reconciliation_pack: 35,
       commission_rebate_automation_pack: 35,
-      extra_users: 29
+      extra_users: 6
     };
     const pricingCurrencyState = {
       selected: detectInitialCurrency(),
@@ -475,6 +475,8 @@
           const price = typeof addOn.price === 'number' ? formatMarketingAmount(addOn.price, getAddOnUsdAmount(addOnKey, addOn)) : 'Custom';
           const unit = addOnKey === 'messaging_pack'
             ? 'per month + WhatsApp API fees'
+            : addOnKey === 'extra_users'
+              ? 'per user / month'
             : 'per month';
           const availability = addOnKey === 'ai_auto_capture' || addOnKey === 'agentsiq_usage_pack'
             ? 'Available across entry and growth plans'
