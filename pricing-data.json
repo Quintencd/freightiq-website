@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-05T10:14:48.093Z",
+  "generated_at_utc": "2026-06-05T13:16:05.078Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -71,7 +71,9 @@
           "value_points": [
             "Keeps daily users inside the same live workspace",
             "Useful when operations teams grow before SKU or warehouse limits do"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
@@ -82,7 +84,9 @@
           "value_points": [
             "Keeps inventory, costing, purchasing, and sales history in one system",
             "Buys more catalogue headroom without paying for unused warehouses"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "agentsiq_usage_pack": {
           "name": "AI Pack",
@@ -93,7 +97,9 @@
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ai_auto_capture": {
           "name": "AI Auto Capture",
@@ -104,7 +110,9 @@
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ecom_pack": {
           "name": "Ecom Pack",
@@ -115,7 +123,9 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
@@ -126,7 +136,9 @@
           "value_points": [
             "Connects till sales into FlowIQ without slowing the counter",
             "Keeps cash-up, invoice, stock, and accounting automation gated until mappings are approved"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "payroll_pack": {
           "name": "Payroll Pack",
@@ -137,7 +149,9 @@
           "value_points": [
             "Adds payroll operations without forcing unused warehouse or SKU capacity",
             "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "business_units": {
           "name": "Business Units",
@@ -148,29 +162,68 @@
           "value_points": [
             "Adds a clean internal structure without creating separate FlowIQ companies",
             "Sets the foundation for unit-level payroll, expenses, invoices, and reporting"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
-        "projectsiq_core": {
-          "name": "ProjectsIQ Core",
-          "price": 799,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Project cockpit, P&L, variations, documents, exports, and allocation from InvoiceIQ and PurchaseIQ.",
-          "value_points": [
-            "Adds project-level margin, cash, billing, and cost visibility without changing source-module workflows",
-            "Keeps invoices, purchases, documents, and project performance tied to one job workspace"
-          ]
-        },
-        "projectsiq_contractor_pack": {
-          "name": "ProjectsIQ Contractor Pack",
+        "projectsiq_addon": {
+          "name": "ProjectsIQ Starter",
           "price": 1499,
           "limit": 1,
           "unit": "workspace",
-          "description": "Contractor-ready ProjectsIQ workflows for cost control, progress claims, subcontractor visibility, and site evidence.",
+          "description": "ProjectsIQ project control room for contractors and builders, capped at 25 active projects per year.",
           "value_points": [
-            "Extends ProjectsIQ for construction and contracting teams that need job control without spreadsheet duplication",
-            "Keeps AI Capture, InvoiceIQ, PurchaseIQ, and SlipIQ as source-of-truth flows while ProjectsIQ becomes the job cockpit"
-          ]
+            "Up to 25 active projects per year with project P&L, cost allocation, claims, BOQs, snags, site photos, ledgers, and live profitability",
+            "Keeps InvoiceIQ, PurchaseIQ, SlipIQ, and AI Capture as source-of-truth flows while ProjectsIQ shows the true project result",
+            "Good for smaller contractors that need proper project control without a heavy project system"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Starter",
+          "project_limit_annual": 25
+        },
+        "projectsiq_growth": {
+          "name": "ProjectsIQ Growth",
+          "price": 2499,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ProjectsIQ for growing contractors, capped at 75 active projects per year.",
+          "value_points": [
+            "Up to 75 active projects per year for larger teams running more sites or maintenance jobs",
+            "Includes the contractor workflows: BOQ/budget control, progress claims, site items, snag photos, and project ledgers",
+            "Keeps product, invoice, slip, purchase, landed-cost, and site cost allocations visible in ProjectsIQ"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Growth",
+          "project_limit_annual": 75
+        },
+        "projectsiq_unlimited": {
+          "name": "ProjectsIQ Unlimited",
+          "price": 3999,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ProjectsIQ for high-volume contractors that need unlimited active projects per year.",
+          "value_points": [
+            "Unlimited active projects per year for larger contractor groups and multi-site operations",
+            "Includes the full contractor control room with BOQs, claims, snags, photos, ledgers, and live project profitability",
+            "Best fit when project volume and document/photo storage will grow materially"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Unlimited",
+          "project_limit_annual": null
+        },
+        "projectsiq_storage_20gb": {
+          "name": "ProjectsIQ Media Pack",
+          "price": 299,
+          "limit": 20,
+          "unit": "20GB storage",
+          "description": "Adds 20GB of ProjectsIQ media storage for snag photos, site evidence, drawings, and project documents.",
+          "value_points": [
+            "Expands ProjectsIQ media storage without changing the project-count tier",
+            "Useful for contractors uploading many snag photos, site photos, drawings, and evidence files",
+            "Keeps storage costs transparent before high-volume projects eat into margin"
+          ],
+          "tier_group": null,
+          "tier_label": null
         }
       }
     },
@@ -235,7 +288,9 @@
           "value_points": [
             "Keeps daily users inside the same live workspace",
             "Useful when operations teams grow before SKU or warehouse limits do"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
@@ -246,7 +301,9 @@
           "value_points": [
             "Keeps inventory, costing, purchasing, and sales history in one system",
             "Buys more catalogue headroom without paying for unused warehouses"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "extra_invoices": {
           "name": "Extra Invoice Capacity",
@@ -257,7 +314,9 @@
           "value_points": [
             "Absorbs seasonal billing spikes without a full plan move",
             "Keeps month-end billing moving when invoice volume jumps"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "workiq_addon": {
           "name": "WorkIQ Add-on",
@@ -268,7 +327,9 @@
           "value_points": [
             "Turns operational work into assignable job cards",
             "Keeps execution queues visible alongside customers, invoices, and stock"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "agentsiq_usage_pack": {
           "name": "AI Pack",
@@ -279,7 +340,9 @@
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ai_auto_capture": {
           "name": "AI Auto Capture",
@@ -290,7 +353,9 @@
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ecom_pack": {
           "name": "Ecom Pack",
@@ -301,7 +366,9 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
@@ -312,7 +379,9 @@
           "value_points": [
             "Connects till sales into FlowIQ without slowing the counter",
             "Keeps cash-up, invoice, stock, and accounting automation gated until mappings are approved"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "payroll_pack": {
           "name": "Payroll Pack",
@@ -323,7 +392,9 @@
           "value_points": [
             "Adds payroll operations without forcing unused warehouse or SKU capacity",
             "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "business_units": {
           "name": "Business Units",
@@ -334,29 +405,68 @@
           "value_points": [
             "Adds a clean internal structure without creating separate FlowIQ companies",
             "Sets the foundation for unit-level payroll, expenses, invoices, and reporting"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
-        "projectsiq_core": {
-          "name": "ProjectsIQ Core",
-          "price": 799,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Project cockpit, P&L, variations, documents, exports, and allocation from InvoiceIQ and PurchaseIQ.",
-          "value_points": [
-            "Adds project-level margin, cash, billing, and cost visibility without changing source-module workflows",
-            "Keeps invoices, purchases, documents, and project performance tied to one job workspace"
-          ]
-        },
-        "projectsiq_contractor_pack": {
-          "name": "ProjectsIQ Contractor Pack",
+        "projectsiq_addon": {
+          "name": "ProjectsIQ Starter",
           "price": 1499,
           "limit": 1,
           "unit": "workspace",
-          "description": "Contractor-ready ProjectsIQ workflows for cost control, progress claims, subcontractor visibility, and site evidence.",
+          "description": "ProjectsIQ project control room for contractors and builders, capped at 25 active projects per year.",
           "value_points": [
-            "Extends ProjectsIQ for construction and contracting teams that need job control without spreadsheet duplication",
-            "Keeps AI Capture, InvoiceIQ, PurchaseIQ, and SlipIQ as source-of-truth flows while ProjectsIQ becomes the job cockpit"
-          ]
+            "Up to 25 active projects per year with project P&L, cost allocation, claims, BOQs, snags, site photos, ledgers, and live profitability",
+            "Keeps InvoiceIQ, PurchaseIQ, SlipIQ, and AI Capture as source-of-truth flows while ProjectsIQ shows the true project result",
+            "Good for smaller contractors that need proper project control without a heavy project system"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Starter",
+          "project_limit_annual": 25
+        },
+        "projectsiq_growth": {
+          "name": "ProjectsIQ Growth",
+          "price": 2499,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ProjectsIQ for growing contractors, capped at 75 active projects per year.",
+          "value_points": [
+            "Up to 75 active projects per year for larger teams running more sites or maintenance jobs",
+            "Includes the contractor workflows: BOQ/budget control, progress claims, site items, snag photos, and project ledgers",
+            "Keeps product, invoice, slip, purchase, landed-cost, and site cost allocations visible in ProjectsIQ"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Growth",
+          "project_limit_annual": 75
+        },
+        "projectsiq_unlimited": {
+          "name": "ProjectsIQ Unlimited",
+          "price": 3999,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ProjectsIQ for high-volume contractors that need unlimited active projects per year.",
+          "value_points": [
+            "Unlimited active projects per year for larger contractor groups and multi-site operations",
+            "Includes the full contractor control room with BOQs, claims, snags, photos, ledgers, and live project profitability",
+            "Best fit when project volume and document/photo storage will grow materially"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Unlimited",
+          "project_limit_annual": null
+        },
+        "projectsiq_storage_20gb": {
+          "name": "ProjectsIQ Media Pack",
+          "price": 299,
+          "limit": 20,
+          "unit": "20GB storage",
+          "description": "Adds 20GB of ProjectsIQ media storage for snag photos, site evidence, drawings, and project documents.",
+          "value_points": [
+            "Expands ProjectsIQ media storage without changing the project-count tier",
+            "Useful for contractors uploading many snag photos, site photos, drawings, and evidence files",
+            "Keeps storage costs transparent before high-volume projects eat into margin"
+          ],
+          "tier_group": null,
+          "tier_label": null
         }
       }
     },
@@ -424,7 +534,9 @@
           "value_points": [
             "Keeps daily users inside the same live workspace",
             "Useful when operations teams grow before SKU or warehouse limits do"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
@@ -435,7 +547,9 @@
           "value_points": [
             "Keeps inventory, costing, purchasing, and sales history in one system",
             "Buys more catalogue headroom without paying for unused warehouses"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "extra_invoices": {
           "name": "Extra Invoice Capacity",
@@ -446,7 +560,9 @@
           "value_points": [
             "Absorbs seasonal billing spikes without a full plan move",
             "Keeps month-end billing moving when invoice volume jumps"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "workiq_addon": {
           "name": "WorkIQ Add-on",
@@ -457,7 +573,9 @@
           "value_points": [
             "Turns operational work into assignable job cards",
             "Keeps execution queues visible alongside customers, invoices, and stock"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "agentsiq_usage_pack": {
           "name": "AI Pack",
@@ -468,7 +586,9 @@
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ai_auto_capture": {
           "name": "AI Auto Capture",
@@ -479,7 +599,9 @@
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ai_agents_pack": {
           "name": "AI Agents Pack",
@@ -490,7 +612,9 @@
           "value_points": [
             "Adds proactive operational checks without hiring another admin person",
             "Uses the data already inside FlowIQ to surface next actions"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
@@ -501,7 +625,9 @@
           "value_points": [
             "Turns live stock and sales history into reorder and risk signals",
             "Helps buyers prevent stockouts, dead stock, and cash tied up in the wrong products"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ecom_pack": {
           "name": "Ecom Pack",
@@ -512,7 +638,9 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "messaging_pack": {
           "name": "Messaging Pack",
@@ -523,7 +651,9 @@
           "value_points": [
             "Adds customer messaging where invoice, quote, and follow-up work already happens",
             "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
@@ -534,7 +664,9 @@
           "value_points": [
             "Connects till sales into FlowIQ without slowing the counter",
             "Keeps cash-up, invoice, stock, and accounting automation gated until mappings are approved"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "payroll_pack": {
           "name": "Payroll Pack",
@@ -545,7 +677,9 @@
           "value_points": [
             "Adds payroll operations without forcing unused warehouse or SKU capacity",
             "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "business_units": {
           "name": "Business Units",
@@ -556,29 +690,68 @@
           "value_points": [
             "Adds a clean internal structure without creating separate FlowIQ companies",
             "Sets the foundation for unit-level payroll, expenses, invoices, and reporting"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
-        "projectsiq_core": {
-          "name": "ProjectsIQ Core",
-          "price": 799,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Project cockpit, P&L, variations, documents, exports, and allocation from InvoiceIQ and PurchaseIQ.",
-          "value_points": [
-            "Adds project-level margin, cash, billing, and cost visibility without changing source-module workflows",
-            "Keeps invoices, purchases, documents, and project performance tied to one job workspace"
-          ]
-        },
-        "projectsiq_contractor_pack": {
-          "name": "ProjectsIQ Contractor Pack",
+        "projectsiq_addon": {
+          "name": "ProjectsIQ Starter",
           "price": 1499,
           "limit": 1,
           "unit": "workspace",
-          "description": "Contractor-ready ProjectsIQ workflows for cost control, progress claims, subcontractor visibility, and site evidence.",
+          "description": "ProjectsIQ project control room for contractors and builders, capped at 25 active projects per year.",
           "value_points": [
-            "Extends ProjectsIQ for construction and contracting teams that need job control without spreadsheet duplication",
-            "Keeps AI Capture, InvoiceIQ, PurchaseIQ, and SlipIQ as source-of-truth flows while ProjectsIQ becomes the job cockpit"
-          ]
+            "Up to 25 active projects per year with project P&L, cost allocation, claims, BOQs, snags, site photos, ledgers, and live profitability",
+            "Keeps InvoiceIQ, PurchaseIQ, SlipIQ, and AI Capture as source-of-truth flows while ProjectsIQ shows the true project result",
+            "Good for smaller contractors that need proper project control without a heavy project system"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Starter",
+          "project_limit_annual": 25
+        },
+        "projectsiq_growth": {
+          "name": "ProjectsIQ Growth",
+          "price": 2499,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ProjectsIQ for growing contractors, capped at 75 active projects per year.",
+          "value_points": [
+            "Up to 75 active projects per year for larger teams running more sites or maintenance jobs",
+            "Includes the contractor workflows: BOQ/budget control, progress claims, site items, snag photos, and project ledgers",
+            "Keeps product, invoice, slip, purchase, landed-cost, and site cost allocations visible in ProjectsIQ"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Growth",
+          "project_limit_annual": 75
+        },
+        "projectsiq_unlimited": {
+          "name": "ProjectsIQ Unlimited",
+          "price": 3999,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ProjectsIQ for high-volume contractors that need unlimited active projects per year.",
+          "value_points": [
+            "Unlimited active projects per year for larger contractor groups and multi-site operations",
+            "Includes the full contractor control room with BOQs, claims, snags, photos, ledgers, and live project profitability",
+            "Best fit when project volume and document/photo storage will grow materially"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Unlimited",
+          "project_limit_annual": null
+        },
+        "projectsiq_storage_20gb": {
+          "name": "ProjectsIQ Media Pack",
+          "price": 299,
+          "limit": 20,
+          "unit": "20GB storage",
+          "description": "Adds 20GB of ProjectsIQ media storage for snag photos, site evidence, drawings, and project documents.",
+          "value_points": [
+            "Expands ProjectsIQ media storage without changing the project-count tier",
+            "Useful for contractors uploading many snag photos, site photos, drawings, and evidence files",
+            "Keeps storage costs transparent before high-volume projects eat into margin"
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "accounting_reconciliation_pack": {
           "name": "AccountingIQ Reconciliation Pack",
@@ -589,7 +762,9 @@
           "value_points": [
             "Speeds up customer and supplier payment matching while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "commission_rebate_automation_pack": {
           "name": "Commission & Rebate Automation Pack",
@@ -600,7 +775,9 @@
           "value_points": [
             "Removes recurring manual rebate and commission reconciliation work",
             "Keeps settlement and rebate automation tied to the live invoice/customer data"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         }
       }
     },
@@ -650,7 +827,6 @@
         "cashiq",
         "invoiceiq",
         "purchaseiq",
-        "projectsiq",
         "timeiq",
         "inventoryiq",
         "priceiq",
@@ -676,7 +852,9 @@
           "value_points": [
             "Keeps daily users inside the same live workspace",
             "Useful when operations teams grow before SKU or warehouse limits do"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
@@ -687,7 +865,9 @@
           "value_points": [
             "Keeps inventory, costing, purchasing, and sales history in one system",
             "Buys more catalogue headroom without paying for unused warehouses"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "extra_shipments": {
           "name": "Extra Import/Export Jobs",
@@ -698,7 +878,9 @@
           "value_points": [
             "Adds freight workflow volume without changing the whole plan",
             "Good for seasonal import/export peaks"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "extra_price_lists": {
           "name": "Extra Price Lists",
@@ -709,7 +891,9 @@
           "value_points": [
             "Adds customer or channel pricing complexity without upgrading",
             "Keeps margins controlled across more price books"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "workiq_addon": {
           "name": "WorkIQ Add-on",
@@ -720,7 +904,9 @@
           "value_points": [
             "Turns operational work into assignable job cards",
             "Keeps execution queues visible alongside customers, invoices, and stock"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "agentsiq_usage_pack": {
           "name": "AI Pack",
@@ -731,7 +917,9 @@
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ai_auto_capture": {
           "name": "AI Auto Capture",
@@ -742,7 +930,9 @@
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ai_agents_pack": {
           "name": "AI Agents Pack",
@@ -753,7 +943,9 @@
           "value_points": [
             "Adds proactive operational checks without hiring another admin person",
             "Uses the data already inside FlowIQ to surface next actions"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
@@ -764,7 +956,9 @@
           "value_points": [
             "Turns live stock and sales history into reorder and risk signals",
             "Helps buyers prevent stockouts, dead stock, and cash tied up in the wrong products"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ecom_pack": {
           "name": "Ecom Pack",
@@ -775,7 +969,9 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "messaging_pack": {
           "name": "Messaging Pack",
@@ -786,7 +982,9 @@
           "value_points": [
             "Adds customer messaging where invoice, quote, and follow-up work already happens",
             "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
@@ -797,7 +995,9 @@
           "value_points": [
             "Connects till sales into FlowIQ without slowing the counter",
             "Keeps cash-up, invoice, stock, and accounting automation gated until mappings are approved"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "payroll_pack": {
           "name": "Payroll Pack",
@@ -808,7 +1008,9 @@
           "value_points": [
             "Adds payroll operations without forcing unused warehouse or SKU capacity",
             "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "business_units": {
           "name": "Business Units",
@@ -819,29 +1021,68 @@
           "value_points": [
             "Adds a clean internal structure without creating separate FlowIQ companies",
             "Sets the foundation for unit-level payroll, expenses, invoices, and reporting"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
-        "projectsiq_core": {
-          "name": "ProjectsIQ Core",
-          "price": 799,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Project cockpit, P&L, variations, documents, exports, and allocation from InvoiceIQ and PurchaseIQ.",
-          "value_points": [
-            "Adds project-level margin, cash, billing, and cost visibility without changing source-module workflows",
-            "Keeps invoices, purchases, documents, and project performance tied to one job workspace"
-          ]
-        },
-        "projectsiq_contractor_pack": {
-          "name": "ProjectsIQ Contractor Pack",
+        "projectsiq_addon": {
+          "name": "ProjectsIQ Starter",
           "price": 1499,
           "limit": 1,
           "unit": "workspace",
-          "description": "Contractor-ready ProjectsIQ workflows for cost control, progress claims, subcontractor visibility, and site evidence.",
+          "description": "ProjectsIQ project control room for contractors and builders, capped at 25 active projects per year.",
           "value_points": [
-            "Extends ProjectsIQ for construction and contracting teams that need job control without spreadsheet duplication",
-            "Keeps AI Capture, InvoiceIQ, PurchaseIQ, and SlipIQ as source-of-truth flows while ProjectsIQ becomes the job cockpit"
-          ]
+            "Up to 25 active projects per year with project P&L, cost allocation, claims, BOQs, snags, site photos, ledgers, and live profitability",
+            "Keeps InvoiceIQ, PurchaseIQ, SlipIQ, and AI Capture as source-of-truth flows while ProjectsIQ shows the true project result",
+            "Good for smaller contractors that need proper project control without a heavy project system"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Starter",
+          "project_limit_annual": 25
+        },
+        "projectsiq_growth": {
+          "name": "ProjectsIQ Growth",
+          "price": 2499,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ProjectsIQ for growing contractors, capped at 75 active projects per year.",
+          "value_points": [
+            "Up to 75 active projects per year for larger teams running more sites or maintenance jobs",
+            "Includes the contractor workflows: BOQ/budget control, progress claims, site items, snag photos, and project ledgers",
+            "Keeps product, invoice, slip, purchase, landed-cost, and site cost allocations visible in ProjectsIQ"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Growth",
+          "project_limit_annual": 75
+        },
+        "projectsiq_unlimited": {
+          "name": "ProjectsIQ Unlimited",
+          "price": 3999,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ProjectsIQ for high-volume contractors that need unlimited active projects per year.",
+          "value_points": [
+            "Unlimited active projects per year for larger contractor groups and multi-site operations",
+            "Includes the full contractor control room with BOQs, claims, snags, photos, ledgers, and live project profitability",
+            "Best fit when project volume and document/photo storage will grow materially"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Unlimited",
+          "project_limit_annual": null
+        },
+        "projectsiq_storage_20gb": {
+          "name": "ProjectsIQ Media Pack",
+          "price": 299,
+          "limit": 20,
+          "unit": "20GB storage",
+          "description": "Adds 20GB of ProjectsIQ media storage for snag photos, site evidence, drawings, and project documents.",
+          "value_points": [
+            "Expands ProjectsIQ media storage without changing the project-count tier",
+            "Useful for contractors uploading many snag photos, site photos, drawings, and evidence files",
+            "Keeps storage costs transparent before high-volume projects eat into margin"
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "accounting_reconciliation_pack": {
           "name": "AccountingIQ Reconciliation Pack",
@@ -852,7 +1093,9 @@
           "value_points": [
             "Speeds up customer and supplier payment matching while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "commission_rebate_automation_pack": {
           "name": "Commission & Rebate Automation Pack",
@@ -863,7 +1106,9 @@
           "value_points": [
             "Removes recurring manual rebate and commission reconciliation work",
             "Keeps settlement and rebate automation tied to the live invoice/customer data"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         }
       }
     },
@@ -913,7 +1158,6 @@
         "cashiq",
         "invoiceiq",
         "purchaseiq",
-        "projectsiq",
         "workiq",
         "timeiq",
         "inventoryiq",
@@ -941,7 +1185,9 @@
           "value_points": [
             "Keeps daily users inside the same live workspace",
             "Useful when operations teams grow before SKU or warehouse limits do"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
@@ -952,7 +1198,9 @@
           "value_points": [
             "Keeps inventory, costing, purchasing, and sales history in one system",
             "Buys more catalogue headroom without paying for unused warehouses"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "extra_shipments": {
           "name": "Extra Import/Export Jobs",
@@ -963,7 +1211,9 @@
           "value_points": [
             "Adds freight workflow volume without changing the whole plan",
             "Good for seasonal import/export peaks"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "agentsiq_usage_pack": {
           "name": "AI Pack",
@@ -974,7 +1224,9 @@
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ai_auto_capture": {
           "name": "AI Auto Capture",
@@ -985,7 +1237,9 @@
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ai_agents_pack": {
           "name": "AI Agents Pack",
@@ -996,7 +1250,9 @@
           "value_points": [
             "Adds proactive operational checks without hiring another admin person",
             "Uses the data already inside FlowIQ to surface next actions"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
@@ -1007,7 +1263,9 @@
           "value_points": [
             "Turns live stock and sales history into reorder and risk signals",
             "Helps buyers prevent stockouts, dead stock, and cash tied up in the wrong products"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ecom_pack": {
           "name": "Ecom Pack",
@@ -1018,7 +1276,9 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "messaging_pack": {
           "name": "Messaging Pack",
@@ -1029,7 +1289,9 @@
           "value_points": [
             "Adds customer messaging where invoice, quote, and follow-up work already happens",
             "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
@@ -1040,7 +1302,9 @@
           "value_points": [
             "Connects till sales into FlowIQ without slowing the counter",
             "Keeps cash-up, invoice, stock, and accounting automation gated until mappings are approved"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "payroll_pack": {
           "name": "Payroll Pack",
@@ -1051,7 +1315,9 @@
           "value_points": [
             "Adds payroll operations without forcing unused warehouse or SKU capacity",
             "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "business_units": {
           "name": "Business Units",
@@ -1062,29 +1328,68 @@
           "value_points": [
             "Adds a clean internal structure without creating separate FlowIQ companies",
             "Sets the foundation for unit-level payroll, expenses, invoices, and reporting"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
-        "projectsiq_core": {
-          "name": "ProjectsIQ Core",
-          "price": 799,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Project cockpit, P&L, variations, documents, exports, and allocation from InvoiceIQ and PurchaseIQ.",
-          "value_points": [
-            "Adds project-level margin, cash, billing, and cost visibility without changing source-module workflows",
-            "Keeps invoices, purchases, documents, and project performance tied to one job workspace"
-          ]
-        },
-        "projectsiq_contractor_pack": {
-          "name": "ProjectsIQ Contractor Pack",
+        "projectsiq_addon": {
+          "name": "ProjectsIQ Starter",
           "price": 1499,
           "limit": 1,
           "unit": "workspace",
-          "description": "Contractor-ready ProjectsIQ workflows for cost control, progress claims, subcontractor visibility, and site evidence.",
+          "description": "ProjectsIQ project control room for contractors and builders, capped at 25 active projects per year.",
           "value_points": [
-            "Extends ProjectsIQ for construction and contracting teams that need job control without spreadsheet duplication",
-            "Keeps AI Capture, InvoiceIQ, PurchaseIQ, and SlipIQ as source-of-truth flows while ProjectsIQ becomes the job cockpit"
-          ]
+            "Up to 25 active projects per year with project P&L, cost allocation, claims, BOQs, snags, site photos, ledgers, and live profitability",
+            "Keeps InvoiceIQ, PurchaseIQ, SlipIQ, and AI Capture as source-of-truth flows while ProjectsIQ shows the true project result",
+            "Good for smaller contractors that need proper project control without a heavy project system"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Starter",
+          "project_limit_annual": 25
+        },
+        "projectsiq_growth": {
+          "name": "ProjectsIQ Growth",
+          "price": 2499,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ProjectsIQ for growing contractors, capped at 75 active projects per year.",
+          "value_points": [
+            "Up to 75 active projects per year for larger teams running more sites or maintenance jobs",
+            "Includes the contractor workflows: BOQ/budget control, progress claims, site items, snag photos, and project ledgers",
+            "Keeps product, invoice, slip, purchase, landed-cost, and site cost allocations visible in ProjectsIQ"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Growth",
+          "project_limit_annual": 75
+        },
+        "projectsiq_unlimited": {
+          "name": "ProjectsIQ Unlimited",
+          "price": 3999,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ProjectsIQ for high-volume contractors that need unlimited active projects per year.",
+          "value_points": [
+            "Unlimited active projects per year for larger contractor groups and multi-site operations",
+            "Includes the full contractor control room with BOQs, claims, snags, photos, ledgers, and live project profitability",
+            "Best fit when project volume and document/photo storage will grow materially"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Unlimited",
+          "project_limit_annual": null
+        },
+        "projectsiq_storage_20gb": {
+          "name": "ProjectsIQ Media Pack",
+          "price": 299,
+          "limit": 20,
+          "unit": "20GB storage",
+          "description": "Adds 20GB of ProjectsIQ media storage for snag photos, site evidence, drawings, and project documents.",
+          "value_points": [
+            "Expands ProjectsIQ media storage without changing the project-count tier",
+            "Useful for contractors uploading many snag photos, site photos, drawings, and evidence files",
+            "Keeps storage costs transparent before high-volume projects eat into margin"
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "accounting_reconciliation_pack": {
           "name": "AccountingIQ Reconciliation Pack",
@@ -1095,7 +1400,9 @@
           "value_points": [
             "Speeds up customer and supplier payment matching while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "commission_rebate_automation_pack": {
           "name": "Commission & Rebate Automation Pack",
@@ -1106,7 +1413,9 @@
           "value_points": [
             "Removes recurring manual rebate and commission reconciliation work",
             "Keeps settlement and rebate automation tied to the live invoice/customer data"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         }
       }
     },
@@ -1156,8 +1465,6 @@
         "cashiq",
         "invoiceiq",
         "purchaseiq",
-        "projectsiq",
-        "projectsiq_contractor_pack",
         "workiq",
         "timeiq",
         "inventoryiq",
@@ -1189,7 +1496,9 @@
           "value_points": [
             "Keeps daily users inside the same live workspace",
             "Useful when operations teams grow before SKU or warehouse limits do"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "agentsiq_usage_pack": {
           "name": "AI Pack",
@@ -1200,7 +1509,9 @@
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ai_auto_capture": {
           "name": "AI Auto Capture",
@@ -1211,7 +1522,9 @@
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ai_agents_pack": {
           "name": "AI Agents Pack",
@@ -1222,7 +1535,9 @@
           "value_points": [
             "Adds proactive operational checks without hiring another admin person",
             "Uses the data already inside FlowIQ to surface next actions"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
@@ -1233,7 +1548,9 @@
           "value_points": [
             "Turns live stock and sales history into reorder and risk signals",
             "Helps buyers prevent stockouts, dead stock, and cash tied up in the wrong products"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ecom_pack": {
           "name": "Ecom Pack",
@@ -1244,7 +1561,9 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "messaging_pack": {
           "name": "Messaging Pack",
@@ -1255,7 +1574,9 @@
           "value_points": [
             "Adds customer messaging where invoice, quote, and follow-up work already happens",
             "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
@@ -1266,7 +1587,9 @@
           "value_points": [
             "Connects till sales into FlowIQ without slowing the counter",
             "Keeps cash-up, invoice, stock, and accounting automation gated until mappings are approved"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "payroll_pack": {
           "name": "Payroll Pack",
@@ -1277,7 +1600,9 @@
           "value_points": [
             "Adds payroll operations without forcing unused warehouse or SKU capacity",
             "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "business_units": {
           "name": "Business Units",
@@ -1288,29 +1613,68 @@
           "value_points": [
             "Adds a clean internal structure without creating separate FlowIQ companies",
             "Sets the foundation for unit-level payroll, expenses, invoices, and reporting"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
-        "projectsiq_core": {
-          "name": "ProjectsIQ Core",
-          "price": 799,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Project cockpit, P&L, variations, documents, exports, and allocation from InvoiceIQ and PurchaseIQ.",
-          "value_points": [
-            "Adds project-level margin, cash, billing, and cost visibility without changing source-module workflows",
-            "Keeps invoices, purchases, documents, and project performance tied to one job workspace"
-          ]
-        },
-        "projectsiq_contractor_pack": {
-          "name": "ProjectsIQ Contractor Pack",
+        "projectsiq_addon": {
+          "name": "ProjectsIQ Starter",
           "price": 1499,
           "limit": 1,
           "unit": "workspace",
-          "description": "Contractor-ready ProjectsIQ workflows for cost control, progress claims, subcontractor visibility, and site evidence.",
+          "description": "ProjectsIQ project control room for contractors and builders, capped at 25 active projects per year.",
           "value_points": [
-            "Extends ProjectsIQ for construction and contracting teams that need job control without spreadsheet duplication",
-            "Keeps AI Capture, InvoiceIQ, PurchaseIQ, and SlipIQ as source-of-truth flows while ProjectsIQ becomes the job cockpit"
-          ]
+            "Up to 25 active projects per year with project P&L, cost allocation, claims, BOQs, snags, site photos, ledgers, and live profitability",
+            "Keeps InvoiceIQ, PurchaseIQ, SlipIQ, and AI Capture as source-of-truth flows while ProjectsIQ shows the true project result",
+            "Good for smaller contractors that need proper project control without a heavy project system"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Starter",
+          "project_limit_annual": 25
+        },
+        "projectsiq_growth": {
+          "name": "ProjectsIQ Growth",
+          "price": 2499,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ProjectsIQ for growing contractors, capped at 75 active projects per year.",
+          "value_points": [
+            "Up to 75 active projects per year for larger teams running more sites or maintenance jobs",
+            "Includes the contractor workflows: BOQ/budget control, progress claims, site items, snag photos, and project ledgers",
+            "Keeps product, invoice, slip, purchase, landed-cost, and site cost allocations visible in ProjectsIQ"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Growth",
+          "project_limit_annual": 75
+        },
+        "projectsiq_unlimited": {
+          "name": "ProjectsIQ Unlimited",
+          "price": 3999,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ProjectsIQ for high-volume contractors that need unlimited active projects per year.",
+          "value_points": [
+            "Unlimited active projects per year for larger contractor groups and multi-site operations",
+            "Includes the full contractor control room with BOQs, claims, snags, photos, ledgers, and live project profitability",
+            "Best fit when project volume and document/photo storage will grow materially"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Unlimited",
+          "project_limit_annual": null
+        },
+        "projectsiq_storage_20gb": {
+          "name": "ProjectsIQ Media Pack",
+          "price": 299,
+          "limit": 20,
+          "unit": "20GB storage",
+          "description": "Adds 20GB of ProjectsIQ media storage for snag photos, site evidence, drawings, and project documents.",
+          "value_points": [
+            "Expands ProjectsIQ media storage without changing the project-count tier",
+            "Useful for contractors uploading many snag photos, site photos, drawings, and evidence files",
+            "Keeps storage costs transparent before high-volume projects eat into margin"
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "accounting_reconciliation_pack": {
           "name": "AccountingIQ Reconciliation Pack",
@@ -1321,7 +1685,9 @@
           "value_points": [
             "Speeds up customer and supplier payment matching while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "commission_rebate_automation_pack": {
           "name": "Commission & Rebate Automation Pack",
@@ -1332,7 +1698,9 @@
           "value_points": [
             "Removes recurring manual rebate and commission reconciliation work",
             "Keeps settlement and rebate automation tied to the live invoice/customer data"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         }
       }
     },
@@ -1382,8 +1750,6 @@
         "cashiq",
         "invoiceiq",
         "purchaseiq",
-        "projectsiq",
-        "projectsiq_contractor_pack",
         "workiq",
         "timeiq",
         "inventoryiq",
@@ -1434,7 +1800,9 @@
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ai_auto_capture": {
           "name": "AI Auto Capture",
@@ -1445,7 +1813,9 @@
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ai_agents_pack": {
           "name": "AI Agents Pack",
@@ -1456,7 +1826,9 @@
           "value_points": [
             "Adds proactive operational checks without hiring another admin person",
             "Uses the data already inside FlowIQ to surface next actions"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
@@ -1467,7 +1839,9 @@
           "value_points": [
             "Turns live stock and sales history into reorder and risk signals",
             "Helps buyers prevent stockouts, dead stock, and cash tied up in the wrong products"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "ecom_pack": {
           "name": "Ecom Pack",
@@ -1478,7 +1852,9 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "messaging_pack": {
           "name": "Messaging Pack",
@@ -1489,7 +1865,9 @@
           "value_points": [
             "Adds customer messaging where invoice, quote, and follow-up work already happens",
             "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
@@ -1500,7 +1878,9 @@
           "value_points": [
             "Connects till sales into FlowIQ without slowing the counter",
             "Keeps cash-up, invoice, stock, and accounting automation gated until mappings are approved"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "payroll_pack": {
           "name": "Payroll Pack",
@@ -1511,7 +1891,9 @@
           "value_points": [
             "Adds payroll operations without forcing unused warehouse or SKU capacity",
             "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "business_units": {
           "name": "Business Units",
@@ -1522,29 +1904,68 @@
           "value_points": [
             "Adds a clean internal structure without creating separate FlowIQ companies",
             "Sets the foundation for unit-level payroll, expenses, invoices, and reporting"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
-        "projectsiq_core": {
-          "name": "ProjectsIQ Core",
-          "price": 799,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Project cockpit, P&L, variations, documents, exports, and allocation from InvoiceIQ and PurchaseIQ.",
-          "value_points": [
-            "Adds project-level margin, cash, billing, and cost visibility without changing source-module workflows",
-            "Keeps invoices, purchases, documents, and project performance tied to one job workspace"
-          ]
-        },
-        "projectsiq_contractor_pack": {
-          "name": "ProjectsIQ Contractor Pack",
+        "projectsiq_addon": {
+          "name": "ProjectsIQ Starter",
           "price": 1499,
           "limit": 1,
           "unit": "workspace",
-          "description": "Contractor-ready ProjectsIQ workflows for cost control, progress claims, subcontractor visibility, and site evidence.",
+          "description": "ProjectsIQ project control room for contractors and builders, capped at 25 active projects per year.",
           "value_points": [
-            "Extends ProjectsIQ for construction and contracting teams that need job control without spreadsheet duplication",
-            "Keeps AI Capture, InvoiceIQ, PurchaseIQ, and SlipIQ as source-of-truth flows while ProjectsIQ becomes the job cockpit"
-          ]
+            "Up to 25 active projects per year with project P&L, cost allocation, claims, BOQs, snags, site photos, ledgers, and live profitability",
+            "Keeps InvoiceIQ, PurchaseIQ, SlipIQ, and AI Capture as source-of-truth flows while ProjectsIQ shows the true project result",
+            "Good for smaller contractors that need proper project control without a heavy project system"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Starter",
+          "project_limit_annual": 25
+        },
+        "projectsiq_growth": {
+          "name": "ProjectsIQ Growth",
+          "price": 2499,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ProjectsIQ for growing contractors, capped at 75 active projects per year.",
+          "value_points": [
+            "Up to 75 active projects per year for larger teams running more sites or maintenance jobs",
+            "Includes the contractor workflows: BOQ/budget control, progress claims, site items, snag photos, and project ledgers",
+            "Keeps product, invoice, slip, purchase, landed-cost, and site cost allocations visible in ProjectsIQ"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Growth",
+          "project_limit_annual": 75
+        },
+        "projectsiq_unlimited": {
+          "name": "ProjectsIQ Unlimited",
+          "price": 3999,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ProjectsIQ for high-volume contractors that need unlimited active projects per year.",
+          "value_points": [
+            "Unlimited active projects per year for larger contractor groups and multi-site operations",
+            "Includes the full contractor control room with BOQs, claims, snags, photos, ledgers, and live project profitability",
+            "Best fit when project volume and document/photo storage will grow materially"
+          ],
+          "tier_group": "projectsiq",
+          "tier_label": "Unlimited",
+          "project_limit_annual": null
+        },
+        "projectsiq_storage_20gb": {
+          "name": "ProjectsIQ Media Pack",
+          "price": 299,
+          "limit": 20,
+          "unit": "20GB storage",
+          "description": "Adds 20GB of ProjectsIQ media storage for snag photos, site evidence, drawings, and project documents.",
+          "value_points": [
+            "Expands ProjectsIQ media storage without changing the project-count tier",
+            "Useful for contractors uploading many snag photos, site photos, drawings, and evidence files",
+            "Keeps storage costs transparent before high-volume projects eat into margin"
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "accounting_reconciliation_pack": {
           "name": "AccountingIQ Reconciliation Pack",
@@ -1555,7 +1976,9 @@
           "value_points": [
             "Speeds up customer and supplier payment matching while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         },
         "commission_rebate_automation_pack": {
           "name": "Commission & Rebate Automation Pack",
@@ -1566,7 +1989,9 @@
           "value_points": [
             "Removes recurring manual rebate and commission reconciliation work",
             "Keeps settlement and rebate automation tied to the live invoice/customer data"
-          ]
+          ],
+          "tier_group": null,
+          "tier_label": null
         }
       }
     }

@@ -325,6 +325,10 @@
       'ecom_pack',
       'messaging_pack',
       'payroll_pack',
+      'projectsiq_addon',
+      'projectsiq_growth',
+      'projectsiq_unlimited',
+      'projectsiq_storage_20gb',
       'accounting_reconciliation_pack',
       'commission_rebate_automation_pack',
       'agentsiq_usage_pack',
@@ -348,6 +352,10 @@
       ecom_pack: 49,
       messaging_pack: 24,
       payroll_pack: 29,
+      projectsiq_addon: 89,
+      projectsiq_growth: 149,
+      projectsiq_unlimited: 239,
+      projectsiq_storage_20gb: 18,
       accounting_reconciliation_pack: 35,
       commission_rebate_automation_pack: 35,
       extra_users: 6
@@ -432,6 +440,22 @@
       payroll_pack: {
         name: 'Payroll Pack',
         value_points: ['Adds payroll without forcing unused SKU or warehouse capacity', 'Keeps employee and payroll workflows in one ecosystem']
+      },
+      projectsiq_addon: {
+        name: 'ProjectsIQ Starter',
+        value_points: ['Up to 25 active projects per year with live costs, claims, snags and margin', 'Links project costs from FlowIQ source modules without spreadsheet duplication']
+      },
+      projectsiq_growth: {
+        name: 'ProjectsIQ Growth',
+        value_points: ['Up to 75 active projects per year for growing contractors', 'Adds BOQ, claim, snag, site-photo and project-ledger control']
+      },
+      projectsiq_unlimited: {
+        name: 'ProjectsIQ Unlimited',
+        value_points: ['Unlimited active projects per year for high-volume contractors', 'Best fit when project and photo storage volume will grow materially']
+      },
+      projectsiq_storage_20gb: {
+        name: 'ProjectsIQ Media Pack',
+        value_points: ['Adds 20GB media storage for snag photos, site evidence, drawings and project documents', 'Keeps heavy photo usage transparent before it affects margin']
       },
       accounting_reconciliation_pack: {
         name: 'AccountingIQ Reconciliation Pack',
@@ -606,8 +630,14 @@
         },
         {
           type: 'row',
-          label: 'Execution (ProjectsIQ/WorkIQ)',
-          get: (p) => (hasFeature(p, 'projectsiq') && hasFeature(p, 'workiq')) ? '✓' : '—',
+          label: 'ProjectsIQ project control',
+          get: (p) => addOnAvailabilityLabel(p, 'projectsiq_addon', hasFeature(p, 'projectsiq')),
+          center: true
+        },
+        {
+          type: 'row',
+          label: 'Execution (WorkIQ)',
+          get: (p) => hasFeature(p, 'workiq') ? '✓' : '—',
           tick: true,
           center: true
         },
