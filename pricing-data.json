@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-01T11:32:02.116Z",
+  "generated_at_utc": "2026-06-05T09:47:45.574Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -100,10 +100,10 @@
           "price": 519,
           "limit": 1,
           "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 50 monthly capture credits.",
           "value_points": [
-            "Turns supplier documents and slips into review-ready drafts",
-            "Reduces manual capture while preserving human approval before posting"
+            "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
+            "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
           ]
         },
         "ecom_pack": {
@@ -286,10 +286,10 @@
           "price": 519,
           "limit": 1,
           "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 50 monthly capture credits.",
           "value_points": [
-            "Turns supplier documents and slips into review-ready drafts",
-            "Reduces manual capture while preserving human approval before posting"
+            "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
+            "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
           ]
         },
         "ecom_pack": {
@@ -475,10 +475,10 @@
           "price": 519,
           "limit": 1,
           "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 50 monthly capture credits.",
           "value_points": [
-            "Turns supplier documents and slips into review-ready drafts",
-            "Reduces manual capture while preserving human approval before posting"
+            "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
+            "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
           ]
         },
         "ai_agents_pack": {
@@ -738,10 +738,10 @@
           "price": 519,
           "limit": 1,
           "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 50 monthly capture credits.",
           "value_points": [
-            "Turns supplier documents and slips into review-ready drafts",
-            "Reduces manual capture while preserving human approval before posting"
+            "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
+            "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
           ]
         },
         "ai_agents_pack": {
@@ -981,10 +981,10 @@
           "price": 519,
           "limit": 1,
           "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 50 monthly capture credits.",
           "value_points": [
-            "Turns supplier documents and slips into review-ready drafts",
-            "Reduces manual capture while preserving human approval before posting"
+            "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
+            "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
           ]
         },
         "ai_agents_pack": {
@@ -1206,10 +1206,10 @@
           "price": 519,
           "limit": 1,
           "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 50 monthly capture credits.",
           "value_points": [
-            "Turns supplier documents and slips into review-ready drafts",
-            "Reduces manual capture while preserving human approval before posting"
+            "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
+            "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
           ]
         },
         "ai_agents_pack": {
@@ -1439,10 +1439,10 @@
           "price": 519,
           "limit": 1,
           "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, and ImportIQ with 50 monthly capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 50 monthly capture credits.",
           "value_points": [
-            "Turns supplier documents and slips into review-ready drafts",
-            "Reduces manual capture while preserving human approval before posting"
+            "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
+            "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
           ]
         },
         "ai_agents_pack": {

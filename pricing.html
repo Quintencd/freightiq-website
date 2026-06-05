@@ -411,7 +411,7 @@
     const addOnFallbackCopy = {
       ai_auto_capture: {
         name: 'AI Auto Capture',
-        value_points: ['Turns supplier documents and slips into review-ready drafts', 'Cuts manual capture while preserving review before posting']
+        value_points: ['Captures invoices, purchase orders, bills, slips, imports and SalesIQ voice notes', 'Transcribes talk-to-note audio while preserving review before posting or follow-up']
       },
       ai_agents_pack: {
         name: 'AI Agents Pack',
@@ -633,7 +633,7 @@
         { type: 'section', label: 'Intelligence & Automation' },
         { type: 'row', label: 'Forecasting Intelligence', get: (p) => addOnAvailabilityLabel(p, 'forecasting_intelligence_pack', hasFeature(p, 'forecastiq') || hasFeature(p, 'forecastiq_advanced')), center: true },
         { type: 'row', label: 'AgentsIQ automation desk', get: (p) => addOnAvailabilityLabel(p, 'ai_agents_pack', hasFeature(p, 'agentsiq')), center: true },
-        { type: 'row', label: 'AI Auto Capture document scanning', get: (p) => hasAddOn(p, 'ai_auto_capture') ? 'Add-on available' : '—', center: true },
+        { type: 'row', label: 'AI Auto Capture documents + voice notes', get: (p) => hasAddOn(p, 'ai_auto_capture') ? 'Add-on available' : '—', center: true },
         {
           type: 'row',
           label: 'AI usage credits',
