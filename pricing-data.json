@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-05T09:47:45.574Z",
+  "generated_at_utc": "2026-06-05T10:14:48.093Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -1164,6 +1164,7 @@
         "priceiq",
         "importiq",
         "exportiq",
+        "broker_commission_dashboard",
         "reportsiq",
         "journaliq",
         "warrantyiq",
@@ -1395,6 +1396,7 @@
         "auto_commission",
         "commission_automation",
         "rep_commission_automation",
+        "broker_commission_dashboard",
         "auto_rebate_settlement_automation",
         "forecastiq",
         "reportsiq",
