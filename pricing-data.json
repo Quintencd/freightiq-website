@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-05T13:16:05.078Z",
+  "generated_at_utc": "2026-06-05T13:41:23.100Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -101,6 +101,19 @@
           "tier_group": null,
           "tier_label": null
         },
+        "workiq_addon": {
+          "name": "WorkIQ Add-on",
+          "price": 990,
+          "limit": 1,
+          "unit": "bundle",
+          "description": "WorkIQ job cards, work queues, and execution tracking.",
+          "value_points": [
+            "Turns operational work into assignable job cards",
+            "Keeps execution queues visible alongside customers, invoices, and stock"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
         "ai_auto_capture": {
           "name": "AI Auto Capture",
           "price": 519,
@@ -114,6 +127,32 @@
           "tier_group": null,
           "tier_label": null
         },
+        "ai_agents_pack": {
+          "name": "AI Agents Pack",
+          "price": 490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Unlock AgentsIQ and ChatIQ automation workflows for proactive checks, follow-ups, and task generation. AI execution usage is controlled through AI Pack credits.",
+          "value_points": [
+            "Adds proactive operational checks without hiring another admin person",
+            "Uses the data already inside FlowIQ to surface next actions"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "forecasting_intelligence_pack": {
+          "name": "Forecasting Intelligence Pack",
+          "price": 2990,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ForecastIQ planning intelligence for demand trends, stock risk, reorder planning, cash impact, and forward-looking operational decisions.",
+          "value_points": [
+            "Turns live stock and sales history into reorder and risk signals",
+            "Helps buyers prevent stockouts, dead stock, and cash tied up in the wrong products"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
         "ecom_pack": {
           "name": "Ecom Pack",
           "price": 790,
@@ -123,6 +162,19 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "messaging_pack": {
+          "name": "Messaging Pack",
+          "price": 390,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
+          "value_points": [
+            "Adds customer messaging where invoice, quote, and follow-up work already happens",
+            "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
           ],
           "tier_group": null,
           "tier_label": null
@@ -221,6 +273,32 @@
             "Expands ProjectsIQ media storage without changing the project-count tier",
             "Useful for contractors uploading many snag photos, site photos, drawings, and evidence files",
             "Keeps storage costs transparent before high-volume projects eat into margin"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "accounting_reconciliation_pack": {
+          "name": "AccountingIQ Reconciliation Pack",
+          "price": 590,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "AccountingIQ advanced reconciliation, payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "value_points": [
+            "Speeds up customer and supplier payment matching while keeping review controls in place",
+            "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "commission_rebate_automation_pack": {
+          "name": "Commission & Rebate Automation Pack",
+          "price": 590,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Automates commission, rebate, and settlement workflows so teams do not manually reconcile customer rebates and representative commission logic.",
+          "value_points": [
+            "Removes recurring manual rebate and commission reconciliation work",
+            "Keeps settlement and rebate automation tied to the live invoice/customer data"
           ],
           "tier_group": null,
           "tier_label": null
@@ -318,19 +396,6 @@
           "tier_group": null,
           "tier_label": null
         },
-        "workiq_addon": {
-          "name": "WorkIQ Add-on",
-          "price": 990,
-          "limit": 1,
-          "unit": "bundle",
-          "description": "WorkIQ job cards, work queues, and execution tracking.",
-          "value_points": [
-            "Turns operational work into assignable job cards",
-            "Keeps execution queues visible alongside customers, invoices, and stock"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
         "agentsiq_usage_pack": {
           "name": "AI Pack",
           "price": 200,
@@ -340,6 +405,19 @@
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "workiq_addon": {
+          "name": "WorkIQ Add-on",
+          "price": 990,
+          "limit": 1,
+          "unit": "bundle",
+          "description": "WorkIQ job cards, work queues, and execution tracking.",
+          "value_points": [
+            "Turns operational work into assignable job cards",
+            "Keeps execution queues visible alongside customers, invoices, and stock"
           ],
           "tier_group": null,
           "tier_label": null
@@ -357,6 +435,32 @@
           "tier_group": null,
           "tier_label": null
         },
+        "ai_agents_pack": {
+          "name": "AI Agents Pack",
+          "price": 490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Unlock AgentsIQ and ChatIQ automation workflows for proactive checks, follow-ups, and task generation. AI execution usage is controlled through AI Pack credits.",
+          "value_points": [
+            "Adds proactive operational checks without hiring another admin person",
+            "Uses the data already inside FlowIQ to surface next actions"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "forecasting_intelligence_pack": {
+          "name": "Forecasting Intelligence Pack",
+          "price": 2990,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "ForecastIQ planning intelligence for demand trends, stock risk, reorder planning, cash impact, and forward-looking operational decisions.",
+          "value_points": [
+            "Turns live stock and sales history into reorder and risk signals",
+            "Helps buyers prevent stockouts, dead stock, and cash tied up in the wrong products"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
         "ecom_pack": {
           "name": "Ecom Pack",
           "price": 790,
@@ -366,6 +470,19 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "messaging_pack": {
+          "name": "Messaging Pack",
+          "price": 390,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
+          "value_points": [
+            "Adds customer messaging where invoice, quote, and follow-up work already happens",
+            "Keeps the FlowIQ platform fee low while external WhatsApp fees remain transparent"
           ],
           "tier_group": null,
           "tier_label": null
@@ -464,6 +581,32 @@
             "Expands ProjectsIQ media storage without changing the project-count tier",
             "Useful for contractors uploading many snag photos, site photos, drawings, and evidence files",
             "Keeps storage costs transparent before high-volume projects eat into margin"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "accounting_reconciliation_pack": {
+          "name": "AccountingIQ Reconciliation Pack",
+          "price": 590,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "AccountingIQ advanced reconciliation, payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "value_points": [
+            "Speeds up customer and supplier payment matching while keeping review controls in place",
+            "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "commission_rebate_automation_pack": {
+          "name": "Commission & Rebate Automation Pack",
+          "price": 590,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Automates commission, rebate, and settlement workflows so teams do not manually reconcile customer rebates and representative commission logic.",
+          "value_points": [
+            "Removes recurring manual rebate and commission reconciliation work",
+            "Keeps settlement and rebate automation tied to the live invoice/customer data"
           ],
           "tier_group": null,
           "tier_label": null

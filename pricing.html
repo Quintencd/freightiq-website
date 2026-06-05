@@ -324,7 +324,9 @@
       'forecasting_intelligence_pack',
       'ecom_pack',
       'messaging_pack',
+      'posiq_till_integration_pack',
       'payroll_pack',
+      'business_units',
       'projectsiq_addon',
       'projectsiq_growth',
       'projectsiq_unlimited',
@@ -351,7 +353,9 @@
       forecasting_intelligence_pack: 179,
       ecom_pack: 49,
       messaging_pack: 24,
+      posiq_till_integration_pack: 59,
       payroll_pack: 29,
+      business_units: 59,
       projectsiq_addon: 89,
       projectsiq_growth: 149,
       projectsiq_unlimited: 239,
@@ -437,9 +441,17 @@
         name: 'Messaging Pack',
         value_points: ['Activates WhatsApp workflow messaging inside FlowIQ', 'Keeps Meta or BSP conversation fees separate and transparent']
       },
+      posiq_till_integration_pack: {
+        name: 'POSIQ Till Integration Pack',
+        value_points: ['Connects retail till activity back into FlowIQ stock and finance workflows', 'Supports branch-level selling without changing the customer base plan']
+      },
       payroll_pack: {
         name: 'Payroll Pack',
         value_points: ['Adds payroll without forcing unused SKU or warehouse capacity', 'Keeps employee and payroll workflows in one ecosystem']
+      },
+      business_units: {
+        name: 'Business Units Pack',
+        value_points: ['Adds branch, division and entity-level operating separation', 'Keeps reporting and approvals cleaner for growing teams']
       },
       projectsiq_addon: {
         name: 'ProjectsIQ Starter',
@@ -502,13 +514,9 @@
             : addOnKey === 'extra_users'
               ? 'per user / month'
             : 'per month';
-          const availability = addOnKey === 'ai_auto_capture' || addOnKey === 'agentsiq_usage_pack'
-            ? 'Available across entry and growth plans'
-            : addOnKey === 'ecom_pack' || addOnKey === 'payroll_pack'
-              ? 'Available on every plan'
-            : addOnKey === 'extra_users'
-              ? 'Starter+ seat expansion'
-              : 'Available from Growth Lite upward';
+          const availability = addOnKey === 'extra_users'
+            ? 'Starter+ seat expansion'
+            : 'Available on every paid plan';
           return `
             <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
               <div class="flex items-start justify-between gap-4">
@@ -636,8 +644,20 @@
         },
         {
           type: 'row',
-          label: 'Execution (WorkIQ)',
-          get: (p) => hasFeature(p, 'workiq') ? '✓' : '—',
+          label: 'ProjectsIQ extra media storage',
+          get: (p) => addOnAvailabilityLabel(p, 'projectsiq_storage_20gb', false),
+          center: true
+        },
+        {
+          type: 'row',
+          label: 'WorkIQ execution',
+          get: (p) => addOnAvailabilityLabel(p, 'workiq_addon', hasFeature(p, 'workiq')),
+          center: true
+        },
+        {
+          type: 'row',
+          label: 'TimeIQ time tracking',
+          get: (p) => hasFeature(p, 'timeiq') ? '✓' : '—',
           tick: true,
           center: true
         },
@@ -653,13 +673,25 @@
           get: (p) => addOnAvailabilityLabel(p, 'ecom_pack', hasFeature(p, 'ecomiq')),
           center: true
         },
+        {
+          type: 'row',
+          label: 'POSIQ till integration',
+          get: (p) => addOnAvailabilityLabel(p, 'posiq_till_integration_pack', hasFeature(p, 'posiq')),
+          center: true
+        },
+        {
+          type: 'row',
+          label: 'Business Units',
+          get: (p) => addOnAvailabilityLabel(p, 'business_units', hasFeature(p, 'business_units')),
+          center: true
+        },
         { type: 'section', label: 'Growth Upgrade Triggers' },
-        { type: 'row', label: 'Multi-warehouse', get: (p) => p?.limits?.warehouses === null || Number(p?.limits?.warehouses || 0) > 1 ? 'Included' : 'Available on Growth Plan', center: true },
-        { type: 'row', label: 'Import costing', get: (p) => hasFeature(p, 'importiq') ? 'Included' : 'Available on Growth Plan', center: true },
+        { type: 'row', label: 'Multi-warehouse', get: (p) => p?.limits?.warehouses === null || Number(p?.limits?.warehouses || 0) > 1 ? 'Included' : '—', center: true },
+        { type: 'row', label: 'Import costing', get: (p) => hasFeature(p, 'importiq') ? 'Included' : '—', center: true },
         { type: 'row', label: 'Forecasting', get: (p) => addOnAvailabilityLabel(p, 'forecasting_intelligence_pack', hasFeature(p, 'forecastiq') || hasFeature(p, 'forecastiq_advanced')), center: true },
-        { type: 'row', label: 'Delivery management', get: (p) => hasFeature(p, 'deliveryiq') ? 'Included' : 'Available on Growth Plan', center: true },
+        { type: 'row', label: 'Delivery management', get: (p) => hasFeature(p, 'deliveryiq') ? 'Included' : '—', center: true },
         { type: 'row', label: 'Operational dashboards', get: (p) => String(p?.capabilities?.dashboard_level || '').toLowerCase() === 'basic' ? 'Basic dashboard' : 'Advanced dashboards', center: true },
-        { type: 'row', label: 'Inventory intelligence', get: (p) => Number(p?.limits?.warehouses || 0) > 1 || p?.limits?.warehouses === null ? 'Included' : 'Available on Growth Plan', center: true },
+        { type: 'row', label: 'Inventory intelligence', get: (p) => Number(p?.limits?.warehouses || 0) > 1 || p?.limits?.warehouses === null ? 'Included' : '—', center: true },
         { type: 'section', label: 'Intelligence & Automation' },
         { type: 'row', label: 'Forecasting Intelligence', get: (p) => addOnAvailabilityLabel(p, 'forecasting_intelligence_pack', hasFeature(p, 'forecastiq') || hasFeature(p, 'forecastiq_advanced')), center: true },
         { type: 'row', label: 'AgentsIQ automation desk', get: (p) => addOnAvailabilityLabel(p, 'ai_agents_pack', hasFeature(p, 'agentsiq')), center: true },
@@ -674,7 +706,7 @@
             return hasAddOn(p, 'agentsiq_usage_pack') ? 'AI Pack add-on' : '—';
           }
         },
-        { type: 'row', label: 'Manufacturing & Kitsets (BOM)', get: (p) => hasManufacturingKitsets(p) ? '✓' : 'Available on Growth Plan', tick: true, center: true },
+        { type: 'row', label: 'Manufacturing & Kitsets (BOM)', get: (p) => hasManufacturingKitsets(p) ? '✓' : '—', tick: true, center: true },
         { type: 'row', label: 'AccountingIQ advanced reconciliation', get: (p) => addOnAvailabilityLabel(p, 'accounting_reconciliation_pack', hasAdvancedReconciliation(p)), center: true },
         { type: 'row', label: 'AccountingIQ customer/supplier payment automation', get: (p) => addOnAvailabilityLabel(p, 'accounting_reconciliation_pack', hasFeature(p, 'accounting_auto_payment_matching')), center: true },
         { type: 'row', label: 'WhatsApp messaging', get: (p) => getWhatsAppLabel(p) },
