@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+/.auth
+/test-results/demo-recordings
 
 # testing
 /coverage

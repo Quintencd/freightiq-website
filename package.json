@@ -5,10 +5,17 @@
   "scripts": {
     "dev": "npx serve . -l 3333",
     "start": "npx serve . -l 3333",
+    "auth:demo": "node scripts/demo-recordings/save-auth-state.mjs",
+    "record:demo": "node scripts/demo-recordings/record-module.mjs",
+    "record:demo:all": "node scripts/demo-recordings/record-all.mjs",
     "deploy:preview": "netlify deploy --site e6a1f747-13f1-4856-83c1-b69104047578 --dir .",
     "deploy:prod": "netlify deploy --site e6a1f747-13f1-4856-83c1-b69104047578 --dir . --prod"
   },
   "dependencies": {
     "@react-email/components": "^0.0.20"
+  },
+  "devDependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "playwright": "^1.60.0"
   }
 }

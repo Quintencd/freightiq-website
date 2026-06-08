@@ -4,48 +4,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FlowIQ Walkthroughs | Product Tours for Imports, Forecasting and Operations</title>
-  <meta name="description" content="Explore FlowIQ product walkthroughs for ImportIQ, ForecastIQ, AccountingIQ and TaskIQ. See how FlowIQ connects landed cost, inventory, accounting, payroll and operations." />
-  <link rel="canonical" href="https://www.flowiq.info/walkthroughs" />
+  <title>FlowIQ Walkthroughs | Self-Serve Product Demo Library</title>
+  <meta name="description" content="Watch guided FlowIQ walkthroughs for DashboardIQ, CompaniesIQ, SalesIQ, ImportIQ, InventoryIQ, ForecastIQ, AccountingIQ, PayrollIQ and more." />
+  <link rel="canonical" href="https://www.flowiq.info/walkthroughs/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="FlowIQ" />
-  <meta property="og:title" content="FlowIQ Product Walkthroughs" />
-  <meta property="og:description" content="Focused FlowIQ product tours for import, forecasting, accounting and workflow control." />
-  <meta property="og:url" content="https://www.flowiq.info/walkthroughs" />
-  <meta property="og:image" content="https://www.flowiq.info/assets/img/modules/thumb-importiq.webp" />
+  <meta property="og:title" content="FlowIQ Self-Serve Demo Library" />
+  <meta property="og:description" content="A guided library of module walkthroughs that shows how FlowIQ replaces manual demos across sales, purchasing, imports, stock, finance and operations." />
+  <meta property="og:url" content="https://www.flowiq.info/walkthroughs/" />
+  <meta property="og:image" content="https://www.flowiq.info/assets/images/demo-library-posters/dashboardiq-real-clickthrough-v1.jpg" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
   <link rel="icon" type="image/png" href="/flowiq-logo.png?v=2">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/flowiq-light.css?v=21">
+  <link rel="stylesheet" href="/flowiq-light.css?v=23">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-    body { font-family: 'Inter', sans-serif; }
+    body{font-family:'Inter',sans-serif}
     nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
-    .walkthrough-hero{display:grid;grid-template-columns:minmax(0,.68fr) minmax(34rem,1.08fr);align-items:center;gap:clamp(1.75rem,4vw,3.5rem);border:1px solid rgba(148,163,184,.22);border-radius:2rem;background:radial-gradient(circle at 8% 0%,rgba(249,115,22,.16),transparent 22rem),linear-gradient(180deg,rgba(255,255,255,.96),rgba(248,250,252,.92));box-shadow:0 24px 80px rgba(15,23,42,.08);padding:clamp(1.75rem,5vw,4rem)}
-    .walkthrough-hero h1{max-width:46rem;color:#0f172a;font-size:clamp(3rem,6vw,5.8rem);line-height:.92;font-weight:900;letter-spacing:-.045em}
-    .walkthrough-hero p{max-width:50rem;color:#475569;font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.6}
-    .walkthrough-hero__media{position:relative;overflow:hidden;border:1px solid rgba(148,163,184,.24);border-radius:1.5rem;background:#fff;box-shadow:0 30px 90px rgba(15,23,42,.15)}
-    .walkthrough-hero__media img,.walkthrough-hero__media video{display:block;width:100%;height:auto}
-    .walkthrough-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
-    .walkthrough-card{position:relative;overflow:hidden;border:1px solid rgba(148,163,184,.24);border-radius:1.5rem;background:#fff;box-shadow:0 18px 58px rgba(15,23,42,.08);text-decoration:none;color:#0f172a;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
-    .walkthrough-card:hover,.walkthrough-card:focus-visible{transform:translateY(-4px);border-color:rgba(249,115,22,.42);box-shadow:0 26px 70px rgba(15,23,42,.12)}
-    .walkthrough-card__media{position:relative;aspect-ratio:16/9;overflow:hidden;background:#e2e8f0}
-    .walkthrough-card__media img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.01);transition:transform .7s ease}
-    .walkthrough-card:hover img{transform:scale(1.055)}
-    .walkthrough-card__media::after{content:"";position:absolute;inset:auto 1rem 1rem auto;width:3.25rem;height:3.25rem;border-radius:999px;background:#f97316;box-shadow:0 18px 36px rgba(249,115,22,.32)}
-    .walkthrough-card__media::before{content:"";position:absolute;right:2.14rem;bottom:2rem;z-index:2;border-left:.8rem solid #fff;border-top:.52rem solid transparent;border-bottom:.52rem solid transparent}
-    .walkthrough-card__body{display:grid;gap:.75rem;padding:1.35rem}
-    .walkthrough-card__eyebrow{width:fit-content;border-radius:999px;background:#fff7ed;color:#ea580c;padding:.42rem .65rem;font-size:.74rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
-    .walkthrough-card h2{font-size:clamp(1.45rem,2.5vw,2.1rem);line-height:1.05;font-weight:900;letter-spacing:-.025em}
-    .walkthrough-card p{color:#475569;line-height:1.55;font-weight:650}
-    .walkthrough-card__link{display:inline-flex;align-items:center;gap:.45rem;color:#ea580c;font-weight:900}
-    .walkthrough-cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.5rem;align-items:center;border-radius:1.5rem;background:#0f172a;color:#fff;padding:clamp(1.5rem,4vw,3rem);box-shadow:0 24px 70px rgba(15,23,42,.2)}
-    .walkthrough-cta h2{font-size:clamp(2rem,4vw,3.6rem);line-height:1;font-weight:900;letter-spacing:-.035em}
-    .walkthrough-cta p{margin-top:.75rem;color:#cbd5e1;font-size:1.08rem;line-height:1.55}
-    @media(max-width:900px){.walkthrough-hero,.walkthrough-grid,.walkthrough-cta{grid-template-columns:1fr}}
+    .walkthrough-shell{width:min(100% - 2rem,1380px);margin:0 auto;padding:7.5rem 0 4rem}
+    .walkthrough-hero{display:grid;grid-template-columns:minmax(0,.72fr) minmax(19rem,.38fr);align-items:end;gap:clamp(1.25rem,3vw,2rem);border:1px solid rgba(148,163,184,.24);border-radius:1.35rem;background:radial-gradient(circle at 10% 0%,rgba(249,115,22,.12),transparent 19rem),linear-gradient(180deg,rgba(255,255,255,.94),rgba(248,250,252,.86));box-shadow:0 22px 70px rgba(15,23,42,.08);padding:clamp(1.25rem,3vw,2.35rem)}
+    .walkthrough-hero h1{max-width:14ch;color:#0f172a;font-size:clamp(2.35rem,4.7vw,4.75rem);line-height:1.01;font-weight:900;letter-spacing:0}
+    .walkthrough-hero p{max-width:52rem;color:#40516a;font-size:clamp(1rem,1.35vw,1.13rem);line-height:1.58;font-weight:700}
+    .walkthrough-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+    .walkthrough-stat{min-height:5.2rem;border:1px solid rgba(148,163,184,.22);border-radius:1rem;background:#fff;padding:.85rem;box-shadow:0 14px 34px rgba(15,23,42,.06)}
+    .walkthrough-stat strong{display:block;color:#0f172a;font-size:1.45rem;line-height:1;font-weight:900}.walkthrough-stat span{display:block;margin-top:.35rem;color:#64748b;font-size:.76rem;line-height:1.25;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+    .filter-row{display:flex;flex-wrap:wrap;gap:.55rem;margin:1.25rem 0}
+    .filter-pill{border:1px solid rgba(148,163,184,.26);border-radius:999px;background:rgba(255,255,255,.82);padding:.58rem .86rem;color:#334155;font-size:.88rem;font-weight:900;box-shadow:0 10px 28px rgba(15,23,42,.05);transition:background .16s ease,border-color .16s ease,color .16s ease}
+    .filter-pill.is-active{border-color:rgba(249,115,22,.45);background:#fff7ed;color:#c2410c}
+    .walkthrough-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .demo-card{position:relative;display:grid;overflow:hidden;border:1px solid rgba(148,163,184,.22);border-radius:1.1rem;background:#fff;text-align:left;color:#0f172a;box-shadow:0 18px 54px rgba(15,23,42,.075);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+    .demo-card:hover,.demo-card:focus-visible{transform:translateY(-3px);border-color:rgba(249,115,22,.42);box-shadow:0 26px 68px rgba(15,23,42,.11);outline:0}
+    .demo-card__media{position:relative;aspect-ratio:16/9;background:#e2e8f0;overflow:hidden}
+    .demo-card__media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+    .demo-card:hover .demo-card__media img{transform:scale(1.035)}
+    .demo-card__badge{position:absolute;left:.75rem;top:.75rem;border-radius:999px;background:rgba(255,255,255,.92);border:1px solid rgba(148,163,184,.26);padding:.38rem .62rem;color:#c2410c;font-size:.72rem;font-weight:950;text-transform:uppercase;letter-spacing:.09em;box-shadow:0 10px 26px rgba(15,23,42,.12)}
+    .demo-card__play{position:absolute;right:.8rem;bottom:.8rem;display:grid;place-items:center;width:3rem;height:3rem;border-radius:999px;background:#f97316;color:#fff;box-shadow:0 16px 38px rgba(249,115,22,.34)}
+    .demo-card__body{display:grid;gap:.65rem;padding:1rem}.demo-card__meta{color:#ea580c;font-size:.76rem;font-weight:950;text-transform:uppercase;letter-spacing:.08em}.demo-card h2{font-size:1.28rem;line-height:1.08;font-weight:900;letter-spacing:0}.demo-card p{color:#526174;font-size:.94rem;line-height:1.45;font-weight:700}.demo-card__chapters{display:flex;flex-wrap:wrap;gap:.4rem}.demo-card__chapters span{border-radius:999px;background:#f8fafc;border:1px solid rgba(148,163,184,.18);padding:.32rem .5rem;color:#475569;font-size:.72rem;font-weight:800}
+    .demo-modal{position:fixed;inset:0;z-index:10050;display:none;align-items:center;justify-content:center;background:rgba(15,23,42,.72);padding:clamp(.75rem,2vw,1.4rem);backdrop-filter:blur(14px)}
+    .demo-modal.is-open{display:flex}.demo-modal__panel{position:relative;display:grid;grid-template-rows:auto minmax(0,1fr);width:min(100%,1380px);max-height:calc(100vh - 1.6rem);overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:1.1rem;background:#071126;box-shadow:0 36px 120px rgba(2,6,23,.55)}
+    .demo-modal__header{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid rgba(255,255,255,.1);padding:.8rem .95rem;background:#0f172a;color:#fff}.demo-modal__header strong{font-size:1rem;font-weight:900}.demo-modal__header span{display:block;margin-top:.14rem;color:#94a3b8;font-size:.8rem;font-weight:800}.demo-modal__close{display:grid;place-items:center;width:2.5rem;height:2.5rem;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.08);color:#fff}
+    .demo-modal__body{display:grid;grid-template-columns:minmax(0,1fr) 22rem;gap:0;min-height:0}.demo-video-stage{position:relative;display:grid;align-items:center;background:#020617;padding:clamp(.6rem,1.5vw,1rem)}.demo-video-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:.8rem;background:#020617;box-shadow:0 20px 70px rgba(0,0,0,.35)}
+    .demo-video-frame video{display:block;width:100%;height:100%;object-fit:contain;background:#020617}.demo-highlight{position:absolute;border:3px solid #fb923c;border-radius:.65rem;box-shadow:0 0 0 999px rgba(2,6,23,.15),0 0 28px rgba(249,115,22,.4);pointer-events:none;transition:all .28s ease}.demo-arrow{position:absolute;width:8rem;height:2px;background:linear-gradient(90deg,transparent,#fb923c);transform-origin:right center;pointer-events:none}.demo-arrow::after{content:"";position:absolute;right:0;top:50%;width:.65rem;height:.65rem;border-top:2px solid #fb923c;border-right:2px solid #fb923c;transform:translateY(-50%) rotate(45deg)}
+    .demo-caption{position:absolute;left:1rem;right:1rem;bottom:1rem;display:grid;gap:.35rem;max-width:42rem;border:1px solid rgba(255,255,255,.18);border-radius:.9rem;background:rgba(15,23,42,.86);padding:.85rem 1rem;color:#fff;box-shadow:0 18px 54px rgba(2,6,23,.38);backdrop-filter:blur(12px)}.demo-caption strong{color:#fdba74;font-size:.76rem;text-transform:uppercase;letter-spacing:.12em}.demo-caption span{font-size:1rem;line-height:1.32;font-weight:850}
+    .demo-side{display:grid;grid-template-rows:auto auto minmax(0,1fr);gap:1rem;min-height:0;border-left:1px solid rgba(255,255,255,.1);background:#0f172a;color:#fff;padding:1rem;overflow:auto}.demo-side h3{font-size:1rem;font-weight:900}.demo-side p{color:#cbd5e1;font-size:.9rem;line-height:1.45;font-weight:650}.benefit-list{display:grid;gap:.55rem}.benefit-list li{display:flex;gap:.5rem;color:#e2e8f0;font-size:.88rem;line-height:1.38;font-weight:750}.benefit-list li::before{content:"";flex:0 0 .48rem;width:.48rem;height:.48rem;margin-top:.42rem;border-radius:999px;background:#f97316}.chapter-list{display:grid;gap:.5rem}.chapter-button{display:flex;align-items:center;justify-content:space-between;gap:.75rem;border:1px solid rgba(255,255,255,.1);border-radius:.75rem;background:rgba(255,255,255,.05);padding:.65rem .75rem;color:#e2e8f0;text-align:left;font-weight:850}.chapter-button.is-active{border-color:rgba(249,115,22,.55);background:rgba(249,115,22,.16);color:#fff}.chapter-button span:last-child{color:#94a3b8;font-size:.76rem}
+    .walkthrough-cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem;align-items:center;margin-top:1.25rem;border-radius:1.1rem;background:#0f172a;color:#fff;padding:1.2rem 1.35rem;box-shadow:0 24px 70px rgba(15,23,42,.18)}.walkthrough-cta h2{font-size:clamp(1.45rem,2.5vw,2.35rem);line-height:1.04;font-weight:900}.walkthrough-cta p{margin-top:.35rem;color:#cbd5e1;font-weight:700}
+    @media(max-width:1080px){.walkthrough-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.demo-modal__body{grid-template-columns:1fr}.demo-side{max-height:18rem;border-left:0;border-top:1px solid rgba(255,255,255,.1)}}
+    @media(max-width:760px){.walkthrough-shell{width:min(100% - 1rem,1380px);padding-top:6.5rem}.walkthrough-hero,.walkthrough-cta{grid-template-columns:1fr}.walkthrough-grid,.walkthrough-stats{grid-template-columns:1fr}.walkthrough-hero h1{font-size:clamp(2.3rem,10vw,3.25rem)}.demo-caption{position:static;margin-top:.65rem}.demo-video-frame{overflow:visible}.demo-highlight,.demo-arrow{display:none}.demo-modal{padding:.4rem}.demo-modal__panel{max-height:calc(100vh - .8rem)}}
   </style>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"CollectionPage","name":"FlowIQ Product Walkthroughs","url":"https://www.flowiq.info/walkthroughs","description":"FlowIQ product walkthroughs for imports, forecasting, accounting and workflow control."}
+  {"@context":"https://schema.org","@type":"CollectionPage","name":"FlowIQ Self-Serve Demo Library","url":"https://www.flowiq.info/walkthroughs/","description":"Guided FlowIQ product walkthroughs for prospects evaluating operations, accounting, stock, imports and reporting workflows."}
   </script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="/assets/smartlook.js"></script>
@@ -55,82 +62,68 @@
   <div class="site-atmosphere fixed inset-0 z-[-1] h-full w-full" aria-hidden="true"></div>
   <nav></nav>
 
-  <main class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
-    <section class="walkthrough-hero mb-10 story-reveal">
+  <main class="walkthrough-shell">
+    <section class="walkthrough-hero story-reveal">
       <div>
-        <span class="section-kicker">Product walkthroughs</span>
-        <h1 class="mt-6">See how FlowIQ works before a demo.</h1>
-        <p class="mt-6">Start with a quick visual tour of how FlowIQ connects imports, inventory, forecasting, sales, invoicing, accounting, payroll and reporting. Focused module walkthroughs sit below so the homepage stays clean.</p>
-        <div class="mt-8 flex flex-col sm:flex-row gap-4">
-          <a href="/book-demo.html" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-orange-500/20 hover:-translate-y-1 transition-all">Book Demo <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
-          <a href="/customers" class="inline-flex items-center justify-center gap-2 glass-panel px-8 py-4 rounded-full font-bold text-lg text-slate-900 hover:-translate-y-0.5 transition-all">View Customer Proof <i data-lucide="star" class="w-5 h-5 text-freight-orange"></i></a>
+        <span class="section-kicker">Self-serve demo library</span>
+        <h1 class="mt-4">Choose the FlowIQ workflow to inspect.</h1>
+        <p class="mt-4">Send prospects one premium link instead of manually clicking through every module. Each video is a real product walkthrough with selling captions, feature callouts and chapter navigation.</p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#module-demos" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-orange-500/20">Browse demos <i data-lucide="arrow-down" class="w-5 h-5"></i></a>
+          <a href="/book-demo.html" class="inline-flex items-center justify-center gap-2 glass-panel px-6 py-3 rounded-full font-bold text-slate-900">Book guided demo <i data-lucide="calendar" class="w-5 h-5 text-freight-orange"></i></a>
         </div>
       </div>
-      <div class="walkthrough-hero__media" aria-label="FlowIQ product overview video">
-        <video controls playsinline preload="metadata" poster="/assets/videos/flowiq-overview-sales-pitch-v13-poster.jpg" width="1920" height="1080">
-          <source src="/assets/videos/flowiq-overview-sales-pitch-v13.mp4" type="video/mp4">
-        </video>
+      <div class="walkthrough-stats" aria-label="Walkthrough library status">
+        <div class="walkthrough-stat"><strong>16</strong><span>ready tours</span></div>
+        <div class="walkthrough-stat"><strong>1080p</strong><span>browser only</span></div>
+        <div class="walkthrough-stat"><strong>Guided</strong><span>captions and callouts</span></div>
       </div>
     </section>
 
-    <section class="walkthrough-grid mb-10" aria-label="FlowIQ product walkthroughs">
-      <a href="/modules/importiq.html" class="walkthrough-card story-reveal">
-        <div class="walkthrough-card__media">
-          <img src="/assets/img/modules/thumb-importiq.webp" alt="ImportIQ landed cost workflow preview" loading="lazy" width="720" height="405">
-        </div>
-        <div class="walkthrough-card__body">
-          <span class="walkthrough-card__eyebrow">ImportIQ</span>
-          <h2>True landed cost and shipment visibility</h2>
-          <p>See how import teams track shipment stages, cost inputs, landed cost accuracy and supplier payments in one operating view.</p>
-          <span class="walkthrough-card__link">Open ImportIQ walkthrough <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
-        </div>
-      </a>
-
-      <a href="/modules/forecastiq.html" class="walkthrough-card story-reveal">
-        <div class="walkthrough-card__media">
-          <img src="/assets/img/modules/thumb-forecastiq.webp" alt="ForecastIQ stock planning preview" loading="lazy" width="720" height="405">
-        </div>
-        <div class="walkthrough-card__body">
-          <span class="walkthrough-card__eyebrow">ForecastIQ</span>
-          <h2>Stock forecasting and replenishment planning</h2>
-          <p>See how teams identify fast movers, reduce stockout risk and shift capital away from slow-moving stock.</p>
-          <span class="walkthrough-card__link">Open ForecastIQ walkthrough <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
-        </div>
-      </a>
-
-      <a href="/modules/accountingiq.html" class="walkthrough-card story-reveal">
-        <div class="walkthrough-card__media">
-          <img src="/assets/img/modules/accountingiq-real-positive.webp" alt="AccountingIQ financial workflow preview" loading="lazy" width="720" height="405">
-        </div>
-        <div class="walkthrough-card__body">
-          <span class="walkthrough-card__eyebrow">AccountingIQ</span>
-          <h2>Connected journals, month-end and reporting</h2>
-          <p>See how accounting work connects to payroll, invoices, operational events and management reporting without spreadsheet handoffs.</p>
-          <span class="walkthrough-card__link">Open AccountingIQ walkthrough <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
-        </div>
-      </a>
-
-      <a href="/modules/taskiq.html" class="walkthrough-card story-reveal">
-        <div class="walkthrough-card__media">
-          <img src="/assets/img/modules/thumb-taskiq.webp" alt="TaskIQ workflow tracking preview" loading="lazy" width="720" height="405">
-        </div>
-        <div class="walkthrough-card__body">
-          <span class="walkthrough-card__eyebrow">TaskIQ</span>
-          <h2>Tasks, bottlenecks and follow-up visibility</h2>
-          <p>See how managers track work allocation, follow-ups and operational bottlenecks without constant meetings or manual chasing.</p>
-          <span class="walkthrough-card__link">Open TaskIQ walkthrough <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
-        </div>
-      </a>
-    </section>
+    <div id="module-demos" class="filter-row" aria-label="Filter module walkthroughs"></div>
+    <section class="walkthrough-grid" data-demo-grid aria-label="FlowIQ module walkthroughs"></section>
 
     <section class="walkthrough-cta story-reveal">
       <div>
-        <h2>Want the proper narrated demo?</h2>
-        <p>The page is ready for narrated module videos. The right next step is recording ImportIQ, ForecastIQ, AccountingIQ and TaskIQ first because those prove landed cost, stock planning, month-end and management control fastest.</p>
+        <h2>Use the videos before the sales meeting.</h2>
+        <p>Prospects can watch the modules they care about first, then your call can focus on fit, pricing and rollout instead of a long screen-share tour.</p>
       </div>
-      <a href="/book-demo.html" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-7 py-3 rounded-full font-bold shadow-lg shadow-orange-500/20 transition-all">Book Demo <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+      <a href="/pricing.html" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-full font-bold">View Pricing <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
     </section>
   </main>
+
+  <div class="demo-modal" data-demo-modal aria-hidden="true">
+    <div class="demo-modal__panel" role="dialog" aria-modal="true" aria-labelledby="demoTitle">
+      <div class="demo-modal__header">
+        <div>
+          <strong id="demoTitle">FlowIQ walkthrough</strong>
+          <span data-demo-subtitle>Guided product demo</span>
+        </div>
+        <button type="button" class="demo-modal__close" data-demo-close aria-label="Close walkthrough"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <div class="demo-modal__body">
+        <div class="demo-video-stage">
+          <div class="demo-video-frame">
+            <video data-demo-video controls playsinline preload="metadata"></video>
+            <div class="demo-highlight" data-demo-highlight hidden></div>
+            <div class="demo-arrow" data-demo-arrow hidden></div>
+            <div class="demo-caption"><strong data-demo-caption-title>Feature</strong><span data-demo-caption-body>Caption</span></div>
+          </div>
+        </div>
+        <aside class="demo-side">
+          <div>
+            <h3>Why this matters</h3>
+            <p data-demo-summary></p>
+          </div>
+          <ul class="benefit-list" data-demo-benefits></ul>
+          <div>
+            <h3>Chapters</h3>
+            <div class="chapter-list" data-demo-chapters></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
 
   <footer class="border-t border-slate-200 py-10 mt-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -142,7 +135,7 @@
         <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium text-slate-600">
           <a href="/solutions/" class="hover:text-orange-600">Solutions</a>
           <a href="/modules" class="hover:text-orange-600">Modules</a>
-          <a href="/walkthroughs" class="hover:text-orange-600">Walkthroughs</a>
+          <a href="/walkthroughs/" class="hover:text-orange-600">Walkthroughs</a>
           <a href="/customers" class="hover:text-orange-600">Customers</a>
           <a href="/pricing" class="hover:text-orange-600">Pricing</a>
         </div>
@@ -159,7 +152,175 @@
   </script>
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
-  <script src="/assets/js/main.js?v=11"></script>
+  <script src="/assets/js/main.js?v=23"></script>
+  <script>
+    const demoAssetVersion = '20260608-guided-v1';
+    const demos = [
+      {id:'dashboardiq',title:'DashboardIQ Command View',group:'Executive',duration:'1:03',asset:'dashboardiq-real-clickthrough-v1',summary:'A founder and manager view of live current-year performance, exception cards and financial-year progress.',chapters:['Live KPI command view','Current-year filters','Performance drill-down'],benefits:['See the whole business without waiting for reports.','Spot stock, sales, import and finance exceptions quickly.','Use current-year progress as the daily management rhythm.'],callouts:[{at:0,title:'Command KPIs',body:'Live cards surface the metrics that need attention today.',x:6,y:14,w:88,h:18},{at:24,title:'Period controls',body:'Managers filter by date and warehouse without rebuilding spreadsheets.',x:5,y:34,w:42,h:24},{at:48,title:'Current-year performance',body:'Financial-year progress gives the leadership team a practical operating view.',x:48,y:48,w:45,h:32}]},
+      {id:'companiesiq',title:'CompaniesIQ Customers and Suppliers',group:'Core Records',duration:'1:14',asset:'companiesiq-real-clickthrough-v1',summary:'The shared customer and supplier master file behind sales, purchasing, invoices and reports.',chapters:['Search trading partners','Open a company record','Review tabs and history'],benefits:['One record for customer and supplier context.','Contacts, documents and transactions stay together.','Teams stop asking each other for the latest company detail.'],callouts:[{at:0,title:'Single source of truth',body:'Customers and suppliers are managed from one searchable register.',x:5,y:22,w:90,h:26},{at:28,title:'Open the record',body:'The walkthrough drills into a company so prospects see what sits behind the list.',x:6,y:48,w:24,h:32},{at:56,title:'Relationship tabs',body:'Tabs expose activity, documents and transactions without another handoff.',x:9,y:16,w:82,h:14}]},
+      {id:'salesiq',title:'SalesIQ Pipeline and Orders',group:'Sales',duration:'0:54',asset:'salesiq-real-clickthrough-v1',summary:'Sales work connects quotes, orders, customers, stock and margin from the same operating system.',chapters:['Sales workspace','Open order context','Margin and customer link'],benefits:['Move from enquiry to order without scattered follow-ups.','Keep sales records connected to stock and billing.','Show commercial context before margin is lost.']},
+      {id:'invoiceiq',title:'InvoiceIQ Billing Control',group:'Sales',duration:'0:54',asset:'invoiceiq-real-clickthrough-v1',summary:'Billing becomes a controlled operational workflow with tax, payment and customer context visible.',chapters:['Billing list','Open invoice detail','Finance readiness'],benefits:['Shorten the gap between completed work and invoicing.','Keep tax and payment status easier to inspect.','Connect billing to reports and accounting.']},
+      {id:'purchaseiq',title:'PurchaseIQ Procurement Control',group:'Purchasing',duration:'0:54',asset:'purchaseiq-real-clickthrough-v1',summary:'Purchase orders, supplier documents and inbound stock context are managed in one buying flow.',chapters:['Purchase order control','Open supplier document','Inbound stock context'],benefits:['Know what is ordered, expected and outstanding.','Connect supplier commitments to imports and stock.','Reduce purchasing blind spots before stock arrives.']},
+      {id:'importiq',title:'ImportIQ Landed Cost Workflow',group:'Imports',duration:'1:02',asset:'importiq-real-clickthrough-v1',summary:'Shipment, freight, duty, FX and receiving context stay connected to landed cost and stock value.',chapters:['Shipment list','Landed-cost inputs','Receiving and closure'],benefits:['Protect margin before freight or duty surprises arrive.','Track imports from supplier order to received stock.','Push landed cost into inventory and finance context.'],callouts:[{at:0,title:'Shipment control',body:'Prospects see all active imports and where each shipment stands.',x:5,y:20,w:90,h:24},{at:24,title:'Cost capture',body:'Freight, duty, taxes and FX are kept with the shipment.',x:52,y:24,w:40,h:42},{at:48,title:'Receive to stock',body:'The same workflow updates stock value and availability.',x:8,y:52,w:84,h:30}]},
+      {id:'inventoryiq',title:'InventoryIQ Stock Control',group:'Stock',duration:'0:54',asset:'inventoryiq-real-clickthrough-v1',summary:'Live SKU, warehouse, valuation and movement visibility for stock teams and managers.',chapters:['Stock list','Open SKU detail','Warehouse availability'],benefits:['Understand availability before promising stock.','Inspect stock value and movement context.','Support better buying and selling decisions.']},
+      {id:'forecastiq',title:'ForecastIQ Planning View',group:'Planning',duration:'0:58',asset:'forecastiq-real-clickthrough-v1',summary:'Demand, dead stock, replenishment pressure and supplier trends turn stock planning into a practical workflow.',chapters:['Planning overview','SKU dashboard','Supplier trends'],benefits:['Identify fast movers and stockout risk earlier.','Move cash away from stale stock.','Give buyers a stronger replenishment plan.']},
+      {id:'priceiq',title:'PriceIQ Margin Control',group:'Margin',duration:'0:54',asset:'priceiq-real-clickthrough-v1',summary:'Pricing decisions stay connected to costs, customers and commercial rules so margin is protected.',chapters:['Pricing workspace','Open price context','Margin protection'],benefits:['React when freight or supplier costs change.','Manage commercial rules in one controlled space.','Protect margin before quotes go out.']},
+      {id:'accountingiq',title:'AccountingIQ Finance Workspace',group:'Finance',duration:'0:54',asset:'accountingiq-real-clickthrough-v1',summary:'Finance users see accounting, VAT, journals, receivables and payables with operational source context.',chapters:['Finance workspace','Review controls','Connected close'],benefits:['Reduce month-end chasing.','Keep source context attached to finance work.','Connect accounting to sales, purchasing and imports.']},
+      {id:'reportsiq',title:'ReportsIQ Management Reporting',group:'Reporting',duration:'0:54',asset:'reportsiq-real-clickthrough-v1',summary:'Management reporting turns operational activity into practical business answers.',chapters:['Reporting centre','Business answers','Executive review'],benefits:['Reduce manual report preparation.','Review customers, suppliers, sales and finance from one source.','Give leaders answers before meetings.']},
+      {id:'payrolliq',title:'PayrollIQ People and Payroll',group:'People',duration:'0:54',asset:'payrolliq-real-clickthrough-v1',summary:'Payroll and people records connect to commissions, finance and audit-ready operational context.',chapters:['People records','Payroll workflow','Finance connection'],benefits:['Make payroll easier to review.','Connect people costs to the wider system.','Support cleaner HR, payroll and accounting handoff.']},
+      {id:'taskiq-workiq-timeiq',title:'TaskIQ, WorkIQ and TimeIQ Control',group:'Work Control',duration:'0:54',asset:'taskiq-workiq-timeiq-real-clickthrough-v1',summary:'Tasks, work ownership, dates and time context reduce manual chasing and management noise.',chapters:['Open work','Ownership and dates','Time and performance'],benefits:['Show accountability without another meeting.','Track bottlenecks and follow-ups in one place.','Connect work execution to operational outcomes.']},
+      {id:'operationsiq',title:'ProjectsIQ and Delivery Operations',group:'Operations',duration:'0:54',asset:'operationsiq-real-clickthrough-v1',summary:'Project and delivery execution sits beside sales, purchasing, stock and finance rather than outside the system.',chapters:['Execution workspace','Project context','Delivery control'],benefits:['Control operational execution beyond finance.','Keep field activity connected to commercial outcomes.','Use evidence and status to reduce follow-up gaps.']},
+      {id:'specialist-flows',title:'EcomIQ, ExportIQ and WarrantyIQ',group:'Specialist',duration:'0:54',asset:'specialist-flows-real-clickthrough-v1',summary:'Specialist workflows show how FlowIQ expands into ecommerce, exports and after-sale support.',chapters:['Specialist workflows','Channel control','After-sale handling'],benefits:['Show prospects the platform can grow with them.','Connect specialist work to core records.','Keep channel and after-sale context inside FlowIQ.']},
+      {id:'settings-admin',title:'Settings and Admin Controls',group:'Admin',duration:'0:58',asset:'settings-admin-real-clickthrough-v1',summary:'Admin controls, user permissions and module settings show that rollout governance is built in.',chapters:['Admin readiness','Permissions and modules','Governance guardrails'],benefits:['Set up teams and modules centrally.','Give admins confidence before rollout.','Keep governance visible as the business scales.']}
+    ];
+    const fallbackCallouts = [{at:0,title:'Module workspace',body:'Start with the live list or dashboard so prospects understand the daily operating view.',x:5,y:20,w:90,h:24},{at:20,title:'Open the detail',body:'The walkthrough drills into records instead of only showing a static landing screen.',x:6,y:44,w:26,h:34},{at:40,title:'Connected context',body:'Tabs, filters and related data show how teams avoid disconnected spreadsheets.',x:42,y:50,w:52,h:30}];
+    const groups = ['All', ...Array.from(new Set(demos.map((demo) => demo.group)))];
+    const grid = document.querySelector('[data-demo-grid]');
+    const filters = document.querySelector('.filter-row');
+    const modal = document.querySelector('[data-demo-modal]');
+    const video = document.querySelector('[data-demo-video]');
+    const title = document.getElementById('demoTitle');
+    const subtitle = document.querySelector('[data-demo-subtitle]');
+    const summary = document.querySelector('[data-demo-summary]');
+    const benefits = document.querySelector('[data-demo-benefits]');
+    const chapters = document.querySelector('[data-demo-chapters]');
+    const highlight = document.querySelector('[data-demo-highlight]');
+    const arrow = document.querySelector('[data-demo-arrow]');
+    const captionTitle = document.querySelector('[data-demo-caption-title]');
+    const captionBody = document.querySelector('[data-demo-caption-body]');
+    let activeDemo = null;
+    let activeGroup = 'All';
+
+    function assetPath(type, asset) {
+      if (type === 'video') return `/assets/videos/demo-library/${asset}.mp4?v=${demoAssetVersion}`;
+      return `/assets/images/demo-library-posters/${asset}.jpg?v=${demoAssetVersion}`;
+    }
+
+    function renderFilters() {
+      filters.innerHTML = groups.map((group) => `<button type="button" class="filter-pill${group === activeGroup ? ' is-active' : ''}" data-filter="${group}">${group}</button>`).join('');
+    }
+
+    function renderGrid() {
+      const visible = demos.filter((demo) => activeGroup === 'All' || demo.group === activeGroup);
+      grid.innerHTML = visible.map((demo) => `
+        <button type="button" class="demo-card story-reveal" data-demo-id="${demo.id}">
+          <div class="demo-card__media">
+            <img src="${assetPath('poster', demo.asset)}" alt="${demo.title} walkthrough preview" loading="lazy" width="640" height="360" onerror="this.src='/assets/videos/flowiq-overview-sales-pitch-v13-poster.jpg'">
+            <span class="demo-card__badge">${demo.group} - ${demo.duration}</span>
+            <span class="demo-card__play" aria-hidden="true"><i data-lucide="play" class="w-5 h-5"></i></span>
+          </div>
+          <div class="demo-card__body">
+            <div class="demo-card__meta">Guided walkthrough</div>
+            <h2>${demo.title}</h2>
+            <p>${demo.summary}</p>
+            <div class="demo-card__chapters">${demo.chapters.map((chapter) => `<span>${chapter}</span>`).join('')}</div>
+          </div>
+        </button>
+      `).join('');
+      if (window.lucide) window.lucide.createIcons();
+      if (window.FlowIQStoryReveal) window.FlowIQStoryReveal();
+    }
+
+    function openDemo(id) {
+      activeDemo = demos.find((demo) => demo.id === id);
+      if (!activeDemo) return;
+      title.textContent = activeDemo.title;
+      subtitle.textContent = `${activeDemo.group} walkthrough - ${activeDemo.duration}`;
+      summary.textContent = activeDemo.summary;
+      benefits.innerHTML = activeDemo.benefits.map((item) => `<li>${item}</li>`).join('');
+      chapters.innerHTML = activeDemo.chapters.map((chapter, index) => `<button type="button" class="chapter-button" data-chapter="${index}"><span>${chapter}</span><span>${formatTime(chapterStart(index))}</span></button>`).join('');
+      video.poster = assetPath('poster', activeDemo.asset);
+      video.innerHTML = `<source src="${assetPath('video', activeDemo.asset)}" type="video/mp4">`;
+      video.load();
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      updateOverlay();
+      video.play().catch(() => {});
+    }
+
+    function closeDemo() {
+      video.pause();
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function chapterStart(index) {
+      if (!activeDemo) return 0;
+      const duration = parseDuration(activeDemo.duration);
+      if (activeDemo.chapters.length <= 1) return 0;
+      return Math.round((duration / activeDemo.chapters.length) * index);
+    }
+
+    function activeCallout() {
+      const callouts = activeDemo?.callouts || fallbackCallouts;
+      const current = video.currentTime || 0;
+      return callouts.reduce((selected, callout) => current >= callout.at ? callout : selected, callouts[0]);
+    }
+
+    function updateOverlay() {
+      if (!activeDemo) return;
+      const callout = activeCallout();
+      captionTitle.textContent = callout.title;
+      captionBody.textContent = callout.body;
+      if (callout.x != null) {
+        highlight.hidden = false;
+        highlight.style.left = `${callout.x}%`;
+        highlight.style.top = `${callout.y}%`;
+        highlight.style.width = `${callout.w}%`;
+        highlight.style.height = `${callout.h}%`;
+        arrow.hidden = false;
+        arrow.style.left = `${Math.max(3, callout.x - 7)}%`;
+        arrow.style.top = `${Math.max(8, callout.y + callout.h / 2)}%`;
+      }
+      Array.from(chapters.children).forEach((button, index) => {
+        const start = chapterStart(index);
+        const next = index + 1 < activeDemo.chapters.length ? chapterStart(index + 1) : 99999;
+        button.classList.toggle('is-active', video.currentTime >= start && video.currentTime < next);
+      });
+    }
+
+    function parseDuration(value) {
+      const parts = value.split(':').map(Number);
+      return parts.length === 2 ? parts[0] * 60 + parts[1] : 60;
+    }
+
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = String(seconds % 60).padStart(2, '0');
+      return `${mins}:${secs}`;
+    }
+
+    filters.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-filter]');
+      if (!button) return;
+      activeGroup = button.dataset.filter;
+      renderFilters();
+      renderGrid();
+    });
+    grid.addEventListener('click', (event) => {
+      const card = event.target.closest('[data-demo-id]');
+      if (card) openDemo(card.dataset.demoId);
+    });
+    document.querySelector('[data-demo-close]').addEventListener('click', closeDemo);
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeDemo();
+    });
+    chapters.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-chapter]');
+      if (!button) return;
+      video.currentTime = chapterStart(Number(button.dataset.chapter || 0));
+      video.play().catch(() => {});
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) closeDemo();
+    });
+    video.addEventListener('timeupdate', updateOverlay);
+    video.addEventListener('loadedmetadata', updateOverlay);
+    renderFilters();
+    renderGrid();
+  </script>
 </body>
 
 </html>
