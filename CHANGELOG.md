@@ -1,5 +1,22 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.12] - June 8, 2026
+
+### Tracking Trust + Demo CTA + Sitemap Cleanup
+
+- Updated `assets/growth-analytics.js` so demo CTA clicks are captured from the real website patterns, including `data-analytics-cta` demo labels and `/book-demo` links that previously fired the wrong event shape.
+- Fixed 25 final CTAs that said `Book a FlowIQ Demo` but still routed to `/signup`; they now route to `/book-demo.html`.
+- Changed `landing.html` to `noindex,follow` with the homepage as canonical and removed it from both sitemap copies.
+- Removed the duplicate `why-spreadsheet-landed-costs-fail` sitemap entry and refreshed `lastmod` on the URLs updated in this pass.
+- Added documentation under `docs/Website/2026-06-08_tracking_trust_demo_cta_and_sitemap_cleanup.md`.
+- No Netlify deploy was run.
+
+### Regression Risk Notes (>10%)
+
+- **15-25%**: Demo-start reporting will likely rise because previously missed demo clicks are now captured.
+- **15-25%**: Trial-vs-demo mix can shift because demo-labeled final CTAs now route to the demo form instead of signup.
+- **10-20%**: `landing.html` may lose any standalone search footprint after the duplicate-indexing cleanup.
+
 ## [1.3.11] - May 17, 2026
 
 ### Pricing Add-on Alignment

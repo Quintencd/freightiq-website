@@ -113,6 +113,16 @@
     return 'module_link';
   }
 
+  function isDemoCta(href, text, analyticsEvent, analyticsCtaLabel) {
+    var label = String(analyticsCtaLabel || '').toLowerCase();
+    return analyticsEvent === 'demo_click' ||
+      (analyticsEvent === 'demo_request' && href.indexOf('/book-demo') >= 0) ||
+      href.indexOf('/book-demo') >= 0 ||
+      /book a? demo|book demo|request plan walkthrough/.test(text || '') ||
+      label.indexOf('book demo') >= 0 ||
+      label.indexOf('final demo') >= 0;
+  }
+
   function installFunnelTracking() {
     var path = window.location.pathname;
     var title = document.title || '';
@@ -171,16 +181,26 @@
       var href = target.getAttribute('href') || '';
       var text = (target.textContent || '').trim().toLowerCase();
       var analyticsEvent = target.getAttribute('data-analytics-event');
+      var analyticsCta = target.getAttribute('data-analytics-cta');
       var commonParams = {
         link_target: href || null,
-        label: (target.getAttribute('data-analytics-label') || (target.textContent || '').trim()).slice(0, 120),
+        label: (target.getAttribute('data-analytics-label') || analyticsCta || (target.textContent || '').trim()).slice(0, 120),
         cta_position: target.getAttribute('data-analytics-position') || null,
         cta_context: target.getAttribute('data-analytics-context') || readBodyDataset('pageIntent', null),
         page_path: window.location.pathname
       };
 
       if (analyticsEvent) {
+        if (analyticsEvent === 'demo_request' && href.indexOf('/book-demo') >= 0) {
+          trackGrowthEvent('demo_click', Object.assign({}, commonParams, { cta_text: text.slice(0, 120) }));
+          return;
+        }
         trackGrowthEvent(analyticsEvent, commonParams);
+        return;
+      }
+
+      if (isDemoCta(href, text, analyticsEvent, analyticsCta)) {
+        trackGrowthEvent('demo_click', Object.assign({}, commonParams, { cta_text: text.slice(0, 120) }));
         return;
       }
 
