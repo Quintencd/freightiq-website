@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowIQ RFID Stock Tracking Video Preview</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f8fafc;
+      --muted: #94a3b8;
+      --orange: #f97316;
+      --navy: #071126;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 10% 5%, rgba(249, 115, 22, .13), transparent 30rem),
+        radial-gradient(circle at 88% 0%, rgba(14, 165, 233, .11), transparent 26rem),
+        linear-gradient(135deg, #030712 0%, #071126 50%, #101827 100%);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(1480px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 28px 0 44px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 136px;
+      height: auto;
+      display: block;
+    }
+
+    .kicker {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .status-pill {
+      border: 1px solid rgba(249, 115, 22, .42);
+      border-radius: 999px;
+      background: rgba(249, 115, 22, .1);
+      color: #fed7aa;
+      padding: 9px 13px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .stage-wrap {
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, .22);
+      border-radius: 22px;
+      background: #020617;
+      box-shadow: 0 38px 120px rgba(0, 0, 0, .38);
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #020617;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
+      gap: 14px;
+      align-items: center;
+      padding: 14px;
+      border-top: 1px solid rgba(148, 163, 184, .2);
+      background: rgba(2, 6, 23, .9);
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      background: var(--orange);
+      color: #fff;
+      padding: 11px 18px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 16px 34px rgba(249, 115, 22, .28);
+    }
+
+    button.secondary {
+      border: 1px solid rgba(148, 163, 184, .28);
+      background: rgba(15, 23, 42, .82);
+      color: var(--ink);
+      box-shadow: none;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--orange);
+    }
+
+    .time {
+      min-width: 92px;
+      color: #cbd5e1;
+      font-variant-numeric: tabular-nums;
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .notes {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .panel {
+      border: 1px solid rgba(148, 163, 184, .18);
+      border-radius: 18px;
+      background: rgba(15, 23, 42, .58);
+      padding: 18px;
+    }
+
+    .panel h1,
+    .panel h2 {
+      margin: 0;
+      letter-spacing: -.03em;
+    }
+
+    .panel h1 {
+      font-size: clamp(28px, 4vw, 52px);
+      line-height: .96;
+    }
+
+    .panel h2 {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .panel p {
+      color: #cbd5e1;
+      line-height: 1.65;
+      margin: 12px 0 0;
+    }
+
+    .scene-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .scene-chip {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border: 1px solid rgba(148, 163, 184, .16);
+      border-radius: 12px;
+      background: rgba(2, 6, 23, .42);
+      padding: 10px 12px;
+      color: #cbd5e1;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .scene-chip span:last-child {
+      color: var(--orange);
+      font-variant-numeric: tabular-nums;
+    }
+
+    @media (max-width: 860px) {
+      main { width: min(100vw - 20px, 1480px); padding-top: 14px; }
+      .topbar,
+      .controls,
+      .notes { grid-template-columns: 1fr; }
+      .topbar { align-items: flex-start; }
+      .controls { display: flex; flex-wrap: wrap; }
+      .controls input { min-width: 100%; order: 3; }
+      .time { text-align: left; }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="topbar">
+      <div class="brand">
+        <img src="/flowiq-logo-dark.png?v=2" alt="FlowIQ">
+        <div>
+          <div class="kicker">RFID stock tracking add-on</div>
+          <strong>90 second website video preview</strong>
+        </div>
+      </div>
+      <div class="status-pill">Original FlowIQ production asset</div>
+    </div>
+
+    <div class="stage-wrap">
+      <canvas id="film" width="1920" height="1080"></canvas>
+      <div class="controls">
+        <button id="play">Play</button>
+        <input id="scrub" type="range" min="0" max="90" step="0.05" value="0">
+        <div class="time"><span id="time">00:00</span> / 01:30</div>
+        <button class="secondary" id="replay">Replay</button>
+      </div>
+    </div>
+
+    <div class="notes">
+      <div class="panel">
+        <h1>Encode once. Let every stock movement carry evidence.</h1>
+        <p>
+          A FlowIQ-specific RFID explainer for the website. The cut is designed to sell the add-on without promising
+          unsafe automatic stock posting: RFID captures proof, FlowIQ keeps the existing receiving, stocktake, transfer,
+          dispatch, DeliveryIQ and TaskIQ controls in place.
+        </p>
+      </div>
+      <div class="panel">
+        <h2>Scene timing</h2>
+        <div class="scene-list">
+          <div class="scene-chip"><span>Manual movement blind spots</span><span>0-10s</span></div>
+          <div class="scene-chip"><span>FlowIQ RFID system reveal</span><span>10-20s</span></div>
+          <div class="scene-chip"><span>Encode EPCs from SKUs</span><span>20-30s</span></div>
+          <div class="scene-chip"><span>PurchaseIQ receiving proof</span><span>30-40s</span></div>
+          <div class="scene-chip"><span>Stocktakes and transfers</span><span>40-55s</span></div>
+          <div class="scene-chip"><span>Dispatch door and DeliveryIQ</span><span>55-72s</span></div>
+          <div class="scene-chip"><span>TaskIQ exceptions and audit</span><span>72-83s</span></div>
+          <div class="scene-chip"><span>Premium add-on close</span><span>83-90s</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const canvas = document.getElementById('film');
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+    const DURATION = 90;
+    const scrub = document.getElementById('scrub');
+    const timeLabel = document.getElementById('time');
+    const playButton = document.getElementById('play');
+    const replayButton = document.getElementById('replay');
+    const ORANGE = '#f97316';
+    const GREEN = '#059669';
+    const BLUE = '#2563eb';
+    const images = {};
+    let playing = false;
+    let startedAt = 0;
+    let offset = 0;
+
+    const imageSources = {
+      logo: '/flowiq-logo.png?v=2',
+      logoDark: '/flowiq-logo-dark.png?v=2',
+      operations: '/assets/img/generated/operations-command-story.webp',
+      warehouse: '/assets/img/generated/inventory-forecast-story.webp',
+      control: '/assets/img/generated/flowiq-control-room.webp',
+      inventory: '/assets/img/modules/thumb-inventoryiq.webp',
+      purchase: '/assets/img/modules/thumb-purchaseiq.webp',
+      invoice: '/assets/img/modules/thumb-invoiceiq.webp',
+      task: '/assets/img/modules/thumb-taskiq.webp',
+      rfidWarehouse: '/assets/img/generated/rfid-video/rfid-warehouse-control-v1.png',
+      rfidEncoding: '/assets/img/generated/rfid-video/rfid-encoding-bench-v1.png',
+      rfidDispatch: '/assets/img/generated/rfid-video/rfid-dispatch-portal-v1.png',
+    };
+
+    function loadImages() {
+      return Promise.all(Object.entries(imageSources).map(([key, src]) => new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => { images[key] = img; resolve(); };
+        img.onerror = () => resolve();
+        img.src = src;
+      })));
+    }
+
+    function clamp(v, min = 0, max = 1) { return Math.max(min, Math.min(max, v)); }
+    function ease(v) { v = clamp(v); return v * v * (3 - 2 * v); }
+    function wave(t, speed = 1, phase = 0) { return (Math.sin(t * speed + phase) + 1) / 2; }
+    function local(t, start, end) { return clamp((t - start) / (end - start)); }
+    function mmss(t) {
+      const s = Math.max(0, Math.floor(t));
+      return `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+    }
+
+    function roundedRect(x, y, w, h, r = 20) {
+      const radius = Math.min(r, w / 2, h / 2);
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.arcTo(x + w, y, x + w, y + h, radius);
+      ctx.arcTo(x + w, y + h, x, y + h, radius);
+      ctx.arcTo(x, y + h, x, y, radius);
+      ctx.arcTo(x, y, x + w, y, radius);
+      ctx.closePath();
+    }
+
+    function fillRound(x, y, w, h, r, fill, stroke = null, lineWidth = 1) {
+      roundedRect(x, y, w, h, r);
+      ctx.fillStyle = fill;
+      ctx.fill();
+      if (stroke) {
+        ctx.strokeStyle = stroke;
+        ctx.lineWidth = lineWidth;
+        ctx.stroke();
+      }
+    }
+
+    function text(lines, x, y, size, color = '#fff', weight = 800, maxWidth = 760, lineHeight = 1.14) {
+      ctx.fillStyle = color;
+      ctx.font = `${weight} ${size}px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif`;
+      ctx.textBaseline = 'top';
+      const arr = Array.isArray(lines) ? lines : [lines];
+      arr.forEach((line, i) => ctx.fillText(line, x, y + i * size * lineHeight, maxWidth));
+    }
+
+    function imageCover(img, x, y, w, h, alpha = 1) {
+      if (!img) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      const scale = Math.max(w / img.width, h / img.height);
+      const sw = w / scale;
+      const sh = h / scale;
+      const sx = (img.width - sw) / 2;
+      const sy = (img.height - sh) / 2;
+      ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
+      ctx.restore();
+    }
+
+    function cinematicPlate(img, t, zoom = .055, panX = 0, panY = 0, alpha = 1, overlay = .34) {
+      if (!img) {
+        background(t, 'dark');
+        return;
+      }
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      const z = 1 + zoom + Math.sin(t * .18) * zoom * .35;
+      const dw = W * z;
+      const dh = H * z;
+      const driftX = panX + Math.sin(t * .22) * 32;
+      const driftY = panY + Math.cos(t * .16) * 18;
+      imageCover(img, (W - dw) / 2 + driftX, (H - dh) / 2 + driftY, dw, dh, 1);
+      ctx.restore();
+      const vignette = ctx.createRadialGradient(W * .55, H * .45, 260, W * .55, H * .45, 980);
+      vignette.addColorStop(0, `rgba(2,6,23,${overlay * .25})`);
+      vignette.addColorStop(.62, `rgba(2,6,23,${overlay})`);
+      vignette.addColorStop(1, `rgba(2,6,23,${Math.min(.82, overlay + .28)})`);
+      ctx.fillStyle = vignette;
+      ctx.fillRect(0, 0, W, H);
+      ctx.save();
+      ctx.globalAlpha = .12;
+      ctx.fillStyle = '#fff';
+      for (let i = 0; i < 220; i += 1) {
+        const x = (i * 977 + Math.floor(t * 12) * 17) % W;
+        const y = (i * 613 + Math.floor(t * 8) * 19) % H;
+        ctx.fillRect(x, y, 1, 1);
+      }
+      ctx.restore();
+    }
+
+    function sweep(t, color = ORANGE) {
+      ctx.save();
+      const x = -420 + ((t * 110) % (W + 840));
+      const g = ctx.createLinearGradient(x - 140, 0, x + 260, H);
+      g.addColorStop(0, 'rgba(255,255,255,0)');
+      g.addColorStop(.5, color === ORANGE ? 'rgba(249,115,22,.16)' : 'rgba(255,255,255,.12)');
+      g.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x + 340, 0);
+      ctx.lineTo(x + 20, H);
+      ctx.lineTo(x - 340, H);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function floatingTag(x, y, t, label = 'EPC', scale = 1) {
+      ctx.save();
+      const yy = y + Math.sin(t * 1.6 + x * .01) * 10;
+      ctx.translate(x, yy);
+      ctx.rotate(Math.sin(t * .8 + x * .003) * .04);
+      fillRound(0, 0, 190 * scale, 92 * scale, 18 * scale, 'rgba(255,255,255,.92)', 'rgba(249,115,22,.42)');
+      ctx.strokeStyle = 'rgba(15,23,42,.16)';
+      ctx.lineWidth = 2 * scale;
+      for (let i = 0; i < 4; i += 1) {
+        ctx.strokeRect((22 + i * 30) * scale, 24 * scale, 18 * scale, 18 * scale);
+      }
+      text(label, 24 * scale, 58 * scale, 16 * scale, '#0f172a', 900, 150 * scale);
+      ctx.restore();
+    }
+
+    function scanGate(x, y, w, h, t) {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(249,115,22,.84)';
+      ctx.lineWidth = 5;
+      roundedRect(x, y, w, h, 34);
+      ctx.stroke();
+      for (let i = 0; i < 7; i += 1) {
+        const p = (t * .55 + i * .13) % 1;
+        ctx.globalAlpha = (1 - p) * .5;
+        ctx.strokeStyle = ORANGE;
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.ellipse(x + w / 2, y + h / 2, w * (.1 + p * .48), h * (.12 + p * .46), 0, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.globalAlpha = .9;
+      const scanY = y + ((t * 120) % h);
+      const g = ctx.createLinearGradient(x, scanY - 22, x, scanY + 22);
+      g.addColorStop(0, 'rgba(249,115,22,0)');
+      g.addColorStop(.5, 'rgba(249,115,22,.65)');
+      g.addColorStop(1, 'rgba(249,115,22,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(x + 28, scanY - 22, w - 56, 44);
+      ctx.restore();
+    }
+
+    function background(t, tone = 'dark') {
+      const g = ctx.createLinearGradient(0, 0, W, H);
+      if (tone === 'light') {
+        g.addColorStop(0, '#f8fafc');
+        g.addColorStop(.48, '#eef4f8');
+        g.addColorStop(1, '#fff7ed');
+      } else {
+        g.addColorStop(0, '#020617');
+        g.addColorStop(.48, '#071126');
+        g.addColorStop(1, '#111827');
+      }
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, W, H);
+      ctx.save();
+      ctx.globalAlpha = tone === 'light' ? .08 : .16;
+      ctx.strokeStyle = tone === 'light' ? '#64748b' : '#94a3b8';
+      ctx.lineWidth = 1;
+      const drift = (t * 12) % 88;
+      for (let x = -120 + drift; x < W + 120; x += 88) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x - 260, H);
+        ctx.stroke();
+      }
+      for (let y = -80 + drift; y < H + 80; y += 88) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(W, y + 180);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    function brandMark(t, dark = false) {
+      const img = dark ? images.logo : images.logoDark;
+      if (img) ctx.drawImage(img, 70, 56, 142, 38);
+      fillRound(1580, 52, 270, 44, 22, dark ? 'rgba(15,23,42,.06)' : 'rgba(255,255,255,.08)', dark ? 'rgba(15,23,42,.14)' : 'rgba(255,255,255,.16)');
+      text('RFID Stock Tracking', 1602, 64, 16, dark ? '#334155' : '#e2e8f0', 900, 230);
+      ctx.save();
+      ctx.globalAlpha = .18 + wave(t, 3) * .22;
+      ctx.fillStyle = ORANGE;
+      ctx.beginPath();
+      ctx.arc(1578, 74, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function caption(t, label, body, accent = ORANGE) {
+      const p = ease(local(t, 0, 1));
+      const y = 836 + (1 - p) * 44;
+      fillRound(88, y, 1744, 142, 26, 'rgba(2,6,23,.72)', 'rgba(255,255,255,.16)');
+      ctx.fillStyle = accent;
+      ctx.fillRect(128, y + 32, 7, 78);
+      text(label.toUpperCase(), 154, y + 30, 17, '#fed7aa', 900, 900);
+      text(body, 154, y + 62, 34, '#f8fafc', 850, 1500, 1.08);
+    }
+
+    function tagChip(x, y, title, value, color = ORANGE, alpha = 1) {
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      fillRound(x, y, 250, 86, 18, 'rgba(255,255,255,.94)', 'rgba(203,213,225,.9)');
+      text(title, x + 24, y + 18, 15, '#64748b', 900, 200);
+      text(value, x + 24, y + 44, 24, color, 900, 210);
+      ctx.restore();
+    }
+
+    function proofCard(x, y, title, metric, status, color = GREEN) {
+      fillRound(x, y, 316, 132, 22, 'rgba(255,255,255,.95)', 'rgba(203,213,225,.9)');
+      text(title, x + 24, y + 22, 17, '#334155', 900, 270);
+      text(metric, x + 24, y + 52, 36, color, 950, 260);
+      text(status, x + 24, y + 98, 15, '#64748b', 800, 260);
+    }
+
+    function radioPulse(x, y, t, color = ORANGE) {
+      ctx.save();
+      for (let i = 0; i < 4; i += 1) {
+        const p = (wave(t * .75 + i * .9) + i * .18) % 1;
+        ctx.globalAlpha = (1 - p) * .36;
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.arc(x, y, 26 + p * 120, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    function route(points, t, color = ORANGE, width = 6) {
+      ctx.save();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = width;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.globalAlpha = .88;
+      ctx.beginPath();
+      points.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y));
+      ctx.stroke();
+      const p = wave(t, 1.7);
+      for (let i = 0; i < points.length - 1; i += 1) {
+        const a = points[i];
+        const b = points[i + 1];
+        const dot = (p + i * .22) % 1;
+        const x = a[0] + (b[0] - a[0]) * dot;
+        const y = a[1] + (b[1] - a[1]) * dot;
+        ctx.fillStyle = '#fff7ed';
+        ctx.beginPath();
+        ctx.arc(x, y, 10, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    function drawQr(x, y, size, t) {
+      fillRound(x, y, size, size, 20, '#fff', 'rgba(15,23,42,.2)');
+      const cells = 17;
+      const c = size / cells;
+      ctx.fillStyle = '#020617';
+      for (let row = 1; row < cells - 1; row += 1) {
+        for (let col = 1; col < cells - 1; col += 1) {
+          const seed = (row * 13 + col * 17 + Math.floor(t * 3)) % 7;
+          if (seed === 0 || seed === 2 || (row + col) % 11 === 0) ctx.fillRect(x + col * c, y + row * c, c * .72, c * .72);
+        }
+      }
+      [[2, 2], [12, 2], [2, 12]].forEach(([col, row]) => {
+        ctx.strokeStyle = '#020617';
+        ctx.lineWidth = c * .7;
+        ctx.strokeRect(x + col * c, y + row * c, c * 3, c * 3);
+      });
+      fillRound(x + size * .38, y + size * .38, size * .24, size * .24, 12, 'rgba(249,115,22,.1)', 'rgba(249,115,22,.45)');
+      text('IQ', x + size * .425, y + size * .425, size * .08, ORANGE, 950, size);
+    }
+
+    function sceneProblem(t) {
+      cinematicPlate(images.rfidWarehouse, t, .065, -32, 0, 1, .44);
+      sweep(t);
+      for (let i = 0; i < 34; i += 1) {
+        const x = 180 + (i * 91) % 1560;
+        const y = 170 + (i * 137) % 680;
+        const pulse = wave(t, 1.4, i);
+        ctx.globalAlpha = .18 + pulse * .4;
+        ctx.fillStyle = i % 4 === 0 ? '#ef4444' : '#64748b';
+        ctx.beginPath();
+        ctx.arc(x, y, 5 + pulse * 5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+      route([[200, 720], [480, 520], [730, 610], [1060, 360], [1500, 430]], t, 'rgba(249,115,22,.72)', 4);
+      route([[360, 300], [680, 360], [920, 245], [1260, 580], [1660, 520]], t + 3, 'rgba(239,68,68,.62)', 3);
+      text(['Stock moves faster', 'than manual systems can see'], 116, 168, 76, '#fff', 900, 1140, 1.02);
+      text('Factory exits, warehouse transfers, receiving, stocktakes and deliveries still depend on people checking after the fact.', 124, 354, 28, '#cbd5e1', 650, 880, 1.24);
+      ['Missing dispatch proof', 'Slow stock takes', 'Transfer variance', 'No five-minute alert'].forEach((item, i) => {
+        const x = 1120 + (i % 2) * 320;
+        const y = 196 + Math.floor(i / 2) * 142;
+        fillRound(x, y, 282, 92, 18, 'rgba(15,23,42,.82)', 'rgba(248,113,113,.34)');
+        text(item, x + 22, y + 28, 22, '#fecaca', 850, 240);
+      });
+      floatingTag(1320, 610, t, 'TAG SEEN', .82);
+      floatingTag(1520, 700, t + 1.4, 'EPC', .72);
+      caption(t, 'Operational gap', 'When stock is moving, FlowIQ should know what happened without creating a second system.');
+      brandMark(t);
+    }
+
+    function sceneReveal(t) {
+      background(t, 'dark');
+      imageCover(images.control, 0, 0, W, H, .25);
+      ctx.fillStyle = 'rgba(2,6,23,.5)';
+      ctx.fillRect(0, 0, W, H);
+      const cx = W / 2;
+      const cy = 440;
+      radioPulse(cx, cy, t, ORANGE);
+      if (images.logoDark) ctx.drawImage(images.logoDark, cx - 170, cy - 44, 340, 90);
+      ['InventoryIQ', 'PurchaseIQ', 'InvoiceIQ', 'StockIQ', 'DeliveryIQ', 'TaskIQ'].forEach((item, i) => {
+        const a = -Math.PI / 2 + i * Math.PI * 2 / 6 + Math.sin(t * .35) * .04;
+        const x = cx + Math.cos(a) * 560;
+        const y = cy + Math.sin(a) * 255;
+        fillRound(x - 112, y - 32, 224, 64, 32, 'rgba(255,255,255,.94)', 'rgba(249,115,22,.38)');
+        text(item, x - 82, y - 12, 20, '#0f172a', 900, 170);
+      });
+      text('RFID adds physical proof to the workflows your teams already use.', 346, 720, 46, '#fff', 900, 1230, 1.08);
+      caption(t, 'No duplicate workflow', 'The add-on enriches receiving, transfers, stocktakes, dispatch and delivery instead of forcing staff into a separate tool.');
+      brandMark(t);
+    }
+
+    function sceneEncode(t) {
+      cinematicPlate(images.rfidEncoding, t, .05, 44, 0, 1, .18);
+      sweep(t);
+      fillRound(92, 120, 820, 190, 28, 'rgba(2,6,23,.48)', 'rgba(255,255,255,.1)');
+      text('Reserve RFID codes', 116, 150, 58, '#fff', 950, 900);
+      text('FlowIQ links the SKU, barcode and unique EPC before labels are printed or encoded.', 120, 232, 29, '#e2e8f0', 650, 760, 1.24);
+      fillRound(120, 336, 760, 410, 28, 'rgba(255,255,255,.88)', 'rgba(203,213,225,.95)');
+      text('SKU', 164, 376, 17, '#64748b', 900, 100);
+      text('0205SECURITAINER', 164, 414, 34, '#0f172a', 950, 480);
+      tagChip(164, 500, 'Barcode', 'BC-0205-8192', ORANGE);
+      tagChip(450, 500, 'EPC', '3034 8F1A 0001', BLUE);
+      tagChip(164, 618, 'Status', 'Ready to encode', GREEN);
+      for (let i = 0; i < 7; i += 1) {
+        const p = (t * .45 + i * .18) % 1;
+        floatingTag(930 + p * 390, 612 + i * 14, t + i, i % 2 ? 'BARCODE' : 'EPC', .52);
+      }
+      caption(t, 'Encode once', 'SKUs become trusted EPC identities that can be verified before reads are used operationally.');
+      brandMark(t, true);
+    }
+
+    function sceneReceiving(t) {
+      background(t, 'light');
+      imageCover(images.purchase, 74, 154, 850, 540, .86);
+      fillRound(96, 176, 806, 496, 30, 'rgba(255,255,255,.5)', 'rgba(15,23,42,.1)');
+      text('Receiving proof starts at the document', 1000, 150, 54, '#0f172a', 950, 760, 1.04);
+      text('PurchaseIQ receiving notes carry the QR context. The counter scans the document, reads the tags, and FlowIQ attaches the proof to the same purchase flow.', 1004, 300, 28, '#475569', 650, 720, 1.25);
+      drawQr(1030, 440, 170, t);
+      radioPulse(1310, 524, t, ORANGE);
+      proofCard(1004, 668, 'PurchaseIQ', '268 matched', 'Receiving proof captured');
+      proofCard(1360, 668, 'Warehouse', 'KZN', 'Saved against the correct site', BLUE);
+      caption(t, 'Receiving control', 'Inbound stock can be checked against the purchase document before receipt decisions are finalised.');
+      brandMark(t, true);
+    }
+
+    function sceneStock(t) {
+      background(t, 'dark');
+      imageCover(images.warehouse, 0, 0, W, H, .34);
+      ctx.fillStyle = 'rgba(2,6,23,.52)';
+      ctx.fillRect(0, 0, W, H);
+      text('Stocktakes and transfers become faster to prove', 112, 130, 62, '#fff', 950, 1200, 1.04);
+      text('Teams stay in the normal InventoryIQ flow. RFID evidence sits in a compact drawer so the working screen stays clean.', 118, 286, 28, '#cbd5e1', 870, 1.24);
+      fillRound(110, 420, 780, 322, 28, 'rgba(255,255,255,.95)', 'rgba(203,213,225,.85)');
+      text('Stock Transfer TXF-8421', 150, 458, 28, '#0f172a', 900, 620);
+      ['Draft', 'Counter', 'Counting', 'Authorizer', 'Committed'].forEach((s, i) => {
+        const x = 150 + i * 138;
+        fillRound(x, 526, 116, 70, 16, i < 3 ? 'rgba(5,150,105,.12)' : 'rgba(241,245,249,.9)', i < 3 ? 'rgba(5,150,105,.55)' : 'rgba(203,213,225,.8)');
+        text(String(i + 1), x + 18, 548, 17, i < 3 ? GREEN : '#64748b', 950, 40);
+        text(s, x + 43, 548, 17, '#0f172a', 850, 70);
+      });
+      proofCard(150, 638, 'RFID rows', '418', 'Attached to this transfer');
+      proofCard(486, 638, 'Needs review', '3', 'Variance visible in TaskIQ', ORANGE);
+      drawQr(1160, 384, 210, t);
+      radioPulse(1450, 490, t, ORANGE);
+      fillRound(1134, 640, 500, 116, 24, 'rgba(15,23,42,.86)', 'rgba(249,115,22,.35)');
+      text('View RFID details drawer', 1170, 674, 29, '#fff', 900, 430);
+      text('Clean screen, full evidence when needed', 1170, 716, 20, '#cbd5e1', 700, 430);
+      caption(t, 'Workflow stays simple', 'Counters scan context from TaskIQ or InventoryIQ, then continue the same approval and commit process.');
+      brandMark(t);
+    }
+
+    function sceneDispatch(t) {
+      cinematicPlate(images.rfidDispatch, t, .045, -16, 0, 1, .38);
+      sweep(t);
+      text('Dispatch doors turn scans into invoice and delivery evidence', 112, 134, 58, '#fff', 950, 1230, 1.04);
+      text('The delivery note QR links the scan session to the invoice. A fixed reader at the exit counts tagged stock as it leaves the factory or warehouse.', 118, 284, 28, '#cbd5e1', 650, 900, 1.24);
+      fillRound(106, 410, 540, 314, 28, 'rgba(255,255,255,.95)', 'rgba(203,213,225,.9)');
+      text('Delivery Note', 150, 450, 34, '#0f172a', 950, 440);
+      text('Invoice INV-12366', 150, 504, 24, '#475569', 800, 380);
+      drawQr(418, 492, 150, t);
+      fillRound(740, 342, 464, 456, 36, 'rgba(15,23,42,.58)', 'rgba(249,115,22,.44)');
+      text('Dispatch door', 824, 394, 38, '#fff', 950, 330);
+      scanGate(784, 462, 360, 250, t);
+      for (let i = 0; i < 7; i += 1) {
+        const p = (t * .22 + i * .12) % 1;
+        floatingTag(790 + p * 350, 628 - i * 28, t + i, 'EPC', .48);
+      }
+      proofCard(1300, 384, 'Invoice proof', '843 / 843', 'RFID matched');
+      proofCard(1300, 548, 'StockIQ draft', 'Ready', 'Generated for dispatch review', BLUE);
+      proofCard(1300, 712, 'DeliveryIQ', 'Dispatched', 'Lifecycle updated from scan', GREEN);
+      caption(t, 'Dispatch acceleration', 'One document scan plus the door read links stock proof back to the invoice and dispatch record.');
+      brandMark(t);
+    }
+
+    function sceneDelivery(t) {
+      background(t, 'light');
+      text('The driver confirms delivery from the same document', 112, 128, 58, '#0f172a', 950, 1180, 1.04);
+      text('At delivery, the phone scans the QR for context. UHF tag reading still needs UHF-capable hardware, but the phone can confirm the document and capture delivery status.', 118, 276, 28, '#475569', 650, 920, 1.24);
+      fillRound(118, 420, 420, 500, 44, '#0f172a', 'rgba(15,23,42,.22)');
+      fillRound(150, 462, 356, 414, 34, '#f8fafc', null);
+      drawQr(228, 520, 198, t);
+      text('Scan delivery note', 194, 742, 28, '#0f172a', 950, 270);
+      text('DeliveryIQ context loaded', 194, 790, 20, GREEN, 850, 270);
+      route([[690, 660], [918, 520], [1170, 548], [1460, 380]], t, ORANGE, 7);
+      ['Loaded', 'In transit', 'Delivered'].forEach((s, i) => {
+        const x = 690 + i * 310;
+        fillRound(x, 426 + i * 52, 250, 104, 22, 'rgba(255,255,255,.95)', 'rgba(203,213,225,.9)');
+        text(s, x + 26, 454 + i * 52, 27, i === 2 ? GREEN : '#0f172a', 950, 210);
+        text(i === 2 ? 'Proof closed' : 'Proof attached', x + 26, 492 + i * 52, 16, '#64748b', 800, 200);
+      });
+      caption(t, 'Delivery follow-through', 'The handoff continues from factory exit to customer delivery without losing the document context.');
+      brandMark(t, true);
+    }
+
+    function sceneAudit(t) {
+      background(t, 'dark');
+      imageCover(images.task, 1040, 132, 740, 470, .76);
+      fillRound(1062, 154, 696, 426, 28, 'rgba(255,255,255,.42)', 'rgba(255,255,255,.12)');
+      text('Exceptions become visible while teams can still act', 112, 132, 58, '#fff', 950, 1050, 1.04);
+      text('If stock changes unexpectedly, proof is missing, or reads arrive outside the plan, FlowIQ can raise TaskIQ work for review instead of silently changing stock.', 118, 282, 28, '#cbd5e1', 650, 850, 1.24);
+      [
+        ['5 min stock change', 'Alert raised', ORANGE],
+        ['Missing RFID proof', 'Needs review', '#ef4444'],
+        ['Transfer variance', 'Counter assigned', BLUE],
+        ['Audit pack', 'Ready for manager', GREEN],
+      ].forEach(([title, status, color], i) => {
+        const x = 138 + (i % 2) * 396;
+        const y = 448 + Math.floor(i / 2) * 148;
+        fillRound(x, y, 348, 112, 22, 'rgba(255,255,255,.95)', 'rgba(203,213,225,.9)');
+        text(title, x + 26, y + 24, 24, '#0f172a', 900, 280);
+        text(status, x + 26, y + 66, 18, color, 900, 260);
+      });
+      caption(t, 'Controlled automation', 'RFID adds evidence and speed while FlowIQ protects the approval, stock and accounting controls.');
+      brandMark(t);
+    }
+
+    function sceneClose(t) {
+      cinematicPlate(images.rfidWarehouse, t, .035, 20, 0, 1, .58);
+      sweep(t);
+      if (images.logoDark) ctx.drawImage(images.logoDark, 698, 194, 524, 138);
+      text('RFID Stock Tracking', 602, 392, 76, '#fff', 950, 880, 1.02);
+      text('Premium stock movement proof for receiving, stocktakes, transfers, dispatch, delivery and audit control.', 430, 508, 34, '#cbd5e1', 700, 1060, 1.22);
+      ['Encode EPCs from SKUs', 'Scan QR document context', 'Capture RFID movement proof', 'Review exceptions in TaskIQ'].forEach((item, i) => {
+        const x = 302 + i * 330;
+        fillRound(x, 654, 290, 94, 24, 'rgba(255,255,255,.94)', 'rgba(249,115,22,.32)');
+        text(item, x + 28, 684, 20, '#0f172a', 900, 230, 1.12);
+      });
+      fillRound(760, 826, 400, 72, 36, ORANGE, 'rgba(255,255,255,.24)');
+      text('Book a FlowIQ demo', 832, 846, 24, '#fff', 950, 300);
+    }
+
+    function drawFrame(t) {
+      t = clamp(t, 0, DURATION);
+      const scenes = [
+        [0, 10, sceneProblem],
+        [10, 20, sceneReveal],
+        [20, 30, sceneEncode],
+        [30, 40, sceneReceiving],
+        [40, 55, sceneStock],
+        [55, 72, sceneDispatch],
+        [72, 83, sceneDelivery],
+        [83, 88, sceneAudit],
+        [88, 90, sceneClose],
+      ];
+      const scene = scenes.find(([start, end]) => t >= start && t < end) || scenes[scenes.length - 1];
+      const sceneT = t - scene[0];
+      scene[2](sceneT);
+      const fadeIn = clamp(t / .8);
+      const fadeOut = clamp((DURATION - t) / .9);
+      const opacity = Math.min(fadeIn, fadeOut);
+      if (opacity < 1) {
+        ctx.fillStyle = `rgba(2,6,23,${1 - opacity})`;
+        ctx.fillRect(0, 0, W, H);
+      }
+      scrub.value = String(t);
+      timeLabel.textContent = mmss(t);
+    }
+
+    function tick(now) {
+      if (!playing) return;
+      const t = offset + (now - startedAt) / 1000;
+      if (t >= DURATION) {
+        playing = false;
+        offset = DURATION;
+        playButton.textContent = 'Play';
+        drawFrame(DURATION);
+        return;
+      }
+      drawFrame(t);
+      requestAnimationFrame(tick);
+    }
+
+    playButton.addEventListener('click', () => {
+      playing = !playing;
+      playButton.textContent = playing ? 'Pause' : 'Play';
+      if (playing) {
+        startedAt = performance.now();
+        requestAnimationFrame(tick);
+      } else {
+        offset = Number(scrub.value);
+      }
+    });
+
+    replayButton.addEventListener('click', () => {
+      offset = 0;
+      startedAt = performance.now();
+      playing = true;
+      playButton.textContent = 'Pause';
+      requestAnimationFrame(tick);
+    });
+
+    scrub.addEventListener('input', () => {
+      offset = Number(scrub.value);
+      drawFrame(offset);
+      if (playing) startedAt = performance.now();
+    });
+
+    async function recordWebm() {
+      await loadImages();
+      drawFrame(0);
+      const stream = canvas.captureStream(30);
+      const recorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9', videoBitsPerSecond: 9000000 });
+      const chunks = [];
+      recorder.ondataavailable = (event) => {
+        if (event.data && event.data.size) chunks.push(event.data);
+      };
+      const stopPromise = new Promise((resolve) => {
+        recorder.onstop = async () => {
+          const blob = new Blob(chunks, { type: 'video/webm' });
+          const buffer = await blob.arrayBuffer();
+          resolve(Array.from(new Uint8Array(buffer)));
+        };
+      });
+      recorder.start(1000);
+      const start = performance.now();
+      await new Promise((resolve) => {
+        function frame(now) {
+          const t = Math.min(DURATION, (now - start) / 1000);
+          drawFrame(t);
+          if (t >= DURATION) {
+            resolve();
+            return;
+          }
+          requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      });
+      recorder.stop();
+      return stopPromise;
+    }
+
+    async function recordWebmToBinding() {
+      if (typeof window.flowiqWriteVideoChunk !== 'function') {
+        throw new Error('flowiqWriteVideoChunk binding is not available');
+      }
+      await loadImages();
+      drawFrame(0);
+      const stream = canvas.captureStream(30);
+      const recorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9', videoBitsPerSecond: 9000000 });
+      const writes = [];
+      recorder.ondataavailable = (event) => {
+        if (!event.data || !event.data.size) return;
+        writes.push((async () => {
+          const buffer = await event.data.arrayBuffer();
+          await window.flowiqWriteVideoChunk(Array.from(new Uint8Array(buffer)));
+        })());
+      };
+      const stopPromise = new Promise((resolve) => {
+        recorder.onstop = async () => {
+          await Promise.all(writes);
+          resolve(true);
+        };
+      });
+      recorder.start(1000);
+      const start = performance.now();
+      await new Promise((resolve) => {
+        function frame(now) {
+          const t = Math.min(DURATION, (now - start) / 1000);
+          drawFrame(t);
+          if (t >= DURATION) {
+            resolve();
+            return;
+          }
+          requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      });
+      recorder.stop();
+      return stopPromise;
+    }
+
+    window.FLOWIQ_RFID_VIDEO = {
+      duration: DURATION,
+      ready: loadImages().then(() => drawFrame(0)),
+      renderAt: drawFrame,
+      recordWebm,
+      recordWebmToBinding,
+    };
+  </script>
+</body>
+
+</html>

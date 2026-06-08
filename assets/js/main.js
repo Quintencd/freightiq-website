@@ -35,7 +35,7 @@
 
   window.FlowIQStoryReveal = initStoryReveals;
 
-  var LIGHT_CSS_VERSION = '21';
+  var LIGHT_CSS_VERSION = '22';
 
   function getPageFamily(pathname) {
     var path = pathname || window.location.pathname || '/';
@@ -141,6 +141,7 @@
                       '<a class="nav-dropdown__link" href="/solutions/retail-outlets.html"><i data-lucide="shopping-bag" class="w-5 h-5"></i><span><strong>Retail</strong><br><small>Stock, sales, and ecommerce</small></span></a>' +
                       '<a class="nav-dropdown__link" href="/solutions/multi-branch.html"><i data-lucide="network" class="w-5 h-5"></i><span><strong>Multi-branch</strong><br><small>Locations, inventory, and visibility</small></span></a>' +
                       '<a class="nav-dropdown__link" href="/solutions/manufacturers.html"><i data-lucide="factory" class="w-5 h-5"></i><span><strong>Manufacturing</strong><br><small>Production, costing, and stock flow</small></span></a>' +
+                      '<a class="nav-dropdown__link" href="/solutions/rfid-stock-tracking.html"><i data-lucide="scan-line" class="w-5 h-5"></i><span><strong>RFID stock tracking</strong><br><small>Scan proof for stock movement</small></span></a>' +
                     '</div>' +
                   '</div>' +
                 '</div>' +
@@ -165,6 +166,7 @@
                 '<a href="/solutions/retail-outlets.html"><i data-lucide="shopping-bag" class="w-4 h-4"></i><span><strong>Retail</strong><small>Stock, sales, and ecommerce</small></span></a>' +
                 '<a href="/solutions/multi-branch.html"><i data-lucide="network" class="w-4 h-4"></i><span><strong>Multi-branch</strong><small>Locations, inventory, and visibility</small></span></a>' +
                 '<a href="/solutions/manufacturers.html"><i data-lucide="factory" class="w-4 h-4"></i><span><strong>Manufacturing</strong><small>Production, costing, and stock flow</small></span></a>' +
+                '<a href="/solutions/rfid-stock-tracking.html"><i data-lucide="scan-line" class="w-4 h-4"></i><span><strong>RFID stock tracking</strong><small>Scan proof for stock movement</small></span></a>' +
               '</div>' +
             '</div>' +
             '<a href="/modules" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Modules</a>' +

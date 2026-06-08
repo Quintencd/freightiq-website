@@ -932,6 +932,109 @@ nav.sticky {
   box-shadow: 0 18px 50px rgba(15, 23, 42, 0.1);
 }
 
+.solution-conversion-hero video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 1.35rem;
+  background: #0f172a;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
+}
+
+.rfid-solution-hero {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  padding: clamp(1.35rem, 3.2vw, 2.55rem);
+}
+
+.rfid-solution-hero h1 {
+  font-size: clamp(2.55rem, 4.6vw, 3.85rem);
+  line-height: 0.98;
+}
+
+.rfid-solution-hero__media {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.rfid-solution-hero__caption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.rfid-solution-hero__caption span,
+.rfid-proof-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #334155;
+  font-size: 0.83rem;
+  font-weight: 850;
+  line-height: 1;
+  padding: 0.58rem 0.72rem;
+}
+
+.rfid-proof-chip {
+  border-color: rgba(249, 115, 22, 0.22);
+  background: rgba(255, 247, 237, 0.88);
+  color: #c2410c;
+}
+
+.rfid-solution-stack,
+.rfid-solution-metrics {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.35rem;
+}
+
+.rfid-solution-stack {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.rfid-solution-metrics {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.rfid-solution-metric {
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  border-radius: 1.1rem;
+  background: rgba(248, 250, 252, 0.78);
+  padding: 1rem;
+}
+
+.rfid-solution-metric strong {
+  display: block;
+  color: var(--fiq-ink);
+  font-size: 1.45rem;
+  line-height: 1;
+  font-weight: 950;
+}
+
+.rfid-solution-metric span {
+  display: block;
+  margin-top: 0.45rem;
+  color: #64748b;
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.rfid-solution-note {
+  margin-top: 1rem;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 1rem;
+  background: rgba(240, 249, 255, 0.72);
+  padding: 0.95rem 1rem;
+  color: #0f3f5c;
+  font-weight: 760;
+  line-height: 1.5;
+}
+
 .solution-conversion-section h2,
 .solution-conversion-cta h2 {
   color: var(--fiq-ink);
@@ -993,6 +1096,11 @@ nav.sticky {
   .solution-conversion-hero {
     grid-template-columns: 1fr;
   }
+
+  .rfid-solution-stack,
+  .rfid-solution-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
@@ -1026,6 +1134,11 @@ nav.sticky {
     left: 1rem;
     right: auto;
     max-width: calc(100% - 2rem);
+  }
+
+  .rfid-solution-stack,
+  .rfid-solution-metrics {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -3295,6 +3408,16 @@ nav.sticky {
   max-width: 52rem;
   font-size: clamp(1.08rem, 1.8vw, 1.35rem) !important;
   line-height: 1.58 !important;
+}
+
+.premium-light-page .fiq-auto-hero.rfid-solution-hero {
+  padding: clamp(1.35rem, 3.2vw, 2.55rem) !important;
+}
+
+.premium-light-page .fiq-auto-hero.rfid-solution-hero h1 {
+  max-width: 12ch;
+  font-size: clamp(2.55rem, 4.6vw, 3.85rem) !important;
+  line-height: 0.98 !important;
 }
 
 .premium-light-page :where(.grid > .rounded-xl, .grid > .rounded-2xl, .solution-segment-card, .route-card, .proof-card, .system-module-card, .pricing-stage-card) {
