@@ -16,7 +16,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
   <link rel="icon" type="image/png" href="/flowiq-logo.png?v=2">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/flowiq-light.css?v=23">
+  <link rel="stylesheet" href="/flowiq-light.css?v=24">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
     body{font-family:'Inter',sans-serif}
@@ -44,12 +44,12 @@
     .demo-modal.is-open{display:flex}.demo-modal__panel{position:relative;display:grid;grid-template-rows:auto minmax(0,1fr);width:min(100%,1380px);max-height:calc(100vh - 1.6rem);overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:1.1rem;background:#071126;box-shadow:0 36px 120px rgba(2,6,23,.55)}
     .demo-modal__header{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid rgba(255,255,255,.1);padding:.8rem .95rem;background:#0f172a;color:#fff}.demo-modal__header strong{font-size:1rem;font-weight:900}.demo-modal__header span{display:block;margin-top:.14rem;color:#94a3b8;font-size:.8rem;font-weight:800}.demo-modal__close{display:grid;place-items:center;width:2.5rem;height:2.5rem;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.08);color:#fff}
     .demo-modal__body{display:grid;grid-template-columns:minmax(0,1fr) 22rem;gap:0;min-height:0}.demo-video-stage{position:relative;display:grid;align-items:center;background:#020617;padding:clamp(.6rem,1.5vw,1rem)}.demo-video-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:.8rem;background:#020617;box-shadow:0 20px 70px rgba(0,0,0,.35)}
-    .demo-video-frame video{display:block;width:100%;height:100%;object-fit:contain;background:#020617}.demo-highlight{position:absolute;border:3px solid #fb923c;border-radius:.65rem;box-shadow:0 0 0 999px rgba(2,6,23,.15),0 0 28px rgba(249,115,22,.4);pointer-events:none;transition:all .28s ease}.demo-arrow{position:absolute;width:8rem;height:2px;background:linear-gradient(90deg,transparent,#fb923c);transform-origin:right center;pointer-events:none}.demo-arrow::after{content:"";position:absolute;right:0;top:50%;width:.65rem;height:.65rem;border-top:2px solid #fb923c;border-right:2px solid #fb923c;transform:translateY(-50%) rotate(45deg)}
+    .demo-video-frame video{display:block;width:100%;height:100%;object-fit:contain;background:#020617}
     .demo-caption{position:absolute;left:1rem;right:1rem;bottom:1rem;display:grid;gap:.35rem;max-width:42rem;border:1px solid rgba(255,255,255,.18);border-radius:.9rem;background:rgba(15,23,42,.86);padding:.85rem 1rem;color:#fff;box-shadow:0 18px 54px rgba(2,6,23,.38);backdrop-filter:blur(12px)}.demo-caption strong{color:#fdba74;font-size:.76rem;text-transform:uppercase;letter-spacing:.12em}.demo-caption span{font-size:1rem;line-height:1.32;font-weight:850}
     .demo-side{display:grid;grid-template-rows:auto auto minmax(0,1fr);gap:1rem;min-height:0;border-left:1px solid rgba(255,255,255,.1);background:#0f172a;color:#fff;padding:1rem;overflow:auto}.demo-side h3{font-size:1rem;font-weight:900}.demo-side p{color:#cbd5e1;font-size:.9rem;line-height:1.45;font-weight:650}.benefit-list{display:grid;gap:.55rem}.benefit-list li{display:flex;gap:.5rem;color:#e2e8f0;font-size:.88rem;line-height:1.38;font-weight:750}.benefit-list li::before{content:"";flex:0 0 .48rem;width:.48rem;height:.48rem;margin-top:.42rem;border-radius:999px;background:#f97316}.chapter-list{display:grid;gap:.5rem}.chapter-button{display:flex;align-items:center;justify-content:space-between;gap:.75rem;border:1px solid rgba(255,255,255,.1);border-radius:.75rem;background:rgba(255,255,255,.05);padding:.65rem .75rem;color:#e2e8f0;text-align:left;font-weight:850}.chapter-button.is-active{border-color:rgba(249,115,22,.55);background:rgba(249,115,22,.16);color:#fff}.chapter-button span:last-child{color:#94a3b8;font-size:.76rem}
     .walkthrough-cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem;align-items:center;margin-top:1.25rem;border-radius:1.1rem;background:#0f172a;color:#fff;padding:1.2rem 1.35rem;box-shadow:0 24px 70px rgba(15,23,42,.18)}.walkthrough-cta h2{font-size:clamp(1.45rem,2.5vw,2.35rem);line-height:1.04;font-weight:900}.walkthrough-cta p{margin-top:.35rem;color:#cbd5e1;font-weight:700}
     @media(max-width:1080px){.walkthrough-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.demo-modal__body{grid-template-columns:1fr}.demo-side{max-height:18rem;border-left:0;border-top:1px solid rgba(255,255,255,.1)}}
-    @media(max-width:760px){.walkthrough-shell{width:min(100% - 1rem,1380px);padding-top:6.5rem}.walkthrough-hero,.walkthrough-cta{grid-template-columns:1fr}.walkthrough-grid,.walkthrough-stats{grid-template-columns:1fr}.walkthrough-hero h1{font-size:clamp(2.3rem,10vw,3.25rem)}.demo-caption{position:static;margin-top:.65rem}.demo-video-frame{overflow:visible}.demo-highlight,.demo-arrow{display:none}.demo-modal{padding:.4rem}.demo-modal__panel{max-height:calc(100vh - .8rem)}}
+    @media(max-width:760px){.walkthrough-shell{width:min(100% - 1rem,1380px);padding-top:6.5rem}.walkthrough-hero,.walkthrough-cta{grid-template-columns:1fr}.walkthrough-grid,.walkthrough-stats{grid-template-columns:1fr}.walkthrough-hero h1{font-size:clamp(2.3rem,10vw,3.25rem)}.demo-caption{position:static;margin-top:.65rem}.demo-video-frame{overflow:visible}.demo-modal{padding:.4rem}.demo-modal__panel{max-height:calc(100vh - .8rem)}}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"CollectionPage","name":"FlowIQ Self-Serve Demo Library","url":"https://www.flowiq.info/walkthroughs/","description":"Guided FlowIQ product walkthroughs for prospects evaluating operations, accounting, stock, imports and reporting workflows."}
@@ -67,7 +67,7 @@
       <div>
         <span class="section-kicker">Self-serve demo library</span>
         <h1 class="mt-4">Choose the FlowIQ workflow to inspect.</h1>
-        <p class="mt-4">Send prospects one premium link instead of manually clicking through every module. Each video is a real product walkthrough with selling captions, feature callouts and chapter navigation.</p>
+        <p class="mt-4">Send prospects one premium link instead of manually clicking through every module. Each video is a real product walkthrough with selling captions and chapter navigation.</p>
         <div class="mt-6 flex flex-col sm:flex-row gap-3">
           <a href="#module-demos" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-orange-500/20">Browse demos <i data-lucide="arrow-down" class="w-5 h-5"></i></a>
           <a href="/book-demo.html" class="inline-flex items-center justify-center gap-2 glass-panel px-6 py-3 rounded-full font-bold text-slate-900">Book guided demo <i data-lucide="calendar" class="w-5 h-5 text-freight-orange"></i></a>
@@ -76,7 +76,7 @@
       <div class="walkthrough-stats" aria-label="Walkthrough library status">
         <div class="walkthrough-stat"><strong>16</strong><span>ready tours</span></div>
         <div class="walkthrough-stat"><strong>1080p</strong><span>browser only</span></div>
-        <div class="walkthrough-stat"><strong>Guided</strong><span>captions and callouts</span></div>
+        <div class="walkthrough-stat"><strong>Guided</strong><span>captions and chapters</span></div>
       </div>
     </section>
 
@@ -105,8 +105,6 @@
         <div class="demo-video-stage">
           <div class="demo-video-frame">
             <video data-demo-video controls playsinline preload="metadata"></video>
-            <div class="demo-highlight" data-demo-highlight hidden></div>
-            <div class="demo-arrow" data-demo-arrow hidden></div>
             <div class="demo-caption"><strong data-demo-caption-title>Feature</strong><span data-demo-caption-body>Caption</span></div>
           </div>
         </div>
@@ -152,7 +150,7 @@
   </script>
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
-  <script src="/assets/js/main.js?v=23"></script>
+  <script src="/assets/js/main.js?v=24"></script>
   <script>
     const demoAssetVersion = '20260608-guided-v1';
     const demos = [
@@ -184,8 +182,6 @@
     const summary = document.querySelector('[data-demo-summary]');
     const benefits = document.querySelector('[data-demo-benefits]');
     const chapters = document.querySelector('[data-demo-chapters]');
-    const highlight = document.querySelector('[data-demo-highlight]');
-    const arrow = document.querySelector('[data-demo-arrow]');
     const captionTitle = document.querySelector('[data-demo-caption-title]');
     const captionBody = document.querySelector('[data-demo-caption-body]');
     let activeDemo = null;
@@ -264,16 +260,6 @@
       const callout = activeCallout();
       captionTitle.textContent = callout.title;
       captionBody.textContent = callout.body;
-      if (callout.x != null) {
-        highlight.hidden = false;
-        highlight.style.left = `${callout.x}%`;
-        highlight.style.top = `${callout.y}%`;
-        highlight.style.width = `${callout.w}%`;
-        highlight.style.height = `${callout.h}%`;
-        arrow.hidden = false;
-        arrow.style.left = `${Math.max(3, callout.x - 7)}%`;
-        arrow.style.top = `${Math.max(8, callout.y + callout.h / 2)}%`;
-      }
       Array.from(chapters.children).forEach((button, index) => {
         const start = chapterStart(index);
         const next = index + 1 < activeDemo.chapters.length ? chapterStart(index + 1) : 99999;

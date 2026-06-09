@@ -6,7 +6,7 @@ Branch: `codex/website-walkthroughs-polish`
 
 ## Summary
 
-Built the self-serve walkthrough library into a premium selling tool for prospects. The page now uses compact website typography, guided module cards, modal video playback, sales captions, feature callouts, chapter navigation and browser-only 1080p product recordings.
+Built the self-serve walkthrough library into a premium selling tool for prospects. The page now uses compact website typography, guided module cards, modal video playback, sales captions, chapter navigation and browser-only 1080p product recordings.
 
 ## What Changed
 
@@ -17,7 +17,6 @@ Built the self-serve walkthrough library into a premium selling tool for prospec
   - module-specific benefit copy
   - chapter lists
   - timed captions
-  - orange highlight boxes and pointers over the video area
 - Added demo recording automation under `scripts/demo-recordings/`:
   - `npm run auth:demo`
   - `npm run record:demo -- <module-id>`

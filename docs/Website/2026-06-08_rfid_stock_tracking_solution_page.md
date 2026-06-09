@@ -16,6 +16,7 @@ This page explains the value of the RFID add-on in business language and embeds 
 - Added RFID solution layout styles to `flowiq-light.css`.
 - Bumped the shared CSS cache version in `assets/js/main.js`.
 - Bumped public HTML references from `assets/js/main.js?v=10` to `assets/js/main.js?v=11` so the new Solutions dropdown is not hidden by browser or CDN cache.
+- Added RFID-specific SEO metadata, Open Graph/Twitter metadata, visible search-intent copy, FAQ copy, and JSON-LD structured data for `WebPage`, `SoftwareApplication`, `VideoObject`, and `BreadcrumbList`.
 
 ## Customer-Facing Message
 
@@ -33,6 +34,24 @@ The page positions RFID as a stock movement proof layer that enriches current Fl
 The copy intentionally avoids promising uncontrolled automatic posting.
 
 The page states that RFID evidence is review-gated and that normal stock, FIFO, invoice and accounting controls remain in place. It also explains that phone cameras can scan document QR context, while UHF RFID tags normally require RFID-capable readers or encoders.
+
+## SEO Coverage
+
+The page now naturally covers business search language such as:
+
+- RFID stock tracking software.
+- RFID inventory management.
+- RFID warehouse management.
+- RFID stocktake software.
+- RFID stock transfer software.
+- RFID dispatch scanning.
+- RFID receiving proof.
+- UHF RFID stock tracking.
+- RFID barcode integration.
+- RFID tags for inventory.
+- Stock movement proof.
+
+The wording avoids keyword stuffing and keeps the page readable for clients.
 
 ## Verification Notes
 

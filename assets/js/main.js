@@ -35,7 +35,7 @@
 
   window.FlowIQStoryReveal = initStoryReveals;
 
-  var LIGHT_CSS_VERSION = '23';
+  var LIGHT_CSS_VERSION = '24';
 
   function getPageFamily(pathname) {
     var path = pathname || window.location.pathname || '/';
@@ -98,19 +98,20 @@
       var compactType = document.createElement('style');
       compactType.id = 'flowiq-compact-type-scale-css';
       compactType.textContent = [
-        '.premium-light-page .fresh-home{padding-top:clamp(6rem,8vw,7.2rem)!important}',
-        '.fiq-family-home .fresh-hero{min-height:auto!important;gap:clamp(1.5rem,4vw,3.5rem)!important;padding-block:clamp(1rem,3vw,2.2rem)!important}',
-        '.fiq-family-home .fresh-hero h1{max-width:42rem!important;font-size:clamp(2.8rem,4.8vw,4.8rem)!important;line-height:1!important;letter-spacing:0!important}',
+        '.premium-light-page .fresh-home{padding-top:clamp(5.6rem,7vw,6.6rem)!important}',
+        '.fiq-family-home .fresh-hero{min-height:auto!important;gap:clamp(1.25rem,3vw,2.5rem)!important;padding-block:clamp(.75rem,2.2vw,1.6rem)!important}',
+        '.fiq-family-home .fresh-hero h1{max-width:38rem!important;font-size:clamp(2.2rem,3.25vw,3.35rem)!important;line-height:1.05!important;letter-spacing:0!important}',
         '.fiq-family-home .fresh-hero p{font-size:clamp(1rem,1.45vw,1.18rem)!important;line-height:1.55!important}',
-        '.fiq-family-home .homepage-tour-band h2,.fiq-family-home .fresh-flow-band h2,.fiq-family-home .fresh-section h2,.fiq-family-home .fresh-cta h2{font-size:clamp(1.9rem,3.2vw,3.25rem)!important;line-height:1.03!important;letter-spacing:0!important}',
-        '.premium-light-page .solution-conversion-hero{padding:clamp(1.4rem,3vw,2.5rem)!important;gap:clamp(1.25rem,3vw,2.35rem)!important}',
-        '.premium-light-page .solution-conversion-hero h1{max-width:15ch!important;font-size:clamp(2rem,3.1vw,3.1rem)!important;line-height:1.06!important;letter-spacing:0!important}',
+        '.fiq-family-home .homepage-tour-band h2,.fiq-family-home .fresh-flow-band h2,.fiq-family-home .fresh-section h2,.fiq-family-home .fresh-cta h2{font-size:clamp(1.55rem,2.45vw,2.5rem)!important;line-height:1.08!important;letter-spacing:0!important}',
+        '.premium-light-page .solution-conversion-hero{padding:clamp(1.15rem,2.4vw,1.9rem)!important;gap:clamp(1rem,2.3vw,1.8rem)!important}',
+        '.premium-light-page .solution-conversion-hero h1{max-width:18ch!important;font-size:clamp(1.85rem,2.55vw,2.65rem)!important;line-height:1.1!important;letter-spacing:0!important}',
         '.premium-light-page .solution-conversion-hero p{font-size:clamp(1rem,1.35vw,1.12rem)!important;line-height:1.55!important}',
-        '.premium-light-page .fiq-auto-hero :where(h1,h2){font-size:clamp(2.2rem,4vw,4rem)!important;line-height:1.04!important;letter-spacing:0!important}',
-        '.premium-light-page .fiq-redesign-title{font-size:clamp(2.35rem,4.6vw,4.5rem)!important;line-height:1!important;letter-spacing:0!important}',
-        '.fiq-family-pricing #scale-path,.fiq-family-pricing h1{font-size:clamp(2.2rem,3.8vw,3.85rem)!important;line-height:1.04!important}',
-        '.fiq-family-article h1,.fiq-family-glossary h1,.fiq-family-compare h1,.fiq-family-use-cases h1,.fiq-family-legal h1{font-size:clamp(2.1rem,4vw,4rem)!important;line-height:1.06!important}',
-        '@media(max-width:720px){.fiq-family-home .fresh-hero h1,.premium-light-page .fiq-auto-hero :where(h1,h2),.premium-light-page .solution-conversion-hero h1,.premium-light-page .fiq-redesign-title{font-size:clamp(2.35rem,10vw,3.4rem)!important;line-height:1.03!important;max-width:none!important}}'
+        '.premium-light-page .fiq-auto-hero :where(h1,h2){font-size:clamp(1.9rem,2.9vw,3rem)!important;line-height:1.08!important;letter-spacing:0!important}',
+        '.premium-light-page .fiq-redesign-title{font-size:clamp(2rem,3.15vw,3.25rem)!important;line-height:1.06!important;letter-spacing:0!important}',
+        '.fiq-family-pricing #scale-path,.fiq-family-pricing h1{font-size:clamp(1.95rem,2.9vw,3rem)!important;line-height:1.08!important}',
+        '.fiq-family-article h1,.fiq-family-glossary h1,.fiq-family-compare h1,.fiq-family-use-cases h1,.fiq-family-legal h1{font-size:clamp(1.9rem,3vw,3.1rem)!important;line-height:1.1!important}',
+        '.premium-light-page main > :where(section,article):first-of-type :where(h1,.fiq-redesign-title){font-size:clamp(1.9rem,3vw,3.1rem)!important;line-height:1.08!important;letter-spacing:0!important}',
+        '@media(max-width:720px){.fiq-family-home .fresh-hero h1,.premium-light-page .fiq-auto-hero :where(h1,h2),.premium-light-page .solution-conversion-hero h1,.premium-light-page .fiq-redesign-title,.premium-light-page main > :where(section,article):first-of-type :where(h1,.fiq-redesign-title){font-size:clamp(1.9rem,8vw,2.45rem)!important;line-height:1.08!important;max-width:none!important}}'
       ].join('');
       document.head.appendChild(compactType);
     }
