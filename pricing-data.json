@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-06T08:06:56.531Z",
+  "generated_at_utc": "2026-06-17T11:35:16.461Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -118,8 +118,8 @@
           "name": "AI Auto Capture",
           "price": 519,
           "limit": 1,
-          "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 50 monthly capture credits.",
+          "unit": "150 capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 150 monthly capture credits.",
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
@@ -282,9 +282,9 @@
           "price": 590,
           "limit": 1,
           "unit": "workspace",
-          "description": "AccountingIQ advanced reconciliation, payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
           "value_points": [
-            "Speeds up customer and supplier payment matching while keeping review controls in place",
+            "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
           ],
           "tier_group": null,
@@ -440,8 +440,8 @@
           "name": "AI Auto Capture",
           "price": 519,
           "limit": 1,
-          "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 50 monthly capture credits.",
+          "unit": "150 capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 150 monthly capture credits.",
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
@@ -604,9 +604,9 @@
           "price": 590,
           "limit": 1,
           "unit": "workspace",
-          "description": "AccountingIQ advanced reconciliation, payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
           "value_points": [
-            "Speeds up customer and supplier payment matching while keeping review controls in place",
+            "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
           ],
           "tier_group": null,
@@ -765,8 +765,8 @@
           "name": "AI Auto Capture",
           "price": 519,
           "limit": 1,
-          "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 50 monthly capture credits.",
+          "unit": "150 capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 150 monthly capture credits.",
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
@@ -929,9 +929,9 @@
           "price": 590,
           "limit": 1,
           "unit": "workspace",
-          "description": "AccountingIQ advanced reconciliation, payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
           "value_points": [
-            "Speeds up customer and supplier payment matching while keeping review controls in place",
+            "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
           ],
           "tier_group": null,
@@ -1110,8 +1110,8 @@
           "name": "AI Auto Capture",
           "price": 519,
           "limit": 1,
-          "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 50 monthly capture credits.",
+          "unit": "150 capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 150 monthly capture credits.",
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
@@ -1274,9 +1274,9 @@
           "price": 590,
           "limit": 1,
           "unit": "workspace",
-          "description": "AccountingIQ advanced reconciliation, payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
           "value_points": [
-            "Speeds up customer and supplier payment matching while keeping review controls in place",
+            "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
           ],
           "tier_group": null,
@@ -1431,8 +1431,8 @@
           "name": "AI Auto Capture",
           "price": 519,
           "limit": 1,
-          "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 50 monthly capture credits.",
+          "unit": "150 capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 150 monthly capture credits.",
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
@@ -1595,9 +1595,9 @@
           "price": 590,
           "limit": 1,
           "unit": "workspace",
-          "description": "AccountingIQ advanced reconciliation, payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
           "value_points": [
-            "Speeds up customer and supplier payment matching while keeping review controls in place",
+            "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
           ],
           "tier_group": null,
@@ -1731,8 +1731,8 @@
           "name": "AI Auto Capture",
           "price": 519,
           "limit": 1,
-          "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 50 monthly capture credits.",
+          "unit": "150 capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 150 monthly capture credits.",
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
@@ -1895,9 +1895,9 @@
           "price": 590,
           "limit": 1,
           "unit": "workspace",
-          "description": "AccountingIQ advanced reconciliation, payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
           "value_points": [
-            "Speeds up customer and supplier payment matching while keeping review controls in place",
+            "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
           ],
           "tier_group": null,
@@ -2036,8 +2036,8 @@
           "name": "AI Auto Capture",
           "price": 519,
           "limit": 1,
-          "unit": "50 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 50 monthly capture credits.",
+          "unit": "150 capture credits",
+          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 150 monthly capture credits.",
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
@@ -2200,9 +2200,9 @@
           "price": 590,
           "limit": 1,
           "unit": "workspace",
-          "description": "AccountingIQ advanced reconciliation, payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
           "value_points": [
-            "Speeds up customer and supplier payment matching while keeping review controls in place",
+            "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
           ],
           "tier_group": null,
