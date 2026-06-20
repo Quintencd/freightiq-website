@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-17T11:35:16.461Z",
+  "generated_at_utc": "2026-06-20T05:18:10.339Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -10,6 +10,175 @@
     "scale",
     "enterprise"
   ],
+  "industry_module_recommendations": {
+    "title": "Find the Right Modules for Your Industry",
+    "subtitle": "Select your industry to see the modules most commonly used by businesses like yours.",
+    "industries": [
+      {
+        "key": "importers",
+        "label": "Importers",
+        "summary": "Most importers use InventoryIQ, PurchaseIQ, ImportIQ, ForecastIQ, AccountingIQ, PayrollIQ and AI Auto Capture to manage stock, purchasing, landed costs, payroll and document capture.",
+        "modules": [
+          "InventoryIQ",
+          "PurchaseIQ",
+          "ImportIQ",
+          "ForecastIQ",
+          "AccountingIQ",
+          "PayrollIQ"
+        ],
+        "selectableAddOns": [
+          "forecasting_intelligence_pack",
+          "accounting_reconciliation_pack",
+          "payroll_pack",
+          "ai_auto_capture"
+        ]
+      },
+      {
+        "key": "distributors",
+        "label": "Distributors",
+        "summary": "Most distributors use InventoryIQ, PurchaseIQ, ForecastIQ, DeliveryIQ, AccountingIQ, PayrollIQ and AI Auto Capture to keep replenishment, delivery, finance, payroll and capture workflows connected.",
+        "modules": [
+          "InventoryIQ",
+          "PurchaseIQ",
+          "ForecastIQ",
+          "DeliveryIQ",
+          "AccountingIQ",
+          "PayrollIQ"
+        ],
+        "selectableAddOns": [
+          "forecasting_intelligence_pack",
+          "accounting_reconciliation_pack",
+          "payroll_pack",
+          "ai_auto_capture"
+        ]
+      },
+      {
+        "key": "manufacturers",
+        "label": "Manufacturers",
+        "summary": "Most manufacturers use InventoryIQ, ManufacturingIQ, PurchaseIQ, ForecastIQ, AccountingIQ, PayrollIQ and AI Auto Capture to plan materials, production, labour, cost control and document capture.",
+        "modules": [
+          "InventoryIQ",
+          "ManufacturingIQ",
+          "PurchaseIQ",
+          "ForecastIQ",
+          "AccountingIQ",
+          "PayrollIQ"
+        ],
+        "selectableAddOns": [
+          "forecasting_intelligence_pack",
+          "accounting_reconciliation_pack",
+          "payroll_pack",
+          "ai_auto_capture"
+        ]
+      },
+      {
+        "key": "multi_branch",
+        "label": "Multi-Branch Businesses",
+        "summary": "Most multi-branch businesses use InventoryIQ, PurchaseIQ, ForecastIQ, DeliveryIQ, AccountingIQ, PayrollIQ and AI Auto Capture to control stock, demand, payroll, capture and branch accountability.",
+        "modules": [
+          "InventoryIQ",
+          "PurchaseIQ",
+          "ForecastIQ",
+          "DeliveryIQ",
+          "AccountingIQ",
+          "PayrollIQ"
+        ],
+        "selectableAddOns": [
+          "forecasting_intelligence_pack",
+          "accounting_reconciliation_pack",
+          "business_units",
+          "payroll_pack",
+          "ai_auto_capture"
+        ]
+      },
+      {
+        "key": "retail_pos",
+        "label": "Retail & POS",
+        "summary": "Most retail and POS teams use InventoryIQ, ForecastIQ, AccountingIQ, BankingIQ, SlipsIQ, PayrollIQ and AI Auto Capture to connect tills, stock, cash controls, payroll and slip capture.",
+        "modules": [
+          "InventoryIQ",
+          "ForecastIQ",
+          "AccountingIQ",
+          "BankingIQ",
+          "SlipsIQ",
+          "PayrollIQ"
+        ],
+        "selectableAddOns": [
+          "forecasting_intelligence_pack",
+          "accounting_reconciliation_pack",
+          "posiq_till_integration_pack",
+          "payroll_pack",
+          "ai_auto_capture"
+        ]
+      },
+      {
+        "key": "wholesalers",
+        "label": "Wholesalers",
+        "summary": "Most wholesalers use InventoryIQ, PurchaseIQ, ForecastIQ, DeliveryIQ, AccountingIQ, PayrollIQ and AI Auto Capture to manage volume sales, stock availability, deliveries, payroll and documents.",
+        "modules": [
+          "InventoryIQ",
+          "PurchaseIQ",
+          "ForecastIQ",
+          "DeliveryIQ",
+          "AccountingIQ",
+          "PayrollIQ"
+        ],
+        "selectableAddOns": [
+          "forecasting_intelligence_pack",
+          "accounting_reconciliation_pack",
+          "payroll_pack",
+          "ai_auto_capture"
+        ]
+      },
+      {
+        "key": "service_businesses",
+        "label": "Service Businesses",
+        "summary": "Most service businesses use TaskIQ, InvoiceIQ, AccountingIQ, BankingIQ, PayrollIQ and AI Auto Capture to keep work, billing, payroll, payments and document capture in one place.",
+        "modules": [
+          "TaskIQ",
+          "InvoiceIQ",
+          "AccountingIQ",
+          "BankingIQ",
+          "PayrollIQ"
+        ],
+        "selectableAddOns": [
+          "accounting_reconciliation_pack",
+          "workiq_addon",
+          "projectsiq_addon",
+          "payroll_pack",
+          "ai_auto_capture"
+        ]
+      },
+      {
+        "key": "ecommerce",
+        "label": "Ecommerce",
+        "summary": "Most ecommerce teams use InventoryIQ, PurchaseIQ, ForecastIQ, AccountingIQ, DeliveryIQ, PayrollIQ and AI Auto Capture to connect online demand to stock, purchasing, fulfilment, payroll and capture.",
+        "modules": [
+          "InventoryIQ",
+          "PurchaseIQ",
+          "ForecastIQ",
+          "AccountingIQ",
+          "DeliveryIQ",
+          "PayrollIQ"
+        ],
+        "selectableAddOns": [
+          "ecom_pack",
+          "forecasting_intelligence_pack",
+          "accounting_reconciliation_pack",
+          "payroll_pack",
+          "ai_auto_capture"
+        ]
+      },
+      {
+        "key": "custom_other",
+        "label": "Custom / Other",
+        "summary": "",
+        "modules": [],
+        "selectableAddOns": [],
+        "showRecommendations": false
+      }
+    ]
+  },
   "plans": {
     "starter_lite": {
       "key": "starter_lite",
@@ -207,7 +376,7 @@
         },
         "business_units": {
           "name": "Business Units",
-          "price": 990,
+          "price": 600,
           "limit": 1,
           "unit": "workspace",
           "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
@@ -529,7 +698,7 @@
         },
         "business_units": {
           "name": "Business Units",
-          "price": 990,
+          "price": 600,
           "limit": 1,
           "unit": "workspace",
           "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
@@ -854,7 +1023,7 @@
         },
         "business_units": {
           "name": "Business Units",
-          "price": 990,
+          "price": 600,
           "limit": 1,
           "unit": "workspace",
           "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
@@ -1199,7 +1368,7 @@
         },
         "business_units": {
           "name": "Business Units",
-          "price": 990,
+          "price": 600,
           "limit": 1,
           "unit": "workspace",
           "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
@@ -1520,7 +1689,7 @@
         },
         "business_units": {
           "name": "Business Units",
-          "price": 990,
+          "price": 600,
           "limit": 1,
           "unit": "workspace",
           "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
@@ -1820,7 +1989,7 @@
         },
         "business_units": {
           "name": "Business Units",
-          "price": 990,
+          "price": 600,
           "limit": 1,
           "unit": "workspace",
           "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
@@ -2125,7 +2294,7 @@
         },
         "business_units": {
           "name": "Business Units",
-          "price": 990,
+          "price": 600,
           "limit": 1,
           "unit": "workspace",
           "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
