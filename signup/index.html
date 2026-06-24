@@ -1403,8 +1403,12 @@
             // Form submission
             // IMPORTANT: Signup creates the account only. Users must manually sign in afterwards.
             console.log('Signup form initialized - login required after account creation');
+            let signupRequestInFlight = false;
             document.getElementById('signupForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+            if (signupRequestInFlight) {
+                return;
+            }
             window.FlowIQWebsiteAnalytics?.track('web_signup_start', {
                 form_name: 'signupForm',
                 account_type: (document.getElementById('accountType')?.value || 'organization').toLowerCase()
@@ -1414,6 +1418,7 @@
             const buttonText = document.getElementById('buttonText');
             const loadingSpinner = document.getElementById('loadingSpinner');
             const messageDiv = document.getElementById('message');
+            signupRequestInFlight = true;
             
             // Clear previous errors
             clearAllFieldErrors();
@@ -1851,6 +1856,7 @@
                 messageDiv.classList.remove('hidden');
             } finally {
                 // Reset button state
+                signupRequestInFlight = false;
                 submitButton.disabled = false;
                 if (typeof window.FlowIQSignupRefreshPlanUI === 'function') {
                     window.FlowIQSignupRefreshPlanUI();

@@ -2,6 +2,12 @@
 
 ## [1.3.13] - June 24, 2026
 
+### Signup Duplicate-Submit Guard
+
+- Added an in-flight guard to `/signup` so repeat clicks do not send parallel `public-signup` requests.
+- This supports the backend `public-signup` duplicate-email guard deployed on the same date.
+- No Netlify deploy was run.
+
 ### Signup Accountant Registration Restore
 
 - Restored the accountant-firm registration block on `/signup` so selecting `Accountant Firm` reveals professional body and practitioner/registration number fields.
