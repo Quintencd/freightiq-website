@@ -1,5 +1,19 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.13] - June 24, 2026
+
+### Signup Accountant Registration Restore
+
+- Restored the accountant-firm registration block on `/signup` so selecting `Accountant Firm` reveals professional body and practitioner/registration number fields.
+- Wired those fields into accountant-only validation and the `public-signup` payload using the backend's canonical field names plus existing aliases.
+- Added the same registration values to the signup support notification.
+- Added documentation under `docs/Website/2026-06-24_signup_accountant_registration_restore.md`.
+- No Netlify deploy was run.
+
+### Regression Risk Notes (>10%)
+
+- **10-15%**: Accountant-firm completion may drop for firms that do not have registration details ready, but the backend already requires these values, so the page now prevents hidden server-side failures.
+
 ## [1.3.12] - June 8, 2026
 
 ### Tracking Trust + Demo CTA + Sitemap Cleanup

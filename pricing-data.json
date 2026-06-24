@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-23T07:15:04.940Z",
+  "generated_at_utc": "2026-06-23T08:34:42.355Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -246,13 +246,13 @@
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
-          "price": 150,
-          "limit": 2,
-          "unit": "100 SKUs",
-          "description": "100 additional SKUs",
+          "price": 2250,
+          "limit": 1,
+          "unit": "250 SKUs",
+          "description": "250 additional SKUs",
           "value_points": [
-            "Keeps inventory, costing, purchasing, and sales history in one system while the catalogue grows",
-            "Limited to two packs per plan so larger catalogues still graduate to the right package"
+            "Keeps inventory, costing, purchasing, and sales history in one system",
+            "Buys more catalogue headroom without paying for unused warehouses"
           ],
           "tier_group": null,
           "tier_label": null
@@ -555,13 +555,13 @@
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
-          "price": 150,
+          "price": 2250,
           "limit": 2,
-          "unit": "100 SKUs",
-          "description": "100 additional SKUs",
+          "unit": "250 SKUs",
+          "description": "250 additional SKUs",
           "value_points": [
-            "Keeps inventory, costing, purchasing, and sales history in one system while the catalogue grows",
-            "Limited to two packs per plan so larger catalogues still graduate to the right package"
+            "Keeps inventory, costing, purchasing, and sales history in one system",
+            "Buys more catalogue headroom without paying for unused warehouses"
           ],
           "tier_group": null,
           "tier_label": null
@@ -880,13 +880,13 @@
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
-          "price": 150,
-          "limit": 2,
-          "unit": "100 SKUs",
-          "description": "100 additional SKUs",
+          "price": 1950,
+          "limit": 1,
+          "unit": "250 SKUs",
+          "description": "250 additional SKUs",
           "value_points": [
-            "Keeps inventory, costing, purchasing, and sales history in one system while the catalogue grows",
-            "Limited to two packs per plan so larger catalogues still graduate to the right package"
+            "Keeps inventory, costing, purchasing, and sales history in one system",
+            "Buys more catalogue headroom without paying for unused warehouses"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1212,13 +1212,13 @@
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
-          "price": 150,
+          "price": 1650,
           "limit": 2,
-          "unit": "100 SKUs",
-          "description": "100 additional SKUs",
+          "unit": "500 SKUs",
+          "description": "500 additional SKUs",
           "value_points": [
-            "Keeps inventory, costing, purchasing, and sales history in one system while the catalogue grows",
-            "Limited to two packs per plan so larger catalogues still graduate to the right package"
+            "Keeps inventory, costing, purchasing, and sales history in one system",
+            "Buys more catalogue headroom without paying for unused warehouses"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1559,13 +1559,13 @@
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
-          "price": 150,
+          "price": 2200,
           "limit": 2,
-          "unit": "100 SKUs",
-          "description": "100 additional SKUs",
+          "unit": "1,000 SKUs",
+          "description": "1,000 additional SKUs",
           "value_points": [
-            "Keeps inventory, costing, purchasing, and sales history in one system while the catalogue grows",
-            "Limited to two packs per plan so larger catalogues still graduate to the right package"
+            "Keeps inventory, costing, purchasing, and sales history in one system",
+            "Buys more catalogue headroom without paying for unused warehouses"
           ],
           "tier_group": null,
           "tier_label": null

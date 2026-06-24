@@ -37,6 +37,11 @@ function buildEmailText(payload) {
   lines.push('Organization');
   lines.push('-------------');
   lines.push(`Company:     ${payload.org_name || payload.company_name || '(not provided)'}`);
+  lines.push(`Account type: ${payload.account_type || 'organization'}`);
+  if (payload.account_type === 'accountant_firm') {
+    lines.push(`Professional body: ${payload.accountant_tax_controlling_body || payload.accountant_professional_body || '(not provided)'}`);
+    lines.push(`Practitioner/registration no: ${payload.accountant_tax_practitioner_registration_number || payload.accountant_registration_number || '(not provided)'}`);
+  }
   lines.push(`Signup source: ${payload.signup_source || 'public_signup'}`);
   lines.push('');
   lines.push('Legal');
@@ -108,6 +113,11 @@ exports.handler = async (event) => {
       last_name: (body.last_name || '').toString().trim(),
       org_name: orgName,
       company_name: orgName,
+      account_type: (body.account_type || 'organization').toString().trim(),
+      accountant_professional_body: (body.accountant_professional_body || '').toString().trim(),
+      accountant_registration_number: (body.accountant_registration_number || '').toString().trim(),
+      accountant_tax_controlling_body: (body.accountant_tax_controlling_body || '').toString().trim(),
+      accountant_tax_practitioner_registration_number: (body.accountant_tax_practitioner_registration_number || '').toString().trim(),
       signup_source: (body.signup_source || 'public_signup').toString().trim(),
       terms_accepted: body.terms_accepted,
       terms_version: (body.terms_version || '').toString().trim(),
