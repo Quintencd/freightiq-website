@@ -1,5 +1,20 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.14] - June 25, 2026
+
+### Accountant Signup Email-Only Registration
+
+- Removed the public `/signup` accountant-firm professional body and practitioner/registration number fields.
+- Accountant firms now register with their FlowIQ email/password and complete firm-code activation inside Accountant HQ after login.
+- Updated the signup notification payload so support emails no longer expect accountant registration values.
+- Updated `public-signup` so accountant firm signup no longer fails when those registration values are absent.
+- Added documentation under `docs/Website/2026-06-25_signup_accountant_email_only_hq_activation.md`.
+- No Netlify deploy was run.
+
+### Regression Risk Notes (>10%)
+
+- **10-12%**: Existing accountant visitors who expected to enter a professional registration number during public signup may look for that field. Mitigation: the public form is shorter, and the firm code is now captured in the authenticated Accountant HQ activation flow where the profile is actually managed.
+
 ## [1.3.13] - June 24, 2026
 
 ### Signup Duplicate-Submit Guard
