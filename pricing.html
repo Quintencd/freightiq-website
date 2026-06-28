@@ -204,10 +204,10 @@
 
     <section id="pricing-addons-section" class="max-w-7xl mx-auto mb-12">
       <div class="mb-6 text-center">
-        <p class="text-xs font-black uppercase tracking-[0.18em] text-orange-600">Modular add-ons</p>
-        <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900">Add specialist tools only when you need them</h2>
+        <p class="text-xs font-black uppercase tracking-[0.18em] text-orange-600">Available add-on modules</p>
+        <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900">Add the modules your business needs</h2>
         <p class="mx-auto mt-3 max-w-3xl text-sm font-semibold leading-6 text-slate-600">
-          Start with the right base plan, then add ecommerce, payroll, reconciliation, forecasting, messaging, or automation as your operation grows.
+          FlowIQ is modular by design. Start with your base plan, then add specialist tools like ForecastIQ, ManufacturingIQ, BankingIQ, CRM, WarrantyIQ and more when your team needs them.
         </p>
       </div>
       <div id="industry-module-filter" class="mb-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -233,6 +233,29 @@
       </div>
       <div id="pricing-addons-grid" class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         <!-- Add-ons rendered by JavaScript -->
+      </div>
+      <div class="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50/70 p-5 text-center shadow-sm">
+        <p class="text-sm font-bold leading-6 text-emerald-950">
+          Module pricing is shown transparently inside your FlowIQ workspace before activation. No module is activated without confirmation.
+        </p>
+        <p class="mt-2 text-sm font-semibold leading-6 text-emerald-900">
+          Pricing for each module is shown clearly inside your workspace before activation.
+        </p>
+      </div>
+      <div class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm md:p-8">
+        <h3 class="text-2xl font-black tracking-tight text-slate-900">Build FlowIQ around how your business actually works.</h3>
+        <p class="mx-auto mt-3 max-w-2xl text-sm font-semibold leading-6 text-slate-600">
+          Start with your base plan, then add the modules your team needs as you grow.
+        </p>
+        <p class="mt-2 text-sm font-black text-orange-600">Start your trial and customise your workspace.</p>
+        <div class="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+          <a href="/signup" data-analytics-event="pricing_start_trial_click" data-analytics-position="pricing_modules_primary" data-analytics-label="pricing modules start trial" class="inline-flex items-center justify-center rounded-xl bg-orange-500 px-6 py-3 text-sm font-black text-white transition hover:bg-orange-600">
+            Start free trial
+          </a>
+          <a href="/book-demo" data-analytics-event="pricing_book_demo_click" data-analytics-position="pricing_modules_secondary" data-analytics-label="pricing modules book demo" class="inline-flex items-center justify-center rounded-xl border border-slate-300 px-6 py-3 text-sm font-black text-slate-700 transition hover:bg-slate-100">
+            Book a demo
+          </a>
+        </div>
       </div>
     </section>
 
@@ -300,9 +323,9 @@
     let planOrder = [];
     let industryRecommendationConfig = { industries: [] };
     let selectedIndustryKey = '';
-    let selectedAddOns = {};
-
     let billingInterval = 'monthly';
+    const trackedModulePreviewViews = new Set();
+    const trackedBasePlanViews = new Set();
 
     function setBillingInterval(interval) {
       billingInterval = interval;
@@ -369,28 +392,28 @@
       professional: { monthly: 479, annual: 5173 },
       scale: { monthly: 779, annual: 8413 }
     };
-    const MARKETING_USD_ADD_ON_PRICES = {
-      agentsiq_usage_pack: 12,
-      ai_auto_capture: 29,
-      ai_agents_pack: 29,
-      forecasting_intelligence_pack: 179,
-      ecom_pack: 49,
-      messaging_pack: 24,
-      posiq_till_integration_pack: 59,
-      payroll_pack: 29,
-      business_units: 59,
-      projectsiq_addon: 89,
-      projectsiq_growth: 149,
-      projectsiq_unlimited: 239,
-      accounting_reconciliation_pack: 35,
-      commission_rebate_automation_pack: 35,
-      extra_users: 6
-    };
     const pricingCurrencyState = {
       selected: detectInitialCurrency(),
       country: ''
     };
     const INDUSTRY_RECOMMENDATION_TOOLTIP = 'Based on common module combinations selected by similar businesses.';
+    const addOnCategoryLabels = {
+      agentsiq_usage_pack: 'AI',
+      ai_auto_capture: 'AI capture',
+      ai_agents_pack: 'AI automation',
+      forecasting_intelligence_pack: 'Forecasting',
+      ecom_pack: 'Ecommerce',
+      messaging_pack: 'Messaging',
+      posiq_till_integration_pack: 'Retail',
+      payroll_pack: 'Payroll',
+      business_units: 'Multi-entity',
+      projectsiq_addon: 'Projects',
+      projectsiq_growth: 'Projects',
+      projectsiq_unlimited: 'Projects',
+      accounting_reconciliation_pack: 'Finance',
+      commission_rebate_automation_pack: 'Sales operations',
+      extra_users: 'Capacity'
+    };
 
     function detectInitialCurrency() {
       const language = String(navigator.language || '').toLowerCase();
@@ -437,12 +460,6 @@
       return roundedUsdFromZar(pricing?.amount);
     }
 
-    function getAddOnUsdAmount(addOnKey, addOn) {
-      const override = MARKETING_USD_ADD_ON_PRICES[addOnKey];
-      if (typeof override === 'number') return override;
-      return roundedUsdFromZar(addOn?.price);
-    }
-
     function getIndustryRecommendation(industryKey) {
       return (industryRecommendationConfig.industries || []).find((industry) => industry.key === industryKey) || null;
     }
@@ -464,29 +481,9 @@
       });
     }
 
-    function selectedAddOnKeys() {
-      return Object.keys(selectedAddOns).filter((key) => Number(selectedAddOns[key] || 0) > 0).sort();
-    }
-
-    function selectedAddOnMonthlyTotal() {
-      return selectedAddOnKeys().reduce((total, addOnKey) => {
-        const addOn = getRepresentativeAddOn(addOnKey);
-        return total + Number(addOn?.price || 0) * Number(selectedAddOns[addOnKey] || 0);
-      }, 0);
-    }
-
-    function selectedAddOnUsdMonthlyTotal() {
-      return selectedAddOnKeys().reduce((total, addOnKey) => {
-        const addOn = getRepresentativeAddOn(addOnKey);
-        return total + Number(getAddOnUsdAmount(addOnKey, addOn) || 0) * Number(selectedAddOns[addOnKey] || 0);
-      }, 0);
-    }
-
     function trackPricingIndustryEvent(eventName, payload) {
       const data = Object.assign({
         industry_key: selectedIndustryKey || null,
-        selected_modules: selectedAddOnKeys().join(','),
-        selected_module_count: selectedAddOnKeys().length,
         page_path: window.location.pathname
       }, payload || {});
       if (window.FlowIQGrowthAnalytics && typeof window.FlowIQGrowthAnalytics.trackEvent === 'function') {
@@ -495,6 +492,47 @@
       if (window.FlowIQWebsiteAnalytics && typeof window.FlowIQWebsiteAnalytics.track === 'function') {
         window.FlowIQWebsiteAnalytics.track(eventName, data);
       }
+    }
+
+    function moduleCategoryFor(addOnKey, recommended) {
+      const industry = getIndustryRecommendation(selectedIndustryKey);
+      if (recommended && industry?.label) return industry.label;
+      return addOnCategoryLabels[addOnKey] || 'Module';
+    }
+
+    function trackModulePreviewView(addOnKey, moduleName, moduleCategory) {
+      if (trackedModulePreviewViews.has(addOnKey)) return;
+      trackedModulePreviewViews.add(addOnKey);
+      trackPricingIndustryEvent('module_preview_view', {
+        module_key: addOnKey,
+        module_name: moduleName,
+        module_category: moduleCategory,
+        source: 'public_pricing_page'
+      });
+    }
+
+    function trackModulePreviewClick(addOnKey, moduleName, moduleCategory) {
+      trackPricingIndustryEvent('module_preview_click', {
+        module_key: addOnKey,
+        module_name: moduleName,
+        module_category: moduleCategory,
+        source: 'public_pricing_page'
+      });
+    }
+
+    function trackBasePlanViews() {
+      planOrder.forEach((planKey) => {
+        if (trackedBasePlanViews.has(planKey)) return;
+        const plan = plans[planKey];
+        if (!plan) return;
+        trackedBasePlanViews.add(planKey);
+        trackPricingIndustryEvent('pricing_base_plan_view', {
+          plan_key: planKey,
+          plan_name: plan.name || planKey,
+          billing_interval: billingInterval,
+          source: 'public_pricing_page'
+        });
+      });
     }
 
     const addOnFallbackCopy = {
@@ -579,63 +617,44 @@
             ? addOn.value_points
             : (fallback.value_points || []);
           const name = addOn.name || fallback.name || addOnKey.replace(/_/g, ' ');
-          const price = typeof addOn.price === 'number' ? formatMarketingAmount(addOn.price, getAddOnUsdAmount(addOnKey, addOn)) : 'Custom';
-          const unit = addOnKey === 'messaging_pack'
-            ? 'per month + WhatsApp API fees'
-            : addOnKey === 'extra_users'
-              ? 'per user / month'
-            : 'per month';
-          const availability = addOnKey === 'extra_users'
-            ? 'Starter+ seat expansion'
-            : 'Available on every paid plan';
           const recommended = recommendedSet.has(addOnKey);
-          const selected = Number(selectedAddOns[addOnKey] || 0) > 0;
+          const category = moduleCategoryFor(addOnKey, recommended);
+          trackModulePreviewView(addOnKey, name, category);
           return `
             <article class="rounded-2xl border ${recommended ? 'border-emerald-200 bg-emerald-50/40 ring-1 ring-emerald-100' : 'border-slate-200 bg-white'} p-5 shadow-sm" ${recommended ? `title="${INDUSTRY_RECOMMENDATION_TOOLTIP}"` : ''}>
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <div class="flex flex-wrap items-center gap-2">
-                    <h3 class="text-base font-black text-slate-900">${name}</h3>
-                    ${recommended ? '<span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-black text-emerald-700 ring-1 ring-emerald-100">✓ Most Popular</span>' : ''}
-                  </div>
-                  <p class="mt-1 text-xs font-black uppercase tracking-[0.14em] text-orange-600">${availability}</p>
+              <div class="flex h-full flex-col">
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-base font-black text-slate-900">${name}</h3>
+                  ${recommended ? '<span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-black text-emerald-700 ring-1 ring-emerald-100">✓ Recommended</span>' : ''}
                 </div>
-                <div class="text-right">
-                  <div class="text-2xl font-black text-slate-900">${price}</div>
-                  <div class="text-[11px] font-bold text-slate-500">${unit}</div>
+                <div class="mt-2 inline-flex w-fit rounded-full bg-orange-50 px-2.5 py-1 text-[11px] font-black uppercase tracking-[0.12em] text-orange-700 ring-1 ring-orange-100">
+                  ${category}
                 </div>
+                <p class="mt-3 text-sm leading-6 text-slate-600">${addOn.description || ''}</p>
+                <ul class="mt-4 space-y-2">
+                  ${points.slice(0, 2).map((point) => `
+                    <li class="flex gap-2 text-xs font-semibold leading-5 text-slate-700">
+                      <span class="mt-0.5 text-emerald-500">✓</span>
+                      <span>${point}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+                <a href="/signup" data-module-preview="${addOnKey}" data-module-name="${name}" data-module-category="${category}" data-analytics-event="module_preview_click" data-analytics-position="pricing_module_preview" data-analytics-label="${name}" class="mt-5 inline-flex w-full items-center justify-center rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-black text-white transition hover:bg-slate-800">
+                  ${recommended ? 'View in workspace' : 'Start trial to customise'}
+                </a>
               </div>
-              <p class="mt-3 text-sm leading-6 text-slate-600">${addOn.description || ''}</p>
-              <ul class="mt-4 space-y-2">
-                ${points.slice(0, 2).map((point) => `
-                  <li class="flex gap-2 text-xs font-semibold leading-5 text-slate-700">
-                    <span class="mt-0.5 text-emerald-500">✓</span>
-                    <span>${point}</span>
-                  </li>
-                `).join('')}
-              </ul>
-              <button type="button" data-addon-toggle="${addOnKey}" class="mt-5 inline-flex w-full items-center justify-center rounded-lg px-4 py-2.5 text-sm font-black transition ${selected ? 'bg-emerald-50 text-emerald-700' : 'bg-slate-900 text-white hover:bg-slate-800'}">
-                ${selected ? 'Added to stack' : 'Add to stack'}
-              </button>
             </article>
           `;
         })
         .filter(Boolean);
       container.innerHTML = cards.join('');
-      container.querySelectorAll('[data-addon-toggle]').forEach((button) => {
-        button.addEventListener('click', () => {
-          const addOnKey = button.getAttribute('data-addon-toggle');
-          const recommended = recommendedSet.has(addOnKey);
-          const isSelected = Number(selectedAddOns[addOnKey] || 0) > 0;
-          if (isSelected) {
-            delete selectedAddOns[addOnKey];
-            if (recommended) trackPricingIndustryEvent('pricing_recommended_module_removed', { module_key: addOnKey });
-          } else {
-            selectedAddOns[addOnKey] = 1;
-            trackPricingIndustryEvent(recommended ? 'pricing_recommended_module_added' : 'pricing_additional_module_added', { module_key: addOnKey });
-          }
-          renderAddOns();
-          renderIndustryRecommendation();
+      container.querySelectorAll('[data-module-preview]').forEach((link) => {
+        link.addEventListener('click', () => {
+          trackModulePreviewClick(
+            link.getAttribute('data-module-preview'),
+            link.getAttribute('data-module-name'),
+            link.getAttribute('data-module-category')
+          );
         });
       });
     }
@@ -952,6 +971,7 @@
         </thead>
         <tbody>${bodyRows}</tbody>
       `;
+      trackBasePlanViews();
     }
 
     async function loadPricingData() {
