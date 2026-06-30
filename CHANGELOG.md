@@ -1,5 +1,20 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.15] - June 29, 2026
+
+### Weekly Growth Sitemap, Pricing Trust, and CTA Tracking
+
+- Expanded `sitemap.xml` and `public/sitemap.xml` with canonical, indexable high-intent detail pages for tools/calculators, solutions, use cases, comparisons, glossary entries, and module pages.
+- Fixed the remaining pricing-page trust badge from `30-Day Free Trial` to `14-Day Free Trial`.
+- Mapped newer pricing and module preview events into the canonical website analytics stream so pricing CTA clicks, base-plan visibility, and module-preview engagement reach internal reporting.
+- Added documentation under `docs/Website/2026-06-29_weekly_growth_audit_sitemap_pricing_tracking.md`.
+- No Netlify deploy was run.
+
+### Regression Risk Notes (>10%)
+
+- **10-15%**: Organic crawl and impression distribution can shift as newly listed detail pages become easier for search engines to discover.
+- **10-12%**: Pricing/module engagement reporting can increase because existing events now reach the canonical internal analytics stream.
+
 ## [1.3.14] - June 25, 2026
 
 ### Accountant Signup Email-Only Registration

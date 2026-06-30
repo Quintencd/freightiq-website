@@ -70,11 +70,16 @@
     trackEvent(eventName, payload);
 
     if (eventName === 'trial_signup_click') emitWebEvent('web_signup_start', withPageMetadata({ source: 'growth_analytics', trigger: 'trial_cta_click' }, payload));
+    if (eventName === 'pricing_start_trial_click') emitWebEvent('web_signup_start', withPageMetadata({ source: 'growth_analytics', trigger: 'pricing_module_trial_cta_click' }, payload));
     if (eventName === 'demo_click') emitWebEvent('web_demo_request_start', withPageMetadata({ source: 'growth_analytics', trigger: 'demo_cta_click' }, payload));
+    if (eventName === 'pricing_book_demo_click') emitWebEvent('web_demo_request_start', withPageMetadata({ source: 'growth_analytics', trigger: 'pricing_module_demo_cta_click' }, payload));
     if (eventName === 'pricing_page_view') emitWebEvent('web_page_view', withPageMetadata({ source: 'growth_analytics', funnel_step: 'pricing' }, payload));
     if (eventName === 'view_pricing') emitWebEvent('web_pricing_view', withPageMetadata({ source: 'growth_analytics', trigger: 'pricing_cta_click' }, payload));
+    if (eventName === 'pricing_base_plan_view') emitWebEvent('web_pricing_view', withPageMetadata({ source: 'growth_analytics', trigger: 'base_plan_visible' }, payload));
     if (eventName === 'pricing_toggle') emitWebEvent('web_pricing_view', withPageMetadata({ source: 'growth_analytics', trigger: 'billing_toggle' }, payload));
     if (eventName === 'calculator_use') emitWebEvent('web_cta_click', withPageMetadata({ source: 'growth_analytics', cta_name: 'calculator_use' }, payload));
+    if (eventName === 'module_preview_view') emitWebEvent('web_module_engagement', withPageMetadata({ source: 'growth_analytics', engagement_type: 'pricing_preview_visible' }, payload));
+    if (eventName === 'module_preview_click') emitWebEvent('web_module_engagement', withPageMetadata({ source: 'growth_analytics', engagement_type: 'pricing_preview_click' }, payload));
     if (eventName === 'demo_request') emitWebEvent('web_demo_request_submit', withPageMetadata({ source: 'growth_analytics' }, payload));
     if (eventName === 'contact_submit') emitWebEvent('web_demo_request_submit', withPageMetadata({ source: 'growth_analytics', subtype: 'contact_submit' }, payload));
     if (eventName === 'account_created') emitWebEvent('web_signup_complete', withPageMetadata({ source: 'growth_analytics' }, payload));
