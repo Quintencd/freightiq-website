@@ -1,5 +1,26 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.16] - July 2, 2026
+
+### Accessible Add-on Pricing Payload Sync
+
+- Regenerated `pricing-data.json` after the app billing catalogue lowered selected add-on prices for import/export jobs, AccountingIQ Reconciliation, POSIQ, Ecom, Messaging, and Payroll.
+- Commission & Rebate Automation remains unchanged.
+- No pricing page layout or public module-price visibility behavior changed.
+- Added documentation under `docs/Website/2026-07-02_accessible_addon_price_payload_sync.md`.
+- No Netlify deploy was run.
+
+### Extra Price Lists Pricing Payload Sync
+
+- Regenerated `pricing-data.json` from the app canonical subscription config after the Growth extra price-list add-on moved from R990/month to R200/month.
+- No pricing page layout or public module-price visibility behavior changed.
+- Added documentation under `docs/Website/2026-07-02_extra_price_lists_r200_payload_sync.md`.
+- No Netlify deploy was run.
+
+### Regression Risk Notes (>10%)
+
+- **10-15%**: App billing, generated website data, Supabase SQL pricing helpers, and PayFast Edge billing functions must deploy together for fully consistent customer-facing pricing. This rollout updated and validated those billing surfaces.
+
 ## [1.3.15] - June 29, 2026
 
 ### Weekly Growth Sitemap, Pricing Trust, and CTA Tracking

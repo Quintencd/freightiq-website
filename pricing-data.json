@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-23T08:34:42.355Z",
+  "generated_at_utc": "2026-07-02T05:17:26.973Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -324,7 +324,7 @@
         },
         "ecom_pack": {
           "name": "Ecom Pack",
-          "price": 790,
+          "price": 690,
           "limit": 1,
           "unit": "workspace",
           "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
@@ -337,7 +337,7 @@
         },
         "messaging_pack": {
           "name": "Messaging Pack",
-          "price": 390,
+          "price": 250,
           "limit": 1,
           "unit": "workspace",
           "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
@@ -350,7 +350,7 @@
         },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
-          "price": 990,
+          "price": 790,
           "limit": 20,
           "unit": "location",
           "description": "POSIQ till/POS integration for one store location, including provider webhooks, queue/retry, mapping review, up to two terminals, and the CashIQ shift cash-balancing bridge.",
@@ -363,7 +363,7 @@
         },
         "payroll_pack": {
           "name": "Payroll Pack",
-          "price": 490,
+          "price": 450,
           "limit": 1,
           "unit": "workspace",
           "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
@@ -448,7 +448,7 @@
         },
         "accounting_reconciliation_pack": {
           "name": "AccountingIQ Reconciliation Pack",
-          "price": 590,
+          "price": 450,
           "limit": 1,
           "unit": "workspace",
           "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
@@ -646,7 +646,7 @@
         },
         "ecom_pack": {
           "name": "Ecom Pack",
-          "price": 790,
+          "price": 690,
           "limit": 1,
           "unit": "workspace",
           "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
@@ -659,7 +659,7 @@
         },
         "messaging_pack": {
           "name": "Messaging Pack",
-          "price": 390,
+          "price": 250,
           "limit": 1,
           "unit": "workspace",
           "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
@@ -672,7 +672,7 @@
         },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
-          "price": 990,
+          "price": 790,
           "limit": 20,
           "unit": "location",
           "description": "POSIQ till/POS integration for one store location, including provider webhooks, queue/retry, mapping review, up to two terminals, and the CashIQ shift cash-balancing bridge.",
@@ -685,7 +685,7 @@
         },
         "payroll_pack": {
           "name": "Payroll Pack",
-          "price": 490,
+          "price": 450,
           "limit": 1,
           "unit": "workspace",
           "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
@@ -770,7 +770,7 @@
         },
         "accounting_reconciliation_pack": {
           "name": "AccountingIQ Reconciliation Pack",
-          "price": 590,
+          "price": 450,
           "limit": 1,
           "unit": "workspace",
           "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
@@ -971,7 +971,7 @@
         },
         "ecom_pack": {
           "name": "Ecom Pack",
-          "price": 790,
+          "price": 690,
           "limit": 1,
           "unit": "workspace",
           "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
@@ -984,7 +984,7 @@
         },
         "messaging_pack": {
           "name": "Messaging Pack",
-          "price": 390,
+          "price": 250,
           "limit": 1,
           "unit": "workspace",
           "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
@@ -997,7 +997,7 @@
         },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
-          "price": 990,
+          "price": 790,
           "limit": 20,
           "unit": "location",
           "description": "POSIQ till/POS integration for one store location, including provider webhooks, queue/retry, mapping review, up to two terminals, and the CashIQ shift cash-balancing bridge.",
@@ -1010,7 +1010,7 @@
         },
         "payroll_pack": {
           "name": "Payroll Pack",
-          "price": 490,
+          "price": 450,
           "limit": 1,
           "unit": "workspace",
           "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
@@ -1095,7 +1095,7 @@
         },
         "accounting_reconciliation_pack": {
           "name": "AccountingIQ Reconciliation Pack",
-          "price": 590,
+          "price": 450,
           "limit": 1,
           "unit": "workspace",
           "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
@@ -1225,7 +1225,7 @@
         },
         "extra_shipments": {
           "name": "Extra Import/Export Jobs",
-          "price": 1350,
+          "price": 900,
           "limit": 2,
           "unit": "3+3 jobs",
           "description": "3 import + 3 export jobs/month",
@@ -1238,7 +1238,7 @@
         },
         "extra_price_lists": {
           "name": "Extra Price Lists",
-          "price": 990,
+          "price": 200,
           "limit": 2,
           "unit": "3 price lists",
           "description": "3 additional custom price lists",
@@ -1316,7 +1316,7 @@
         },
         "ecom_pack": {
           "name": "Ecom Pack",
-          "price": 790,
+          "price": 690,
           "limit": 1,
           "unit": "workspace",
           "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
@@ -1329,7 +1329,7 @@
         },
         "messaging_pack": {
           "name": "Messaging Pack",
-          "price": 390,
+          "price": 250,
           "limit": 1,
           "unit": "workspace",
           "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
@@ -1342,7 +1342,7 @@
         },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
-          "price": 990,
+          "price": 790,
           "limit": 20,
           "unit": "location",
           "description": "POSIQ till/POS integration for one store location, including provider webhooks, queue/retry, mapping review, up to two terminals, and the CashIQ shift cash-balancing bridge.",
@@ -1355,7 +1355,7 @@
         },
         "payroll_pack": {
           "name": "Payroll Pack",
-          "price": 490,
+          "price": 450,
           "limit": 1,
           "unit": "workspace",
           "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
@@ -1440,7 +1440,7 @@
         },
         "accounting_reconciliation_pack": {
           "name": "AccountingIQ Reconciliation Pack",
-          "price": 590,
+          "price": 450,
           "limit": 1,
           "unit": "workspace",
           "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
@@ -1572,7 +1572,7 @@
         },
         "extra_shipments": {
           "name": "Extra Import/Export Jobs",
-          "price": 1750,
+          "price": 1200,
           "limit": 2,
           "unit": "10+10 jobs",
           "description": "10 import + 10 export jobs/month",
@@ -1637,7 +1637,7 @@
         },
         "ecom_pack": {
           "name": "Ecom Pack",
-          "price": 790,
+          "price": 690,
           "limit": 1,
           "unit": "workspace",
           "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
@@ -1650,7 +1650,7 @@
         },
         "messaging_pack": {
           "name": "Messaging Pack",
-          "price": 390,
+          "price": 250,
           "limit": 1,
           "unit": "workspace",
           "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
@@ -1663,7 +1663,7 @@
         },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
-          "price": 990,
+          "price": 790,
           "limit": 20,
           "unit": "location",
           "description": "POSIQ till/POS integration for one store location, including provider webhooks, queue/retry, mapping review, up to two terminals, and the CashIQ shift cash-balancing bridge.",
@@ -1676,7 +1676,7 @@
         },
         "payroll_pack": {
           "name": "Payroll Pack",
-          "price": 490,
+          "price": 450,
           "limit": 1,
           "unit": "workspace",
           "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
@@ -1761,7 +1761,7 @@
         },
         "accounting_reconciliation_pack": {
           "name": "AccountingIQ Reconciliation Pack",
-          "price": 590,
+          "price": 450,
           "limit": 1,
           "unit": "workspace",
           "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
@@ -1937,7 +1937,7 @@
         },
         "ecom_pack": {
           "name": "Ecom Pack",
-          "price": 790,
+          "price": 690,
           "limit": 1,
           "unit": "workspace",
           "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
@@ -1950,7 +1950,7 @@
         },
         "messaging_pack": {
           "name": "Messaging Pack",
-          "price": 390,
+          "price": 250,
           "limit": 1,
           "unit": "workspace",
           "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
@@ -1963,7 +1963,7 @@
         },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
-          "price": 990,
+          "price": 790,
           "limit": 20,
           "unit": "location",
           "description": "POSIQ till/POS integration for one store location, including provider webhooks, queue/retry, mapping review, up to two terminals, and the CashIQ shift cash-balancing bridge.",
@@ -1976,7 +1976,7 @@
         },
         "payroll_pack": {
           "name": "Payroll Pack",
-          "price": 490,
+          "price": 450,
           "limit": 1,
           "unit": "workspace",
           "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
@@ -2061,7 +2061,7 @@
         },
         "accounting_reconciliation_pack": {
           "name": "AccountingIQ Reconciliation Pack",
-          "price": 590,
+          "price": 450,
           "limit": 1,
           "unit": "workspace",
           "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
@@ -2242,7 +2242,7 @@
         },
         "ecom_pack": {
           "name": "Ecom Pack",
-          "price": 790,
+          "price": 690,
           "limit": 1,
           "unit": "workspace",
           "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
@@ -2255,7 +2255,7 @@
         },
         "messaging_pack": {
           "name": "Messaging Pack",
-          "price": 390,
+          "price": 250,
           "limit": 1,
           "unit": "workspace",
           "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
@@ -2268,7 +2268,7 @@
         },
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
-          "price": 990,
+          "price": 790,
           "limit": 20,
           "unit": "location",
           "description": "POSIQ till/POS integration for one store location, including provider webhooks, queue/retry, mapping review, up to two terminals, and the CashIQ shift cash-balancing bridge.",
@@ -2281,7 +2281,7 @@
         },
         "payroll_pack": {
           "name": "Payroll Pack",
-          "price": 490,
+          "price": 450,
           "limit": 1,
           "unit": "workspace",
           "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
@@ -2366,7 +2366,7 @@
         },
         "accounting_reconciliation_pack": {
           "name": "AccountingIQ Reconciliation Pack",
-          "price": 590,
+          "price": 450,
           "limit": 1,
           "unit": "workspace",
           "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
