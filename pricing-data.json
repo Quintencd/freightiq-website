@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-07-02T05:17:26.973Z",
+  "generated_at_utc": "2026-07-02T09:27:32.205Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -17,7 +17,7 @@
       {
         "key": "importers",
         "label": "Importers",
-        "summary": "Most importers use InventoryIQ, PurchaseIQ, ImportIQ, ForecastIQ, AccountingIQ, PayrollIQ and AI Auto Capture to manage stock, purchasing, landed costs, payroll and document capture.",
+        "summary": "Most importers use InventoryIQ, PurchaseIQ, ImportIQ, ForecastIQ, AccountingIQ, PayrollIQ and AI Automation Suite to manage stock, purchasing, landed costs, payroll and document capture.",
         "modules": [
           "InventoryIQ",
           "PurchaseIQ",
@@ -36,7 +36,7 @@
       {
         "key": "distributors",
         "label": "Distributors",
-        "summary": "Most distributors use InventoryIQ, PurchaseIQ, ForecastIQ, DeliveryIQ, AccountingIQ, PayrollIQ and AI Auto Capture to keep replenishment, delivery, finance, payroll and capture workflows connected.",
+        "summary": "Most distributors use InventoryIQ, PurchaseIQ, ForecastIQ, DeliveryIQ, AccountingIQ, PayrollIQ and AI Automation Suite to keep replenishment, delivery, finance, payroll and capture workflows connected.",
         "modules": [
           "InventoryIQ",
           "PurchaseIQ",
@@ -55,7 +55,7 @@
       {
         "key": "manufacturers",
         "label": "Manufacturers",
-        "summary": "Most manufacturers use InventoryIQ, ManufacturingIQ, PurchaseIQ, ForecastIQ, AccountingIQ, PayrollIQ and AI Auto Capture to plan materials, production, labour, cost control and document capture.",
+        "summary": "Most manufacturers use InventoryIQ, ManufacturingIQ, PurchaseIQ, ForecastIQ, AccountingIQ, PayrollIQ and AI Automation Suite to plan materials, production, labour, cost control and document capture.",
         "modules": [
           "InventoryIQ",
           "ManufacturingIQ",
@@ -74,7 +74,7 @@
       {
         "key": "multi_branch",
         "label": "Multi-Branch Businesses",
-        "summary": "Most multi-branch businesses use InventoryIQ, PurchaseIQ, ForecastIQ, DeliveryIQ, AccountingIQ, PayrollIQ and AI Auto Capture to control stock, demand, payroll, capture and branch accountability.",
+        "summary": "Most multi-branch businesses use InventoryIQ, PurchaseIQ, ForecastIQ, DeliveryIQ, AccountingIQ, PayrollIQ and AI Automation Suite to control stock, demand, payroll, capture and branch accountability.",
         "modules": [
           "InventoryIQ",
           "PurchaseIQ",
@@ -94,7 +94,7 @@
       {
         "key": "retail_pos",
         "label": "Retail & POS",
-        "summary": "Most retail and POS teams use InventoryIQ, ForecastIQ, AccountingIQ, BankingIQ, SlipsIQ, PayrollIQ and AI Auto Capture to connect tills, stock, cash controls, payroll and slip capture.",
+        "summary": "Most retail and POS teams use InventoryIQ, ForecastIQ, AccountingIQ, BankingIQ, SlipsIQ, PayrollIQ and AI Automation Suite to connect tills, stock, cash controls, payroll and slip capture.",
         "modules": [
           "InventoryIQ",
           "ForecastIQ",
@@ -114,7 +114,7 @@
       {
         "key": "wholesalers",
         "label": "Wholesalers",
-        "summary": "Most wholesalers use InventoryIQ, PurchaseIQ, ForecastIQ, DeliveryIQ, AccountingIQ, PayrollIQ and AI Auto Capture to manage volume sales, stock availability, deliveries, payroll and documents.",
+        "summary": "Most wholesalers use InventoryIQ, PurchaseIQ, ForecastIQ, DeliveryIQ, AccountingIQ, PayrollIQ and AI Automation Suite to manage volume sales, stock availability, deliveries, payroll and documents.",
         "modules": [
           "InventoryIQ",
           "PurchaseIQ",
@@ -133,7 +133,7 @@
       {
         "key": "service_businesses",
         "label": "Service Businesses",
-        "summary": "Most service businesses use TaskIQ, InvoiceIQ, AccountingIQ, BankingIQ, PayrollIQ and AI Auto Capture to keep work, billing, payroll, payments and document capture in one place.",
+        "summary": "Most service businesses use TaskIQ, InvoiceIQ, AccountingIQ, BankingIQ, PayrollIQ and AI Automation Suite to keep work, billing, payroll, payments and document capture in one place.",
         "modules": [
           "TaskIQ",
           "InvoiceIQ",
@@ -152,7 +152,7 @@
       {
         "key": "ecommerce",
         "label": "Ecommerce",
-        "summary": "Most ecommerce teams use InventoryIQ, PurchaseIQ, ForecastIQ, AccountingIQ, DeliveryIQ, PayrollIQ and AI Auto Capture to connect online demand to stock, purchasing, fulfilment, payroll and capture.",
+        "summary": "Most ecommerce teams use InventoryIQ, PurchaseIQ, ForecastIQ, AccountingIQ, DeliveryIQ, PayrollIQ and AI Automation Suite to connect online demand to stock, purchasing, fulfilment, payroll and capture.",
         "modules": [
           "InventoryIQ",
           "PurchaseIQ",
@@ -262,7 +262,7 @@
           "price": 200,
           "limit": 20,
           "unit": "100 capture credits",
-          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture",
+          "description": "AI Pack: 100 capture credits shared with AI Automation Suite capture and AgentsIQ workflows",
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
@@ -284,27 +284,14 @@
           "tier_label": null
         },
         "ai_auto_capture": {
-          "name": "AI Auto Capture",
+          "name": "AI Automation Suite",
           "price": 519,
           "limit": 1,
           "unit": "150 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 150 monthly capture credits.",
+          "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
-            "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "ai_agents_pack": {
-          "name": "AI Agents Pack",
-          "price": 490,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Unlock AgentsIQ and ChatIQ automation workflows for proactive checks, follow-ups, and task generation. AI execution usage is controlled through AI Pack credits.",
-          "value_points": [
-            "Adds proactive operational checks without hiring another admin person",
-            "Uses the data already inside FlowIQ to surface next actions"
+            "Includes AgentsIQ proactive checks and follow-up workflows while preserving human review before posting or action"
           ],
           "tier_group": null,
           "tier_label": null
@@ -584,7 +571,7 @@
           "price": 200,
           "limit": 20,
           "unit": "100 capture credits",
-          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture",
+          "description": "AI Pack: 100 capture credits shared with AI Automation Suite capture and AgentsIQ workflows",
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
@@ -606,27 +593,14 @@
           "tier_label": null
         },
         "ai_auto_capture": {
-          "name": "AI Auto Capture",
+          "name": "AI Automation Suite",
           "price": 519,
           "limit": 1,
           "unit": "150 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 150 monthly capture credits.",
+          "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
-            "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "ai_agents_pack": {
-          "name": "AI Agents Pack",
-          "price": 490,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Unlock AgentsIQ and ChatIQ automation workflows for proactive checks, follow-ups, and task generation. AI execution usage is controlled through AI Pack credits.",
-          "value_points": [
-            "Adds proactive operational checks without hiring another admin person",
-            "Uses the data already inside FlowIQ to surface next actions"
+            "Includes AgentsIQ proactive checks and follow-up workflows while preserving human review before posting or action"
           ],
           "tier_group": null,
           "tier_label": null
@@ -922,7 +896,7 @@
           "price": 200,
           "limit": 20,
           "unit": "100 capture credits",
-          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture",
+          "description": "AI Pack: 100 capture credits shared with AI Automation Suite capture and AgentsIQ workflows",
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
@@ -931,27 +905,14 @@
           "tier_label": null
         },
         "ai_auto_capture": {
-          "name": "AI Auto Capture",
+          "name": "AI Automation Suite",
           "price": 519,
           "limit": 1,
           "unit": "150 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 150 monthly capture credits.",
+          "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
-            "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "ai_agents_pack": {
-          "name": "AI Agents Pack",
-          "price": 490,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Unlock AgentsIQ and ChatIQ automation workflows for proactive checks, follow-ups, and task generation. AI execution usage is controlled through AI Pack credits.",
-          "value_points": [
-            "Adds proactive operational checks without hiring another admin person",
-            "Uses the data already inside FlowIQ to surface next actions"
+            "Includes AgentsIQ proactive checks and follow-up workflows while preserving human review before posting or action"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1267,7 +1228,7 @@
           "price": 200,
           "limit": 20,
           "unit": "100 capture credits",
-          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture",
+          "description": "AI Pack: 100 capture credits shared with AI Automation Suite capture and AgentsIQ workflows",
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
@@ -1276,27 +1237,14 @@
           "tier_label": null
         },
         "ai_auto_capture": {
-          "name": "AI Auto Capture",
+          "name": "AI Automation Suite",
           "price": 519,
           "limit": 1,
           "unit": "150 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 150 monthly capture credits.",
+          "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
-            "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "ai_agents_pack": {
-          "name": "AI Agents Pack",
-          "price": 490,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Unlock AgentsIQ and ChatIQ automation workflows for proactive checks, follow-ups, and task generation. AI execution usage is controlled through AI Pack credits.",
-          "value_points": [
-            "Adds proactive operational checks without hiring another admin person",
-            "Uses the data already inside FlowIQ to surface next actions"
+            "Includes AgentsIQ proactive checks and follow-up workflows while preserving human review before posting or action"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1588,7 +1536,7 @@
           "price": 200,
           "limit": 20,
           "unit": "100 capture credits",
-          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture",
+          "description": "AI Pack: 100 capture credits shared with AI Automation Suite capture and AgentsIQ workflows",
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
@@ -1597,27 +1545,14 @@
           "tier_label": null
         },
         "ai_auto_capture": {
-          "name": "AI Auto Capture",
+          "name": "AI Automation Suite",
           "price": 519,
           "limit": 1,
           "unit": "150 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 150 monthly capture credits.",
+          "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
-            "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "ai_agents_pack": {
-          "name": "AI Agents Pack",
-          "price": 490,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Unlock AgentsIQ and ChatIQ automation workflows for proactive checks, follow-ups, and task generation. AI execution usage is controlled through AI Pack credits.",
-          "value_points": [
-            "Adds proactive operational checks without hiring another admin person",
-            "Uses the data already inside FlowIQ to surface next actions"
+            "Includes AgentsIQ proactive checks and follow-up workflows while preserving human review before posting or action"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1888,7 +1823,7 @@
           "price": 200,
           "limit": 50,
           "unit": "100 capture credits",
-          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture",
+          "description": "AI Pack: 100 capture credits shared with AI Automation Suite capture and AgentsIQ workflows",
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
@@ -1897,27 +1832,14 @@
           "tier_label": null
         },
         "ai_auto_capture": {
-          "name": "AI Auto Capture",
+          "name": "AI Automation Suite",
           "price": 519,
           "limit": 1,
           "unit": "150 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 150 monthly capture credits.",
+          "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
-            "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "ai_agents_pack": {
-          "name": "AI Agents Pack",
-          "price": 490,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Unlock AgentsIQ and ChatIQ automation workflows for proactive checks, follow-ups, and task generation. AI execution usage is controlled through AI Pack credits.",
-          "value_points": [
-            "Adds proactive operational checks without hiring another admin person",
-            "Uses the data already inside FlowIQ to surface next actions"
+            "Includes AgentsIQ proactive checks and follow-up workflows while preserving human review before posting or action"
           ],
           "tier_group": null,
           "tier_label": null
@@ -2169,7 +2091,6 @@
         "settings",
         "shipments",
         "user_management",
-        "chatiq",
         "forecastiq_baseline",
         "forecastiq_advanced",
         "bom_manufacturing",
@@ -2193,7 +2114,7 @@
           "price": 200,
           "limit": 100,
           "unit": "100 capture credits",
-          "description": "AI Pack: 100 capture credits shared with ChatIQ, AgentsIQ, and AI Capture",
+          "description": "AI Pack: 100 capture credits shared with AI Automation Suite capture and AgentsIQ workflows",
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
@@ -2202,27 +2123,14 @@
           "tier_label": null
         },
         "ai_auto_capture": {
-          "name": "AI Auto Capture",
+          "name": "AI Automation Suite",
           "price": 519,
           "limit": 1,
           "unit": "150 capture credits",
-          "description": "AI Auto Capture for InvoiceIQ, PurchaseIQ, SlipIQ, ImportIQ, and SalesIQ voice transcription with 150 monthly capture credits.",
+          "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
-            "Adds SalesIQ talk-to-note transcription while preserving human review before posting or follow-up"
-          ],
-          "tier_group": null,
-          "tier_label": null
-        },
-        "ai_agents_pack": {
-          "name": "AI Agents Pack",
-          "price": 490,
-          "limit": 1,
-          "unit": "workspace",
-          "description": "Unlock AgentsIQ and ChatIQ automation workflows for proactive checks, follow-ups, and task generation. AI execution usage is controlled through AI Pack credits.",
-          "value_points": [
-            "Adds proactive operational checks without hiring another admin person",
-            "Uses the data already inside FlowIQ to surface next actions"
+            "Includes AgentsIQ proactive checks and follow-up workflows while preserving human review before posting or action"
           ],
           "tier_group": null,
           "tier_label": null

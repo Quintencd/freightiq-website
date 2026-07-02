@@ -46,7 +46,7 @@
           "name": "Which plans include AgentsIQ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AgentsIQ is available as the AI Agents Pack from Growth Lite upward for teams that want proactive operational automation."
+            "text": "AgentsIQ is included in the AI Automation Suite add-on for teams that want proactive operational automation."
           }
         },
         {
@@ -368,7 +368,6 @@
 
     const addOnOrder = [
       'ai_auto_capture',
-      'ai_agents_pack',
       'forecasting_intelligence_pack',
       'ecom_pack',
       'messaging_pack',
@@ -399,8 +398,7 @@
     const INDUSTRY_RECOMMENDATION_TOOLTIP = 'Based on common module combinations selected by similar businesses.';
     const addOnCategoryLabels = {
       agentsiq_usage_pack: 'AI',
-      ai_auto_capture: 'AI capture',
-      ai_agents_pack: 'AI automation',
+      ai_auto_capture: 'AI automation',
       forecasting_intelligence_pack: 'Forecasting',
       ecom_pack: 'Ecommerce',
       messaging_pack: 'Messaging',
@@ -537,12 +535,8 @@
 
     const addOnFallbackCopy = {
       ai_auto_capture: {
-        name: 'AI Auto Capture',
-        value_points: ['Captures invoices, purchase orders, bills, slips, imports and SalesIQ voice notes', 'Transcribes talk-to-note audio while preserving review before posting or follow-up']
-      },
-      ai_agents_pack: {
-        name: 'AI Agents Pack',
-        value_points: ['Adds proactive operational checks and follow-ups', 'Uses FlowIQ data already captured by the customer']
+        name: 'AI Automation Suite',
+        value_points: ['Captures invoices, purchase orders, bills, slips, imports and SalesIQ voice notes', 'Includes AgentsIQ proactive checks and follow-up workflows']
       },
       forecasting_intelligence_pack: {
         name: 'Forecasting Intelligence Pack',
@@ -877,8 +871,7 @@
         { type: 'row', label: 'Inventory intelligence', get: (p) => Number(p?.limits?.warehouses || 0) > 1 || p?.limits?.warehouses === null ? 'Included' : '—', center: true },
         { type: 'section', label: 'Intelligence & Automation' },
         { type: 'row', label: 'Forecasting Intelligence', get: (p) => addOnAvailabilityLabel(p, 'forecasting_intelligence_pack', hasFeature(p, 'forecastiq') || hasFeature(p, 'forecastiq_advanced')), center: true },
-        { type: 'row', label: 'AgentsIQ automation desk', get: (p) => addOnAvailabilityLabel(p, 'ai_agents_pack', hasFeature(p, 'agentsiq')), center: true },
-        { type: 'row', label: 'AI Auto Capture documents + voice notes', get: (p) => hasAddOn(p, 'ai_auto_capture') ? 'Add-on available' : '—', center: true },
+        { type: 'row', label: 'AI Automation Suite', get: (p) => addOnAvailabilityLabel(p, 'ai_auto_capture', hasFeature(p, 'agentsiq')), center: true },
         { type: 'row', label: 'Manufacturing & Kitsets (BOM)', get: (p) => hasManufacturingKitsets(p) ? '✓' : '—', tick: true, center: true },
         { type: 'row', label: 'AccountingIQ advanced reconciliation', get: (p) => addOnAvailabilityLabel(p, 'accounting_reconciliation_pack', hasAdvancedReconciliation(p)), center: true },
         { type: 'row', label: 'AccountingIQ customer/supplier payment automation', get: (p) => addOnAvailabilityLabel(p, 'accounting_reconciliation_pack', hasFeature(p, 'accounting_auto_payment_matching')), center: true },

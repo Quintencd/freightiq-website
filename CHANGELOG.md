@@ -2,6 +2,12 @@
 
 ## [1.3.16] - July 2, 2026
 
+### AI Automation Suite Pricing Payload Sync
+
+- Synced pricing copy and `pricing-data.json` for the AI Automation Suite consolidation: `ai_auto_capture` now carries the AgentsIQ value at the existing R519 price, and the old separate AI Agents Pack is no longer advertised.
+- Added documentation under `docs/Website/2026-07-02_ai_automation_suite_pricing_payload_sync.md`.
+- No Netlify deploy was run.
+
 ### Accessible Add-on Pricing Payload Sync
 
 - Regenerated `pricing-data.json` after the app billing catalogue lowered selected add-on prices for import/export jobs, AccountingIQ Reconciliation, POSIQ, Ecom, Messaging, and Payroll.
