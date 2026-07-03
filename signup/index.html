@@ -17,8 +17,22 @@
     <link rel="alternate icon" type="image/x-icon" href="/favicon.ico?v=2">
     <!-- Preconnect to ensure favicon loads quickly -->
     <link rel="preconnect" href="https://www.flowiq.info">
+    <link rel="preconnect" href="https://challenges.cloudflare.com">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        window.FlowIQSignupTurnstileToken = '';
+        window.onFlowIQTurnstileSuccess = function(token) {
+            window.FlowIQSignupTurnstileToken = token || '';
+        };
+        window.onFlowIQTurnstileExpired = function() {
+            window.FlowIQSignupTurnstileToken = '';
+        };
+        window.onFlowIQTurnstileError = function() {
+            window.FlowIQSignupTurnstileToken = '';
+        };
+    </script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <!-- Cache busting to ensure updated code loads -->
     <script>
         console.log('Signup page loaded - version 3.9 (strict password policy + real-time validation)');
@@ -259,6 +273,48 @@
                                 class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
                                 placeholder="Your Company Name"
                             >
+                        </div>
+
+                        <div>
+                            <label for="companyWebsite" class="block text-sm font-medium text-slate-300 mb-2">Company Website</label>
+                            <input
+                                id="companyWebsite"
+                                name="companyWebsite"
+                                type="text"
+                                autocomplete="url"
+                                class="w-full px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors"
+                                placeholder="example.com"
+                            >
+                        </div>
+
+                        <div>
+                            <label for="signupReferralSource" class="block text-sm font-medium text-slate-300 mb-2">How did you hear about us? *</label>
+                            <input id="signupReferralSource" name="signupReferralSource" type="hidden" required>
+                            <div class="relative" data-flowiq-select data-flowiq-select-for="signupReferralSource">
+                                <button
+                                    id="signupReferralSourceButton"
+                                    type="button"
+                                    aria-haspopup="listbox"
+                                    aria-expanded="false"
+                                    class="flowiq-select-btn is-placeholder"
+                                >
+                                    <span id="signupReferralSourceButtonLabel">Select source</span>
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                                </button>
+                                <div id="signupReferralSourceMenu" class="flowiq-select-menu hidden" role="listbox" aria-label="Signup referral source options"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="signupReferralDetail" class="block text-sm font-medium text-slate-300 mb-2">Referral Detail</label>
+                            <textarea
+                                id="signupReferralDetail"
+                                name="signupReferralDetail"
+                                rows="2"
+                                maxlength="240"
+                                class="w-full min-h-[76px] px-4 py-3 bg-freight-slate border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-freight-orange focus:outline-none focus:ring-2 focus:ring-freight-orange/20 transition-colors resize-y"
+                                placeholder="Optional: person, company, campaign, search term, or link"
+                            ></textarea>
                         </div>
 
                         <div>
@@ -560,6 +616,18 @@
                                 <p class="text-slate-400">By continuing, you acknowledge backup/disaster-recovery responsibility and acceptance of FlowIQ risk-allocation clauses.</p>
                             </div>
                         </details>
+                    </div>
+
+                    <div class="rounded-xl border border-slate-700 bg-freight-slate/70 p-4">
+                        <div
+                            id="signupTurnstile"
+                            class="cf-turnstile flex justify-center"
+                            data-sitekey="0x4AAAAAADvBACKZG3zCAmE4"
+                            data-theme="dark"
+                            data-callback="onFlowIQTurnstileSuccess"
+                            data-expired-callback="onFlowIQTurnstileExpired"
+                            data-error-callback="onFlowIQTurnstileError"
+                        ></div>
                     </div>
 
                     <!-- Submit Button -->
@@ -887,7 +955,7 @@
                 });
             }
 
-            // FlowIQ custom selectors for industry/company size/country
+            // FlowIQ custom selectors for signup dropdown fields.
             const flowiqSelectWrappers = Array.from(document.querySelectorAll('[data-flowiq-select]'));
             function closeAllFlowIQSelects() {
                 flowiqSelectWrappers.forEach((wrapper) => {
@@ -948,6 +1016,9 @@
                 renderOptions('');
                 if (config.fieldId === 'industry') {
                     window.FlowIQSignupResetIndustrySelect = resetSelection;
+                }
+                if (config.fieldId === 'signupReferralSource') {
+                    window.FlowIQSignupResetReferralSourceSelect = resetSelection;
                 }
 
                 button.addEventListener('click', function () {
@@ -1021,6 +1092,24 @@
                 ],
             });
 
+            setupFlowIQSelect({
+                fieldId: 'signupReferralSource',
+                buttonId: 'signupReferralSourceButton',
+                labelId: 'signupReferralSourceButtonLabel',
+                menuId: 'signupReferralSourceMenu',
+                placeholder: 'Select source',
+                options: [
+                    { value: 'google_search', text: 'Google search' },
+                    { value: 'ai_search', text: 'AI search' },
+                    { value: 'social_media', text: 'Social media' },
+                    { value: 'linkedin', text: 'LinkedIn' },
+                    { value: 'referral', text: 'Referral' },
+                    { value: 'partner', text: 'Partner' },
+                    { value: 'event', text: 'Event' },
+                    { value: 'other', text: 'Other' }
+                ],
+            });
+
             // Custom checkbox behavior - simplified and robust
             function wireCustomCheckbox(id) {
                 const checkbox = document.getElementById(id);
@@ -1084,6 +1173,13 @@
                 'password': 'password',
                 'company name': 'companyName',
                 'company_name': 'companyName',
+                'company website': 'companyWebsite',
+                'company_website_url': 'companyWebsite',
+                'signup referral source': 'signupReferralSource',
+                'signup_referral_source': 'signupReferralSource',
+                'referral source': 'signupReferralSource',
+                'heard about us': 'signupReferralSource',
+                'how did you hear about flowiq': 'signupReferralSource',
                 'full name': ['firstName', 'lastName'],
                 'first_name': 'firstName',
                 'last_name': 'lastName',
@@ -1177,11 +1273,12 @@
                 }
 
                 // Special handling for FlowIQ custom selectors
-                if (fieldId === 'industry' || fieldId === 'employees' || fieldId === 'country') {
+                if (fieldId === 'industry' || fieldId === 'employees' || fieldId === 'country' || fieldId === 'signupReferralSource') {
                     const config = {
                         industry: { buttonId: 'industryButton', wrapper: '[data-flowiq-select-for="industry"]', message: 'Please select your industry' },
                         employees: { buttonId: 'employeesButton', wrapper: '[data-flowiq-select-for="employees"]', message: 'Please select your company size' },
                         country: { buttonId: 'countryButton', wrapper: '[data-flowiq-select-for="country"]', message: 'Please select your country' },
+                        signupReferralSource: { buttonId: 'signupReferralSourceButton', wrapper: '[data-flowiq-select-for="signupReferralSource"]', message: 'Please select how you heard about FlowIQ' },
                     }[fieldId];
                     const customButton = config ? document.getElementById(config.buttonId) : null;
                     if (customButton) customButton.classList.add('field-error');
@@ -1256,11 +1353,12 @@
                     });
                 }
 
-                if (fieldId === 'industry' || fieldId === 'employees' || fieldId === 'country') {
+                if (fieldId === 'industry' || fieldId === 'employees' || fieldId === 'country' || fieldId === 'signupReferralSource') {
                     const config = {
                         industry: { buttonId: 'industryButton', wrapper: '[data-flowiq-select-for="industry"]' },
                         employees: { buttonId: 'employeesButton', wrapper: '[data-flowiq-select-for="employees"]' },
                         country: { buttonId: 'countryButton', wrapper: '[data-flowiq-select-for="country"]' },
+                        signupReferralSource: { buttonId: 'signupReferralSourceButton', wrapper: '[data-flowiq-select-for="signupReferralSource"]' },
                     }[fieldId];
                     const customButton = config ? document.getElementById(config.buttonId) : null;
                     if (customButton) customButton.classList.remove('field-error');
@@ -1298,6 +1396,9 @@
                 'email',
                 'password',
                 'companyName',
+                'companyWebsite',
+                'signupReferralSource',
+                'signupReferralDetail',
                 'firstName',
                 'lastName',
                 'industry',
@@ -1346,6 +1447,13 @@
             // Form submission
             // IMPORTANT: Signup creates the account only. Users must manually sign in afterwards.
             console.log('Signup form initialized - login required after account creation');
+            const resetTurnstile = () => {
+                window.FlowIQSignupTurnstileToken = '';
+                const turnstileElement = document.getElementById('signupTurnstile');
+                if (window.turnstile && turnstileElement) {
+                    window.turnstile.reset(turnstileElement);
+                }
+            };
             let signupRequestInFlight = false;
             document.getElementById('signupForm').addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -1369,6 +1477,7 @@
             // Browser-native validity checks (required fields, type=email, etc).
             // Because we call preventDefault, we must trigger validation explicitly.
             if (typeof this.reportValidity === 'function' && !this.reportValidity()) {
+                signupRequestInFlight = false;
                 return;
             }
 
@@ -1404,6 +1513,15 @@
                 const legalAcceptanceSourceUrl = window.location.href;
                 const legalAcceptanceLocale = navigator.language || null;
                 const legalAcceptanceUserAgent = navigator.userAgent || null;
+                const normalizeWebsiteInput = (value) => {
+                    const trimmed = (value || '').toString().trim();
+                    if (!trimmed) return '';
+                    return /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+                };
+                const companyWebsiteUrl = normalizeWebsiteInput(formData.get('companyWebsite'));
+                const signupReferralSource = (formData.get('signupReferralSource') || '').toString().trim();
+                const signupReferralDetail = (formData.get('signupReferralDetail') || '').toString().trim().replace(/\s+/g, ' ').slice(0, 240);
+                const turnstileToken = (window.FlowIQSignupTurnstileToken || '').toString().trim();
                 
                 // Get selected plan - read directly from DOM element as fallback if FormData doesn't have it
                 const selectedPlanInput = document.getElementById('selectedPlan');
@@ -1498,6 +1616,14 @@
                     validationErrors.push('phone number');
                 }
 
+                if (!signupReferralSource) {
+                    validationErrors.push('signup_referral_source');
+                }
+
+                if (!turnstileToken) {
+                    validationErrors.push('security verification');
+                }
+
                 if (!['organization', 'accountant_firm'].includes(accountTypeValue)) {
                     validationErrors.push('account type');
                 }
@@ -1561,6 +1687,9 @@
                         employees: formData.get('employees'),
                         country: formData.get('country'),
                         phone: formData.get('phone'),
+                        company_website_url: companyWebsiteUrl || null,
+                        signup_referral_source: signupReferralSource,
+                        signup_referral_detail: signupReferralDetail || null,
                         first_name: formData.get('firstName'),
                         last_name: formData.get('lastName'),
                         surname: formData.get('lastName'),
@@ -1586,7 +1715,8 @@
                         accountant_practitioner_declaration_accepted: isAccountantFirm ? accountantPractitionerDeclarationAccepted : null,
                         accountant_practitioner_declaration_accepted_at:
                             isAccountantFirm && accountantPractitionerDeclarationAccepted ? legalAcceptedAt : null,
-                        accountant_compliance_version: isAccountantFirm ? FLOWIQ_LEGAL_VERSION : null
+                        accountant_compliance_version: isAccountantFirm ? FLOWIQ_LEGAL_VERSION : null,
+                        turnstile_token: turnstileToken
                     })
                 });
 
@@ -1671,9 +1801,12 @@
                         highlightFieldError('cross_border_controls');
                         highlightFieldError('practitioner_declaration');
                     }
-                    if (errorText.includes('already registered') || errorText.includes('email already exists')) {
-                        highlightFieldError('email');
-                    }
+                if (errorText.includes('already registered') || errorText.includes('email already exists')) {
+                    highlightFieldError('email');
+                }
+                if (errorText.includes('security verification') || errorText.includes('turnstile')) {
+                    resetTurnstile();
+                }
                     
                     throw new Error(errorMessage);
                 }
@@ -1694,6 +1827,9 @@
                             industry: formData.get('industry'),
                             employees: formData.get('employees'),
                             country: formData.get('country'),
+                            company_website_url: companyWebsiteUrl || null,
+                            signup_referral_source: signupReferralSource,
+                            signup_referral_detail: signupReferralDetail || null,
                             account_type: accountTypeValue,
                             accountant_firm_name: isAccountantFirm ? formData.get('companyName') : null,
                             selected_plan: selectedPlanValue,
@@ -1721,12 +1857,14 @@
                 window.FlowIQWebsiteAnalytics?.track('web_signup_complete', {
                     form_name: 'signupForm',
                     selected_plan: selectedPlanValue,
-                    account_type: accountTypeValue
+                    account_type: accountTypeValue,
+                    signup_referral_source: signupReferralSource
                 });
                 window.FlowIQGrowthAnalytics?.trackAccountCreated({
                     selected_plan: selectedPlanValue,
                     form_name: 'signupForm',
-                    account_type: accountTypeValue
+                    account_type: accountTypeValue,
+                    signup_referral_source: signupReferralSource
                 });
                 messageDiv.className = 'p-4 rounded-lg bg-green-500/20 border border-green-500/30';
                 messageDiv.innerHTML = `
@@ -1756,9 +1894,13 @@
                 if (typeof window.FlowIQSignupResetIndustrySelect === 'function') {
                     window.FlowIQSignupResetIndustrySelect();
                 }
+                if (typeof window.FlowIQSignupResetReferralSourceSelect === 'function') {
+                    window.FlowIQSignupResetReferralSourceSelect();
+                }
                 if (typeof window.FlowIQSignupApplyAccountType === 'function') {
                     window.FlowIQSignupApplyAccountType('organization');
                 }
+                resetTurnstile();
                 // No auto-login / no auto-redirect: user explicitly clicks "Go to Sign In".
 
             } catch (error) {
@@ -1766,7 +1908,8 @@
                 window.FlowIQWebsiteAnalytics?.track('web_signup_error', {
                     form_name: 'signupForm',
                     error_message: (error?.message || 'unknown').slice(0, 200),
-                    account_type: (document.getElementById('accountType')?.value || 'organization').toLowerCase()
+                    account_type: (document.getElementById('accountType')?.value || 'organization').toLowerCase(),
+                    signup_referral_source: (document.getElementById('signupReferralSource')?.value || '').toString().trim() || null
                 });
                 
                 // Show error
@@ -1791,6 +1934,7 @@
                     buttonText.textContent = 'Start Your Free Trial';
                 }
                 loadingSpinner.classList.add('hidden');
+                resetTurnstile();
                 
                 if (window.lucide) { window.lucide.createIcons(); }
             }

@@ -1,5 +1,20 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.18] - July 3, 2026
+
+### Signup Website And Referral Capture
+
+- Added optional company website capture to `/signup`.
+- Added a required FlowIQ-style "How did you hear about us?" dropdown and optional referral detail field.
+- Sent signup acquisition fields through `public-signup` and `/api/signup-notify` so Founder Console can report them.
+- Added documentation under `docs/Website/2026-07-03_signup_website_referral_capture.md`.
+- No Netlify deploy was run.
+
+### Regression Risk Notes (>10%)
+
+- **10-15%**: the live `public-signup` Edge Function now requires `signup_referral_source`, so any signup surface missing that payload field would fail validation. The public website signup page has been updated and the static signup guard now checks for the field.
+- **10-12%**: the public signup page is slightly longer on mobile. The new source control reuses the existing FlowIQ dropdown UI to keep spacing and behavior consistent.
+
 ## [1.3.17] - July 3, 2026
 
 ### Pricing New Account Module Promo Banner
