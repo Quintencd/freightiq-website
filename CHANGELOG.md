@@ -1,5 +1,18 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.17] - July 3, 2026
+
+### Pricing New Account Module Promo Banner
+
+- Added a green top-of-pricing promotional banner explaining that new account sign-ups get 3 months free access to specialist modules.
+- Listed the promoted modules in compact pills: ForecastIQ, ImportIQ, DeliveryIQ, ManufacturingIQ, ProjectsIQ, PayrollIQ, Ecom Pack, Messaging Pack, AI Automation Suite, and Accounting Reconciliation.
+- Added documentation under `docs/Website/2026-07-03_pricing_new_account_module_promo_banner.md`.
+- No Netlify deploy was run.
+
+### Regression Risk Notes (>10%)
+
+- None identified. This is a static pricing-page content addition and does not change pricing data, signup payloads, plan rendering, or module activation logic.
+
 ## [1.3.16] - July 2, 2026
 
 ### AI Automation Suite Pricing Payload Sync
