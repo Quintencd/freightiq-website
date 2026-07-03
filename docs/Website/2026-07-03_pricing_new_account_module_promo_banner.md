@@ -4,7 +4,8 @@
 
 - Added a green promotional banner near the top of `pricing.html`, directly below the hero call-to-action buttons and above the pricing path cards.
 - The banner states that new account sign-ups get 3 months free access to specialist modules.
-- Listed the promoted modules in compact pills: ForecastIQ, ImportIQ, DeliveryIQ, ManufacturingIQ, ProjectsIQ, PayrollIQ, Ecom Pack, Messaging Pack, AI Automation Suite, and Accounting Reconciliation.
+- Narrowed the visible module pills to the actual bonus modules only: AI Automation Suite, Auto Accounting Reconciliation, and PayrollIQ.
+- Synced generated public pricing payloads after renaming the accounting add-on card from `AccountingIQ Reconciliation Pack` to `Auto Accounting Reconciliation`.
 - Added a dedicated signup CTA with pricing analytics metadata at `pricing_new_account_module_promo`.
 
 ## Validation
@@ -15,4 +16,4 @@
 
 ## Regression Risk
 
-- No regression risk identified above 10%. This is a static pricing-page content addition that does not alter pricing data, plan rendering, currency detection, checkout/signup payloads, or module activation logic.
+- No regression risk identified above 10%. This is a static pricing-page copy correction and generated-payload sync that does not alter pricing amounts, add-on keys, plan rendering, currency detection, checkout/signup payloads, or module activation logic.

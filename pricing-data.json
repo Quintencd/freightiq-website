@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-07-02T09:27:32.205Z",
+  "generated_at_utc": "2026-07-03T06:33:11.421Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -434,11 +434,11 @@
           "tier_label": null
         },
         "accounting_reconciliation_pack": {
-          "name": "AccountingIQ Reconciliation Pack",
+          "name": "Auto Accounting Reconciliation",
           "price": 450,
           "limit": 1,
           "unit": "workspace",
-          "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
           "value_points": [
             "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
@@ -743,11 +743,11 @@
           "tier_label": null
         },
         "accounting_reconciliation_pack": {
-          "name": "AccountingIQ Reconciliation Pack",
+          "name": "Auto Accounting Reconciliation",
           "price": 450,
           "limit": 1,
           "unit": "workspace",
-          "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
           "value_points": [
             "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
@@ -1055,11 +1055,11 @@
           "tier_label": null
         },
         "accounting_reconciliation_pack": {
-          "name": "AccountingIQ Reconciliation Pack",
+          "name": "Auto Accounting Reconciliation",
           "price": 450,
           "limit": 1,
           "unit": "workspace",
-          "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
           "value_points": [
             "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
@@ -1387,11 +1387,11 @@
           "tier_label": null
         },
         "accounting_reconciliation_pack": {
-          "name": "AccountingIQ Reconciliation Pack",
+          "name": "Auto Accounting Reconciliation",
           "price": 450,
           "limit": 1,
           "unit": "workspace",
-          "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
           "value_points": [
             "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
@@ -1695,11 +1695,11 @@
           "tier_label": null
         },
         "accounting_reconciliation_pack": {
-          "name": "AccountingIQ Reconciliation Pack",
+          "name": "Auto Accounting Reconciliation",
           "price": 450,
           "limit": 1,
           "unit": "workspace",
-          "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
           "value_points": [
             "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
@@ -1982,11 +1982,11 @@
           "tier_label": null
         },
         "accounting_reconciliation_pack": {
-          "name": "AccountingIQ Reconciliation Pack",
+          "name": "Auto Accounting Reconciliation",
           "price": 450,
           "limit": 1,
           "unit": "workspace",
-          "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
           "value_points": [
             "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
@@ -2273,11 +2273,11 @@
           "tier_label": null
         },
         "accounting_reconciliation_pack": {
-          "name": "AccountingIQ Reconciliation Pack",
+          "name": "Auto Accounting Reconciliation",
           "price": 450,
           "limit": 1,
           "unit": "workspace",
-          "description": "AccountingIQ advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
           "value_points": [
             "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
             "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"

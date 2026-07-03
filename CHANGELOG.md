@@ -5,13 +5,14 @@
 ### Pricing New Account Module Promo Banner
 
 - Added a green top-of-pricing promotional banner explaining that new account sign-ups get 3 months free access to specialist modules.
-- Listed the promoted modules in compact pills: ForecastIQ, ImportIQ, DeliveryIQ, ManufacturingIQ, ProjectsIQ, PayrollIQ, Ecom Pack, Messaging Pack, AI Automation Suite, and Accounting Reconciliation.
+- Listed only the actual bonus modules in compact pills: AI Automation Suite, Auto Accounting Reconciliation, and PayrollIQ.
+- Renamed the generated accounting add-on card from `AccountingIQ Reconciliation Pack` to `Auto Accounting Reconciliation` for clearer customer-facing value.
 - Added documentation under `docs/Website/2026-07-03_pricing_new_account_module_promo_banner.md`.
 - No Netlify deploy was run.
 
 ### Regression Risk Notes (>10%)
 
-- None identified. This is a static pricing-page content addition and does not change pricing data, signup payloads, plan rendering, or module activation logic.
+- None identified. This is a static pricing-page copy correction and generated-payload sync; it does not change pricing amounts, add-on keys, signup payloads, plan rendering, or module activation logic.
 
 ## [1.3.16] - July 2, 2026
 
