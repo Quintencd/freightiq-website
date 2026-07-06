@@ -1,5 +1,20 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.19] - July 6, 2026
+
+### Weekly Growth Module SEO and Tracking Completion
+
+- Added self-canonical URLs, indexable robots tags, and structured data to the remaining live module draft pages: JournalIQ, Manufacturing, and TaskIQ.
+- Added module-detail body metadata plus the shared website analytics stack to those pages so module page views, demo clicks, scroll depth, and CTA context reach reporting.
+- Added the three now-indexable module pages to both root and public sitemap copies.
+- Added documentation under `docs/Website/2026-07-06_weekly_growth_audit_module_seo_tracking.md`.
+- No Netlify deploy was run.
+
+### Regression Risk Notes (>10%)
+
+- **10-15%**: Organic crawl and impression distribution can shift as the three newly indexable module pages become easier for search engines to discover.
+- **10-12%**: Module analytics baselines can rise because these pages now load the shared website tracking stack.
+
 ## [1.3.18] - July 3, 2026
 
 ### Signup Website And Referral Capture
