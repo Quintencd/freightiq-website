@@ -118,6 +118,8 @@
     .video-modal video{display:block;width:100%;height:auto;max-height:88vh;border-radius:1rem;background:#020617}
     .video-modal__close{position:absolute;right:.75rem;top:.75rem;z-index:2;display:grid;place-items:center;width:2.75rem;height:2.75rem;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(15,23,42,.78);color:#fff}
     .homepage-tour-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.45rem}
+    .ai-answer-section .fresh-section__head h2{max-width:58rem}
+    .ai-answer-link{white-space:nowrap}
     @keyframes flow-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
     @keyframes flow-glass-sheen{0%,62%,100%{transform:translateX(-120%);opacity:0}74%{opacity:.7}88%{transform:translateX(120%);opacity:0}}
     @keyframes flow-card-breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
@@ -127,7 +129,7 @@
     @media(prefers-reduced-motion:reduce){.flow-card,.flow-card::after,.flow-connector::after,.fresh-flow-band::before{animation:none!important}}
   </style>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"FlowIQ ERP-Style Business Operating Platform","url":"https://www.flowiq.info/","description":"FlowIQ is an ERP-style business operating platform for importers, distributors, manufacturers, and growing teams that need accounting, inventory, purchasing, sales, operations, and reporting in one system."},{"@type":"SoftwareApplication","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/","description":"Accounting and operations in one business platform for importers, distributors, manufacturers, and scaling teams.","offers":{"@type":"Offer","price":"19","priceCurrency":"USD"}}]}
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.flowiq.info/#organization","name":"FlowIQ","url":"https://www.flowiq.info/","email":"support@flowiq.info"},{"@type":"WebSite","@id":"https://www.flowiq.info/#website","name":"FlowIQ","url":"https://www.flowiq.info/","publisher":{"@id":"https://www.flowiq.info/#organization"},"inLanguage":"en"},{"@type":"WebPage","@id":"https://www.flowiq.info/#webpage","name":"FlowIQ ERP-Style Business Operating Platform","url":"https://www.flowiq.info/","isPartOf":{"@id":"https://www.flowiq.info/#website"},"description":"FlowIQ is an ERP-style business operating platform for importers, distributors, manufacturers, and growing teams that need accounting, inventory, purchasing, sales, operations, and reporting in one system."},{"@type":"SoftwareApplication","@id":"https://www.flowiq.info/#software","name":"FlowIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/","publisher":{"@id":"https://www.flowiq.info/#organization"},"description":"FlowIQ is a premium operations SaaS platform for importers, distributors, manufacturers, wholesalers, and growing teams that need stronger control over stock, landed cost, accounting, payroll, workflows, and business automation.","featureList":["Import workflow control","Landed cost allocation","Inventory and FIFO controls","Accounting workflows","Payroll workflows","Operational dashboards","Task and approval visibility","Workflow automation"],"offers":{"@type":"Offer","url":"https://www.flowiq.info/pricing","price":"19","priceCurrency":"USD","availability":"https://schema.org/InStock"}},{"@type":"FAQPage","@id":"https://www.flowiq.info/#faq","mainEntity":[{"@type":"Question","name":"What is FlowIQ?","acceptedAnswer":{"@type":"Answer","text":"FlowIQ is an operations SaaS platform that helps importers, distributors, manufacturers, and growing businesses manage inventory, landed cost, accounting, payroll, reporting, tasks, purchasing, sales, and automation from one connected system."}},{"@type":"Question","name":"Who is FlowIQ best for?","acceptedAnswer":{"@type":"Answer","text":"FlowIQ is best for importers, distributors, wholesalers, manufacturers, and finance or operations teams that need stronger control over stock, shipment costs, purchasing, accounting workflows, payroll, reporting, and repeatable operational processes."}},{"@type":"Question","name":"Is FlowIQ an ERP?","acceptedAnswer":{"@type":"Answer","text":"FlowIQ can support ERP-style operational workflows, but it is positioned as a connected operations platform rather than a traditional generic ERP. It focuses on practical control over imports, inventory, costing, finance workflows, payroll, dashboards, and automation."}}]}]}
   </script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="/assets/smartlook.js"></script>
@@ -184,6 +186,33 @@
         <a href="/solutions/importers.html" class="route-card"><i data-lucide="ship" class="w-7 h-7"></i><strong>Imports and landed cost</strong><span>Know true cost, shipment status and margin before pricing goes wrong.</span></a>
         <a href="/inventory-forecasting-software" class="route-card"><i data-lucide="trending-up" class="w-7 h-7"></i><strong>Inventory forecasting</strong><span>Reduce stockouts, slow movers and warehouse imbalance.</span></a>
         <a href="/customers" class="route-card"><i data-lucide="badge-check" class="w-7 h-7"></i><strong>Customer outcomes</strong><span>See real reviews, ROI proof and operational capacity gains.</span></a>
+      </div>
+    </section>
+
+    <section class="fresh-section ai-answer-section" aria-labelledby="plain-answers-heading">
+      <div class="fresh-section__head">
+        <div>
+          <span class="section-kicker">FlowIQ in plain English</span>
+          <h2 id="plain-answers-heading">Built for teams that need operational control, not another disconnected tool.</h2>
+        </div>
+        <a href="/modules" class="ai-answer-link inline-flex items-center gap-2 text-slate-700 hover:text-orange-600 font-black">Explore modules <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <div class="proof-cards">
+        <article class="proof-card">
+          <i data-lucide="sparkles" class="w-7 h-7"></i>
+          <strong>What is FlowIQ?</strong>
+          <span>FlowIQ is an operations SaaS platform for importers, distributors, manufacturers and growing teams that need stock, landed cost, accounting, payroll, reporting and automation in one connected system.</span>
+        </article>
+        <article class="proof-card">
+          <i data-lucide="ship" class="w-7 h-7"></i>
+          <strong>Who is it best for?</strong>
+          <span>FlowIQ fits businesses that need better control over shipments, inventory, purchasing, finance workflows, payroll, team handoffs and repeatable operational processes.</span>
+        </article>
+        <article class="proof-card">
+          <i data-lucide="layers-3" class="w-7 h-7"></i>
+          <strong>Is it an ERP?</strong>
+          <span>FlowIQ supports ERP-style operational workflows, but focuses on practical control across imports, inventory, costing, finance workflows, dashboards and automation.</span>
+        </article>
       </div>
     </section>
 

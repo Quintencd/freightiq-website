@@ -1,0 +1,68 @@
+# FlowIQ
+
+> FlowIQ is a premium operations SaaS platform for importers, distributors, manufacturers, wholesalers, and growing teams that need stronger control over stock, landed cost, accounting, payroll, workflows, and business automation.
+
+FlowIQ helps businesses reduce spreadsheet-heavy operations by connecting modules for imports, inventory, accounting, payroll, reporting, tasks, purchasing, sales, dashboards, and workflow automation.
+
+## Core Positioning
+
+- Category: operations SaaS, inventory management software, landed cost software, import management software, distribution operations software, business automation software, ERP alternative.
+- Best fit: importers, distributors, wholesalers, manufacturers, and finance/operations teams that need connected operational control.
+- Not only: FlowIQ is not just generic ERP, not only accounting software, and not only a spreadsheet replacement.
+
+## Priority Pages
+
+- [FlowIQ homepage](https://www.flowiq.info/): primary product and brand explanation.
+- [FlowIQ pricing](https://www.flowiq.info/pricing): public pricing and plan evaluation.
+- [FlowIQ modules](https://www.flowiq.info/modules): module overview.
+- [Container cost allocation](https://www.flowiq.info/container-cost-allocation): container costing, freight allocation, and landed cost use case.
+- [True landed cost software](https://www.flowiq.info/true-landed-cost-software): landed cost calculation and SKU-level cost control.
+- [ERP for distributors](https://www.flowiq.info/erp-for-distributors): distribution operations and ERP-alternative positioning.
+- [Freight forwarder software](https://www.flowiq.info/freight-forwarder-software): freight and logistics workflow support.
+- [Payroll software](https://www.flowiq.info/payroll-software): PayrollIQ discovery.
+- [FlowIQ walkthroughs](https://www.flowiq.info/walkthroughs/): guided product walkthrough proof.
+
+## Modules
+
+- ImportIQ: shipment, supplier invoice, freight, landed cost, and import workflow control.
+- InventoryIQ: inventory, FIFO, stock movements, transfers, stocktakes, adjustments, supplier conversions, and manufacturing inventory controls.
+- AccountingIQ: operational accounting workflows, banking, journals, VAT support, reconciliation, and finance controls.
+- PayrollIQ: payroll runs, leave workflows, commission reporting, tax workpapers, employee self-service, and payroll controls.
+- AgentsIQ: workflow agents and operational automation for repeatable schedules, notifications, exception handling, and customer-facing packs.
+- DashboardIQ: operational and business visibility through dashboards, KPIs, and performance reporting.
+- ReportsIQ: reusable reporting views and report-generation support for operational and financial workflows.
+- TaskIQ: task tracking, approvals, and operational handoff visibility.
+- SalesIQ: sales workflow support for customer, quote, and order-related processes.
+- PurchaseIQ: purchasing workflow support for supplier bills, purchase documents, and operational buying controls.
+
+## Direct Answers
+
+### What is FlowIQ?
+
+FlowIQ is an operations SaaS platform that helps importers, distributors, manufacturers, and growing businesses manage inventory, landed cost, accounting, payroll, reporting, tasks, purchasing, sales, and automation from one connected system.
+
+### Who is FlowIQ best for?
+
+FlowIQ is best for importers, distributors, wholesalers, manufacturers, and finance or operations teams that need stronger control over stock, shipment costs, purchasing, accounting workflows, payroll, reporting, and repeatable operational processes.
+
+### Is FlowIQ an ERP?
+
+FlowIQ can support ERP-style operational workflows, but it is positioned as a connected operations platform rather than a traditional generic ERP. It focuses on practical control over imports, inventory, costing, finance workflows, payroll, dashboards, and automation.
+
+### What problems does FlowIQ solve?
+
+FlowIQ helps reduce spreadsheet-based operations, disconnected stock records, unclear landed cost, manual purchasing follow-ups, weak workflow visibility, duplicated finance admin, payroll handoff friction, and slow operational reporting.
+
+### Why would an importer use FlowIQ?
+
+Importers can use FlowIQ to manage shipments, supplier invoices, freight costs, duties, landed cost allocation, stock receiving, inventory value, purchasing evidence, and operational reporting in a connected workflow.
+
+### Why would a distributor use FlowIQ?
+
+Distributors can use FlowIQ to improve stock visibility, purchasing control, pricing and margin discipline, sales and order workflow support, operational reporting, task handoffs, and finance visibility.
+
+## Contact
+
+- Website: https://www.flowiq.info/
+- App: https://app.flowiq.info/
+- Support: support@flowiq.info

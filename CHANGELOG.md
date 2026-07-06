@@ -1,5 +1,22 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.20] - July 6, 2026
+
+### AI Search Discovery Foundation
+
+- Added `llms.txt` at the website root and `public/llms.txt` with canonical FlowIQ positioning, priority URLs, module summaries, and direct AI-answer snippets.
+- Added explicit AI/search crawler allow rules to both root and public `robots.txt` copies while preserving sitemap declarations.
+- Added `llms.txt` to both root and public sitemap copies.
+- Strengthened homepage JSON-LD with `Organization`, `WebSite`, `SoftwareApplication`, and `FAQPage` graph entries for core AI-search questions.
+- Added a compact homepage answer section using existing premium card styling so public copy now directly answers what FlowIQ is, who it fits, and how it relates to ERP-style workflows.
+- Added documentation under `docs/Website/2026-07-06_ai_search_discovery_foundation.md`.
+- No Netlify deploy was run.
+
+### Regression Risk Notes (>10%)
+
+- **10-15%**: Organic and AI-search crawl behavior can shift because `llms.txt`, explicit crawler rules, and richer homepage schema make FlowIQ easier to classify and quote.
+- **10-12%**: Homepage snippet/FAQ interpretation can shift because direct answer copy and FAQ schema now states FlowIQ positioning more explicitly. Mitigation: claims are conservative and match existing module/site positioning.
+
 ## [1.3.19] - July 6, 2026
 
 ### Weekly Growth Module SEO and Tracking Completion
