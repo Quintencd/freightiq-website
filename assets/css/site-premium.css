@@ -1,0 +1,455 @@
+/* FlowIQ marketing-site premium system
+   Shared across public page families through assets/js/main.js. */
+
+:root {
+  --premium-ink: #191817;
+  --premium-copy: #5d5955;
+  --premium-muted: #8b8580;
+  --premium-paper: #fbfaf8;
+  --premium-stone: #f2f0ed;
+  --premium-line: #dedad5;
+  --premium-orange: #f97316;
+  --premium-orange-dark: #ea580c;
+  --premium-dark: #211e1c;
+}
+
+body.premium-light-page {
+  background: var(--premium-paper) !important;
+  color: var(--premium-ink) !important;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif !important;
+  font-synthesis: none;
+}
+
+body.premium-light-page .site-atmosphere { display: none !important; }
+
+/* Shared navigation */
+body.premium-light-page > nav > nav,
+body.premium-light-page nav.fixed,
+body.premium-light-page nav.sticky {
+  border-bottom: 1px solid rgba(222,218,213,.82) !important;
+  background: rgba(251,250,248,.93) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+body.premium-light-page nav img { filter: none !important; }
+body.premium-light-page nav a,
+body.premium-light-page .nav-dropdown__trigger {
+  color: #4e4a46 !important;
+  font-weight: 510 !important;
+  letter-spacing: -.01em !important;
+  text-transform: none !important;
+}
+body.premium-light-page nav a:hover,
+body.premium-light-page .nav-dropdown__trigger:hover { color: var(--premium-orange-dark) !important; }
+
+body.premium-light-page .nav-dropdown__menu { padding-top: .75rem; }
+body.premium-light-page .nav-dropdown__panel {
+  border: 1px solid var(--premium-line) !important;
+  border-radius: 1rem !important;
+  background: rgba(251,250,248,.99) !important;
+  box-shadow: 0 24px 60px rgba(42,35,30,.12) !important;
+}
+body.premium-light-page .nav-dropdown__link { border-radius: .7rem !important; }
+body.premium-light-page .nav-dropdown__link:hover { background: #f1eee9 !important; }
+
+body.premium-light-page > nav a[href="/signup"] {
+  border: 1px solid rgba(249,115,22,.55) !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  color: var(--premium-orange-dark) !important;
+  box-shadow: none !important;
+  font-size: .82rem !important;
+  font-weight: 540 !important;
+}
+body.premium-light-page > nav a[href="/signup"]:hover {
+  background: #fff1e7 !important;
+  transform: none !important;
+}
+
+/* Global typography and rhythm */
+body.premium-light-page:not(.fiq-family-home) .premium-main {
+  width: min(100% - 3rem, 1240px) !important;
+  padding-top: clamp(8rem,10vw,9.5rem) !important;
+  padding-bottom: clamp(4rem,8vw,7rem) !important;
+}
+
+body.premium-light-page:not(.fiq-family-home) :where(h1,h2,h3) {
+  color: var(--premium-ink) !important;
+  letter-spacing: -.045em !important;
+}
+body.premium-light-page:not(.fiq-family-home) h1 {
+  font-size: clamp(3.2rem,6.2vw,6.5rem) !important;
+  font-weight: 440 !important;
+  line-height: .94 !important;
+  overflow-wrap: normal !important;
+}
+body.premium-light-page:not(.fiq-family-home) h2 {
+  font-size: clamp(2rem,3.8vw,4rem) !important;
+  font-weight: 460 !important;
+  line-height: 1 !important;
+}
+body.premium-light-page:not(.fiq-family-home) h3 {
+  font-weight: 560 !important;
+  letter-spacing: -.03em !important;
+}
+body.premium-light-page:not(.fiq-family-home) :where(p,li) {
+  color: var(--premium-copy) !important;
+  font-weight: 400 !important;
+}
+
+body.premium-light-page:not(.fiq-family-home) :where(.section-kicker,.fiq-redesign-kicker,.text-orange-600,.text-freight-orange) {
+  color: var(--premium-orange-dark) !important;
+}
+
+/* Editorial hero surface */
+body.premium-light-page:not(.fiq-family-home) :where(.fiq-auto-hero,.fiq-redesign-hero,.solution-conversion-hero) {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--premium-line) !important;
+  border-radius: 1.1rem !important;
+  background: rgba(255,255,255,.45) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+body.premium-light-page:not(.fiq-family-home) :where(.fiq-auto-hero,.fiq-redesign-hero,.solution-conversion-hero)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(249,115,22,.12) .7px,transparent .7px);
+  background-size: 6px 6px;
+  mask-image: linear-gradient(120deg,#000,transparent 65%);
+  pointer-events: none;
+}
+body.premium-light-page:not(.fiq-family-home) :where(.fiq-auto-hero,.fiq-redesign-hero,.solution-conversion-hero) > * {
+  position: relative;
+  z-index: 1;
+}
+body.premium-light-page:not(.fiq-family-home) .fiq-auto-hero :where(h1,h2),
+body.premium-light-page:not(.fiq-family-home) .fiq-redesign-title,
+body.premium-light-page:not(.fiq-family-home) .solution-conversion-hero h1 {
+  max-width: 15ch !important;
+  font-size: clamp(3rem,5vw,5.5rem) !important;
+  font-weight: 440 !important;
+  letter-spacing: -.06em !important;
+  line-height: .96 !important;
+}
+body.premium-light-page:not(.fiq-family-home) :where(.fiq-auto-hero,.fiq-redesign-hero,.solution-conversion-hero) p {
+  max-width: 48rem;
+  color: var(--premium-copy) !important;
+  font-size: clamp(1rem,1.55vw,1.2rem) !important;
+  line-height: 1.58 !important;
+}
+
+/* Preserve and elevate solution artwork */
+body.fiq-family-solutions .solution-conversion-page { max-width: 1240px !important; }
+body.fiq-family-solutions .solution-conversion-hero {
+  grid-template-columns: minmax(0,.88fr) minmax(27rem,1.12fr) !important;
+  gap: clamp(2rem,5vw,5rem) !important;
+  min-height: 38rem;
+  padding: clamp(2rem,5vw,4.5rem) !important;
+}
+body.fiq-family-solutions .solution-conversion-hero img,
+body.fiq-family-solutions .solution-conversion-hero video {
+  width: 100%;
+  aspect-ratio: 16/10 !important;
+  border: 1px solid rgba(222,218,213,.8) !important;
+  border-radius: .8rem !important;
+  object-fit: cover;
+  box-shadow: 0 30px 72px rgba(44,36,31,.14) !important;
+}
+
+body.fiq-family-solutions .solution-conversion-section,
+body.fiq-family-solutions .solution-conversion-cta {
+  border: 1px solid var(--premium-line) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: clamp(2rem,5vw,4rem) !important;
+}
+body.fiq-family-solutions .solution-conversion-section + .solution-conversion-section { margin-top: -1px; }
+
+/* Premium cards and indexed content sections */
+body.premium-light-page:not(.fiq-family-home) :where(
+  .fiq-premium-section,
+  .fiq-redesign-section,
+  article.bg-white,
+  section.bg-white,
+  .solution-segment-card,
+  .system-module-card,
+  .pricing-stage-card
+) {
+  border-color: var(--premium-line) !important;
+  background: rgba(255,255,255,.45) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+body.premium-light-page:not(.fiq-family-home) :where(
+  .grid > .rounded-lg,
+  .grid > .rounded-xl,
+  .grid > .rounded-2xl,
+  .fiq-redesign-card,
+  .solution-segment-card,
+  .system-module-card,
+  .pricing-stage-card
+) {
+  border: 1px solid var(--premium-line) !important;
+  border-radius: .9rem !important;
+  background: rgba(255,255,255,.52) !important;
+  box-shadow: none !important;
+  transition: background .2s ease,border-color .2s ease,transform .2s ease !important;
+}
+body.premium-light-page:not(.fiq-family-home) :where(
+  .grid > .rounded-lg,
+  .grid > .rounded-xl,
+  .grid > .rounded-2xl,
+  .fiq-redesign-card,
+  .solution-segment-card,
+  .system-module-card
+):hover {
+  border-color: #c9c3bd !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  transform: translateY(-2px);
+}
+
+body.premium-light-page:not(.fiq-family-home) :where(.fiq-redesign-card,.solution-segment-card,.system-module-card) > :is(i,svg),
+body.premium-light-page:not(.fiq-family-home) .grid > :where(.rounded-lg,.rounded-xl,.rounded-2xl) :is(i[data-lucide],svg[data-lucide]) {
+  color: var(--premium-orange) !important;
+}
+
+/* Module and customer imagery */
+body.fiq-family-modules .module-thumb-wrap,
+body.fiq-family-customers .fiq-redesign-card img,
+body.fiq-family-walkthroughs video,
+body.fiq-family-walkthroughs img {
+  border-radius: .65rem !important;
+  box-shadow: none !important;
+}
+body.fiq-family-modules .module-thumb-wrap { border-bottom: 1px solid var(--premium-line); }
+body.fiq-family-modules main > .fiq-auto-hero {
+  overflow: visible;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+body.fiq-family-modules main > .fiq-auto-hero::before { display: none; }
+
+/* Buttons */
+body.premium-light-page:not(.fiq-family-home) :where(
+  a.bg-freight-orange,
+  button.bg-freight-orange,
+  a.bg-orange-500,
+  button.bg-orange-500,
+  a[data-analytics-event="trial_signup_click"]
+) {
+  border: 1px solid var(--premium-orange) !important;
+  border-radius: 999px !important;
+  background: var(--premium-orange) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  font-weight: 550 !important;
+}
+body.premium-light-page:not(.fiq-family-home) :where(
+  a.bg-freight-orange,
+  button.bg-freight-orange,
+  a.bg-orange-500,
+  button.bg-orange-500,
+  a[data-analytics-event="trial_signup_click"]
+):hover {
+  border-color: var(--premium-orange-dark) !important;
+  background: var(--premium-orange-dark) !important;
+  box-shadow: none !important;
+  transform: translateY(-2px);
+}
+
+body.premium-light-page:not(.fiq-family-home) :where(a.border,button.border,.glass-panel) {
+  border-color: var(--premium-line) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Strong conversion bands */
+body.fiq-family-solutions .solution-conversion-cta,
+body.premium-light-page:not(.fiq-family-home) .fiq-redesign-cta {
+  position: relative;
+  overflow: hidden;
+  border: 0 !important;
+  background: var(--premium-orange) !important;
+  color: #fff !important;
+}
+body.fiq-family-solutions .solution-conversion-cta::after,
+body.premium-light-page:not(.fiq-family-home) .fiq-redesign-cta::after {
+  content: "";
+  position: absolute;
+  inset: 10% 3% 10% 54%;
+  opacity: .25;
+  background-image: radial-gradient(rgba(255,255,255,.8) .8px,transparent .8px);
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+body.fiq-family-solutions .solution-conversion-cta :where(h2,p),
+body.premium-light-page:not(.fiq-family-home) .fiq-redesign-cta :where(h2,p) { color: #fff !important; }
+body.fiq-family-solutions .solution-conversion-cta p,
+body.premium-light-page:not(.fiq-family-home) .fiq-redesign-cta p { opacity: .82; }
+body.fiq-family-solutions .solution-conversion-cta > div {
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  gap: .7rem !important;
+}
+body.fiq-family-solutions .solution-conversion-cta > div > a {
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 3.2rem;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  border-radius: 999px !important;
+  padding: .72rem 1.3rem !important;
+  box-shadow: none !important;
+  font-size: .9rem !important;
+  font-weight: 560 !important;
+  line-height: 1 !important;
+  text-decoration: none;
+  transition: transform .2s ease,background .2s ease,border-color .2s ease !important;
+}
+body.fiq-family-solutions .solution-conversion-cta > div > a:hover { transform: translateY(-2px) !important; }
+body.fiq-family-solutions .solution-conversion-cta > div > a:first-child {
+  border: 1px solid var(--premium-dark) !important;
+  background: var(--premium-dark) !important;
+  color: #fff !important;
+}
+body.fiq-family-solutions .solution-conversion-cta > div > a:first-child:hover {
+  border-color: #0f0e0d !important;
+  background: #0f0e0d !important;
+}
+body.fiq-family-solutions .solution-conversion-cta > div > a:last-child {
+  border: 1px solid rgba(255,255,255,.72) !important;
+  background: rgba(255,255,255,.94) !important;
+  color: var(--premium-dark) !important;
+}
+body.fiq-family-solutions .solution-conversion-cta > div > a:last-child:hover { background: #fff !important; }
+body.fiq-family-solutions .solution-conversion-cta > div > a:first-child :is(i,svg) { color: #fff !important; }
+body.fiq-family-solutions .solution-conversion-cta > div > a:last-child :is(i,svg) { color: var(--premium-dark) !important; }
+
+/* Pricing */
+body.fiq-family-pricing .premium-main { width: min(100% - 3rem,1400px) !important; }
+body.fiq-family-pricing #scale-path,
+body.fiq-family-pricing h1 {
+  font-size: clamp(3rem,5.2vw,5.6rem) !important;
+  font-weight: 440 !important;
+  letter-spacing: -.06em !important;
+}
+body.fiq-family-pricing #pricing-table-wrap > div {
+  border: 1px solid var(--premium-line) !important;
+  border-radius: 1rem !important;
+  background: rgba(255,255,255,.58) !important;
+  box-shadow: none !important;
+}
+body.fiq-family-pricing table :where(th,td) { border-color: var(--premium-line) !important; }
+body.fiq-family-pricing #new-account-module-promo {
+  border-color: rgba(249,115,22,.22) !important;
+  background: rgba(255,247,237,.72) !important;
+  box-shadow: none !important;
+}
+body.fiq-family-pricing #new-account-module-promo :where(.bg-emerald-600,.bg-green-600) {
+  border-color: var(--premium-dark) !important;
+  background: var(--premium-dark) !important;
+  color: #fff !important;
+}
+
+/* Forms */
+body.premium-light-page :where(input,select,textarea) {
+  border: 1px solid #cfc9c3 !important;
+  border-radius: .75rem !important;
+  background: #fff !important;
+  color: var(--premium-ink) !important;
+  box-shadow: none !important;
+}
+body.premium-light-page :where(input,select,textarea):focus {
+  outline: 0 !important;
+  border-color: var(--premium-orange) !important;
+  box-shadow: 0 0 0 4px rgba(249,115,22,.1) !important;
+}
+body.premium-light-page .fiq-premium-form {
+  border-color: var(--premium-line) !important;
+  border-radius: 1rem !important;
+  background: rgba(255,255,255,.6) !important;
+  box-shadow: none !important;
+}
+
+/* Article, glossary, comparison and tool reading surfaces */
+body:is(.fiq-family-article,.fiq-family-glossary,.fiq-family-compare,.fiq-family-use-cases,.fiq-family-legal,.fiq-family-tools) .premium-main {
+  width: min(100% - 3rem,1120px) !important;
+}
+body:is(.fiq-family-article,.fiq-family-glossary,.fiq-family-compare,.fiq-family-use-cases,.fiq-family-legal,.fiq-family-tools) main :where(section,article,.prose) {
+  border-color: var(--premium-line) !important;
+  border-radius: .9rem !important;
+  background: rgba(255,255,255,.4) !important;
+  box-shadow: none !important;
+}
+body:is(.fiq-family-article,.fiq-family-glossary,.fiq-family-compare,.fiq-family-use-cases,.fiq-family-legal,.fiq-family-tools) main :where(p,li) {
+  line-height: 1.72 !important;
+}
+
+/* Footer */
+body.premium-light-page footer,
+body.premium-light-page footer[class*="bg-"] {
+  border-top: 1px solid var(--premium-line) !important;
+  background: #f3f0ec !important;
+  color: var(--premium-copy) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+body.premium-light-page footer :where(h1,h2,h3,h4,h5,h6,strong) { color: var(--premium-ink) !important; }
+body.premium-light-page footer a { color: var(--premium-copy) !important; }
+body.premium-light-page footer a:hover { color: var(--premium-orange-dark) !important; }
+
+/* Keep the shared header CTA quiet on every page family. */
+body.premium-light-page > nav > nav a[href="/signup"],
+body.premium-light-page > nav a[href="/signup"] {
+  border: 1px solid rgba(249,115,22,.55) !important;
+  background: transparent !important;
+  color: var(--premium-orange-dark) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+body.premium-light-page > nav > nav a[href="/signup"]:hover,
+body.premium-light-page > nav a[href="/signup"]:hover { background: #fff1e7 !important; }
+
+@media (max-width: 960px) {
+  body.premium-light-page:not(.fiq-family-home) .premium-main {
+    width: min(100% - 1.5rem,100%) !important;
+    padding-top: 6.5rem !important;
+  }
+  body.fiq-family-solutions .solution-conversion-hero {
+    grid-template-columns: 1fr !important;
+    min-height: 0;
+  }
+  body.premium-light-page:not(.fiq-family-home) .fiq-auto-hero :where(h1,h2),
+  body.premium-light-page:not(.fiq-family-home) .fiq-redesign-title,
+  body.premium-light-page:not(.fiq-family-home) .solution-conversion-hero h1 {
+    max-width: none !important;
+    font-size: clamp(2.7rem,9vw,4.8rem) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body.premium-light-page:not(.fiq-family-home) .premium-main { width: min(100% - 1rem,100%) !important; }
+  body.premium-light-page:not(.fiq-family-home) h1 { font-size: clamp(2.65rem,13vw,4rem) !important; }
+  body.premium-light-page:not(.fiq-family-home) h2 { font-size: clamp(2rem,9vw,3rem) !important; }
+  body.fiq-family-solutions .solution-conversion-hero,
+  body.fiq-family-solutions .solution-conversion-section,
+  body.fiq-family-solutions .solution-conversion-cta { padding: 1.4rem !important; }
+  body.fiq-family-solutions .solution-conversion-cta > div > a { width: 100% !important; }
+  body.fiq-family-solutions .solution-conversion-cta::after,
+  body.premium-light-page:not(.fiq-family-home) .fiq-redesign-cta::after { inset: 50% -10% 0 10%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.premium-light-page * { scroll-behavior: auto !important; }
+}

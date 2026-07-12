@@ -36,6 +36,7 @@
   window.FlowIQStoryReveal = initStoryReveals;
 
   var LIGHT_CSS_VERSION = '24';
+  var PREMIUM_SITE_CSS_VERSION = '1';
 
   function getPageFamily(pathname) {
     var path = pathname || window.location.pathname || '/';
@@ -142,6 +143,20 @@
     document.head.appendChild(script);
   }
 
+  function ensurePremiumSiteStyles() {
+    var existing = document.getElementById('flowiq-premium-site-css');
+    if (existing) {
+      existing.setAttribute('href', '/assets/css/site-premium.css?v=' + PREMIUM_SITE_CSS_VERSION);
+      return;
+    }
+
+    var link = document.createElement('link');
+    link.id = 'flowiq-premium-site-css';
+    link.rel = 'stylesheet';
+    link.href = '/assets/css/site-premium.css?v=' + PREMIUM_SITE_CSS_VERSION;
+    document.head.appendChild(link);
+  }
+
   function getSiteNav() {
     return '' +
       '<nav class="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-sm supports-[backdrop-filter]:bg-white/60">' +
@@ -220,6 +235,7 @@
 
   function initSiteNav() {
     ensureSiteStyles();
+    ensurePremiumSiteStyles();
     ensureLucideScript();
     normalizeWebsiteShell();
 

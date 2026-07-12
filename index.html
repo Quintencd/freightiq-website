@@ -22,9 +22,10 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
   <link rel="icon" type="image/png" href="/flowiq-logo.png?v=2">
   <link rel="shortcut icon" href="/favicon.ico?v=2">
-  <link rel="preload" as="image" href="/assets/img/generated/operations-command-story.webp" imagesrcset="/assets/img/generated/operations-command-story-960.webp 960w, /assets/img/generated/operations-command-story.webp 1672w" imagesizes="(max-width: 900px) 100vw, 50vw" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/img/modules/thumb-dashboardiq-2048.webp" type="image/webp" fetchpriority="high">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="/flowiq-light.css?v=21">
+  <link rel="stylesheet" href="/assets/css/homepage-premium.css?v=1">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -140,37 +141,33 @@
 
   <nav></nav>
 
-  <main class="fresh-home">
-    <section id="hero" class="fresh-hero">
-      <div class="story-reveal">
+  <main class="premium-home">
+    <section id="hero" class="premium-hero">
+      <div class="premium-hero__copy story-reveal">
         <span class="section-kicker">Start simple. Scale smarter.</span>
-        <h1 class="mt-6">The ERP-style business platform that grows with you.</h1>
-        <p class="mt-6">FlowIQ brings accounting, stock, purchasing, sales, operations and reporting into one platform for importers, distributors, manufacturers and scaling teams that have outgrown disconnected tools.</p>
-        <div class="fresh-actions">
-          <a href="/signup" data-analytics-event="trial_signup_click" data-analytics-position="fresh_hero_primary" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-orange-500/20 hover:-translate-y-1 transition-all">Start Free Trial <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
-          <a href="/book-demo.html" data-analytics-event="demo_click" data-analytics-position="fresh_hero_secondary" data-analytics-label="homepage hero book demo" class="inline-flex items-center justify-center gap-2 glass-panel px-8 py-4 rounded-full font-bold text-lg text-slate-900 hover:-translate-y-0.5 transition-all">Book a Demo <i data-lucide="calendar-check" class="w-5 h-5 text-freight-orange"></i></a>
-          <a href="/pricing.html#scale-path" data-analytics-event="view_pricing" data-analytics-position="fresh_hero_tertiary" data-analytics-label="homepage hero pricing scale path" class="inline-flex items-center justify-center gap-2 px-4 py-4 font-black text-slate-700 hover:text-orange-600 transition-all">See pricing path <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        <h1>The ERP-style business platform<br><span>that grows with you.</span></h1>
+        <p>FlowIQ brings accounting, stock, purchasing, sales, operations and reporting into one platform for importers, distributors, manufacturers and scaling teams that have outgrown disconnected tools.</p>
+        <div class="premium-actions">
+          <a href="/signup" data-analytics-event="trial_signup_click" data-analytics-position="fresh_hero_primary" class="premium-button premium-button--primary">Start free trial <span aria-hidden="true">→</span></a>
+          <a href="/book-demo.html" data-analytics-event="demo_click" data-analytics-position="fresh_hero_secondary" data-analytics-label="homepage hero book demo" class="premium-button premium-button--secondary">Book a demo</a>
         </div>
-        <div class="fresh-proof-row" aria-label="FlowIQ proof points">
-          <span><i data-lucide="check-circle-2" class="w-4 h-4 text-green-600"></i> Accounting + operations together</span>
-          <span><i data-lucide="boxes" class="w-4 h-4 text-orange-600"></i> From 100 SKUs to multi-warehouse scale</span>
-          <span><i data-lucide="star" class="w-4 h-4 text-orange-600"></i> Free migration assistance available</span>
+        <div class="premium-hero__trust" aria-label="FlowIQ proof points">
+          <span>Accounting + operations</span><span>100 SKUs to multi-warehouse</span><span>Migration assistance</span>
         </div>
       </div>
 
-      <div class="generated-hero-panel story-reveal">
-        <video class="hero-loop-video" autoplay muted loop playsinline preload="metadata" poster="/assets/img/generated/homepage-support/flowiq-homepage-hero-poster.jpg" aria-hidden="true">
-          <source src="/assets/videos/homepage/flowiq-homepage-hero-loop.webm" type="video/webm">
-          <source src="/assets/videos/homepage/flowiq-homepage-hero-loop.mp4" type="video/mp4">
-        </video>
-        <img class="hero-loop-fallback" src="/assets/img/generated/homepage-support/flowiq-homepage-hero-poster.jpg" srcset="/assets/img/generated/homepage-support/flowiq-homepage-hero-poster-960.jpg 960w, /assets/img/generated/homepage-support/flowiq-homepage-hero-poster.jpg 1280w" sizes="(max-width: 900px) 100vw, 50vw" alt="FlowIQ business operations hero scene showing warehouse stock, office users, connected devices, and orange operational data movement"
-          width="1280" height="720" loading="eager" fetchpriority="high" decoding="async">
-        <div class="hero-motion-stack" aria-hidden="true">
-          <span>Import cost updated</span>
-          <span>Stock risk detected</span>
-          <span>Month-end ready</span>
+      <div class="product-stage story-reveal" aria-label="FlowIQ product preview" data-product-carousel>
+        <div class="product-stage__tabs" role="tablist" aria-label="FlowIQ product views">
+          <button class="is-active" type="button" data-product-tab="dashboard" aria-selected="true">Command centre</button>
+          <button type="button" data-product-tab="imports" aria-selected="false">Imports</button>
+          <button type="button" data-product-tab="forecast" aria-selected="false">Forecasting</button>
         </div>
-        <span class="hero-live-badge">Accounting, stock and operations in one platform</span>
+        <div class="product-stage__screen">
+          <img data-product-screen="dashboard" class="is-active" src="/assets/img/modules/thumb-dashboardiq-2048.webp" alt="FlowIQ operational dashboard showing financial performance, imports, inventory and risk signals" width="2048" height="1284" loading="eager" fetchpriority="high" decoding="async">
+          <img data-product-screen="imports" src="/assets/img/modules/thumb-importiq-2048.webp" alt="FlowIQ ImportIQ shipment and landed-cost workspace" width="2048" height="1293" loading="lazy" decoding="async">
+          <img data-product-screen="forecast" src="/assets/img/modules/thumb-forecastiq-2048.webp" alt="FlowIQ ForecastIQ inventory forecasting workspace" width="2048" height="1287" loading="lazy" decoding="async">
+        </div>
+        <div class="product-stage__status" aria-hidden="true"><span></span> Live operational view <em>Updated across every module</em></div>
       </div>
     </section>
 
@@ -286,7 +283,10 @@
         <h2>See if FlowIQ can recover margin in your operation.</h2>
         <p>Book a focused walkthrough around imports, stock planning, accounting and workflow control.</p>
       </div>
-      <a href="/book-demo.html" data-analytics-event="demo_click" data-analytics-position="homepage_bottom_cta" data-analytics-label="homepage bottom book demo" class="inline-flex items-center justify-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-orange-500/20 hover:-translate-y-1 transition-all">Book Demo <i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+      <div class="fresh-cta__actions">
+        <a href="/signup" data-analytics-event="trial_signup_click" data-analytics-position="homepage_bottom_cta" data-analytics-label="homepage bottom start free trial" class="fresh-cta__primary">Start free trial <span aria-hidden="true">→</span></a>
+        <a href="/book-demo.html" data-analytics-event="demo_click" data-analytics-position="homepage_bottom_cta" data-analytics-label="homepage bottom book demo" class="fresh-cta__secondary">Book a demo</a>
+      </div>
     </section>
   </main>
 
@@ -321,6 +321,52 @@
   </div>
 
   <script>
+    var productCarousel = document.querySelector('[data-product-carousel]');
+    var productTabs = Array.from(document.querySelectorAll('[data-product-tab]'));
+    var productRotationTimer;
+
+    function selectProductScreen(tabButton) {
+      if (!tabButton) return;
+      var target = tabButton.getAttribute('data-product-tab');
+      productTabs.forEach(function (button) {
+        var active = button === tabButton;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-selected', String(active));
+      });
+      document.querySelectorAll('[data-product-screen]').forEach(function (screen) {
+        screen.classList.toggle('is-active', screen.getAttribute('data-product-screen') === target);
+      });
+    }
+
+    function stopProductRotation() {
+      window.clearInterval(productRotationTimer);
+    }
+
+    function startProductRotation() {
+      stopProductRotation();
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || productTabs.length < 2) return;
+      productRotationTimer = window.setInterval(function () {
+        var activeIndex = productTabs.findIndex(function (button) { return button.classList.contains('is-active'); });
+        selectProductScreen(productTabs[(activeIndex + 1) % productTabs.length]);
+      }, 4200);
+    }
+
+    productTabs.forEach(function (tabButton) {
+      tabButton.addEventListener('click', function () {
+        selectProductScreen(tabButton);
+        startProductRotation();
+      });
+    });
+    productCarousel?.addEventListener('mouseenter', stopProductRotation);
+    productCarousel?.addEventListener('mouseleave', startProductRotation);
+    productCarousel?.addEventListener('focusin', stopProductRotation);
+    productCarousel?.addEventListener('focusout', startProductRotation);
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stopProductRotation();
+      else startProductRotation();
+    });
+    startProductRotation();
+
     document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
       var menu = document.getElementById('mobileMenu');
       menu?.classList.toggle('hidden');
