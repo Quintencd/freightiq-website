@@ -1,5 +1,21 @@
 # FlowIQ Marketing Website Changelog
 
+## [1.3.21] - July 13, 2026
+
+### Weekly Growth Research-Page Tracking Parity
+
+- Added the canonical website and growth analytics stacks to all sitemap-listed comparison, use-case, and glossary pages.
+- Added page-family reporting metadata so comparison, operational-problem, and educational journeys can be segmented cleanly.
+- Added explicit indexable robots directives and refreshed changed-route `lastmod` values in both synchronized sitemap copies.
+- Added documentation under `docs/Website/2026-07-13_weekly_growth_audit_research_page_tracking.md`.
+- No Netlify deploy, Git push, or commit was performed.
+
+### Regression Risk Notes (>10%)
+
+- **10-20%**: research-page analytics baselines can increase because 13 previously untracked routes now enter the canonical event stream.
+- **10-15%**: the added bottom-loaded analytics scripts introduce extra client network work on those routes; telemetry remains non-blocking and failure-tolerant.
+- **10-12%**: explicit robots directives and refreshed sitemap timestamps may prompt search engines to recrawl the changed routes.
+
 ## [1.3.20] - July 6, 2026
 
 ### AI Search Discovery Foundation

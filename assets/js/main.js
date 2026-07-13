@@ -36,7 +36,7 @@
   window.FlowIQStoryReveal = initStoryReveals;
 
   var LIGHT_CSS_VERSION = '24';
-  var PREMIUM_SITE_CSS_VERSION = '1';
+  var PREMIUM_SITE_CSS_VERSION = '2';
 
   function getPageFamily(pathname) {
     var path = pathname || window.location.pathname || '/';
@@ -60,6 +60,14 @@
     var family = getPageFamily(window.location.pathname);
     document.body.classList.add('marketing-shell', 'premium-light-page', 'fiq-family-' + family);
     document.body.setAttribute('data-page-family', family);
+
+    var normalizedPath = (window.location.pathname || '/').replace(/\/index\.html$/, '/');
+    if (
+      /^\/(compare|glossary)\/?$/.test(normalizedPath) ||
+      /^\/use-cases\/(?:[^/]+(?:\.html)?)?$/.test(normalizedPath)
+    ) {
+      document.body.classList.add('fiq-editorial-index');
+    }
 
     if (!document.querySelector('.site-atmosphere')) {
       var atmosphere = document.createElement('div');

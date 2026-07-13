@@ -396,6 +396,125 @@ body:is(.fiq-family-article,.fiq-family-glossary,.fiq-family-compare,.fiq-family
   line-height: 1.72 !important;
 }
 
+/* Editorial resource hubs previously retained the old centred utility-page
+   composition. Bring their headers and conversion bands into the approved
+   homepage rhythm without changing indexed copy, links, or document order. */
+body.fiq-editorial-index .premium-main {
+  width: min(100% - 3rem, 1240px) !important;
+}
+
+body.fiq-editorial-index .premium-main > .fiq-auto-hero {
+  display: flex !important;
+  flex-direction: column;
+  min-height: clamp(24rem, 40vw, 32rem);
+  margin-bottom: clamp(4.5rem, 8vw, 7rem) !important;
+  padding: clamp(2.5rem, 7vw, 6rem) !important;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left !important;
+}
+
+body.fiq-editorial-index .premium-main > .fiq-auto-hero > :where(h1,p) {
+  width: min(100%, 50rem);
+}
+
+body.fiq-editorial-index .premium-main > .fiq-auto-hero h1 {
+  max-width: 13ch !important;
+  margin-right: auto !important;
+  margin-left: 0 !important;
+  font-size: clamp(3.3rem, 6vw, 6.2rem) !important;
+  font-weight: 440 !important;
+  letter-spacing: -.06em !important;
+  line-height: .96 !important;
+}
+
+body.fiq-editorial-index .premium-main > .fiq-auto-hero p {
+  max-width: 42rem !important;
+  margin-right: auto !important;
+  margin-left: 0 !important;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem) !important;
+}
+
+body.fiq-editorial-index .premium-main > .fiq-auto-hero a {
+  align-self: flex-start;
+  min-height: 3.15rem;
+  padding: .75rem 1.35rem !important;
+  font-size: .9rem !important;
+  font-weight: 560 !important;
+}
+
+body.fiq-editorial-index .premium-main > section:not(.fiq-auto-hero) {
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+body.fiq-editorial-index .premium-main > section:not(.fiq-auto-hero) > h2 {
+  max-width: 18ch;
+  font-size: clamp(2.2rem, 4vw, 4rem) !important;
+  font-weight: 460 !important;
+  letter-spacing: -.055em !important;
+  line-height: 1 !important;
+}
+
+body.fiq-editorial-index .premium-main ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid var(--premium-line);
+  border-radius: 1rem;
+}
+
+body.fiq-editorial-index .premium-main ul > li {
+  margin: 0 !important;
+  border-right: 1px solid var(--premium-line);
+  border-bottom: 1px solid var(--premium-line);
+}
+
+body.fiq-editorial-index .premium-main ul > li:nth-child(even) { border-right: 0; }
+body.fiq-editorial-index .premium-main ul > li:nth-last-child(-n + 2) { border-bottom: 0; }
+
+body.fiq-editorial-index .premium-main ul > li > a {
+  min-height: 5.25rem;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: rgba(255,255,255,.34) !important;
+  padding: 1.35rem 1.5rem !important;
+  font-weight: 520 !important;
+}
+
+body.fiq-editorial-index .premium-main ul > li > a:hover {
+  background: #fff !important;
+  color: var(--premium-orange-dark) !important;
+}
+
+body.fiq-editorial-index .premium-main > section:last-child:not(:first-child) {
+  position: relative;
+  overflow: hidden;
+  margin-top: clamp(4.5rem, 8vw, 7rem) !important;
+  padding: clamp(2.5rem, 6vw, 5rem) !important;
+  border: 0 !important;
+  border-radius: 1rem !important;
+  background: var(--premium-orange) !important;
+  text-align: left !important;
+}
+
+body.fiq-editorial-index .premium-main > section:last-child:not(:first-child) :where(h2,p) {
+  max-width: 42rem;
+  color: #fff !important;
+}
+
+body.fiq-editorial-index .premium-main > section:last-child:not(:first-child) a {
+  border-color: var(--premium-dark) !important;
+  background: var(--premium-dark) !important;
+  color: #fff !important;
+}
+
+body.fiq-editorial-index .premium-main > section:last-child:not(:first-child) a:hover {
+  border-color: #0f0e0d !important;
+  background: #0f0e0d !important;
+}
+
 /* Footer */
 body.premium-light-page footer,
 body.premium-light-page footer[class*="bg-"] {
@@ -436,12 +555,38 @@ body.premium-light-page > nav a[href="/signup"]:hover { background: #fff1e7 !imp
     max-width: none !important;
     font-size: clamp(2.7rem,9vw,4.8rem) !important;
   }
+
+  body.fiq-editorial-index .premium-main > .fiq-auto-hero {
+    min-height: 0;
+    padding: clamp(2.25rem, 8vw, 4.5rem) !important;
+  }
 }
 
 @media (max-width: 640px) {
   body.premium-light-page:not(.fiq-family-home) .premium-main { width: min(100% - 1rem,100%) !important; }
   body.premium-light-page:not(.fiq-family-home) h1 { font-size: clamp(2.65rem,13vw,4rem) !important; }
   body.premium-light-page:not(.fiq-family-home) h2 { font-size: clamp(2rem,9vw,3rem) !important; }
+  body.fiq-editorial-index .premium-main { width: min(100% - 1rem,100%) !important; }
+  body.fiq-editorial-index .premium-main > .fiq-auto-hero {
+    margin-bottom: 3.5rem !important;
+    padding: 2rem 1.35rem !important;
+  }
+  body.fiq-editorial-index .premium-main > .fiq-auto-hero h1 {
+    max-width: none !important;
+    font-size: clamp(2.55rem, 12vw, 3.8rem) !important;
+  }
+  body.fiq-editorial-index .premium-main ul { grid-template-columns: 1fr; }
+  body.fiq-editorial-index .premium-main ul > li,
+  body.fiq-editorial-index .premium-main ul > li:nth-child(even),
+  body.fiq-editorial-index .premium-main ul > li:nth-last-child(-n + 2) {
+    border-right: 0;
+    border-bottom: 1px solid var(--premium-line);
+  }
+  body.fiq-editorial-index .premium-main ul > li:last-child { border-bottom: 0; }
+  body.fiq-editorial-index .premium-main > section:last-child:not(:first-child) {
+    margin-top: 3.5rem !important;
+    padding: 2.5rem 1.4rem !important;
+  }
   body.fiq-family-solutions .solution-conversion-hero,
   body.fiq-family-solutions .solution-conversion-section,
   body.fiq-family-solutions .solution-conversion-cta { padding: 1.4rem !important; }
