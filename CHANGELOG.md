@@ -1,5 +1,20 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - July 16, 2026
+
+### Commerce and bank integration positioning
+
+- Added a premium homepage section for Shopify and Takealot commerce operations, paired with clearly qualified direct bank integration solution pathways for FNB, Standard Bank, Nedbank, Absa and Investec.
+- Added conversion instrumentation to the EcomIQ exploration action so Founder Console reporting can measure commerce-integration interest.
+- Updated homepage and EcomIQ metadata, social cards, structured data and the shared EcomIQ runtime module story for Shopify, Takealot, ecommerce operations and provider-neutral bank integration solution discovery.
+- Added clear non-affiliation language next to the brand identifiers: bank availability remains dependent on bank, account type, customer onboarding and approved access.
+- No Netlify deployment was run.
+
+### Regression Risk Notes (>10%)
+
+- **15-20% positioning risk:** named commerce and bank brands can be read as a partnership claim. Mitigation: every related surface states that names identify intended connection pathways only, with no affiliation, endorsement or certified-partnership claim; bank access is explicitly qualified.
+- **10-15% SEO expectation risk:** new Shopify and Takealot discovery language can create demand for details beyond the public page. Mitigation: copy links to the EcomIQ product surface and limits claims to operational pathways and review-first workflow value.
+
 ## [1.3.21] - July 13, 2026
 
 ### Weekly Growth Research-Page Tracking Parity

@@ -136,24 +136,25 @@
     },
     ecomiq: {
       title: 'EcomIQ',
-      eyebrow: 'Order Flow Story',
-      description: 'Pull ecommerce demand into the same stock, invoice, and fulfillment story as the rest of the business.',
+      pageTitle: 'EcomIQ | Shopify and Takealot Operations in FlowIQ',
+      eyebrow: 'Shopify and Takealot Operations',
+      description: 'Bring Shopify and Takealot demand into the same stock, invoice, fulfilment and margin story as the rest of the business.',
       image: '/assets/img/generated/ecommerce-retail-story.webp',
       imageAlt: 'EcomIQ ecommerce and retail operations workspace with orders, price lists, customer activity, reservations, fulfillment tasks, and dashboards',
       screen: '/assets/img/modules/ecomiq-real.webp',
       icon: 'shopping-bag',
-      lead: 'EcomIQ helps online orders stop feeling like a separate island. Orders, stock pressure, fulfillment, and margin can move through the same FlowIQ surface.',
+      lead: 'EcomIQ helps Shopify and Takealot activity stop feeling like a separate island. Orders, stock pressure, fulfilment and margin can move through the same FlowIQ surface.',
 	      relatedModules: ['InventoryIQ', 'InvoiceIQ', 'CompaniesIQ', 'AccountingIQ', 'DashboardIQ', 'ReportsIQ'],
-      valueHeadline: 'Online demand becomes part of the operating rhythm.',
-      valueCopy: 'Ecommerce connects to stock availability, dispatch, customer history, invoicing, finance, and management visibility instead of living in another silo.',
+      valueHeadline: 'Commerce demand becomes part of the operating rhythm.',
+      valueCopy: 'Shopify and Takealot operations connect to stock availability, dispatch, customer history, invoicing, finance, and management visibility instead of living in another silo.',
       nodes: [
-        ['Capture', 'Online orders enter the operating workflow.', 'shopping-bag'],
+        ['Capture', 'Shopify and Takealot orders enter the operating workflow.', 'shopping-bag'],
         ['Reserve', 'Stock availability and branch context stay visible.', 'package-check'],
         ['Fulfil', 'Picking and dispatch signals keep teams aligned.', 'truck'],
         ['Invoice', 'Orders carry into billing and accounting context.', 'file-text'],
         ['Review', 'Ecommerce demand informs stock and margin decisions.', 'bar-chart-3']
       ],
-      outcomes: ['Connected online order flow', 'Better stock reservation', 'Cleaner dispatch and invoice handoff'],
+      outcomes: ['Connected Shopify and Takealot flow', 'Better stock reservation', 'Cleaner dispatch and invoice handoff'],
       next: [['InventoryIQ', '/modules/inventoryiq'], ['InvoiceIQ', '/modules/invoiceiq']]
     },
     purchaseiq: {
@@ -411,7 +412,7 @@
   }
 
   function renderStory(root, story) {
-    document.title = story.title + ' | FlowIQ Module Story';
+    document.title = story.pageTitle || (story.title + ' | FlowIQ Module Story');
     root.innerHTML =
       '<section class="solution-story-visual module-story-split story-reveal">' +
         '<div class="grid lg:grid-cols-[0.88fr_1.12fr]">' +
