@@ -1,6 +1,12 @@
 # FlowIQ Marketing Website Changelog
 
-## [Unreleased] - July 16, 2026
+## [Unreleased] - July 17, 2026
+
+### Two-month Welcome Bonus Pack
+
+- Updated the pricing launch offer and CTA from a three-month to a two-month specialist-module bonus.
+- Kept the eligible modules, signup route, analytics metadata, and all published plan and add-on prices unchanged.
+- Updated the owning website documentation. No Netlify deployment was run.
 
 ### Commerce and bank integration positioning
 
@@ -9,6 +15,8 @@
 - Updated homepage and EcomIQ metadata, social cards, structured data and the shared EcomIQ runtime module story for Shopify, Takealot, ecommerce operations and provider-neutral bank integration solution discovery.
 - Added clear non-affiliation language next to the brand identifiers: bank availability remains dependent on bank, account type, customer onboarding and approved access.
 - Revised the section into a top-led, moving connection rail and replaced the text-only marks with original commerce and banking brand assets; FlowIQ remains the surrounding brand rather than appearing as a connection target.
+- Centred the connection narrative, constrained the scrolling rail, and cache-versioned the homepage stylesheet so external brand marks stay contained across browsers.
+- Removed the logo-card treatment and normalised every brand mark to the same transparent footprint for a cleaner moving rail.
 - No Netlify deployment was run.
 
 ### Regression Risk Notes (>10%)
@@ -83,7 +91,7 @@
 
 ### Pricing New Account Module Promo Banner
 
-- Added a green top-of-pricing promotional banner explaining that new account sign-ups get 3 months free access to specialist modules.
+- Added a green top-of-pricing promotional banner explaining the new-account specialist-module launch offer.
 - Listed only the actual bonus modules in compact pills: AI Automation Suite, Auto Accounting Reconciliation, and PayrollIQ.
 - Renamed the generated accounting add-on card from `AccountingIQ Reconciliation Pack` to `Auto Accounting Reconciliation` for clearer customer-facing value.
 - Added documentation under `docs/Website/2026-07-03_pricing_new_account_module_promo_banner.md`.

@@ -234,31 +234,27 @@ body[data-page-template="homepage"] > nav a[href="/signup"]:hover { background: 
   padding: clamp(2.2rem, 5vw, 4.6rem) 0;
   border-top: 1px solid var(--home-line);
   border-bottom: 1px solid var(--home-line);
+  text-align: center;
 }
-.premium-home .integration-band h2 { max-width: 47rem; margin-top: 1rem; }
-.integration-band__intro { max-width: 52rem; }
-.integration-band__intro > p { max-width: 46rem; margin-top: 1.35rem; color: var(--home-copy); font-size: 1.04rem; line-height: 1.65; }
+.premium-home .integration-band h2 { max-width: 51rem; margin: 1rem auto 0; }
+.integration-band__intro { max-width: 54rem; margin: 0 auto; }
+.integration-band__intro > p { max-width: 49rem; margin: 1.35rem auto 0; color: var(--home-copy); font-size: 1.04rem; line-height: 1.65; }
 .integration-band__link { display: inline-flex; gap: .6rem; margin-top: 1.65rem; color: var(--home-copper-dark); font-size: .88rem; font-weight: 650; text-decoration: none; }
 .integration-band__link:hover { color: var(--home-ink); }
-.integration-rail { margin-top: clamp(2rem, 4vw, 3.6rem); border: 1px solid var(--home-line); background: rgba(255,255,255,.52); padding: 1rem 0 0; overflow: hidden; }
-.integration-rail__label { margin: 0; padding: 0 clamp(1.2rem, 3vw, 2rem) 1rem; color: var(--home-muted); font-size: .67rem; font-weight: 650; letter-spacing: .14em; text-transform: uppercase; }
-.integration-rail__viewport { position: relative; overflow: hidden; border-top: 1px solid var(--home-line); }
+.integration-rail { margin-top: clamp(2rem, 4vw, 3.6rem); border: 1px solid var(--home-line); background: rgba(255,255,255,.52); overflow: hidden; }
+.integration-rail__label { margin: 0; padding: 1rem clamp(1.2rem, 3vw, 2rem); color: var(--home-muted); font-size: .67rem; font-weight: 650; letter-spacing: .14em; text-transform: uppercase; }
+.integration-rail__viewport { position: relative; height: 6.25rem; overflow: hidden; border-top: 1px solid var(--home-line); }
 .integration-rail__viewport::before, .integration-rail__viewport::after { content: ""; position: absolute; top: 0; bottom: 0; z-index: 2; width: min(12vw, 9rem); pointer-events: none; }
 .integration-rail__viewport::before { left: 0; background: linear-gradient(90deg, rgba(255,255,255,.98), transparent); }
 .integration-rail__viewport::after { right: 0; background: linear-gradient(270deg, rgba(255,255,255,.98), transparent); }
-.integration-rail__track { display: flex; width: max-content; animation: integration-rail-scroll 38s linear infinite; }
-.integration-rail__set { display: flex; align-items: center; gap: 1rem; flex: 0 0 auto; padding: 1.2rem 1rem; }
+.integration-rail__track { display: flex; align-items: center; width: max-content; height: 100%; animation: integration-rail-scroll 38s linear infinite; will-change: transform; }
+.integration-rail__set { display: flex; align-items: center; gap: 1rem; flex: 0 0 auto; height: 100%; padding: 0 1rem; }
 .integration-rail:hover .integration-rail__track { animation-play-state: paused; }
 .integration-rail__connector { width: 1.8rem; height: 1px; background: var(--home-line); }
-.connection-mark { display: grid; place-items: center; width: clamp(5.2rem, 10vw, 8.25rem); height: 4.25rem; margin: 0; border: 1px solid rgba(25,24,23,.12); border-radius: .42rem; background: rgba(255,255,255,.86); padding: .62rem; }
-.connection-mark img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
-.connection-mark--takealot { width: clamp(7.4rem, 14vw, 10.25rem); }
-.connection-mark--flowiq { width: clamp(6.2rem, 12vw, 9.6rem); border-color: rgba(249,115,22,.3); }
-.connection-mark--fnb { width: 6rem; }
-.connection-mark--standard { width: clamp(7.4rem, 14vw, 10.25rem); }
-.connection-mark--nedbank { width: 7rem; }
-.connection-mark--absa { width: 6rem; background: #c8102e; }
-.connection-mark--investec { width: 4.25rem; }
+.connection-mark { display: grid; place-items: center; width: 7.25rem; height: 3.85rem; margin: 0; overflow: hidden; padding: .35rem; }
+.connection-mark img { display: block !important; box-sizing: border-box; width: auto !important; height: auto !important; max-width: 100% !important; max-height: 2.65rem !important; margin: 0 !important; object-fit: contain; object-position: center; }
+.connection-mark--takealot, .connection-mark--flowiq, .connection-mark--fnb, .connection-mark--standard, .connection-mark--nedbank, .connection-mark--absa, .connection-mark--investec { width: 7.25rem; background: transparent; }
+.connection-mark--investec img { max-width: 2.45rem !important; }
 .integration-band__notice { margin: 1rem 0 0; color: var(--home-muted); font-size: .72rem; line-height: 1.5; }
 @keyframes integration-rail-scroll { to { transform: translateX(-50%); } }
 
