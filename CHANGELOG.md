@@ -8,6 +8,7 @@
 - Added conversion instrumentation to the EcomIQ exploration action so Founder Console reporting can measure commerce-integration interest.
 - Updated homepage and EcomIQ metadata, social cards, structured data and the shared EcomIQ runtime module story for Shopify, Takealot, ecommerce operations and provider-neutral bank integration solution discovery.
 - Added clear non-affiliation language next to the brand identifiers: bank availability remains dependent on bank, account type, customer onboarding and approved access.
+- Revised the section into a top-led, moving connection rail and replaced the text-only marks with original commerce and banking brand assets; FlowIQ remains the surrounding brand rather than appearing as a connection target.
 - No Netlify deployment was run.
 
 ### Regression Risk Notes (>10%)

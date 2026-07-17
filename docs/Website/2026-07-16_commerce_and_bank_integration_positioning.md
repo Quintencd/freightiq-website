@@ -12,7 +12,8 @@ Strengthen FlowIQ's ecommerce and operational-confidence story by making Shopify
 
 ## Customer-facing changes
 
-- The homepage now has a dedicated commerce-and-banking connections band between the module-flow and product-tour sections.
+- The homepage now has a dedicated commerce-and-banking connection rail between the module-flow and product-tour sections. Its narrative sits above the moving logo rail, so the visual confidence marks read as one cohesive follow-on block rather than a detached side panel.
+- The rail shows only the external commerce and banking brand marks that FlowIQ can work with. FlowIQ remains the surrounding site brand and is not repeated inside the connection sequence. Its wording positions the marks as tailored connection solutions, not partners or universally self-serve integrations.
 - Shopify and Takealot are presented as commerce-operation pathways: products, orders and operational data can be brought into FlowIQ's stock, fulfilment, invoicing, margin and reporting workflows.
 - FNB, Standard Bank, Nedbank, Absa and Investec are shown under the label `Direct bank integration solutions`.
 - The section explicitly says FlowIQ uses a provider-neutral banking architecture and that access depends on the bank, account type, approved customer onboarding and access.

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-07-03T06:33:11.421Z",
+  "generated_at_utc": "2026-07-17T09:48:39.310Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -234,7 +234,7 @@
         "extra_users": {
           "name": "Extra User Seat",
           "price": 99,
-          "limit": 2,
+          "limit": null,
           "unit": "user",
           "description": "Add one additional team member without forcing a full plan upgrade.",
           "value_points": [
@@ -530,7 +530,7 @@
         "extra_users": {
           "name": "Extra User Seat",
           "price": 99,
-          "limit": 2,
+          "limit": null,
           "unit": "user",
           "description": "Add one additional team member without forcing a full plan upgrade.",
           "value_points": [
@@ -842,7 +842,7 @@
         "extra_users": {
           "name": "Extra User Seat",
           "price": 99,
-          "limit": 2,
+          "limit": null,
           "unit": "user",
           "description": "Add one additional team member without forcing a full plan upgrade.",
           "value_points": [
@@ -1161,7 +1161,7 @@
         "extra_users": {
           "name": "Extra User Seat",
           "price": 99,
-          "limit": 2,
+          "limit": null,
           "unit": "user",
           "description": "Add one additional team member without forcing a full plan upgrade.",
           "value_points": [
@@ -1495,7 +1495,7 @@
         "extra_users": {
           "name": "Extra User Seat",
           "price": 99,
-          "limit": 5,
+          "limit": null,
           "unit": "user",
           "description": "Add one additional team member without forcing a full plan upgrade.",
           "value_points": [
@@ -1808,7 +1808,7 @@
         "extra_users": {
           "name": "Extra User Seat",
           "price": 99,
-          "limit": 25,
+          "limit": null,
           "unit": "user",
           "description": "Add one additional team member without forcing a full plan upgrade.",
           "value_points": [
