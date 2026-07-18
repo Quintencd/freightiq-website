@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-07-17T09:48:39.310Z",
+  "generated_at_utc": "2026-07-18T05:31:23.795Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -322,6 +322,19 @@
           "tier_group": null,
           "tier_label": null
         },
+        "brandiq_addon": {
+          "name": "BrandIQ",
+          "price": 1490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Brand strategy, Market Radar, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
+          "value_points": [
+            "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
+            "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
         "messaging_pack": {
           "name": "Messaging Pack",
           "price": 250,
@@ -627,6 +640,19 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "brandiq_addon": {
+          "name": "BrandIQ",
+          "price": 1490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Brand strategy, Market Radar, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
+          "value_points": [
+            "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
+            "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
           ],
           "tier_group": null,
           "tier_label": null
@@ -939,6 +965,19 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "brandiq_addon": {
+          "name": "BrandIQ",
+          "price": 1490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Brand strategy, Market Radar, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
+          "value_points": [
+            "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
+            "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1275,6 +1314,19 @@
           "tier_group": null,
           "tier_label": null
         },
+        "brandiq_addon": {
+          "name": "BrandIQ",
+          "price": 1490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Brand strategy, Market Radar, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
+          "value_points": [
+            "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
+            "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
         "messaging_pack": {
           "name": "Messaging Pack",
           "price": 250,
@@ -1583,6 +1635,19 @@
           "tier_group": null,
           "tier_label": null
         },
+        "brandiq_addon": {
+          "name": "BrandIQ",
+          "price": 1490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Brand strategy, Market Radar, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
+          "value_points": [
+            "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
+            "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
         "messaging_pack": {
           "name": "Messaging Pack",
           "price": 250,
@@ -1866,6 +1931,19 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "brandiq_addon": {
+          "name": "BrandIQ",
+          "price": 1490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Brand strategy, Market Radar, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
+          "value_points": [
+            "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
+            "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
           ],
           "tier_group": null,
           "tier_label": null
@@ -2157,6 +2235,19 @@
           "value_points": [
             "Connects ecommerce demand back into operational stock and invoice workflows",
             "Reduces manual order and catalogue handling across online channels"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "brandiq_addon": {
+          "name": "BrandIQ",
+          "price": 1490,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Brand strategy, Market Radar, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
+          "value_points": [
+            "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
+            "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
           ],
           "tier_group": null,
           "tier_label": null
