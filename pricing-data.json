@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-07-18T05:31:23.795Z",
+  "generated_at_utc": "2026-07-19T06:49:06.490Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -197,7 +197,7 @@
       },
       "limits": {
         "users": 1,
-        "skus": 100,
+        "skus": 250,
         "warehouses": 1,
         "import_shipments_monthly": 0,
         "export_shipments_monthly": 0,
@@ -246,10 +246,10 @@
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
-          "price": 2250,
-          "limit": 1,
-          "unit": "250 SKUs",
-          "description": "250 additional SKUs",
+          "price": 150,
+          "limit": 2,
+          "unit": "100 SKUs",
+          "description": "100 additional SKUs",
           "value_points": [
             "Keeps inventory, costing, purchasing, and sales history in one system",
             "Buys more catalogue headroom without paying for unused warehouses"
@@ -505,7 +505,7 @@
       },
       "limits": {
         "users": 1,
-        "skus": 500,
+        "skus": 750,
         "warehouses": 1,
         "import_shipments_monthly": 0,
         "export_shipments_monthly": 0,
@@ -555,10 +555,10 @@
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
-          "price": 2250,
+          "price": 150,
           "limit": 2,
-          "unit": "250 SKUs",
-          "description": "250 additional SKUs",
+          "unit": "100 SKUs",
+          "description": "100 additional SKUs",
           "value_points": [
             "Keeps inventory, costing, purchasing, and sales history in one system",
             "Buys more catalogue headroom without paying for unused warehouses"
@@ -827,7 +827,7 @@
       },
       "limits": {
         "users": 2,
-        "skus": 750,
+        "skus": 1500,
         "warehouses": 1,
         "import_shipments_monthly": 0,
         "export_shipments_monthly": 0,
@@ -880,10 +880,10 @@
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
-          "price": 1950,
-          "limit": 1,
-          "unit": "250 SKUs",
-          "description": "250 additional SKUs",
+          "price": 150,
+          "limit": 2,
+          "unit": "100 SKUs",
+          "description": "100 additional SKUs",
           "value_points": [
             "Keeps inventory, costing, purchasing, and sales history in one system",
             "Buys more catalogue headroom without paying for unused warehouses"
@@ -1152,7 +1152,7 @@
       },
       "limits": {
         "users": 3,
-        "skus": 1000,
+        "skus": 5000,
         "warehouses": 2,
         "import_shipments_monthly": 3,
         "export_shipments_monthly": 3,
@@ -1212,10 +1212,10 @@
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
-          "price": 1650,
+          "price": 150,
           "limit": 2,
-          "unit": "500 SKUs",
-          "description": "500 additional SKUs",
+          "unit": "100 SKUs",
+          "description": "100 additional SKUs",
           "value_points": [
             "Keeps inventory, costing, purchasing, and sales history in one system",
             "Buys more catalogue headroom without paying for unused warehouses"
@@ -1497,7 +1497,7 @@
       },
       "limits": {
         "users": 5,
-        "skus": 3000,
+        "skus": 15000,
         "warehouses": 5,
         "import_shipments_monthly": 10,
         "export_shipments_monthly": 10,
@@ -1559,10 +1559,10 @@
         },
         "extra_skus": {
           "name": "Extra SKU Capacity",
-          "price": 2200,
+          "price": 150,
           "limit": 2,
-          "unit": "1,000 SKUs",
-          "description": "1,000 additional SKUs",
+          "unit": "100 SKUs",
+          "description": "100 additional SKUs",
           "value_points": [
             "Keeps inventory, costing, purchasing, and sales history in one system",
             "Buys more catalogue headroom without paying for unused warehouses"
@@ -1818,7 +1818,7 @@
       },
       "limits": {
         "users": 10,
-        "skus": 10000,
+        "skus": 50000,
         "warehouses": 10,
         "import_shipments_monthly": 30,
         "export_shipments_monthly": 30,
