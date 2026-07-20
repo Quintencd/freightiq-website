@@ -1,5 +1,21 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - July 20, 2026
+
+### Weekly Growth Customer-Proof Tracking Parity
+
+- Added the established growth analytics layer to the customer hub and both public customer case studies.
+- Completed scroll-depth and demo/trial-intent coverage across the customer-proof page family without changing claims, layouts, or CTA destinations.
+- Refreshed the three changed-route `lastmod` values in both synchronized sitemap copies.
+- Added documentation under `docs/Website/2026-07-20_weekly_growth_audit_customer_proof_tracking.md`.
+- No Netlify deploy, Git push, or commit was performed.
+
+### Regression Risk Notes (>10%)
+
+- **10-20%**: customer-proof analytics baselines can increase because scroll-depth and demo-intent events now enter the canonical stream.
+- **10-15%**: the added growth script introduces a small non-blocking network and telemetry cost on three routes.
+- **10-12%**: refreshed sitemap timestamps may prompt crawlers to revisit the unchanged customer content.
+
 ## [Unreleased] - July 17, 2026
 
 ### Two-month Welcome Bonus Pack
