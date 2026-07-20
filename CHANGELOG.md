@@ -2,6 +2,19 @@
 
 ## [Unreleased] - July 20, 2026
 
+### Market Radar connection rail logo
+
+- Added the supplied Market Radar logo to both sets of the homepage commerce-and-banking connection rail so the continuous loop remains seamless.
+- Stored an optimized 600 x 200 WebP asset locally instead of relying on a temporary or third-party URL.
+- Preserved the existing equal-footprint containment, accessibility pattern, connection-pathway positioning and non-affiliation notice.
+- Refreshed the homepage `lastmod` in both synchronized sitemap copies and added the owning website documentation.
+- No Netlify deployment, Git push, or commit was performed.
+
+### Regression Risk Notes (>10%)
+
+- **10-15% brand-positioning risk:** Market Radar could be interpreted as an endorsement or certified partnership. Mitigation: it appears inside the existing connection-solutions rail directly above the explicit non-affiliation notice.
+- **10-12% rail-cadence risk:** adding another wide mark changes the loop length. Mitigation: the logo uses the same fixed footprint and image containment rules as the existing marks and is present once in each duplicated set.
+
 ### Weekly Growth Customer-Proof Tracking Parity
 
 - Added the established growth analytics layer to the customer hub and both public customer case studies.

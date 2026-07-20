@@ -253,7 +253,7 @@ body[data-page-template="homepage"] > nav a[href="/signup"]:hover { background: 
 .integration-rail__connector { width: 1.8rem; height: 1px; background: var(--home-line); }
 .connection-mark { display: grid; place-items: center; width: 7.25rem; height: 3.85rem; margin: 0; overflow: hidden; padding: .35rem; }
 .connection-mark img { display: block !important; box-sizing: border-box; width: auto !important; height: auto !important; max-width: 100% !important; max-height: 2.65rem !important; margin: 0 !important; object-fit: contain; object-position: center; }
-.connection-mark--takealot, .connection-mark--flowiq, .connection-mark--fnb, .connection-mark--standard, .connection-mark--nedbank, .connection-mark--absa, .connection-mark--investec { width: 7.25rem; background: transparent; }
+.connection-mark--takealot, .connection-mark--market-radar, .connection-mark--flowiq, .connection-mark--fnb, .connection-mark--standard, .connection-mark--nedbank, .connection-mark--absa, .connection-mark--investec { width: 7.25rem; background: transparent; }
 .connection-mark--investec img { max-width: 2.45rem !important; }
 .integration-band__notice { margin: 1rem 0 0; color: var(--home-muted); font-size: .72rem; line-height: 1.5; }
 @keyframes integration-rail-scroll { to { transform: translateX(-50%); } }
