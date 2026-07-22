@@ -573,10 +573,20 @@
 
   function setupFormTracking() {
     document.querySelectorAll('form').forEach((form) => {
+      const formName = form.getAttribute('id') || form.getAttribute('name') || 'unnamed_form';
+      if (/signup/i.test(formName)) {
+        let signupStartTracked = false;
+        form.addEventListener('focusin', function (event) {
+          if (signupStartTracked) return;
+          const field = event.target;
+          if (!field || !/^(INPUT|SELECT|TEXTAREA)$/.test(field.tagName)) return;
+          if (field.type === 'hidden' || field.type === 'submit') return;
+          signupStartTracked = true;
+          track('web_signup_start', { form_name: formName, trigger: 'first_field_interaction' });
+        });
+      }
       form.addEventListener('submit', function () {
-        const formName = form.getAttribute('id') || form.getAttribute('name') || 'unnamed_form';
-        if (/signup/i.test(formName)) track('web_signup_start', { form_name: formName });
-        else if (/demo|lead|contact/i.test(formName)) track('web_demo_request_submit', { form_name: formName });
+        if (/demo|lead|contact/i.test(formName)) track('web_demo_request_submit', { form_name: formName });
       });
     });
   }

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-07-19T06:49:06.490Z",
+  "generated_at_utc": "2026-07-21T19:39:43.433Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -327,7 +327,7 @@
           "price": 1490,
           "limit": 1,
           "unit": "workspace",
-          "description": "Brand strategy, Market Radar, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
+          "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
           "value_points": [
             "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
             "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
@@ -649,7 +649,7 @@
           "price": 1490,
           "limit": 1,
           "unit": "workspace",
-          "description": "Brand strategy, Market Radar, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
+          "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
           "value_points": [
             "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
             "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
@@ -974,7 +974,7 @@
           "price": 1490,
           "limit": 1,
           "unit": "workspace",
-          "description": "Brand strategy, Market Radar, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
+          "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
           "value_points": [
             "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
             "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
@@ -1319,7 +1319,7 @@
           "price": 1490,
           "limit": 1,
           "unit": "workspace",
-          "description": "Brand strategy, Market Radar, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
+          "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
           "value_points": [
             "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
             "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
@@ -1640,7 +1640,7 @@
           "price": 1490,
           "limit": 1,
           "unit": "workspace",
-          "description": "Brand strategy, Market Radar, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
+          "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
           "value_points": [
             "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
             "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
@@ -1940,7 +1940,7 @@
           "price": 1490,
           "limit": 1,
           "unit": "workspace",
-          "description": "Brand strategy, Market Radar, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
+          "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
           "value_points": [
             "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
             "Connects approved campaigns to measurable leads, sales, revenue and return on spend"
@@ -2244,7 +2244,7 @@
           "price": 1490,
           "limit": 1,
           "unit": "workspace",
-          "description": "Brand strategy, Market Radar, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
+          "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
           "value_points": [
             "Runs as a focused growth workspace without requiring the client to replace its existing ERP",
             "Connects approved campaigns to measurable leads, sales, revenue and return on spend"

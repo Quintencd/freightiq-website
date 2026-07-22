@@ -188,59 +188,41 @@
                         <i data-lucide="building-2" class="text-freight-orange" style="width:32px;height:32px"></i>
                     </div>
                     <h2 class="text-3xl font-bold text-white mb-2">Create Your Account</h2>
-                    <p class="text-slate-300 max-w-2xl">Start your 14-day free trial. No credit card required. Your data stays. Upgrade only if it adds value.</p>
+                    <p class="text-slate-300 max-w-2xl">Create your workspace and explore FlowIQ for 14 days with full access. No credit card and no plan choice during registration.</p>
                 </div>
 
-                <div id="planCard" class="bg-freight-slate-light/70 rounded-xl border border-slate-700 p-5">
-                <div class="flex items-start justify-between gap-4">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <i data-lucide="layers" class="text-freight-orange" style="width:18px;height:18px"></i>
-                            <h3 class="text-white font-semibold">Choose a plan</h3>
+                <section aria-labelledby="signup-trial-timeline" class="overflow-hidden rounded-xl border border-slate-700 bg-freight-slate-light/70">
+                    <div class="flex flex-col gap-3 border-b border-slate-700 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-orange-300">A safe, transparent start</p>
+                            <h3 id="signup-trial-timeline" class="mt-1 text-lg font-semibold text-white">How your 14-day trial works</h3>
                         </div>
-                        <p class="text-slate-300 text-sm mt-1">Pick what you want to start with — you can change plans anytime during your trial.</p>
+                        <a class="text-sm font-semibold text-orange-300 transition-colors hover:text-orange-200" href="/pricing">Review plans and pricing</a>
                     </div>
-                    <a class='text-sm text-slate-300 hover:text-white transition-colors whitespace-nowrap' href='/pricing'>View pricing</a>
-                </div>
-
-                <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3" role="radiogroup" aria-label="Select a FlowIQ plan">
-                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="starter_lite">
-                        <div class="text-white font-semibold">Starter Lite</div>
-                        <div class="text-xs text-slate-300">Startups and solo founders</div>
-                    </button>
-                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="starter">
-                        <div class="text-white font-semibold">Starter</div>
-                        <div class="text-xs text-slate-300">Operational starter teams</div>
-                    </button>
-                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="growth_lite">
-                        <div class="text-white font-semibold">Growth Lite</div>
-                        <div class="text-xs text-slate-300">Early sales teams</div>
-                    </button>
-                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="growth">
-                        <div class="text-white font-semibold">Growth</div>
-                        <div class="text-xs text-slate-300">Small teams</div>
-                    </button>
-                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="professional">
-                        <div class="text-white font-semibold">Professional</div>
-                        <div class="text-xs text-slate-300">Established ops</div>
-                    </button>
-                    <button type="button" class="plan-option border border-slate-600 hover:border-orange-500/70 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-plan="scale">
-                        <div class="text-white font-semibold">Scale</div>
-                        <div class="text-xs text-slate-300">High volume</div>
-                    </button>
-                </div>
-
-                <div class="mt-4 flex items-center justify-between gap-3">
-                    <div class="text-sm text-slate-300">
-                        Selected: <span id="selectedPlanName" class="text-white font-semibold">Growth</span>
+                    <div class="grid sm:grid-cols-3">
+                        <div class="border-b border-slate-700 p-5 sm:border-b-0 sm:border-r">
+                            <span class="inline-grid h-8 w-8 place-items-center rounded-full bg-freight-orange text-sm font-bold text-white">1</span>
+                            <p class="mt-3 text-sm font-semibold text-white">Today</p>
+                            <p class="mt-1 text-xs leading-5 text-slate-300">Create your workspace. Full FlowIQ access starts with no credit card.</p>
+                        </div>
+                        <div class="border-b border-slate-700 p-5 sm:border-b-0 sm:border-r">
+                            <span class="inline-grid h-8 w-8 place-items-center rounded-full bg-slate-600 text-sm font-bold text-white">2</span>
+                            <p class="mt-3 text-sm font-semibold text-white">Before it ends</p>
+                            <p class="mt-1 text-xs leading-5 text-slate-300">We remind you and keep every plan visible in Billing &amp; Subscription.</p>
+                        </div>
+                        <div class="p-5">
+                            <span class="inline-grid h-8 w-8 place-items-center rounded-full bg-emerald-600 text-sm font-bold text-white">3</span>
+                            <p class="mt-3 text-sm font-semibold text-white">Day 14</p>
+                            <p class="mt-1 text-xs leading-5 text-slate-300">Choose and activate a plan to keep working. Nothing is charged automatically.</p>
+                        </div>
                     </div>
-                    <a class='text-sm text-slate-300 hover:text-white transition-colors' href='/#demo'>Enterprise? Request demo</a>
-                </div>
-            </div>
+                    <div id="shopifySignupContext" class="hidden border-t border-emerald-700/40 bg-emerald-500/10 px-5 py-3 text-sm text-emerald-200">
+                        Your Shopify connection is preserved while you create the workspace. After signup, sign in to finish linking the store.
+                    </div>
+                </section>
 
                 <div class="bg-freight-slate-light rounded-xl shadow-2xl p-8 border border-slate-700">
                 <form id="signupForm" class="space-y-6">
-                    <input type="hidden" id="selectedPlan" name="selectedPlan" value="growth" />
                     <input type="hidden" id="accountType" name="accountType" value="organization" />
 
                     <div class="space-y-3">
@@ -248,14 +230,14 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" role="radiogroup" aria-label="Select account type">
                             <button type="button" class="account-type-option border border-freight-orange bg-freight-orange/10 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-account-type="organization">
                                 <div class="text-white font-semibold">Organization</div>
-                                <div class="text-xs text-slate-300">Standard company workspace with plan trial</div>
+                                <div class="text-xs text-slate-300">Standard company workspace with a full-access trial</div>
                             </button>
                             <button type="button" class="account-type-option border border-slate-600 rounded-lg px-4 py-3 text-left transition-all cursor-pointer focus:outline-none focus:ring-0 active:scale-[0.98]" data-account-type="accountant_firm">
                                 <div class="text-white font-semibold">Accountant Firm</div>
                                 <div class="text-xs text-slate-300">FlowIQ HQ dashboard for client switching</div>
                             </button>
                         </div>
-                        <p id="accountTypeHint" class="text-xs text-slate-400">Organization signup includes a 14-day trial on the selected plan.</p>
+                        <p id="accountTypeHint" class="text-xs text-slate-400">Organization signup includes a 14-day full-access trial. Choose a plan in Billing before it ends.</p>
                     </div>
 
                     <!-- Company Information -->
@@ -334,7 +316,6 @@
                                 <div id="industryMenu" class="flowiq-select-menu hidden" role="listbox" aria-label="Industry options"></div>
                             </div>
                         </div>
-
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label for="employees" class="block text-sm font-medium text-slate-300 mb-2">Company Size *</label>
@@ -636,14 +617,12 @@
                         id="submitButton"
                         class="w-full bg-freight-orange hover:bg-freight-orange-dark text-white py-3 px-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-freight-orange/20 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        <span id="buttonText">Start Your Free Trial</span>
+                        <span id="buttonText">Create My FlowIQ Workspace</span>
                         <div id="loadingSpinner" class="hidden inline-block ml-2">
                             <div class="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
                         </div>
                     </button>
-                    <p class="mt-2 text-center text-xs text-slate-400">
-                        Selected: <span id="selectedPlanInline" class="text-slate-200 font-semibold">Growth</span> <span class="text-slate-500">• change anytime</span>
-                    </p>
+                    <p class="mt-2 text-center text-xs text-slate-400">Full access for 14 days. Choose and activate a plan in Billing before the trial ends.</p>
 
                     <!-- Error/Success Messages -->
                     <div id="message" class="hidden p-4 rounded-lg"></div>
@@ -660,7 +639,7 @@
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i data-lucide="clock" class="text-blue-500" style="width:16px;height:16px"></i>
-                                <span class="text-xs">Live in 24 hours</span>
+                                <span class="text-xs">Guided setup</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i data-lucide="star" class="text-yellow-500" style="width:16px;height:16px"></i>
@@ -698,115 +677,24 @@
             const FLOWIQ_PRIVACY_URL = '/privacy.html';
             const legalVersionLabel = document.getElementById('legalVersionLabel');
             if (legalVersionLabel) legalVersionLabel.textContent = FLOWIQ_LEGAL_VERSION;
+            const signupQuery = new URLSearchParams(window.location.search || '');
+            const shopifyInstallClaim = (signupQuery.get('shopifyClaim') || '').trim();
+            const requestedRedirect = (signupQuery.get('redirect') || '').trim();
+            const safeAppRedirect = requestedRedirect.startsWith('/') && !requestedRedirect.startsWith('//')
+                ? requestedRedirect
+                : '/dashboard';
+            if (shopifyInstallClaim) {
+                document.getElementById('shopifySignupContext')?.classList.remove('hidden');
+            }
         // NOTE: This marketing signup page does not need a Supabase JS client instance.
         // Creating one via the CDN bundle was crashing the page in production, which prevented
         // plan selection + checkbox visuals + password toggle from working.
-
-            // Plan preselection (pricing -> signup). Safe: does NOT change backend signup payload.
-            ;(function initPlanSelection() {
-            const allowedPlans = ['starter_lite', 'starter', 'growth_lite', 'growth', 'professional', 'scale'];
-            const planLabels = {
-                starter_lite: 'Starter Lite',
-                starter: 'Starter',
-                growth_lite: 'Growth Lite',
-                growth: 'Growth',
-                professional: 'Professional',
-                scale: 'Scale'
-            };
-            const planCtaLabels = {
-                starter_lite: 'Start Starter Lite Free Trial',
-                starter: 'Start Starter Free Trial',
-                growth_lite: 'Start Growth Lite Free Trial',
-                growth: 'Start Growth Free Trial',
-                professional: 'Start Professional Free Trial',
-                scale: 'Start Scale Free Trial'
-            };
-
-            const params = new URLSearchParams(window.location.search || '');
-            const paramPlan = (params.get('plan') || '').toLowerCase();
-            const storedPlan = (localStorage.getItem('flowiq_selected_plan') || '').toLowerCase();
-
-            let activePlan = allowedPlans.includes(paramPlan) ? paramPlan : (allowedPlans.includes(storedPlan) ? storedPlan : 'growth');
-
-            const selectedPlanInput = document.getElementById('selectedPlan');
-            const selectedPlanName = document.getElementById('selectedPlanName');
-            const selectedPlanInline = document.getElementById('selectedPlanInline');
-            const planButtons = Array.from(document.querySelectorAll('.plan-option[data-plan]'));
-            const buttonTextEl = document.getElementById('buttonText');
-            const accountTypeInput = document.getElementById('accountType');
-
-            function updateButtonText() {
-                if (!buttonTextEl) return;
-                const accountTypeValue = (accountTypeInput?.value || 'organization').toLowerCase();
-                if (accountTypeValue === 'accountant_firm') {
-                    buttonTextEl.textContent = 'Create FlowIQ HQ Account';
-                    return;
-                }
-                buttonTextEl.textContent = planCtaLabels[activePlan] || 'Start Your Free Trial';
-            }
-
-            function render() {
-                // Always ensure hidden input has the current plan value
-                if (selectedPlanInput) {
-                    selectedPlanInput.value = activePlan;
-                    // Double-check it was set
-                    if (!selectedPlanInput.value || selectedPlanInput.value.trim() === '') {
-                        selectedPlanInput.value = activePlan || 'growth';
-                    }
-                }
-                if (selectedPlanName) selectedPlanName.textContent = planLabels[activePlan] || 'Growth';
-                if (selectedPlanInline) selectedPlanInline.textContent = planLabels[activePlan] || 'Growth';
-                planButtons.forEach((btn) => {
-                    const btnPlan = (btn.getAttribute('data-plan') || '').toLowerCase();
-                    const isActive = btnPlan === activePlan;
-                    // Reset all styles
-                    btn.style.borderColor = '';
-                    btn.style.backgroundColor = '';
-                    btn.style.boxShadow = '';
-                    btn.classList.remove('border-freight-orange', 'bg-freight-orange/10', 'border-slate-600');
-                    // Apply active styles
-                    if (isActive) {
-                        btn.classList.add('border-freight-orange', 'bg-freight-orange/10');
-                        btn.style.borderColor = '#f97316';
-                        btn.style.backgroundColor = 'rgba(249, 115, 22, 0.1)';
-                        btn.style.boxShadow = '0 0 0 2px rgba(249, 115, 22, 0.5), 0 0 12px rgba(249, 115, 22, 0.5)';
-                    } else {
-                        btn.classList.add('border-slate-600');
-                        btn.style.borderColor = '#475569';
-                    }
-                });
-                updateButtonText();
-            }
-
-            function setPlan(next) {
-                if (!allowedPlans.includes(next)) return;
-                activePlan = next;
-                try { localStorage.setItem('flowiq_selected_plan', activePlan); } catch (_) {}
-                render();
-                // Explicitly verify the hidden input was updated
-                const verifyInput = document.getElementById('selectedPlan');
-                if (verifyInput && verifyInput.value !== activePlan) {
-                    console.warn('Plan selection not persisted to hidden input, fixing...');
-                    verifyInput.value = activePlan;
-                }
-            }
-
-            planButtons.forEach((btn) => {
-                btn.addEventListener('click', () => setPlan((btn.getAttribute('data-plan') || '').toLowerCase()));
-            });
-
-            window.FlowIQSignupRefreshPlanUI = render;
-            window.FlowIQSignupSetPlan = setPlan;
-            window.FlowIQSignupGetActivePlan = () => activePlan;
-            render();
-            })();
 
             ;(function initAccountTypeSelection() {
                 const accountTypeInput = document.getElementById('accountType');
                 const accountTypeHint = document.getElementById('accountTypeHint');
                 const accountTypeButtons = Array.from(document.querySelectorAll('.account-type-option[data-account-type]'));
-                const planCard = document.getElementById('planCard');
-                const selectedPlanInlineWrap = document.getElementById('selectedPlanInline')?.closest('p');
+                const buttonTextEl = document.getElementById('buttonText');
                 const accountantLegalSection = document.getElementById('accountantLegalSection');
                 const accountantCheckboxIds = [
                     'accountantOperatorTerms',
@@ -841,8 +729,6 @@
                     styleButtons(normalizedType);
 
                     const isAccountant = normalizedType === 'accountant_firm';
-                    if (planCard) planCard.classList.toggle('hidden', isAccountant);
-                    if (selectedPlanInlineWrap) selectedPlanInlineWrap.classList.toggle('hidden', isAccountant);
                     if (accountantLegalSection) accountantLegalSection.classList.toggle('hidden', !isAccountant);
 
                     accountantCheckboxIds.forEach((id) => {
@@ -854,20 +740,15 @@
                         }
                     });
 
-                    if (isAccountant) {
-                        const selectedPlanInput = document.getElementById('selectedPlan');
-                        if (selectedPlanInput) selectedPlanInput.value = 'starter';
-                        clearFieldError('selectedPlan');
-                    }
-
                     if (accountTypeHint) {
                         accountTypeHint.textContent = isAccountant
                             ? 'Accountant firms are not charged for HQ access. Billing applies only when client orgs are shared and billed by plan.'
-                            : 'Organization signup includes a 14-day trial on the selected plan.';
+                            : 'Organization signup includes a 14-day full-access trial. Choose a plan in Billing before it ends.';
                     }
-
-                    if (typeof window.FlowIQSignupRefreshPlanUI === 'function') {
-                        window.FlowIQSignupRefreshPlanUI();
+                    if (buttonTextEl) {
+                        buttonTextEl.textContent = isAccountant
+                            ? 'Create FlowIQ HQ Account'
+                            : 'Create My FlowIQ Workspace';
                     }
                 }
 
@@ -1191,8 +1072,6 @@
                 'country': 'country',
                 'phone number': 'phone',
                 'phone': 'phone',
-                'plan selection': 'selectedPlan',
-                'selectedPlan': 'selectedPlan',
                 'account type': 'accountType',
                 'account_type': 'accountType',
                 'accountant operator terms': 'accountantOperatorTerms',
@@ -1244,23 +1123,6 @@
 
                 field.classList.add('field-error');
                 
-                // Special handling for plan selection
-                if (fieldId === 'selectedPlan') {
-                    const planCard = document.getElementById('planCard');
-                    if (planCard && !planCard.querySelector('.error-message')) {
-                        const errorMsg = document.createElement('p');
-                        errorMsg.className = 'error-message mt-2';
-                        errorMsg.textContent = 'Please select a plan';
-                        planCard.appendChild(errorMsg);
-                    }
-                    // Also highlight plan buttons
-                    document.querySelectorAll('.plan-option').forEach(btn => {
-                        btn.style.borderColor = '#ef4444';
-                        btn.style.boxShadow = '0 0 0 2px rgba(239, 68, 68, 0.2)';
-                    });
-                    return;
-                }
-
                 if (fieldId === 'accountType') {
                     const accountTypeSection = field?.closest('.space-y-3');
                     if (accountTypeSection && !accountTypeSection.querySelector('.error-message')) {
@@ -1339,20 +1201,6 @@
                     }
                 }
                 
-                // Special handling for plan selection
-                if (fieldId === 'selectedPlan') {
-                    const planCard = document.getElementById('planCard');
-                    if (planCard) {
-                        const errorMsg = planCard.querySelector('.error-message');
-                        if (errorMsg) errorMsg.remove();
-                    }
-                    // Reset plan button styles
-                    document.querySelectorAll('.plan-option').forEach(btn => {
-                        btn.style.borderColor = '';
-                        btn.style.boxShadow = '';
-                    });
-                }
-
                 if (fieldId === 'industry' || fieldId === 'employees' || fieldId === 'country' || fieldId === 'signupReferralSource') {
                     const config = {
                         industry: { buttonId: 'industryButton', wrapper: '[data-flowiq-select-for="industry"]' },
@@ -1384,11 +1232,6 @@
                 document.querySelectorAll('.error-message').forEach(el => {
                     el.remove();
                 });
-                // Reset plan button styles
-                document.querySelectorAll('.plan-option').forEach(btn => {
-                    btn.style.borderColor = '';
-                    btn.style.boxShadow = '';
-                });
             }
 
             // Add event listeners to clear errors when user interacts with fields
@@ -1413,19 +1256,6 @@
                     field.addEventListener('input', () => clearFieldError(fieldId));
                     field.addEventListener('change', () => clearFieldError(fieldId));
                 }
-            });
-
-            // Clear plan selection error when user clicks a plan
-            document.querySelectorAll('.plan-option').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    clearFieldError('selectedPlan');
-                    // Also clear any error message near the plan selection
-                    const planCard = document.getElementById('planCard');
-                    if (planCard) {
-                        const errorMsg = planCard.querySelector('.error-message');
-                        if (errorMsg) errorMsg.remove();
-                    }
-                });
             });
 
             // Clear checkbox errors when user checks them
@@ -1460,11 +1290,6 @@
             if (signupRequestInFlight) {
                 return;
             }
-            window.FlowIQWebsiteAnalytics?.track('web_signup_start', {
-                form_name: 'signupForm',
-                account_type: (document.getElementById('accountType')?.value || 'organization').toLowerCase()
-            });
-            
             const submitButton = document.getElementById('submitButton');
             const buttonText = document.getElementById('buttonText');
             const loadingSpinner = document.getElementById('loadingSpinner');
@@ -1522,34 +1347,6 @@
                 const signupReferralSource = (formData.get('signupReferralSource') || '').toString().trim();
                 const signupReferralDetail = (formData.get('signupReferralDetail') || '').toString().trim().replace(/\s+/g, ' ').slice(0, 240);
                 const turnstileToken = (window.FlowIQSignupTurnstileToken || '').toString().trim();
-                
-                // Get selected plan - read directly from DOM element as fallback if FormData doesn't have it
-                const selectedPlanInput = document.getElementById('selectedPlan');
-                let selectedPlanValue = (selectedPlanInput?.value || formData.get('selectedPlan') || '').toString().trim().toLowerCase();
-                
-                // Fallback: if still empty, check the active plan from the plan selection state
-                if (!selectedPlanValue) {
-                    // Try to get from the active button
-                    const activeButton = document.querySelector('.plan-option.border-freight-orange[data-plan]');
-                    if (activeButton) {
-                        selectedPlanValue = (activeButton.getAttribute('data-plan') || '').toLowerCase();
-                    }
-                }
-                
-                // Final fallback to 'growth' if still empty
-                if (!selectedPlanValue || !['starter', 'growth_lite', 'growth', 'professional', 'scale'].includes(selectedPlanValue)) {
-                    selectedPlanValue = 'growth';
-                    // Update the hidden input for consistency
-                    if (selectedPlanInput) selectedPlanInput.value = selectedPlanValue;
-                }
-
-                if (isAccountantFirm) {
-                    selectedPlanValue = 'starter';
-                    if (selectedPlanInput) selectedPlanInput.value = selectedPlanValue;
-                }
-                
-                // Log for debugging
-                console.log('Submitting signup with account type:', accountTypeValue, 'and plan:', selectedPlanValue, 'from input:', selectedPlanInput?.value);
                 
                 // Client-side validation before submission
                 const validationErrors = [];
@@ -1628,10 +1425,6 @@
                     validationErrors.push('account type');
                 }
                 
-                if (!isAccountantFirm && (!selectedPlanValue || !['starter', 'growth_lite', 'growth', 'professional', 'scale'].includes(selectedPlanValue))) {
-                    validationErrors.push('plan selection');
-                }
-                
                 if (!document.getElementById('terms')?.checked) {
                     validationErrors.push('terms');
                 }
@@ -1676,7 +1469,6 @@
                         "Authorization": `Bearer ${supabaseKey}`
                     },
                     body: JSON.stringify({
-                        selectedPlan: selectedPlanValue,
                         accountType: accountTypeValue,
                         account_type: accountTypeValue,
                         email: emailValue,
@@ -1716,6 +1508,7 @@
                         accountant_practitioner_declaration_accepted_at:
                             isAccountantFirm && accountantPractitionerDeclarationAccepted ? legalAcceptedAt : null,
                         accountant_compliance_version: isAccountantFirm ? FLOWIQ_LEGAL_VERSION : null,
+                        shopify_install_claim: shopifyInstallClaim || null,
                         turnstile_token: turnstileToken
                     })
                 });
@@ -1832,7 +1625,6 @@
                             signup_referral_detail: signupReferralDetail || null,
                             account_type: accountTypeValue,
                             accountant_firm_name: isAccountantFirm ? formData.get('companyName') : null,
-                            selected_plan: selectedPlanValue,
                             signup_source: 'website_signup',
                             terms_accepted: document.getElementById('terms')?.checked === true,
                             terms_version: FLOWIQ_LEGAL_VERSION,
@@ -1856,15 +1648,15 @@
                 // ✅ SUCCESS: Account created with organization (no email confirmation required)
                 window.FlowIQWebsiteAnalytics?.track('web_signup_complete', {
                     form_name: 'signupForm',
-                    selected_plan: selectedPlanValue,
                     account_type: accountTypeValue,
-                    signup_referral_source: signupReferralSource
+                    signup_referral_source: signupReferralSource,
+                    signup_context: shopifyInstallClaim ? 'shopify_install' : 'direct'
                 });
                 window.FlowIQGrowthAnalytics?.trackAccountCreated({
-                    selected_plan: selectedPlanValue,
                     form_name: 'signupForm',
                     account_type: accountTypeValue,
-                    signup_referral_source: signupReferralSource
+                    signup_referral_source: signupReferralSource,
+                    signup_context: shopifyInstallClaim ? 'shopify_install' : 'direct'
                 });
                 messageDiv.className = 'p-4 rounded-lg bg-green-500/20 border border-green-500/30';
                 messageDiv.innerHTML = `
@@ -1877,7 +1669,7 @@
                             </div>
                         </div>
                         <div class="pt-2">
-                            <a href="https://app.flowiq.info/login" class="inline-flex items-center justify-center w-full bg-freight-orange hover:bg-freight-orange-dark text-white py-2.5 px-4 rounded-lg font-semibold text-sm transition-all transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-freight-orange/20">
+                            <a href="https://app.flowiq.info/login?redirect=${encodeURIComponent(safeAppRedirect)}" class="inline-flex items-center justify-center w-full bg-freight-orange hover:bg-freight-orange-dark text-white py-2.5 px-4 rounded-lg font-semibold text-sm transition-all transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-freight-orange/20">
                                 <i data-lucide="log-in" class="mr-2" style="width:16px;height:16px"></i>
                                 Go to Sign In
                             </a>
@@ -1928,11 +1720,10 @@
                 // Reset button state
                 signupRequestInFlight = false;
                 submitButton.disabled = false;
-                if (typeof window.FlowIQSignupRefreshPlanUI === 'function') {
-                    window.FlowIQSignupRefreshPlanUI();
-                } else {
-                    buttonText.textContent = 'Start Your Free Trial';
-                }
+                const activeAccountType = (document.getElementById('accountType')?.value || 'organization').toLowerCase();
+                buttonText.textContent = activeAccountType === 'accountant_firm'
+                    ? 'Create FlowIQ HQ Account'
+                    : 'Create My FlowIQ Workspace';
                 loadingSpinner.classList.add('hidden');
                 resetTurnstile();
                 

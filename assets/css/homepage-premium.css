@@ -58,11 +58,11 @@ body[data-page-template="homepage"] > nav a[href="/signup"]:hover { background: 
 
 .premium-hero {
   position: relative;
-  min-height: 52rem;
+  min-height: 48rem;
   display: grid;
   align-content: start;
   justify-items: center;
-  padding: clamp(4.5rem, 9vw, 8rem) 0 0;
+  padding: clamp(2.75rem, 5.5vw, 4.75rem) 0 0;
   text-align: center;
   border: 0 !important;
   border-radius: 0 !important;
@@ -105,7 +105,7 @@ body[data-page-template="homepage"] > nav a[href="/signup"]:hover { background: 
   max-width: none !important;
   margin: 1.35rem 0 0;
   color: var(--home-ink);
-  font-size: clamp(3.6rem, 7.2vw, 7.2rem) !important;
+  font-size: clamp(3.6rem, 6.6vw, 6.65rem) !important;
   font-weight: 430 !important;
   letter-spacing: -.072em !important;
   line-height: .91 !important;
@@ -153,7 +153,7 @@ body[data-page-template="homepage"] > nav a[href="/signup"]:hover { background: 
   position: relative;
   z-index: 3;
   width: min(100%, 77rem);
-  margin-top: 4.6rem;
+  margin-top: 2.85rem;
   border: 1px solid var(--home-line);
   border-radius: 1.15rem;
   background: rgba(255,255,255,.88);
@@ -340,9 +340,9 @@ body[data-page-template="homepage"] footer .font-black { font-weight: 550 !impor
 
 @media (max-width: 960px) {
   .premium-home { padding-inline: 1.2rem; }
-  .premium-hero { min-height: auto; padding-top: 5rem; }
+  .premium-hero { min-height: auto; padding-top: 3.8rem; }
   .premium-hero h1 { font-size: clamp(3.5rem, 11vw, 6rem) !important; }
-  .product-stage { margin-top: 3.2rem; }
+  .product-stage { margin-top: 2.5rem; }
   .premium-home .route-cards,
   .premium-home .proof-cards { grid-template-columns: 1fr; }
   .premium-home .route-card,
@@ -355,7 +355,7 @@ body[data-page-template="homepage"] footer .font-black { font-weight: 550 !impor
 
 @media (max-width: 640px) {
   .premium-home { padding: 5.2rem .8rem 0; }
-  .premium-hero { padding-top: 3.5rem; }
+  .premium-hero { padding-top: 2.75rem; }
   .premium-hero h1 { font-size: clamp(3rem, 15.5vw, 4.6rem) !important; letter-spacing: -.065em !important; }
   .premium-hero h1 span { white-space: normal; }
   .premium-hero__copy > p { font-size: 1rem; }

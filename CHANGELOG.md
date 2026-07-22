@@ -1,5 +1,23 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - July 22, 2026
+
+### Canonical no-plan signup and clearer 14-day journey
+
+- Kept the full business-data signup form while removing six upfront plan cards; customers choose and activate a plan in app Billing instead.
+- Preserved Shopify install claims and safe return paths when the app `/signup` route hands registration to the canonical marketing site.
+- Moved existing homepage product proof higher into the first viewport without replacing the approved premium design system.
+- Reframed pricing as one chronological 14-day trial-to-activation journey and kept Welcome Bonus modules explicitly separate.
+- Corrected signup funnel analytics so first meaningful form interaction is counted once and CTA clicks no longer inflate `web_signup_start`.
+- Details: `docs/Website/2026-07-22_trial_signup_and_first_viewport_conversion.md`.
+- No Netlify deployment, Git push, or commit was performed.
+
+### Regression Risk Notes (>10%)
+
+- **10-15% Shopify signup handoff risk:** mitigated by preserving the full query/hash and forwarding `shopify_install_claim` through the canonical form.
+- **10-15% analytics baseline risk:** signup-start totals intentionally fall to a truthful first-interaction count.
+- **10-12% responsive hero risk:** mitigated through existing breakpoints and desktop/mobile visual QA before release.
+
 ## [Unreleased] - July 20, 2026
 
 ### Market Radar connection rail logo

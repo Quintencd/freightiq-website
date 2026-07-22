@@ -69,8 +69,6 @@
     var payload = withPageMetadata(params);
     trackEvent(eventName, payload);
 
-    if (eventName === 'trial_signup_click') emitWebEvent('web_signup_start', withPageMetadata({ source: 'growth_analytics', trigger: 'trial_cta_click' }, payload));
-    if (eventName === 'pricing_start_trial_click') emitWebEvent('web_signup_start', withPageMetadata({ source: 'growth_analytics', trigger: 'pricing_module_trial_cta_click' }, payload));
     if (eventName === 'demo_click') emitWebEvent('web_demo_request_start', withPageMetadata({ source: 'growth_analytics', trigger: 'demo_cta_click' }, payload));
     if (eventName === 'pricing_book_demo_click') emitWebEvent('web_demo_request_start', withPageMetadata({ source: 'growth_analytics', trigger: 'pricing_module_demo_cta_click' }, payload));
     if (eventName === 'pricing_page_view') emitWebEvent('web_page_view', withPageMetadata({ source: 'growth_analytics', funnel_step: 'pricing' }, payload));
