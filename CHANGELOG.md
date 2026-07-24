@@ -1,5 +1,25 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - July 24, 2026
+
+### Premium modules directory and dedicated module pages
+
+- Replaced the limited module grid with a premium searchable directory covering 32 connected modules and add-ons across operating, specialist, and automation workflows.
+- Added a categorized Modules mega-menu on desktop and an expandable Modules group in the mobile navigation.
+- Added or consolidated 32 dedicated module pages with buyer value, features, workflow, outcomes, real/product imagery, connected modules, CTAs, self-canonicals, social metadata, and structured data.
+- Expanded AI Auto Capture marketing to cover customer-order and supplier-document email intake, attachment-level auto-split, pending queues, bell notifications, source-linked mapping, reviewed mapping memory, and explicit approval before draft creation.
+- Kept Auto Capture claims review-first and documented the Google restricted-scope and real-document certification boundaries.
+- Added one canonical module catalog, a repeatable page/sitemap generator, a module validation command, and synchronized root/public sitemap entries.
+- Details: `docs/Website/2026-07-24_premium_modules_directory_and_detail_pages.md`.
+- No Netlify deployment, Git push, commit, database change, or app runtime change was performed.
+
+### Regression Risk Notes (>10%)
+
+- **15-20% public-claim drift:** mitigated by one canonical catalog and explicit provider/certification boundaries.
+- **12-18% indexed-page replacement:** mitigated by stable canonicals, unique crawlable content, JSON-LD, sitemap parity, and automated validation.
+- **10-15% shared-navigation footprint:** mitigated through the existing keyboard dropdown contract, a bounded desktop mega-menu, and a separate mobile accordion.
+- **10-15% email-intake expectation risk:** mitigated by stating that intake creates review items and cannot post commercial documents automatically.
+
 ## [Unreleased] - July 22, 2026
 
 ### Canonical no-plan signup and clearer 14-day journey

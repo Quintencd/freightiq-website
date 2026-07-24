@@ -36,7 +36,7 @@
   window.FlowIQStoryReveal = initStoryReveals;
 
   var LIGHT_CSS_VERSION = '24';
-  var PREMIUM_SITE_CSS_VERSION = '2';
+  var PREMIUM_SITE_CSS_VERSION = '3';
 
   function getPageFamily(pathname) {
     var path = pathname || window.location.pathname || '/';
@@ -175,7 +175,7 @@
                 '<img src="/flowiq-logo.png" alt="FlowIQ - Smarter business in motion" class="h-[52px] w-auto max-w-[205px] object-contain group-hover:opacity-90 transition-opacity duration-300" width="205" height="52" loading="eager">' +
               '</a>' +
             '</div>' +
-            '<div class="hidden md:flex items-center space-x-8 flex-shrink-0">' +
+            '<div class="hidden md:flex items-center space-x-6 flex-shrink-0">' +
               '<a href="/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Home</a>' +
               '<div class="nav-dropdown">' +
                 '<button type="button" class="nav-dropdown__trigger">Solutions <i data-lucide="chevron-down" class="w-4 h-4"></i></button>' +
@@ -191,7 +191,40 @@
                   '</div>' +
                 '</div>' +
               '</div>' +
-              '<a href="/modules" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Modules</a>' +
+              '<div class="nav-dropdown nav-dropdown--modules">' +
+                '<button type="button" class="nav-dropdown__trigger">Modules <i data-lucide="chevron-down" class="w-4 h-4"></i></button>' +
+                '<div class="nav-dropdown__menu nav-dropdown__menu--modules">' +
+                  '<div class="nav-dropdown__panel modules-mega-menu">' +
+                    '<div class="modules-mega-menu__intro">' +
+                      '<span>Explore FlowIQ</span>' +
+                      '<strong>More than 30 connected capabilities.</strong>' +
+                      '<p>Build the operating system your business needs now, then add specialist workflows without creating another silo.</p>' +
+                      '<a href="/modules">View every module <i data-lucide="arrow-right" class="w-4 h-4"></i></a>' +
+                    '</div>' +
+                    '<div class="modules-mega-menu__group">' +
+                      '<span>Run the business</span>' +
+                      '<a href="/modules/dashboardiq.html"><i data-lucide="layout-dashboard"></i><span><strong>DashboardIQ</strong><small>Executive control</small></span></a>' +
+                      '<a href="/modules/salesiq.html"><i data-lucide="target"></i><span><strong>SalesIQ</strong><small>Pipeline and follow-up</small></span></a>' +
+                      '<a href="/modules/inventoryiq.html"><i data-lucide="boxes"></i><span><strong>InventoryIQ</strong><small>Stock and cost truth</small></span></a>' +
+                      '<a href="/modules/accountingiq.html"><i data-lucide="calculator"></i><span><strong>AccountingIQ</strong><small>Finance and close</small></span></a>' +
+                    '</div>' +
+                    '<div class="modules-mega-menu__group">' +
+                      '<span>Plan and execute</span>' +
+                      '<a href="/modules/importiq.html"><i data-lucide="ship"></i><span><strong>ImportIQ</strong><small>Landed cost control</small></span></a>' +
+                      '<a href="/modules/forecastiq.html"><i data-lucide="trending-up"></i><span><strong>ForecastIQ</strong><small>Demand and replenishment</small></span></a>' +
+                      '<a href="/modules/manufacturing.html"><i data-lucide="factory"></i><span><strong>Manufacturing</strong><small>BOMs and work orders</small></span></a>' +
+                      '<a href="/modules/projectsiq.html"><i data-lucide="folder-kanban"></i><span><strong>ProjectsIQ</strong><small>Work, cost, and proof</small></span></a>' +
+                    '</div>' +
+                    '<div class="modules-mega-menu__group modules-mega-menu__group--accent">' +
+                      '<span>Automate and extend</span>' +
+                      '<a href="/modules/ai-auto-capture.html"><i data-lucide="sparkles"></i><span><strong>AI Auto Capture</strong><small>Email-to-review queues</small></span></a>' +
+                      '<a href="/modules/agentsiq.html"><i data-lucide="bot"></i><span><strong>AgentsIQ</strong><small>Guarded AI assistance</small></span></a>' +
+                      '<a href="/modules/rfid-stock-tracking.html"><i data-lucide="scan-line"></i><span><strong>RFID Stock Tracking</strong><small>Supervised scan evidence</small></span></a>' +
+                      '<a href="/modules/business-units.html"><i data-lucide="network"></i><span><strong>Business Units</strong><small>Local control, group view</small></span></a>' +
+                    '</div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
               '<a href="/walkthroughs" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Walkthroughs</a>' +
               '<a href="/tools/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Tools</a>' +
               '<a href="/pricing" class="text-slate-600 hover:text-orange-600 font-medium transition-colors text-sm uppercase tracking-wide">Pricing</a>' +
@@ -204,7 +237,7 @@
         '<div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white/95 backdrop-blur-md absolute w-full left-0 top-20 shadow-xl">' +
           '<div class="px-6 py-6 space-y-4">' +
             '<a href="/" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Home</a>' +
-            '<div class="mobile-solutions-group">' +
+            '<div class="mobile-solutions-group mobile-nav-group">' +
               '<button type="button" class="mobile-solutions-toggle" aria-expanded="false" aria-controls="mobileSolutionsPanel">Solutions <i data-lucide="chevron-down" class="w-5 h-5"></i></button>' +
               '<div id="mobileSolutionsPanel" class="mobile-solutions-panel" hidden>' +
                 '<a href="/solutions/importers.html"><i data-lucide="ship" class="w-4 h-4"></i><span><strong>Importers</strong><small>Landed cost, shipments, and margin</small></span></a>' +
@@ -214,7 +247,16 @@
                 '<a href="/solutions/rfid-stock-tracking.html"><i data-lucide="scan-line" class="w-4 h-4"></i><span><strong>RFID stock tracking</strong><small>Scan proof for stock movement</small></span></a>' +
               '</div>' +
             '</div>' +
-            '<a href="/modules" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Modules</a>' +
+            '<div class="mobile-solutions-group mobile-nav-group">' +
+              '<button type="button" class="mobile-solutions-toggle" aria-expanded="false" aria-controls="mobileModulesPanel">Modules <i data-lucide="chevron-down" class="w-5 h-5"></i></button>' +
+              '<div id="mobileModulesPanel" class="mobile-solutions-panel" hidden>' +
+                '<a href="/modules"><i data-lucide="grid-2x2" class="w-4 h-4"></i><span><strong>Explore all modules</strong><small>Browse more than 30 capabilities</small></span></a>' +
+                '<a href="/modules/ai-auto-capture.html"><i data-lucide="sparkles" class="w-4 h-4"></i><span><strong>AI Auto Capture</strong><small>Incoming document review queues</small></span></a>' +
+                '<a href="/modules/importiq.html"><i data-lucide="ship" class="w-4 h-4"></i><span><strong>ImportIQ</strong><small>Landed cost and shipments</small></span></a>' +
+                '<a href="/modules/inventoryiq.html"><i data-lucide="boxes" class="w-4 h-4"></i><span><strong>InventoryIQ</strong><small>Stock and cost control</small></span></a>' +
+                '<a href="/modules/accountingiq.html"><i data-lucide="calculator" class="w-4 h-4"></i><span><strong>AccountingIQ</strong><small>Finance and reporting</small></span></a>' +
+              '</div>' +
+            '</div>' +
             '<a href="/walkthroughs" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Walkthroughs</a>' +
             '<a href="/tools/" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Tools</a>' +
             '<a href="/pricing" class="block text-slate-600 hover:text-orange-600 font-medium text-lg">Pricing</a>' +
@@ -225,19 +267,21 @@
       '</nav>';
   }
 
-  function initMobileSolutionsDropdown() {
+  function initMobileNavDropdowns() {
     var mobileMenu = document.getElementById('mobileMenu');
     if (!mobileMenu) return;
 
-    var toggle = mobileMenu.querySelector('.mobile-solutions-toggle');
-    var panel = mobileMenu.querySelector('.mobile-solutions-panel');
-    if (!toggle || !panel) return;
+    mobileMenu.querySelectorAll('.mobile-nav-group').forEach(function (group) {
+      var toggle = group.querySelector('.mobile-solutions-toggle');
+      var panel = group.querySelector('.mobile-solutions-panel');
+      if (!toggle || !panel) return;
 
-    toggle.addEventListener('click', function () {
-      var shouldOpen = toggle.getAttribute('aria-expanded') !== 'true';
-      toggle.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
-      panel.hidden = !shouldOpen;
-      toggle.classList.toggle('is-open', shouldOpen);
+      toggle.addEventListener('click', function () {
+        var shouldOpen = toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+        panel.hidden = !shouldOpen;
+        toggle.classList.toggle('is-open', shouldOpen);
+      });
     });
   }
 
@@ -262,7 +306,7 @@
       });
     }
 
-    initMobileSolutionsDropdown();
+    initMobileNavDropdowns();
 
     if (window.lucide) window.lucide.createIcons();
   }

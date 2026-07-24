@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "npx serve . -l 3333",
     "start": "npx serve . -l 3333",
+    "generate:modules": "node tools/generate-module-marketing.mjs",
+    "validate:modules": "node tools/validate-module-marketing.mjs",
     "auth:demo": "node scripts/demo-recordings/save-auth-state.mjs",
     "record:demo": "node scripts/demo-recordings/record-module.mjs",
     "record:demo:all": "node scripts/demo-recordings/record-all.mjs",

@@ -35,7 +35,7 @@
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <!-- Cache busting to ensure updated code loads -->
     <script>
-        console.log('Signup page loaded - version 3.9 (strict password policy + real-time validation)');
+        console.log('Signup page loaded - version 4.0 (all-or-nothing password conformance)');
     </script>
     <style>
         .bg-freight-slate { background-color: #0f172a; }
@@ -454,7 +454,12 @@
                                         <span class="password-rule-icon inline-block w-3 text-center text-slate-400">×</span>
                                         <span>One number (0-9)</span>
                                     </li>
+                                    <li id="req-common" class="text-slate-400 flex items-center gap-1">
+                                        <span class="password-rule-icon inline-block w-3 text-center text-slate-400">×</span>
+                                        <span>Does not use a common password pattern</span>
+                                    </li>
                                 </ul>
+                                <p class="text-xs text-slate-400 mt-1">All requirements turn green together only when the new password conforms. Supabase also blocks passwords found in known data breaches.</p>
                             </div>
                         </div>
                     </div>
@@ -783,11 +788,33 @@
 
             // Real-time password strength validation
             function validatePasswordStrength(password) {
+                const normalized = String(password || '')
+                    .toLowerCase()
+                    .replace(/[@4]/g, 'a')
+                    .replace(/[3]/g, 'e')
+                    .replace(/[1!]/g, 'i')
+                    .replace(/[0]/g, 'o')
+                    .replace(/[$5]/g, 's')
+                    .replace(/[7]/g, 't')
+                    .replace(/[^a-z0-9]/g, '');
+                const commonPatterns = [
+                    'password',
+                    'passw0rd',
+                    'qwerty',
+                    'letmein',
+                    'welcome',
+                    'admin',
+                    'login',
+                    'changeme',
+                    'iloveyou',
+                    '123456'
+                ];
                 const checks = {
                     length: password.length >= 8,
                     lowercase: /[a-z]/.test(password),
                     uppercase: /[A-Z]/.test(password),
-                    number: /\d/.test(password)
+                    number: /\d/.test(password),
+                    common: !commonPatterns.some((pattern) => normalized.includes(pattern))
                 };
                 return checks;
             }
@@ -798,15 +825,17 @@
                     'req-length': checks.length,
                     'req-lowercase': checks.lowercase,
                     'req-uppercase': checks.uppercase,
-                    'req-number': checks.number
+                    'req-number': checks.number,
+                    'req-common': checks.common
                 };
+                const allRequirementsMet = password.length > 0 && Object.values(checks).every(Boolean);
 
-                Object.entries(requirements).forEach(([id, met]) => {
+                Object.keys(requirements).forEach((id) => {
                     const element = document.getElementById(id);
                     if (element) {
                         const icon = element.querySelector('.password-rule-icon');
                         if (icon) {
-                            if (met) {
+                            if (allRequirementsMet) {
                                 icon.classList.remove('text-slate-400');
                                 icon.classList.add('text-green-500');
                                 icon.textContent = '✓';
@@ -1365,7 +1394,7 @@
                 // Strict password validation
                 const passwordValue = (formData.get('password') || '').toString();
                 const passwordChecks = validatePasswordStrength(passwordValue);
-                if (!passwordValue || !passwordChecks.length || !passwordChecks.lowercase || !passwordChecks.uppercase || !passwordChecks.number) {
+                if (!passwordValue || !passwordChecks.length || !passwordChecks.lowercase || !passwordChecks.uppercase || !passwordChecks.number || !passwordChecks.common) {
                     validationErrors.push('password');
                     // Highlight password field
                     highlightFieldError('password');
@@ -1375,6 +1404,7 @@
                     if (!passwordChecks.lowercase) missingReqs.push('a lowercase letter');
                     if (!passwordChecks.uppercase) missingReqs.push('an uppercase letter');
                     if (!passwordChecks.number) missingReqs.push('a number');
+                    if (!passwordChecks.common) missingReqs.push('no common password patterns');
                     
                     const passwordField = document.getElementById('password');
                     if (passwordField && !passwordField.nextElementSibling?.classList.contains('error-message')) {

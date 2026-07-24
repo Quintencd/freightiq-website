@@ -3,115 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TaskIQ — Tasks & Workflows</title>
-  <meta name="description" content="TaskIQ: team workflows, recurring tasks, checklists, and audit logs.">
+  <title>TaskIQ | Owned work, due dates, proof, and review queues | FlowIQ</title>
+  <meta name="description" content="TaskIQ in FlowIQ: Track work that needs ownership, due dates, priority, notes, attachments, recurring schedules, review, and completion status.">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://www.flowiq.info/modules/taskiq.html">
-  <link rel="icon" type="image/png" href="/flowiq-logo.png">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="shortcut icon" href="/favicon.ico">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FlowIQ">
+  <meta property="og:title" content="TaskIQ | Owned work, due dates, proof, and review queues | FlowIQ">
+  <meta property="og:description" content="TaskIQ in FlowIQ: Track work that needs ownership, due dates, priority, notes, attachments, recurring schedules, review, and completion status.">
+  <meta property="og:url" content="https://www.flowiq.info/modules/taskiq.html">
+  <meta property="og:image" content="https://www.flowiq.info/assets/img/generated/operations-command-story.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TaskIQ | Owned work, due dates, proof, and review queues | FlowIQ">
+  <meta name="twitter:description" content="TaskIQ in FlowIQ: Track work that needs ownership, due dates, priority, notes, attachments, recurring schedules, review, and completion status.">
+  <meta name="twitter:image" content="https://www.flowiq.info/assets/img/generated/operations-command-story.webp">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+  <link rel="icon" type="image/png" href="/flowiq-logo.png?v=2">
+  <link rel="shortcut icon" href="/favicon.ico?v=2">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-    body { font-family: 'Inter', sans-serif; }
-    .text-freight-orange { color: #f97316; }
-    .bg-freight-orange { background-color: #f97316; }
-    .hover\:bg-freight-orange-dark:hover { background-color: #ea580c; }
-  
-    /* Keep the marketing menu visible above page visuals. */
-    nav.fixed,nav.sticky{top:0;left:0;right:0;z-index:9999!important}#mobileMenu{z-index:10000}
-  </style>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"TaskIQ | Tasks and Workflow Management | FlowIQ","url":"https://www.flowiq.info/modules/taskiq.html","description":"TaskIQ manages team workflows, recurring schedules, checklists, reminders, escalations, and audit logs across FlowIQ modules.","isPartOf":{"@type":"WebSite","name":"FlowIQ","url":"https://www.flowiq.info/"},"about":{"@type":"SoftwareApplication","name":"TaskIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.flowiq.info/"},{"@type":"ListItem","position":2,"name":"Modules","item":"https://www.flowiq.info/modules.html"},{"@type":"ListItem","position":3,"name":"TaskIQ","item":"https://www.flowiq.info/modules/taskiq.html"}]},{"@type":"SoftwareApplication","name":"TaskIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/modules/taskiq.html","description":"TaskIQ manages team workflows, recurring schedules, checklists, reminders, escalations, and audit logs across FlowIQ modules.","featureList":["Workflow templates","Recurring tasks","Checklists","SLA reminders","Escalations","Audit logs"]}]}
-  </script>
+  <link rel="stylesheet" href="/flowiq-light.css?v=24">
+  <link rel="stylesheet" href="/assets/css/modules-marketing.css?v=1">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"TaskIQ | FlowIQ","url":"https://www.flowiq.info/modules/taskiq.html","description":"TaskIQ in FlowIQ: Track work that needs ownership, due dates, priority, notes, attachments, recurring schedules, review, and completion status.","isPartOf":{"@type":"WebSite","name":"FlowIQ","url":"https://www.flowiq.info/"},"about":{"@type":"SoftwareApplication","name":"TaskIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web"}},{"@type":"SoftwareApplication","name":"TaskIQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.flowiq.info/modules/taskiq.html","description":"Track work that needs ownership, due dates, priority, notes, attachments, recurring schedules, review, and completion status.","featureList":["Personal and assigned queues","Due dates and priority","Notes, checklists, and attachments","Recurring work and review status"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.flowiq.info/"},{"@type":"ListItem","position":2,"name":"Modules","item":"https://www.flowiq.info/modules.html"},{"@type":"ListItem","position":3,"name":"TaskIQ","item":"https://www.flowiq.info/modules/taskiq.html"}]}]}</script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
-  <link rel="stylesheet" href="/flowiq-light.css?v=21">
   <script src="/assets/smartlook.js"></script>
 </head>
-<body class="bg-slate-50 text-slate-900 overflow-x-hidden marketing-shell premium-light-page" data-page-template="module-detail" data-page-intent="module_demo_intent" data-page-topic="taskiq">
-  <div class="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.15),rgba(255,255,255,0))]"></div>
-  <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <div class="flex items-center">
-          <a href="/" class="flex items-center gap-2">
-            <img src="/flowiq-logo.png" alt="FlowIQ - Smarter business in motion" class="h-[52px] w-auto max-w-[205px] object-contain" width="205" height="52" loading="eager">
-          </a>
+<body class="marketing-shell premium-light-page fiq-module-detail-page" data-page-template="module-detail" data-page-intent="module_demo_intent" data-page-topic="taskiq">
+  <a class="fiq-skip-link" href="#module-content">Skip to module content</a>
+  <main id="module-content" class="fiq-module-detail">
+    <nav class="fiq-module-breadcrumb" aria-label="Breadcrumb"><a href="/modules">Modules</a><i data-lucide="chevron-right" aria-hidden="true"></i><span>TaskIQ</span></nav>
+    <section class="fiq-module-detail__hero">
+      <div class="fiq-module-detail__hero-copy">
+        <div class="fiq-module-detail__labels"><span>Module</span><span>Plan and execute</span></div>
+        <h1>TaskIQ: <span>Owned work, due dates, proof, and review queues</span></h1>
+        <p>Track work that needs ownership, due dates, priority, notes, attachments, recurring schedules, review, and completion status.</p>
+        <div class="fiq-module-hero-actions">
+          <a class="fiq-module-button fiq-module-button--primary" href="/book-demo" data-analytics-event="demo_request" data-analytics-label="TaskIQ detail demo">See TaskIQ in action</a>
+          <a class="fiq-module-button fiq-module-button--secondary" href="/pricing">View pricing</a>
         </div>
-        <div class="hidden md:flex items-center space-x-6">
-          <a href="/" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Home</a>
-          <a href="/who-flowiq-is-for.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Who it's for</a>
-          <a href="/modules.html" class="text-orange-600 font-medium">Modules</a>
-          <a href="/pricing.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Pricing</a>
-          <a href="/brochure.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Brochure</a>
-          <a href="https://app.flowiq.info/login" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Login</a>
-          <a href="/book-demo.html" class="text-slate-600 hover:text-orange-600 font-medium transition-colors">Book a Demo</a>
-          <a href="/signup" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-5 py-2.5 rounded-lg font-semibold shadow-sm transition-all hover:shadow-md">Start your 14-day free trial</a>
-        </div>
-        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900" aria-label="Open menu">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
+        <ul class="fiq-module-detail__outcomes"><li><i data-lucide="circle-check" aria-hidden="true"></i>Fewer dropped actions</li><li><i data-lucide="circle-check" aria-hidden="true"></i>Clearer ownership</li><li><i data-lucide="circle-check" aria-hidden="true"></i>A stronger completion trail</li></ul>
       </div>
-    </div>
-    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white absolute w-full left-0 top-16">
-      <div class="px-4 py-4 space-y-4 shadow-lg">
-        <a href="/" class="block text-slate-600 hover:text-orange-600 font-medium">Home</a>
-        <a href="/who-flowiq-is-for.html" class="block text-slate-600 hover:text-orange-600 font-medium">Who it's for</a>
-        <a href="/modules.html" class="block text-orange-600 font-medium">Modules</a>
-        <a href="/pricing.html" class="block text-slate-600 hover:text-orange-600 font-medium">Pricing</a>
-        <a href="/brochure.html" class="block text-slate-600 hover:text-orange-600 font-medium">Brochure</a>
-        <a href="https://app.flowiq.info/login" class="block text-slate-600 hover:text-orange-600 font-medium">Login</a>
-        <a href="/book-demo.html" class="block text-slate-600 hover:text-orange-600 font-medium">Book a Demo</a>
-        <a href="/signup" class="block bg-freight-orange text-white px-4 py-2 rounded-lg text-center font-medium">Start your 14-day free trial</a>
+      <div class="fiq-module-detail__hero-media">
+        <img src="/assets/img/generated/operations-command-story.webp" alt="TaskIQ task and workflow workspace" width="1200" height="800">
+        <div><i data-lucide="list-checks" aria-hidden="true"></i><span>TaskIQ</span><small>Connected by FlowIQ</small></div>
       </div>
-    </div>
-  </nav>
-
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32 space-y-12">
-    <section class="text-center mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">TaskIQ</h1>
-      <p class="text-xl text-slate-600 max-w-3xl mx-auto">Team tasks and workflows with recurring schedules and full audit logs across modules.</p>
-      <a href="/book-demo.html" class="inline-flex items-center gap-2 bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all mt-6">Book Demo</a>
     </section>
-    <section class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-        <h3 class="text-slate-900 font-semibold mb-2">Workflows</h3>
-        <p class="text-slate-600 text-sm">Templates and checklists spanning purchasing, inventory, and invoicing.</p>
+
+    <section class="fiq-module-detail__value">
+      <div><p class="fiq-module-eyebrow">Why it matters</p><h2>Follow-through becomes visible across teams and modules.</h2></div>
+      <p>FlowIQ keeps this workflow connected to the records, permissions, source documents, and downstream modules that give it operational meaning.</p>
+    </section>
+
+    <section class="fiq-module-detail__features" aria-labelledby="features-heading">
+      <div class="fiq-module-detail__section-heading"><p class="fiq-module-eyebrow">Capability</p><h2 id="features-heading">What TaskIQ gives your team.</h2></div>
+      <div class="fiq-module-detail__feature-grid"><article><span>01</span><i data-lucide="circle-check-big" aria-hidden="true"></i><h3>Personal and assigned queues</h3></article><article><span>02</span><i data-lucide="workflow" aria-hidden="true"></i><h3>Due dates and priority</h3></article><article><span>03</span><i data-lucide="scan-search" aria-hidden="true"></i><h3>Notes, checklists, and attachments</h3></article><article><span>04</span><i data-lucide="shield-check" aria-hidden="true"></i><h3>Recurring work and review status</h3></article></div>
+    </section>
+
+    <section class="fiq-module-detail__workflow" aria-labelledby="workflow-heading">
+      <div class="fiq-module-detail__workflow-copy">
+        <p class="fiq-module-eyebrow">The operating flow</p>
+        <h2 id="workflow-heading">A clear path from signal to controlled outcome.</h2>
+        <p>Follow-through becomes visible across teams and modules. The workflow stays understandable for the person doing the work and reviewable for the person accountable for the result.</p>
       </div>
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-        <h3 class="text-slate-900 font-semibold mb-2">Recurring</h3>
-        <p class="text-slate-600 text-sm">Schedule tasks with SLAs, reminders, and escalations.</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-        <h3 class="text-slate-900 font-semibold mb-2">Audit</h3>
-        <p class="text-slate-600 text-sm">Every action tracked with user, time, and context.</p>
-      </div>
+      <ol><li><span>01</span><div><strong>Create the required action</strong><small>Context and ownership stay visible before the next step.</small></div></li><li><span>02</span><div><strong>Assign owner and due date</strong><small>Context and ownership stay visible before the next step.</small></div></li><li><span>03</span><div><strong>Complete with context or proof</strong><small>Context and ownership stay visible before the next step.</small></div></li><li><span>04</span><div><strong>Review and close</strong><small>The approved result remains connected to its source and history.</small></div></li></ol>
+    </section>
+
+    <section class="fiq-module-detail__proof" aria-labelledby="proof-heading">
+      <div class="fiq-module-detail__proof-media"><img src="/assets/img/modules/thumb-taskiq.webp" alt="TaskIQ task and workflow workspace" width="1440" height="900" loading="lazy"></div>
+      <div><p class="fiq-module-eyebrow">Connected by design</p><h2 id="proof-heading">TaskIQ does not live in another silo.</h2><p>Track work that needs ownership, due dates, priority, notes, attachments, recurring schedules, review, and completion status. The same organization, user permissions, and operating records travel through the wider FlowIQ suite.</p></div>
+    </section>
+
+    
+    
+
+    <section class="fiq-module-detail__connected" aria-labelledby="connected-heading">
+      <div class="fiq-module-detail__section-heading"><p class="fiq-module-eyebrow">Works better together</p><h2 id="connected-heading">Continue the operating story.</h2></div>
+      <div><a href="/modules/workiq.html" data-module-engagement="WorkIQ related"><span><i data-lucide="briefcase-business" aria-hidden="true"></i>WorkIQ</span><p>Client work and staff execution in visible queues.</p><small>Explore module <i data-lucide="arrow-up-right" aria-hidden="true"></i></small></a><a href="/modules/projectsiq.html" data-module-engagement="ProjectsIQ related"><span><i data-lucide="folder-kanban" aria-hidden="true"></i>ProjectsIQ</span><p>Project work, cost, ownership, and proof in one workspace.</p><small>Explore module <i data-lucide="arrow-up-right" aria-hidden="true"></i></small></a><a href="/modules/dashboardiq.html" data-module-engagement="DashboardIQ related"><span><i data-lucide="layout-dashboard" aria-hidden="true"></i>DashboardIQ</span><p>One operating picture for the whole business.</p><small>Explore module <i data-lucide="arrow-up-right" aria-hidden="true"></i></small></a></div>
+    </section>
+
+    <section class="fiq-module-cta">
+      <p class="fiq-module-eyebrow">See the workflow with your team in mind</p>
+      <h2>Build a practical FlowIQ rollout around the work you want to improve first.</h2>
+      <p>We will map TaskIQ into the modules, data, and approvals your operation already relies on.</p>
+      <div><a class="fiq-module-button fiq-module-button--dark" href="/book-demo">Book a tailored walkthrough</a><a class="fiq-module-button fiq-module-button--light" href="/modules">Explore all modules</a></div>
     </section>
   </main>
-
-  <footer class="border-t border-slate-200 py-8 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
-      <a href="/solutions/" class="text-slate-600 hover:text-orange-600">Solutions</a>
-      <span class="mx-2">·</span>
-      <a href="/use-cases/" class="text-slate-600 hover:text-orange-600">Use Cases</a>
-      <span class="mx-2">·</span>
-      <a href="/tools/" class="text-slate-600 hover:text-orange-600">Tools</a>
-      <span class="mx-2">·</span>
-      <a href="/compare/" class="text-slate-600 hover:text-orange-600">Compare</a>
-      <span class="mx-2">·</span>
-      <a href="/glossary/" class="text-slate-600 hover:text-orange-600">Glossary</a>
-      <p class="mt-4">Your data remains private and is never shared.</p>
+  <footer class="fiq-module-footer">
+    <div>
+      <a href="/"><img src="/flowiq-logo.png" width="176" height="44" alt="FlowIQ"></a>
+      <p>Smarter business in motion.</p>
     </div>
+    <nav aria-label="Footer">
+      <a href="/solutions/">Solutions</a>
+      <a href="/modules">Modules</a>
+      <a href="/walkthroughs">Walkthroughs</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/book-demo">Book a demo</a>
+    </nav>
   </footer>
-
-  <script>
-    document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
-      var menu = document.getElementById('mobileMenu');
-      menu?.classList.toggle('hidden');
-    });
-    if (typeof lucide !== 'undefined') lucide.createIcons();
-  </script>
-  <script src="/assets/js/main.js?v=12"></script>
+  <script src="/assets/js/main.js?v=13"></script>
   <script src="/assets/website-analytics.js"></script>
   <script src="/assets/growth-analytics.js"></script>
 </body>

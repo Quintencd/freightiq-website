@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-07-21T19:39:43.433Z",
+  "generated_at_utc": "2026-07-24T08:41:22.203Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -195,6 +195,21 @@
         "discount": 10,
         "custom": false
       },
+      "regional_prices": {
+        "USD": {
+          "price_book": "us_usd_v1",
+          "monthly": {
+            "amount": 39,
+            "custom": false,
+            "starting_at": null
+          },
+          "annual": {
+            "amount": 421,
+            "discount": 10,
+            "custom": false
+          }
+        }
+      },
       "limits": {
         "users": 1,
         "skus": 250,
@@ -234,6 +249,7 @@
         "extra_users": {
           "name": "Extra User Seat",
           "price": 99,
+          "price_usd": 9,
           "limit": null,
           "unit": "user",
           "description": "Add one additional team member without forcing a full plan upgrade.",
@@ -247,6 +263,7 @@
         "extra_skus": {
           "name": "Extra SKU Capacity",
           "price": 150,
+          "price_usd": 9,
           "limit": 2,
           "unit": "100 SKUs",
           "description": "100 additional SKUs",
@@ -260,6 +277,7 @@
         "agentsiq_usage_pack": {
           "name": "AI Pack",
           "price": 200,
+          "price_usd": 15,
           "limit": 20,
           "unit": "100 capture credits",
           "description": "AI Pack: 100 capture credits shared with AI Automation Suite capture and AgentsIQ workflows",
@@ -273,6 +291,7 @@
         "workiq_addon": {
           "name": "WorkIQ Add-on",
           "price": 990,
+          "price_usd": 69,
           "limit": 1,
           "unit": "bundle",
           "description": "WorkIQ job cards, work queues, and execution tracking.",
@@ -286,6 +305,7 @@
         "ai_auto_capture": {
           "name": "AI Automation Suite",
           "price": 519,
+          "price_usd": 49,
           "limit": 1,
           "unit": "150 capture credits",
           "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
@@ -299,6 +319,7 @@
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
           "price": 2990,
+          "price_usd": 199,
           "limit": 1,
           "unit": "workspace",
           "description": "ForecastIQ planning intelligence for demand trends, stock risk, reorder planning, cash impact, and forward-looking operational decisions.",
@@ -312,6 +333,7 @@
         "ecom_pack": {
           "name": "Ecom Pack",
           "price": 690,
+          "price_usd": 59,
           "limit": 1,
           "unit": "workspace",
           "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
@@ -325,6 +347,7 @@
         "brandiq_addon": {
           "name": "BrandIQ",
           "price": 1490,
+          "price_usd": 149,
           "limit": 1,
           "unit": "workspace",
           "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
@@ -338,6 +361,7 @@
         "messaging_pack": {
           "name": "Messaging Pack",
           "price": 250,
+          "price_usd": 19,
           "limit": 1,
           "unit": "workspace",
           "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
@@ -351,6 +375,7 @@
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
+          "price_usd": 69,
           "limit": 20,
           "unit": "location",
           "description": "POSIQ till/POS integration for one store location, including provider webhooks, queue/retry, mapping review, up to two terminals, and the CashIQ shift cash-balancing bridge.",
@@ -364,6 +389,7 @@
         "payroll_pack": {
           "name": "Payroll Pack",
           "price": 450,
+          "price_usd": 39,
           "limit": 1,
           "unit": "workspace",
           "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
@@ -377,6 +403,7 @@
         "business_units": {
           "name": "Business Units",
           "price": 600,
+          "price_usd": 59,
           "limit": 1,
           "unit": "workspace",
           "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
@@ -390,6 +417,7 @@
         "projectsiq_addon": {
           "name": "ProjectsIQ Starter",
           "price": 1499,
+          "price_usd": 99,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ project control room for contractors and builders, capped at 25 active projects per year.",
@@ -405,6 +433,7 @@
         "projectsiq_growth": {
           "name": "ProjectsIQ Growth",
           "price": 2499,
+          "price_usd": 169,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ for growing contractors, capped at 75 active projects per year.",
@@ -420,6 +449,7 @@
         "projectsiq_unlimited": {
           "name": "ProjectsIQ Unlimited",
           "price": 3999,
+          "price_usd": 269,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ for high-volume contractors that need unlimited active projects per year.",
@@ -435,6 +465,7 @@
         "projectsiq_storage_20gb": {
           "name": "ProjectsIQ Media Pack",
           "price": 299,
+          "price_usd": 19,
           "limit": 20,
           "unit": "20GB storage",
           "description": "Adds 20GB of ProjectsIQ media storage for snag photos, site evidence, drawings, and project documents.",
@@ -449,6 +480,7 @@
         "accounting_reconciliation_pack": {
           "name": "Auto Accounting Reconciliation",
           "price": 450,
+          "price_usd": 39,
           "limit": 1,
           "unit": "workspace",
           "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
@@ -462,6 +494,7 @@
         "commission_rebate_automation_pack": {
           "name": "Commission & Rebate Automation Pack",
           "price": 590,
+          "price_usd": 49,
           "limit": 1,
           "unit": "workspace",
           "description": "Automates commission, rebate, and settlement workflows so teams do not manually reconcile customer rebates and representative commission logic.",
@@ -475,6 +508,7 @@
         "rfid_stock_tracking_pack": {
           "name": "RFID Stock Tracking Pack",
           "price": 1490,
+          "price_usd": 99,
           "limit": 1,
           "unit": "workspace",
           "description": "RFID tag code generation, label batch exports, reader evidence, stocktake scan foundation, transfer proof, and factory exit controls. Hardware, tags, and installation are billed separately.",
@@ -502,6 +536,21 @@
         "amount": 8532,
         "discount": 10,
         "custom": false
+      },
+      "regional_prices": {
+        "USD": {
+          "price_book": "us_usd_v1",
+          "monthly": {
+            "amount": 79,
+            "custom": false,
+            "starting_at": null
+          },
+          "annual": {
+            "amount": 853,
+            "discount": 10,
+            "custom": false
+          }
+        }
       },
       "limits": {
         "users": 1,
@@ -543,6 +592,7 @@
         "extra_users": {
           "name": "Extra User Seat",
           "price": 99,
+          "price_usd": 9,
           "limit": null,
           "unit": "user",
           "description": "Add one additional team member without forcing a full plan upgrade.",
@@ -556,6 +606,7 @@
         "extra_skus": {
           "name": "Extra SKU Capacity",
           "price": 150,
+          "price_usd": 9,
           "limit": 2,
           "unit": "100 SKUs",
           "description": "100 additional SKUs",
@@ -569,6 +620,7 @@
         "extra_invoices": {
           "name": "Extra Invoice Capacity",
           "price": 590,
+          "price_usd": 39,
           "limit": null,
           "unit": "50 invoices",
           "description": "50 additional invoices/month",
@@ -582,6 +634,7 @@
         "agentsiq_usage_pack": {
           "name": "AI Pack",
           "price": 200,
+          "price_usd": 15,
           "limit": 20,
           "unit": "100 capture credits",
           "description": "AI Pack: 100 capture credits shared with AI Automation Suite capture and AgentsIQ workflows",
@@ -595,6 +648,7 @@
         "workiq_addon": {
           "name": "WorkIQ Add-on",
           "price": 990,
+          "price_usd": 69,
           "limit": 1,
           "unit": "bundle",
           "description": "WorkIQ job cards, work queues, and execution tracking.",
@@ -608,6 +662,7 @@
         "ai_auto_capture": {
           "name": "AI Automation Suite",
           "price": 519,
+          "price_usd": 49,
           "limit": 1,
           "unit": "150 capture credits",
           "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
@@ -621,6 +676,7 @@
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
           "price": 2990,
+          "price_usd": 199,
           "limit": 1,
           "unit": "workspace",
           "description": "ForecastIQ planning intelligence for demand trends, stock risk, reorder planning, cash impact, and forward-looking operational decisions.",
@@ -634,6 +690,7 @@
         "ecom_pack": {
           "name": "Ecom Pack",
           "price": 690,
+          "price_usd": 59,
           "limit": 1,
           "unit": "workspace",
           "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
@@ -647,6 +704,7 @@
         "brandiq_addon": {
           "name": "BrandIQ",
           "price": 1490,
+          "price_usd": 149,
           "limit": 1,
           "unit": "workspace",
           "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
@@ -660,6 +718,7 @@
         "messaging_pack": {
           "name": "Messaging Pack",
           "price": 250,
+          "price_usd": 19,
           "limit": 1,
           "unit": "workspace",
           "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
@@ -673,6 +732,7 @@
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
+          "price_usd": 69,
           "limit": 20,
           "unit": "location",
           "description": "POSIQ till/POS integration for one store location, including provider webhooks, queue/retry, mapping review, up to two terminals, and the CashIQ shift cash-balancing bridge.",
@@ -686,6 +746,7 @@
         "payroll_pack": {
           "name": "Payroll Pack",
           "price": 450,
+          "price_usd": 39,
           "limit": 1,
           "unit": "workspace",
           "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
@@ -699,6 +760,7 @@
         "business_units": {
           "name": "Business Units",
           "price": 600,
+          "price_usd": 59,
           "limit": 1,
           "unit": "workspace",
           "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
@@ -712,6 +774,7 @@
         "projectsiq_addon": {
           "name": "ProjectsIQ Starter",
           "price": 1499,
+          "price_usd": 99,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ project control room for contractors and builders, capped at 25 active projects per year.",
@@ -727,6 +790,7 @@
         "projectsiq_growth": {
           "name": "ProjectsIQ Growth",
           "price": 2499,
+          "price_usd": 169,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ for growing contractors, capped at 75 active projects per year.",
@@ -742,6 +806,7 @@
         "projectsiq_unlimited": {
           "name": "ProjectsIQ Unlimited",
           "price": 3999,
+          "price_usd": 269,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ for high-volume contractors that need unlimited active projects per year.",
@@ -757,6 +822,7 @@
         "projectsiq_storage_20gb": {
           "name": "ProjectsIQ Media Pack",
           "price": 299,
+          "price_usd": 19,
           "limit": 20,
           "unit": "20GB storage",
           "description": "Adds 20GB of ProjectsIQ media storage for snag photos, site evidence, drawings, and project documents.",
@@ -771,6 +837,7 @@
         "accounting_reconciliation_pack": {
           "name": "Auto Accounting Reconciliation",
           "price": 450,
+          "price_usd": 39,
           "limit": 1,
           "unit": "workspace",
           "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
@@ -784,6 +851,7 @@
         "commission_rebate_automation_pack": {
           "name": "Commission & Rebate Automation Pack",
           "price": 590,
+          "price_usd": 49,
           "limit": 1,
           "unit": "workspace",
           "description": "Automates commission, rebate, and settlement workflows so teams do not manually reconcile customer rebates and representative commission logic.",
@@ -797,6 +865,7 @@
         "rfid_stock_tracking_pack": {
           "name": "RFID Stock Tracking Pack",
           "price": 1490,
+          "price_usd": 99,
           "limit": 1,
           "unit": "workspace",
           "description": "RFID tag code generation, label batch exports, reader evidence, stocktake scan foundation, transfer proof, and factory exit controls. Hardware, tags, and installation are billed separately.",
@@ -824,6 +893,21 @@
         "amount": 26892,
         "discount": 10,
         "custom": false
+      },
+      "regional_prices": {
+        "USD": {
+          "price_book": "us_usd_v1",
+          "monthly": {
+            "amount": 179,
+            "custom": false,
+            "starting_at": null
+          },
+          "annual": {
+            "amount": 1933,
+            "discount": 10,
+            "custom": false
+          }
+        }
       },
       "limits": {
         "users": 2,
@@ -868,6 +952,7 @@
         "extra_users": {
           "name": "Extra User Seat",
           "price": 99,
+          "price_usd": 9,
           "limit": null,
           "unit": "user",
           "description": "Add one additional team member without forcing a full plan upgrade.",
@@ -881,6 +966,7 @@
         "extra_skus": {
           "name": "Extra SKU Capacity",
           "price": 150,
+          "price_usd": 9,
           "limit": 2,
           "unit": "100 SKUs",
           "description": "100 additional SKUs",
@@ -894,6 +980,7 @@
         "extra_invoices": {
           "name": "Extra Invoice Capacity",
           "price": 590,
+          "price_usd": 39,
           "limit": 2,
           "unit": "50 invoices",
           "description": "50 additional invoices/month",
@@ -907,6 +994,7 @@
         "workiq_addon": {
           "name": "WorkIQ Add-on",
           "price": 990,
+          "price_usd": 69,
           "limit": 1,
           "unit": "bundle",
           "description": "WorkIQ job cards, work queues, and execution tracking.",
@@ -920,6 +1008,7 @@
         "agentsiq_usage_pack": {
           "name": "AI Pack",
           "price": 200,
+          "price_usd": 15,
           "limit": 20,
           "unit": "100 capture credits",
           "description": "AI Pack: 100 capture credits shared with AI Automation Suite capture and AgentsIQ workflows",
@@ -933,6 +1022,7 @@
         "ai_auto_capture": {
           "name": "AI Automation Suite",
           "price": 519,
+          "price_usd": 49,
           "limit": 1,
           "unit": "150 capture credits",
           "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
@@ -946,6 +1036,7 @@
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
           "price": 2990,
+          "price_usd": 199,
           "limit": 1,
           "unit": "workspace",
           "description": "ForecastIQ planning intelligence for demand trends, stock risk, reorder planning, cash impact, and forward-looking operational decisions.",
@@ -959,6 +1050,7 @@
         "ecom_pack": {
           "name": "Ecom Pack",
           "price": 690,
+          "price_usd": 59,
           "limit": 1,
           "unit": "workspace",
           "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
@@ -972,6 +1064,7 @@
         "brandiq_addon": {
           "name": "BrandIQ",
           "price": 1490,
+          "price_usd": 149,
           "limit": 1,
           "unit": "workspace",
           "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
@@ -985,6 +1078,7 @@
         "messaging_pack": {
           "name": "Messaging Pack",
           "price": 250,
+          "price_usd": 19,
           "limit": 1,
           "unit": "workspace",
           "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
@@ -998,6 +1092,7 @@
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
+          "price_usd": 69,
           "limit": 20,
           "unit": "location",
           "description": "POSIQ till/POS integration for one store location, including provider webhooks, queue/retry, mapping review, up to two terminals, and the CashIQ shift cash-balancing bridge.",
@@ -1011,6 +1106,7 @@
         "payroll_pack": {
           "name": "Payroll Pack",
           "price": 450,
+          "price_usd": 39,
           "limit": 1,
           "unit": "workspace",
           "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
@@ -1024,6 +1120,7 @@
         "business_units": {
           "name": "Business Units",
           "price": 600,
+          "price_usd": 59,
           "limit": 1,
           "unit": "workspace",
           "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
@@ -1037,6 +1134,7 @@
         "projectsiq_addon": {
           "name": "ProjectsIQ Starter",
           "price": 1499,
+          "price_usd": 99,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ project control room for contractors and builders, capped at 25 active projects per year.",
@@ -1052,6 +1150,7 @@
         "projectsiq_growth": {
           "name": "ProjectsIQ Growth",
           "price": 2499,
+          "price_usd": 169,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ for growing contractors, capped at 75 active projects per year.",
@@ -1067,6 +1166,7 @@
         "projectsiq_unlimited": {
           "name": "ProjectsIQ Unlimited",
           "price": 3999,
+          "price_usd": 269,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ for high-volume contractors that need unlimited active projects per year.",
@@ -1082,6 +1182,7 @@
         "projectsiq_storage_20gb": {
           "name": "ProjectsIQ Media Pack",
           "price": 299,
+          "price_usd": 19,
           "limit": 20,
           "unit": "20GB storage",
           "description": "Adds 20GB of ProjectsIQ media storage for snag photos, site evidence, drawings, and project documents.",
@@ -1096,6 +1197,7 @@
         "accounting_reconciliation_pack": {
           "name": "Auto Accounting Reconciliation",
           "price": 450,
+          "price_usd": 39,
           "limit": 1,
           "unit": "workspace",
           "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
@@ -1109,6 +1211,7 @@
         "commission_rebate_automation_pack": {
           "name": "Commission & Rebate Automation Pack",
           "price": 590,
+          "price_usd": 49,
           "limit": 1,
           "unit": "workspace",
           "description": "Automates commission, rebate, and settlement workflows so teams do not manually reconcile customer rebates and representative commission logic.",
@@ -1122,6 +1225,7 @@
         "rfid_stock_tracking_pack": {
           "name": "RFID Stock Tracking Pack",
           "price": 1490,
+          "price_usd": 99,
           "limit": 1,
           "unit": "workspace",
           "description": "RFID tag code generation, label batch exports, reader evidence, stocktake scan foundation, transfer proof, and factory exit controls. Hardware, tags, and installation are billed separately.",
@@ -1149,6 +1253,21 @@
         "amount": 43092,
         "discount": 10,
         "custom": false
+      },
+      "regional_prices": {
+        "USD": {
+          "price_book": "us_usd_v1",
+          "monthly": {
+            "amount": 299,
+            "custom": false,
+            "starting_at": null
+          },
+          "annual": {
+            "amount": 3229,
+            "discount": 10,
+            "custom": false
+          }
+        }
       },
       "limits": {
         "users": 3,
@@ -1200,6 +1319,7 @@
         "extra_users": {
           "name": "Extra User Seat",
           "price": 99,
+          "price_usd": 9,
           "limit": null,
           "unit": "user",
           "description": "Add one additional team member without forcing a full plan upgrade.",
@@ -1213,6 +1333,7 @@
         "extra_skus": {
           "name": "Extra SKU Capacity",
           "price": 150,
+          "price_usd": 9,
           "limit": 2,
           "unit": "100 SKUs",
           "description": "100 additional SKUs",
@@ -1226,6 +1347,7 @@
         "extra_shipments": {
           "name": "Extra Import/Export Jobs",
           "price": 900,
+          "price_usd": 59,
           "limit": 2,
           "unit": "3+3 jobs",
           "description": "3 import + 3 export jobs/month",
@@ -1239,6 +1361,7 @@
         "extra_price_lists": {
           "name": "Extra Price Lists",
           "price": 200,
+          "price_usd": 15,
           "limit": 2,
           "unit": "3 price lists",
           "description": "3 additional custom price lists",
@@ -1252,6 +1375,7 @@
         "workiq_addon": {
           "name": "WorkIQ Add-on",
           "price": 990,
+          "price_usd": 69,
           "limit": 1,
           "unit": "bundle",
           "description": "WorkIQ job cards, work queues, and execution tracking.",
@@ -1265,6 +1389,7 @@
         "agentsiq_usage_pack": {
           "name": "AI Pack",
           "price": 200,
+          "price_usd": 15,
           "limit": 20,
           "unit": "100 capture credits",
           "description": "AI Pack: 100 capture credits shared with AI Automation Suite capture and AgentsIQ workflows",
@@ -1278,6 +1403,7 @@
         "ai_auto_capture": {
           "name": "AI Automation Suite",
           "price": 519,
+          "price_usd": 49,
           "limit": 1,
           "unit": "150 capture credits",
           "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
@@ -1291,6 +1417,7 @@
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
           "price": 2990,
+          "price_usd": 199,
           "limit": 1,
           "unit": "workspace",
           "description": "ForecastIQ planning intelligence for demand trends, stock risk, reorder planning, cash impact, and forward-looking operational decisions.",
@@ -1304,6 +1431,7 @@
         "ecom_pack": {
           "name": "Ecom Pack",
           "price": 690,
+          "price_usd": 59,
           "limit": 1,
           "unit": "workspace",
           "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
@@ -1317,6 +1445,7 @@
         "brandiq_addon": {
           "name": "BrandIQ",
           "price": 1490,
+          "price_usd": 149,
           "limit": 1,
           "unit": "workspace",
           "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
@@ -1330,6 +1459,7 @@
         "messaging_pack": {
           "name": "Messaging Pack",
           "price": 250,
+          "price_usd": 19,
           "limit": 1,
           "unit": "workspace",
           "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
@@ -1343,6 +1473,7 @@
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
+          "price_usd": 69,
           "limit": 20,
           "unit": "location",
           "description": "POSIQ till/POS integration for one store location, including provider webhooks, queue/retry, mapping review, up to two terminals, and the CashIQ shift cash-balancing bridge.",
@@ -1356,6 +1487,7 @@
         "payroll_pack": {
           "name": "Payroll Pack",
           "price": 450,
+          "price_usd": 39,
           "limit": 1,
           "unit": "workspace",
           "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
@@ -1369,6 +1501,7 @@
         "business_units": {
           "name": "Business Units",
           "price": 600,
+          "price_usd": 59,
           "limit": 1,
           "unit": "workspace",
           "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
@@ -1382,6 +1515,7 @@
         "projectsiq_addon": {
           "name": "ProjectsIQ Starter",
           "price": 1499,
+          "price_usd": 99,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ project control room for contractors and builders, capped at 25 active projects per year.",
@@ -1397,6 +1531,7 @@
         "projectsiq_growth": {
           "name": "ProjectsIQ Growth",
           "price": 2499,
+          "price_usd": 169,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ for growing contractors, capped at 75 active projects per year.",
@@ -1412,6 +1547,7 @@
         "projectsiq_unlimited": {
           "name": "ProjectsIQ Unlimited",
           "price": 3999,
+          "price_usd": 269,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ for high-volume contractors that need unlimited active projects per year.",
@@ -1427,6 +1563,7 @@
         "projectsiq_storage_20gb": {
           "name": "ProjectsIQ Media Pack",
           "price": 299,
+          "price_usd": 19,
           "limit": 20,
           "unit": "20GB storage",
           "description": "Adds 20GB of ProjectsIQ media storage for snag photos, site evidence, drawings, and project documents.",
@@ -1441,6 +1578,7 @@
         "accounting_reconciliation_pack": {
           "name": "Auto Accounting Reconciliation",
           "price": 450,
+          "price_usd": 39,
           "limit": 1,
           "unit": "workspace",
           "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
@@ -1454,6 +1592,7 @@
         "commission_rebate_automation_pack": {
           "name": "Commission & Rebate Automation Pack",
           "price": 590,
+          "price_usd": 49,
           "limit": 1,
           "unit": "workspace",
           "description": "Automates commission, rebate, and settlement workflows so teams do not manually reconcile customer rebates and representative commission logic.",
@@ -1467,6 +1606,7 @@
         "rfid_stock_tracking_pack": {
           "name": "RFID Stock Tracking Pack",
           "price": 1490,
+          "price_usd": 99,
           "limit": 1,
           "unit": "workspace",
           "description": "RFID tag code generation, label batch exports, reader evidence, stocktake scan foundation, transfer proof, and factory exit controls. Hardware, tags, and installation are billed separately.",
@@ -1494,6 +1634,21 @@
         "amount": 85320,
         "discount": 10,
         "custom": false
+      },
+      "regional_prices": {
+        "USD": {
+          "price_book": "us_usd_v1",
+          "monthly": {
+            "amount": 599,
+            "custom": false,
+            "starting_at": null
+          },
+          "annual": {
+            "amount": 6469,
+            "discount": 10,
+            "custom": false
+          }
+        }
       },
       "limits": {
         "users": 5,
@@ -1547,6 +1702,7 @@
         "extra_users": {
           "name": "Extra User Seat",
           "price": 99,
+          "price_usd": 9,
           "limit": null,
           "unit": "user",
           "description": "Add one additional team member without forcing a full plan upgrade.",
@@ -1560,6 +1716,7 @@
         "extra_skus": {
           "name": "Extra SKU Capacity",
           "price": 150,
+          "price_usd": 9,
           "limit": 2,
           "unit": "100 SKUs",
           "description": "100 additional SKUs",
@@ -1573,6 +1730,7 @@
         "extra_shipments": {
           "name": "Extra Import/Export Jobs",
           "price": 1200,
+          "price_usd": 79,
           "limit": 2,
           "unit": "10+10 jobs",
           "description": "10 import + 10 export jobs/month",
@@ -1586,6 +1744,7 @@
         "agentsiq_usage_pack": {
           "name": "AI Pack",
           "price": 200,
+          "price_usd": 15,
           "limit": 20,
           "unit": "100 capture credits",
           "description": "AI Pack: 100 capture credits shared with AI Automation Suite capture and AgentsIQ workflows",
@@ -1599,6 +1758,7 @@
         "ai_auto_capture": {
           "name": "AI Automation Suite",
           "price": 519,
+          "price_usd": 49,
           "limit": 1,
           "unit": "150 capture credits",
           "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
@@ -1612,6 +1772,7 @@
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
           "price": 2990,
+          "price_usd": 199,
           "limit": 1,
           "unit": "workspace",
           "description": "ForecastIQ planning intelligence for demand trends, stock risk, reorder planning, cash impact, and forward-looking operational decisions.",
@@ -1625,6 +1786,7 @@
         "ecom_pack": {
           "name": "Ecom Pack",
           "price": 690,
+          "price_usd": 59,
           "limit": 1,
           "unit": "workspace",
           "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
@@ -1638,6 +1800,7 @@
         "brandiq_addon": {
           "name": "BrandIQ",
           "price": 1490,
+          "price_usd": 149,
           "limit": 1,
           "unit": "workspace",
           "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
@@ -1651,6 +1814,7 @@
         "messaging_pack": {
           "name": "Messaging Pack",
           "price": 250,
+          "price_usd": 19,
           "limit": 1,
           "unit": "workspace",
           "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
@@ -1664,6 +1828,7 @@
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
+          "price_usd": 69,
           "limit": 20,
           "unit": "location",
           "description": "POSIQ till/POS integration for one store location, including provider webhooks, queue/retry, mapping review, up to two terminals, and the CashIQ shift cash-balancing bridge.",
@@ -1677,6 +1842,7 @@
         "payroll_pack": {
           "name": "Payroll Pack",
           "price": 450,
+          "price_usd": 39,
           "limit": 1,
           "unit": "workspace",
           "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
@@ -1690,6 +1856,7 @@
         "business_units": {
           "name": "Business Units",
           "price": 600,
+          "price_usd": 59,
           "limit": 1,
           "unit": "workspace",
           "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
@@ -1703,6 +1870,7 @@
         "projectsiq_addon": {
           "name": "ProjectsIQ Starter",
           "price": 1499,
+          "price_usd": 99,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ project control room for contractors and builders, capped at 25 active projects per year.",
@@ -1718,6 +1886,7 @@
         "projectsiq_growth": {
           "name": "ProjectsIQ Growth",
           "price": 2499,
+          "price_usd": 169,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ for growing contractors, capped at 75 active projects per year.",
@@ -1733,6 +1902,7 @@
         "projectsiq_unlimited": {
           "name": "ProjectsIQ Unlimited",
           "price": 3999,
+          "price_usd": 269,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ for high-volume contractors that need unlimited active projects per year.",
@@ -1748,6 +1918,7 @@
         "projectsiq_storage_20gb": {
           "name": "ProjectsIQ Media Pack",
           "price": 299,
+          "price_usd": 19,
           "limit": 20,
           "unit": "20GB storage",
           "description": "Adds 20GB of ProjectsIQ media storage for snag photos, site evidence, drawings, and project documents.",
@@ -1762,6 +1933,7 @@
         "accounting_reconciliation_pack": {
           "name": "Auto Accounting Reconciliation",
           "price": 450,
+          "price_usd": 39,
           "limit": 1,
           "unit": "workspace",
           "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
@@ -1775,6 +1947,7 @@
         "commission_rebate_automation_pack": {
           "name": "Commission & Rebate Automation Pack",
           "price": 590,
+          "price_usd": 49,
           "limit": 1,
           "unit": "workspace",
           "description": "Automates commission, rebate, and settlement workflows so teams do not manually reconcile customer rebates and representative commission logic.",
@@ -1788,6 +1961,7 @@
         "rfid_stock_tracking_pack": {
           "name": "RFID Stock Tracking Pack",
           "price": 1490,
+          "price_usd": 99,
           "limit": 1,
           "unit": "workspace",
           "description": "RFID tag code generation, label batch exports, reader evidence, stocktake scan foundation, transfer proof, and factory exit controls. Hardware, tags, and installation are billed separately.",
@@ -1815,6 +1989,21 @@
         "amount": 139320,
         "discount": 10,
         "custom": false
+      },
+      "regional_prices": {
+        "USD": {
+          "price_book": "us_usd_v1",
+          "monthly": {
+            "amount": 999,
+            "custom": false,
+            "starting_at": null
+          },
+          "annual": {
+            "amount": 10789,
+            "discount": 10,
+            "custom": false
+          }
+        }
       },
       "limits": {
         "users": 10,
@@ -1873,6 +2062,7 @@
         "extra_users": {
           "name": "Extra User Seat",
           "price": 99,
+          "price_usd": 9,
           "limit": null,
           "unit": "user",
           "description": "Add one additional team member without forcing a full plan upgrade.",
@@ -1886,6 +2076,7 @@
         "agentsiq_usage_pack": {
           "name": "AI Pack",
           "price": 200,
+          "price_usd": 15,
           "limit": 50,
           "unit": "100 capture credits",
           "description": "AI Pack: 100 capture credits shared with AI Automation Suite capture and AgentsIQ workflows",
@@ -1899,6 +2090,7 @@
         "ai_auto_capture": {
           "name": "AI Automation Suite",
           "price": 519,
+          "price_usd": 49,
           "limit": 1,
           "unit": "150 capture credits",
           "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
@@ -1912,6 +2104,7 @@
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
           "price": 2990,
+          "price_usd": 199,
           "limit": 1,
           "unit": "workspace",
           "description": "ForecastIQ planning intelligence for demand trends, stock risk, reorder planning, cash impact, and forward-looking operational decisions.",
@@ -1925,6 +2118,7 @@
         "ecom_pack": {
           "name": "Ecom Pack",
           "price": 690,
+          "price_usd": 59,
           "limit": 1,
           "unit": "workspace",
           "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
@@ -1938,6 +2132,7 @@
         "brandiq_addon": {
           "name": "BrandIQ",
           "price": 1490,
+          "price_usd": 149,
           "limit": 1,
           "unit": "workspace",
           "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
@@ -1951,6 +2146,7 @@
         "messaging_pack": {
           "name": "Messaging Pack",
           "price": 250,
+          "price_usd": 19,
           "limit": 1,
           "unit": "workspace",
           "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
@@ -1964,6 +2160,7 @@
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
+          "price_usd": 69,
           "limit": 20,
           "unit": "location",
           "description": "POSIQ till/POS integration for one store location, including provider webhooks, queue/retry, mapping review, up to two terminals, and the CashIQ shift cash-balancing bridge.",
@@ -1977,6 +2174,7 @@
         "payroll_pack": {
           "name": "Payroll Pack",
           "price": 450,
+          "price_usd": 39,
           "limit": 1,
           "unit": "workspace",
           "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
@@ -1990,6 +2188,7 @@
         "business_units": {
           "name": "Business Units",
           "price": 600,
+          "price_usd": 59,
           "limit": 1,
           "unit": "workspace",
           "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
@@ -2003,6 +2202,7 @@
         "projectsiq_addon": {
           "name": "ProjectsIQ Starter",
           "price": 1499,
+          "price_usd": 99,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ project control room for contractors and builders, capped at 25 active projects per year.",
@@ -2018,6 +2218,7 @@
         "projectsiq_growth": {
           "name": "ProjectsIQ Growth",
           "price": 2499,
+          "price_usd": 169,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ for growing contractors, capped at 75 active projects per year.",
@@ -2033,6 +2234,7 @@
         "projectsiq_unlimited": {
           "name": "ProjectsIQ Unlimited",
           "price": 3999,
+          "price_usd": 269,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ for high-volume contractors that need unlimited active projects per year.",
@@ -2048,6 +2250,7 @@
         "projectsiq_storage_20gb": {
           "name": "ProjectsIQ Media Pack",
           "price": 299,
+          "price_usd": 19,
           "limit": 20,
           "unit": "20GB storage",
           "description": "Adds 20GB of ProjectsIQ media storage for snag photos, site evidence, drawings, and project documents.",
@@ -2062,6 +2265,7 @@
         "accounting_reconciliation_pack": {
           "name": "Auto Accounting Reconciliation",
           "price": 450,
+          "price_usd": 39,
           "limit": 1,
           "unit": "workspace",
           "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
@@ -2075,6 +2279,7 @@
         "commission_rebate_automation_pack": {
           "name": "Commission & Rebate Automation Pack",
           "price": 590,
+          "price_usd": 49,
           "limit": 1,
           "unit": "workspace",
           "description": "Automates commission, rebate, and settlement workflows so teams do not manually reconcile customer rebates and representative commission logic.",
@@ -2088,6 +2293,7 @@
         "rfid_stock_tracking_pack": {
           "name": "RFID Stock Tracking Pack",
           "price": 1490,
+          "price_usd": 99,
           "limit": 1,
           "unit": "workspace",
           "description": "RFID tag code generation, label batch exports, reader evidence, stocktake scan foundation, transfer proof, and factory exit controls. Hardware, tags, and installation are billed separately.",
@@ -2115,6 +2321,21 @@
         "amount": null,
         "discount": null,
         "custom": true
+      },
+      "regional_prices": {
+        "USD": {
+          "price_book": "us_usd_v1",
+          "monthly": {
+            "amount": null,
+            "custom": true,
+            "starting_at": 1499
+          },
+          "annual": {
+            "amount": null,
+            "discount": null,
+            "custom": true
+          }
+        }
       },
       "limits": {
         "users": null,
@@ -2190,6 +2411,7 @@
         "agentsiq_usage_pack": {
           "name": "AI Pack",
           "price": 200,
+          "price_usd": 15,
           "limit": 100,
           "unit": "100 capture credits",
           "description": "AI Pack: 100 capture credits shared with AI Automation Suite capture and AgentsIQ workflows",
@@ -2203,6 +2425,7 @@
         "ai_auto_capture": {
           "name": "AI Automation Suite",
           "price": 519,
+          "price_usd": 49,
           "limit": 1,
           "unit": "150 capture credits",
           "description": "AI Automation Suite for document capture, slip capture, import capture, SalesIQ voice transcription, and AgentsIQ proactive workflows with 150 monthly capture credits.",
@@ -2216,6 +2439,7 @@
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
           "price": 2990,
+          "price_usd": 199,
           "limit": 1,
           "unit": "workspace",
           "description": "ForecastIQ planning intelligence for demand trends, stock risk, reorder planning, cash impact, and forward-looking operational decisions.",
@@ -2229,6 +2453,7 @@
         "ecom_pack": {
           "name": "Ecom Pack",
           "price": 690,
+          "price_usd": 59,
           "limit": 1,
           "unit": "workspace",
           "description": "EcomIQ marketplace and web-store automation for product sync, order flow, cart events, and ecommerce visibility.",
@@ -2242,6 +2467,7 @@
         "brandiq_addon": {
           "name": "BrandIQ",
           "price": 1490,
+          "price_usd": 149,
           "limit": 1,
           "unit": "workspace",
           "description": "Brand strategy, Growth Signals, content workflows, campaign management, publishing connections, attribution and Agency HQ.",
@@ -2255,6 +2481,7 @@
         "messaging_pack": {
           "name": "Messaging Pack",
           "price": 250,
+          "price_usd": 19,
           "limit": 1,
           "unit": "workspace",
           "description": "WhatsApp Web and WhatsApp API workflow activation. Meta/BSP conversation and API fees remain billed separately.",
@@ -2268,6 +2495,7 @@
         "posiq_till_integration_pack": {
           "name": "POSIQ Till Integration Pack",
           "price": 790,
+          "price_usd": 69,
           "limit": 20,
           "unit": "location",
           "description": "POSIQ till/POS integration for one store location, including provider webhooks, queue/retry, mapping review, up to two terminals, and the CashIQ shift cash-balancing bridge.",
@@ -2281,6 +2509,7 @@
         "payroll_pack": {
           "name": "Payroll Pack",
           "price": 450,
+          "price_usd": 39,
           "limit": 1,
           "unit": "workspace",
           "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
@@ -2294,6 +2523,7 @@
         "business_units": {
           "name": "Business Units",
           "price": 600,
+          "price_usd": 59,
           "limit": 1,
           "unit": "workspace",
           "description": "Unlimited internal subsidiaries, divisions, branches, brands, and cost centres inside one legal company.",
@@ -2307,6 +2537,7 @@
         "projectsiq_addon": {
           "name": "ProjectsIQ Starter",
           "price": 1499,
+          "price_usd": 99,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ project control room for contractors and builders, capped at 25 active projects per year.",
@@ -2322,6 +2553,7 @@
         "projectsiq_growth": {
           "name": "ProjectsIQ Growth",
           "price": 2499,
+          "price_usd": 169,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ for growing contractors, capped at 75 active projects per year.",
@@ -2337,6 +2569,7 @@
         "projectsiq_unlimited": {
           "name": "ProjectsIQ Unlimited",
           "price": 3999,
+          "price_usd": 269,
           "limit": 1,
           "unit": "workspace",
           "description": "ProjectsIQ for high-volume contractors that need unlimited active projects per year.",
@@ -2352,6 +2585,7 @@
         "projectsiq_storage_20gb": {
           "name": "ProjectsIQ Media Pack",
           "price": 299,
+          "price_usd": 19,
           "limit": 20,
           "unit": "20GB storage",
           "description": "Adds 20GB of ProjectsIQ media storage for snag photos, site evidence, drawings, and project documents.",
@@ -2366,6 +2600,7 @@
         "accounting_reconciliation_pack": {
           "name": "Auto Accounting Reconciliation",
           "price": 450,
+          "price_usd": 39,
           "limit": 1,
           "unit": "workspace",
           "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
@@ -2379,6 +2614,7 @@
         "commission_rebate_automation_pack": {
           "name": "Commission & Rebate Automation Pack",
           "price": 590,
+          "price_usd": 49,
           "limit": 1,
           "unit": "workspace",
           "description": "Automates commission, rebate, and settlement workflows so teams do not manually reconcile customer rebates and representative commission logic.",
@@ -2392,6 +2628,7 @@
         "rfid_stock_tracking_pack": {
           "name": "RFID Stock Tracking Pack",
           "price": 1490,
+          "price_usd": 99,
           "limit": 1,
           "unit": "workspace",
           "description": "RFID tag code generation, label batch exports, reader evidence, stocktake scan foundation, transfer proof, and factory exit controls. Hardware, tags, and installation are billed separately.",
