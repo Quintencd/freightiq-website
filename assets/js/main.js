@@ -58,7 +58,9 @@
 
   function normalizeWebsiteShell() {
     var family = getPageFamily(window.location.pathname);
-    document.body.classList.add('marketing-shell', 'premium-light-page', 'fiq-family-' + family);
+    var preservesPageTheme = document.body.hasAttribute('data-preserve-page-theme');
+    document.body.classList.add('marketing-shell', 'fiq-family-' + family);
+    if (!preservesPageTheme) document.body.classList.add('premium-light-page');
     document.body.setAttribute('data-page-family', family);
 
     var normalizedPath = (window.location.pathname || '/').replace(/\/index\.html$/, '/');

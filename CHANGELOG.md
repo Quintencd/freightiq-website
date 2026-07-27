@@ -1,5 +1,31 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - July 27, 2026
+
+### Weekly buyer-journey visibility and measurement
+
+- Restored the brochure's dark-theme cover and page copy by adding a narrow
+  page-owned-theme opt-out to the shared premium shell.
+- Added canonical website and growth analytics coverage to Support, Who FlowIQ
+  Is For, and Brochure.
+- Added page-family reporting metadata and structured data to all three pages,
+  plus the missing standard brochure meta description.
+- Refreshed the three route timestamps in both synchronized sitemap copies.
+- Added the audit report and accepted render captures under `docs/Website`.
+- No Netlify deployment, Git push, commit, database write, or app/admin-console
+  change was performed.
+
+### Regression Risk Notes (>10%)
+
+- **12-18% brochure-theme risk:** mitigated by a one-page explicit theme opt-out
+  with desktop and mobile render verification.
+- **10-20% analytics baseline shift:** these previously unmeasured page families
+  will begin contributing canonical funnel events.
+- **10-15% network risk:** each corrected page now loads two established,
+  non-blocking analytics assets.
+- **10-12% crawl-refresh risk:** mitigated by stable canonicals and accurate
+  structured metadata.
+
 ## [Unreleased] - July 24, 2026
 
 ### Premium modules directory and dedicated module pages
