@@ -33,7 +33,10 @@ for (const entry of modules) {
   const html = read(relativePath)
   check(html.includes(`data-page-topic="${entry.slug}"`), `${relativePath} has the wrong analytics topic`)
   const escapedName = entry.name.replaceAll('&', '&amp;')
-  check(html.includes(`<h1>${escapedName}:`), `${relativePath} has no module-specific H1`)
+  check(
+    html.includes(`<h1><span class="fiq-module-detail__name">${escapedName}</span>`),
+    `${relativePath} has no module-specific H1`,
+  )
   check(html.includes(`https://www.flowiq.info/modules/${entry.slug}.html`), `${relativePath} has no self-canonical URL`)
   check(html.includes('data-page-template="module-detail"'), `${relativePath} is missing detail-page analytics metadata`)
 

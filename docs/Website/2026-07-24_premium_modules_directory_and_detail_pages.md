@@ -205,3 +205,28 @@ that intake creates a review item, never an automatically posted order.
 No Netlify deployment, Git push, commit, database change, or application runtime
 change was performed. The website remains ready for the normal GitHub-led
 release workflow.
+
+## 2026-07-27 visual hierarchy refinement
+
+The generated module-detail heroes were refined after visual QA found that the
+shared desktop H1 reached about 89px inside a narrow split layout. Long names
+and outcomes pushed DashboardIQ's title to about 504px high and AI Auto
+Capture's title to about 671px high.
+
+The canonical generator now keeps one semantic H1 while separating the module
+name from its buyer-facing outcome for styling. The module name is a compact
+graphite identifier and the outcome is a controlled copper headline. Shared
+detail-section headings were also reduced without changing any module copy,
+metadata, analytics, URLs, structured data, imagery, or conversion actions.
+
+At the audited 1440x900 desktop viewport:
+
+- DashboardIQ hero height reduced from about 1,018px to 626px.
+- AI Auto Capture hero height reduced from about 1,186px to 657px.
+- All 32 pages remained free of horizontal overflow.
+- The 390x844 mobile layout retained the single-column reading order, full-width
+  actions, image proof, and semantic H1.
+- All 32 pages were captured and checked at both desktop and mobile viewports.
+
+Evidence and audit notes are stored in
+`docs/Website/2026-07-27_module_detail_page_visual_polish.md`.

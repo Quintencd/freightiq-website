@@ -38,7 +38,7 @@ function sharedHead({ title, description, canonical, image, schema }) {
   <link rel="shortcut icon" href="/favicon.ico?v=2">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="/flowiq-light.css?v=24">
-  <link rel="stylesheet" href="/assets/css/modules-marketing.css?v=1">
+  <link rel="stylesheet" href="/assets/css/modules-marketing.css?v=2">
   <script type="application/ld+json">${jsonScript(schema)}</script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <script src="/assets/smartlook.js"></script>`
@@ -272,7 +272,7 @@ ${sharedHead({
     <section class="fiq-module-detail__hero">
       <div class="fiq-module-detail__hero-copy">
         <div class="fiq-module-detail__labels"><span>${escapeHtml(entry.type)}</span><span>${escapeHtml(categoryLabels[entry.category])}</span></div>
-        <h1>${escapeHtml(entry.name)}: <span>${escapeHtml(entry.tagline.replace(/\.$/, ''))}</span></h1>
+        <h1><span class="fiq-module-detail__name">${escapeHtml(entry.name)}</span><span class="fiq-module-detail__tagline">${escapeHtml(entry.tagline.replace(/\.$/, ''))}</span></h1>
         <p>${escapeHtml(entry.summary)}</p>
         <div class="fiq-module-hero-actions">
           <a class="fiq-module-button fiq-module-button--primary" href="/book-demo" data-analytics-event="demo_request" data-analytics-label="${escapeHtml(entry.name)} detail demo">See ${escapeHtml(entry.name)} in action</a>

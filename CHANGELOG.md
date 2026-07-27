@@ -2,6 +2,31 @@
 
 ## [Unreleased] - July 27, 2026
 
+### Module detail page visual polish
+
+- Rebuilt the shared module-detail H1 hierarchy so the module name is a compact
+  identifier and the buyer-facing outcome is the primary headline.
+- Reduced the desktop hero from an oversized 1,018-1,186px presentation to a
+  compact 626-657px layout on DashboardIQ and AI Auto Capture.
+- Tightened shared detail-section heading scale and mobile hero media height.
+- Completed a screenshot and layout-metric sweep of all 32 module pages at
+  1440x900 and 390x844, including a compact exception for the longest
+  Commission & Rebate Automation outcome.
+- Updated the canonical generator, generated all 32 detail pages, and extended
+  validation to protect the new semantic H1 structure.
+- Added before/after desktop and mobile audit captures under
+  `docs/Website/audits/2026-07-27-module-detail-polish`.
+- No Netlify deployment, Git push, commit, database write, or app/admin-console
+  change was performed.
+
+### Regression Risk Notes
+
+- No identified regression risk exceeds 10%. The change is limited to the
+  canonical module generator and dedicated module-detail stylesheet, with
+  sitemap, metadata, content, links, analytics, and module claims unchanged.
+  All 64 final desktop/mobile captures passed overflow, containment, stacking,
+  image-load, and primary-action visibility checks.
+
 ### Weekly buyer-journey visibility and measurement
 
 - Restored the brochure's dark-theme cover and page copy by adding a narrow

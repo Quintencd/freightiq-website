@@ -161,10 +161,6 @@ body[data-page-topic="ai-auto-capture"] .fiq-module-detail__hero-media > img {
   padding: 1rem;
 }
 
-body[data-page-topic="ai-auto-capture"] .fiq-module-detail__hero h1 {
-  font-size: clamp(2.7rem, 4.1vw, 4.5rem) !important;
-}
-
 .fiq-module-hero-stat {
   position: absolute;
   right: 1.35rem;
@@ -606,7 +602,12 @@ body[data-page-topic="ai-auto-capture"] .fiq-module-detail__hero h1 {
 .fiq-module-breadcrumb svg { width: .8rem; }
 
 .fiq-module-detail__hero {
+  min-height: 36rem;
   grid-template-columns: minmax(0, .95fr) minmax(30rem, 1.05fr);
+}
+
+.fiq-module-detail__hero-copy {
+  padding: clamp(2.2rem, 3.5vw, 3.5rem);
 }
 
 .fiq-module-detail__labels {
@@ -627,8 +628,34 @@ body[data-page-topic="ai-auto-capture"] .fiq-module-detail__hero h1 {
 }
 
 .fiq-module-detail__hero h1 {
-  max-width: 13ch !important;
-  font-size: clamp(2.8rem, 4.7vw, 5.2rem) !important;
+  display: grid;
+  max-width: none !important;
+  gap: .65rem;
+  font-size: inherit !important;
+  letter-spacing: normal !important;
+  line-height: normal !important;
+}
+
+.fiq-module-detail__hero h1 .fiq-module-detail__name {
+  color: var(--fiq-ink) !important;
+  font-size: clamp(1.05rem, 1.35vw, 1.3rem);
+  font-weight: 680;
+  letter-spacing: -.025em;
+  line-height: 1.2;
+}
+
+.fiq-module-detail__hero h1 .fiq-module-detail__tagline {
+  display: block;
+  max-width: 13ch;
+  color: var(--fiq-copper) !important;
+  font-size: clamp(2.65rem, 3.6vw, 4rem);
+  font-weight: 450;
+  letter-spacing: -.055em;
+  line-height: .98;
+}
+
+body[data-page-topic="commission-rebate-automation"] .fiq-module-detail__tagline {
+  font-size: clamp(2.5rem, 3.25vw, 3.65rem);
 }
 
 .fiq-module-detail__outcomes {
@@ -685,6 +712,14 @@ body[data-page-topic="ai-auto-capture"] .fiq-module-detail__hero h1 {
 }
 
 .fiq-module-detail__value h2 { max-width: 18ch; }
+
+.fiq-module-detail__value h2,
+.fiq-module-detail__section-heading h2,
+.fiq-module-detail__workflow h2,
+.fiq-module-detail__proof h2 {
+  font-size: clamp(2rem, 3.2vw, 3.35rem) !important;
+  line-height: 1.04 !important;
+}
 
 .fiq-module-detail__features,
 .fiq-module-detail__connected,
@@ -915,10 +950,15 @@ body[data-page-topic="ai-auto-capture"] .fiq-module-detail__hero h1 {
   .fiq-module-detail { width: min(100% - 1rem, 100%); }
   .fiq-module-directory__hero-copy,
   .fiq-module-detail__hero-copy { padding: 1.75rem 1.35rem 2rem; }
-  .fiq-module-directory__hero h1,
-  .fiq-module-detail__hero h1 { max-width: none !important; font-size: clamp(2.65rem, 13vw, 4rem) !important; }
+  .fiq-module-directory__hero h1 { max-width: none !important; font-size: clamp(2.65rem, 13vw, 4rem) !important; }
+  .fiq-module-detail__hero h1 .fiq-module-detail__name { font-size: 1rem; }
+  .fiq-module-detail__hero h1 .fiq-module-detail__tagline {
+    max-width: 15ch;
+    font-size: clamp(2.35rem, 10.8vw, 3rem);
+    line-height: 1;
+  }
   .fiq-module-directory__hero-art,
-  .fiq-module-detail__hero-media { min-height: 21rem; }
+  .fiq-module-detail__hero-media { min-height: 19rem; }
   .fiq-module-hero-stat { right: .8rem; bottom: .8rem; }
   .fiq-module-hero-actions,
   .fiq-module-hero-actions .fiq-module-button { width: 100%; }
