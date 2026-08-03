@@ -369,15 +369,49 @@
     });
   }
 
+  function initCalculatorAccessibility() {
+    var calculateButton = document.getElementById('calc-submit');
+    if (!calculateButton) return;
+
+    var calculatorId = calculateButton.getAttribute('data-calculator-id') ||
+      (window.location.pathname.split('/').pop() || 'website-calculator').replace(/\.html$/, '');
+    calculateButton.setAttribute('data-analytics-event', 'calculator_use');
+    calculateButton.setAttribute('data-calculator-id', calculatorId);
+
+    document.querySelectorAll('main input, main select, main textarea').forEach(function (field, index) {
+      if (field.type === 'hidden' || field.type === 'submit' || field.type === 'button') return;
+      var id = field.id || calculatorId + '-field-' + (index + 1);
+      field.id = id;
+      var escapedId = window.CSS && window.CSS.escape ? window.CSS.escape(id) : id;
+      if (document.querySelector('label[for="' + escapedId + '"]') || field.closest('label')) return;
+
+      var labelText = field.getAttribute('placeholder') || field.getAttribute('name') || 'Calculator input';
+      var label = document.createElement('label');
+      label.setAttribute('for', id);
+      label.className = 'fiq-calculator-label block text-sm font-semibold text-slate-700 -mb-2';
+      label.textContent = labelText;
+      field.parentNode.insertBefore(label, field);
+    });
+
+    var result = document.getElementById('result') || document.getElementById('calculator-result-value');
+    if (result) {
+      result.setAttribute('role', 'status');
+      result.setAttribute('aria-live', 'polite');
+      result.setAttribute('aria-atomic', 'true');
+    }
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       initSiteNav();
       initStoryReveals();
       initDropdownKeyboard();
+      initCalculatorAccessibility();
     });
   } else {
     initSiteNav();
     initStoryReveals();
     initDropdownKeyboard();
+    initCalculatorAccessibility();
   }
 })();

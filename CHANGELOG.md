@@ -1,5 +1,31 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - August 3, 2026
+
+### Weekly calculator accessibility and measurement
+
+- Separated calculator navigation intent from completed calculator uses and
+  restored the canonical `web_calculator_use` event with stable calculator IDs.
+- Removed duplicate calculate-button tracking.
+- Added persistent visible labels and accessible names across the seven tools
+  calculators without replacing existing labels.
+- Added polite atomic status semantics to calculated results.
+- Refreshed the tools-family timestamps in both synchronized sitemap copies and
+  saved current-run desktop/mobile audit captures under `docs/Website`.
+- No Netlify deployment, Git push, commit, database write, app, or admin-console
+  change was performed.
+
+### Regression Risk Notes (>10%)
+
+- **10-20% analytics baseline shift:** calculator navigation and completed-use
+  events are now intentionally separated.
+- **10-15% calculator layout risk:** persistent labels add compact vertical
+  height; mitigated by calculator-only scoping and desktop/mobile checks.
+- **10-12% shared-runtime risk:** mitigated by a strict `#calc-submit` gate and a
+  seven-route calculator contract sweep.
+- **10-12% crawl-refresh risk:** tool URLs may be revisited after sitemap
+  timestamp refresh; URLs, canonicals, formulas, and claims are unchanged.
+
 ## [Unreleased] - July 27, 2026
 
 ### Module detail page visual polish

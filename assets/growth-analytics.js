@@ -75,7 +75,8 @@
     if (eventName === 'view_pricing') emitWebEvent('web_pricing_view', withPageMetadata({ source: 'growth_analytics', trigger: 'pricing_cta_click' }, payload));
     if (eventName === 'pricing_base_plan_view') emitWebEvent('web_pricing_view', withPageMetadata({ source: 'growth_analytics', trigger: 'base_plan_visible' }, payload));
     if (eventName === 'pricing_toggle') emitWebEvent('web_pricing_view', withPageMetadata({ source: 'growth_analytics', trigger: 'billing_toggle' }, payload));
-    if (eventName === 'calculator_use') emitWebEvent('web_cta_click', withPageMetadata({ source: 'growth_analytics', cta_name: 'calculator_use' }, payload));
+    if (eventName === 'calculator_open') emitWebEvent('web_cta_click', withPageMetadata({ source: 'growth_analytics', cta_name: 'calculator_open' }, payload));
+    if (eventName === 'calculator_use') emitWebEvent('web_calculator_use', withPageMetadata({ source: 'growth_analytics' }, payload));
     if (eventName === 'module_preview_view') emitWebEvent('web_module_engagement', withPageMetadata({ source: 'growth_analytics', engagement_type: 'pricing_preview_visible' }, payload));
     if (eventName === 'module_preview_click') emitWebEvent('web_module_engagement', withPageMetadata({ source: 'growth_analytics', engagement_type: 'pricing_preview_click' }, payload));
     if (eventName === 'demo_request') emitWebEvent('web_demo_request_submit', withPageMetadata({ source: 'growth_analytics' }, payload));
@@ -198,6 +199,19 @@
           trackGrowthEvent('demo_click', Object.assign({}, commonParams, { cta_text: text.slice(0, 120) }));
           return;
         }
+        if (analyticsEvent === 'calculator_use' && target.tagName === 'A') {
+          trackGrowthEvent('calculator_open', Object.assign({}, commonParams, { tool_path: href }));
+          return;
+        }
+        if (analyticsEvent === 'calculator_use') {
+          trackGrowthEvent(analyticsEvent, Object.assign({}, commonParams, {
+            calculator_id: target.getAttribute('data-calculator-id') ||
+              window.location.pathname.split('/').pop().replace('.html', '') ||
+              'website_calculator',
+            trigger: 'calculate_button'
+          }));
+          return;
+        }
         trackGrowthEvent(analyticsEvent, commonParams);
         return;
       }
@@ -216,7 +230,7 @@
       }
 
       if (href.indexOf('/tools/') >= 0 && href.indexOf('calculator') >= 0) {
-        trackGrowthEvent('calculator_use', Object.assign({}, commonParams, { tool_path: href }));
+        trackGrowthEvent('calculator_open', Object.assign({}, commonParams, { tool_path: href }));
       }
     }, { passive: true });
   }
@@ -253,12 +267,6 @@
       });
     });
 
-    var calcSubmit = document.getElementById('calc-submit');
-    if (calcSubmit) {
-      calcSubmit.addEventListener('click', function () {
-        trackGrowthEvent('calculator_use', { tool_path: window.location.pathname, trigger: 'calculate_button' });
-      });
-    }
   }
 
   function installVideoTracking() {
