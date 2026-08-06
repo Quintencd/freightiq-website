@@ -1,5 +1,20 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - August 4, 2026
+
+### Signup password security
+
+- Aligned the public signup checklist and validation with FlowIQ's 12-character,
+  uppercase, lowercase, number, special-character and common-pattern policy.
+- Kept billing, legal acceptance, analytics and provisioning unchanged.
+- No Netlify deployment was performed.
+
+### Regression Risk Notes (>10%)
+
+- **10-15% stronger-policy friction:** passwords that previously met the
+  eight-character rule are now rejected. Matching browser and server guidance
+  prevents contradictory failures.
+
 ## [Unreleased] - August 3, 2026
 
 ### Weekly calculator accessibility and measurement

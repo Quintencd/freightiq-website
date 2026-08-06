@@ -440,7 +440,7 @@
                                 <ul class="text-xs space-y-0.5">
                                     <li id="req-length" class="text-slate-400 flex items-center gap-1">
                                         <span class="password-rule-icon inline-block w-3 text-center text-slate-400">×</span>
-                                        <span>At least 8 characters</span>
+                                        <span>At least 12 characters</span>
                                     </li>
                                     <li id="req-lowercase" class="text-slate-400 flex items-center gap-1">
                                         <span class="password-rule-icon inline-block w-3 text-center text-slate-400">×</span>
@@ -453,6 +453,10 @@
                                     <li id="req-number" class="text-slate-400 flex items-center gap-1">
                                         <span class="password-rule-icon inline-block w-3 text-center text-slate-400">×</span>
                                         <span>One number (0-9)</span>
+                                    </li>
+                                    <li id="req-special" class="text-slate-400 flex items-center gap-1">
+                                        <span class="password-rule-icon inline-block w-3 text-center text-slate-400">×</span>
+                                        <span>One special character</span>
                                     </li>
                                     <li id="req-common" class="text-slate-400 flex items-center gap-1">
                                         <span class="password-rule-icon inline-block w-3 text-center text-slate-400">×</span>
@@ -810,10 +814,11 @@
                     '123456'
                 ];
                 const checks = {
-                    length: password.length >= 8,
+                    length: password.length >= 12,
                     lowercase: /[a-z]/.test(password),
                     uppercase: /[A-Z]/.test(password),
                     number: /\d/.test(password),
+                    special: /[^A-Za-z0-9]/.test(password),
                     common: !commonPatterns.some((pattern) => normalized.includes(pattern))
                 };
                 return checks;
@@ -826,6 +831,7 @@
                     'req-lowercase': checks.lowercase,
                     'req-uppercase': checks.uppercase,
                     'req-number': checks.number,
+                    'req-special': checks.special,
                     'req-common': checks.common
                 };
                 const allRequirementsMet = password.length > 0 && Object.values(checks).every(Boolean);
@@ -1212,7 +1218,7 @@
                     if (fieldName.toLowerCase().includes('email')) {
                         message = 'Please enter a valid email address';
                     } else if (fieldName.toLowerCase().includes('password')) {
-                        message = 'Password must be at least 8 characters';
+                        message = 'Password must be at least 12 characters and include a special character';
                     }
                     errorMsg.textContent = message;
                     field.parentElement?.appendChild(errorMsg);
@@ -1394,16 +1400,17 @@
                 // Strict password validation
                 const passwordValue = (formData.get('password') || '').toString();
                 const passwordChecks = validatePasswordStrength(passwordValue);
-                if (!passwordValue || !passwordChecks.length || !passwordChecks.lowercase || !passwordChecks.uppercase || !passwordChecks.number || !passwordChecks.common) {
+                if (!passwordValue || !passwordChecks.length || !passwordChecks.lowercase || !passwordChecks.uppercase || !passwordChecks.number || !passwordChecks.special || !passwordChecks.common) {
                     validationErrors.push('password');
                     // Highlight password field
                     highlightFieldError('password');
                     // Show specific missing requirements
                     const missingReqs = [];
-                    if (!passwordChecks.length) missingReqs.push('at least 8 characters');
+                    if (!passwordChecks.length) missingReqs.push('at least 12 characters');
                     if (!passwordChecks.lowercase) missingReqs.push('a lowercase letter');
                     if (!passwordChecks.uppercase) missingReqs.push('an uppercase letter');
                     if (!passwordChecks.number) missingReqs.push('a number');
+                    if (!passwordChecks.special) missingReqs.push('a special character');
                     if (!passwordChecks.common) missingReqs.push('no common password patterns');
                     
                     const passwordField = document.getElementById('password');
