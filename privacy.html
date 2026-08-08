@@ -66,7 +66,7 @@
   <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
     <article class="bg-white border border-slate-200 rounded-xl p-8 shadow-sm">
       <h1 class="text-3xl font-bold text-slate-900 mb-2">Privacy Policy (POPIA)</h1>
-      <p class="text-slate-500 text-sm mb-8">Last Updated: 16 July 2026 · Applicable Law: Protection of Personal Information Act, 4 of 2013 (POPIA)</p>
+      <p class="text-slate-500 text-sm mb-8">Last Updated: 8 August 2026 · Applicable Law: Protection of Personal Information Act, 4 of 2013 (POPIA)</p>
 
       <section class="mb-8">
         <h2 class="text-xl font-semibold text-slate-900 mb-3">1. Purpose</h2>
@@ -170,8 +170,40 @@
         <p class="text-slate-600">Shopify merchants and their customers may request assistance at <a href="mailto:support@flowiq.info" class="text-orange-600 hover:underline font-medium">support@flowiq.info</a>.</p>
       </section>
 
+      <section id="google-email-data" class="mb-8 scroll-mt-24">
+        <h2 class="text-xl font-semibold text-slate-900 mb-3">10. Google Email and Google User Data</h2>
+        <p class="text-slate-600 mb-4">When an organisation administrator connects a Google or Gmail account, FlowIQ uses the minimum Google permissions needed for the features the administrator chooses.</p>
+
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Data accessed and how it is used</h3>
+        <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+          <li>The normal Google email connection accesses the connected account's basic identity, verified email address, OAuth permission details, and the <code>gmail.send</code> permission to send email on the user's behalf. FlowIQ processes the recipients, subject, message content, and attachments supplied for each requested outbound email.</li>
+          <li>The normal send-only connection cannot read, search, modify, delete, or manage messages in the connected inbox.</li>
+          <li>Incoming Documents is optional and requires a separate, explicit read-only permission. If enabled, FlowIQ uses that permission only to search for messages matching the organisation's configured recipient address or Gmail label and to retrieve the message and attachment identifiers, sender, recipient, subject, received time, supported PDF or image attachments, file hashes, processing status, validation warnings, and extracted draft fields needed for the visible InvoiceIQ or PurchaseIQ capture workflow.</li>
+          <li>Incoming Documents does not modify or delete email, mark messages as read, send replies, or retain unrelated message body content.</li>
+          <li>Google user data is used only to provide the email sending, incoming-document capture, security, support, and user-facing workflow functions requested by the organisation.</li>
+        </ul>
+
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Storage, protection, and deletion</h3>
+        <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+          <li>Google OAuth access and refresh tokens are encrypted and stored server-side. They are not returned to the browser.</li>
+          <li>Captured message metadata, supported attachments, processing records, and extracted draft fields are stored in private, organisation-scoped records. They remain part of the resulting review queue or business record until an authorised user deletes the supported record or requests deletion, subject to the organisation's business-record requirements and applicable law.</li>
+          <li>Disconnecting Google email stops new access, pauses incoming monitoring, deletes FlowIQ's encrypted OAuth credential, and attempts to revoke the Google token. Disconnecting does not automatically delete attachments, drafts, or business records already imported at the organisation's request; those records remain subject to the organisation's normal retention and deletion controls.</li>
+          <li>An authorised user may request deletion of applicable Google-derived data by contacting <a href="mailto:support@flowiq.info" class="text-orange-600 hover:underline font-medium">support@flowiq.info</a>, subject to legal retention requirements.</li>
+        </ul>
+
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Sharing, human access, advertising, and AI</h3>
+        <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+          <li>FlowIQ does not sell Google user data or transfer it to advertising platforms, data brokers, or information resellers, and does not use it for advertising, retargeting, credit-worthiness, or lending.</li>
+          <li>Google user data is shared only with contracted service providers needed to deliver, host, secure, or support the requested FlowIQ feature, or where disclosure is required by law. Human access is limited to the user's instruction, necessary security or support investigation, or legal obligation.</li>
+          <li>Where Incoming Documents is enabled, a supported attachment may be processed by contracted document-processing or AI providers solely to extract information for the specific, visible FlowIQ draft-and-review workflow requested by the organisation.</li>
+          <li>FlowIQ does not use or transfer Google Workspace API data to develop, improve, or train generalised or non-personalised artificial intelligence or machine-learning models.</li>
+        </ul>
+
+        <p class="text-slate-600">FlowIQ's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" class="text-orange-600 hover:underline font-medium" rel="noopener noreferrer" target="_blank">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+      </section>
+
       <section class="mb-8">
-        <h2 class="text-xl font-semibold text-slate-900 mb-3">10. Limitation</h2>
+        <h2 class="text-xl font-semibold text-slate-900 mb-3">11. Limitation</h2>
         <p class="text-slate-600 mb-2">FlowIQ is not responsible for:</p>
         <ul class="list-disc list-inside text-slate-600 space-y-1">
           <li>Data uploaded by users about third parties</li>
@@ -182,7 +214,7 @@
       </section>
 
       <section class="mb-8">
-        <h2 class="text-xl font-semibold text-slate-900 mb-3">11. Changes</h2>
+        <h2 class="text-xl font-semibold text-slate-900 mb-3">12. Changes</h2>
         <p class="text-slate-600">This policy may be updated at any time. Continued use constitutes acceptance.</p>
       </section>
     </article>

@@ -1,5 +1,25 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - August 8, 2026
+
+### Search indexing canonicalization
+
+- Marked the account-creation page as `noindex, follow`, matching the existing
+  sitemap policy that signup is a conversion route rather than an organic
+  landing page.
+- Added a stable `/signup` canonical and Open Graph URL so analytics attribution
+  parameters do not create ambiguous duplicate signup documents for crawlers.
+- Preserved all signup attribution query parameters, validation, Shopify claim
+  handling, provisioning, and analytics behavior.
+- No Netlify deployment, Git push, commit, database write, app, or admin-console
+  change was performed.
+
+### Regression Risk Notes (>10%)
+
+- No identified regression risk exceeds 10%. The change is head metadata only;
+  the signup route, query-string handoff, form behavior, and tracking runtime are
+  unchanged.
+
 ## [Unreleased] - August 4, 2026
 
 ### Signup password security
