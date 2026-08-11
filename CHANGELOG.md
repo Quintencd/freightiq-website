@@ -1,5 +1,28 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - August 10, 2026
+
+### Weekly solution and landed-cost discovery metadata
+
+- Added a page-specific `CollectionPage` schema contract and reporting metadata
+  to the FlowIQ solutions directory.
+- Added page-specific `WebPage` schema and reporting metadata to the importer,
+  manufacturing, multi-branch, and retail solution pages.
+- Added page-specific `WebPage` schema to the true-landed-cost use case and the
+  FlowIQ-versus-spreadsheets comparison page.
+- Refreshed the seven affected URLs in both synchronized sitemap copies.
+- Preserved all visible content, claims, forms, CTAs, pricing, navigation,
+  analytics runtime behavior, and page layout.
+- No Netlify deployment, Git push, commit, database write, app, or admin-console
+  change was performed.
+
+### Regression Risk Notes (>10%)
+
+- **10-12% crawl-refresh risk:** refreshed `lastmod` values may prompt search
+  engines to revisit the seven pages. Mitigation: URLs, canonicals, visible
+  copy, and claims are unchanged, and each JSON-LD description matches the
+  existing page metadata.
+
 ## [Unreleased] - August 8, 2026
 
 ### Search indexing canonicalization
