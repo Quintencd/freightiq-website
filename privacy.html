@@ -173,7 +173,7 @@
       </section>
 
       <section id="google-email-data" class="mb-8 scroll-mt-24">
-        <h2 class="text-xl font-semibold text-slate-900 mb-3">10. Google Email and Google User Data</h2>
+        <h2 class="text-xl font-semibold text-slate-900 mb-3">10. Google Email and Google Workspace API Data</h2>
         <p class="text-slate-600 mb-4">When an organisation administrator connects a Google or Gmail account, FlowIQ uses the minimum Google permissions needed for the features the administrator chooses.</p>
 
         <h3 class="text-base font-semibold text-slate-900 mb-2">Data accessed and how it is used</h3>
@@ -202,6 +202,30 @@
         </ul>
 
         <p class="text-slate-600">FlowIQ's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" class="text-orange-600 hover:underline font-medium" rel="noopener noreferrer" target="_blank">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+      </section>
+
+      <section id="google-ads-data" class="mb-8 scroll-mt-24">
+        <h2 class="text-xl font-semibold text-slate-900 mb-3">10A. BrandIQ Google Ads Data</h2>
+        <p class="text-slate-600 mb-4">When a business administrator connects Google Ads to BrandIQ, Google authenticates the user and FlowIQ accesses only the Google Ads accounts that user authorises and the business selects.</p>
+
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Data accessed and how it is used</h3>
+        <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+          <li>FlowIQ processes the consenting user's basic Google identity, verified email address and OAuth permission details to identify and secure the connection.</li>
+          <li>For the selected Google Ads account, BrandIQ may process customer and account identifiers, account names, campaign structure, supported advertising settings, budgets, impressions, clicks, costs, conversions and conversion values.</li>
+          <li>BrandIQ uses this data to show advertising performance, compare provider-reported results with FlowIQ-verified visits and commercial outcomes, calculate measures such as cost per click and profitable return, and prepare recommendations.</li>
+          <li>Supported campaign or budget creation and changes occur only through the business's visible BrandIQ workflow, after the applicable campaign, account, budget and safety approvals. Connecting Google Ads does not authorise bank payments, wallet top-ups or unrestricted automated spending.</li>
+        </ul>
+
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Storage, sharing and control</h3>
+        <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+          <li>Google OAuth access and refresh tokens are encrypted and stored in FlowIQ's service-only boundary. Tokens are not returned to the browser or shown to other FlowIQ customers.</li>
+          <li>Selected account details, imported performance evidence, approvals, recommendations and change history are stored in private, business-scoped records and are not combined with another customer's identifiable advertising data.</li>
+          <li>FlowIQ does not sell Google Ads data, use it for unrelated advertising, disclose it to data brokers, or use Google API data to train a general-purpose AI model. Data is shared only with contracted providers needed to host, secure or deliver the requested FlowIQ service, or where required by law.</li>
+          <li>Disconnecting Google Ads stops new API access, removes FlowIQ's encrypted OAuth credential and account selection, and attempts to revoke the Google grant. Existing reports and audit records created at the business's request follow the business's retention controls and applicable legal requirements.</li>
+          <li>An authorised user may request deletion of applicable Google-derived data at <a href="mailto:support@flowiq.info" class="text-orange-600 hover:underline font-medium">support@flowiq.info</a>, subject to legitimate security, audit and legal-retention requirements.</li>
+        </ul>
+
+        <p class="text-slate-600">FlowIQ's use and transfer of Google Ads information follows the <a href="https://developers.google.com/terms/api-services-user-data-policy" class="text-orange-600 hover:underline font-medium" rel="noopener noreferrer" target="_blank">Google API Services User Data Policy</a>. See the <a href="/brandiq-google-ads.html" class="text-orange-600 hover:underline font-medium">FlowIQ BrandIQ Google Ads overview</a> for the customer workflow.</p>
       </section>
 
       <section id="meta-whatsapp-data" class="mb-8 scroll-mt-24">
