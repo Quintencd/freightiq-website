@@ -1,5 +1,25 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - August 17, 2026
+
+### Weekly research-directory discovery schema
+
+- Replaced generic product schema on the use-case, tools, and comparison hubs
+  with page-specific `CollectionPage` and `ItemList` contracts.
+- Kept each structured list aligned with the visible directory links and reused
+  the existing canonical URL and meta description without adding new claims.
+- Refreshed the three affected hub URLs in both synchronized sitemap copies.
+- Preserved all visible content, CTAs, forms, navigation, tracking behavior,
+  page layout, and runtime scripts.
+- No Netlify deployment, Git push, commit, database write, app, or admin-console
+  change was performed.
+
+### Regression Risk Notes (>10%)
+
+- **10-12% crawl-refresh risk:** refreshed `lastmod` values may prompt search
+  engines to revisit the three hubs. Mitigation: URLs, canonicals, visible
+  content, and links are unchanged; each schema item matches a visible link.
+
 ## [Unreleased] - August 10, 2026
 
 ### Weekly solution and landed-cost discovery metadata

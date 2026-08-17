@@ -204,6 +204,30 @@
         <p class="text-slate-600">FlowIQ's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" class="text-orange-600 hover:underline font-medium" rel="noopener noreferrer" target="_blank">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
       </section>
 
+      <section id="incoming-email-data" class="mb-8 scroll-mt-24">
+        <h2 class="text-xl font-semibold text-slate-900 mb-3">10B. Hosted Email Incoming-Document Data</h2>
+        <p class="text-slate-600 mb-4">When an organisation administrator connects a non-Google hosted mailbox for Incoming Documents, FlowIQ uses a TLS-protected IMAP connection only for the monitored addresses and mailbox folders the administrator configures.</p>
+
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Data accessed and how it is used</h3>
+        <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+          <li>FlowIQ searches the configured mailbox folder for messages delivered to the organisation's configured InvoiceIQ or PurchaseIQ recipient address.</li>
+          <li>For matching messages, FlowIQ processes limited sender, recipient, subject, received-time, delivery and processing metadata together with supported PDF or image attachments.</li>
+          <li>Supported attachments enter the organisation's private review queue. A selected attachment may be processed by contracted document-processing or AI providers only to prepare the specific draft that an authorised user reviews.</li>
+          <li>FlowIQ does not delete or modify mailbox messages, mark them as read, or send replies through the incoming connection. It does not automatically create a pro-forma, invoice, purchase order, or other committed business record.</li>
+        </ul>
+
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Connection security, storage, and control</h3>
+        <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
+          <li>The administrator supplies the hosted provider's public IMAP hostname, username, and password or app password. FlowIQ permits only encrypted TLS or STARTTLS connections to the standard secure IMAP ports.</li>
+          <li>The mailbox password is AES-GCM encrypted in a service-only credential table, is never returned to the browser, and is not stored with normal organisation settings.</li>
+          <li>Captured metadata, supported attachments, processing records, and reviewed draft fields are stored in private organisation-scoped records under the organisation's normal retention and deletion controls.</li>
+          <li>Disconnecting the hosted mailbox stops future access and pauses its monitored routes. It does not silently delete attachments, drafts, or business records already imported at the organisation's request.</li>
+          <li>FlowIQ does not sell hosted mailbox data, use it for advertising or credit decisions, or use it to train a general-purpose AI model. Data is shared only with contracted providers needed to host, secure, support, or deliver the requested workflow, or where required by law.</li>
+        </ul>
+
+        <p class="text-slate-600">An authorised user may request deletion of applicable imported mailbox data by contacting <a href="mailto:support@flowiq.info" class="text-orange-600 hover:underline font-medium">support@flowiq.info</a>, subject to the organisation's business-record requirements and applicable law.</p>
+      </section>
+
       <section id="google-ads-data" class="mb-8 scroll-mt-24">
         <h2 class="text-xl font-semibold text-slate-900 mb-3">10A. BrandIQ Google Ads Data</h2>
         <p class="text-slate-600 mb-4">When a business administrator connects Google Ads to BrandIQ, Google authenticates the user and FlowIQ accesses only the Google Ads accounts that user authorises and the business selects.</p>
