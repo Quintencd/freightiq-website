@@ -1,5 +1,37 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - August 18, 2026
+
+### PayrollIQ active-employee pricing
+
+- Added one PayrollIQ card at `R220/month` including five active employees, with a concise `R20` per additional active employee line.
+- Kept all PayrollIQ features and employee self-service in the same offer; inactive and terminated employees do not count.
+- Hid the internal additional-employee billing quantity from public pricing data and updated both PayrollIQ product-page routes.
+- No Netlify deployment was performed.
+
+### Regression Risk Notes (>10%)
+
+- `10-12%` marketing/app price drift risk is controlled by canonical generated pricing, focused parity tests, and one conditional PayrollIQ capacity note.
+
+### BankingIQ R790 adoption pricing
+
+- Repositioned BankingIQ at `R790/month` across generated ZAR pricing data,
+  add-on cards, and comparison rows.
+- Expanded the value story to cover multi-bank accounts and statements,
+  supplier, payroll, SARS and once-off payment preparation, saved
+  beneficiaries, per-payment authorization, schedules and batch queues,
+  automated and multi-document reconciliation, exception and anomaly control,
+  cash-flow intelligence, and the complete audit trail.
+- Kept direct bank feeds, payment execution, and provider charges subject to a
+  separately approved and configured provider connection.
+- No Netlify deployment was performed.
+
+### Regression Risk Notes (>10%)
+
+- `10-15%` cross-surface pricing drift risk is controlled by one canonical
+  pricing source, generated pricing payloads, focused parity tests, and live
+  database read-back.
+
 ## [Unreleased] - August 17, 2026
 
 ### BankingIQ R990 commercial alignment

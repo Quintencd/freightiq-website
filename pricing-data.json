@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-17T19:47:23.229Z",
+  "generated_at_utc": "2026-08-18T15:07:48.891Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -386,15 +386,15 @@
           "tier_label": null
         },
         "payroll_pack": {
-          "name": "Payroll Pack",
-          "price": 450,
+          "name": "PayrollIQ",
+          "price": 220,
           "price_usd": 39,
           "limit": 1,
-          "unit": "workspace",
-          "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
+          "unit": "month",
+          "description": "Complete PayrollIQ payroll, leave, tax, payslip, employee self-service, and accounting handover for up to 5 active employees. Add more active employees for R20 each per month.",
           "value_points": [
-            "Adds payroll operations without forcing unused warehouse or SKU capacity",
-            "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+            "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
+            "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
           ],
           "tier_group": null,
           "tier_label": null
@@ -478,15 +478,16 @@
         },
         "bankingiq_addon": {
           "name": "BankingIQ",
-          "price": 990,
+          "price": 790,
           "price_usd": 69,
           "limit": 1,
           "unit": "workspace",
-          "description": "A complete bank-control workspace for bank accounts, statement imports, beneficiaries, once-off and supplier payment preparation, maker-checker approvals, scheduled queues, advanced reconciliation, anomaly controls, cash-flow intelligence, and an auditable payment trail.",
+          "description": "A complete multi-bank finance control room for bank accounts and statements, supplier, payroll, statutory and once-off payment preparation, saved beneficiaries, maker-checker approvals, scheduled queues, automated reconciliation, anomaly monitoring, cash-flow intelligence, and a complete audit trail.",
           "value_points": [
-            "Prepare and control supplier, payroll, statutory, and once-off payments with saved beneficiaries, authorization controls, schedules, queues, status tracking, and a full audit trail",
-            "Import statements and accelerate reconciliation with suggested matches, safe auto-matching, bulk confidence controls, exception review, anomaly detection, and monthly cash-flow intelligence",
-            "Direct bank feeds and payment execution remain fail-closed until the selected bank/provider integration is separately approved, configured, and priced"
+            "Prepare supplier, payroll, SARS, and once-off payments from the correct bank account with saved beneficiaries, per-payment authorization, scheduling, batch queues, status tracking, and proof-ready history",
+            "Reconcile faster with statement imports, suggested matches, safe automation, bulk confidence review, multi-document allocations, and clear exception handling",
+            "Monitor bank balances, cash-flow pressure, unusual activity, and every approval, release, settlement, and reconciliation event in one auditable workspace",
+            "Direct bank feeds and payment execution require a separately approved and configured provider connection; provider charges remain separate"
           ],
           "tier_group": null,
           "tier_label": null
@@ -743,15 +744,15 @@
           "tier_label": null
         },
         "payroll_pack": {
-          "name": "Payroll Pack",
-          "price": 450,
+          "name": "PayrollIQ",
+          "price": 220,
           "price_usd": 39,
           "limit": 1,
-          "unit": "workspace",
-          "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
+          "unit": "month",
+          "description": "Complete PayrollIQ payroll, leave, tax, payslip, employee self-service, and accounting handover for up to 5 active employees. Add more active employees for R20 each per month.",
           "value_points": [
-            "Adds payroll operations without forcing unused warehouse or SKU capacity",
-            "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+            "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
+            "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
           ],
           "tier_group": null,
           "tier_label": null
@@ -835,15 +836,16 @@
         },
         "bankingiq_addon": {
           "name": "BankingIQ",
-          "price": 990,
+          "price": 790,
           "price_usd": 69,
           "limit": 1,
           "unit": "workspace",
-          "description": "A complete bank-control workspace for bank accounts, statement imports, beneficiaries, once-off and supplier payment preparation, maker-checker approvals, scheduled queues, advanced reconciliation, anomaly controls, cash-flow intelligence, and an auditable payment trail.",
+          "description": "A complete multi-bank finance control room for bank accounts and statements, supplier, payroll, statutory and once-off payment preparation, saved beneficiaries, maker-checker approvals, scheduled queues, automated reconciliation, anomaly monitoring, cash-flow intelligence, and a complete audit trail.",
           "value_points": [
-            "Prepare and control supplier, payroll, statutory, and once-off payments with saved beneficiaries, authorization controls, schedules, queues, status tracking, and a full audit trail",
-            "Import statements and accelerate reconciliation with suggested matches, safe auto-matching, bulk confidence controls, exception review, anomaly detection, and monthly cash-flow intelligence",
-            "Direct bank feeds and payment execution remain fail-closed until the selected bank/provider integration is separately approved, configured, and priced"
+            "Prepare supplier, payroll, SARS, and once-off payments from the correct bank account with saved beneficiaries, per-payment authorization, scheduling, batch queues, status tracking, and proof-ready history",
+            "Reconcile faster with statement imports, suggested matches, safe automation, bulk confidence review, multi-document allocations, and clear exception handling",
+            "Monitor bank balances, cash-flow pressure, unusual activity, and every approval, release, settlement, and reconciliation event in one auditable workspace",
+            "Direct bank feeds and payment execution require a separately approved and configured provider connection; provider charges remain separate"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1103,15 +1105,15 @@
           "tier_label": null
         },
         "payroll_pack": {
-          "name": "Payroll Pack",
-          "price": 450,
+          "name": "PayrollIQ",
+          "price": 220,
           "price_usd": 39,
           "limit": 1,
-          "unit": "workspace",
-          "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
+          "unit": "month",
+          "description": "Complete PayrollIQ payroll, leave, tax, payslip, employee self-service, and accounting handover for up to 5 active employees. Add more active employees for R20 each per month.",
           "value_points": [
-            "Adds payroll operations without forcing unused warehouse or SKU capacity",
-            "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+            "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
+            "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1195,15 +1197,16 @@
         },
         "bankingiq_addon": {
           "name": "BankingIQ",
-          "price": 990,
+          "price": 790,
           "price_usd": 69,
           "limit": 1,
           "unit": "workspace",
-          "description": "A complete bank-control workspace for bank accounts, statement imports, beneficiaries, once-off and supplier payment preparation, maker-checker approvals, scheduled queues, advanced reconciliation, anomaly controls, cash-flow intelligence, and an auditable payment trail.",
+          "description": "A complete multi-bank finance control room for bank accounts and statements, supplier, payroll, statutory and once-off payment preparation, saved beneficiaries, maker-checker approvals, scheduled queues, automated reconciliation, anomaly monitoring, cash-flow intelligence, and a complete audit trail.",
           "value_points": [
-            "Prepare and control supplier, payroll, statutory, and once-off payments with saved beneficiaries, authorization controls, schedules, queues, status tracking, and a full audit trail",
-            "Import statements and accelerate reconciliation with suggested matches, safe auto-matching, bulk confidence controls, exception review, anomaly detection, and monthly cash-flow intelligence",
-            "Direct bank feeds and payment execution remain fail-closed until the selected bank/provider integration is separately approved, configured, and priced"
+            "Prepare supplier, payroll, SARS, and once-off payments from the correct bank account with saved beneficiaries, per-payment authorization, scheduling, batch queues, status tracking, and proof-ready history",
+            "Reconcile faster with statement imports, suggested matches, safe automation, bulk confidence review, multi-document allocations, and clear exception handling",
+            "Monitor bank balances, cash-flow pressure, unusual activity, and every approval, release, settlement, and reconciliation event in one auditable workspace",
+            "Direct bank feeds and payment execution require a separately approved and configured provider connection; provider charges remain separate"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1484,15 +1487,15 @@
           "tier_label": null
         },
         "payroll_pack": {
-          "name": "Payroll Pack",
-          "price": 450,
+          "name": "PayrollIQ",
+          "price": 220,
           "price_usd": 39,
           "limit": 1,
-          "unit": "workspace",
-          "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
+          "unit": "month",
+          "description": "Complete PayrollIQ payroll, leave, tax, payslip, employee self-service, and accounting handover for up to 5 active employees. Add more active employees for R20 each per month.",
           "value_points": [
-            "Adds payroll operations without forcing unused warehouse or SKU capacity",
-            "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+            "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
+            "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1576,15 +1579,16 @@
         },
         "bankingiq_addon": {
           "name": "BankingIQ",
-          "price": 990,
+          "price": 790,
           "price_usd": 69,
           "limit": 1,
           "unit": "workspace",
-          "description": "A complete bank-control workspace for bank accounts, statement imports, beneficiaries, once-off and supplier payment preparation, maker-checker approvals, scheduled queues, advanced reconciliation, anomaly controls, cash-flow intelligence, and an auditable payment trail.",
+          "description": "A complete multi-bank finance control room for bank accounts and statements, supplier, payroll, statutory and once-off payment preparation, saved beneficiaries, maker-checker approvals, scheduled queues, automated reconciliation, anomaly monitoring, cash-flow intelligence, and a complete audit trail.",
           "value_points": [
-            "Prepare and control supplier, payroll, statutory, and once-off payments with saved beneficiaries, authorization controls, schedules, queues, status tracking, and a full audit trail",
-            "Import statements and accelerate reconciliation with suggested matches, safe auto-matching, bulk confidence controls, exception review, anomaly detection, and monthly cash-flow intelligence",
-            "Direct bank feeds and payment execution remain fail-closed until the selected bank/provider integration is separately approved, configured, and priced"
+            "Prepare supplier, payroll, SARS, and once-off payments from the correct bank account with saved beneficiaries, per-payment authorization, scheduling, batch queues, status tracking, and proof-ready history",
+            "Reconcile faster with statement imports, suggested matches, safe automation, bulk confidence review, multi-document allocations, and clear exception handling",
+            "Monitor bank balances, cash-flow pressure, unusual activity, and every approval, release, settlement, and reconciliation event in one auditable workspace",
+            "Direct bank feeds and payment execution require a separately approved and configured provider connection; provider charges remain separate"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1839,15 +1843,15 @@
           "tier_label": null
         },
         "payroll_pack": {
-          "name": "Payroll Pack",
-          "price": 450,
+          "name": "PayrollIQ",
+          "price": 220,
           "price_usd": 39,
           "limit": 1,
-          "unit": "workspace",
-          "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
+          "unit": "month",
+          "description": "Complete PayrollIQ payroll, leave, tax, payslip, employee self-service, and accounting handover for up to 5 active employees. Add more active employees for R20 each per month.",
           "value_points": [
-            "Adds payroll operations without forcing unused warehouse or SKU capacity",
-            "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+            "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
+            "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1931,15 +1935,16 @@
         },
         "bankingiq_addon": {
           "name": "BankingIQ",
-          "price": 990,
+          "price": 790,
           "price_usd": 69,
           "limit": 1,
           "unit": "workspace",
-          "description": "A complete bank-control workspace for bank accounts, statement imports, beneficiaries, once-off and supplier payment preparation, maker-checker approvals, scheduled queues, advanced reconciliation, anomaly controls, cash-flow intelligence, and an auditable payment trail.",
+          "description": "A complete multi-bank finance control room for bank accounts and statements, supplier, payroll, statutory and once-off payment preparation, saved beneficiaries, maker-checker approvals, scheduled queues, automated reconciliation, anomaly monitoring, cash-flow intelligence, and a complete audit trail.",
           "value_points": [
-            "Prepare and control supplier, payroll, statutory, and once-off payments with saved beneficiaries, authorization controls, schedules, queues, status tracking, and a full audit trail",
-            "Import statements and accelerate reconciliation with suggested matches, safe auto-matching, bulk confidence controls, exception review, anomaly detection, and monthly cash-flow intelligence",
-            "Direct bank feeds and payment execution remain fail-closed until the selected bank/provider integration is separately approved, configured, and priced"
+            "Prepare supplier, payroll, SARS, and once-off payments from the correct bank account with saved beneficiaries, per-payment authorization, scheduling, batch queues, status tracking, and proof-ready history",
+            "Reconcile faster with statement imports, suggested matches, safe automation, bulk confidence review, multi-document allocations, and clear exception handling",
+            "Monitor bank balances, cash-flow pressure, unusual activity, and every approval, release, settlement, and reconciliation event in one auditable workspace",
+            "Direct bank feeds and payment execution require a separately approved and configured provider connection; provider charges remain separate"
           ],
           "tier_group": null,
           "tier_label": null
@@ -2172,15 +2177,15 @@
           "tier_label": null
         },
         "payroll_pack": {
-          "name": "Payroll Pack",
-          "price": 450,
+          "name": "PayrollIQ",
+          "price": 220,
           "price_usd": 39,
           "limit": 1,
-          "unit": "workspace",
-          "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
+          "unit": "month",
+          "description": "Complete PayrollIQ payroll, leave, tax, payslip, employee self-service, and accounting handover for up to 5 active employees. Add more active employees for R20 each per month.",
           "value_points": [
-            "Adds payroll operations without forcing unused warehouse or SKU capacity",
-            "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+            "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
+            "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
           ],
           "tier_group": null,
           "tier_label": null
@@ -2264,15 +2269,16 @@
         },
         "bankingiq_addon": {
           "name": "BankingIQ",
-          "price": 990,
+          "price": 790,
           "price_usd": 69,
           "limit": 1,
           "unit": "workspace",
-          "description": "A complete bank-control workspace for bank accounts, statement imports, beneficiaries, once-off and supplier payment preparation, maker-checker approvals, scheduled queues, advanced reconciliation, anomaly controls, cash-flow intelligence, and an auditable payment trail.",
+          "description": "A complete multi-bank finance control room for bank accounts and statements, supplier, payroll, statutory and once-off payment preparation, saved beneficiaries, maker-checker approvals, scheduled queues, automated reconciliation, anomaly monitoring, cash-flow intelligence, and a complete audit trail.",
           "value_points": [
-            "Prepare and control supplier, payroll, statutory, and once-off payments with saved beneficiaries, authorization controls, schedules, queues, status tracking, and a full audit trail",
-            "Import statements and accelerate reconciliation with suggested matches, safe auto-matching, bulk confidence controls, exception review, anomaly detection, and monthly cash-flow intelligence",
-            "Direct bank feeds and payment execution remain fail-closed until the selected bank/provider integration is separately approved, configured, and priced"
+            "Prepare supplier, payroll, SARS, and once-off payments from the correct bank account with saved beneficiaries, per-payment authorization, scheduling, batch queues, status tracking, and proof-ready history",
+            "Reconcile faster with statement imports, suggested matches, safe automation, bulk confidence review, multi-document allocations, and clear exception handling",
+            "Monitor bank balances, cash-flow pressure, unusual activity, and every approval, release, settlement, and reconciliation event in one auditable workspace",
+            "Direct bank feeds and payment execution require a separately approved and configured provider connection; provider charges remain separate"
           ],
           "tier_group": null,
           "tier_label": null
@@ -2508,15 +2514,15 @@
           "tier_label": null
         },
         "payroll_pack": {
-          "name": "Payroll Pack",
-          "price": 450,
+          "name": "PayrollIQ",
+          "price": 220,
           "price_usd": 39,
           "limit": 1,
-          "unit": "workspace",
-          "description": "PayrollIQ payroll, leave, tax, payslip, and employee workflow access. Employee-volume pricing can be layered on later when the payroll seat model is finalized.",
+          "unit": "month",
+          "description": "Complete PayrollIQ payroll, leave, tax, payslip, employee self-service, and accounting handover for up to 5 active employees. Add more active employees for R20 each per month.",
           "value_points": [
-            "Adds payroll operations without forcing unused warehouse or SKU capacity",
-            "Keeps employee records, payroll actions, and accounting handover in one ecosystem"
+            "Includes all PayrollIQ features and employee self-service for up to 5 active employees",
+            "Scales simply at R20 per additional active employee; inactive and terminated employees do not count"
           ],
           "tier_group": null,
           "tier_label": null
@@ -2600,15 +2606,16 @@
         },
         "bankingiq_addon": {
           "name": "BankingIQ",
-          "price": 990,
+          "price": 790,
           "price_usd": 69,
           "limit": 1,
           "unit": "workspace",
-          "description": "A complete bank-control workspace for bank accounts, statement imports, beneficiaries, once-off and supplier payment preparation, maker-checker approvals, scheduled queues, advanced reconciliation, anomaly controls, cash-flow intelligence, and an auditable payment trail.",
+          "description": "A complete multi-bank finance control room for bank accounts and statements, supplier, payroll, statutory and once-off payment preparation, saved beneficiaries, maker-checker approvals, scheduled queues, automated reconciliation, anomaly monitoring, cash-flow intelligence, and a complete audit trail.",
           "value_points": [
-            "Prepare and control supplier, payroll, statutory, and once-off payments with saved beneficiaries, authorization controls, schedules, queues, status tracking, and a full audit trail",
-            "Import statements and accelerate reconciliation with suggested matches, safe auto-matching, bulk confidence controls, exception review, anomaly detection, and monthly cash-flow intelligence",
-            "Direct bank feeds and payment execution remain fail-closed until the selected bank/provider integration is separately approved, configured, and priced"
+            "Prepare supplier, payroll, SARS, and once-off payments from the correct bank account with saved beneficiaries, per-payment authorization, scheduling, batch queues, status tracking, and proof-ready history",
+            "Reconcile faster with statement imports, suggested matches, safe automation, bulk confidence review, multi-document allocations, and clear exception handling",
+            "Monitor bank balances, cash-flow pressure, unusual activity, and every approval, release, settlement, and reconciliation event in one auditable workspace",
+            "Direct bank feeds and payment execution require a separately approved and configured provider connection; provider charges remain separate"
           ],
           "tier_group": null,
           "tier_label": null

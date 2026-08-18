@@ -38,7 +38,7 @@
           "name": "Which plans include PayrollIQ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "PayrollIQ is available as a Payroll Pack add-on on every paid plan, so teams can add payroll without buying unused SKU or warehouse capacity."
+            "text": "PayrollIQ is available on every paid FlowIQ plan for R220 per month including 5 active employees, then R20 per additional active employee."
           }
         },
         {
@@ -592,8 +592,8 @@
         value_points: ['Connects retail till activity back into FlowIQ stock and finance workflows', 'Supports branch-level selling without changing the customer base plan']
       },
       payroll_pack: {
-        name: 'Payroll Pack',
-        value_points: ['Adds payroll without forcing unused SKU or warehouse capacity', 'Keeps employee and payroll workflows in one ecosystem']
+        name: 'PayrollIQ',
+        value_points: ['Complete payroll and employee self-service are included', 'Inactive and terminated employees do not count toward capacity']
       },
       business_units: {
         name: 'Business Units Pack',
@@ -613,7 +613,7 @@
       },
       bankingiq_addon: {
         name: 'BankingIQ',
-        value_points: ['Controls beneficiaries, payment preparation, maker-checker approvals, schedules and payment queues', 'Adds statement imports, automated reconciliation, anomaly controls, cash-flow intelligence and an auditable trail; direct bank execution needs separate provider approval']
+        value_points: ['Controls supplier, payroll, SARS and once-off payment preparation across bank accounts, beneficiaries, approvals, schedules and batch queues', 'Adds statement imports, suggested and safe automated matching, multi-document reconciliation, exception and anomaly controls', 'Brings cash-flow intelligence and a complete approval-to-reconciliation audit trail into one workspace; direct bank execution needs separate provider approval']
       },
       commission_rebate_automation_pack: {
         name: 'Commission & Rebate Automation Pack',
@@ -654,6 +654,11 @@
           const modulePrice = pricingCurrencyState.selected === 'ZAR'
             ? formatZarAmount(addOn.price)
             : formatUsdAmount(moduleUsdPrice);
+          const payrollCapacityNote = addOnKey === 'payroll_pack'
+            ? (pricingCurrencyState.selected === 'ZAR'
+              ? 'Includes 5 active employees · +R20 per additional active employee'
+              : 'Includes 5 active employees · +$1 per additional active employee')
+            : '';
           const recommended = recommendedSet.has(addOnKey);
           const category = moduleCategoryFor(addOnKey, recommended);
           trackModulePreviewView(addOnKey, name, category);
@@ -668,6 +673,7 @@
                   ${category}
                 </div>
                 <div class="mt-3 text-2xl font-black text-slate-950">${modulePrice}<span class="ml-1 text-xs font-bold text-slate-500">/${addOn.unit || 'month'}</span></div>
+                ${payrollCapacityNote ? `<div class="mt-1 text-xs font-black text-orange-700">${payrollCapacityNote}</div>` : ''}
                 <p class="mt-3 text-sm leading-6 text-slate-600">${addOn.description || ''}</p>
                 <ul class="mt-4 space-y-2">
                   ${points.slice(0, 2).map((point) => `
