@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-07-29T04:33:54.434Z",
+  "generated_at_utc": "2026-08-17T19:47:23.229Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -28,7 +28,7 @@
         ],
         "selectableAddOns": [
           "forecasting_intelligence_pack",
-          "accounting_reconciliation_pack",
+          "bankingiq_addon",
           "payroll_pack",
           "ai_auto_capture"
         ]
@@ -47,7 +47,7 @@
         ],
         "selectableAddOns": [
           "forecasting_intelligence_pack",
-          "accounting_reconciliation_pack",
+          "bankingiq_addon",
           "payroll_pack",
           "ai_auto_capture"
         ]
@@ -66,7 +66,7 @@
         ],
         "selectableAddOns": [
           "forecasting_intelligence_pack",
-          "accounting_reconciliation_pack",
+          "bankingiq_addon",
           "payroll_pack",
           "ai_auto_capture"
         ]
@@ -85,7 +85,7 @@
         ],
         "selectableAddOns": [
           "forecasting_intelligence_pack",
-          "accounting_reconciliation_pack",
+          "bankingiq_addon",
           "business_units",
           "payroll_pack",
           "ai_auto_capture"
@@ -105,7 +105,7 @@
         ],
         "selectableAddOns": [
           "forecasting_intelligence_pack",
-          "accounting_reconciliation_pack",
+          "bankingiq_addon",
           "posiq_till_integration_pack",
           "payroll_pack",
           "ai_auto_capture"
@@ -125,7 +125,7 @@
         ],
         "selectableAddOns": [
           "forecasting_intelligence_pack",
-          "accounting_reconciliation_pack",
+          "bankingiq_addon",
           "payroll_pack",
           "ai_auto_capture"
         ]
@@ -142,7 +142,7 @@
           "PayrollIQ"
         ],
         "selectableAddOns": [
-          "accounting_reconciliation_pack",
+          "bankingiq_addon",
           "workiq_addon",
           "projectsiq_addon",
           "payroll_pack",
@@ -164,7 +164,7 @@
         "selectableAddOns": [
           "ecom_pack",
           "forecasting_intelligence_pack",
-          "accounting_reconciliation_pack",
+          "bankingiq_addon",
           "payroll_pack",
           "ai_auto_capture"
         ]
@@ -476,16 +476,17 @@
           "tier_group": null,
           "tier_label": null
         },
-        "accounting_reconciliation_pack": {
-          "name": "Auto Accounting Reconciliation",
-          "price": 450,
-          "price_usd": 39,
+        "bankingiq_addon": {
+          "name": "BankingIQ",
+          "price": 990,
+          "price_usd": 69,
           "limit": 1,
           "unit": "workspace",
-          "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "A complete bank-control workspace for bank accounts, statement imports, beneficiaries, once-off and supplier payment preparation, maker-checker approvals, scheduled queues, advanced reconciliation, anomaly controls, cash-flow intelligence, and an auditable payment trail.",
           "value_points": [
-            "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
-            "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
+            "Prepare and control supplier, payroll, statutory, and once-off payments with saved beneficiaries, authorization controls, schedules, queues, status tracking, and a full audit trail",
+            "Import statements and accelerate reconciliation with suggested matches, safe auto-matching, bulk confidence controls, exception review, anomaly detection, and monthly cash-flow intelligence",
+            "Direct bank feeds and payment execution remain fail-closed until the selected bank/provider integration is separately approved, configured, and priced"
           ],
           "tier_group": null,
           "tier_label": null
@@ -832,16 +833,17 @@
           "tier_group": null,
           "tier_label": null
         },
-        "accounting_reconciliation_pack": {
-          "name": "Auto Accounting Reconciliation",
-          "price": 450,
-          "price_usd": 39,
+        "bankingiq_addon": {
+          "name": "BankingIQ",
+          "price": 990,
+          "price_usd": 69,
           "limit": 1,
           "unit": "workspace",
-          "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "A complete bank-control workspace for bank accounts, statement imports, beneficiaries, once-off and supplier payment preparation, maker-checker approvals, scheduled queues, advanced reconciliation, anomaly controls, cash-flow intelligence, and an auditable payment trail.",
           "value_points": [
-            "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
-            "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
+            "Prepare and control supplier, payroll, statutory, and once-off payments with saved beneficiaries, authorization controls, schedules, queues, status tracking, and a full audit trail",
+            "Import statements and accelerate reconciliation with suggested matches, safe auto-matching, bulk confidence controls, exception review, anomaly detection, and monthly cash-flow intelligence",
+            "Direct bank feeds and payment execution remain fail-closed until the selected bank/provider integration is separately approved, configured, and priced"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1191,16 +1193,17 @@
           "tier_group": null,
           "tier_label": null
         },
-        "accounting_reconciliation_pack": {
-          "name": "Auto Accounting Reconciliation",
-          "price": 450,
-          "price_usd": 39,
+        "bankingiq_addon": {
+          "name": "BankingIQ",
+          "price": 990,
+          "price_usd": 69,
           "limit": 1,
           "unit": "workspace",
-          "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "A complete bank-control workspace for bank accounts, statement imports, beneficiaries, once-off and supplier payment preparation, maker-checker approvals, scheduled queues, advanced reconciliation, anomaly controls, cash-flow intelligence, and an auditable payment trail.",
           "value_points": [
-            "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
-            "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
+            "Prepare and control supplier, payroll, statutory, and once-off payments with saved beneficiaries, authorization controls, schedules, queues, status tracking, and a full audit trail",
+            "Import statements and accelerate reconciliation with suggested matches, safe auto-matching, bulk confidence controls, exception review, anomaly detection, and monthly cash-flow intelligence",
+            "Direct bank feeds and payment execution remain fail-closed until the selected bank/provider integration is separately approved, configured, and priced"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1571,16 +1574,17 @@
           "tier_group": null,
           "tier_label": null
         },
-        "accounting_reconciliation_pack": {
-          "name": "Auto Accounting Reconciliation",
-          "price": 450,
-          "price_usd": 39,
+        "bankingiq_addon": {
+          "name": "BankingIQ",
+          "price": 990,
+          "price_usd": 69,
           "limit": 1,
           "unit": "workspace",
-          "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "A complete bank-control workspace for bank accounts, statement imports, beneficiaries, once-off and supplier payment preparation, maker-checker approvals, scheduled queues, advanced reconciliation, anomaly controls, cash-flow intelligence, and an auditable payment trail.",
           "value_points": [
-            "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
-            "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
+            "Prepare and control supplier, payroll, statutory, and once-off payments with saved beneficiaries, authorization controls, schedules, queues, status tracking, and a full audit trail",
+            "Import statements and accelerate reconciliation with suggested matches, safe auto-matching, bulk confidence controls, exception review, anomaly detection, and monthly cash-flow intelligence",
+            "Direct bank feeds and payment execution remain fail-closed until the selected bank/provider integration is separately approved, configured, and priced"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1925,16 +1929,17 @@
           "tier_group": null,
           "tier_label": null
         },
-        "accounting_reconciliation_pack": {
-          "name": "Auto Accounting Reconciliation",
-          "price": 450,
-          "price_usd": 39,
+        "bankingiq_addon": {
+          "name": "BankingIQ",
+          "price": 990,
+          "price_usd": 69,
           "limit": 1,
           "unit": "workspace",
-          "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "A complete bank-control workspace for bank accounts, statement imports, beneficiaries, once-off and supplier payment preparation, maker-checker approvals, scheduled queues, advanced reconciliation, anomaly controls, cash-flow intelligence, and an auditable payment trail.",
           "value_points": [
-            "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
-            "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
+            "Prepare and control supplier, payroll, statutory, and once-off payments with saved beneficiaries, authorization controls, schedules, queues, status tracking, and a full audit trail",
+            "Import statements and accelerate reconciliation with suggested matches, safe auto-matching, bulk confidence controls, exception review, anomaly detection, and monthly cash-flow intelligence",
+            "Direct bank feeds and payment execution remain fail-closed until the selected bank/provider integration is separately approved, configured, and priced"
           ],
           "tier_group": null,
           "tier_label": null
@@ -2050,6 +2055,7 @@
         "barcode_scanning",
         "rfid_stock_tracking",
         "timeiq_finance_bridge",
+        "bankingiq",
         "ai_auto_capture"
       ],
       "add_ons": {
@@ -2256,16 +2262,17 @@
           "tier_group": null,
           "tier_label": null
         },
-        "accounting_reconciliation_pack": {
-          "name": "Auto Accounting Reconciliation",
-          "price": 450,
-          "price_usd": 39,
+        "bankingiq_addon": {
+          "name": "BankingIQ",
+          "price": 990,
+          "price_usd": 69,
           "limit": 1,
           "unit": "workspace",
-          "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "A complete bank-control workspace for bank accounts, statement imports, beneficiaries, once-off and supplier payment preparation, maker-checker approvals, scheduled queues, advanced reconciliation, anomaly controls, cash-flow intelligence, and an auditable payment trail.",
           "value_points": [
-            "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
-            "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
+            "Prepare and control supplier, payroll, statutory, and once-off payments with saved beneficiaries, authorization controls, schedules, queues, status tracking, and a full audit trail",
+            "Import statements and accelerate reconciliation with suggested matches, safe auto-matching, bulk confidence controls, exception review, anomaly detection, and monthly cash-flow intelligence",
+            "Direct bank feeds and payment execution remain fail-closed until the selected bank/provider integration is separately approved, configured, and priced"
           ],
           "tier_group": null,
           "tier_label": null
@@ -2391,6 +2398,7 @@
         "automation_advanced",
         "barcode_scanning",
         "timeiq_finance_bridge",
+        "bankingiq",
         "accounting_recon_advanced",
         "accounting_auto_payment_matching",
         "accounting_recon_bulk_confidence",
@@ -2590,16 +2598,17 @@
           "tier_group": null,
           "tier_label": null
         },
-        "accounting_reconciliation_pack": {
-          "name": "Auto Accounting Reconciliation",
-          "price": 450,
-          "price_usd": 39,
+        "bankingiq_addon": {
+          "name": "BankingIQ",
+          "price": 990,
+          "price_usd": 69,
           "limit": 1,
           "unit": "workspace",
-          "description": "Auto Accounting Reconciliation for advanced reconciliation, safe customer and supplier auto-payment matching, confidence controls, anomaly checks, and monthly cash-flow intelligence.",
+          "description": "A complete bank-control workspace for bank accounts, statement imports, beneficiaries, once-off and supplier payment preparation, maker-checker approvals, scheduled queues, advanced reconciliation, anomaly controls, cash-flow intelligence, and an auditable payment trail.",
           "value_points": [
-            "Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile while keeping review controls in place",
-            "Adds learned monthly debit orders and CEO cash-flow planning without forcing a full plan upgrade"
+            "Prepare and control supplier, payroll, statutory, and once-off payments with saved beneficiaries, authorization controls, schedules, queues, status tracking, and a full audit trail",
+            "Import statements and accelerate reconciliation with suggested matches, safe auto-matching, bulk confidence controls, exception review, anomaly detection, and monthly cash-flow intelligence",
+            "Direct bank feeds and payment execution remain fail-closed until the selected bank/provider integration is separately approved, configured, and priced"
           ],
           "tier_group": null,
           "tier_label": null

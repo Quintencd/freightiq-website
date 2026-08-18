@@ -2,6 +2,26 @@
 
 ## [Unreleased] - August 17, 2026
 
+### BankingIQ R990 commercial alignment
+
+- Replaced the public Auto Accounting Reconciliation add-on with BankingIQ at
+  `R990/month` across generated pricing data, pricing cards, and comparison rows.
+- Added complete BankingIQ value copy for bank accounts, statements,
+  beneficiaries, payment preparation, maker-checker approval, queues,
+  reconciliation automation, anomaly controls, cash-flow intelligence, and
+  audit history.
+- Added the generated BankingIQ module page and synchronized directory/sitemap
+  entries, with permanent redirects from the retired reconciliation URL.
+- Kept direct bank feeds and payment execution explicitly subject to separate
+  provider approval, setup, and pricing.
+- No Netlify deployment was performed.
+
+### Regression Risk Notes (>10%)
+
+- **10-15% pricing/SEO transition risk:** mitigated by one generated pricing
+  source, synchronized sitemap output, module validation, and permanent legacy
+  URL redirects.
+
 ### Weekly research-directory discovery schema
 
 - Replaced generic product schema on the use-case, tools, and comparison hubs

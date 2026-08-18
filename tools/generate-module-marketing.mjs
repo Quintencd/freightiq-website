@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import { categoryLabels, moduleBySlug, modules } from './module-catalog.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const today = '2026-07-24'
+const today = '2026-08-17'
 
 const escapeHtml = (value = '') => String(value)
   .replaceAll('&', '&amp;')

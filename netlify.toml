@@ -248,6 +248,23 @@
   status = 200
 
 [[redirects]]
+  from = "/modules/bankingiq"
+  to = "/modules/bankingiq.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/accounting-reconciliation"
+  to = "/modules/bankingiq.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/modules/accounting-reconciliation.html"
+  to = "/modules/bankingiq.html"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/modules/ecomiq"
   to = "/modules/ecomiq.html"
   status = 200

@@ -206,7 +206,7 @@
         <div class="flex flex-wrap gap-2 border-t border-emerald-200 bg-emerald-50/80 px-5 py-4 text-xs font-black text-emerald-950 md:px-6">
           <span class="rounded-full bg-emerald-600 px-3 py-1.5 text-white">Two-month welcome modules</span>
           <span class="rounded-full bg-white px-3 py-1.5 ring-1 ring-emerald-200">AI Automation Suite</span>
-          <span class="rounded-full bg-white px-3 py-1.5 ring-1 ring-emerald-200">Auto Accounting Reconciliation</span>
+          <span class="rounded-full bg-white px-3 py-1.5 ring-1 ring-emerald-200">BankingIQ</span>
           <span class="rounded-full bg-white px-3 py-1.5 ring-1 ring-emerald-200">PayrollIQ</span>
         </div>
       </section>
@@ -423,7 +423,7 @@
       'projectsiq_addon',
       'projectsiq_growth',
       'projectsiq_unlimited',
-      'accounting_reconciliation_pack',
+      'bankingiq_addon',
       'commission_rebate_automation_pack',
       'extra_users'
     ];
@@ -446,7 +446,7 @@
       projectsiq_addon: 'Projects',
       projectsiq_growth: 'Projects',
       projectsiq_unlimited: 'Projects',
-      accounting_reconciliation_pack: 'Finance',
+      bankingiq_addon: 'Finance',
       commission_rebate_automation_pack: 'Sales operations',
       extra_users: 'Capacity'
     };
@@ -611,9 +611,9 @@
         name: 'ProjectsIQ Unlimited',
         value_points: ['Unlimited active projects per year for high-volume contractors', 'Best fit when project and photo storage volume will grow materially']
       },
-      accounting_reconciliation_pack: {
-        name: 'Auto Accounting Reconciliation',
-        value_points: ['Includes the auto-payment matching toggle for safe customer and supplier auto-reconcile', 'Adds confidence controls, anomaly checks, and review-first finance controls']
+      bankingiq_addon: {
+        name: 'BankingIQ',
+        value_points: ['Controls beneficiaries, payment preparation, maker-checker approvals, schedules and payment queues', 'Adds statement imports, automated reconciliation, anomaly controls, cash-flow intelligence and an auditable trail; direct bank execution needs separate provider approval']
       },
       commission_rebate_automation_pack: {
         name: 'Commission & Rebate Automation Pack',
@@ -917,8 +917,8 @@
         { type: 'row', label: 'Forecasting Intelligence', get: (p) => addOnAvailabilityLabel(p, 'forecasting_intelligence_pack', hasFeature(p, 'forecastiq') || hasFeature(p, 'forecastiq_advanced')), center: true },
         { type: 'row', label: 'AI Automation Suite', get: (p) => addOnAvailabilityLabel(p, 'ai_auto_capture', hasFeature(p, 'agentsiq')), center: true },
         { type: 'row', label: 'Manufacturing & Kitsets (BOM)', get: (p) => hasManufacturingKitsets(p) ? '✓' : '—', tick: true, center: true },
-        { type: 'row', label: 'Auto Accounting Reconciliation', get: (p) => addOnAvailabilityLabel(p, 'accounting_reconciliation_pack', hasAdvancedReconciliation(p)), center: true },
-        { type: 'row', label: 'Auto customer/supplier payment matching', get: (p) => addOnAvailabilityLabel(p, 'accounting_reconciliation_pack', hasFeature(p, 'accounting_auto_payment_matching')), center: true },
+        { type: 'row', label: 'BankingIQ payments, beneficiaries & approvals', get: (p) => addOnAvailabilityLabel(p, 'bankingiq_addon', hasFeature(p, 'bankingiq')), center: true },
+        { type: 'row', label: 'BankingIQ automated reconciliation & cash-flow intelligence', get: (p) => addOnAvailabilityLabel(p, 'bankingiq_addon', hasAdvancedReconciliation(p)), center: true },
         { type: 'row', label: 'WhatsApp messaging', get: (p) => getWhatsAppLabel(p) },
         {
           type: 'row',
