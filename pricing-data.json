@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-18T15:07:48.891Z",
+  "generated_at_utc": "2026-08-18T23:44:05.106Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -36,7 +36,7 @@
       {
         "key": "distributors",
         "label": "Distributors",
-        "summary": "Most distributors use InventoryIQ, PurchaseIQ, ForecastIQ, DeliveryIQ, AccountingIQ, PayrollIQ and AI Automation Suite to keep replenishment, delivery, finance, payroll and capture workflows connected.",
+        "summary": "Most distributors use InventoryIQ, PurchaseIQ, ForecastIQ, DeliveryIQ, AccountingIQ, Trade Portal, PayrollIQ and AI Automation Suite to keep replenishment, customer ordering, delivery, finance, payroll and capture workflows connected.",
         "modules": [
           "InventoryIQ",
           "PurchaseIQ",
@@ -46,6 +46,7 @@
           "PayrollIQ"
         ],
         "selectableAddOns": [
+          "trade_portal",
           "forecasting_intelligence_pack",
           "bankingiq_addon",
           "payroll_pack",
@@ -114,7 +115,7 @@
       {
         "key": "wholesalers",
         "label": "Wholesalers",
-        "summary": "Most wholesalers use InventoryIQ, PurchaseIQ, ForecastIQ, DeliveryIQ, AccountingIQ, PayrollIQ and AI Automation Suite to manage volume sales, stock availability, deliveries, payroll and documents.",
+        "summary": "Most wholesalers use InventoryIQ, PurchaseIQ, ForecastIQ, DeliveryIQ, AccountingIQ, Trade Portal, PayrollIQ and AI Automation Suite to manage customer ordering, volume sales, stock availability, deliveries, payroll and documents.",
         "modules": [
           "InventoryIQ",
           "PurchaseIQ",
@@ -124,6 +125,7 @@
           "PayrollIQ"
         ],
         "selectableAddOns": [
+          "trade_portal",
           "forecasting_intelligence_pack",
           "bankingiq_addon",
           "payroll_pack",
@@ -1020,6 +1022,21 @@
           "tier_group": null,
           "tier_label": null
         },
+        "trade_portal": {
+          "name": "Trade Portal",
+          "price": 1490,
+          "price_usd": 99,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "A secure self-service ordering portal where customers see their approved products, live pricing and permitted stock availability, then submit orders directly into InvoiceIQ.",
+          "value_points": [
+            "Lets customers place accurate orders from their assigned price list without waiting for a quote",
+            "Keeps customer access, stock visibility, documents and order progress safely controlled by the supplier",
+            "Includes unlimited customer companies and portal users for one FlowIQ organisation"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
         "ai_auto_capture": {
           "name": "AI Automation Suite",
           "price": 519,
@@ -1402,6 +1419,21 @@
           "tier_group": null,
           "tier_label": null
         },
+        "trade_portal": {
+          "name": "Trade Portal",
+          "price": 1490,
+          "price_usd": 99,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "A secure self-service ordering portal where customers see their approved products, live pricing and permitted stock availability, then submit orders directly into InvoiceIQ.",
+          "value_points": [
+            "Lets customers place accurate orders from their assigned price list without waiting for a quote",
+            "Keeps customer access, stock visibility, documents and order progress safely controlled by the supplier",
+            "Includes unlimited customer companies and portal users for one FlowIQ organisation"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
         "ai_auto_capture": {
           "name": "AI Automation Suite",
           "price": 519,
@@ -1758,6 +1790,21 @@
           "tier_group": null,
           "tier_label": null
         },
+        "trade_portal": {
+          "name": "Trade Portal",
+          "price": 1490,
+          "price_usd": 99,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "A secure self-service ordering portal where customers see their approved products, live pricing and permitted stock availability, then submit orders directly into InvoiceIQ.",
+          "value_points": [
+            "Lets customers place accurate orders from their assigned price list without waiting for a quote",
+            "Keeps customer access, stock visibility, documents and order progress safely controlled by the supplier",
+            "Includes unlimited customer companies and portal users for one FlowIQ organisation"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
         "ai_auto_capture": {
           "name": "AI Automation Suite",
           "price": 519,
@@ -2046,6 +2093,7 @@
         "priceiq",
         "importiq",
         "exportiq",
+        "trade_portal",
         "broker_commission_dashboard",
         "reportsiq",
         "journaliq",
@@ -2088,6 +2136,21 @@
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "trade_portal": {
+          "name": "Trade Portal",
+          "price": 1490,
+          "price_usd": 99,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "A secure self-service ordering portal where customers see their approved products, live pricing and permitted stock availability, then submit orders directly into InvoiceIQ.",
+          "value_points": [
+            "Lets customers place accurate orders from their assigned price list without waiting for a quote",
+            "Keeps customer access, stock visibility, documents and order progress safely controlled by the supplier",
+            "Includes unlimited customer companies and portal users for one FlowIQ organisation"
           ],
           "tier_group": null,
           "tier_label": null
@@ -2382,6 +2445,7 @@
         "exportiq",
         "payrolliq",
         "ecomiq",
+        "trade_portal",
         "commission",
         "auto_commission",
         "commission_automation",
@@ -2425,6 +2489,21 @@
           "value_points": [
             "Recurring monthly AI credit allowance for capture and agent usage",
             "Lets customers scale AI usage in small, predictable increments"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "trade_portal": {
+          "name": "Trade Portal",
+          "price": 1490,
+          "price_usd": 99,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "A secure self-service ordering portal where customers see their approved products, live pricing and permitted stock availability, then submit orders directly into InvoiceIQ.",
+          "value_points": [
+            "Lets customers place accurate orders from their assigned price list without waiting for a quote",
+            "Keeps customer access, stock visibility, documents and order progress safely controlled by the supplier",
+            "Includes unlimited customer companies and portal users for one FlowIQ organisation"
           ],
           "tier_group": null,
           "tier_label": null

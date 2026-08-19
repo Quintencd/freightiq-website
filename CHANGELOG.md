@@ -1,5 +1,18 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - August 19, 2026
+
+### Trade Portal module pricing
+
+- Added Trade Portal to generated pricing at `R1,490/month` and `USD 99/month` for Growth Lite and above.
+- Positioned the module as secure customer self-service ordering using approved products, customer pricing, permitted stock visibility and InvoiceIQ order handling.
+- Included Trade Portal in distributor and wholesaler recommendations while keeping Starter plans excluded because the portal depends on customer-specific PriceIQ price lists.
+- No Netlify deployment was performed.
+
+### Regression Risk Notes (>10%)
+
+- App/website pricing drift is controlled with one generated catalogue and focused plan-parity checks. Publish the app and website pricing payload together.
+
 ## [Unreleased] - August 18, 2026
 
 ### PayrollIQ active-employee pricing
