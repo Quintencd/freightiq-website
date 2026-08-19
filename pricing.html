@@ -387,6 +387,7 @@
       }
       
       renderComparisonTable();
+      renderAddOns();
 
       if (window.FlowIQGrowthAnalytics && typeof window.FlowIQGrowthAnalytics.trackEvent === 'function') {
         window.FlowIQGrowthAnalytics.trackEvent('pricing_toggle', {
@@ -420,6 +421,7 @@
       'posiq_till_integration_pack',
       'payroll_pack',
       'business_units',
+      'trade_portal',
       'projectsiq_addon',
       'projectsiq_growth',
       'projectsiq_unlimited',
@@ -443,6 +445,7 @@
       posiq_till_integration_pack: 'Retail',
       payroll_pack: 'Payroll',
       business_units: 'Multi-entity',
+      trade_portal: 'Customer ordering',
       projectsiq_addon: 'Projects',
       projectsiq_growth: 'Projects',
       projectsiq_unlimited: 'Projects',
@@ -599,6 +602,10 @@
         name: 'Business Units Pack',
         value_points: ['Adds branch, division and entity-level operating separation', 'Keeps reporting and approvals cleaner for growing teams']
       },
+      trade_portal: {
+        name: 'Trade Portal',
+        value_points: ['Lets customers order from their approved PriceIQ catalogue and live pricing', 'Feeds submitted orders into InvoiceIQ with controlled stock, document and progress visibility']
+      },
       projectsiq_addon: {
         name: 'ProjectsIQ Starter',
         value_points: ['Up to 25 active projects per year with live costs, claims, snags and margin', 'Links project costs from FlowIQ source modules without spreadsheet duplication']
@@ -651,9 +658,17 @@
           const moduleUsdPrice = Number.isFinite(Number(addOn.price_usd))
             ? Number(addOn.price_usd)
             : roundedUsdFromZar(addOn.price);
-          const modulePrice = pricingCurrencyState.selected === 'ZAR'
-            ? formatZarAmount(addOn.price)
-            : formatUsdAmount(moduleUsdPrice);
+          const moduleAnnualUsdPrice = Number.isFinite(Number(addOn.annual_price_usd))
+            ? Number(addOn.annual_price_usd)
+            : Math.round(moduleUsdPrice * 12 * 0.9);
+          const modulePrice = billingInterval === 'annual'
+            ? (pricingCurrencyState.selected === 'ZAR'
+              ? formatZarAmount(addOn.annual_price)
+              : formatUsdAmount(moduleAnnualUsdPrice))
+            : (pricingCurrencyState.selected === 'ZAR'
+              ? formatZarAmount(addOn.price)
+              : formatUsdAmount(moduleUsdPrice));
+          const moduleIntervalLabel = billingInterval === 'annual' ? 'year' : 'month';
           const payrollCapacityNote = addOnKey === 'payroll_pack'
             ? (pricingCurrencyState.selected === 'ZAR'
               ? 'Includes 5 active employees · +R20 per additional active employee'
@@ -672,7 +687,9 @@
                 <div class="mt-2 inline-flex w-fit rounded-full bg-orange-50 px-2.5 py-1 text-[11px] font-black uppercase tracking-[0.12em] text-orange-700 ring-1 ring-orange-100">
                   ${category}
                 </div>
-                <div class="mt-3 text-2xl font-black text-slate-950">${modulePrice}<span class="ml-1 text-xs font-bold text-slate-500">/${addOn.unit || 'month'}</span></div>
+                <div class="mt-3 text-2xl font-black text-slate-950">${modulePrice}<span class="ml-1 text-xs font-bold text-slate-500">/${moduleIntervalLabel}</span></div>
+                ${billingInterval === 'annual' && Number(addOn.annual_discount_percent || 0) > 0 ? `<div class="mt-1 text-xs font-black text-emerald-700">Save ${addOn.annual_discount_percent}% with annual billing</div>` : ''}
+                ${addOnKey === 'trade_portal' ? '<div class="mt-1 text-xs font-bold text-slate-500">Available on plans with PriceIQ · billed separately</div>' : ''}
                 ${payrollCapacityNote ? `<div class="mt-1 text-xs font-black text-orange-700">${payrollCapacityNote}</div>` : ''}
                 <p class="mt-3 text-sm leading-6 text-slate-600">${addOn.description || ''}</p>
                 <ul class="mt-4 space-y-2">
@@ -910,6 +927,12 @@
           type: 'row',
           label: 'Business Units',
           get: (p) => addOnAvailabilityLabel(p, 'business_units', hasFeature(p, 'business_units')),
+          center: true
+        },
+        {
+          type: 'row',
+          label: 'Trade Portal customer ordering',
+          get: (p) => addOnAvailabilityLabel(p, 'trade_portal', hasFeature(p, 'trade_portal')),
           center: true
         },
         { type: 'section', label: 'Growth Upgrade Triggers' },

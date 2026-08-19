@@ -4,7 +4,7 @@
 
 ### Trade Portal module pricing
 
-- Added Trade Portal to generated pricing at `R1,490/month` and `USD 99/month` for Growth Lite and above.
+- Added Trade Portal to the add-on cards at `R990/month`, `R10,692/year` with annual billing, and `USD 99/month` for plans with PriceIQ. It is shown as separately billed rather than included in any base plan.
 - Positioned the module as secure customer self-service ordering using approved products, customer pricing, permitted stock visibility and InvoiceIQ order handling.
 - Included Trade Portal in distributor and wholesaler recommendations while keeping Starter plans excluded because the portal depends on customer-specific PriceIQ price lists.
 - No Netlify deployment was performed.

@@ -2,7 +2,7 @@
 
 Date: 2026-08-19
 
-The generated public pricing catalogue now includes Trade Portal as a Growth Lite-and-above add-on at `R1,490/month` and `USD 99/month`.
+The generated public pricing catalogue now includes Trade Portal as a separately billed Growth Lite-and-above add-on at `R990/month`, `R10,692/year` with the standard annual discount, and `USD 99/month` on the United States price book.
 
 The public description positions it as a secure customer self-service ordering workspace using the customer's approved products, PriceIQ pricing, permitted stock visibility and the supplier's InvoiceIQ order flow. One FlowIQ organisation can provide access to unlimited customer companies and portal users.
 
