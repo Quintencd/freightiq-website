@@ -26,9 +26,10 @@
   </script>
   <script src="https://unpkg.com/lucide@latest" defer></script>
   <link rel="stylesheet" href="/flowiq-light.css?v=21">
+  <link rel="stylesheet" href="/assets/css/demo-fit-questionnaire.css?v=1">
   <script src="/assets/smartlook.js"></script>
 </head>
-<body class="bg-slate-50 text-slate-900 overflow-x-hidden marketing-shell premium-light-page" data-page-template="conversion-form" data-page-intent="demo_booking" data-page-topic="book demo">
+<body class="demo-fit-page bg-slate-50 text-slate-900 overflow-x-hidden marketing-shell premium-light-page" data-page-template="conversion-form" data-page-intent="demo_fit" data-page-topic="find your FlowIQ starting point">
   <div class="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.15),rgba(255,255,255,0))]"></div>
   <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,123 +69,216 @@
   </nav>
 
   <main class="fiq-redesign-main">
-    <section class="fiq-redesign-hero">
+    <section class="fiq-redesign-hero demo-fit-hero">
       <div>
-        <p class="fiq-redesign-kicker">Book a demo</p>
-        <h1 class="fiq-redesign-title">See FlowIQ on your <span>real workflow</span>.</h1>
-        <p class="fiq-redesign-lead">Tell us what you want to control first: landed cost, inventory, forecasting, accounting, payroll, reporting or the whole operating flow. We will shape the walkthrough around that.</p>
+        <p class="fiq-redesign-kicker">Find your best starting point</p>
+        <h1 class="fiq-redesign-title">Let’s make your FlowIQ conversation <span>useful from the start</span>.</h1>
+        <p class="fiq-redesign-lead">Share a little about how your business works today and what you want to improve. Your answers help us recommend the right next step—whether that is a focused walkthrough, a self-guided starting point, or a broader rollout conversation.</p>
         <div class="fiq-redesign-proof">
-          <span>Workflow-led demo</span>
-          <span>No generic sales deck</span>
-          <span>Migration path included</span>
+          <span>About 3 minutes</span>
+          <span>No generic sales pitch</span>
+          <span>Advice shaped around your workflow</span>
         </div>
+        <p class="demo-fit-hero-note">There are no “wrong” answers here. Thinking through these questions often helps teams clarify where time is being lost before we even meet.</p>
       </div>
       <aside class="fiq-redesign-panel">
-        <p class="fiq-redesign-panel-title">What we cover</p>
+        <p class="fiq-redesign-panel-title">What happens next</p>
         <ul class="fiq-redesign-checks">
-          <li>Which FlowIQ modules fit your operation first.</li>
-          <li>How your current spreadsheets or tools could migrate.</li>
-          <li>What plan level is likely enough without overbuying.</li>
+          <li>We review your priorities and current way of working.</li>
+          <li>We identify the FlowIQ modules most likely to help first.</li>
+          <li>We recommend the most useful next conversation or resource.</li>
         </ul>
+        <div class="demo-fit-panel-links" aria-label="Self-guided options">
+          <a href="/walkthroughs">Prefer to explore first? View walkthroughs</a>
+          <a href="/signup">Ready to begin? Start your free trial</a>
+        </div>
       </aside>
     </section>
 
     <section class="fiq-redesign-section">
-      <h2>Request your walkthrough.</h2>
-      <p>We’ll reach out to schedule a demo focused on your workflow.</p>
-      <form name="demo" method="POST" action="/.netlify/functions/public-lead" data-analytics-position="demo_form" class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-sm mt-6">
+      <h2>Tell us where you would like to make work flow better.</h2>
+      <p>We’ll use your answers to prepare a relevant recommendation—not to put you through a generic qualification call.</p>
+      <form id="demo-fit-form" name="demo-fit" method="POST" action="/.netlify/functions/public-lead" data-analytics-position="demo_fit_form" class="demo-fit-form">
         <input type="hidden" name="form-name" value="demo" />
         <input type="hidden" name="request_type" value="demo" />
+        <input type="hidden" name="qualification_version" value="demo_fit_v1" />
+        <input type="hidden" id="lead_route" name="lead_route" value="nurture_or_incomplete" />
+        <input type="hidden" id="lead_source" name="lead_source" value="website_demo_cta" />
+        <input type="hidden" id="plan_interest" name="plan_interest" value="" />
+        <input type="hidden" id="feature_interest" name="feature_interest" value="" />
         <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
-        <div class="grid sm:grid-cols-2 gap-4 mb-4">
-          <div>
-            <label for="first_name" class="block text-sm font-medium text-slate-700 mb-1">First name <span class="text-red-500">*</span></label>
-            <input type="text" id="first_name" name="first_name" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+
+        <section class="demo-fit-section" aria-labelledby="demo-fit-business-heading">
+          <div class="demo-fit-section-heading">
+            <span class="demo-fit-step">01</span>
+            <div><h2 id="demo-fit-business-heading">Your business today</h2><p>A quick picture of your operation helps us keep the recommendation practical.</p></div>
           </div>
-          <div>
-            <label for="last_name" class="block text-sm font-medium text-slate-700 mb-1">Last name <span class="text-red-500">*</span></label>
-            <input type="text" id="last_name" name="last_name" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-          </div>
-        </div>
-        <div class="mb-4">
-          <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email <span class="text-red-500">*</span></label>
-          <input type="email" id="email" name="email" required class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-        </div>
-        <div class="grid sm:grid-cols-2 gap-4 mb-4">
-          <div>
-            <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
-            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-          </div>
-          <div>
-            <label for="company" class="block text-sm font-medium text-slate-700 mb-1">Company</label>
-            <input type="text" id="company" name="company" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-          </div>
-        </div>
-	        <div class="mb-4">
-	          <label for="country" class="block text-sm font-medium text-slate-700 mb-1">Country <span class="text-red-500">*</span></label>
-	          <input type="hidden" id="country" name="country" />
-	          <div class="relative" data-country-select>
-            <button
-              id="countryButton"
-              type="button"
-              aria-haspopup="listbox"
-              aria-expanded="false"
-              class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-slate-900 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white flex items-center justify-between"
-            >
-              <span id="countryButtonLabel" class="text-slate-400">Select a country</span>
-              <svg id="countryChevron" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" />
-              </svg>
-            </button>
-            <div
-              id="countryMenu"
-              class="hidden absolute z-50 mt-2 w-full bg-white border border-slate-200 rounded-lg shadow-lg overflow-hidden"
-            >
-              <div class="p-2 border-b border-slate-200">
-                <input
-                  id="countrySearch"
-                  type="text"
-                  inputmode="search"
-                  autocomplete="off"
-                  class="w-full px-3 py-2 border border-slate-300 rounded-md text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                  placeholder="Search country…"
-                />
-              </div>
-              <ul id="countryList" role="listbox" class="max-h-64 overflow-auto py-1"></ul>
+          <div class="demo-fit-grid">
+            <div>
+              <label for="company" class="demo-fit-label">Business name <span class="demo-fit-required">*</span></label>
+              <input type="text" id="company" name="company" autocomplete="organization" required maxlength="120" class="demo-fit-control" />
             </div>
-            <p id="countryError" class="mt-1 text-sm text-red-600 hidden">Please select a country.</p>
-	          </div>
-	        </div>
-	        <div class="mb-4">
-	          <label for="feature_interest" class="block text-sm font-medium text-slate-700 mb-1">Feature you’re most interested in <span class="text-red-500">*</span></label>
-	          <input type="hidden" id="feature_interest" name="feature_interest" />
-	          <div class="relative" data-feature-select>
-	            <button
-	              id="featureButton"
-	              type="button"
-	              aria-haspopup="listbox"
-	              aria-expanded="false"
-	              class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-slate-900 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white flex items-center justify-between"
-	            >
-	              <span id="featureButtonLabel" class="text-slate-400">Select a feature</span>
-	              <svg id="featureChevron" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-	                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" />
-	              </svg>
-	            </button>
-	            <div
-	              id="featureMenu"
-	              class="hidden absolute z-50 mt-2 w-full bg-white border border-slate-200 rounded-lg shadow-lg overflow-hidden"
-	            >
-	              <ul id="featureList" role="listbox" class="max-h-64 overflow-auto py-1"></ul>
-	            </div>
-	            <p id="featureError" class="mt-1 text-sm text-red-600 hidden">Please select a feature.</p>
-	          </div>
-	        </div>
-	        <div class="mb-6">
-	          <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Message</label>
-	          <textarea id="message" name="message" rows="3" class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" placeholder="What would you like to see in the demo?"></textarea>
-	        </div>
-        <button type="submit" data-analytics-position="demo_form_submit" data-analytics-label="book demo submit" class="w-full sm:w-auto bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors">Request Demo</button>
+            <div>
+              <label for="business_type" class="demo-fit-label">What does your business do? <span class="demo-fit-required">*</span></label>
+              <input type="text" id="business_type" name="business_type" required maxlength="160" class="demo-fit-control" placeholder="e.g. importer, distributor, manufacturer" />
+            </div>
+            <div class="demo-fit-field--wide">
+              <label for="business_description" class="demo-fit-label">Tell us a little about your operation <span class="demo-fit-required">*</span></label>
+              <textarea id="business_description" name="business_description" required minlength="20" maxlength="1200" class="demo-fit-control" placeholder="What do you sell or deliver, and how does work move between your teams, locations or branches?"></textarea>
+            </div>
+            <fieldset class="demo-fit-field--wide">
+              <legend class="demo-fit-legend">How many people are in the team that would use or rely on FlowIQ? <span class="demo-fit-required">*</span></legend>
+              <div class="demo-fit-choice-grid demo-fit-choice-grid--three">
+                <label class="demo-fit-choice"><input type="radio" name="team_size" value="1-5" required /><span>1–5 people</span></label>
+                <label class="demo-fit-choice"><input type="radio" name="team_size" value="6-10" /><span>6–10 people</span></label>
+                <label class="demo-fit-choice"><input type="radio" name="team_size" value="11-25" /><span>11–25 people</span></label>
+                <label class="demo-fit-choice"><input type="radio" name="team_size" value="26-50" /><span>26–50 people</span></label>
+                <label class="demo-fit-choice"><input type="radio" name="team_size" value="51-100" /><span>51–100 people</span></label>
+                <label class="demo-fit-choice"><input type="radio" name="team_size" value="101+" /><span>101+ people</span></label>
+              </div>
+            </fieldset>
+          </div>
+        </section>
+
+        <section class="demo-fit-section" aria-labelledby="demo-fit-workflow-heading">
+          <div class="demo-fit-section-heading">
+            <span class="demo-fit-step">02</span>
+            <div><h2 id="demo-fit-workflow-heading">What you would like to improve</h2><p>These prompts are here to help you put the need into words before a demo—not to test whether you qualify.</p></div>
+          </div>
+          <div class="demo-fit-grid">
+            <div class="demo-fit-field--wide">
+              <label for="current_tools" class="demo-fit-label">What are you currently using? <span class="demo-fit-required">*</span></label>
+              <textarea id="current_tools" name="current_tools" required minlength="5" maxlength="1000" class="demo-fit-control" placeholder="For example: spreadsheets, accounting software, an ERP, separate apps, paper processes—or a mix."></textarea>
+            </div>
+            <div class="demo-fit-field--wide">
+              <label for="pain_points" class="demo-fit-label">What are your main business pain points and where are you currently struggling? <span class="demo-fit-required">*</span></label>
+              <textarea id="pain_points" name="pain_points" required minlength="20" maxlength="1400" class="demo-fit-control" placeholder="Think about repeated admin, delays, missed handovers, reporting gaps, stock uncertainty or anything that makes work harder than it should be."></textarea>
+            </div>
+            <div class="demo-fit-field--wide">
+              <label for="desired_outcomes" class="demo-fit-label">What would you like FlowIQ to help improve so you and your staff can work more efficiently and reclaim time? <span class="demo-fit-required">*</span></label>
+              <textarea id="desired_outcomes" name="desired_outcomes" required minlength="20" maxlength="1400" class="demo-fit-control" placeholder="What would a better working day look like for you and your team?"></textarea>
+            </div>
+            <div class="demo-fit-field--wide">
+              <label for="monthly_software_spend" class="demo-fit-label">What is your current monthly spend on software? <small>(optional)</small></label>
+              <input type="text" id="monthly_software_spend" name="monthly_software_spend" maxlength="100" class="demo-fit-control" placeholder="A rough amount or range is welcome, in your currency" />
+              <p class="demo-fit-help">This simply helps us recommend a realistic starting point. You are welcome to leave it blank.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="demo-fit-section" aria-labelledby="demo-fit-modules-heading">
+          <div class="demo-fit-section-heading">
+            <span class="demo-fit-step">03</span>
+            <div><h2 id="demo-fit-modules-heading">Where FlowIQ may help first</h2><p>Choose as many areas as are relevant. “Not sure yet” is a perfectly useful answer.</p></div>
+          </div>
+          <fieldset>
+            <legend class="demo-fit-legend">Which FlowIQ areas would you like us to focus on? <span class="demo-fit-required">*</span></legend>
+            <div class="demo-fit-choice-grid">
+              <label class="demo-fit-choice demo-fit-choice--check"><input type="checkbox" name="module_importiq" value="ImportIQ" data-module-interest /><span>ImportIQ · landed costs and shipments</span></label>
+              <label class="demo-fit-choice demo-fit-choice--check"><input type="checkbox" name="module_inventoryiq" value="InventoryIQ" data-module-interest /><span>InventoryIQ · stock and valuation</span></label>
+              <label class="demo-fit-choice demo-fit-choice--check"><input type="checkbox" name="module_purchaseiq" value="PurchaseIQ" data-module-interest /><span>PurchaseIQ · purchasing and receiving</span></label>
+              <label class="demo-fit-choice demo-fit-choice--check"><input type="checkbox" name="module_salesiq" value="SalesIQ and InvoiceIQ" data-module-interest /><span>SalesIQ &amp; InvoiceIQ · sales and invoicing</span></label>
+              <label class="demo-fit-choice demo-fit-choice--check"><input type="checkbox" name="module_forecastiq" value="ForecastIQ" data-module-interest /><span>ForecastIQ · demand and planning</span></label>
+              <label class="demo-fit-choice demo-fit-choice--check"><input type="checkbox" name="module_accountingiq" value="AccountingIQ and BankingIQ" data-module-interest /><span>AccountingIQ &amp; BankingIQ · finance</span></label>
+              <label class="demo-fit-choice demo-fit-choice--check"><input type="checkbox" name="module_manufacturingiq" value="ManufacturingIQ" data-module-interest /><span>ManufacturingIQ · production and BOMs</span></label>
+              <label class="demo-fit-choice demo-fit-choice--check"><input type="checkbox" name="module_payrolliq" value="PayrollIQ and WorkIQ" data-module-interest /><span>PayrollIQ &amp; WorkIQ · people and work</span></label>
+              <label class="demo-fit-choice demo-fit-choice--check"><input type="checkbox" name="module_reportsiq" value="ReportsIQ and automation" data-module-interest /><span>ReportsIQ &amp; automation · visibility</span></label>
+              <label class="demo-fit-choice demo-fit-choice--check"><input type="checkbox" name="module_not_sure" value="Not sure yet" data-module-interest /><span>Not sure yet · help us prioritise</span></label>
+            </div>
+            <p id="moduleInterestError" class="demo-fit-error hidden" role="alert">Please choose at least one area, including “Not sure yet” if you would like our guidance.</p>
+          </fieldset>
+        </section>
+
+        <section class="demo-fit-section" aria-labelledby="demo-fit-readiness-heading">
+          <div class="demo-fit-section-heading">
+            <span class="demo-fit-step">04</span>
+            <div><h2 id="demo-fit-readiness-heading">Timing and readiness</h2><p>This helps us pace the next step around your team instead of pushing you into the wrong conversation.</p></div>
+          </div>
+          <div class="demo-fit-grid">
+            <fieldset class="demo-fit-field--wide">
+              <legend class="demo-fit-legend">When would you ideally like to start improving this workflow? <span class="demo-fit-required">*</span></legend>
+              <div class="demo-fit-choice-grid">
+                <label class="demo-fit-choice"><input type="radio" name="timeline" value="Within 30 days" required /><span>Within 30 days</span></label>
+                <label class="demo-fit-choice"><input type="radio" name="timeline" value="1-3 months" /><span>In the next 1–3 months</span></label>
+                <label class="demo-fit-choice"><input type="radio" name="timeline" value="3-6 months" /><span>In the next 3–6 months</span></label>
+                <label class="demo-fit-choice"><input type="radio" name="timeline" value="Exploring for later" /><span>Exploring for later</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="demo-fit-field--wide">
+              <legend class="demo-fit-legend">How are you involved in choosing a solution? <span class="demo-fit-required">*</span></legend>
+              <div class="demo-fit-choice-grid">
+                <label class="demo-fit-choice"><input type="radio" name="buying_role" value="Decision maker" required /><span>I am a decision maker</span></label>
+                <label class="demo-fit-choice"><input type="radio" name="buying_role" value="Part of the decision team" /><span>I am part of the decision team</span></label>
+                <label class="demo-fit-choice"><input type="radio" name="buying_role" value="Preparing a recommendation" /><span>I am preparing a recommendation</span></label>
+                <label class="demo-fit-choice"><input type="radio" name="buying_role" value="Researching options" /><span>I am researching options</span></label>
+              </div>
+            </fieldset>
+            <div class="demo-fit-field--wide">
+              <label for="role_title" class="demo-fit-label">What is your role or job title? <span class="demo-fit-required">*</span></label>
+              <input type="text" id="role_title" name="role_title" autocomplete="organization-title" required maxlength="120" class="demo-fit-control" />
+            </div>
+            <fieldset class="demo-fit-field--wide">
+              <legend class="demo-fit-legend">Which best describes your readiness for onboarding? <span class="demo-fit-required">*</span></legend>
+              <div class="demo-fit-choice-grid">
+                <label class="demo-fit-choice"><input type="radio" name="onboarding_readiness" value="Ready to assign an owner and prepare our data" required /><span>Ready to assign an owner and prepare our data</span></label>
+                <label class="demo-fit-choice"><input type="radio" name="onboarding_readiness" value="Interested, but we need to plan resources first" /><span>Interested, but we need to plan resources first</span></label>
+                <label class="demo-fit-choice"><input type="radio" name="onboarding_readiness" value="Prefer to start with self-guided resources" /><span>Prefer to start with self-guided resources</span></label>
+                <label class="demo-fit-choice"><input type="radio" name="onboarding_readiness" value="Still understanding what onboarding involves" /><span>Still understanding what onboarding involves</span></label>
+              </div>
+            </fieldset>
+          </div>
+        </section>
+
+        <section class="demo-fit-section" aria-labelledby="demo-fit-contact-heading">
+          <div class="demo-fit-section-heading">
+            <span class="demo-fit-step">05</span>
+            <div><h2 id="demo-fit-contact-heading">Where should we send your recommendation?</h2><p>We’ll use these details only to respond to this request.</p></div>
+          </div>
+          <div class="demo-fit-grid">
+            <div>
+              <label for="first_name" class="demo-fit-label">First name <span class="demo-fit-required">*</span></label>
+              <input type="text" id="first_name" name="first_name" autocomplete="given-name" required maxlength="80" class="demo-fit-control" />
+            </div>
+            <div>
+              <label for="last_name" class="demo-fit-label">Last name <span class="demo-fit-required">*</span></label>
+              <input type="text" id="last_name" name="last_name" autocomplete="family-name" required maxlength="80" class="demo-fit-control" />
+            </div>
+            <div>
+              <label for="email" class="demo-fit-label">Work email <span class="demo-fit-required">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required maxlength="254" class="demo-fit-control" />
+            </div>
+            <div>
+              <label for="phone" class="demo-fit-label">Contact number <span class="demo-fit-required">*</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required minlength="7" maxlength="60" class="demo-fit-control" placeholder="Include your country or area code" />
+            </div>
+            <div class="demo-fit-field--wide">
+              <label for="country" class="demo-fit-label">Country <span class="demo-fit-required">*</span></label>
+              <input type="hidden" id="country" name="country" />
+              <div class="relative" data-country-select>
+                <button id="countryButton" type="button" aria-haspopup="listbox" aria-expanded="false" class="demo-fit-control demo-fit-country-button flex items-center justify-between text-left">
+                  <span id="countryButtonLabel" class="text-slate-400">Select a country</span>
+                  <svg id="countryChevron" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" /></svg>
+                </button>
+                <div id="countryMenu" class="demo-fit-country-menu hidden absolute mt-2 w-full bg-white border border-slate-200 rounded-lg shadow-lg overflow-hidden">
+                  <div class="p-2 border-b border-slate-200"><input id="countrySearch" type="text" inputmode="search" autocomplete="off" class="demo-fit-control" placeholder="Search country…" /></div>
+                  <ul id="countryList" role="listbox" class="max-h-64 overflow-auto py-1"></ul>
+                </div>
+                <p id="countryError" class="demo-fit-error hidden">Please select a country.</p>
+              </div>
+            </div>
+            <div class="demo-fit-field--wide">
+              <label class="demo-fit-choice demo-fit-choice--check demo-fit-consent">
+                <input type="checkbox" name="contact_consent" value="yes" required />
+                <span>I agree that FlowIQ may use these details to respond to my request, in line with the <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. <b class="demo-fit-required" aria-hidden="true">*</b></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <div class="demo-fit-submit-card">
+          <div><h2>Ready when you are.</h2><p>We’ll review your answers and come back with the most useful next step. Your software-spend answer is optional and never determines whether we respond.</p></div>
+          <button type="submit" data-analytics-position="demo_fit_form_submit" data-analytics-label="find best starting point submit" class="demo-fit-submit">Find my best starting point</button>
+        </div>
       </form>
     </section>
   </main>
@@ -209,7 +303,7 @@
 	  </footer>
 
 	  <script src="/assets/js/country-select.js"></script>
-	  <script src="/assets/js/feature-select.js"></script>
+	  <script src="/assets/js/demo-fit-questionnaire.js?v=1"></script>
 	  <script>
 	    document.getElementById('mobileMenuBtn')?.addEventListener('click', function () {
 	      var menu = document.getElementById('mobileMenu');

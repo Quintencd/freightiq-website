@@ -63,6 +63,94 @@ function requiredEnv(name) {
   return value;
 }
 
+const DEMO_FIT_FIELDS = [
+  ['lead_route', 'Lead classification'],
+  ['lead_source', 'Lead source'],
+  ['plan_interest', 'Plan interest'],
+  ['company', 'Business name'],
+  ['business_type', 'Business type'],
+  ['business_description', 'Business operation'],
+  ['team_size', 'Team size'],
+  ['current_tools', 'Currently using'],
+  ['pain_points', 'Main pain points and current struggles'],
+  ['desired_outcomes', 'Desired efficiency and time improvements'],
+  ['monthly_software_spend', 'Current monthly software spend (optional)'],
+  ['feature_interest', 'FlowIQ module interests'],
+  ['timeline', 'Timeline'],
+  ['buying_role', 'Decision involvement'],
+  ['role_title', 'Role or job title'],
+  ['onboarding_readiness', 'Onboarding readiness'],
+  ['contact_consent', 'Contact consent'],
+];
+
+function cleanField(value, maxLength = 4000) {
+  return (value || '').toString().trim().slice(0, maxLength);
+}
+
+function isDemoFitSubmission(body) {
+  return cleanField(body.qualification_version, 80) === 'demo_fit_v1';
+}
+
+function classifyDemoFitLead(answers) {
+  const requiredForClassification = [
+    'company',
+    'business_type',
+    'business_description',
+    'team_size',
+    'current_tools',
+    'pain_points',
+    'desired_outcomes',
+    'feature_interest',
+    'timeline',
+    'buying_role',
+    'role_title',
+    'onboarding_readiness',
+    'first_name',
+    'last_name',
+    'email',
+    'phone',
+    'country',
+  ];
+
+  if (requiredForClassification.some((field) => !answers[field]) || answers.contact_consent !== 'yes') {
+    return 'nurture_or_incomplete';
+  }
+
+  const modules = answers.feature_interest.split(',').map((value) => value.trim()).filter(Boolean);
+  const teamScore = ['11-25', '26-50', '51-100', '101+'].includes(answers.team_size) ? 2 : 0;
+  const timelineScore = ['Within 30 days', '1-3 months'].includes(answers.timeline) ? 2 : 0;
+  const roleScore = answers.buying_role === 'Decision maker' ? 2 : answers.buying_role === 'Part of the decision team' ? 1 : 0;
+  const readinessScore = answers.onboarding_readiness === 'Ready to assign an owner and prepare our data'
+    ? 2
+    : answers.onboarding_readiness === 'Interested, but we need to plan resources first'
+      ? 1
+      : 0;
+  const breadthScore = modules.length >= 2 && !modules.includes('Not sure yet') ? 1 : 0;
+  const qualificationScore = teamScore + timelineScore + roleScore + readinessScore + breadthScore;
+
+  if (qualificationScore >= 6) return 'qualified_demo';
+  if (
+    ['1-5', '6-10'].includes(answers.team_size) &&
+    (answers.timeline === 'Exploring for later' || answers.onboarding_readiness === 'Prefer to start with self-guided resources')
+  ) {
+    return 'self_serve';
+  }
+  return 'nurture_or_incomplete';
+}
+
+function leadRouteLabel(route) {
+  if (route === 'qualified_demo') return 'Qualified demo';
+  if (route === 'self_serve') return 'Self-serve';
+  return 'Nurture / incomplete';
+}
+
+function buildDemoFitSummary(answers) {
+  return DEMO_FIT_FIELDS.map(([field, label]) => {
+    const value = field === 'lead_route' ? leadRouteLabel(answers.lead_route) : answers[field];
+    return `${label}: ${value || '(not provided)'}`;
+  }).join('\n');
+}
+
 function buildEmailText({ request_type, name, email, phone, country, feature_interest, company, message, first_name, last_name }) {
   const lines = [];
   lines.push(`Type: ${request_type || 'contact'}`);
@@ -215,16 +303,47 @@ exports.handler = async (event) => {
       };
     }
 
-    const request_type = (body.request_type || body['request-type'] || body['form-name'] || 'demo').toString().trim();
-    const name = (body.name || '').toString().trim();
-    const email = (body.email || '').toString().trim();
-    const phone = (body.phone || '').toString().trim();
-    const country = (body.country || '').toString().trim();
-    const feature_interest = (body.feature_interest || '').toString().trim();
-    const company = (body.company || '').toString().trim();
-    const message = (body.message || '').toString().trim();
-    const first_name = (body.first_name || '').toString().trim();
-    const last_name = (body.last_name || '').toString().trim();
+    const request_type = cleanField(body.request_type || body['request-type'] || body['form-name'] || 'demo', 80);
+    const name = cleanField(body.name, 200);
+    const email = cleanField(body.email, 254);
+    const phone = cleanField(body.phone, 80);
+    const country = cleanField(body.country, 120);
+    const feature_interest = cleanField(body.feature_interest, 1200);
+    const company = cleanField(body.company, 200);
+    const message = cleanField(body.message, 5000);
+    const first_name = cleanField(body.first_name, 100);
+    const last_name = cleanField(body.last_name, 100);
+    const demoFit = isDemoFitSubmission(body);
+    const demoFitAnswers = {
+      qualification_version: cleanField(body.qualification_version, 80),
+      lead_source: cleanField(body.lead_source, 120) || 'website_demo_cta',
+      plan_interest: cleanField(body.plan_interest, 120),
+      company,
+      business_type: cleanField(body.business_type, 240),
+      business_description: cleanField(body.business_description, 1600),
+      team_size: cleanField(body.team_size, 80),
+      current_tools: cleanField(body.current_tools, 1400),
+      pain_points: cleanField(body.pain_points, 1800),
+      desired_outcomes: cleanField(body.desired_outcomes, 1800),
+      monthly_software_spend: cleanField(body.monthly_software_spend, 160),
+      feature_interest,
+      timeline: cleanField(body.timeline, 100),
+      buying_role: cleanField(body.buying_role, 120),
+      role_title: cleanField(body.role_title, 160),
+      onboarding_readiness: cleanField(body.onboarding_readiness, 180),
+      contact_consent: cleanField(body.contact_consent, 20).toLowerCase(),
+      first_name,
+      last_name,
+      email,
+      phone,
+      country,
+    };
+
+    if (demoFit) demoFitAnswers.lead_route = classifyDemoFitLead(demoFitAnswers);
+    const lead_route = demoFit ? demoFitAnswers.lead_route : '';
+    const messageForStorage = demoFit
+      ? [message, 'FlowIQ demo-fit questionnaire', buildDemoFitSummary(demoFitAnswers)].filter(Boolean).join('\n\n')
+      : message;
 
     if (!email) return { statusCode: 400, headers, body: 'Missing required field: email' };
     if (request_type === 'demo' && (!first_name || !last_name)) {
@@ -232,6 +351,30 @@ exports.handler = async (event) => {
     }
     if (request_type === 'demo' && !feature_interest) {
       return { statusCode: 400, headers, body: 'Missing required field: feature_interest' };
+    }
+    if (demoFit) {
+      const requiredDemoFitFields = [
+        ['company', company],
+        ['business_type', demoFitAnswers.business_type],
+        ['business_description', demoFitAnswers.business_description],
+        ['team_size', demoFitAnswers.team_size],
+        ['current_tools', demoFitAnswers.current_tools],
+        ['pain_points', demoFitAnswers.pain_points],
+        ['desired_outcomes', demoFitAnswers.desired_outcomes],
+        ['timeline', demoFitAnswers.timeline],
+        ['buying_role', demoFitAnswers.buying_role],
+        ['role_title', demoFitAnswers.role_title],
+        ['onboarding_readiness', demoFitAnswers.onboarding_readiness],
+        ['phone', phone],
+        ['country', country],
+      ];
+      const missingFields = requiredDemoFitFields.filter(([, value]) => !value).map(([field]) => field);
+      if (missingFields.length > 0) {
+        return { statusCode: 400, headers, body: `Missing required fields: ${missingFields.join(', ')}` };
+      }
+      if (demoFitAnswers.contact_consent !== 'yes') {
+        return { statusCode: 400, headers, body: 'Missing required field: contact_consent' };
+      }
     }
     if (request_type === 'contact' && (!name || !message)) {
       return { statusCode: 400, headers, body: 'Missing required fields: name, message' };
@@ -258,7 +401,7 @@ exports.handler = async (event) => {
         country,
         feature_interest,
         company,
-        message,
+        message: messageForStorage,
       });
       if (storedInDb) {
         console.log('Demo request stored in database - trigger will send email automatically');
@@ -285,7 +428,7 @@ exports.handler = async (event) => {
                 country,
                 feature_interest,
                 company,
-                message,
+                message: messageForStorage,
                 created_at: new Date().toISOString(),
               },
             }),
@@ -307,12 +450,13 @@ exports.handler = async (event) => {
     const to = process.env.SUPPORT_EMAIL_TO;
 
     if (to && process.env.PLATFORM_SMTP_HOST && process.env.PLATFORM_SMTP_USER && process.env.PLATFORM_SMTP_PASS) {
-      const subject =
+      const baseSubject =
         request_type === 'deck'
           ? 'FlowIQ – Deck request'
           : request_type === 'contact'
             ? 'FlowIQ – Contact request'
             : 'FlowIQ – Demo request';
+      const subject = demoFit ? `${baseSubject} [${leadRouteLabel(lead_route)}]` : baseSubject;
 
       const emailResult = await sendEmail({
         to,
@@ -327,7 +471,7 @@ exports.handler = async (event) => {
         country,
         featureInterest: feature_interest,
         company,
-        message,
+        message: messageForStorage,
       });
 
       if (!emailResult.ok) {
@@ -352,8 +496,24 @@ exports.handler = async (event) => {
           country,
           feature_interest,
           company,
-          message,
+          message: messageForStorage,
           request_type,
+          qualification_version: demoFitAnswers.qualification_version,
+          lead_route,
+          lead_source: demoFitAnswers.lead_source,
+          plan_interest: demoFitAnswers.plan_interest,
+          business_type: demoFitAnswers.business_type,
+          business_description: demoFitAnswers.business_description,
+          team_size: demoFitAnswers.team_size,
+          current_tools: demoFitAnswers.current_tools,
+          pain_points: demoFitAnswers.pain_points,
+          desired_outcomes: demoFitAnswers.desired_outcomes,
+          monthly_software_spend: demoFitAnswers.monthly_software_spend,
+          timeline: demoFitAnswers.timeline,
+          buying_role: demoFitAnswers.buying_role,
+          role_title: demoFitAnswers.role_title,
+          onboarding_readiness: demoFitAnswers.onboarding_readiness,
+          contact_consent: demoFitAnswers.contact_consent,
         },
       });
     } catch {

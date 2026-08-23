@@ -691,6 +691,10 @@
             if (legalVersionLabel) legalVersionLabel.textContent = FLOWIQ_LEGAL_VERSION;
             const signupQuery = new URLSearchParams(window.location.search || '');
             const shopifyInstallClaim = (signupQuery.get('shopifyClaim') || '').trim();
+            const partnerReferralCodeCandidate = (signupQuery.get('partner_ref') || '').trim().toLowerCase();
+            const partnerWarmReferralCandidate = (signupQuery.get('partner_warm_ref') || '').trim().toLowerCase();
+            const partnerReferralCode = /^[a-z0-9][a-z0-9-]{5,47}$/.test(partnerReferralCodeCandidate) ? partnerReferralCodeCandidate : '';
+            const partnerWarmReferralToken = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(partnerWarmReferralCandidate) ? partnerWarmReferralCandidate : '';
             const requestedRedirect = (signupQuery.get('redirect') || '').trim();
             const safeAppRedirect = requestedRedirect.startsWith('/') && !requestedRedirect.startsWith('//')
                 ? requestedRedirect
@@ -978,6 +982,16 @@
                     { value: 'other', text: 'Other' }
                 ],
             });
+            if (partnerReferralCode || partnerWarmReferralToken) {
+                const referralSourceInput = document.getElementById('signupReferralSource');
+                const referralSourceLabel = document.getElementById('signupReferralSourceButtonLabel');
+                const referralSourceButton = document.getElementById('signupReferralSourceButton');
+                const referralDetailInput = document.getElementById('signupReferralDetail');
+                if (referralSourceInput) referralSourceInput.value = 'partner';
+                if (referralSourceLabel) referralSourceLabel.textContent = 'Paragon Finance referral';
+                referralSourceButton?.classList.remove('is-placeholder');
+                if (referralDetailInput && !referralDetailInput.value) referralDetailInput.value = partnerWarmReferralToken ? 'Paragon warm introduction' : 'Paragon partner campaign';
+            }
 
             setupFlowIQSelect({
                 fieldId: 'employees',
@@ -1522,6 +1536,8 @@
                         company_website_url: companyWebsiteUrl || null,
                         signup_referral_source: signupReferralSource,
                         signup_referral_detail: signupReferralDetail || null,
+                        partner_referral_code: partnerReferralCode || null,
+                        partner_warm_referral_token: partnerWarmReferralToken || null,
                         first_name: formData.get('firstName'),
                         last_name: formData.get('lastName'),
                         surname: formData.get('lastName'),

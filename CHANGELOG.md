@@ -1,5 +1,21 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - August 20, 2026
+
+### Paragon partner referral attribution
+
+- Added optional `partner_ref` campaign and unguessable `partner_warm_ref` introduction routes to FlowIQ signup.
+- Preselects the existing custom FlowIQ partner-referral source without adding browser-native controls.
+- Sends canonical attribution separately from human-entered acquisition detail.
+- Records attribution only after successful account and organisation provisioning; attribution errors cannot strand a valid signup.
+- Campaign signup attribution does not copy contact PII into the Paragon referral workspace.
+- No Netlify deployment was performed.
+
+### Regression Risk Notes (>10%)
+
+- `12–18%` signup regression risk is controlled through optional validated fields, unchanged provisioning order and non-blocking post-success attribution.
+- `12–18%` false-attribution risk is controlled by server validation, permanent campaign state, unguessable warm tokens and one canonical organisation attribution.
+
 ## [Unreleased] - August 19, 2026
 
 ### Trade Portal module pricing
