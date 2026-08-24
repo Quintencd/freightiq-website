@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Import Cost Calculator | FlowIQ</title>
   <meta name="description" content="Estimate total import cost by combining supplier, freight, duties, and clearance charges. Free FlowIQ import cost calculator for importers." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://www.flowiq.info/tools/import-cost-calculator.html" />
   <link rel="icon" href="/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="/flowiq-light.css?v=21">
   <script src="/assets/smartlook.js"></script>
 </head>
-<body class="bg-slate-50 text-slate-900 marketing-shell premium-light-page overflow-x-hidden">
+<body class="bg-slate-50 text-slate-900 marketing-shell premium-light-page overflow-x-hidden" data-page-template="calculator" data-page-intent="calculator_use" data-page-topic="import cost">
   <main class="fiq-redesign-main">
     <section class="fiq-redesign-hero">
       <div>
@@ -42,13 +43,17 @@
         <h2>Calculate total import cost.</h2>
         <p>Enter the major cost buckets. The result gives a planning estimate before stock receives into your warehouse.</p>
         <div class="fiq-redesign-form-grid mt-6">
+          <label for="supplier" class="font-medium text-slate-700">Supplier cost</label>
           <input id="supplier" type="number" step="0.01" min="0" placeholder="Supplier cost" class="border rounded-lg px-3 py-2" />
+          <label for="freight" class="font-medium text-slate-700">Freight cost</label>
           <input id="freight" type="number" step="0.01" min="0" placeholder="Freight cost" class="border rounded-lg px-3 py-2" />
+          <label for="duty" class="font-medium text-slate-700">Duty and VAT</label>
           <input id="duty" type="number" step="0.01" min="0" placeholder="Duty and VAT" class="border rounded-lg px-3 py-2" />
+          <label for="clearance" class="font-medium text-slate-700">Clearance and local fees</label>
           <input id="clearance" type="number" step="0.01" min="0" placeholder="Clearance and local fees" class="border rounded-lg px-3 py-2" />
-          <button id="calc-submit" data-analytics-event="calculator_use" class="bg-freight-orange hover:bg-freight-orange-dark text-white rounded-lg py-3 font-semibold">Calculate</button>
+          <button id="calc-submit" data-analytics-event="calculator_use" data-calculator-id="import-cost" class="bg-freight-orange hover:bg-freight-orange-dark text-white rounded-lg py-3 font-semibold">Calculate</button>
         </div>
-        <p id="result" class="fiq-redesign-result"></p>
+        <p id="result" class="fiq-redesign-result" role="status" aria-live="polite" aria-atomic="true"></p>
       </section>
 
       <aside class="fiq-redesign-panel">
@@ -56,8 +61,10 @@
         <p class="text-slate-600">Enter your email to receive this result and a breakdown template.</p>
         <form id="lead-form" name="import-cost-lead" method="POST" data-netlify="true" class="fiq-redesign-form-grid">
           <input type="hidden" name="form-name" value="import-cost-lead" />
-          <input id="lead-email" name="email" type="email" required placeholder="you@company.com" class="border rounded-lg px-3 py-2" />
-          <input id="lead-company" name="company" type="text" placeholder="Company" class="border rounded-lg px-3 py-2" />
+          <label for="lead-email" class="font-medium text-slate-700">Work email</label>
+          <input id="lead-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com" class="border rounded-lg px-3 py-2" />
+          <label for="lead-company" class="font-medium text-slate-700">Company <span class="font-normal text-slate-500">(optional)</span></label>
+          <input id="lead-company" name="company" type="text" autocomplete="organization" placeholder="Company" class="border rounded-lg px-3 py-2" />
           <input id="lead-result" name="estimated_total_import_cost" type="hidden" />
           <button type="submit" class="fiq-redesign-button-secondary">Email me this result</button>
         </form>

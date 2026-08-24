@@ -1,5 +1,19 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - August 24, 2026
+
+### Import and landed-cost calculator search, reporting, and accessibility hardening
+
+- Added explicit indexable robots directives and refreshed sitemap dates for the two highest-intent import-cost calculators.
+- Added calculator-specific reporting context and stable completion identifiers without changing formulas or event names.
+- Made import-cost fields persistent in the HTML, added form autocomplete hints, and ensured both calculator results are polite atomic status updates.
+- No Netlify deployment, commit, or push was performed.
+
+### Regression Risk Notes (>10%)
+
+- `10-15%` compact-form layout risk is controlled by the existing FlowIQ grid, unchanged controls, and desktop/mobile render validation.
+- `10-12%` analytics-series risk is controlled by retaining `web_calculator_use` and adding only stable calculator identifiers and page context.
+
 ## [Unreleased] - August 20, 2026
 
 ### Paragon partner referral attribution
