@@ -1,5 +1,13 @@
 # FlowIQ Marketing Website Changelog
 
+## [Unreleased] - August 26, 2026
+
+### Homepage ERP positioning
+
+- Updated the homepage hero headline to: `The ERP platform that grows with your business.`
+- Preserved the existing responsive two-line layout and FlowIQ orange accent treatment.
+- No Netlify deployment, commit, or push was performed.
+
 ## [Unreleased] - August 24, 2026
 
 ### Import and landed-cost calculator search, reporting, and accessibility hardening
