@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-19T09:45:07.626Z",
+  "generated_at_utc": "2026-08-26T14:08:41.034Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -2413,7 +2413,6 @@
         "barcode_scanning",
         "rfid_stock_tracking",
         "timeiq_finance_bridge",
-        "bankingiq",
         "ai_auto_capture"
       ],
       "add_ons": {
@@ -2826,7 +2825,6 @@
         "automation_advanced",
         "barcode_scanning",
         "timeiq_finance_bridge",
-        "bankingiq",
         "accounting_recon_advanced",
         "accounting_auto_payment_matching",
         "accounting_recon_bulk_confidence",

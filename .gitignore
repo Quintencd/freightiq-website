@@ -49,6 +49,8 @@ deployment-trigger.txt
 
 # Business intelligence files
 *business*
+# Public SEO landing page; do not exclude it with private business documents.
+!/erp-for-multi-branch-businesses.html
 *strategy*
 *architecture*
 *product-feed*

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landed Cost Calculator for Importers | FlowIQ</title>
-  <meta name="description" content="Use FlowIQ's landed cost calculator to estimate true import costs including freight, duties, and exchange rates." />
+  <meta name="description" content="Estimate average landed cost per unit from supplier cost, freight, duty and clearance. Explore FlowIQ for connected per-SKU costing and inventory workflows." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://www.flowiq.info/tools/landed-cost-calculator.html" />
   <link rel="icon" type="image/png" href="/flowiq-logo.png">
@@ -69,8 +69,8 @@
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
     <section id="calculator" class="text-center mb-16">
-      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Calculate your true landed cost before the stock arrives</h1>
-      <p class="text-xl text-slate-600 mb-8">Calculate true landed cost per SKU by allocating freight, duty, clearance, insurance, and FX accurately — then see real margins with FlowIQ. To see this with your own data, <a href="/book-demo.html" class="text-orange-600 hover:underline font-medium">book a demo</a>.</p>
+      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Estimate landed cost before the stock arrives</h1>
+      <p class="text-xl text-slate-600 mb-8">Use this free tool to estimate average cost per unit from supplier cost, freight, duty and clearance. For per-SKU allocation and connected inventory workflows in FlowIQ, <a href="/book-demo.html" class="text-orange-600 hover:underline font-medium">book a demo</a>.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
         <a href="#calculator-form" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2">Use the Calculator</a>
         <a href="/book-demo.html" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 px-8 py-4 rounded-xl font-semibold shadow-sm hover:shadow-md transition-all inline-flex items-center justify-center gap-2">Book a Demo</a>
@@ -78,7 +78,7 @@
 
       <div id="calculator-form" class="max-w-lg mx-auto text-left bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
         <h2 class="text-xl font-semibold text-slate-900 mb-1">Quick estimate</h2>
-        <p class="text-sm text-slate-600 mb-4">Enter the costs for one shipment. Use your own currency.</p>
+        <p class="text-sm text-slate-600 mb-4">Enter one shipment's costs in the same currency. This estimate averages cost across units; it does not allocate mixed SKUs, convert currencies or update inventory.</p>
         <div class="space-y-4">
           <div>
             <label for="calc-product-cost" class="block text-sm font-medium text-slate-700 mb-1">What you paid the supplier</label>
@@ -112,7 +112,7 @@
     <section id="lead-capture-cta" class="mb-16 hidden" aria-hidden="true">
       <div class="max-w-2xl mx-auto text-center border border-slate-200 rounded-xl bg-white p-8 shadow-sm">
         <h2 class="text-2xl font-semibold text-slate-900 mb-4">Want a detailed breakdown?</h2>
-        <p class="text-slate-600 mb-6">Most importers underestimate landed cost by 5–15%. Get a full breakdown using your real data and see how FlowIQ calculates it correctly.</p>
+        <p class="text-slate-600 mb-6">Missing shipment costs can distort your margin. Request a breakdown using your inputs, or explore a full costing workflow with the FlowIQ team.</p>
         <div id="lead-capture-buttons" class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button type="button" id="lead-email-cta" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2">Email me this breakdown</button>
           <a href="/book-demo.html" class="text-orange-600 hover:underline font-medium">Book a demo instead</a>
@@ -175,21 +175,21 @@
     </section>
 
     <section class="mb-16">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-6">What This Landed Cost Calculator Actually Solves</h2>
-      <p class="text-slate-600 mb-4">Most “landed cost calculators” only add percentages or averages.</p>
-      <p class="text-slate-600 mb-2">This calculator is designed to reflect real import complexity:</p>
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">When a Shipment Average Is Not Enough</h2>
+      <p class="text-slate-600 mb-4">A quick average helps with planning, but different products may need different cost allocations.</p>
+      <p class="text-slate-600 mb-2">A full costing workflow in FlowIQ goes beyond this quick estimate to handle:</p>
       <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
         <li>Mixed SKUs in one shipment</li>
         <li>One freight invoice across many products</li>
         <li>Duties and clearance charged at shipment level</li>
         <li>FX differences across multiple payments</li>
       </ul>
-      <p class="text-slate-600">FlowIQ’s landed cost calculator mirrors how landed cost should be calculated in a real import operation — per SKU, using proper allocation logic.</p>
+      <p class="text-slate-600">The public calculator shows a shipment-wide average. Use the authenticated FlowIQ workflow for allocation across individual SKUs.</p>
     </section>
 
     <section class="mb-16">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-6">Costs Included in the Calculation</h2>
-      <p class="text-slate-600 mb-2">The calculator supports allocation of:</p>
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">Costs to Review in a Full Shipment Workflow</h2>
+      <p class="text-slate-600 mb-2">When moving beyond this estimate, review:</p>
       <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
         <li>Supplier product cost</li>
         <li>International and local freight</li>
@@ -198,12 +198,12 @@
         <li>Insurance</li>
         <li>FX differences between payments</li>
       </ul>
-      <p class="text-slate-600">These costs are allocated across SKUs using volume, weight, or value — not guesswork.</p>
+      <p class="text-slate-600">This public tool adds only the supplier, freight, and combined duty/clearance amounts you enter. Insurance and FX differences are not calculated separately here. FlowIQ's full shipment workflow supports per-SKU allocation.</p>
     </section>
 
     <section class="mb-16">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-6">How the Landed Cost Is Calculated</h2>
-      <p class="text-slate-600 mb-4">FlowIQ treats each shipment as a cost container.</p>
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">How Costing Works Inside FlowIQ</h2>
+      <p class="text-slate-600 mb-4">In the authenticated app, FlowIQ treats each shipment as a cost container. This is separate from the free estimate above.</p>
       <p class="text-slate-600 mb-2">Steps:</p>
       <ol class="list-decimal list-inside text-slate-600 space-y-1 mb-4">
         <li>Capture total shipment costs</li>
@@ -216,7 +216,7 @@
     </section>
 
     <section class="mb-16">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-6">Landed Cost Formula (Simplified)</h2>
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">Full Workflow Formula (Beyond This Estimate)</h2>
       <div class="bg-slate-100 border border-slate-200 rounded-lg p-6 font-mono text-slate-800 mb-4 whitespace-pre">(Supplier Cost
   + Allocated Freight
   + Allocated Duty
@@ -229,8 +229,8 @@
     </section>
 
     <section class="mb-16">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-6">Why This Calculator Is Better Than Spreadsheets</h2>
-      <p class="text-slate-600 mb-2">Spreadsheets break because they:</p>
+      <h2 class="text-2xl font-semibold text-slate-900 mb-6">When to Move Beyond a Spreadsheet Estimate</h2>
+      <p class="text-slate-600 mb-2">Consider a connected workflow when your spreadsheets:</p>
       <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
         <li>Use averages instead of allocation</li>
         <li>Lose track of FX differences</li>
@@ -238,13 +238,13 @@
         <li>Cannot audit changes per shipment</li>
         <li>Do not update inventory automatically</li>
       </ul>
-      <p class="text-slate-600">FlowIQ’s calculator feeds directly into inventory and margin reporting — so calculations don’t live in isolation.</p>
+      <p class="text-slate-600">Costing inside FlowIQ connects to inventory and margin reporting. This public estimate does not send values to your inventory.</p>
     </section>
 
     <section class="mb-16">
       <h2 class="text-2xl font-semibold text-slate-900 mb-6">From Calculator to Inventory and Margins</h2>
-      <p class="text-slate-600 mb-4">This calculator is not a standalone tool.</p>
-      <p class="text-slate-600 mb-2">With FlowIQ:</p>
+      <p class="text-slate-600 mb-4">This free calculator is a standalone planning tool. It creates no shipment, stock receipt or accounting entry.</p>
+      <p class="text-slate-600 mb-2">With the authenticated FlowIQ shipment workflow:</p>
       <ul class="list-disc list-inside text-slate-600 space-y-1 mb-4">
         <li>Landed cost flows directly into inventory</li>
         <li>Stock is valued correctly on receipt</li>
@@ -258,10 +258,10 @@
       <h2 class="text-2xl font-semibold text-slate-900 mb-6">Who This Landed Cost Calculator Is For</h2>
       <p class="text-slate-600 mb-2">This tool is ideal for:</p>
       <ul class="list-disc list-inside text-slate-600 space-y-1">
-        <li>Importers with mixed-SKU shipments</li>
+        <li>Importers seeking a quick shipment-wide average</li>
         <li>Businesses exposed to freight and FX volatility</li>
         <li>Teams currently using spreadsheets for costing</li>
-        <li>Companies that need accurate margins, not estimates</li>
+        <li>Teams evaluating whether they need a full costing workflow</li>
       </ul>
     </section>
 
@@ -270,25 +270,25 @@
       <div class="space-y-8">
         <div>
           <h3 class="text-lg font-semibold text-slate-900 mb-2">Is this a free spreadsheet-style calculator?</h3>
-          <p class="text-slate-600">No. This calculator reflects the logic used inside FlowIQ to calculate true landed cost per SKU. It is designed to support real operational workflows.</p>
+          <p class="text-slate-600">Yes. This free calculator provides an average cost per unit from the amounts you enter. No account is needed to calculate an estimate.</p>
         </div>
         <div>
           <h3 class="text-lg font-semibold text-slate-900 mb-2">Can I allocate costs by CBM or weight?</h3>
-          <p class="text-slate-600">Yes. FlowIQ supports allocation by CBM, weight, value, or custom logic depending on shipment structure.</p>
+          <p class="text-slate-600">Not in this public tool. It divides shipment costs equally by the number of units. Per-SKU allocation belongs to the authenticated FlowIQ shipment workflow.</p>
         </div>
         <div>
           <h3 class="text-lg font-semibold text-slate-900 mb-2">Does this handle FX differences?</h3>
-          <p class="text-slate-600">Yes. FX differences across supplier and freight payments are included in landed cost calculations.</p>
+          <p class="text-slate-600">Not automatically. Enter all amounts in one currency. This public estimate has no exchange-rate or payment-variance calculation.</p>
         </div>
         <div>
           <h3 class="text-lg font-semibold text-slate-900 mb-2">Can I use this without inventory software?</h3>
-          <p class="text-slate-600">The calculator works best as part of FlowIQ, where landed cost feeds directly into inventory and margin reporting.</p>
+          <p class="text-slate-600">Yes. Use it independently for planning. To connect shipment costing to stock and margin reporting, explore the full FlowIQ app.</p>
         </div>
       </div>
     </section>
 
     <section class="text-center pt-8 pb-4 border-t border-slate-200">
-      <h2 class="text-2xl font-semibold text-slate-900 mb-4">Calculate Your True Landed Cost</h2>
+      <h2 class="text-2xl font-semibold text-slate-900 mb-4">Estimate Now, Explore the Full Workflow</h2>
       <p class="text-slate-600 mb-8 max-w-2xl mx-auto">Use the landed cost calculator or book a demo to see how accurate per-SKU costing changes pricing, margins, and stock decisions.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="#calculator" class="bg-freight-orange hover:bg-freight-orange-dark text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2">Use the Calculator</a>
