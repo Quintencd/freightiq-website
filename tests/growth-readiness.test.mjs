@@ -14,6 +14,15 @@ test('public ERP route is no longer ignored and keeps canonical and rewrite', ()
   assert.equal(ignored, '');
 });
 
+test('Business Units page and its module image are not ignored', () => {
+  const root = new URL('../', import.meta.url);
+  assert.match(read('.gitignore'), /!\/modules\/business-units\.html/);
+  assert.match(read('.gitignore'), /!\/assets\/img\/generated\/business-command-story\.webp/);
+  assert.match(read('modules/business-units.html'), /business-command-story\.webp/);
+  const ignored = execFileSync('git', ['ls-files', '--others', '--ignored', '--exclude-standard', '--', 'modules/business-units.html', 'assets/img/generated/business-command-story.webp'], { cwd: root, encoding: 'utf8' });
+  assert.equal(ignored, '');
+});
+
 test('calculator clearly separates free estimate from app workflow; formula remains unchanged', () => {
   const html = read('tools/landed-cost-calculator.html');
   assert.match(html, /standalone planning tool/);
@@ -43,5 +52,22 @@ test('required fields and Turnstile remain enforced; validation receives structu
   assert.match(html, /validationErrors.push\('security verification'\)/);
   assert.match(html, /validationError.code = 'required_fields_missing'/);
   assert.match(html, /validation_fields: Array.isArray/);
+  assert.match(html, /assets\/signup-error-telemetry\.js/);
+  assert.match(html, /isRepeatedRequiredFieldError/);
   assert.match(html, /signupFailureStage = 'signup_request';\s+const response = await fetch/);
+});
+
+test('identical incomplete signup attempts emit one validation event per browser session', () => {
+  const storage = new Map();
+  const context = {
+    sessionStorage: {
+      getItem: key => storage.get(key) || null,
+      setItem: (key, value) => storage.set(key, value),
+    },
+  };
+  vm.runInNewContext(read('assets/signup-error-telemetry.js'), context);
+  const { shouldTrackRequiredFields } = context.FlowIQSignupErrorTelemetry;
+  assert.equal(shouldTrackRequiredFields(['industry', 'country']), true);
+  assert.equal(shouldTrackRequiredFields(['country', 'industry']), false);
+  assert.equal(shouldTrackRequiredFields(['industry', 'employees']), true);
 });

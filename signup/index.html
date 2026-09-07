@@ -23,6 +23,7 @@
     <link rel="preconnect" href="https://challenges.cloudflare.com">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/assets/signup-error-telemetry.js"></script>
     <script>
         window.FlowIQSignupTurnstileToken = '';
         window.onFlowIQTurnstileSuccess = function(token) {
@@ -1759,7 +1760,10 @@
 
             } catch (error) {
                 console.error('Signup error:', error);
-                window.FlowIQWebsiteAnalytics?.track('web_signup_error', {
+                const isRepeatedRequiredFieldError =
+                    error?.code === 'required_fields_missing' &&
+                    window.FlowIQSignupErrorTelemetry?.shouldTrackRequiredFields(error.validationFields) === false;
+                if (!isRepeatedRequiredFieldError) window.FlowIQWebsiteAnalytics?.track('web_signup_error', {
                     form_name: 'signupForm',
                     error_message: (error?.message || 'unknown').slice(0, 200),
                     error_code: error?.code === 'required_fields_missing' ? 'required_fields_missing' : signupFailureStage,

@@ -49,8 +49,10 @@ deployment-trigger.txt
 
 # Business intelligence files
 *business*
-# Public SEO landing page; do not exclude it with private business documents.
+# Public website files; do not exclude them with private business documents.
 !/erp-for-multi-branch-businesses.html
+!/modules/business-units.html
+!/assets/img/generated/business-command-story.webp
 *strategy*
 *architecture*
 *product-feed*

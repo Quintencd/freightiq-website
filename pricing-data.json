@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-26T14:08:41.034Z",
+  "generated_at_utc": "2026-09-03T10:50:07.638Z",
   "source": "src/config/subscriptionPlans.js",
   "plan_order": [
     "starter_lite",
@@ -328,6 +328,24 @@
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Includes AgentsIQ proactive checks and follow-up workflows while preserving human review before posting or action"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "jobiq_addon": {
+          "name": "JobIQ",
+          "price": 990,
+          "price_usd": 69,
+          "annual_price": 10692,
+          "annual_price_usd": 745,
+          "annual_discount_percent": 10,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Warehouse-scoped job cards for repair, service, refurbishment and controlled manufacturing work.",
+          "value_points": [
+            "Runs quote approval, labour, evidence, linked costs and job progress in one focused workspace",
+            "Includes unlimited named JobIQ users and warehouses within the organisation; normal plan limits still apply to connected invoices and purchases",
+            "Manufacturing actions appear only when the base plan also includes BOM & Manufacturing and the user has InventoryIQ access"
           ],
           "tier_group": null,
           "tier_label": null
@@ -746,6 +764,24 @@
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Includes AgentsIQ proactive checks and follow-up workflows while preserving human review before posting or action"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "jobiq_addon": {
+          "name": "JobIQ",
+          "price": 990,
+          "price_usd": 69,
+          "annual_price": 10692,
+          "annual_price_usd": 745,
+          "annual_discount_percent": 10,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Warehouse-scoped job cards for repair, service, refurbishment and controlled manufacturing work.",
+          "value_points": [
+            "Runs quote approval, labour, evidence, linked costs and job progress in one focused workspace",
+            "Includes unlimited named JobIQ users and warehouses within the organisation; normal plan limits still apply to connected invoices and purchases",
+            "Manufacturing actions appear only when the base plan also includes BOM & Manufacturing and the user has InventoryIQ access"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1185,6 +1221,24 @@
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Includes AgentsIQ proactive checks and follow-up workflows while preserving human review before posting or action"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "jobiq_addon": {
+          "name": "JobIQ",
+          "price": 990,
+          "price_usd": 69,
+          "annual_price": 10692,
+          "annual_price_usd": 745,
+          "annual_discount_percent": 10,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Warehouse-scoped job cards for repair, service, refurbishment and controlled manufacturing work.",
+          "value_points": [
+            "Runs quote approval, labour, evidence, linked costs and job progress in one focused workspace",
+            "Includes unlimited named JobIQ users and warehouses within the organisation; normal plan limits still apply to connected invoices and purchases",
+            "Manufacturing actions appear only when the base plan also includes BOM & Manufacturing and the user has InventoryIQ access"
           ],
           "tier_group": null,
           "tier_label": null
@@ -1652,6 +1706,24 @@
           "tier_group": null,
           "tier_label": null
         },
+        "jobiq_addon": {
+          "name": "JobIQ",
+          "price": 990,
+          "price_usd": 69,
+          "annual_price": 10692,
+          "annual_price_usd": 745,
+          "annual_discount_percent": 10,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Warehouse-scoped job cards for repair, service, refurbishment and controlled manufacturing work.",
+          "value_points": [
+            "Runs quote approval, labour, evidence, linked costs and job progress in one focused workspace",
+            "Includes unlimited named JobIQ users and warehouses within the organisation; normal plan limits still apply to connected invoices and purchases",
+            "Manufacturing actions appear only when the base plan also includes BOM & Manufacturing and the user has InventoryIQ access"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
           "price": 2990,
@@ -2083,6 +2155,24 @@
           "tier_group": null,
           "tier_label": null
         },
+        "jobiq_addon": {
+          "name": "JobIQ",
+          "price": 990,
+          "price_usd": 69,
+          "annual_price": 10692,
+          "annual_price_usd": 745,
+          "annual_discount_percent": 10,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Warehouse-scoped job cards for repair, service, refurbishment and controlled manufacturing work.",
+          "value_points": [
+            "Runs quote approval, labour, evidence, linked costs and job progress in one focused workspace",
+            "Includes unlimited named JobIQ users and warehouses within the organisation; normal plan limits still apply to connected invoices and purchases",
+            "Manufacturing actions appear only when the base plan also includes BOM & Manufacturing and the user has InventoryIQ access"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
           "price": 2990,
@@ -2485,6 +2575,24 @@
           "tier_group": null,
           "tier_label": null
         },
+        "jobiq_addon": {
+          "name": "JobIQ",
+          "price": 990,
+          "price_usd": 69,
+          "annual_price": 10692,
+          "annual_price_usd": 745,
+          "annual_discount_percent": 10,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Warehouse-scoped job cards for repair, service, refurbishment and controlled manufacturing work.",
+          "value_points": [
+            "Runs quote approval, labour, evidence, linked costs and job progress in one focused workspace",
+            "Includes unlimited named JobIQ users and warehouses within the organisation; normal plan limits still apply to connected invoices and purchases",
+            "Manufacturing actions appear only when the base plan also includes BOM & Manufacturing and the user has InventoryIQ access"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
         "forecasting_intelligence_pack": {
           "name": "Forecasting Intelligence Pack",
           "price": 2990,
@@ -2883,6 +2991,24 @@
           "value_points": [
             "Turns invoices, purchase orders, supplier bills, slips, import documents, and voice notes into review-ready drafts",
             "Includes AgentsIQ proactive checks and follow-up workflows while preserving human review before posting or action"
+          ],
+          "tier_group": null,
+          "tier_label": null
+        },
+        "jobiq_addon": {
+          "name": "JobIQ",
+          "price": 990,
+          "price_usd": 69,
+          "annual_price": 10692,
+          "annual_price_usd": 745,
+          "annual_discount_percent": 10,
+          "limit": 1,
+          "unit": "workspace",
+          "description": "Warehouse-scoped job cards for repair, service, refurbishment and controlled manufacturing work.",
+          "value_points": [
+            "Runs quote approval, labour, evidence, linked costs and job progress in one focused workspace",
+            "Includes unlimited named JobIQ users and warehouses within the organisation; normal plan limits still apply to connected invoices and purchases",
+            "Manufacturing actions appear only when the base plan also includes BOM & Manufacturing and the user has InventoryIQ access"
           ],
           "tier_group": null,
           "tier_label": null
